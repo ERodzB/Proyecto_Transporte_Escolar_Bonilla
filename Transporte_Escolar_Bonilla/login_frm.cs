@@ -19,6 +19,22 @@ namespace Transporte_Escolar_Bonilla
 
         private void OlvidadoLogin_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Correo_tb.Visible = true;
+            correo_lbl.Visible = true;
+            contra_tb.Visible = false;
+            contra_lbl.Visible = false;
+            regresar_linklbl.Visible = true;
+            olvidadoLogin_linklbl.Visible = false;
+        }
+
+        private void Regresar_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Correo_tb.Visible = false;
+            correo_lbl.Visible =false;
+            regresar_linklbl.Visible = false;
+            contra_tb.Visible = true;
+            contra_lbl.Visible = true;
+            olvidadoLogin_linklbl.Visible = true;
 
         }
     }

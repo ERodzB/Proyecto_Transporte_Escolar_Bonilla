@@ -12,6 +12,8 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Principal_frm : Form
     {
+        Estetica Estetics = new Estetica();
+        login_frm log = new login_frm();
         public Principal_frm()
         {
             
@@ -23,10 +25,7 @@ namespace Transporte_Escolar_Bonilla
             usuarios_btn.Enabled = false;
             rutas_btn.Enabled = false;
             close_btn.Enabled = false;
-            login_frm log = new login_frm();
-            log.TopLevel = false;
-            center_panel.Controls.Add(log);
-            log.Show();*/
+            Estetics.AbrirFormularios(log, center_panel);*/
         }
 
         private void Salir_btn_Click(object sender, EventArgs e)
@@ -41,62 +40,44 @@ namespace Transporte_Escolar_Bonilla
 
         private void Rutas_btn_Click(object sender, EventArgs e)
         {
-            center_panel.Controls.Clear();
-            bar_panel.Location = rutas_btn.Location;
             rutas_frm rutas = new rutas_frm();
-            rutas.TopLevel = false;
-            center_panel.Controls.Add(rutas);
-            rutas.Show();
+            Estetics.AbrirFormularios(rutas, center_panel);
+            bar_panel.Location = rutas_btn.Location;
         }
 
         private void Unidades_btn_Click(object sender, EventArgs e)
         {
-            center_panel.Controls.Clear();
-            bar_panel.Location = unidades_btn.Location;
             unidades_frm uni = new unidades_frm();
-            uni.TopLevel = false;
-            center_panel.Controls.Add(uni);
-            uni.Show();
+            Estetics.AbrirFormularios(uni , center_panel);
+            bar_panel.Location = unidades_btn.Location;
         }
 
         private void Contratos_btn_Click(object sender, EventArgs e)
         {
-            bar_panel.Location = conductores_btn.Location;
-            center_panel.Controls.Clear();
             conductores_frm condu = new conductores_frm();
-            condu.TopLevel = false;
-            center_panel.Controls.Add(condu);
-            condu.Show();
+            Estetics.AbrirFormularios(condu, center_panel);
+            bar_panel.Location = conductores_btn.Location;
         }
 
         private void Viajes_btn_Click(object sender, EventArgs e)
         {
-            bar_panel.Location = clientes_btn.Location;
-            center_panel.Controls.Clear();
             clientes_frm client = new clientes_frm();
-            client.TopLevel = false;
-            center_panel.Controls.Add(client);
-            client.Show();
+            Estetics.AbrirFormularios(client, center_panel);
+            bar_panel.Location = clientes_btn.Location;
         }
 
         private void Users_btn_Click(object sender, EventArgs e)
         {
-            bar_panel.Location = contratos_btn.Location;
-            center_panel.Controls.Clear();
             contratos_frm contra = new contratos_frm();
-            contra.TopLevel = false;
-            center_panel.Controls.Add(contra);
-            contra.Show();
+            Estetics.AbrirFormularios(contra, center_panel);
+            bar_panel.Location = contratos_btn.Location;
         }
 
         private void Usuarios_btn_Click(object sender, EventArgs e)
         {
-            bar_panel.Location = usuarios_btn.Location;
-            center_panel.Controls.Clear();
             usuarios_frm user = new usuarios_frm();
-            user.TopLevel = false;
-            center_panel.Controls.Add(user);
-            user.Show();
+            Estetics.AbrirFormularios(user, center_panel);
+            bar_panel.Location = usuarios_btn.Location;
         }
     }
 }

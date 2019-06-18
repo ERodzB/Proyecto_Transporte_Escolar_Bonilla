@@ -59,24 +59,29 @@
     <Compile Include="conductores_frm.Designer.cs">
       <DependentUpon>conductores_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConexionBD.cs" />
+    <Compile Include="Consultar.cs" />
     <Compile Include="contratos_frm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="contratos_frm.Designer.cs">
       <DependentUpon>contratos_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estetica.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ingresar.cs" />
     <Compile Include="login_frm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login_frm.Designer.cs">
       <DependentUpon>login_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modificar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rutas_frm.cs">
@@ -97,6 +102,7 @@
     <Compile Include="usuariosf_Frm.Designer.cs">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validar.cs" />
     <EmbeddedResource Include="clientes_frm.resx">
       <DependentUpon>clientes_frm.cs</DependentUpon>
     </EmbeddedResource>
