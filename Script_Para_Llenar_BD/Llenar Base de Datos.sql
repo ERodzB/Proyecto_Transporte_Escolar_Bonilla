@@ -1,3 +1,5 @@
+use Transporte_Bonilla
+GO
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (1, N'Alto', N'Acceso Completo')
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (2, N'Medio', N'Acceso de consultor')
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (3, N'Bajo', N'Acceso Superficial')
@@ -53,7 +55,7 @@ INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [De
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (N'605', N'RT', N'Segura', N'La ruta no presenta ningun problema')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (N'701', N'VE', N'En Mantenimiento', N'El vehiculo esta en mantenimiento')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (N'702', N'VE', N'Disponible', N'El vehiculo esta listo para rodar')
-INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (N'703', N'VE', N'Dañado', N'El vehiculo esta fuera de servicio')
+INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (N'703', N'VE', N'Daï¿½ado', N'El vehiculo esta fuera de servicio')
 INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'ChoqueV001', N'Choque Vehiculo', N'Colision', N'Choque con Bolo', CAST(N'2019-05-30' AS Date), CAST(N'2019-06-30' AS Date), N'304', N'3', N'PAW4234')
 INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'PrestamoV001', N'Prestamo Vehiculo', N'Extravio Llaves', N'Llaves Perdidas', CAST(N'2019-01-26' AS Date), CAST(N'2019-01-30' AS Date), N'305', N'2', N'PAF5039')
 INSERT [dbo].[Mantenimientos] ([Codigo_Mantenimiento], [Tipo_Mantenimiento], [Fecha_Mantenimiento], [Codigo_Vehiculo], [Costo_Mantenimiento], [Estado_Mantenimiento]) VALUES (1, 1, CAST(N'2019-01-27' AS Date), N'PAF5039', 1500.0000, N'402')
@@ -80,7 +82,7 @@ INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_Cuota], [Codigo_Contrato], [Codigo
 INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_Cuota], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI]) VALUES (3, 1, N'TransporteUnicah', N'CTUnicah', CAST(N'2019-01-01' AS Date), 1500.0000, N'021')
 INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Codigo_Contrato]) VALUES (N'JESREntrada', N'Entrada de Empleado', N'Recoger Empleados', N'JESRtransporte')
 INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Codigo_Contrato]) VALUES (N'JESRsalida', N'Salida de Empleado', N'Despacho Empleado', N'JESRtransporte')
-INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Codigo_Contrato]) VALUES (N'UNICAHPlazaM', N'Plaza Miraf. Mana', N'Transporte Mañana', N'TransporteUnicah')
+INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Codigo_Contrato]) VALUES (N'UNICAHPlazaM', N'Plaza Miraf. Mana', N'Transporte Maï¿½ana', N'TransporteUnicah')
 INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (1, N'Cambio Aceite', N'Cambio de aceite quemado')
 INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (2, N'Cambio de llantas', N'Cambio de llantas gastadas')
 INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (3, N'Cambio de asientos', N'Cambio de asientos maltratados')
