@@ -12,8 +12,8 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Principal_frm : Form
     {
-        Estetica Estetics = new Estetica();
-        login_frm log = new login_frm();
+        Estetica Estetics = new Estetica();//Clase que manejara lo estetico de el proyecto
+        login_frm log = new login_frm();//Login no utilizado debido a que no es necesario 
         public Principal_frm()
         {
             
@@ -40,8 +40,8 @@ namespace Transporte_Escolar_Bonilla
 
         private void Rutas_btn_Click(object sender, EventArgs e)
         {
-            rutas_frm rutas = new rutas_frm();
-            Estetics.AbrirFormularios(rutas, center_panel);
+            rutas_frm rutas = new rutas_frm(); //Creacion de referencia al formulario
+            Estetics.AbrirFormularios(rutas, center_panel);//Para abrir un formulario deben llamar a la referencia y en que panel lo quieren abrir
             bar_panel.Location = rutas_btn.Location;
         }
 
