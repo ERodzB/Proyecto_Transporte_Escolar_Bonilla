@@ -74,6 +74,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_nueva_ruta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_nueva_ruta.Designer.cs">
+      <DependentUpon>form_nueva_ruta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_nuevo_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_nuevo_cliente.Designer.cs">
+      <DependentUpon>form_nuevo_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_nuevo_cliente2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_nuevo_cliente2.Designer.cs">
+      <DependentUpon>form_nuevo_cliente2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ingresar.cs" />
     <Compile Include="login_frm.cs">
       <SubType>Form</SubType>
@@ -114,6 +132,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_nueva_ruta.resx">
+      <DependentUpon>form_nueva_ruta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_nuevo_cliente.resx">
+      <DependentUpon>form_nuevo_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_nuevo_cliente2.resx">
+      <DependentUpon>form_nuevo_cliente2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login_frm.resx">
       <DependentUpon>login_frm.cs</DependentUpon>
