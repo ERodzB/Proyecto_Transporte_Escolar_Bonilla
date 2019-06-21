@@ -40,7 +40,18 @@
             this.conductores_btn = new System.Windows.Forms.Button();
             this.unidades_btn = new System.Windows.Forms.Button();
             this.rutas_btn = new System.Windows.Forms.Button();
+            this.enviar_linklbl = new System.Windows.Forms.LinkLabel();
+            this.regresar_linklbl = new System.Windows.Forms.LinkLabel();
+            this.Correo_tb = new System.Windows.Forms.TextBox();
+            this.correo_lbl = new System.Windows.Forms.Label();
+            this.olvidadoLogin_linklbl = new System.Windows.Forms.LinkLabel();
+            this.contra_tb = new System.Windows.Forms.TextBox();
+            this.contra_lbl = new System.Windows.Forms.Label();
+            this.ingresarLogin_btn = new System.Windows.Forms.Button();
+            this.userLogin_tb = new System.Windows.Forms.TextBox();
+            this.userLogin_lbl = new System.Windows.Forms.Label();
             this.top_panel.SuspendLayout();
+            this.center_panel.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +84,16 @@
             // center_panel
             // 
             this.center_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
+            this.center_panel.Controls.Add(this.enviar_linklbl);
+            this.center_panel.Controls.Add(this.regresar_linklbl);
+            this.center_panel.Controls.Add(this.Correo_tb);
+            this.center_panel.Controls.Add(this.correo_lbl);
+            this.center_panel.Controls.Add(this.olvidadoLogin_linklbl);
+            this.center_panel.Controls.Add(this.contra_tb);
+            this.center_panel.Controls.Add(this.contra_lbl);
+            this.center_panel.Controls.Add(this.ingresarLogin_btn);
+            this.center_panel.Controls.Add(this.userLogin_tb);
+            this.center_panel.Controls.Add(this.userLogin_lbl);
             this.center_panel.Dock = System.Windows.Forms.DockStyle.Right;
             this.center_panel.Location = new System.Drawing.Point(314, 35);
             this.center_panel.Name = "center_panel";
@@ -100,6 +121,7 @@
             // 
             this.close_btn.BackColor = System.Drawing.Color.White;
             this.close_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.close_btn.Enabled = false;
             this.close_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(45)))), ((int)(((byte)(108)))));
             this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_btn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -110,6 +132,7 @@
             this.close_btn.TabIndex = 7;
             this.close_btn.Text = "Cerrar Sessión";
             this.close_btn.UseVisualStyleBackColor = false;
+            this.close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
             // bar_panel
             // 
@@ -123,6 +146,7 @@
             // 
             this.usuarios_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(28)))), ((int)(((byte)(44)))));
             this.usuarios_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usuarios_btn.Enabled = false;
             this.usuarios_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(45)))), ((int)(((byte)(108)))));
             this.usuarios_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usuarios_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +163,7 @@
             // 
             this.contratos_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(28)))), ((int)(((byte)(44)))));
             this.contratos_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contratos_btn.Enabled = false;
             this.contratos_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(45)))), ((int)(((byte)(108)))));
             this.contratos_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contratos_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic);
@@ -155,6 +180,7 @@
             // 
             this.clientes_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(28)))), ((int)(((byte)(44)))));
             this.clientes_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clientes_btn.Enabled = false;
             this.clientes_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(45)))), ((int)(((byte)(108)))));
             this.clientes_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clientes_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic);
@@ -171,6 +197,7 @@
             // 
             this.conductores_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(28)))), ((int)(((byte)(44)))));
             this.conductores_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.conductores_btn.Enabled = false;
             this.conductores_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(45)))), ((int)(((byte)(108)))));
             this.conductores_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.conductores_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic);
@@ -187,6 +214,7 @@
             // 
             this.unidades_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(28)))), ((int)(((byte)(44)))));
             this.unidades_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.unidades_btn.Enabled = false;
             this.unidades_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(45)))), ((int)(((byte)(108)))));
             this.unidades_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unidades_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,6 +231,7 @@
             // 
             this.rutas_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(28)))), ((int)(((byte)(44)))));
             this.rutas_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rutas_btn.Enabled = false;
             this.rutas_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(45)))), ((int)(((byte)(108)))));
             this.rutas_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rutas_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,6 +243,130 @@
             this.rutas_btn.Text = "Rutas";
             this.rutas_btn.UseVisualStyleBackColor = false;
             this.rutas_btn.Click += new System.EventHandler(this.Rutas_btn_Click);
+            // 
+            // enviar_linklbl
+            // 
+            this.enviar_linklbl.AutoSize = true;
+            this.enviar_linklbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
+            this.enviar_linklbl.DisabledLinkColor = System.Drawing.SystemColors.ButtonFace;
+            this.enviar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enviar_linklbl.ForeColor = System.Drawing.Color.White;
+            this.enviar_linklbl.LinkColor = System.Drawing.Color.White;
+            this.enviar_linklbl.Location = new System.Drawing.Point(774, 461);
+            this.enviar_linklbl.Name = "enviar_linklbl";
+            this.enviar_linklbl.Size = new System.Drawing.Size(69, 23);
+            this.enviar_linklbl.TabIndex = 19;
+            this.enviar_linklbl.TabStop = true;
+            this.enviar_linklbl.Text = "Enviar";
+            this.enviar_linklbl.Visible = false;
+            // 
+            // regresar_linklbl
+            // 
+            this.regresar_linklbl.AutoSize = true;
+            this.regresar_linklbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
+            this.regresar_linklbl.DisabledLinkColor = System.Drawing.SystemColors.ButtonFace;
+            this.regresar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regresar_linklbl.ForeColor = System.Drawing.Color.White;
+            this.regresar_linklbl.LinkColor = System.Drawing.Color.White;
+            this.regresar_linklbl.Location = new System.Drawing.Point(499, 425);
+            this.regresar_linklbl.Name = "regresar_linklbl";
+            this.regresar_linklbl.Size = new System.Drawing.Size(95, 23);
+            this.regresar_linklbl.TabIndex = 18;
+            this.regresar_linklbl.TabStop = true;
+            this.regresar_linklbl.Text = "Regresar";
+            this.regresar_linklbl.Visible = false;
+            this.regresar_linklbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Regresar_linklbl_LinkClicked);
+            // 
+            // Correo_tb
+            // 
+            this.Correo_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.Correo_tb.Location = new System.Drawing.Point(533, 367);
+            this.Correo_tb.Name = "Correo_tb";
+            this.Correo_tb.Size = new System.Drawing.Size(310, 38);
+            this.Correo_tb.TabIndex = 17;
+            this.Correo_tb.Visible = false;
+            // 
+            // correo_lbl
+            // 
+            this.correo_lbl.AutoSize = true;
+            this.correo_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
+            this.correo_lbl.ForeColor = System.Drawing.Color.White;
+            this.correo_lbl.Location = new System.Drawing.Point(175, 365);
+            this.correo_lbl.Name = "correo_lbl";
+            this.correo_lbl.Size = new System.Drawing.Size(324, 40);
+            this.correo_lbl.TabIndex = 16;
+            this.correo_lbl.Text = "Correo Electronico";
+            this.correo_lbl.Visible = false;
+            // 
+            // olvidadoLogin_linklbl
+            // 
+            this.olvidadoLogin_linklbl.AutoSize = true;
+            this.olvidadoLogin_linklbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
+            this.olvidadoLogin_linklbl.DisabledLinkColor = System.Drawing.SystemColors.ButtonFace;
+            this.olvidadoLogin_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.olvidadoLogin_linklbl.ForeColor = System.Drawing.Color.White;
+            this.olvidadoLogin_linklbl.LinkColor = System.Drawing.Color.White;
+            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(600, 425);
+            this.olvidadoLogin_linklbl.Name = "olvidadoLogin_linklbl";
+            this.olvidadoLogin_linklbl.Size = new System.Drawing.Size(243, 23);
+            this.olvidadoLogin_linklbl.TabIndex = 15;
+            this.olvidadoLogin_linklbl.TabStop = true;
+            this.olvidadoLogin_linklbl.Text = "¿Olvido su contraseña?";
+            this.olvidadoLogin_linklbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OlvidadoLogin_linklbl_LinkClicked);
+            // 
+            // contra_tb
+            // 
+            this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.contra_tb.Location = new System.Drawing.Point(533, 298);
+            this.contra_tb.Name = "contra_tb";
+            this.contra_tb.Size = new System.Drawing.Size(310, 38);
+            this.contra_tb.TabIndex = 14;
+            // 
+            // contra_lbl
+            // 
+            this.contra_lbl.AutoSize = true;
+            this.contra_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
+            this.contra_lbl.ForeColor = System.Drawing.Color.White;
+            this.contra_lbl.Location = new System.Drawing.Point(266, 298);
+            this.contra_lbl.Name = "contra_lbl";
+            this.contra_lbl.Size = new System.Drawing.Size(212, 40);
+            this.contra_lbl.TabIndex = 13;
+            this.contra_lbl.Text = "Contraseña";
+            // 
+            // ingresarLogin_btn
+            // 
+            this.ingresarLogin_btn.BackColor = System.Drawing.Color.White;
+            this.ingresarLogin_btn.FlatAppearance.BorderSize = 0;
+            this.ingresarLogin_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ingresarLogin_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ingresarLogin_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
+            this.ingresarLogin_btn.Location = new System.Drawing.Point(711, 504);
+            this.ingresarLogin_btn.Name = "ingresarLogin_btn";
+            this.ingresarLogin_btn.Size = new System.Drawing.Size(132, 45);
+            this.ingresarLogin_btn.TabIndex = 12;
+            this.ingresarLogin_btn.Text = "Ingresar";
+            this.ingresarLogin_btn.UseVisualStyleBackColor = false;
+            this.ingresarLogin_btn.Click += new System.EventHandler(this.IngresarLogin_btn_Click);
+            // 
+            // userLogin_tb
+            // 
+            this.userLogin_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.userLogin_tb.Location = new System.Drawing.Point(533, 226);
+            this.userLogin_tb.Name = "userLogin_tb";
+            this.userLogin_tb.Size = new System.Drawing.Size(310, 38);
+            this.userLogin_tb.TabIndex = 11;
+            this.userLogin_tb.TextChanged += new System.EventHandler(this.UserLogin_tb_TextChanged);
+            // 
+            // userLogin_lbl
+            // 
+            this.userLogin_lbl.AutoSize = true;
+            this.userLogin_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
+            this.userLogin_lbl.ForeColor = System.Drawing.Color.White;
+            this.userLogin_lbl.Location = new System.Drawing.Point(333, 226);
+            this.userLogin_lbl.Name = "userLogin_lbl";
+            this.userLogin_lbl.Size = new System.Drawing.Size(134, 40);
+            this.userLogin_lbl.TabIndex = 10;
+            this.userLogin_lbl.Text = "Usuario";
             // 
             // Principal_frm
             // 
@@ -231,6 +384,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.top_panel.ResumeLayout(false);
+            this.center_panel.ResumeLayout(false);
+            this.center_panel.PerformLayout();
             this.left_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -250,6 +405,16 @@
         private System.Windows.Forms.Button rutas_btn;
         private System.Windows.Forms.Panel bar_panel;
         private System.Windows.Forms.Button close_btn;
+        private System.Windows.Forms.LinkLabel enviar_linklbl;
+        private System.Windows.Forms.LinkLabel regresar_linklbl;
+        private System.Windows.Forms.TextBox Correo_tb;
+        private System.Windows.Forms.Label correo_lbl;
+        private System.Windows.Forms.LinkLabel olvidadoLogin_linklbl;
+        private System.Windows.Forms.TextBox contra_tb;
+        private System.Windows.Forms.Label contra_lbl;
+        private System.Windows.Forms.Button ingresarLogin_btn;
+        private System.Windows.Forms.TextBox userLogin_tb;
+        private System.Windows.Forms.Label userLogin_lbl;
     }
 }
 

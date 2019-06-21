@@ -25,5 +25,30 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Desconectado: " + ex.ToString());
             }
         }
+
+        public void ModificarUsuario(string Codigo_Empleado, string Nombre_Usuario,string Contrasena_Usuario, int Perfil_Acceso)
+        {
+            try
+            {
+                cmd = new SqlCommand("ModificarUsuario", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Empleado", Codigo_Empleado);
+                cmd.Parameters.AddWithValue("@Nombre_Usuario", Nombre_Usuario);
+                cmd.Parameters.AddWithValue("@Contrasena_Usuario", Contrasena_Usuario);
+                cmd.Parameters.AddWithValue("@Perfil_Acceso", Perfil_Acceso);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha Modificado correctamente el usuario");
+
+            }
+            catch(Exception ex)
+            {
+                Validar valido = new Validar();
+                if (valido.validarUsuario(Nombre_Usuario) == 1)
+                    MessageBox.Show("Ya existe ese usuario");
+                else
+                    MessageBox.Show("Error" + ex);
+
+            }
+        }
     }
 }

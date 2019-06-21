@@ -12,27 +12,25 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Principal_frm : Form
     {
+       
         Estetica Estetics = new Estetica();//Clase que manejara lo estetico de el proyecto
-        login_frm log = new login_frm();//Login no utilizado debido a que no es necesario 
         public Principal_frm()
         {
-            
             InitializeComponent();
-            /*clientes_btn.Enabled = false;
-            conductores_btn.Enabled = false;
-            unidades_btn.Enabled = false;
-            contratos_btn.Enabled = false;
-            usuarios_btn.Enabled = false;
-            rutas_btn.Enabled = false;
-            close_btn.Enabled = false;
-            Estetics.AbrirFormularios(log, center_panel);*/
+            bar_panel.Visible = false;
+            
+            
+            
+            // Estetics.NivelAcceso(ConexionBD.Acceso, rutas_btn, unidades_btn, conductores_btn, clientes_btn, contratos_btn, usuarios_btn, bar_panel);
         }
-
+        
+       
+        
         private void Salir_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        
         private void Salir_btn_MouseHover(object sender, EventArgs e)
         {
             salir_btn.BackColor = Color.Transparent;
@@ -78,6 +76,81 @@ namespace Transporte_Escolar_Bonilla
             usuarios_frm user = new usuarios_frm();
             Estetics.AbrirFormularios(user, center_panel);
             bar_panel.Location = usuarios_btn.Location;
+        }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void UserLogin_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OlvidadoLogin_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Correo_tb.Visible = true;
+            correo_lbl.Visible = true;
+            contra_tb.Visible = false;
+            contra_lbl.Visible = false;
+            regresar_linklbl.Visible = true;
+            olvidadoLogin_linklbl.Visible = false;
+        }
+
+        private void Regresar_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Correo_tb.Visible = false;
+            correo_lbl.Visible = false;
+            regresar_linklbl.Visible = false;
+            contra_tb.Visible = true;
+            contra_lbl.Visible = true;
+            olvidadoLogin_linklbl.Visible = true;
+        }
+
+        private void IngresarLogin_btn_Click(object sender, EventArgs e)
+        {
+            Ingresar ingreso = new Ingresar();
+            ingreso.login(userLogin_tb.Text, contra_tb.Text);
+            if (ConexionBD.Acceso == 1)
+            {
+                center_panel.Controls.Clear();
+                rutas_btn.Enabled = true;
+                unidades_btn.Enabled = true;
+                conductores_btn.Enabled = true;
+                clientes_btn.Enabled = true;
+                contratos_btn.Enabled = true;
+                usuarios_btn.Enabled = true;
+                bar_panel.Enabled = true;
+                close_btn.Enabled = true;
+            }
+
+            if (ConexionBD.Acceso == 2)
+            {
+                center_panel.Controls.Clear();
+                rutas_btn.Visible = true;
+                unidades_btn.Visible = true;
+                conductores_btn.Visible = true;
+                clientes_btn.Visible = true;
+                contratos_btn.Visible = true;
+                usuarios_btn.Visible = false;
+                bar_panel.Visible = true;
+                close_btn.Enabled = true;
+            }
+
+            if (ConexionBD.Acceso == 3)
+            {
+                center_panel.Controls.Clear();
+                rutas_btn.Visible = false;
+                unidades_btn.Visible = false;
+                conductores_btn.Visible = false;
+                clientes_btn.Visible = true;
+                contratos_btn.Visible = true;
+                usuarios_btn.Visible = false;
+                bar_panel.Visible = true;
+                close_btn.Enabled = true;
+            }
+            
         }
     }
 }

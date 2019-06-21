@@ -11,7 +11,7 @@ namespace Transporte_Escolar_Bonilla
    public class ConexionBD
     {
         protected SqlConnection conexionBD = new SqlConnection("Data Source=.; Initial Catalog=Transporte_Bonilla; Integrated Security=True");
-        public static string Acceso;//Nivel de Acceso
+        public static int Acceso=0;//Nivel de Acceso
         public static string codigo;
         public static string password;
         public ConexionBD()
