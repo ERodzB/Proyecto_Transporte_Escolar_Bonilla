@@ -40,7 +40,7 @@
             // nombrePerfil_tb
             // 
             this.nombrePerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombrePerfil_tb.Location = new System.Drawing.Point(511, 170);
+            this.nombrePerfil_tb.Location = new System.Drawing.Point(533, 228);
             this.nombrePerfil_tb.Name = "nombrePerfil_tb";
             this.nombrePerfil_tb.Size = new System.Drawing.Size(451, 41);
             this.nombrePerfil_tb.TabIndex = 26;
@@ -50,7 +50,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(91, 77);
+            this.label2.Location = new System.Drawing.Point(113, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(277, 40);
             this.label2.TabIndex = 25;
@@ -65,7 +65,7 @@
             "1",
             "2",
             "3"});
-            this.nivelAcceso_cmb.Location = new System.Drawing.Point(590, 76);
+            this.nivelAcceso_cmb.Location = new System.Drawing.Point(612, 134);
             this.nivelAcceso_cmb.Name = "nivelAcceso_cmb";
             this.nivelAcceso_cmb.Size = new System.Drawing.Size(372, 45);
             this.nivelAcceso_cmb.TabIndex = 24;
@@ -77,7 +77,7 @@
             this.Crear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Crear_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Crear_btn.ForeColor = System.Drawing.Color.White;
-            this.Crear_btn.Location = new System.Drawing.Point(813, 335);
+            this.Crear_btn.Location = new System.Drawing.Point(835, 393);
             this.Crear_btn.Name = "Crear_btn";
             this.Crear_btn.Size = new System.Drawing.Size(149, 63);
             this.Crear_btn.TabIndex = 23;
@@ -90,7 +90,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(91, 161);
+            this.label1.Location = new System.Drawing.Point(113, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(283, 40);
             this.label1.TabIndex = 27;
@@ -101,7 +101,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(91, 240);
+            this.label3.Location = new System.Drawing.Point(113, 298);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(343, 40);
             this.label3.TabIndex = 29;
@@ -110,7 +110,7 @@
             // desPerfil_tb
             // 
             this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desPerfil_tb.Location = new System.Drawing.Point(511, 249);
+            this.desPerfil_tb.Location = new System.Drawing.Point(533, 307);
             this.desPerfil_tb.Name = "desPerfil_tb";
             this.desPerfil_tb.Size = new System.Drawing.Size(451, 41);
             this.desPerfil_tb.TabIndex = 28;
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1052, 509);
+            this.ClientSize = new System.Drawing.Size(1106, 650);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.desPerfil_tb);
             this.Controls.Add(this.label1);

@@ -24,7 +24,7 @@ namespace Transporte_Escolar_Bonilla
             Perfiles_cmb.DataSource = consulto.llenarPerfiles();
             Perfiles_cmb.DisplayMember = "Nombre_Perfil";
             Perfiles_cmb.ValueMember = "Codigo_Perfil";
-            Perfiles_cmb.SelectedIndex = -1;
+            Perfiles_cmb.SelectedIndex = 0;
         }
 
         private void Perfiles_cmb_SelectedIndexChanged(object sender, EventArgs e)
