@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;//Libreria para mandar Correo
+using System.Net.Mail;//Libreria para mandar Correo
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -17,11 +19,10 @@ namespace Transporte_Escolar_Bonilla
         public Principal_frm()
         {
             InitializeComponent();
-            bar_panel.Visible = false;
+            //bar_panel.Visible = false;
             
             
-            
-            // Estetics.NivelAcceso(ConexionBD.Acceso, rutas_btn, unidades_btn, conductores_btn, clientes_btn, contratos_btn, usuarios_btn, bar_panel);
+
         }
         
        
@@ -90,6 +91,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void OlvidadoLogin_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            enviar_linklbl.Visible = true;
             Correo_tb.Visible = true;
             correo_lbl.Visible = true;
             contra_tb.Visible = false;
@@ -100,6 +102,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Regresar_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            enviar_linklbl.Visible = false;
             Correo_tb.Visible = false;
             correo_lbl.Visible = false;
             regresar_linklbl.Visible = false;
@@ -111,6 +114,7 @@ namespace Transporte_Escolar_Bonilla
         private void IngresarLogin_btn_Click(object sender, EventArgs e)
         {
             Ingresar ingreso = new Ingresar();
+
             ingreso.login(userLogin_tb.Text, contra_tb.Text);
             if (ConexionBD.Acceso == 1)
             {
@@ -121,7 +125,7 @@ namespace Transporte_Escolar_Bonilla
                 clientes_btn.Enabled = true;
                 contratos_btn.Enabled = true;
                 usuarios_btn.Enabled = true;
-                bar_panel.Enabled = true;
+                bar_panel.Visible = true;
                 close_btn.Enabled = true;
             }
 
@@ -151,6 +155,30 @@ namespace Transporte_Escolar_Bonilla
                 close_btn.Enabled = true;
             }
             
+        }
+
+        private void Enviar_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Validar valido = new Validar();
+            Modificar modifico = new Modificar();
+            if(valido.validarInicioSession(userLogin_tb.Text, Correo_tb.Text) == 1)
+            {
+                MailMessage mensaje = new MailMessage("transporte.escolar.bonilla13@gmail.com",Correo_tb.Text,enviar_linklbl.Text, modifico.CambiarContra(userLogin_tb.Text));//Crea el cuerpo del correo
+                //MailMessage(Quien lo envia, A quien se lo enviamos, titulo del correo, cuerpo del correo)
+                mensaje.IsBodyHtml = true;//el texto que se envia tiene una codificacion html
+                SmtpClient mail = new SmtpClient("smtp.gmail.com", 587); // usar el servicio de gmail y especificar el puerto
+                mail.UseDefaultCredentials = false; //No estoy seguro de esto
+                NetworkCredential ntc = new NetworkCredential("transporte.escolar.bonilla13@gmail.com", "transporte93"); // El correo que lo envia y su contrasena
+                mail.Credentials = ntc; // le pasa las credenciales para poder enviar el correo
+                mail.EnableSsl = true;// No estoy seguro de esto
+                mail.Send(mensaje);//Envia el mensaje creado
+                MessageBox.Show("Nueva Contraseña enviada");
+                Application.Restart();//Reinicia la aplicacion
+                
+            }else
+            {
+                MessageBox.Show("El usuario o correo introducido son incorrectos");
+            }
         }
     }
 }

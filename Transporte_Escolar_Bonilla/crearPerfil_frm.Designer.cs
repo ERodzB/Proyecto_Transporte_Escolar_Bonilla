@@ -77,7 +77,7 @@
             this.Crear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Crear_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Crear_btn.ForeColor = System.Drawing.Color.White;
-            this.Crear_btn.Location = new System.Drawing.Point(835, 393);
+            this.Crear_btn.Location = new System.Drawing.Point(835, 462);
             this.Crear_btn.Name = "Crear_btn";
             this.Crear_btn.Size = new System.Drawing.Size(149, 63);
             this.Crear_btn.TabIndex = 23;
@@ -110,9 +110,9 @@
             // desPerfil_tb
             // 
             this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desPerfil_tb.Location = new System.Drawing.Point(533, 307);
+            this.desPerfil_tb.Location = new System.Drawing.Point(120, 367);
             this.desPerfil_tb.Name = "desPerfil_tb";
-            this.desPerfil_tb.Size = new System.Drawing.Size(451, 41);
+            this.desPerfil_tb.Size = new System.Drawing.Size(864, 41);
             this.desPerfil_tb.TabIndex = 28;
             // 
             // crearPerfil_frm

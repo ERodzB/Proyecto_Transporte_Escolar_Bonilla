@@ -34,5 +34,16 @@ namespace Transporte_Escolar_Bonilla
                 consulto.BuscarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb, nombrePerfil_tb, desPerfil_tb);
             }
         }
+
+        private void Modificar_btn_Click(object sender, EventArgs e)
+        {
+            Modificar mperfiles = new Modificar();
+
+            mperfiles.ModificarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb.SelectedIndex+1, nombrePerfil_tb.Text, desPerfil_tb.Text);
+            Perfiles_cmb.SelectedIndex = -1;
+            nivelAcceso_cmb.SelectedIndex = -1;
+            nombrePerfil_tb.Clear();
+            desPerfil_tb.Clear();
+        }
     }
 }

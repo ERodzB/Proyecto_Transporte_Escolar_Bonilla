@@ -27,7 +27,23 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Desconectado: " + ex.ToString());
             }
         }
-
+        public int validarInicioSession (string Nombre_Usuario, string Correo)
+        {
+            x = 0;
+            try
+            {
+                cmd = new SqlCommand("VerificarCorreo", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Nombre_Usuario", Nombre_Usuario);
+                cmd.Parameters.AddWithValue("@Correo", Correo);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            return x;
+        }
         public int validarUsuario_Empleado(string Codigo_Empleado)
         {
             x= 0;
