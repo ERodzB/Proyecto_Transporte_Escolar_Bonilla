@@ -168,5 +168,10 @@ namespace Transporte_Escolar_Bonilla
                 }
             }
         }
+
+        private void Combcontrato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

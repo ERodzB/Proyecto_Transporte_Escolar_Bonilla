@@ -47,6 +47,24 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table; 
         }
+   
+        public DataTable combox_Clientes()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxClientes", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+        //Llenar Combobox de Clientes
+        public DataTable combox_estados()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxEstados", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
 
         //Llenar Combobox de Vehiculos
         public DataTable Combobox_Vehiculos()
@@ -123,6 +141,79 @@ namespace Transporte_Escolar_Bonilla
             catch(Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
+            }
+        }
+
+        public void consultasusuario(DataGridView dgvConsulta, string consulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("consultasusuario", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@TipoConsulta", consulta);
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void consultaclientes(DataGridView dgvConsulta, string consulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("consultaclientes", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@consultacliente", consulta);
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void cargardvg(DataGridView dgvConsulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("LLenarDVG", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void filtrarcontrato(DataGridView dgvConsulta, string tipo,string filtro)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("filtrarcontratos", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@tipobusqueda", tipo);
+                Adapter.SelectCommand.Parameters.AddWithValue("@filtro", filtro);
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
             }
         }
     }

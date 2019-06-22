@@ -63,9 +63,49 @@ namespace Transporte_Escolar_Bonilla.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5b59571fbd286354a8e2f1df_Icon_group {
+            get {
+                object obj = ResourceManager.GetObject("5b59571fbd286354a8e2f1df_Icon-group", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap community_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("community_icon_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contract_icon_white_01 {
+            get {
+                object obj = ResourceManager.GetObject("contract_icon_white-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap remove_symbol {
             get {
                 object obj = ResourceManager.GetObject("remove-symbol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_icon_2_svg {
+            get {
+                object obj = ResourceManager.GetObject("User_icon_2.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

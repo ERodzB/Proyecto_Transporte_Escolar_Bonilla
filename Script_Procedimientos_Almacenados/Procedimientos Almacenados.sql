@@ -251,5 +251,102 @@ GO
 		where Codigo_Perfil=@Codigo_Perfil
 	end
 	GO
-
-
+-----------------------------------------------------------Consultas de Usuarios------------------------------------------------------*/
+create procedure consultasusuario
+		@TipoConsulta as varchar(50)
+	as
+	if @TipoConsulta='Usuarios'
+		Begin
+			select e.Nombre_Empleado'Empleado', u.Nombre_Usuario'Usuario',u.Contrasena_Usuario'Contraseña',
+			p.Nombre_Perfil'Perfil Usuario',a.Tipo_Acceso'Acceso Usuario'
+			from dbo.Usuarios u
+			inner join dbo.Empleado e on u.Codigo_Empleado = e.Identidad_Empleado
+			inner join dbo.Perfiles p on u.Perfil_Acceso = p.Codigo_Perfil
+			inner join dbo.Acceso a on p.Nivel_Acceso = a.Codigo_Acceso
+		end
+	if @TipoConsulta='Perfiles'
+		Begin
+			select p.Codigo_Perfil'Codigo del Perfil',p.Nombre_Perfil'Perfil',p.Descripcion_Perfil'Descripción Perfil',
+			a.Tipo_Acceso'Acceso del Perfil'
+			from dbo.Perfiles p
+			inner join dbo.Acceso a on p.Nivel_Acceso = a.Codigo_Acceso
+		end
+	if @TipoConsulta='Niveles de Acceso'
+		Begin
+			select a.Codigo_Acceso 'Codigo del Acceso', a.Tipo_Acceso 'Acceso', a.Descripcion_Acceso'Descripción Acceso'
+			from dbo.Acceso a
+end
+GO
+/*------------------------------------------------------Consultar Clientes---------------------------------------------*/
+create procedure consultaclientes
+		@consultacliente as varchar(50)
+	as
+begin
+	if @consultacliente = 'Clientes'
+	select c.Codigo_Cliente'Identificador del Cliente', c.Nombre_Cliente'Nombre del Cliente',c.Telefono_Cliente'Telefono del Cliente',
+	c.Correo_Cliente'Correo del Cliente', c.Direccion_Cliente'Direccion del Cliente',count(co.Codigo_Contrato)'Contratos del Cliente'
+	from dbo.Cliente c
+	inner join dbo.Contratos co on c.Codigo_Cliente = co.Cliente_Contrato
+	group by c.Codigo_Cliente,c.Correo_Cliente,c.Direccion_Cliente,c.Nombre_Cliente,c.Telefono_Cliente
+	if @consultacliente ='Contratos por Cliente'
+	select c.Nombre_Cliente'Cliente del Contrato',c.Telefono_Cliente'Contacto del Cliente', co.Codigo_Contrato'Contrato',tc.Tipo_Contrato'Tipo de Contrato',e.Nombre_Estado'Estado Contrato'
+	from  dbo.Cliente c
+	inner join dbo.Contratos co on c.Codigo_Cliente = co.Cliente_Contrato
+	inner join dbo.TipoContrato tc on co.Tipo_Contrato = tc.Cod_Contrato
+	inner join dbo.Estado e on co.Estado_Contrato = e.Codigo_Estado
+end
+GO
+/*---------------------------------------------Procedimiento Llenar ComboBox Clientes------------------------------------------------*/
+create procedure ComboboxClientes
+as
+begin
+	select Nombre_Cliente,Codigo_Cliente from DBO.Cliente
+end
+GO
+/*---------------------------------------------Procedimiento Llenar ComboBox Estados Contrato------------------------------------------------*/
+create procedure ComboboxEstados
+As
+begin
+	select Codigo_Estado,Nombre_Estado from dbo.Estado
+	where Codigo_Categoria ='CT'
+end
+GO
+/*---------------------------------------------Procedimiento LLenar DGV Contratos------------------------------------------------*/
+create procedure LLenarDVG
+as
+begin
+	select c.Codigo_Contrato'Codigo del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Tipo_Contrato 'Tipo de Contrato',
+	c.Fecha_Inicio_Contrato'Incio del Contrato',c.Fecha_Vencimiento'Finalizacion del Contrato',e.Nombre_Estado 'Estado del Contrato',
+	c.Monto_Contrato'Costo del Contrato'
+	from Contratos C
+	inner join dbo.Estado e on c.Estado_Contrato = e.Codigo_Estado
+	inner join dbo.TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join dbo.Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
+end
+go
+/*------------------------------------------------------Filtrar Contratos---------------------------------------------*/
+create procedure filtrarcontratos
+		@tipobusqueda as varchar(50),
+		@filtro as varchar(50)
+	as
+begin
+	if @tipobusqueda = 'Clientes'
+	select c.Codigo_Contrato'Codigo del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Tipo_Contrato 'Tipo de Contrato',
+	c.Fecha_Inicio_Contrato'Incio del Contrato',c.Fecha_Vencimiento'Finalizacion del Contrato',e.Nombre_Estado 'Estado del Contrato',
+	c.Monto_Contrato'Costo del Contrato'
+	from Contratos C
+	inner join dbo.Estado e on c.Estado_Contrato = e.Codigo_Estado
+	inner join dbo.TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join dbo.Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
+	where cl.Codigo_Cliente = @filtro;
+	if @tipobusqueda = 'Estados'
+	select c.Codigo_Contrato'Codigo del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Tipo_Contrato 'Tipo de Contrato',
+	c.Fecha_Inicio_Contrato'Incio del Contrato',c.Fecha_Vencimiento'Finalizacion del Contrato',e.Nombre_Estado 'Estado del Contrato',
+	c.Monto_Contrato'Costo del Contrato'
+	from Contratos C
+	inner join dbo.Estado e on c.Estado_Contrato = e.Codigo_Estado
+	inner join dbo.TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join dbo.Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
+	where e.Codigo_Estado = @filtro;
+end
+GO

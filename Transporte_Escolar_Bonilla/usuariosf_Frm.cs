@@ -41,5 +41,16 @@ namespace Transporte_Escolar_Bonilla
             modificarPerfiles_frm mperfil = new modificarPerfiles_frm();
             estetics.AbrirFormularios(mperfil, mainUsuarios_panel);
         }
+
+        private void ConsultasUsuarios_btn_Click(object sender, EventArgs e)
+        {
+            consulta_usuarios cusuario = new consulta_usuarios();
+            estetics.AbrirFormularios(cusuario, mainUsuarios_panel);
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

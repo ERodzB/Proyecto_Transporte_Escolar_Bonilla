@@ -25,5 +25,11 @@ namespace Transporte_Escolar_Bonilla
             form_nuevo_cliente cli1 = new form_nuevo_cliente();
             Estetics.AbrirFormularios(cli1, clienteMain_panel);
         }
+
+        private void ConsultasClientes_btn_Click(object sender, EventArgs e)
+        {
+            consultar_clientes ccliente = new consultar_clientes();
+            Estetics.AbrirFormularios(ccliente, clienteMain_panel);
+        }
     }
 }
