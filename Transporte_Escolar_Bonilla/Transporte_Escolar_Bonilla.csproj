@@ -156,6 +156,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_nueva_ruta.resx">
       <DependentUpon>form_nueva_ruta.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,8 +166,6 @@
     <EmbeddedResource Include="form_nuevo_cliente2.resx">
       <DependentUpon>form_nuevo_cliente2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login_frm.resx">
-      <DependentUpon>login_frm.cs</DependentUpon>
     <EmbeddedResource Include="modificarPerfiles_frm.resx">
       <DependentUpon>modificarPerfiles_frm.cs</DependentUpon>
     </EmbeddedResource>
