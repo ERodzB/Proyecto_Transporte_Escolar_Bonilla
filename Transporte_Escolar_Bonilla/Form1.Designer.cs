@@ -111,7 +111,7 @@
             this.enviar_linklbl.Location = new System.Drawing.Point(621, 496);
             this.enviar_linklbl.Name = "enviar_linklbl";
             this.enviar_linklbl.Size = new System.Drawing.Size(252, 23);
-            this.enviar_linklbl.TabIndex = 19;
+            this.enviar_linklbl.TabIndex = 17;
             this.enviar_linklbl.TabStop = true;
             this.enviar_linklbl.Text = "Pedir Nueva Contraseña";
             this.enviar_linklbl.Visible = false;
@@ -128,7 +128,7 @@
             this.regresar_linklbl.Location = new System.Drawing.Point(528, 456);
             this.regresar_linklbl.Name = "regresar_linklbl";
             this.regresar_linklbl.Size = new System.Drawing.Size(95, 23);
-            this.regresar_linklbl.TabIndex = 18;
+            this.regresar_linklbl.TabIndex = 15;
             this.regresar_linklbl.TabStop = true;
             this.regresar_linklbl.Text = "Regresar";
             this.regresar_linklbl.Visible = false;
@@ -140,7 +140,7 @@
             this.Correo_tb.Location = new System.Drawing.Point(562, 398);
             this.Correo_tb.Name = "Correo_tb";
             this.Correo_tb.Size = new System.Drawing.Size(310, 38);
-            this.Correo_tb.TabIndex = 17;
+            this.Correo_tb.TabIndex = 13;
             this.Correo_tb.Visible = false;
             // 
             // correo_lbl
@@ -166,7 +166,7 @@
             this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(629, 456);
             this.olvidadoLogin_linklbl.Name = "olvidadoLogin_linklbl";
             this.olvidadoLogin_linklbl.Size = new System.Drawing.Size(243, 23);
-            this.olvidadoLogin_linklbl.TabIndex = 15;
+            this.olvidadoLogin_linklbl.TabIndex = 16;
             this.olvidadoLogin_linklbl.TabStop = true;
             this.olvidadoLogin_linklbl.Text = "¿Olvido su contraseña?";
             this.olvidadoLogin_linklbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OlvidadoLogin_linklbl_LinkClicked);
@@ -175,9 +175,12 @@
             // 
             this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.contra_tb.Location = new System.Drawing.Point(562, 329);
+            this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
+            this.contra_tb.PasswordChar = '*';
             this.contra_tb.Size = new System.Drawing.Size(310, 38);
-            this.contra_tb.TabIndex = 14;
+            this.contra_tb.TabIndex = 12;
+            this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
             // 
             // contra_lbl
             // 
@@ -200,7 +203,7 @@
             this.ingresarLogin_btn.Location = new System.Drawing.Point(740, 540);
             this.ingresarLogin_btn.Name = "ingresarLogin_btn";
             this.ingresarLogin_btn.Size = new System.Drawing.Size(132, 45);
-            this.ingresarLogin_btn.TabIndex = 12;
+            this.ingresarLogin_btn.TabIndex = 14;
             this.ingresarLogin_btn.Text = "Ingresar";
             this.ingresarLogin_btn.UseVisualStyleBackColor = false;
             this.ingresarLogin_btn.Click += new System.EventHandler(this.IngresarLogin_btn_Click);
@@ -209,10 +212,12 @@
             // 
             this.userLogin_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.userLogin_tb.Location = new System.Drawing.Point(562, 257);
+            this.userLogin_tb.MaxLength = 10;
             this.userLogin_tb.Name = "userLogin_tb";
             this.userLogin_tb.Size = new System.Drawing.Size(310, 38);
             this.userLogin_tb.TabIndex = 11;
             this.userLogin_tb.TextChanged += new System.EventHandler(this.UserLogin_tb_TextChanged);
+            this.userLogin_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserLogin_tb_KeyPress);
             // 
             // userLogin_lbl
             // 

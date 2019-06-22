@@ -14,7 +14,10 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Principal_frm : Form
     {
-       
+
+        int usuario_key_press = 0;
+        int contrasena_key_press = 0;
+
         Estetica Estetics = new Estetica();//Clase que manejara lo estetico de el proyecto
         public Principal_frm()
         {
@@ -178,6 +181,22 @@ namespace Transporte_Escolar_Bonilla
             }else
             {
                 MessageBox.Show("El usuario o correo introducido son incorrectos");
+            }
+        }
+
+        private void Contra_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void UserLogin_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

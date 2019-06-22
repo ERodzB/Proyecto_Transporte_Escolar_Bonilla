@@ -49,16 +49,18 @@
             this.Perfil_cmb.Location = new System.Drawing.Point(566, 372);
             this.Perfil_cmb.Name = "Perfil_cmb";
             this.Perfil_cmb.Size = new System.Drawing.Size(372, 45);
-            this.Perfil_cmb.TabIndex = 20;
+            this.Perfil_cmb.TabIndex = 26;
             // 
             // nombre_tb
             // 
             this.nombre_tb.Enabled = false;
             this.nombre_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre_tb.Location = new System.Drawing.Point(487, 234);
+            this.nombre_tb.MaxLength = 10;
             this.nombre_tb.Name = "nombre_tb";
             this.nombre_tb.Size = new System.Drawing.Size(451, 41);
-            this.nombre_tb.TabIndex = 19;
+            this.nombre_tb.TabIndex = 24;
+            this.nombre_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre_tb_KeyPress);
             // 
             // label6
             // 
@@ -81,7 +83,7 @@
             this.Buscar_btn.Location = new System.Drawing.Point(789, 124);
             this.Buscar_btn.Name = "Buscar_btn";
             this.Buscar_btn.Size = new System.Drawing.Size(149, 63);
-            this.Buscar_btn.TabIndex = 17;
+            this.Buscar_btn.TabIndex = 23;
             this.Buscar_btn.Text = "Buscar";
             this.Buscar_btn.UseVisualStyleBackColor = false;
             this.Buscar_btn.Click += new System.EventHandler(this.Ingresar_btn_Click);
@@ -91,9 +93,11 @@
             this.contra_tb.Enabled = false;
             this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contra_tb.Location = new System.Drawing.Point(487, 305);
+            this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
             this.contra_tb.Size = new System.Drawing.Size(451, 41);
-            this.contra_tb.TabIndex = 16;
+            this.contra_tb.TabIndex = 25;
+            this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
             // 
             // label4
             // 
@@ -121,9 +125,11 @@
             // 
             this.identidad_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.identidad_tb.Location = new System.Drawing.Point(487, 61);
+            this.identidad_tb.MaxLength = 13;
             this.identidad_tb.Name = "identidad_tb";
             this.identidad_tb.Size = new System.Drawing.Size(451, 41);
             this.identidad_tb.TabIndex = 22;
+            this.identidad_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Identidad_tb_KeyPress);
             // 
             // label2
             // 
@@ -147,7 +153,7 @@
             this.modificar_btn.Location = new System.Drawing.Point(743, 456);
             this.modificar_btn.Name = "modificar_btn";
             this.modificar_btn.Size = new System.Drawing.Size(195, 63);
-            this.modificar_btn.TabIndex = 23;
+            this.modificar_btn.TabIndex = 27;
             this.modificar_btn.Text = "Modificar";
             this.modificar_btn.UseVisualStyleBackColor = false;
             this.modificar_btn.Click += new System.EventHandler(this.Modificar_btn_Click);

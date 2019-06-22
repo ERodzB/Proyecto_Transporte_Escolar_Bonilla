@@ -42,17 +42,48 @@ namespace Transporte_Escolar_Bonilla
         }
         private void Modificar_btn_Click(object sender, EventArgs e)
         {
-            Modificar modify = new Modificar();
-            modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
-            identidad_tb.Clear();
-            nombre_tb.Clear();
-            contra_tb.Clear();
-            identidad_tb.Enabled = true;
-            nombre_tb.Enabled = true;
-            contra_tb.Enabled = false;
-            Perfil_cmb.Enabled = false;
-            Perfil_cmb.SelectedIndex = -1;
-            modificar_btn.Enabled = false;
+            if (nombre_tb.Text!="" && contra_tb.Text!="" && Perfil_cmb.Text!="")
+            {
+                Modificar modify = new Modificar();
+                modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
+                identidad_tb.Clear();
+                nombre_tb.Clear();
+                contra_tb.Clear();
+                identidad_tb.Enabled = true;
+                nombre_tb.Enabled = true;
+                contra_tb.Enabled = false;
+                Perfil_cmb.Enabled = false;
+                Perfil_cmb.SelectedIndex = -1;
+                modificar_btn.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("ERROR! Ingrese todos los datos requeridos");
+            }
+        }
+
+        private void Identidad_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Nombre_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Contra_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

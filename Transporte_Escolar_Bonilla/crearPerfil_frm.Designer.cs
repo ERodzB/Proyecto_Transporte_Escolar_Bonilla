@@ -41,9 +41,11 @@
             // 
             this.nombrePerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombrePerfil_tb.Location = new System.Drawing.Point(533, 228);
+            this.nombrePerfil_tb.MaxLength = 20;
             this.nombrePerfil_tb.Name = "nombrePerfil_tb";
             this.nombrePerfil_tb.Size = new System.Drawing.Size(451, 41);
             this.nombrePerfil_tb.TabIndex = 26;
+            this.nombrePerfil_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrePerfil_tb_KeyPress);
             // 
             // label2
             // 
@@ -80,7 +82,7 @@
             this.Crear_btn.Location = new System.Drawing.Point(835, 462);
             this.Crear_btn.Name = "Crear_btn";
             this.Crear_btn.Size = new System.Drawing.Size(149, 63);
-            this.Crear_btn.TabIndex = 23;
+            this.Crear_btn.TabIndex = 30;
             this.Crear_btn.Text = "Crear";
             this.Crear_btn.UseVisualStyleBackColor = false;
             this.Crear_btn.Click += new System.EventHandler(this.Crear_btn_Click);
@@ -111,9 +113,11 @@
             // 
             this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desPerfil_tb.Location = new System.Drawing.Point(120, 367);
+            this.desPerfil_tb.MaxLength = 50;
             this.desPerfil_tb.Name = "desPerfil_tb";
             this.desPerfil_tb.Size = new System.Drawing.Size(864, 41);
             this.desPerfil_tb.TabIndex = 28;
+            this.desPerfil_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesPerfil_tb_KeyPress);
             // 
             // crearPerfil_frm
             // 

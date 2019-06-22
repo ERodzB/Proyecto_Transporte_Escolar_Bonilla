@@ -76,17 +76,21 @@
             // 
             this.identidad_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.identidad_tb.Location = new System.Drawing.Point(462, 145);
+            this.identidad_tb.MaxLength = 13;
             this.identidad_tb.Name = "identidad_tb";
             this.identidad_tb.Size = new System.Drawing.Size(451, 41);
             this.identidad_tb.TabIndex = 5;
+            this.identidad_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Identidad_tb_KeyPress);
             // 
             // contra_tb
             // 
             this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contra_tb.Location = new System.Drawing.Point(462, 274);
+            this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
             this.contra_tb.Size = new System.Drawing.Size(451, 41);
-            this.contra_tb.TabIndex = 6;
+            this.contra_tb.TabIndex = 7;
+            this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
             // 
             // ingresar_btn
             // 
@@ -107,9 +111,11 @@
             // 
             this.nombre_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre_tb.Location = new System.Drawing.Point(462, 210);
+            this.nombre_tb.MaxLength = 10;
             this.nombre_tb.Name = "nombre_tb";
             this.nombre_tb.Size = new System.Drawing.Size(451, 41);
-            this.nombre_tb.TabIndex = 12;
+            this.nombre_tb.TabIndex = 6;
+            this.nombre_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre_tb_KeyPress);
             // 
             // label6
             // 
@@ -130,7 +136,7 @@
             this.Perfil_cmb.Location = new System.Drawing.Point(541, 341);
             this.Perfil_cmb.Name = "Perfil_cmb";
             this.Perfil_cmb.Size = new System.Drawing.Size(372, 45);
-            this.Perfil_cmb.TabIndex = 13;
+            this.Perfil_cmb.TabIndex = 8;
             this.Perfil_cmb.SelectedIndexChanged += new System.EventHandler(this.Perfil_cmb_SelectedIndexChanged);
             // 
             // crearUsuario_frm

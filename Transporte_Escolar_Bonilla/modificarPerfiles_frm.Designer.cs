@@ -54,9 +54,11 @@
             // 
             this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desPerfil_tb.Location = new System.Drawing.Point(111, 374);
+            this.desPerfil_tb.MaxLength = 50;
             this.desPerfil_tb.Name = "desPerfil_tb";
             this.desPerfil_tb.Size = new System.Drawing.Size(864, 41);
-            this.desPerfil_tb.TabIndex = 35;
+            this.desPerfil_tb.TabIndex = 40;
+            this.desPerfil_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesPerfil_tb_KeyPress);
             // 
             // label1
             // 
@@ -73,9 +75,11 @@
             // 
             this.nombrePerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombrePerfil_tb.Location = new System.Drawing.Point(524, 250);
+            this.nombrePerfil_tb.MaxLength = 20;
             this.nombrePerfil_tb.Name = "nombrePerfil_tb";
             this.nombrePerfil_tb.Size = new System.Drawing.Size(451, 41);
-            this.nombrePerfil_tb.TabIndex = 33;
+            this.nombrePerfil_tb.TabIndex = 39;
+            this.nombrePerfil_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrePerfil_tb_KeyPress);
             // 
             // label2
             // 
@@ -100,7 +104,7 @@
             this.nivelAcceso_cmb.Location = new System.Drawing.Point(603, 178);
             this.nivelAcceso_cmb.Name = "nivelAcceso_cmb";
             this.nivelAcceso_cmb.Size = new System.Drawing.Size(372, 45);
-            this.nivelAcceso_cmb.TabIndex = 31;
+            this.nivelAcceso_cmb.TabIndex = 38;
             // 
             // Modificar_btn
             // 
@@ -112,7 +116,7 @@
             this.Modificar_btn.Location = new System.Drawing.Point(781, 468);
             this.Modificar_btn.Name = "Modificar_btn";
             this.Modificar_btn.Size = new System.Drawing.Size(194, 63);
-            this.Modificar_btn.TabIndex = 30;
+            this.Modificar_btn.TabIndex = 41;
             this.Modificar_btn.Text = "Modificar";
             this.Modificar_btn.UseVisualStyleBackColor = false;
             this.Modificar_btn.Click += new System.EventHandler(this.Modificar_btn_Click);
