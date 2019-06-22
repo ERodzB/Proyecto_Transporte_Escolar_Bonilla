@@ -21,10 +21,9 @@ namespace Transporte_Escolar_Bonilla
         {
             Ingresar ingreso = new Ingresar();
             Validar valido = new Validar();
-            MessageBox.Show(Convert.ToString(valido.validarUsuario_Empleado(identidad_tb.Text)));
             if (valido.validarEmpleado(identidad_tb.Text) == 1)
             {
-                if (valido.validarUsuario_Empleado(identidad_tb.Text) == 1)
+                if (valido.validarUsuario_Empleado(identidad_tb.Text) == 0)
                 {
                     if (valido.validarUsuario(nombre_tb.Text) == 0)
                     {
