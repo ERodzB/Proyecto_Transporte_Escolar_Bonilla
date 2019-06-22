@@ -1,4 +1,4 @@
-/* Procedimientos Almacenados */  
+/* Procedimientos Almacenados NUEVO CLIENTE */  
 
 /*---------------------------------------------Procedimiento Ingreso de Nuevo Cliente------------------------------------------------*/
 create procedure NuevoCliente
@@ -90,7 +90,7 @@ end
 GO 
  
 
-/* Procedimientos Almacenados */
+/* ----------------------------------------------------Procedimientos Almacenados USUARIOS---------------------------------------------------------- */
 
 /*Procedimiento para el Inicio del Sitema*/
 	--Entrar al sistema
@@ -104,6 +104,7 @@ GO
 		where u.Nombre_Usuario=@Nombre_Usuario and
 		u.Contrasena_Usuario=@Contrasena_Usuario
 	end
+	GO
 	--Verificacion de Correo
 	create procedure VerificarCorreo
 	@Nombre_Usuario varchar(100),
@@ -114,7 +115,7 @@ GO
 		inner join Usuarios u on u.Codigo_Empleado=e.Identidad_Empleado
 		where u.Nombre_Usuario=@Nombre_Usuario and e.Correo=@Correo
 	end
-
+	GO
 	create procedure CambioContrasena
 	@Nombre_Usuario varchar(100)
 	as
@@ -128,13 +129,14 @@ GO
 		from Transporte_Bonilla.dbo.Usuarios 
 		where Nombre_Usuario=@Nombre_Usuario
 	end
-
-/*Cargar comboBox de Perfiles */
-create procedure cargarPerfiles
-as
-begin
-	select p.Codigo_Perfil, p.Nombre_Perfil from [dbo].[Perfiles] p
-end
+	GO
+	/*Cargar comboBox de Perfiles */
+		create procedure cargarPerfiles
+		as
+		begin
+			select p.Codigo_Perfil, p.Nombre_Perfil from [dbo].[Perfiles] p
+		end
+		GO
 /*Procedimiento para Crear un Nuevo Usuario*/
 	--Nuevo Usuario--
 	create procedure NuevoUsuario
@@ -153,6 +155,7 @@ end
 		@Codigo_Perfil
 		)
 	end
+	GO
 	--Verificacion si Empleado tiene usuario--
 	create procedure verificar_empleado_usuario
 	@Codigo_Empleado varchar(50)
@@ -160,6 +163,7 @@ end
 	begin
 		select COUNT(*) from [dbo].[Usuarios] u where u.Codigo_Empleado=@Codigo_Empleado
 	end
+	GO
 	--Verificacion si Ya existe ese usuario
 	create procedure VerificarUsuario
 	@Nombre_Usuario varchar(100)
@@ -167,21 +171,25 @@ end
 	begin
 		select COUNT(*) FROM [dbo].[Usuarios] U WHERE U.Nombre_Usuario=@Nombre_Usuario
 	END
+	GO
 	--verificar si existe ese empleado
 	create procedure VerificarEmpleado
 	@Codigo_Empleado varchar(50)
 	as
 	begin
 		select COUNT(*) FROM [dbo].[Empleado] E WHERE E.Identidad_Empleado=@Codigo_Empleado
-	END 
+	END
+	GO
 
 /*---------------------------------Procedimientos Para Modificar usuarios---------------------------------*/
-create procedure BuscarUsuario
-	@Codigo_Empleado  varchar(100)
-as
-begin
-	select U.Nombre_Usuario,U.Contrasena_Usuario, U.Perfil_Acceso from Usuarios U where u.Codigo_Empleado=@Codigo_Empleado
-end
+	--BuscarUsuarios
+	create procedure BuscarUsuario
+		@Codigo_Empleado  varchar(100)
+	as
+	begin
+		select U.Nombre_Usuario,U.Contrasena_Usuario, U.Perfil_Acceso from Usuarios U where u.Codigo_Empleado=@Codigo_Empleado
+	end
+	GO
 	--Modificar Usuario--
 	create procedure ModificarUsuario
 		@Codigo_Empleado as varchar(50),
@@ -196,6 +204,7 @@ end
 		Perfil_Acceso=@Perfil_Acceso
 		where @Codigo_Empleado=Codigo_Empleado
 	end
+	GO
 /*---------------------------------------Procedimientos Para perfiles------------------------------------*/
 	--Crear Perfil
 	create procedure CrearPerfil
@@ -207,6 +216,7 @@ end
 			insert into Transporte_Bonilla.dbo.Perfiles
 			select COUNT(*)+1, @Nivel_Acceso,@Nombre_Perfil,@Descripcion_Perfil from [dbo].[Perfiles]
 		end
+	GO
 	--Verificacion de Perfil
 	create procedure VerificarPerfil
 		@Nombre_Perfil as varchar(100)
@@ -215,6 +225,7 @@ end
 			select COUNT(*) from Transporte_Bonilla.dbo.Perfiles p
 			where @Nombre_Perfil=p.Nombre_Perfil
 		end
+	GO
 	--Mostrar Informacion Perfil
 	create procedure InfoPerfil
 		@Codigo_Perfil int
@@ -223,6 +234,7 @@ end
 			select  P.Nivel_Acceso,  P.Nombre_Perfil, P.Descripcion_Perfil from Transporte_Bonilla.dbo.Perfiles P 
 			where Codigo_Perfil=@Codigo_Perfil
 		END
+	GO
 /*-------------------------------------------------------Modificar Perfil -----------------------------------------------------*/
 	--Modificar Perfil
 	create procedure ModificarPerfil
@@ -238,10 +250,6 @@ end
 		Descripcion_Perfil=@Descripcion_Perfil
 		where Codigo_Perfil=@Codigo_Perfil
 	end
-		
-
-select  * from Transporte_Bonilla.dbo.Perfiles
-select * from Empleado
-select * from Usuarios
+	GO
 
 
