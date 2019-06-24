@@ -88,5 +88,27 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex);
             }
         }
+
+        public void ModificarClientes(string id ,string nombre, string direccion, string telfono, string correo)
+        {
+            try
+            {
+                cmd = new SqlCommand("ModificarCliente", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Cliente", id);
+                cmd.Parameters.AddWithValue("@Nombre_Cliente", nombre);
+                cmd.Parameters.AddWithValue("@Direccion_Cliente", direccion);
+                cmd.Parameters.AddWithValue("@Telefono_Cliente", telfono);
+                cmd.Parameters.AddWithValue("@Correo_Cliente", correo);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha Modificado correctamente el cliente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+    
     }
 }

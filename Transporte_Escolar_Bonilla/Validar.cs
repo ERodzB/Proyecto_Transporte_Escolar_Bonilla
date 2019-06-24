@@ -110,5 +110,24 @@ namespace Transporte_Escolar_Bonilla
             }
             return x;
         }
+
+        public int VerificarCliente(string identidad)
+        {
+            int x = 0;
+            try
+            {
+                cmd = new SqlCommand("VerificarCliente", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("Codigo_Cliente", identidad);
+                x = (int)cmd.ExecuteScalar();
+            
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            return x;
+            
+        }
     }
 }

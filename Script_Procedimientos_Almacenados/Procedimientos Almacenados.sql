@@ -350,3 +350,29 @@ begin
 	where e.Codigo_Estado = @filtro;
 end
 GO
+
+/*----------------------------------Modificar cliente-----------------------------------*/
+select * from Contratos
+
+select * from Usuarios
+
+
+
+create procedure ModificarContrato
+@Codigo_Cliente varchar(50),
+@Nombre_Cliente varchar(100),
+@Direccion_Cliente varchar(200),
+@Telefono_Cliente varchar (20),
+@Correo_Cliente varchar (50)
+as
+begin
+	update Cliente
+	set Nombre_Cliente = @Nombre_Cliente,
+	Direccion_Cliente = @Direccion_Cliente,
+	Telefono_Cliente = @Telefono_Cliente,
+	Correo_Cliente = @Correo_Cliente
+	where Codigo_Cliente = @Codigo_Cliente
+end
+
+/*-------------------Cargar Cliente-------------------------------*/
+

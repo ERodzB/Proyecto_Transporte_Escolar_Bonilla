@@ -216,5 +216,44 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
+
+        public void CargarCliente(DataGridView dgvCargacliente, string Ident)
+        {
+
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("CargarCliente", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@Cod_Client", Ident);
+                Adapter.Fill(table);
+                dgvCargacliente.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+
+        public void CargadgvCliente(DataGridView dgvCliente)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); Adapter = new SqlDataAdapter("ConsultaUnicaCliente", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvCliente.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+
+  
     }
 }
