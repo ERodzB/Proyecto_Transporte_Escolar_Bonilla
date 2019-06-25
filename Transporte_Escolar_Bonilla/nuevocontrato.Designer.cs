@@ -260,6 +260,7 @@
             this.txtfin2.Name = "txtfin2";
             this.txtfin2.Size = new System.Drawing.Size(216, 26);
             this.txtfin2.TabIndex = 211;
+            this.txtfin2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtfin2_KeyPress);
             // 
             // label21
             // 
@@ -281,6 +282,7 @@
             this.txtini2.Name = "txtini2";
             this.txtini2.Size = new System.Drawing.Size(216, 26);
             this.txtini2.TabIndex = 209;
+            this.txtini2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtini2_KeyPress);
             // 
             // label24
             // 
@@ -474,6 +476,7 @@
             this.txtfin1.Name = "txtfin1";
             this.txtfin1.Size = new System.Drawing.Size(216, 26);
             this.txtfin1.TabIndex = 181;
+            this.txtfin1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtfin1_KeyPress);
             // 
             // label2
             // 
@@ -495,6 +498,7 @@
             this.txtinicio1.Name = "txtinicio1";
             this.txtinicio1.Size = new System.Drawing.Size(216, 26);
             this.txtinicio1.TabIndex = 180;
+            this.txtinicio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtinicio1_KeyPress);
             // 
             // label1
             // 
@@ -585,8 +589,9 @@
             this.txtmonto.Location = new System.Drawing.Point(851, 497);
             this.txtmonto.Margin = new System.Windows.Forms.Padding(4);
             this.txtmonto.Name = "txtmonto";
-            this.txtmonto.Size = new System.Drawing.Size(169, 26);
+            this.txtmonto.Size = new System.Drawing.Size(150, 26);
             this.txtmonto.TabIndex = 188;
+            this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmonto_KeyPress);
             // 
             // label4
             // 

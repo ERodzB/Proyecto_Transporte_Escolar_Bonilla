@@ -110,5 +110,23 @@ namespace Transporte_Escolar_Bonilla
             }
             return x;
         }
+
+        public int validarContrasena(string cont, string ID)
+        {
+            x = 0;
+            try
+            {
+                cmd = new SqlCommand("VerificarContrasena", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@contra", cont);
+                cmd.Parameters.AddWithValue("@identidad", ID);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            return x;
+        }
     }
 }

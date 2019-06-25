@@ -22,150 +22,91 @@ namespace Transporte_Escolar_Bonilla
 
         private void Botcrear_Click(object sender, EventArgs e)
         {
-
-            //                                         SE DEBE REVISAR VALIDACION     
-
-            int contc = 0, conth = 0, tipoc = 0;
-            string errorc = "", errorh = "\n\n";
-
-            //Campos de Texto y TipoContrato Vacio
-            if (string.IsNullOrEmpty(txtinicio1.Text) && string.IsNullOrEmpty(txtfin1.Text) && string.IsNullOrEmpty(txtini2.Text) && string.IsNullOrEmpty(txtfin2.Text) && string.IsNullOrEmpty(txtnomc.Text))
-                contc++;
-
-            if (string.IsNullOrEmpty(txtmonto.Text))
-                contc++;
-
-            if ((txtinicio1.Text == "" && txtfin1.Text != "") || (txtinicio1.Text != "" && txtfin1.Text == ""))
-                contc++;
-
-            if ((txtini2.Text == "" && txtfin2.Text != "") || (txtini2.Text != "" && txtfin2.Text == ""))
-                contc++;
-
-            if (combTipoContrato.SelectedIndex == -1 && CMBDueno.SelectedIndex== -1)
-                contc++;
-            //else
-            //    if (string.IsNullOrEmpty(txtfin1.Text)) 
-            //    contc++;
-            //else
-            //    if (string.IsNullOrEmpty(txtini2.Text))
-            //    contc++;
-            //else
-            //    if (string.IsNullOrEmpty(txtfin2.Text))
-            //    contc++;
-
-            if (contc > 0)
+            if (combTipoContrato.Text!="" && CMBDueno.Text!="" && txtnomc.Text!="" && txtmonto.Text!="" && txtinicio1.Text!="" && txtini2.Text!="" && combvh1r1.Text!="" && dtpsh1r1.Checked==true && dtpeh1r1.Checked==true)
             {
-                MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //errorc += "Debe llenar correctamente los datos -"; 
+                if (combvh1r1.Text!="" && dtpsh1r2.Checked==true && dtpeh1r2.Checked==true)
+                {
+                    if (txtini2.Text!="" && txtfin2.Text!="" && dtpsh2r1.Checked==true && dtpeh2r1.Checked==true)
+                    {
+                        
+                        if (MessageBox.Show("Esta seguro de los datos que esta ingresando?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                        {
+                            string codcliente;
+
+                            codcliente = CMBDueno.SelectedValue.ToString();
+                            MessageBox.Show(codcliente, "algo", MessageBoxButtons.OK);
+                            ing.NuevoContrato(txtnomc.Text, codcliente, Convert.ToInt32(combTipoContrato.SelectedIndex.ToString()) + 1, Convert.ToDateTime(dtpinicio.Text), double.Parse(txtmonto.Text), Convert.ToDateTime(dtpfin.Text));
+
+                            //Guardar Ruta #1 y Horarios
+                            if (txtinicio1.Text != "" && txtfin1.Text != "")
+                            {
+                                ing.NuevaRuta(txtinicio1.Text + txtfin1.Text, txtinicio1.Text + " - " + txtfin1.Text, "Puntos clave desde " + txtinicio1.Text + " hasta " + txtfin1.Text, txtnomc.Text);
+
+                                if (dtpsh1r1.Checked)
+                                    ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh1r1.Text, dtpsh1r1.Text, dtpeh1r1.Text);
+
+                                if (dtpsh2r1.Checked)
+                                    ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh2r1.Text, dtpsh2r1.Text, dtpeh2r1.Text);
+
+                            }
+
+                            //Guardar Ruta #2 y Horarios
+                            if (txtini2.Text != "" && txtfin2.Text != "")
+                            {
+                                ing.NuevaRuta(txtini2.Text + txtfin2.Text, txtini2.Text + " - " + txtfin2.Text, "Puntos clave desde " + txtini2.Text + " hasta " + txtfin2.Text, txtnomc.Text);
+
+                                if (dtpsh1r2.Checked)
+                                    ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh1r2.Text, dtpsh1r2.Text, dtpeh1r2.Text);
+
+                                if (dtpsh2r2.Checked)
+                                    ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh2r2.Text, dtpsh2r2.Text, dtpeh2r2.Text);
+
+                            }
+
+                            MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            //Limpieza  
+                            dtpsh1r1.Checked = false;
+                            dtpeh1r1.Checked = false;
+                            dtpsh2r1.Checked = false;
+                            dtpeh2r1.Checked = false;
+                            dtpsh1r2.Checked = false;
+                            dtpeh1r2.Checked = false;
+                            dtpsh2r2.Checked = false;
+                            dtpeh2r2.Checked = false;
+
+                            combvh1r1.SelectedIndex = -1;
+                            combvh2r1.SelectedIndex = -1;
+                            combvh1r2.SelectedIndex = -1;
+                            combvh2r2.SelectedIndex = -1;
+                            combTipoContrato.SelectedIndex = -1;
+                            CMBDueno.SelectedIndex = -1;
+
+                            txtinicio1.Clear();
+                            txtfin1.Clear();
+                            txtini2.Clear();
+                            txtfin2.Clear();
+                            txtmonto.Clear();
+                            txtnomc.Clear();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR! Ingrese todos los datos requeridos");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERROR! Ingrese todos los datos requeridos");
+                }
             }
             else
             {
-                //Horarios incorrectos
-                if ((dtpsh1r1.Checked == true && dtpeh1r1.Checked == false) || (dtpsh1r1.Checked == false && dtpeh1r1.Checked == true) || (dtpsh1r1.Checked == true && dtpeh1r1.Checked == true && combvh1r1.SelectedIndex == -1))
-                {
-                    conth++;
-                    errorh += "Error Horario 1/Ruta #1\n";
-                }
-
-                if ((dtpsh2r1.Checked == true && dtpeh2r1.Checked == false) || (dtpsh2r1.Checked == false && dtpeh2r1.Checked == true) || (dtpsh2r1.Checked == true && dtpeh2r1.Checked == true && combvh2r1.SelectedIndex == -1))
-                {
-                    conth++;
-                    errorh += "Error Horario 2/Ruta #1\n";
-                }
-
-                if ((dtpsh1r2.Checked == true && dtpeh1r2.Checked == false) || (dtpsh1r2.Checked == false && dtpeh1r2.Checked == true) || (dtpsh1r2.Checked == true && dtpeh1r2.Checked == true && combvh1r2.SelectedIndex == -1))
-                {
-                    conth++;
-                    errorh += "Error Horario 1/Ruta #2\n";
-                }
-
-                if ((dtpsh2r2.Checked == true && dtpeh2r2.Checked == false) || (dtpsh2r2.Checked == false && dtpeh2r2.Checked == true) || (dtpsh2r2.Checked == true && dtpeh2r2.Checked == true && combvh2r2.SelectedIndex == -1))
-                {
-                    conth++;
-                    errorh += "Error Horario 2/Ruta #2\n";
-                }
-
-                //Al menos una ruta
-                if ((dtpsh1r1.Checked == false && dtpeh1r1.Checked == false && combvh1r1.SelectedIndex == -1) && (dtpsh2r1.Checked == false && dtpeh2r1.Checked == false && combvh2r1.SelectedIndex == -1) && (dtpsh1r2.Checked == false && dtpeh1r2.Checked == false && combvh1r2.SelectedIndex == -1) && (dtpsh1r2.Checked == false && dtpeh2r2.Checked == false && combvh2r2.SelectedIndex == -1))
-                {
-                    conth++;
-                    errorh += "Debe ingresar al menos 1 Horario\n";
-                }
-
-                //Mostrar mensajes de Error
-                if (/*contc > 0 ||*/ conth > 0)
-                    MessageBox.Show(/*errorc +*/ errorh, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                {
-                    DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if (DialogResult == DialogResult.Yes)
-                    {
-                        tipoc = combTipoContrato.SelectedIndex;
-                       
-                        //Guardar datos de Contrato
-                        string codcliente;
-
-                        codcliente = CMBDueno.SelectedValue.ToString();
-                        MessageBox.Show(codcliente, "algo", MessageBoxButtons.OK);
-                            ing.NuevoContrato(txtnomc.Text, codcliente, tipoc + 1, Convert.ToDateTime(dtpinicio.Text), double.Parse(txtmonto.Text), Convert.ToDateTime(dtpfin.Text));
-
-                        //Guardar Ruta #1 y Horarios
-                        if (txtinicio1.Text != "" && txtfin1.Text != "")
-                        {
-                            ing.NuevaRuta(txtinicio1.Text + txtfin1.Text, txtinicio1.Text + " - " + txtfin1.Text, "Puntos clave desde " + txtinicio1.Text + " hasta " + txtfin1.Text, txtnomc.Text);
-
-                            if (dtpsh1r1.Checked)
-                                ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh1r1.Text, dtpsh1r1.Text, dtpeh1r1.Text);
-
-                            if (dtpsh2r1.Checked)
-                                ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh2r1.Text, dtpsh2r1.Text, dtpeh2r1.Text);
-
-                        }
-
-                        //Guardar Ruta #2 y Horarios
-                        if (txtini2.Text != "" && txtfin2.Text != "")
-                        {
-                            ing.NuevaRuta(txtini2.Text + txtfin2.Text, txtini2.Text + " - " + txtfin2.Text, "Puntos clave desde " + txtini2.Text + " hasta " + txtfin2.Text, txtnomc.Text);
-
-                            if (dtpsh1r2.Checked)
-                                ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh1r2.Text, dtpsh1r2.Text, dtpeh1r2.Text);
-
-                            if (dtpsh2r2.Checked)
-                                ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh2r2.Text, dtpsh2r2.Text, dtpeh2r2.Text);
-
-                        }
-
-                        MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        //Limpieza  
-                        dtpsh1r1.Checked = false;
-                        dtpeh1r1.Checked = false;
-                        dtpsh2r1.Checked = false;
-                        dtpeh2r1.Checked = false;
-                        dtpsh1r2.Checked = false;
-                        dtpeh1r2.Checked = false;
-                        dtpsh2r2.Checked = false;
-                        dtpeh2r2.Checked = false;
-
-                        combvh1r1.SelectedIndex = -1;
-                        combvh2r1.SelectedIndex = -1;
-                        combvh1r2.SelectedIndex = -1;
-                        combvh2r2.SelectedIndex = -1;
-                        combTipoContrato.SelectedIndex = -1;
-                        CMBDueno.SelectedIndex = -1;
-
-                        txtinicio1.Clear();
-                        txtfin1.Clear();
-                        txtini2.Clear();
-                        txtfin2.Clear();
-                        txtmonto.Clear();
-                        txtnomc.Clear();
-                    }
-
-                }
+                MessageBox.Show("ERROR! Ingrese todos los datos requeridos");
             }
         }
+            
+        
 
         private void Nuevocontrato_Load(object sender, EventArgs e)
         {
@@ -241,11 +182,57 @@ namespace Transporte_Escolar_Bonilla
             combTipoContrato.DisplayMember = "Tipo_Contrato";
             combTipoContrato.SelectedIndex = -1;
 
+            dtpinicio.MinDate = DateTime.Today;
+            dtpfin.MinDate = DateTime.Today;
+
+
             CMBDueno.DataSource = consul.combox_Clientes();
             CMBDueno.DisplayMember = "Nombre_Cliente";
             CMBDueno.ValueMember = "Codigo_Cliente";
             CMBDueno.SelectedIndex = -1;
             txtinicio1.Focus();
+        }
+
+        private void Txtmonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                &&!char.IsDigit(e.KeyChar)
+                )
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtinicio1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtfin1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtini2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtfin2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

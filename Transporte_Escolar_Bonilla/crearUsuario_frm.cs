@@ -91,5 +91,29 @@ namespace Transporte_Escolar_Bonilla
                 e.Handled = true;
             }
         }
+
+        private void Conform_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void OJO1_Click(object sender, EventArgs e)
+        {
+            if (contra_tb.PasswordChar == '\0')
+                contra_tb.PasswordChar = '*';
+            else
+                contra_tb.PasswordChar = '\0';
+        }
+
+        private void OJO2_Click(object sender, EventArgs e)
+        {
+            if (confirm_tb.PasswordChar == '\0')
+                confirm_tb.PasswordChar = '*';
+            else
+                confirm_tb.PasswordChar = '\0';
+        }
     }
 }
