@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdentidad = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -41,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dgvCargaCliente = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargaCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,30 +49,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(76, 65);
+            this.label1.Location = new System.Drawing.Point(76, 245);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 20);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ingresar Identidad";
+            this.label1.Text = "Identidad";
             // 
             // txtIdentidad
             // 
-            this.txtIdentidad.Location = new System.Drawing.Point(236, 65);
+            this.txtIdentidad.Enabled = false;
+            this.txtIdentidad.Location = new System.Drawing.Point(236, 245);
             this.txtIdentidad.Name = "txtIdentidad";
-            this.txtIdentidad.Size = new System.Drawing.Size(292, 20);
+            this.txtIdentidad.Size = new System.Drawing.Size(187, 20);
             this.txtIdentidad.TabIndex = 1;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.btnBuscar.Location = new System.Drawing.Point(553, 57);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(97, 34);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Ingresar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // txtNombre
             // 
@@ -165,10 +154,22 @@
             // dgvCargaCliente
             // 
             this.dgvCargaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCargaCliente.Location = new System.Drawing.Point(80, 116);
+            this.dgvCargaCliente.Location = new System.Drawing.Point(80, 73);
             this.dgvCargaCliente.Name = "dgvCargaCliente";
-            this.dgvCargaCliente.Size = new System.Drawing.Size(448, 150);
+            this.dgvCargaCliente.Size = new System.Drawing.Size(561, 150);
             this.dgvCargaCliente.TabIndex = 12;
+            this.dgvCargaCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCargaCliente_CellClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(76, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(317, 23);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Seleccione el Cliente a Modificar";
             // 
             // Form_Modificar_Cliente
             // 
@@ -176,6 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(815, 489);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvCargaCliente);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtCorreo);
@@ -186,7 +188,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtIdentidad);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -203,7 +204,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIdentidad;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTelefono;
@@ -214,5 +214,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dgvCargaCliente;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -19,27 +19,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            Validar val = new Validar();
-            Consultar consultar = new Consultar();
-
-            if (val.VerificarCliente(txtIdentidad.Text) == 1)
-            {
-                consultar.CargarCliente(dgvCargaCliente, txtIdentidad.Text);
-                txtNombre.Text = dgvCargaCliente.CurrentRow.Cells[0].Value.ToString();
-                txtDireccion.Text = dgvCargaCliente.CurrentRow.Cells[1].Value.ToString();                
-                txtTelefono.Text = dgvCargaCliente.CurrentRow.Cells[2].Value.ToString();
-                txtCorreo.Text = dgvCargaCliente.CurrentRow.Cells[3].Value.ToString();
-
-                txtNombre.Enabled = true;
-                txtDireccion.Enabled = true;
-                txtTelefono.Enabled = true;
-                txtCorreo.Enabled = true;
-
-            }
-            else
-            {
-                MessageBox.Show("El codigo No existe", "Error", MessageBoxButtons.OK);
-            }
+            
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -60,6 +40,21 @@ namespace Transporte_Escolar_Bonilla
             Consultar con = new Consultar();
 
             con.CargadgvCliente(dgvCargaCliente);
+        }
+
+        private void DgvCargaCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtIdentidad.Text = dgvCargaCliente.CurrentRow.Cells[0].Value.ToString();
+            txtNombre.Text = dgvCargaCliente.CurrentRow.Cells[1].Value.ToString();
+            txtDireccion.Text = dgvCargaCliente.CurrentRow.Cells[2].Value.ToString();
+            txtTelefono.Text = dgvCargaCliente.CurrentRow.Cells[3].Value.ToString();
+            txtCorreo.Text = dgvCargaCliente.CurrentRow.Cells[4].Value.ToString();
+
+            txtNombre.Enabled = true;
+            txtDireccion.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtCorreo.Enabled = true;
+
         }
     }
 }
