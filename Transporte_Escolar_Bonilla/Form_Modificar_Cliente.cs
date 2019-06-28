@@ -27,11 +27,17 @@ namespace Transporte_Escolar_Bonilla
             Modificar mod = new Modificar();
             if(txtIdentidad.Text !="")
             {
-                if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (txtNombre.Text!="" && txtDireccion.Text!="" && txtTelefono.Text!="" && txtCorreo.Text!="")
                 {
-                    mod.ModificarClientes(txtIdentidad.Text ,txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text);                    
+                    if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        mod.ModificarClientes(txtIdentidad.Text, txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text);
+                    }
                 }
-
+                else
+                {
+                    MessageBox.Show("Error. Favor no dejar ningun valor vacio","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -55,6 +61,38 @@ namespace Transporte_Escolar_Bonilla
             txtTelefono.Enabled = true;
             txtCorreo.Enabled = true;
 
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar=='@'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
