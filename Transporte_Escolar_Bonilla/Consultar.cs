@@ -254,6 +254,49 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-  
+        public void CargadgvContrato(DataGridView dgvContrato)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); Adapter = new SqlDataAdapter("CargadgvContrato1", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvContrato.DataSource = table;
+                //MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+
+        public void CargadgvDatosContrato(DataGridView dgvContrato, string cod)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); Adapter = new SqlDataAdapter("CargadgvDatoContratoCliente", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@Cod_Cliente", cod);
+                Adapter.Fill(table);
+                dgvContrato.DataSource = table;
+                //MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+
+        public DataTable combox_mod_contrato()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxEstados", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;            
+            Adapter.Fill(table);
+            return table;
+        }
+
     }
 }

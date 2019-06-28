@@ -110,6 +110,12 @@
     <Compile Include="Form_Modificar_Cliente.Designer.cs">
       <DependentUpon>Form_Modificar_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Modificar_Contrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Modificar_Contrato.Designer.cs">
+      <DependentUpon>Form_Modificar_Contrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_nueva_ruta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     </Compile>
     <Compile Include="modificarUsuario_frm.Designer.cs">
       <DependentUpon>modificarUsuario_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Datos_Contrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Datos_Contrato.Designer.cs">
+      <DependentUpon>Modificar_Datos_Contrato.cs</DependentUpon>
     </Compile>
     <Compile Include="nuevocontrato.cs">
       <SubType>Form</SubType>
@@ -199,6 +211,9 @@
     <EmbeddedResource Include="Form_Modificar_Cliente.resx">
       <DependentUpon>Form_Modificar_Cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Modificar_Contrato.resx">
+      <DependentUpon>Form_Modificar_Contrato.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_nueva_ruta.resx">
       <DependentUpon>form_nueva_ruta.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modificarUsuario_frm.resx">
       <DependentUpon>modificarUsuario_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Datos_Contrato.resx">
+      <DependentUpon>Modificar_Datos_Contrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nuevocontrato.resx">
       <DependentUpon>nuevocontrato.cs</DependentUpon>

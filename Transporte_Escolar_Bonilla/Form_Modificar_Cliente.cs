@@ -19,7 +19,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            Validar val = new Validar();
+           /* Validar val = new Validar();                  //Esto era otra forma de seleccionar el cliente a modificar
             Consultar consultar = new Consultar();
 
             if (val.VerificarCliente(txtIdentidad.Text) == 1)
@@ -39,7 +39,7 @@ namespace Transporte_Escolar_Bonilla
             else
             {
                 MessageBox.Show("El codigo No existe", "Error", MessageBoxButtons.OK);
-            }
+            }*/
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -53,6 +53,7 @@ namespace Transporte_Escolar_Bonilla
                 }
 
             }
+
         }
 
         private void Form_Modificar_Cliente_Load(object sender, EventArgs e)
@@ -60,6 +61,26 @@ namespace Transporte_Escolar_Bonilla
             Consultar con = new Consultar();
 
             con.CargadgvCliente(dgvCargaCliente);
+        }
+
+        private void DgvCargaCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtIdentidad.Text = dgvCargaCliente.CurrentRow.Cells[0].Value.ToString();
+            txtNombre.Text = dgvCargaCliente.CurrentRow.Cells[1].Value.ToString();
+            txtDireccion.Text = dgvCargaCliente.CurrentRow.Cells[2].Value.ToString();
+            txtTelefono.Text = dgvCargaCliente.CurrentRow.Cells[3].Value.ToString();
+            txtCorreo.Text = dgvCargaCliente.CurrentRow.Cells[4].Value.ToString();
+
+            txtNombre.Enabled = true;
+            txtDireccion.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtCorreo.Enabled = true;
+
+        }
+
+        private void DgvCargaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

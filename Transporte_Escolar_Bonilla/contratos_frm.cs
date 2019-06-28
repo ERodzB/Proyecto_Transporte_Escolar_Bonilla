@@ -30,5 +30,17 @@ namespace Transporte_Escolar_Bonilla
             consultarcontrato ccontrato = new consultarcontrato();
             estetics.AbrirFormularios(ccontrato, contratosMain_panel);
         }
+
+        private void ModificarContratos_btn_Click(object sender, EventArgs e)
+        {
+            contrato_panel modcon = new contrato_panel();
+            estetics.AbrirFormularios(modcon, contratosMain_panel);
+            //label1.Visible = false;//La form no sobreescribia el label
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

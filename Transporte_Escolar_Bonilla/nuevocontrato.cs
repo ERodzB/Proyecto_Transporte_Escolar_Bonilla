@@ -247,5 +247,10 @@ namespace Transporte_Escolar_Bonilla
             CMBDueno.SelectedIndex = -1;
             txtinicio1.Focus();
         }
+
+        private void Dtpinicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

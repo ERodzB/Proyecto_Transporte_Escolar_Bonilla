@@ -109,6 +109,27 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex);
             }
         }
-    
+
+        public void ModificarContrato(string id, double monto, DateTime fechafin, int estado)
+        {
+            
+            try
+            {
+                cmd = new SqlCommand("ModificarContrato", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Contrato", id);
+                cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
+                cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechafin);
+                cmd.Parameters.AddWithValue("@Estado_Contrato", estado);                
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha Modificado correctamente el Contrato");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+
     }
 }

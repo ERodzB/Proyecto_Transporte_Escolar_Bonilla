@@ -308,7 +308,7 @@ create procedure ComboboxEstados
 As
 begin
 	select Codigo_Estado,Nombre_Estado from dbo.Estado
-	where Codigo_Categoria ='CT'
+	where Codigo_Categoria ='CT' 
 end
 GO
 /*---------------------------------------------Procedimiento LLenar DGV Contratos------------------------------------------------*/
@@ -352,13 +352,8 @@ end
 GO
 
 /*----------------------------------Modificar cliente-----------------------------------*/
-select * from Contratos
 
-select * from Usuarios
-
-
-
-create procedure ModificarContrato
+create procedure ModificarCliente
 @Codigo_Cliente varchar(50),
 @Nombre_Cliente varchar(100),
 @Direccion_Cliente varchar(200),
@@ -375,4 +370,83 @@ begin
 end
 
 /*-------------------Cargar Cliente-------------------------------*/
+
+create procedure CargarCliente
+@Cod_Client varchar (50)
+as 
+begin
+	select Nombre_Cliente, Direccion_Cliente, Telefono_Cliente, Correo_Cliente from Cliente
+	where Codigo_Cliente = @Cod_Client
+end
+
+/*-----------------Verificar Cliente---------------------*/	
+
+create procedure VerificarCliente
+	@Codigo_Cliente varchar(50)
+	as
+	begin
+		select COUNT(*) FROM [dbo].[Cliente] WHERE Codigo_Cliente = @Codigo_Cliente
+	END
+	GO
+
+/*---------------------Consulta Unica Cliente----------------------------*/
+
+create procedure ConsultaUnicaCliente
+as
+begin
+	select Codigo_Cliente'Codigo Cliente', Nombre_Cliente'Nombre del Cliente', Direccion_Cliente'Direccion del Cliente', Telefono_Cliente'Telefono del Cliente', Correo_Cliente'Correo del Cliente' 
+	from CLiente 
+end
+
+select * from Estado
+
+
+/*--------------------------------Procedimiento Modificar Contrato------------------------------------*/
+
+Create procedure ModificarContrato
+@Codigo_Contrato varchar(50),
+@Monto_Contrato money,
+@Fecha_Vencimiento date,
+@Estado_Contrato int
+as
+begin
+	update Contratos
+	set Monto_Contrato = @Monto_Contrato,
+	Fecha_Vencimiento = @Fecha_Vencimiento,
+	Estado_Contrato = @Estado_Contrato
+	where Codigo_Contrato = @Codigo_Contrato
+end
+
+
+/*-----------------Carga dgv Contrato------------------*/
+Create procedure CargadgvContrato1
+as
+begin
+	select cli.Codigo_Cliente'Codigo_Cliente', cli.Nombre_Cliente'Cliente Afiliado al contrato'
+	from Cliente cli
+end
+/*-------------------Carga dgv Datos contrato del cliente------------------*/
+select * from Contratos
+
+create procedure CargadgvDatoContratoCliente
+@Cod_Cliente varchar(50)
+as
+begin
+	select c.Codigo_Contrato'Nombre del Contrato', c.Fecha_Inicio_Contrato'Fecha de inicio del Contrato', c.Monto_Contrato'Monto del Contrato', 
+	c.Fecha_Vencimiento'Fecha de vencimiento del contrato' , e.Nombre_Estado'Estado del Contrato'
+	from Contratos c
+	inner join Estado e on c.Estado_Contrato = e.Codigo_Estado
+	where Cliente_Contrato = @Cod_Cliente
+end
+
+exec CargadgvDatoContratoCliente '0002'
+
+/*-------------------Carga Combobox Modificar Contrato--------------------------*/
+create procedure ComboModContrato
+As
+begin
+	select Codigo_Estado,Nombre_Estado from dbo.Estado
+	where Codigo_Categoria ='CT' 
+end
+GO
 
