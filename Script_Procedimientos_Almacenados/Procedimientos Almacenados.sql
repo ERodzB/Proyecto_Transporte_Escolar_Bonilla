@@ -1,4 +1,4 @@
-/* Procedimientos Almacenados NUEVO CLIENTE */   
+/* Procedimientos Almacenados NUEVO CLIENTE */  
 
 /*---------------------------------------------Procedimiento Ingreso de Nuevo Cliente------------------------------------------------*/
 create procedure NuevoCliente 
@@ -433,7 +433,7 @@ begin
 	Correo_Cliente = @Correo_Cliente
 	where Codigo_Cliente = @Codigo_Cliente
 end
-
+GO
 /*-------------------Cargar Cliente-------------------------------*/
 
 create procedure CargarCliente
@@ -443,7 +443,7 @@ begin
 	select Nombre_Cliente, Direccion_Cliente, Telefono_Cliente, Correo_Cliente from Cliente
 	where Codigo_Cliente = @Cod_Client
 end
-
+GO
 /*-----------------Verificar Cliente---------------------*/	
 
 create procedure VerificarCliente
@@ -462,9 +462,10 @@ begin
 	select Codigo_Cliente'Codigo Cliente', Nombre_Cliente'Nombre del Cliente', Direccion_Cliente'Direccion del Cliente', Telefono_Cliente'Telefono del Cliente', Correo_Cliente'Correo del Cliente' 
 	from CLiente 
 end
-
+GO
+/*
 select * from Estado
-
+*/
 
 /*--------------------------------Procedimiento Modificar Contrato------------------------------------*/
 
@@ -481,7 +482,7 @@ begin
 	Estado_Contrato = @Estado_Contrato
 	where Codigo_Contrato = @Codigo_Contrato
 end
-
+GO
 
 /*-----------------Carga dgv Contrato------------------*/
 Create procedure CargadgvContrato1
@@ -490,9 +491,11 @@ begin
 	select cli.Codigo_Cliente'Codigo_Cliente', cli.Nombre_Cliente'Cliente Afiliado al contrato'
 	from Cliente cli
 end
+GO
 /*-------------------Carga dgv Datos contrato del cliente------------------*/
+/*
 select * from Contratos
-
+*/
 create procedure CargadgvDatoContratoCliente
 @Cod_Cliente varchar(50)
 as
@@ -503,9 +506,10 @@ begin
 	inner join Estado e on c.Estado_Contrato = e.Codigo_Estado
 	where Cliente_Contrato = @Cod_Cliente
 end
-
+GO
+/*
 exec CargadgvDatoContratoCliente '0002'
-
+*/
 /*-------------------Carga Combobox Modificar Contrato--------------------------*/
 create procedure ComboModContrato
 As
