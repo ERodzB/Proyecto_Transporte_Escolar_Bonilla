@@ -173,7 +173,10 @@
             // 
             // dgvCargaCliente
             // 
+            this.dgvCargaCliente.AllowUserToAddRows = false;
+            this.dgvCargaCliente.AllowUserToDeleteRows = false;
             this.dgvCargaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCargaCliente.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCargaCliente.Location = new System.Drawing.Point(107, 90);
             this.dgvCargaCliente.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCargaCliente.Name = "dgvCargaCliente";
