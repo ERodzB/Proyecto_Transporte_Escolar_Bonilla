@@ -117,9 +117,8 @@ namespace Transporte_Escolar_Bonilla
         private void IngresarLogin_btn_Click(object sender, EventArgs e)
         {
             Ingresar ingreso = new Ingresar();
-
             ingreso.login(userLogin_tb.Text, contra_tb.Text);
-            if (ConexionBD.Acceso == 1)
+            if (ConexionBD.Acceso == 1 || ConexionBD.Acceso == 2 || ConexionBD.Acceso == 3)
             {
                 center_panel.Controls.Clear();
                 rutas_btn.Enabled = true;
@@ -131,36 +130,6 @@ namespace Transporte_Escolar_Bonilla
                 bar_panel.Visible = true;
                 close_btn.Enabled = true;
             }
-
-            if (ConexionBD.Acceso == 2)
-            {
-                center_panel.Controls.Clear();
-                rutas_btn.Visible = true;
-                unidades_btn.Visible = true;
-                conductores_btn.Visible = true;
-                clientes_btn.Visible = true;
-                contratos_btn.Visible = true;
-                usuarios_btn.Visible = false;
-                bar_panel.Visible = true;
-                close_btn.Enabled = true;
-            }
-
-            if (ConexionBD.Acceso == 3)
-            {
-                center_panel.Controls.Clear();
-                rutas_btn.Visible = false;
-                unidades_btn.Visible = false;
-                conductores_btn.Visible = false;
-                clientes_btn.Visible = true;
-                contratos_btn.Visible = true;
-                usuarios_btn.Visible = false;
-                bar_panel.Visible = true;
-                close_btn.Enabled = true;
-            }
-
-            userLogin_tb.Clear();
-            contra_tb.Clear();
-            
         }
 
         private void Enviar_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

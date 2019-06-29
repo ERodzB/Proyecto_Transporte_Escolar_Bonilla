@@ -51,6 +51,7 @@
             this.conductorTop_panel.Name = "conductorTop_panel";
             this.conductorTop_panel.Size = new System.Drawing.Size(1108, 95);
             this.conductorTop_panel.TabIndex = 0;
+            this.conductorTop_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.ConductorTop_panel_Paint);
             // 
             // entregaUnidad_btn
             // 

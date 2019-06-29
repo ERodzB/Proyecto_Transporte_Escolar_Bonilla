@@ -15,6 +15,37 @@ namespace Transporte_Escolar_Bonilla
         public conductores_frm()
         {
             InitializeComponent();
+            if (ConexionBD.Acceso == 1)
+            {
+                consultaConductores_btn.Visible = true;
+                nuevoConductor_btn.Visible = true;
+                modificarConductores_btn.Visible = true;
+                entregaUnidad_btn.Visible = true;
+                asignarConductor_btn.Visible = true;
+            }
+
+            if (ConexionBD.Acceso == 2)
+            {
+                consultaConductores_btn.Visible = true;
+                nuevoConductor_btn.Visible = true;
+                modificarConductores_btn.Visible = true;
+                entregaUnidad_btn.Visible = true;
+                asignarConductor_btn.Visible = true;
+            }
+            if (ConexionBD.Acceso == 3)
+            {
+                consultaConductores_btn.Visible = true;
+                nuevoConductor_btn.Visible = false;
+                modificarConductores_btn.Visible = false;
+                entregaUnidad_btn.Visible = true;
+                asignarConductor_btn.Visible = false;
+            }
+
+        }
+
+        private void ConductorTop_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
