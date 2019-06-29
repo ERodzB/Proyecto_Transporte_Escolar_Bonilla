@@ -17,6 +17,27 @@ namespace Transporte_Escolar_Bonilla
         public contratos_frm()
         {
             InitializeComponent();
+            if (ConexionBD.Acceso == 1)
+            {
+                consultaContratos_btn.Visible = true;
+                Contratos_btn.Visible = true;
+                modificarContratos_btn.Visible = true;
+            }
+
+            if (ConexionBD.Acceso == 2)
+            {
+                consultaContratos_btn.Visible = true;
+                Contratos_btn.Visible = true;
+                modificarContratos_btn.Visible = true;
+            }
+            if (ConexionBD.Acceso == 3)
+            {
+                consultaContratos_btn.Visible = true;
+                Contratos_btn.Visible = false;
+                modificarContratos_btn.Visible =false;
+            }
+
+
         }
 
         private void Contratos_btn_Click(object sender, EventArgs e)

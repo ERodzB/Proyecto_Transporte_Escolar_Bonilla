@@ -17,6 +17,26 @@ namespace Transporte_Escolar_Bonilla
         public rutas_frm()
         {
             InitializeComponent();
+            if (ConexionBD.Acceso == 1)
+            {
+                consultasRutas_btn.Visible = true;
+                nuevaRuta_btn.Visible = true;
+                modificarRuta_btn.Visible = true;
+            }
+            if (ConexionBD.Acceso == 2)
+            {
+                consultasRutas_btn.Visible = true;
+                nuevaRuta_btn.Visible = true;
+                modificarRuta_btn.Visible = false;
+            }
+            if (ConexionBD.Acceso == 3)
+            {
+                consultasRutas_btn.Visible = true;
+                nuevaRuta_btn.Visible = false;
+                modificarRuta_btn.Visible = false;
+            }
+
+
         }
 
         //Boton Nueva Ruta

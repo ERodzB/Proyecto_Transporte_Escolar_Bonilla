@@ -16,6 +16,31 @@ namespace Transporte_Escolar_Bonilla
         public usuarios_frm()
         {
             InitializeComponent();
+            if (ConexionBD.Acceso == 1)
+            {
+                consultasUsuarios_btn.Visible = true;
+                crearUsuarios_btn.Visible = true;
+                modificarUsuarios_btn.Visible = true;
+                crearPerfil_btn.Visible = true;
+                modificarPerfil_btn.Visible = true;
+            }
+            if (ConexionBD.Acceso == 2)
+            {
+                consultasUsuarios_btn.Visible = true;
+                crearUsuarios_btn.Visible = true;
+                modificarUsuarios_btn.Visible = true;
+                crearPerfil_btn.Visible = true;
+                modificarPerfil_btn.Visible = false;
+            }
+            if (ConexionBD.Acceso == 3)
+            {
+                consultasUsuarios_btn.Visible = true;
+                crearUsuarios_btn.Visible = true;
+                modificarUsuarios_btn.Visible = false;
+                crearPerfil_btn.Visible = false;
+                modificarPerfil_btn.Visible = false;
+            }
+
         }
 
         private void CrearUsuarios_btn_Click(object sender, EventArgs e)

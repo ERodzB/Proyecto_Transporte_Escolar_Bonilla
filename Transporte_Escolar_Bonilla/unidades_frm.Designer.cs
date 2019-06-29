@@ -134,6 +134,7 @@
             this.mainUnidades_panel.Name = "mainUnidades_panel";
             this.mainUnidades_panel.Size = new System.Drawing.Size(1108, 650);
             this.mainUnidades_panel.TabIndex = 6;
+            this.mainUnidades_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainUnidades_panel_Paint);
             // 
             // unidades_frm
             // 
