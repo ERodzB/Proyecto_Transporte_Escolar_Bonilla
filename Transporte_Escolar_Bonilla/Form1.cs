@@ -157,6 +157,9 @@ namespace Transporte_Escolar_Bonilla
                 bar_panel.Visible = true;
                 close_btn.Enabled = true;
             }
+
+            userLogin_tb.Clear();
+            contra_tb.Clear();
             
         }
 

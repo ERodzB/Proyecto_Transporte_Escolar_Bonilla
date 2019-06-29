@@ -63,6 +63,7 @@
             // 
             // cbConsulta
             // 
+            this.cbConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConsulta.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.cbConsulta.FormattingEnabled = true;
             this.cbConsulta.Items.AddRange(new object[] {

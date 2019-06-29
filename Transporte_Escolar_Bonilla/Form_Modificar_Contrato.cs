@@ -43,6 +43,7 @@ namespace Transporte_Escolar_Bonilla
         {
             codc = dgvContrato.CurrentRow.Cells[0].Value.ToString();
             nombrecli = dgvContrato.CurrentRow.Cells[1].Value.ToString();
+            btnSeleccionar.Enabled = true;
         }
 
         public contrato_panel()
@@ -67,6 +68,7 @@ namespace Transporte_Escolar_Bonilla
             monto = null;
             fechafin = null;
             estado = null;
+            btnSeleccionar.Enabled = false;
         }
 
         private void DgvContrato_CellClick(object sender, DataGridViewCellEventArgs e)
