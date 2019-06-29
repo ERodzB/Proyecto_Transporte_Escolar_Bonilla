@@ -229,6 +229,15 @@ GO
 		select COUNT(*) from [dbo].[Usuarios] u where u.Codigo_Empleado=@Codigo_Empleado
 	end
 	GO
+	--Verificacion si existe esa contraseña con ese usuario
+	create procedure VerificarContrasena
+	@contra varchar (100),
+	@identidad varchar(50)
+	as
+	begin
+		select COUNT(*) FROM [dbo].[Usuarios] U WHERE U.Contrasena_Usuario=@contra and U.Codigo_Empleado=@identidad
+	end
+	GO
 	--Verificacion si Ya existe ese usuario
 	create procedure VerificarUsuario
 	@Nombre_Usuario varchar(100)
