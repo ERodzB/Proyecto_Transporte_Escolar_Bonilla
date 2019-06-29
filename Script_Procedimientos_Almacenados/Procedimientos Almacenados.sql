@@ -1,12 +1,12 @@
-/* Procedimientos Almacenados NUEVO CLIENTE */  
+/* Procedimientos Almacenados NUEVO CLIENTE */   
 
 /*---------------------------------------------Procedimiento Ingreso de Nuevo Cliente------------------------------------------------*/
-create procedure NuevoCliente
-@Codigo_Cliente varchar(50),
+create procedure NuevoCliente 
+@Codigo_Cliente varchar(50),   
 @Nombre_Cliente varchar(100),
-@Direccion_Cliente varchar(200),
+@Direccion_Cliente varchar(200), 
 @Telefono_Cliente varchar(20), 
-@Correo_Cliente varchar(100)
+@Correo_Cliente varchar(100) 
 as 
 begin
 	insert into Cliente (Codigo_Cliente, Nombre_Cliente, Direccion_Cliente, Telefono_Cliente, Correo_Cliente)
@@ -18,7 +18,9 @@ GO
 create procedure ComboboxContratos
 as
 begin
-	select Codigo_Contrato from Contratos  
+	--Se agrega el Nombre de Cliente para mejor visualización
+	select con.Codigo_Contrato+' - '+cli.Nombre_Cliente 'Contratos' from Contratos con
+	inner join Cliente cli on con.Cliente_Contrato = cli.Codigo_Cliente 
 end
 GO  
 
@@ -38,32 +40,64 @@ begin
 end
 GO 
 
+/*---------------------------------------------Procedimiento Etiqueta Descripcion de Vehiculos------------------------------------------------*/
+create procedure DescVehiculos
+@Codigo_Vehiculo varchar(50) 
+as
+begin
+	select Marca_Vehiculo+' '+Modelo_Vehiculo+' '+Color_Vehiculo 'Descripcion' from Vehiculos
+	where Codigo_Vehiculo = @Codigo_Vehiculo 
+end 
+GO
+
 /*---------------------------------------------Procedimiento Ingreso de Nuevo Contrato------------------------------------------------*/
 create procedure NuevoContrato
-@Codigo_Contrato varchar(50),
-@Cliente_Contrato varchar(50),
+@Anio_Contrato varchar(4),
+@Nombre_Cliente_Contrato varchar(100),
+@Id_Cliente_Contrato varchar(50),
 @Tipo_Contrato int,
 @Fecha_Inicio_Contrato date,
 @Monto_Contrato money,
-@Fecha_Vencimiento date  
-as
-begin
-	insert into Contratos (Codigo_Contrato, Cliente_Contrato, Tipo_Contrato, Fecha_Inicio_Contrato, Monto_Contrato, Fecha_Vencimiento, Estado_Contrato, Cod_Documento)
-	values (@Codigo_Contrato, @Cliente_Contrato, @Tipo_Contrato, @Fecha_Inicio_Contrato, @Monto_Contrato, @Fecha_Vencimiento, '1', 'CTr')
-end
-GO
+@Fecha_Vencimiento date   
+as 
+begin 
+	insert into Contratos 
+	select CONCAT(@Anio_Contrato,'-',COUNT(*)+1,'-',SUBSTRING(@Nombre_Cliente_Contrato,1,1)), @Id_Cliente_Contrato, @Tipo_Contrato, @Fecha_Inicio_Contrato, @Monto_Contrato, @Fecha_Vencimiento, '1', 'CTr' from Contratos
+end 
+GO  
 
 /*--------------------------------------Procedimiento para Crear una nueva Ruta---------------------------------------------------*/
 create procedure NuevaRuta
 	@Codigo_ruta varchar(50),
 	@Nombre_Ruta varchar(100),
 	@Descripcion_Ruta varchar(200),
-	@Codigo_Contrato varchar(50)
+	@Codigo_Contrato varchar(50),
+	@Anio_Contrato varchar(4),
+	@Nombre_Cliente_Contrato varchar(100),      
+	@Opcion int
 as
-begin
-	insert into Rutas (Codigo_Ruta, Nombre_Ruta, Descripcion_Ruta, Codigo_Contrato)
-	values (@Codigo_ruta, @Nombre_Ruta, @Descripcion_Ruta, @Codigo_Contrato) 
-end
+BEGIN
+	declare @Cod_Contrato as varchar(50)
+		
+	set @Cod_Contrato = (select CONCAT(@Anio_Contrato,'-',COUNT(*),'-',SUBSTRING(@Nombre_Cliente_Contrato,1,1)) from Contratos)
+
+	if(@Opcion=1) --Ruta guardada junto con el contrato
+	begin
+		insert into Rutas (Codigo_Ruta, Nombre_Ruta, Descripcion_Ruta, Codigo_Contrato)
+		values (@Codigo_ruta, @Nombre_Ruta, @Descripcion_Ruta, @Cod_Contrato)  
+	end
+
+	if(@Opcion=2) --Ruta creada despues, donde se selecciona el contrato al que esta asociada
+	begin
+		insert into Rutas (Codigo_Ruta, Nombre_Ruta, Descripcion_Ruta, Codigo_Contrato)
+		values (@Codigo_ruta, @Nombre_Ruta, @Descripcion_Ruta, (select SUBSTRING(@Codigo_Contrato,1,charindex(' ',@Codigo_Contrato,1)-1))) 
+		--ComboBox fuente lleno con Nombre de Cliente para mejor Visualización (Ver PA ComboboxContratos), se realiza esto para obtener solo el codigo de Contrato
+
+		--charindex busca una subcadena dentro de una cadena y devuelve la posicion en la que se encuentra
+		--Charindex(substring, string, start)
+		--select charindex('M','Hola Mundo',1)   
+	end   
+END  
 GO
 
 /*--------------------------------------Procedimiento para Asignar Horarios y Vehiculos a una Ruta---------------------------------------------------*/
@@ -87,7 +121,38 @@ begin
 	select Codigo_Ruta from Rutas
 	group by Codigo_Ruta
 end 
-GO 
+GO  
+
+/*--------------------------------------------- Procedimiento Verificar Cliente Existente ------------------------------------------------*/
+create procedure VerificarCliente
+@Codigo_Cliente varchar(50)
+as
+begin
+	select COUNT(*) from Cliente where Codigo_Cliente = @Codigo_Cliente
+end
+GO
+
+/*--------------------------------------------- Procedimiento Verificar Ruta Existente ------------------------------------------------*/
+create procedure VerificarRuta
+@Codigo_Ruta varchar(50)
+as
+begin
+	select COUNT(*) from Rutas where Codigo_Ruta = @Codigo_Ruta
+end
+GO
+
+/*--------------------------------------------- Procedimiento Verificar Horario Existente para Vehiculos ------------------------------------------------*/
+create procedure VerificarHoraVeh
+@Codigo_Vehiculo varchar(50),
+@Horario_Salida time(7) 
+as
+begin 
+	select COUNT(*) from Vehiculos_Rutas where (Codigo_Vehiculo = @Codigo_Vehiculo) and ( @Horario_Salida between (CONVERT(varchar(15),CAST([Horario_Salida] AS TIME),100)) and (CONVERT(varchar(15),CAST([Horario_Entrada] AS TIME),100)))    
+end 
+GO
+
+
+
  
 
 /* ----------------------------------------------------Procedimientos Almacenados USUARIOS---------------------------------------------------------- */
@@ -232,7 +297,7 @@ GO
 	as
 		begin
 			select  P.Nivel_Acceso,  P.Nombre_Perfil, P.Descripcion_Perfil from Transporte_Bonilla.dbo.Perfiles P 
-			where Codigo_Perfil=@Codigo_Perfil
+			where Codigo_Perfil=@Codigo_Perfil 
 		END
 	GO
 /*-------------------------------------------------------Modificar Perfil -----------------------------------------------------*/

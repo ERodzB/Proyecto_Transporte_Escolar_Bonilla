@@ -13,7 +13,7 @@ namespace Transporte_Escolar_Bonilla
     class Ingresar : ConexionBD
     {
         private SqlCommand cmd;
-        public string mensaje = "";
+        public string mensaje = ""; 
 
         public Ingresar()
         {
@@ -51,14 +51,15 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Ingresar Nuevo Contrato
-        public void NuevoContrato(string cod, string cli, int tipo, DateTime fechai, double monto, DateTime fechaf)
+        public void NuevoContrato(string anio, string nomcli, string idcli, int tipo, DateTime fechai, double monto, DateTime fechaf)
         {
             try
             {
                 cmd = new SqlCommand("NuevoContrato", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Codigo_Contrato", cod);
-                cmd.Parameters.AddWithValue("@Cliente_Contrato", cli);
+                cmd.Parameters.AddWithValue("@Anio_Contrato", anio);
+                cmd.Parameters.AddWithValue("@Nombre_Cliente_Contrato", nomcli); 
+                cmd.Parameters.AddWithValue("@Id_Cliente_Contrato", idcli); 
                 cmd.Parameters.AddWithValue("@Tipo_Contrato", tipo);
                 cmd.Parameters.AddWithValue("@Fecha_Inicio_Contrato", fechai);
                 cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
@@ -74,7 +75,7 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Ingresar Nueva Ruta
-        public void NuevaRuta(string cod, string nom, string desc, string contrato)
+        public void NuevaRuta(string cod, string nom, string desc, string contrato, string anio, string nomcli, int opc)
         {
             try
             {
@@ -84,6 +85,9 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Nombre_Ruta", nom);
                 cmd.Parameters.AddWithValue("@Descripcion_Ruta", desc);
                 cmd.Parameters.AddWithValue("@Codigo_Contrato", contrato);
+                cmd.Parameters.AddWithValue("@Anio_Contrato", anio);
+                cmd.Parameters.AddWithValue("@Nombre_Cliente_Contrato", nomcli);
+                cmd.Parameters.AddWithValue("@Opcion", opc);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

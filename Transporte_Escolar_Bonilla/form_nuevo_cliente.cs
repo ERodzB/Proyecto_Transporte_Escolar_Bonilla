@@ -14,6 +14,7 @@ namespace Transporte_Escolar_Bonilla
     {
         Estetica Estetics = new Estetica();
         Ingresar ing = new Ingresar();
+        Validar val = new Validar();
 
         //Llevar id y nombre de cliente para asociarlo al contrato
         static public string id;
@@ -82,21 +83,38 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Debe Llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                DialogResult = MessageBox.Show("Procederá a crear el Contrato y ya no podrá regresar\n\n¿Está seguro de los datos ingresados?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if(DialogResult == DialogResult.Yes) 
+                if(val.validarCliente(txtid.Text) == 1)
                 {
-                    //Guardar Datos del Cliente
-                    ing.NuevoCliente(txtid.Text, txtnom.Text, txtdir.Text, txttel.Text, txtcorreo.Text);
+                    MessageBox.Show("El ID ingresado ya existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtid.Clear();
+                    txtid.Focus(); 
+                }
+                else
+                {
+                    DialogResult = MessageBox.Show("Procederá a crear el Contrato y ya no podrá regresar\n\n¿Está seguro de los datos ingresados?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    //Guardar id y nombre
-                    id = txtid.Text;
-                    nomc = txtnom.Text; 
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        //Guardar Datos del Cliente
+                        ing.NuevoCliente(txtid.Text, txtnom.Text, txtdir.Text, txttel.Text, txtcorreo.Text);
+                         
+                        MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    form_nuevo_cliente2 cli2 = new form_nuevo_cliente2();      
-                    Estetics.AbrirFormularios(cli2, cliente1_panel);
+                        //Guardar id y nombre
+                        id = txtid.Text;
+                        nomc = txtnom.Text;     
+
+                        //Limpieza
+                        txtnom.Clear();
+                        txtid.Clear();
+                        txtdir.Clear();
+                        txttel.Clear();
+                        txtcorreo.Clear();
+
+                        form_nuevo_cliente2 cli2 = new form_nuevo_cliente2();
+                        Estetics.AbrirFormularios(cli2, cliente1_panel);
+                    }
                 }
             }
         }

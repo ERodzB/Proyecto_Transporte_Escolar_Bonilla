@@ -15,6 +15,8 @@ namespace Transporte_Escolar_Bonilla
         private SqlCommand cmd;
         private SqlDataReader Reader;
         int x = 0;
+        public int igual = 0; //Para validar horarios duplicados de un vehiculo
+
         public Validar()
         {
             try
@@ -109,6 +111,71 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error" + ex);
             }
             return x;
+        }
+
+        public int validarCliente(string id)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarCliente", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Cliente", id);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: "+ex.ToString());
+            }
+
+            return x;
+        }
+
+        public int validarRuta(string cod)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarRuta", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Ruta", cod);
+                 x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: "+ex.ToString());
+            }
+
+            return x;
+        }
+
+        public int validarHorariosVeh(string cod, string hora)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarHoraVeh", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", cod);
+                cmd.Parameters.AddWithValue("@Horario_Salida", hora);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: "+ex.ToString());
+            }
+
+            return x;
+        }
+
+        //Validar Horarios Repetidos para un mismo vehiculo
+        public void ValidarHora(DateTimePicker h1, DateTimePicker h2, ComboBox va, ComboBox vb)
+        {
+            if ((h1.Checked == true && h2.Checked == true) && (h1.Text == h2.Text) && (va.Text == vb.Text))
+                igual++;
         }
     }
 }
