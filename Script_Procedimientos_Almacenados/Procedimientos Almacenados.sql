@@ -333,7 +333,7 @@ create procedure consultasusuario
 	as
 	if @TipoConsulta='Usuarios'
 		Begin
-			select e.Nombre_Empleado'Empleado', u.Nombre_Usuario'Usuario',u.Contrasena_Usuario'Contraseña',
+			select e.Nombre_Empleado'Empleado', u.Nombre_Usuario'Usuario',convert(varchar(50),ENCRYPTBYPASSPHRASE(u.Codigo_Empleado,u.Contrasena_Usuario))'Contrasena',
 			p.Nombre_Perfil'Perfil Usuario',a.Tipo_Acceso'Acceso Usuario'
 			from dbo.Usuarios u
 			inner join dbo.Empleado e on u.Codigo_Empleado = e.Identidad_Empleado

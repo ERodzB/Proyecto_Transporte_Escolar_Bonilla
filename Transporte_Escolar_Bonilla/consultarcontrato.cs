@@ -30,7 +30,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            if (CMBFiltro.SelectedIndex == -1 && CBFiltrox.SelectedIndex == -1)
+            if (CMBFiltro.SelectedIndex == -1 || CBFiltrox.SelectedIndex == -1)
             {
                 MessageBox.Show("Porfavor seleccione una opcion del menu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
