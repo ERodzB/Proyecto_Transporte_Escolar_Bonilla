@@ -74,5 +74,14 @@ namespace Transporte_Escolar_Bonilla
                 modif.ModificarContrato(txtContrato.Text, double.Parse(txtMonto.Text), DateTime.Parse(dtpFinal.Text), int.Parse(estado));
             }
         }
+
+        private void TxtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.' || (char.IsControl(e.KeyChar) && e.KeyChar != (char)Keys.Back))
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtMonto.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
     }
 }
