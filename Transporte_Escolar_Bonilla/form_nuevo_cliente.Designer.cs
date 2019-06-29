@@ -57,7 +57,7 @@
             this.cliente1_panel.Controls.Add(this.label14);
             this.cliente1_panel.Controls.Add(this.txtcorreo);
             this.cliente1_panel.Location = new System.Drawing.Point(1, 0);
-            this.cliente1_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.cliente1_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cliente1_panel.Name = "cliente1_panel";
             this.cliente1_panel.Size = new System.Drawing.Size(1104, 649);
             this.cliente1_panel.TabIndex = 0;
@@ -94,12 +94,10 @@
             // 
             this.txtid.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtid.Location = new System.Drawing.Point(76, 168);
-            this.txtid.Margin = new System.Windows.Forms.Padding(4);
-            this.txtid.MaxLength = 13;
+            this.txtid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(379, 41);
             this.txtid.TabIndex = 1;
-            this.txtid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtid_KeyPress);
             // 
             // label2
             // 
@@ -117,12 +115,10 @@
             // 
             this.txtnom.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnom.Location = new System.Drawing.Point(517, 168);
-            this.txtnom.Margin = new System.Windows.Forms.Padding(4);
-            this.txtnom.MaxLength = 20;
+            this.txtnom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(481, 41);
             this.txtnom.TabIndex = 2;
-            this.txtnom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnom_KeyPress);
             // 
             // label12
             // 
@@ -140,12 +136,10 @@
             // 
             this.txtdir.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdir.Location = new System.Drawing.Point(76, 302);
-            this.txtdir.Margin = new System.Windows.Forms.Padding(4);
-            this.txtdir.MaxLength = 50;
+            this.txtdir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtdir.Name = "txtdir";
             this.txtdir.Size = new System.Drawing.Size(799, 41);
             this.txtdir.TabIndex = 3;
-            this.txtdir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtdir_KeyPress);
             // 
             // label13
             // 
@@ -163,12 +157,10 @@
             // 
             this.txttel.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttel.Location = new System.Drawing.Point(76, 429);
-            this.txttel.Margin = new System.Windows.Forms.Padding(4);
-            this.txttel.MaxLength = 8;
+            this.txttel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txttel.Name = "txttel";
             this.txttel.Size = new System.Drawing.Size(379, 41);
             this.txttel.TabIndex = 4;
-            this.txttel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txttel_KeyPress);
             // 
             // label14
             // 
@@ -186,12 +178,10 @@
             // 
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.Location = new System.Drawing.Point(517, 429);
-            this.txtcorreo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcorreo.MaxLength = 30;
+            this.txtcorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(481, 41);
             this.txtcorreo.TabIndex = 5;
-            this.txtcorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcorreo_KeyPress);
             // 
             // form_nuevo_cliente
             // 
@@ -201,7 +191,7 @@
             this.ClientSize = new System.Drawing.Size(1104, 649);
             this.Controls.Add(this.cliente1_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "form_nuevo_cliente";
             this.Text = "form_nuevo_cliente";
             this.Load += new System.EventHandler(this.Form_nuevo_cliente_Load);

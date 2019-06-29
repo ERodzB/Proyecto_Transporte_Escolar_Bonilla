@@ -297,98 +297,93 @@ namespace Transporte_Escolar_Bonilla
 
                 //Mostrar mensajes de Error
                 if (/*contc > 0 ||*/ conth > 0)
-                MessageBox.Show("Error. Ingrese correctamente toda la informacion requerida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                {
-
-                DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (DialogResult == DialogResult.Yes)
-                {
-                    tipoc = combTipoContrato.SelectedIndex;
-                    anio = dtpinicio.Value.Year.ToString();
-
-                    //Guardar datos de Contrato 
-                    ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, tipoc + 1, Convert.ToDateTime(dtpinicio.Text), double.Parse(txtmonto.Text), Convert.ToDateTime(dtpfin.Text));
-
-                    //Guardar Ruta #1 y Horarios
-                    if (txtinicio1.Text != "" && txtfin1.Text != "")
-                    {
-                        ing.NuevaRuta(txtinicio1.Text + txtfin1.Text, txtinicio1.Text + " - " + txtfin1.Text, "Puntos clave desde " + txtinicio1.Text + " hasta " + txtfin1.Text, " ", anio, form_nuevo_cliente.nomc, 1);
-
-                        if (dtpsh1r1.Checked)
-                            ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh1r1.Text, dtpsh1r1.Text, dtpeh1r1.Text);
-
-                        if (dtpsh2r1.Checked)
-                            ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh2r1.Text, dtpsh2r1.Text, dtpeh2r1.Text);
-                    }
-
-                    //Guardar Ruta #2 y Horarios
-                    if (txtini2.Text != "" && txtfin2.Text != "")
-                    {
-                        ing.NuevaRuta(txtini2.Text + txtfin2.Text, txtini2.Text + " - " + txtfin2.Text, "Puntos clave desde " + txtini2.Text + " hasta " + txtfin2.Text, " ", anio, form_nuevo_cliente.nomc, 1);
-
-                        if (dtpsh1r2.Checked)
-                            ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh1r2.Text, dtpsh1r2.Text, dtpeh1r2.Text);
-
-                        if (dtpsh2r2.Checked)
-                            ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh2r2.Text, dtpsh2r2.Text, dtpeh2r2.Text);
-                    }
-
-                    MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    form_nuevo_cliente cli1 = new form_nuevo_cliente();
-                    Estetics.AbrirFormularios(cli1, cliente2_panel);
-
-                    this.Close();
-
-                    //Limpieza  
-                    //dtpsh1r1.Checked = false;
-                    //dtpeh1r1.Checked = false;
-                    //dtpsh2r1.Checked = false;
-                    //dtpeh2r1.Checked = false; 
-                    //dtpsh1r2.Checked = false;
-                    //dtpeh1r2.Checked = false;
-                    //dtpsh2r2.Checked = false;
-                    //dtpeh2r2.Checked = false;
-
-                    //cambio1 = 2;
-                    //cambio2 = 2;
-                    //cambio3 = 2;
-                    //cambio4 = 2;
-
-                    //labv1.Visible = false;
-                    //labv2.Visible = false;
-                    //labv3.Visible = false;
-                    //labv4.Visible = false;
-
-                    //combvh1r1.SelectedIndex = -1;
-                    //combvh2r1.SelectedIndex = -1;
-                    //combvh1r2.SelectedIndex = -1;
-                    //combvh2r2.SelectedIndex = -1;
-                    //combTipoContrato.SelectedIndex = -1;
-
-                    ////MessageBox.Show(cambio1.ToString() + "\n" + cambio2.ToString() + "\n" + cambio3.ToString() + "\n" + cambio4.ToString(), "CAMBIOS");
-
-                    //cambio1 = 3;
-                    //cambio2 = 3;
-                    //cambio3 = 3;
-                    //cambio4 = 3;
-
-                    ////MessageBox.Show(cambio1.ToString() + "\n" + cambio2.ToString() + "\n" + cambio3.ToString() + "\n" + cambio4.ToString(), "CAMBIOS");
-
-                    //txtinicio1.Clear();
-                    //txtfin1.Clear();
-                    //txtini2.Clear();
-                    //txtfin2.Clear(); 
-                    //txtmonto.Clear();  
-                }
+                    MessageBox.Show(/*errorc +*/ errorh, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    MessageBox.Show(/*errorc +*/ errorh, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            }
-            
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        tipoc = combTipoContrato.SelectedIndex;
+                        anio = dtpinicio.Value.Year.ToString(); 
+
+                        //Guardar datos de Contrato 
+                        ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, tipoc + 1, Convert.ToDateTime(dtpinicio.Text), double.Parse(txtmonto.Text), Convert.ToDateTime(dtpfin.Text));
+
+                        //Guardar Ruta #1 y Horarios
+                        if (txtinicio1.Text != "" && txtfin1.Text != "")
+                        {
+                                ing.NuevaRuta(txtinicio1.Text + txtfin1.Text, txtinicio1.Text + " - " + txtfin1.Text, "Puntos clave desde " + txtinicio1.Text + " hasta " + txtfin1.Text, " ", anio, form_nuevo_cliente.nomc, 1);
+
+                                if (dtpsh1r1.Checked)
+                                    ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh1r1.Text, dtpsh1r1.Text, dtpeh1r1.Text);
+
+                                if (dtpsh2r1.Checked)
+                                    ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh2r1.Text, dtpsh2r1.Text, dtpeh2r1.Text);
+                        }
+
+                        //Guardar Ruta #2 y Horarios
+                        if (txtini2.Text != "" && txtfin2.Text != "")
+                        {
+                                ing.NuevaRuta(txtini2.Text + txtfin2.Text, txtini2.Text + " - " + txtfin2.Text, "Puntos clave desde " + txtini2.Text + " hasta " + txtfin2.Text, " ", anio, form_nuevo_cliente.nomc, 1);
+
+                                if (dtpsh1r2.Checked)
+                                    ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh1r2.Text, dtpsh1r2.Text, dtpeh1r2.Text);
+
+                                if (dtpsh2r2.Checked)
+                                    ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh2r2.Text, dtpsh2r2.Text, dtpeh2r2.Text);
+                        }
+
+                        MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
+
+                        form_nuevo_cliente cli1 = new form_nuevo_cliente();
+                        Estetics.AbrirFormularios(cli1, cliente2_panel);
+
+                        this.Close();                         
+
+                        //Limpieza  
+                        //dtpsh1r1.Checked = false;
+                        //dtpeh1r1.Checked = false;
+                        //dtpsh2r1.Checked = false;
+                        //dtpeh2r1.Checked = false; 
+                        //dtpsh1r2.Checked = false;
+                        //dtpeh1r2.Checked = false;
+                        //dtpsh2r2.Checked = false;
+                        //dtpeh2r2.Checked = false;
+
+                        //cambio1 = 2;
+                        //cambio2 = 2;
+                        //cambio3 = 2;
+                        //cambio4 = 2;
+
+                        //labv1.Visible = false;
+                        //labv2.Visible = false;
+                        //labv3.Visible = false;
+                        //labv4.Visible = false;
+
+                        //combvh1r1.SelectedIndex = -1;
+                        //combvh2r1.SelectedIndex = -1;
+                        //combvh1r2.SelectedIndex = -1;
+                        //combvh2r2.SelectedIndex = -1;
+                        //combTipoContrato.SelectedIndex = -1;
+
+                        ////MessageBox.Show(cambio1.ToString() + "\n" + cambio2.ToString() + "\n" + cambio3.ToString() + "\n" + cambio4.ToString(), "CAMBIOS");
+
+                        //cambio1 = 3;
+                        //cambio2 = 3;
+                        //cambio3 = 3;
+                        //cambio4 = 3;
+
+                        ////MessageBox.Show(cambio1.ToString() + "\n" + cambio2.ToString() + "\n" + cambio3.ToString() + "\n" + cambio4.ToString(), "CAMBIOS");
+
+                        //txtinicio1.Clear();
+                        //txtfin1.Clear();
+                        //txtini2.Clear();
+                        //txtfin2.Clear(); 
+                        //txtmonto.Clear();  
+                    }
+
+                }
             }
         }
 
@@ -401,7 +396,7 @@ namespace Transporte_Escolar_Bonilla
             //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
             if (cambio1>3)
             {
-  //              consul.DescVehiculos(combvh1r1.Text, labv1);
+                consul.DescVehiculos(combvh1r1.Text, labv1);
                 labv1.Visible = true; 
             }
         }
@@ -409,47 +404,6 @@ namespace Transporte_Escolar_Bonilla
         private void Combvh1r1_SelectedValueChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void Txtinicio1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txtfin1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txtini2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txtfin2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txtmonto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.' || (char.IsControl(e.KeyChar) && e.KeyChar != (char)Keys.Back))
-            {
-                if (System.Text.RegularExpressions.Regex.IsMatch(txtmonto.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
-            }
-            else e.Handled = e.KeyChar != (char)Keys.Back;
         }
 
         //Seleccionar Vehiculo 2
@@ -461,7 +415,7 @@ namespace Transporte_Escolar_Bonilla
             //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
             if (cambio2 > 3)
             {
-    //            consul.DescVehiculos(combvh2r1.Text, labv2);
+                consul.DescVehiculos(combvh2r1.Text, labv2);
                 labv2.Visible = true;  
             }
         }
@@ -475,7 +429,7 @@ namespace Transporte_Escolar_Bonilla
             //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
             if (cambio3 > 3)
             {
-       //         consul.DescVehiculos(combvh1r2.Text, labv3); 
+                consul.DescVehiculos(combvh1r2.Text, labv3); 
                 labv3.Visible = true;
             }
         }
@@ -489,7 +443,7 @@ namespace Transporte_Escolar_Bonilla
             //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
             if (cambio4 > 3)
             {
-     //           consul.DescVehiculos(combvh2r2.Text, labv4);
+                consul.DescVehiculos(combvh2r2.Text, labv4);
                 labv4.Visible = true; 
             }
         }

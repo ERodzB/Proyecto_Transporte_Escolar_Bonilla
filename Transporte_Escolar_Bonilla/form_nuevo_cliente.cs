@@ -64,8 +64,22 @@ namespace Transporte_Escolar_Bonilla
         //Click Siguiente
         private void Labsiguiente_Click(object sender, EventArgs e)
         { 
+            int cont = 0;
+
             //No dejar Campos Vacios
-            if (txtid.Text=="" || txtnom.Text=="" || txtdir.Text=="" || txttel.Text=="")
+            if (string.IsNullOrEmpty(txtid.Text))
+                cont++;
+            else
+                if (string.IsNullOrEmpty(txtnom.Text)) 
+                cont++;
+            else
+                if (string.IsNullOrEmpty(txtdir.Text))
+                cont++; 
+            else
+                if (string.IsNullOrEmpty(txttel.Text))        
+                cont++;
+
+            if (cont > 0) 
                 MessageBox.Show("Debe Llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -115,46 +129,6 @@ namespace Transporte_Escolar_Bonilla
         private void Labsiguiente_MouseLeave(object sender, EventArgs e)
         {
             labsiguiente.ForeColor = Color.FromArgb(12, 24, 94); 
-        }
-
-        private void Txtid_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txtnom_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txtdir_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txttel_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Txtcorreo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='@') && !(e.KeyChar=='.'))
-            {
-                e.Handled = true;
-            }
         }
     }
 }

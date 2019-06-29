@@ -141,7 +141,7 @@
             this.cliente2_panel.Controls.Add(this.txtmonto);
             this.cliente2_panel.Controls.Add(this.label4);
             this.cliente2_panel.Location = new System.Drawing.Point(0, 0);
-            this.cliente2_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.cliente2_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cliente2_panel.Name = "cliente2_panel";
             this.cliente2_panel.Size = new System.Drawing.Size(1104, 649);
             this.cliente2_panel.TabIndex = 0;
@@ -201,8 +201,7 @@
             // dtpinicio
             // 
             this.dtpinicio.Location = new System.Drawing.Point(396, 518);
-            this.dtpinicio.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpinicio.MinDate = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
+            this.dtpinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpinicio.Name = "dtpinicio";
             this.dtpinicio.Size = new System.Drawing.Size(175, 22);
             this.dtpinicio.TabIndex = 179;
@@ -213,7 +212,7 @@
             this.combTipoContrato.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combTipoContrato.FormattingEnabled = true;
             this.combTipoContrato.Location = new System.Drawing.Point(85, 512);
-            this.combTipoContrato.Margin = new System.Windows.Forms.Padding(4);
+            this.combTipoContrato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combTipoContrato.Name = "combTipoContrato";
             this.combTipoContrato.Size = new System.Drawing.Size(235, 31);
             this.combTipoContrato.TabIndex = 177;
@@ -236,7 +235,7 @@
             this.combvh2r2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combvh2r2.FormattingEnabled = true;
             this.combvh2r2.Location = new System.Drawing.Point(913, 359);
-            this.combvh2r2.Margin = new System.Windows.Forms.Padding(4);
+            this.combvh2r2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combvh2r2.Name = "combvh2r2";
             this.combvh2r2.Size = new System.Drawing.Size(161, 28);
             this.combvh2r2.TabIndex = 175;
@@ -260,7 +259,7 @@
             this.combvh1r2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combvh1r2.FormattingEnabled = true;
             this.combvh1r2.Location = new System.Drawing.Point(915, 219);
-            this.combvh1r2.Margin = new System.Windows.Forms.Padding(4);
+            this.combvh1r2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combvh1r2.Name = "combvh1r2";
             this.combvh1r2.Size = new System.Drawing.Size(161, 28);
             this.combvh1r2.TabIndex = 173;
@@ -281,7 +280,7 @@
             // dtpeh2r2
             // 
             this.dtpeh2r2.Location = new System.Drawing.Point(751, 364);
-            this.dtpeh2r2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpeh2r2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpeh2r2.Name = "dtpeh2r2";
             this.dtpeh2r2.Size = new System.Drawing.Size(124, 22);
             this.dtpeh2r2.TabIndex = 171;
@@ -289,7 +288,7 @@
             // dtpsh2r2
             // 
             this.dtpsh2r2.Location = new System.Drawing.Point(593, 364);
-            this.dtpsh2r2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpsh2r2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpsh2r2.Name = "dtpsh2r2";
             this.dtpsh2r2.Size = new System.Drawing.Size(124, 22);
             this.dtpsh2r2.TabIndex = 170;
@@ -333,7 +332,7 @@
             // dtpeh1r2
             // 
             this.dtpeh1r2.Location = new System.Drawing.Point(752, 225);
-            this.dtpeh1r2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpeh1r2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpeh1r2.Name = "dtpeh1r2";
             this.dtpeh1r2.Size = new System.Drawing.Size(124, 22);
             this.dtpeh1r2.TabIndex = 166;
@@ -341,7 +340,7 @@
             // dtpsh1r2
             // 
             this.dtpsh1r2.Location = new System.Drawing.Point(595, 225);
-            this.dtpsh1r2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpsh1r2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpsh1r2.Name = "dtpsh1r2";
             this.dtpsh1r2.Size = new System.Drawing.Size(124, 22);
             this.dtpsh1r2.TabIndex = 165;
@@ -374,12 +373,10 @@
             // 
             this.txtfin2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfin2.Location = new System.Drawing.Point(856, 98);
-            this.txtfin2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfin2.MaxLength = 70;
+            this.txtfin2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtfin2.Name = "txtfin2";
             this.txtfin2.Size = new System.Drawing.Size(216, 26);
             this.txtfin2.TabIndex = 162;
-            this.txtfin2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtfin2_KeyPress);
             // 
             // label21
             // 
@@ -397,12 +394,10 @@
             // 
             this.txtini2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtini2.Location = new System.Drawing.Point(592, 98);
-            this.txtini2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtini2.MaxLength = 70;
+            this.txtini2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtini2.Name = "txtini2";
             this.txtini2.Size = new System.Drawing.Size(216, 26);
             this.txtini2.TabIndex = 160;
-            this.txtini2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtini2_KeyPress);
             // 
             // label24
             // 
@@ -434,7 +429,7 @@
             this.combvh2r1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combvh2r1.FormattingEnabled = true;
             this.combvh2r1.Location = new System.Drawing.Point(355, 359);
-            this.combvh2r1.Margin = new System.Windows.Forms.Padding(4);
+            this.combvh2r1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combvh2r1.Name = "combvh2r1";
             this.combvh2r1.Size = new System.Drawing.Size(161, 28);
             this.combvh2r1.TabIndex = 8;
@@ -458,7 +453,7 @@
             this.combvh1r1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combvh1r1.FormattingEnabled = true;
             this.combvh1r1.Location = new System.Drawing.Point(355, 220);
-            this.combvh1r1.Margin = new System.Windows.Forms.Padding(4);
+            this.combvh1r1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combvh1r1.Name = "combvh1r1";
             this.combvh1r1.Size = new System.Drawing.Size(161, 28);
             this.combvh1r1.TabIndex = 5;
@@ -481,7 +476,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 449);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1108, 4);
             this.panel2.TabIndex = 153;
@@ -491,7 +486,7 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.ForeColor = System.Drawing.SystemColors.Window;
             this.panel3.Location = new System.Drawing.Point(551, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(4, 449);
             this.panel3.TabIndex = 152;
@@ -511,7 +506,7 @@
             // dtpeh2r1
             // 
             this.dtpeh2r1.Location = new System.Drawing.Point(192, 364);
-            this.dtpeh2r1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpeh2r1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpeh2r1.Name = "dtpeh2r1";
             this.dtpeh2r1.Size = new System.Drawing.Size(124, 22);
             this.dtpeh2r1.TabIndex = 7;
@@ -519,7 +514,7 @@
             // dtpsh2r1
             // 
             this.dtpsh2r1.Location = new System.Drawing.Point(35, 364);
-            this.dtpsh2r1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpsh2r1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpsh2r1.Name = "dtpsh2r1";
             this.dtpsh2r1.Size = new System.Drawing.Size(124, 22);
             this.dtpsh2r1.TabIndex = 6;
@@ -563,7 +558,7 @@
             // dtpeh1r1
             // 
             this.dtpeh1r1.Location = new System.Drawing.Point(192, 225);
-            this.dtpeh1r1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpeh1r1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpeh1r1.Name = "dtpeh1r1";
             this.dtpeh1r1.Size = new System.Drawing.Size(124, 22);
             this.dtpeh1r1.TabIndex = 4;
@@ -571,7 +566,7 @@
             // dtpsh1r1
             // 
             this.dtpsh1r1.Location = new System.Drawing.Point(35, 225);
-            this.dtpsh1r1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpsh1r1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpsh1r1.Name = "dtpsh1r1";
             this.dtpsh1r1.Size = new System.Drawing.Size(124, 22);
             this.dtpsh1r1.TabIndex = 3;
@@ -604,12 +599,10 @@
             // 
             this.txtfin1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfin1.Location = new System.Drawing.Point(300, 98);
-            this.txtfin1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfin1.MaxLength = 70;
+            this.txtfin1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtfin1.Name = "txtfin1";
             this.txtfin1.Size = new System.Drawing.Size(216, 26);
             this.txtfin1.TabIndex = 2;
-            this.txtfin1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtfin1_KeyPress);
             // 
             // label2
             // 
@@ -627,12 +620,10 @@
             // 
             this.txtinicio1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtinicio1.Location = new System.Drawing.Point(36, 98);
-            this.txtinicio1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtinicio1.MaxLength = 70;
+            this.txtinicio1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtinicio1.Name = "txtinicio1";
             this.txtinicio1.Size = new System.Drawing.Size(216, 26);
             this.txtinicio1.TabIndex = 1;
-            this.txtinicio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtinicio1_KeyPress);
             // 
             // label1
             // 
@@ -689,7 +680,7 @@
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
             this.botcrear.Location = new System.Drawing.Point(903, 576);
-            this.botcrear.Margin = new System.Windows.Forms.Padding(4);
+            this.botcrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.botcrear.Name = "botcrear";
             this.botcrear.Size = new System.Drawing.Size(145, 52);
             this.botcrear.TabIndex = 137;
@@ -700,8 +691,7 @@
             // dtpfin
             // 
             this.dtpfin.Location = new System.Drawing.Point(617, 518);
-            this.dtpfin.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpfin.MinDate = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
+            this.dtpfin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpfin.Name = "dtpfin";
             this.dtpfin.Size = new System.Drawing.Size(175, 22);
             this.dtpfin.TabIndex = 131;
@@ -722,11 +712,10 @@
             // 
             this.txtmonto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmonto.Location = new System.Drawing.Point(857, 516);
-            this.txtmonto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmonto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(169, 26);
             this.txtmonto.TabIndex = 129;
-            this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmonto_KeyPress);
             // 
             // label4
             // 
@@ -748,7 +737,7 @@
             this.ClientSize = new System.Drawing.Size(1104, 649);
             this.Controls.Add(this.cliente2_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "form_nuevo_cliente2";
             this.Text = "form_nuevo_cliente2";
             this.Load += new System.EventHandler(this.Form_nuevo_cliente2_Load);

@@ -131,7 +131,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 if (Acceso == 0)
                 {
-                    MessageBox.Show("Error. Favor ingrese sus credenciales nuevamente");
+                    MessageBox.Show("Error no se encontro el usuario");
                 }
                 else
                     MessageBox.Show("Error" + ex);
