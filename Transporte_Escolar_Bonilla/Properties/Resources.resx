@@ -121,6 +121,9 @@
   <data name="remove-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\remove-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="contract_icon_white-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contract_icon_white-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="User_icon_2.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User_icon_2.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,7 +133,7 @@
   <data name="community_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\community_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contract_icon_white-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contract_icon_white-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

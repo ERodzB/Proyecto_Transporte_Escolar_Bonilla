@@ -94,5 +94,10 @@ namespace Transporte_Escolar_Bonilla
                 e.Handled = true;
             }
         }
+
+        private void DgvCargaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

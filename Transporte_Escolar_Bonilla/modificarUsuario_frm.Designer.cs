@@ -42,9 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.actual_tb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.OJO1 = new System.Windows.Forms.Button();
             this.OJO2 = new System.Windows.Forms.Button();
             this.OJO3 = new System.Windows.Forms.Button();
+            this.OJO1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Perfil_cmb
@@ -53,7 +53,7 @@
             this.Perfil_cmb.Enabled = false;
             this.Perfil_cmb.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Perfil_cmb.FormattingEnabled = true;
-            this.Perfil_cmb.Location = new System.Drawing.Point(602, 399);
+            this.Perfil_cmb.Location = new System.Drawing.Point(645, 449);
             this.Perfil_cmb.Name = "Perfil_cmb";
             this.Perfil_cmb.Size = new System.Drawing.Size(372, 45);
             this.Perfil_cmb.TabIndex = 28;
@@ -62,7 +62,7 @@
             // 
             this.nombre_tb.Enabled = false;
             this.nombre_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_tb.Location = new System.Drawing.Point(523, 154);
+            this.nombre_tb.Location = new System.Drawing.Point(566, 204);
             this.nombre_tb.MaxLength = 10;
             this.nombre_tb.Name = "nombre_tb";
             this.nombre_tb.Size = new System.Drawing.Size(451, 41);
@@ -74,7 +74,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(119, 154);
+            this.label6.Location = new System.Drawing.Point(155, 204);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(325, 40);
             this.label6.TabIndex = 18;
@@ -87,7 +87,7 @@
             this.Buscar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buscar_btn.ForeColor = System.Drawing.Color.White;
-            this.Buscar_btn.Location = new System.Drawing.Point(825, 74);
+            this.Buscar_btn.Location = new System.Drawing.Point(868, 124);
             this.Buscar_btn.Name = "Buscar_btn";
             this.Buscar_btn.Size = new System.Drawing.Size(149, 63);
             this.Buscar_btn.TabIndex = 23;
@@ -99,7 +99,7 @@
             // 
             this.contra_tb.Enabled = false;
             this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contra_tb.Location = new System.Drawing.Point(523, 341);
+            this.contra_tb.Location = new System.Drawing.Point(566, 391);
             this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
             this.contra_tb.Size = new System.Drawing.Size(451, 41);
@@ -111,7 +111,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(222, 399);
+            this.label4.Location = new System.Drawing.Point(262, 449);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(218, 40);
             this.label4.TabIndex = 15;
@@ -122,7 +122,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 338);
+            this.label1.Location = new System.Drawing.Point(0, 388);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(480, 40);
             this.label1.TabIndex = 14;
@@ -131,7 +131,7 @@
             // identidad_tb
             // 
             this.identidad_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.identidad_tb.Location = new System.Drawing.Point(523, 11);
+            this.identidad_tb.Location = new System.Drawing.Point(566, 61);
             this.identidad_tb.MaxLength = 13;
             this.identidad_tb.Name = "identidad_tb";
             this.identidad_tb.Size = new System.Drawing.Size(451, 41);
@@ -143,7 +143,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(67, 12);
+            this.label2.Location = new System.Drawing.Point(107, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(373, 40);
             this.label2.TabIndex = 21;
@@ -157,7 +157,7 @@
             this.modificar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificar_btn.ForeColor = System.Drawing.Color.White;
-            this.modificar_btn.Location = new System.Drawing.Point(779, 483);
+            this.modificar_btn.Location = new System.Drawing.Point(822, 533);
             this.modificar_btn.Name = "modificar_btn";
             this.modificar_btn.Size = new System.Drawing.Size(195, 63);
             this.modificar_btn.TabIndex = 29;
@@ -169,7 +169,7 @@
             // 
             this.nueva_tb.Enabled = false;
             this.nueva_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nueva_tb.Location = new System.Drawing.Point(523, 281);
+            this.nueva_tb.Location = new System.Drawing.Point(566, 331);
             this.nueva_tb.MaxLength = 20;
             this.nueva_tb.Name = "nueva_tb";
             this.nueva_tb.Size = new System.Drawing.Size(451, 41);
@@ -181,7 +181,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(121, 279);
+            this.label3.Location = new System.Drawing.Point(164, 331);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(316, 40);
             this.label3.TabIndex = 28;
@@ -191,7 +191,7 @@
             // 
             this.actual_tb.Enabled = false;
             this.actual_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actual_tb.Location = new System.Drawing.Point(523, 218);
+            this.actual_tb.Location = new System.Drawing.Point(566, 268);
             this.actual_tb.MaxLength = 20;
             this.actual_tb.Name = "actual_tb";
             this.actual_tb.Size = new System.Drawing.Size(451, 41);
@@ -203,51 +203,61 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(119, 215);
+            this.label5.Location = new System.Drawing.Point(162, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(318, 40);
             this.label5.TabIndex = 30;
             this.label5.Text = "Contraseña actual";
             // 
-            // OJO1
-            // 
-            this.OJO1.Location = new System.Drawing.Point(993, 218);
-            this.OJO1.Name = "OJO1";
-            this.OJO1.Size = new System.Drawing.Size(53, 41);
-            this.OJO1.TabIndex = 31;
-            this.OJO1.TabStop = false;
-            this.OJO1.Text = "OJO";
-            this.OJO1.UseVisualStyleBackColor = true;
-            this.OJO1.Click += new System.EventHandler(this.OJO1_Click);
-            // 
             // OJO2
             // 
-            this.OJO2.Location = new System.Drawing.Point(993, 281);
+            this.OJO2.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.ojo;
+            this.OJO2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OJO2.FlatAppearance.BorderSize = 0;
+            this.OJO2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OJO2.Location = new System.Drawing.Point(1036, 331);
             this.OJO2.Name = "OJO2";
             this.OJO2.Size = new System.Drawing.Size(53, 41);
             this.OJO2.TabIndex = 32;
             this.OJO2.TabStop = false;
-            this.OJO2.Text = "OJO";
             this.OJO2.UseVisualStyleBackColor = true;
             this.OJO2.Click += new System.EventHandler(this.OJO2_Click);
             // 
             // OJO3
             // 
-            this.OJO3.Location = new System.Drawing.Point(993, 341);
+            this.OJO3.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.ojo;
+            this.OJO3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OJO3.FlatAppearance.BorderSize = 0;
+            this.OJO3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OJO3.Location = new System.Drawing.Point(1036, 391);
             this.OJO3.Name = "OJO3";
             this.OJO3.Size = new System.Drawing.Size(53, 41);
             this.OJO3.TabIndex = 33;
             this.OJO3.TabStop = false;
-            this.OJO3.Text = "OJO";
             this.OJO3.UseVisualStyleBackColor = true;
             this.OJO3.Click += new System.EventHandler(this.OJO3_Click);
+            // 
+            // OJO1
+            // 
+            this.OJO1.BackColor = System.Drawing.Color.Transparent;
+            this.OJO1.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.ojo;
+            this.OJO1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OJO1.FlatAppearance.BorderSize = 0;
+            this.OJO1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OJO1.Location = new System.Drawing.Point(1036, 268);
+            this.OJO1.Name = "OJO1";
+            this.OJO1.Size = new System.Drawing.Size(53, 41);
+            this.OJO1.TabIndex = 31;
+            this.OJO1.TabStop = false;
+            this.OJO1.UseVisualStyleBackColor = false;
+            this.OJO1.Click += new System.EventHandler(this.OJO1_Click);
             // 
             // modificarUsuario_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1070, 556);
+            this.ClientSize = new System.Drawing.Size(1106, 650);
             this.Controls.Add(this.OJO3);
             this.Controls.Add(this.OJO2);
             this.Controls.Add(this.OJO1);

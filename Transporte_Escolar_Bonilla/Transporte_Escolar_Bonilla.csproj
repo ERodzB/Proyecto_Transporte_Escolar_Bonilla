@@ -282,5 +282,8 @@
   <ItemGroup>
     <None Include="Resources\contract_icon_white-01.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,3 +1,5 @@
+USE Transporte_Bonilla
+GO
 /* Procedimientos Almacenados NUEVO CLIENTE */  
 
 /*---------------------------------------------Procedimiento Ingreso de Nuevo Cliente------------------------------------------------*/
@@ -453,16 +455,6 @@ begin
 	where Codigo_Cliente = @Cod_Client
 end
 GO
-/*-----------------Verificar Cliente---------------------*/	
-
-create procedure VerificarCliente
-	@Codigo_Cliente varchar(50)
-	as
-	begin
-		select COUNT(*) FROM [dbo].[Cliente] WHERE Codigo_Cliente = @Codigo_Cliente
-	END
-	GO
-
 /*---------------------Consulta Unica Cliente----------------------------*/
 
 create procedure ConsultaUnicaCliente
@@ -527,4 +519,3 @@ begin
 	where Codigo_Categoria ='CT' 
 end
 GO
-

@@ -41,10 +41,10 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnConsultar.Location = new System.Drawing.Point(658, 79);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultar.Location = new System.Drawing.Point(877, 97);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(118, 37);
+            this.btnConsultar.Size = new System.Drawing.Size(157, 46);
             this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -55,10 +55,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(58, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(77, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 24);
+            this.label1.Size = new System.Drawing.Size(444, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "Seleccione que desea consultar:";
             // 
@@ -69,10 +68,10 @@
             this.cbConsulta.Items.AddRange(new object[] {
             "Clientes",
             "Contratos por Cliente"});
-            this.cbConsulta.Location = new System.Drawing.Point(478, 41);
-            this.cbConsulta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbConsulta.Location = new System.Drawing.Point(637, 50);
+            this.cbConsulta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbConsulta.Name = "cbConsulta";
-            this.cbConsulta.Size = new System.Drawing.Size(300, 32);
+            this.cbConsulta.Size = new System.Drawing.Size(399, 40);
             this.cbConsulta.TabIndex = 5;
             // 
             // dgvConsultaU
@@ -101,8 +100,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvConsultaU.Location = new System.Drawing.Point(41, 120);
-            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvConsultaU.Location = new System.Drawing.Point(55, 148);
+            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -116,22 +115,22 @@
             this.dgvConsultaU.RowHeadersWidth = 51;
             this.dgvConsultaU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvConsultaU.RowTemplate.Height = 24;
-            this.dgvConsultaU.Size = new System.Drawing.Size(736, 328);
+            this.dgvConsultaU.Size = new System.Drawing.Size(981, 404);
             this.dgvConsultaU.TabIndex = 4;
             // 
             // consultar_clientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(831, 528);
+            this.ClientSize = new System.Drawing.Size(1104, 649);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbConsulta);
             this.Controls.Add(this.dgvConsultaU);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "consultar_clientes";
             this.Text = "consultar_clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaU)).EndInit();
