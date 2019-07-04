@@ -327,7 +327,7 @@ GO
 CREATE TABLE [dbo].[Rutas_Contratos](
 	[Codigo_Ruta] [varchar](50) NOT NULL,
 	[Codigo_Contrato] [varchar](50) NOT NULL,
-	[Parada_Contrato] [varchar](100) NOT NULL
+	[Parada_Contrato] [varchar](100) NULL
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tipo_Mantenimientos]    Script Date: 7/3/2019 10:35:56 PM ******/
@@ -412,7 +412,7 @@ CREATE TABLE [dbo].[Vehiculos_Rutas](
 	[Codigo_Vehiculo] [varchar](50) NOT NULL,
 	[Horario_Salida] [time](7) NOT NULL,
 	[Horario_Entrada] [time](7) NOT NULL,
-	[Cantidad_Alumnos_Actuales] [int] NOT NULL
+	[Cantidad_Pasajeros_Actuales] [int] NOT NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Acceso] ADD  CONSTRAINT [DF_Acceso_Descripcion_Acceso]  DEFAULT ('Sin Especificar') FOR [Descripcion_Acceso]
