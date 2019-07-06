@@ -16,6 +16,24 @@ begin
 end
 GO
 
+/*---------------------------------------------Procedimiento Ingreso de Nuevo Empleado------------------------------------------------*/
+create procedure NuevoEmpleado
+@Identidad varchar(50),   
+@Nombr varchar(100),
+@FNacimiento date,
+@Genero as varchar(20),
+@Telefono varchar(20), 
+@Correo varchar(100),
+@Direccion varchar(200),
+@Puesto int,
+@Salario money
+as 
+begin
+	insert into Empleado values
+	(@Identidad,@Nombr,@FNacimiento,@Genero,@Telefono,@Correo,@Direccion,@Puesto,@Salario)
+end
+GO
+
 /*---------------------------------------------Procedimiento Llenar ComboBox de Contrato------------------------------------------------*/
 create procedure ComboboxContratos
 as
@@ -52,7 +70,7 @@ begin
 end 
 GO
 
-/*---------------------------------------------Procedimiento Ingreso de Nuevo Contrato------------------------------------------------*/
+/*NO---------------------------------------------Procedimiento Ingreso de Nuevo Contrato------------------------------------------------*/
 create procedure NuevoContrato
 @Anio_Contrato varchar(4),
 @Nombre_Cliente_Contrato varchar(100),
@@ -68,7 +86,7 @@ begin
 end 
 GO  
 
-/*--------------------------------------Procedimiento para Crear una nueva Ruta---------------------------------------------------*/
+/* NO--------------------------------------Procedimiento para Crear una nueva Ruta---------------------------------------------------*/
 create procedure NuevaRuta
 	@Codigo_ruta varchar(50),
 	@Nombre_Ruta varchar(100),
@@ -110,8 +128,8 @@ create procedure AsignarHoraVeh
 	@Horario_Entrada time(7)
 as
 begin
-	insert into Vehiculos_Rutas (Codigo_Ruta, Codigo_Vehiculo, Horario_Salida, Horario_Entrada)
-	values (@Codigo_ruta, @Codigo_Vehiculo, @Horario_Salida, @Horario_Entrada)
+	insert into Vehiculos_Rutas (Codigo_Ruta, Codigo_Vehiculo, Horario_Salida, Horario_Entrada,Cantidad_Alumnos_Actuales)
+	values (@Codigo_ruta, @Codigo_Vehiculo, @Horario_Salida, @Horario_Entrada,0)
 end
 GO
 
@@ -120,7 +138,7 @@ GO
 create procedure  ComboboxRutas
 as 
 begin
-	select Codigo_Ruta from Rutas
+	select Codigo_Ruta, Nombre_Ruta from Rutas
 	group by Codigo_Ruta
 end 
 GO  
@@ -372,11 +390,43 @@ begin
 	inner join dbo.Estado e on co.Estado_Contrato = e.Codigo_Estado
 end
 GO
+/*------------------------------------------------------Consultar Rutas---------------------------------------------*/
+create procedure consultarutas
+		@consultacliente as varchar(50)
+	as
+begin
+	if @consultacliente = 'Rutas Generales'
+	select r.Codigo_Ruta'Codigo Ruta',r.Nombre_Ruta'Paradas de la Ruta' from Rutas r
+	where r.Tipo_Ruta='Temporal';
+	if @consultacliente ='Rutas de Clientes'
+	select r.Codigo_Ruta'Codigo Ruta',cl.Nombre_Cliente'Cliente de la Ruta',c.Codigo_Contrato'Contrato del Cliente', 
+	concat(v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Vehiculo de la Ruta',concat(Cast(vr.Horario_Salida as time(0)),'-',cast(vr.Horario_Entrada as time(0)))'Hora de Ruta'
+	, rc.Parada_Contrato'Se Baja en:',c.Servicio'Servicio de Ruta' from Rutas R
+	inner join Rutas_Contratos rc on r.Codigo_Ruta = rc.Codigo_Ruta
+	inner join Vehiculos_Rutas vr on r.Codigo_Ruta = vr.Codigo_Ruta
+	inner join Contratos c on rc.Codigo_Contrato = c.Codigo_Contrato
+	inner join Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
+	inner join Vehiculos v on vr.Codigo_Vehiculo = v.Codigo_Vehiculo
+	if @consultacliente ='Rutas Viajes Privados'
+	select r.Codigo_Ruta'Codigo Viaje',r.Nombre_Ruta'Nombre de Viaje',r.Descripcion_Ruta'Descripcion Viaje',rc.Parada_Contrato'Final de Viaje', c.Servicio'Tipo de Viaje' from Rutas r
+	inner join Rutas_Contratos rc on r.Codigo_Ruta = rc.Codigo_Ruta
+	inner join Contratos c on rc.Codigo_Contrato = c.Codigo_Contrato
+	where r.Tipo_Ruta='Viaje';
+
+end
+GO
 /*---------------------------------------------Procedimiento Llenar ComboBox Clientes------------------------------------------------*/
 create procedure ComboboxClientes
 as
 begin
 	select Nombre_Cliente,Codigo_Cliente from DBO.Cliente
+end
+GO
+/*---------------------------------------------Procedimiento Llenar ComboBox Puestos------------------------------------------------*/
+create procedure ComboboxPuesto
+as
+begin
+	select Nombre_Puesto,Codigo_Puesto from DBO.Puesto
 end
 GO
 /*---------------------------------------------Procedimiento Llenar ComboBox Estados Contrato------------------------------------------------*/
@@ -398,6 +448,16 @@ begin
 	inner join dbo.Estado e on c.Estado_Contrato = e.Codigo_Estado
 	inner join dbo.TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
 	inner join dbo.Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
+end
+go
+/*---------------------------------------------Procedimiento LLenar DGV Empleados------------------------------------------------*/
+create procedure DatosDVGEmpleados
+as
+begin
+	select e.Identidad_Empleado'Identidad Empleado',e.Nombre_Empleado'Nombre Empleado',e.Fecha_Nacimiento'Fecha Nacimiento',
+	e.Genero,E.Telefono,e.Correo,e.Direccion,p.Nombre_Puesto'Puesto Empleado',e.Salario
+	from Empleado E
+	inner join Puesto p on E.Puesto_Empleado = P.Codigo_Puesto;
 end
 go
 /*------------------------------------------------------Filtrar Contratos---------------------------------------------*/

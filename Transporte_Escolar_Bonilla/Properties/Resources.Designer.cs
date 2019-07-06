@@ -73,6 +73,16 @@ namespace Transporte_Escolar_Bonilla.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bus {
+            get {
+                object obj = ResourceManager.GetObject("bus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap community_icon_white {
             get {
                 object obj = ResourceManager.GetObject("community_icon_white", resourceCulture);
@@ -86,6 +96,16 @@ namespace Transporte_Escolar_Bonilla.Properties {
         internal static System.Drawing.Bitmap contract_icon_white_01 {
             get {
                 object obj = ResourceManager.GetObject("contract_icon_white-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap makefg {
+            get {
+                object obj = ResourceManager.GetObject("makefg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

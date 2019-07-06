@@ -337,7 +337,7 @@
             this.conductores_btn.Name = "conductores_btn";
             this.conductores_btn.Size = new System.Drawing.Size(315, 113);
             this.conductores_btn.TabIndex = 2;
-            this.conductores_btn.Text = "Conductores";
+            this.conductores_btn.Text = "Empleados";
             this.conductores_btn.UseVisualStyleBackColor = false;
             this.conductores_btn.Click += new System.EventHandler(this.Contratos_btn_Click);
             // 

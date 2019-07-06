@@ -50,6 +50,31 @@ namespace Transporte_Escolar_Bonilla
             mensaje = "Datos del Cliente guardados con Éxito"; 
         }
 
+        public void NuevoEmpleado(string id, string nom, DateTime fecha, string genero, string tel, string correo, string dir, int puesto, double salario)
+        {
+            try
+            {
+                cmd = new SqlCommand("NuevoEmpleado", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@identidad", id);
+                cmd.Parameters.AddWithValue("@Nombr", nom);
+                cmd.Parameters.AddWithValue("@FNacimiento", fecha);
+                cmd.Parameters.AddWithValue("@Genero", genero);
+                cmd.Parameters.AddWithValue("@Telefono", tel);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@Direccion",dir);
+                cmd.Parameters.AddWithValue("@Puesto", puesto);
+                cmd.Parameters.AddWithValue("@Salario", salario);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+
+            mensaje = "Datos del Cliente guardados con Éxito";
+        }
+
         //Ingresar Nuevo Contrato
         public void NuevoContrato(string anio, string nomcli, string idcli, int tipo, DateTime fechai, double monto, DateTime fechaf)
         {
