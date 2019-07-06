@@ -297,8 +297,7 @@ namespace Transporte_Escolar_Bonilla
             else
             {
                 label7.Text = "Monto Total";
-                txtcantm.Enabled = false;
-                label17.Enabled = false;
+                label17.Text = "Meses a Pagar";
             }
         }
 

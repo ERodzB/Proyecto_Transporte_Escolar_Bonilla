@@ -205,7 +205,7 @@ namespace Transporte_Escolar_Bonilla
                             ant = double.Parse(txtant.Text);
 
                         ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
-                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant," ");
+                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant, "Otros");
 
                         /****** RUTA ******/
                         ing.NuevaRuta(txtorigen.Text + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");

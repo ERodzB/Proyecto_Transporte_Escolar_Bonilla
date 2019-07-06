@@ -98,22 +98,12 @@ create procedure NuevoContrato
 @Tipo_Pago varchar(50)
 as 
 BEGIN 
-	if(@Tipo_Contrato=1)
-	begin
+
 	insert into Contratos 
 	select CONCAT(@Anio_Contrato,'-',COUNT(*)+1,'-',SUBSTRING(@Nombre_Cliente_Contrato,1,1)), @Id_Cliente_Contrato, @Tipo_Contrato, @Monto_Mensual, 
 	@Cuotas_Mensuales, @Servicio, @Anticipo, @Fecha_Inicio_Contrato, @Monto_Contrato, @Fecha_Vencimiento, '1', 'CTr',@Tipo_Pago from Contratos
-	end
-	if(@Tipo_Contrato=2)
-	BEGIN
-	select CONCAT(@Anio_Contrato,'-',COUNT(*)+1,'-',SUBSTRING(@Nombre_Cliente_Contrato,1,1)), @Id_Cliente_Contrato, @Tipo_Contrato, @Monto_Mensual, 
-	@Cuotas_Mensuales, @Servicio, @Anticipo, @Fecha_Inicio_Contrato, @Monto_Contrato, @Fecha_Vencimiento, '1', 'CTr','Completo' from Contratos
-	END
 END 
 GO  
-select * from TipoContrato
-
-
 /* NO--------------------------------------Procedimiento para Crear una nueva Ruta---------------------------------------------------*/
 create procedure NuevaRuta
 	@Codigo_ruta varchar(50),
