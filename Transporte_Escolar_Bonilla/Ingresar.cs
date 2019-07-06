@@ -76,7 +76,7 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Ingresar Nuevo Contrato
-        public void NuevoContrato(string anio, string nomcli, string idcli, int tipo, DateTime fechai, double monto, DateTime fechaf, double montom, int meses, string ser, double ant)
+        public void NuevoContrato(string anio, string nomcli, string idcli, int tipo, DateTime fechai, double monto, DateTime fechaf, double montom, int meses, string ser, double ant, string pago)
         {
             try
             {
@@ -90,9 +90,10 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
                 cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechaf);
                 cmd.Parameters.AddWithValue("@Monto_Mensual", montom);
-                cmd.Parameters.AddWithValue("@Meses_Pagados", meses);
+                cmd.Parameters.AddWithValue("@Cuotas_Mensuales", meses);
                 cmd.Parameters.AddWithValue("@Servicio", ser);
                 cmd.Parameters.AddWithValue("@Anticipo", ant);
+                cmd.Parameters.AddWithValue("@Tipo_Pago", pago);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

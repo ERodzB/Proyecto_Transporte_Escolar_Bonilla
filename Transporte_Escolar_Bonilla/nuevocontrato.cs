@@ -27,7 +27,7 @@ namespace Transporte_Escolar_Bonilla
         private void Nuevocontrato_Load(object sender, EventArgs e)
         {
             combservicio.SelectedIndex = -1;
-
+            pago_cmb.SelectedIndex = 0;
             //Llenar ComboBox de Rutas
             combruta1.DataSource = consul.Combobox_Rutas();
             combruta1.DisplayMember = "Codigo_Ruta";
@@ -238,9 +238,18 @@ namespace Transporte_Escolar_Bonilla
                         codcli = combcliente.SelectedValue.ToString();
 
                         //Guardar datos de Contrato 
-                        ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
-                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00);
+                        if (pago_cmb.SelectedItem.Equals("Mensual"))
+                        {
+                            ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
+                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedItem.ToString());
 
+                        }
+                        else
+                        {
+                            ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
+                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedItem.ToString());
+
+                        }
                         //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
                         ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, combcliente.Text);
                         ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);
@@ -278,6 +287,29 @@ namespace Transporte_Escolar_Bonilla
 
                 }
             }
+        }
+
+        private void Pago_cmb_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (pago_cmb.SelectedItem.Equals("Mensual")) { 
+                label7.Text = "Cantidad de Meses";
+            }
+            else
+            {
+                label7.Text = "Monto Total";
+                txtcantm.Enabled = false;
+                label17.Enabled = false;
+            }
+        }
+
+        private void Pago_cmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

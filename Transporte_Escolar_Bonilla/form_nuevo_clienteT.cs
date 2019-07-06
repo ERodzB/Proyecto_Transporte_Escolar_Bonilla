@@ -118,16 +118,26 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("Debe llenar correctamente los datos de la Ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    DialogResult = MessageBox.Show("¿Desea Crear el Contrato con esos Datos?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (DialogResult == DialogResult.Yes)
                     {
                         anio = dtpinicio.Value.Year.ToString();  
 
                         //Guardar datos de Contrato 
-                        ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total, 
-                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00);
+                        
+                        if (pago_cmb.SelectedItem.Equals("Mensual"))
+                        {
+                            ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
+                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00,pago_cmb.SelectedItem.ToString());
 
+                        }
+                        else
+                        {
+                            ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
+                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedItem.ToString());
+
+                        }
                         //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
                         ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, form_nuevo_cliente.nomc);
                         ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);
@@ -238,7 +248,7 @@ namespace Transporte_Escolar_Bonilla
         private void Txtmontom_TextChanged(object sender, EventArgs e)
         {
             //Para calcular Monto Total
-         
+
 
         }
 
@@ -246,8 +256,7 @@ namespace Transporte_Escolar_Bonilla
         private void Txtcantm_TextChanged(object sender, EventArgs e)
         {
             //Para calcular Monto Total
-            
-
+           
             //Para calcular fecha de finalizacion (Se toma en cuenta si se presiona borrar)
             if (txtcantm.Text == "")
                 txtfechafin.Text = "";
@@ -296,6 +305,26 @@ namespace Transporte_Escolar_Bonilla
             //        txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(e.KeyChar.ToString())).ToString("dd/MM/yyyy");
             //    }
             //}      
+        }
+
+        private void Cliente2_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Pago_cmb_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (pago_cmb.SelectedItem.Equals("Mensual"))
+            {
+                label7.Text = "Cantidad de Meses";
+                label7.Text = "Monto Mensual";
+            }
+            else
+            {
+                label7.Text = "Monto Total";
+                txtcantm.Enabled = false;
+                label17.Enabled = false;
+            }
         }
     }
 }
