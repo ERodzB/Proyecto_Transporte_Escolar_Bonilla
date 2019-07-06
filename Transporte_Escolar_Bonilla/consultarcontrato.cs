@@ -25,7 +25,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Consultarcontrato_Load(object sender, EventArgs e)
         {
-            
+            con.cargardvg(dgvConsultaU);
         }
 
         private void BtnFiltrar_Click(object sender, EventArgs e)

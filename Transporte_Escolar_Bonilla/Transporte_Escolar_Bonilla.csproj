@@ -73,6 +73,18 @@
     <Compile Include="consultar_clientes.Designer.cs">
       <DependentUpon>consultar_clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultar_empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_empleados.Designer.cs">
+      <DependentUpon>Consultar_empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="consultar_rutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultar_rutas.Designer.cs">
+      <DependentUpon>consultar_rutas.cs</DependentUpon>
+    </Compile>
     <Compile Include="consulta_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,12 @@
     <Compile Include="nuevocontrato.Designer.cs">
       <DependentUpon>nuevocontrato.cs</DependentUpon>
     </Compile>
+    <Compile Include="nuevoempleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nuevoempleado.Designer.cs">
+      <DependentUpon>nuevoempleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="nuevoviaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +222,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="consultar_clientes.resx">
       <DependentUpon>consultar_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_empleados.resx">
+      <DependentUpon>Consultar_empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consultar_rutas.resx">
+      <DependentUpon>consultar_rutas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="consulta_usuarios.resx">
       <DependentUpon>consulta_usuarios.cs</DependentUpon>
@@ -249,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nuevocontrato.resx">
       <DependentUpon>nuevocontrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nuevoempleado.resx">
+      <DependentUpon>nuevoempleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nuevoviaje.resx">
       <DependentUpon>nuevoviaje.cs</DependentUpon>
@@ -302,6 +329,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\makefg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

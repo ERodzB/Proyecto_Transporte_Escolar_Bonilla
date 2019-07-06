@@ -12,6 +12,7 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class conductores_frm : Form
     {
+        Estetica Estetics = new Estetica();
         public conductores_frm()
         {
             InitializeComponent();
@@ -46,6 +47,18 @@ namespace Transporte_Escolar_Bonilla
         private void ConductorTop_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void NuevoConductor_btn_Click(object sender, EventArgs e)
+        {
+            nuevoempleado Nuevoempleado = new nuevoempleado();
+            Estetics.AbrirFormularios(Nuevoempleado, conductorMain_Panel);
+        }
+
+        private void ConsultaConductores_btn_Click(object sender, EventArgs e)
+        {
+            Consultar_empleados empleados = new Consultar_empleados();
+            Estetics.AbrirFormularios(empleados, conductorMain_Panel);
         }
     }
 }

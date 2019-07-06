@@ -35,7 +35,11 @@
             this.nuevoConductor_btn = new System.Windows.Forms.Button();
             this.consultaConductores_btn = new System.Windows.Forms.Button();
             this.conductorMain_Panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.conductorTop_panel.SuspendLayout();
+            this.conductorMain_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // conductorTop_panel
@@ -112,6 +116,7 @@
             this.nuevoConductor_btn.TabIndex = 3;
             this.nuevoConductor_btn.Text = "Nuevo Empleado";
             this.nuevoConductor_btn.UseVisualStyleBackColor = false;
+            this.nuevoConductor_btn.Click += new System.EventHandler(this.NuevoConductor_btn_Click);
             // 
             // consultaConductores_btn
             // 
@@ -127,14 +132,41 @@
             this.consultaConductores_btn.TabIndex = 2;
             this.consultaConductores_btn.Text = "Consultas";
             this.consultaConductores_btn.UseVisualStyleBackColor = false;
+            this.consultaConductores_btn.Click += new System.EventHandler(this.ConsultaConductores_btn_Click);
             // 
             // conductorMain_Panel
             // 
+            this.conductorMain_Panel.Controls.Add(this.label1);
+            this.conductorMain_Panel.Controls.Add(this.pictureBox1);
             this.conductorMain_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.conductorMain_Panel.Location = new System.Drawing.Point(0, 95);
             this.conductorMain_Panel.Name = "conductorMain_Panel";
             this.conductorMain_Panel.Size = new System.Drawing.Size(1108, 650);
             this.conductorMain_Panel.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(74, 472);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(954, 80);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Bienvenido al Módulo de Empleados\r\nSeleccione la acción que desea realizar del me" +
+    "nú superior\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.makefg;
+            this.pictureBox1.Location = new System.Drawing.Point(339, 47);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(427, 423);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // conductores_frm
             // 
@@ -148,6 +180,9 @@
             this.Name = "conductores_frm";
             this.Text = "conductores_frm";
             this.conductorTop_panel.ResumeLayout(false);
+            this.conductorMain_Panel.ResumeLayout(false);
+            this.conductorMain_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,5 +196,7 @@
         private System.Windows.Forms.Button nuevoConductor_btn;
         private System.Windows.Forms.Button consultaConductores_btn;
         private System.Windows.Forms.Panel conductorMain_Panel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
