@@ -95,7 +95,7 @@
             this.modificarConductores_btn.Name = "modificarConductores_btn";
             this.modificarConductores_btn.Size = new System.Drawing.Size(222, 95);
             this.modificarConductores_btn.TabIndex = 4;
-            this.modificarConductores_btn.Text = "Modificar Conductores";
+            this.modificarConductores_btn.Text = "Modificar Empleado";
             this.modificarConductores_btn.UseVisualStyleBackColor = false;
             // 
             // nuevoConductor_btn
@@ -110,7 +110,7 @@
             this.nuevoConductor_btn.Name = "nuevoConductor_btn";
             this.nuevoConductor_btn.Size = new System.Drawing.Size(216, 95);
             this.nuevoConductor_btn.TabIndex = 3;
-            this.nuevoConductor_btn.Text = "Nuevo Conductor";
+            this.nuevoConductor_btn.Text = "Nuevo Empleado";
             this.nuevoConductor_btn.UseVisualStyleBackColor = false;
             // 
             // consultaConductores_btn

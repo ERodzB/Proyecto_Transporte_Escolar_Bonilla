@@ -51,7 +51,7 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Ingresar Nuevo Contrato
-        public void NuevoContrato(string anio, string nomcli, string idcli, int tipo, DateTime fechai, double monto, DateTime fechaf)
+        public void NuevoContrato(string anio, string nomcli, string idcli, int tipo, DateTime fechai, double monto, DateTime fechaf, double montom, int meses, string ser, double ant)
         {
             try
             {
@@ -64,6 +64,10 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Fecha_Inicio_Contrato", fechai);
                 cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
                 cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechaf);
+                cmd.Parameters.AddWithValue("@Monto_Mensual", montom);
+                cmd.Parameters.AddWithValue("@Meses_Pagados", meses);
+                cmd.Parameters.AddWithValue("@Servicio", ser);
+                cmd.Parameters.AddWithValue("@Anticipo", ant);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -74,8 +78,46 @@ namespace Transporte_Escolar_Bonilla
             mensaje = "Contrato guardado con Éxito";
         }
 
+        //Vincular Ruta con Contrato
+        public void RutaContrato(string cod, string parada, string anio, string nomcli)
+        {
+            try
+            {
+                cmd = new SqlCommand("RutaContrato", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Ruta", cod);
+                cmd.Parameters.AddWithValue("@Parada_Contrato", parada);
+                cmd.Parameters.AddWithValue("@Anio_Contrato", anio);
+                cmd.Parameters.AddWithValue("@Nombre_Cliente_Contrato", nomcli);
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+        }
+
+        //Actualizar Pasajeros
+        public void Pasajeros(string cod, string veh, string horario)
+        {
+            try
+            {
+                cmd = new SqlCommand("Pasajeros", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Ruta", cod);
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", veh);
+                cmd.Parameters.AddWithValue("@Horario", horario);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+        }
+
+
         //Ingresar Nueva Ruta
-        public void NuevaRuta(string cod, string nom, string desc, string contrato, string anio, string nomcli, int opc)
+        public void NuevaRuta(string cod, string nom, string desc, string tipor)
         {
             try
             {
@@ -84,10 +126,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Codigo_Ruta", cod);
                 cmd.Parameters.AddWithValue("@Nombre_Ruta", nom);
                 cmd.Parameters.AddWithValue("@Descripcion_Ruta", desc);
-                cmd.Parameters.AddWithValue("@Codigo_Contrato", contrato);
-                cmd.Parameters.AddWithValue("@Anio_Contrato", anio);
-                cmd.Parameters.AddWithValue("@Nombre_Cliente_Contrato", nomcli);
-                cmd.Parameters.AddWithValue("@Opcion", opc);
+                cmd.Parameters.AddWithValue("@Tipo_Ruta", tipor);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -97,7 +136,7 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Asignar Horarios y Vehiculos a las Rutas
-        public void AsignarHoraVeh(string cod, string mat, string horas, string horae) 
+        public void AsignarHoraVeh(string cod, string mat, string horas, string horae, int pa) 
         {
             try
             {
@@ -106,7 +145,8 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Codigo_Ruta", cod);
                 cmd.Parameters.AddWithValue("@Codigo_Vehiculo", mat);
                 cmd.Parameters.AddWithValue("@Horario_Salida", horas);
-                cmd.Parameters.AddWithValue("@Horario_Entrada", horae);  
+                cmd.Parameters.AddWithValue("@Horario_Entrada", horae);
+                cmd.Parameters.AddWithValue("@Pasajeros", pa);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

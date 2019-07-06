@@ -260,7 +260,7 @@
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(315, 67);
             this.close_btn.TabIndex = 7;
-            this.close_btn.Text = "Cerrar Sessión";
+            this.close_btn.Text = "Cerrar Sesión";
             this.close_btn.UseVisualStyleBackColor = false;
             this.close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
@@ -337,7 +337,7 @@
             this.conductores_btn.Name = "conductores_btn";
             this.conductores_btn.Size = new System.Drawing.Size(315, 113);
             this.conductores_btn.TabIndex = 2;
-            this.conductores_btn.Text = "Conductores";
+            this.conductores_btn.Text = "Empleados";
             this.conductores_btn.UseVisualStyleBackColor = false;
             this.conductores_btn.Click += new System.EventHandler(this.Contratos_btn_Click);
             // 

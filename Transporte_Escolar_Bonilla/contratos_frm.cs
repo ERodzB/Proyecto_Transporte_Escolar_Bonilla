@@ -21,27 +21,28 @@ namespace Transporte_Escolar_Bonilla
             {
                 consultaContratos_btn.Visible = true;
                 Contratos_btn.Visible = true;
-                modificarContratos_btn.Visible = true;
+                ContratosPrivado_btn.Visible = true;
             }
 
             if (ConexionBD.Acceso == 2)
             {
                 consultaContratos_btn.Visible = true;
                 Contratos_btn.Visible = true;
-                modificarContratos_btn.Visible = true;
+                ContratosPrivado_btn.Visible = true;
             }
             if (ConexionBD.Acceso == 3)
             {
                 consultaContratos_btn.Visible = true;
                 Contratos_btn.Visible = false;
-                modificarContratos_btn.Visible =false;
+                ContratosPrivado_btn.Visible =false;
             }
 
 
         }
 
+        //TEMPORAL
         private void Contratos_btn_Click(object sender, EventArgs e)
-        {
+        {           
             nuevocontrato ncontrato = new nuevocontrato();
             estetics.AbrirFormularios(ncontrato, contratosMain_panel);
         }
@@ -52,16 +53,24 @@ namespace Transporte_Escolar_Bonilla
             estetics.AbrirFormularios(ccontrato, contratosMain_panel);
         }
 
+        //PRIVADO
         private void ModificarContratos_btn_Click(object sender, EventArgs e)
-        {
-            contrato_panel modcon = new contrato_panel();
-            estetics.AbrirFormularios(modcon, contratosMain_panel);
+        {      
+            nuevoviaje viaje = new nuevoviaje();
+            estetics.AbrirFormularios(viaje, contratosMain_panel);
             //label1.Visible = false;//La form no sobreescribia el label
         }
 
         private void Label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //MODIFICAR
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            contrato_panel modcon = new contrato_panel();
+            estetics.AbrirFormularios(modcon, contratosMain_panel);
         }
     }
 }

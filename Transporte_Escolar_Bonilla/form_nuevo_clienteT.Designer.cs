@@ -1,6 +1,6 @@
 ﻿namespace Transporte_Escolar_Bonilla
 {
-    partial class nuevocontrato
+    partial class form_nuevo_clienteT
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.cliente2_panel = new System.Windows.Forms.Panel();
             this.txtpa2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtpa1 = new System.Windows.Forms.TextBox();
@@ -62,47 +63,87 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtcantm = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.combcliente = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.cliente2_panel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // cliente2_panel
+            // 
+            this.cliente2_panel.Controls.Add(this.txtpa2);
+            this.cliente2_panel.Controls.Add(this.label12);
+            this.cliente2_panel.Controls.Add(this.txtpa1);
+            this.cliente2_panel.Controls.Add(this.label11);
+            this.cliente2_panel.Controls.Add(this.labtotal);
+            this.cliente2_panel.Controls.Add(this.label10);
+            this.cliente2_panel.Controls.Add(this.label7);
+            this.cliente2_panel.Controls.Add(this.txtmontom);
+            this.cliente2_panel.Controls.Add(this.txtfechafin);
+            this.cliente2_panel.Controls.Add(this.combhora2);
+            this.cliente2_panel.Controls.Add(this.label5);
+            this.cliente2_panel.Controls.Add(this.combruta2);
+            this.cliente2_panel.Controls.Add(this.label6);
+            this.cliente2_panel.Controls.Add(this.labv2);
+            this.cliente2_panel.Controls.Add(this.combveh2);
+            this.cliente2_panel.Controls.Add(this.label8);
+            this.cliente2_panel.Controls.Add(this.label9);
+            this.cliente2_panel.Controls.Add(this.combhora1);
+            this.cliente2_panel.Controls.Add(this.label2);
+            this.cliente2_panel.Controls.Add(this.combruta1);
+            this.cliente2_panel.Controls.Add(this.label1);
+            this.cliente2_panel.Controls.Add(this.combservicio);
+            this.cliente2_panel.Controls.Add(this.labv1);
+            this.cliente2_panel.Controls.Add(this.dtpinicio);
+            this.cliente2_panel.Controls.Add(this.combveh1);
+            this.cliente2_panel.Controls.Add(this.label22);
+            this.cliente2_panel.Controls.Add(this.panel2);
+            this.cliente2_panel.Controls.Add(this.label18);
+            this.cliente2_panel.Controls.Add(this.label3);
+            this.cliente2_panel.Controls.Add(this.label19);
+            this.cliente2_panel.Controls.Add(this.botcrear);
+            this.cliente2_panel.Controls.Add(this.label17);
+            this.cliente2_panel.Controls.Add(this.txtcantm);
+            this.cliente2_panel.Controls.Add(this.label4);
+            this.cliente2_panel.Location = new System.Drawing.Point(0, 0);
+            this.cliente2_panel.Name = "cliente2_panel";
+            this.cliente2_panel.Size = new System.Drawing.Size(828, 527);
+            this.cliente2_panel.TabIndex = 0;
             // 
             // txtpa2
             // 
             this.txtpa2.Enabled = false;
             this.txtpa2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpa2.Location = new System.Drawing.Point(534, 264);
+            this.txtpa2.Location = new System.Drawing.Point(534, 266);
             this.txtpa2.Name = "txtpa2";
             this.txtpa2.Size = new System.Drawing.Size(241, 22);
-            this.txtpa2.TabIndex = 237;
+            this.txtpa2.TabIndex = 203;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(530, 234);
+            this.label12.Location = new System.Drawing.Point(530, 236);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 24);
-            this.label12.TabIndex = 236;
+            this.label12.TabIndex = 202;
             this.label12.Text = "Parada:";
             // 
             // txtpa1
             // 
             this.txtpa1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpa1.Location = new System.Drawing.Point(534, 143);
+            this.txtpa1.Location = new System.Drawing.Point(534, 145);
             this.txtpa1.Name = "txtpa1";
             this.txtpa1.Size = new System.Drawing.Size(241, 22);
-            this.txtpa1.TabIndex = 235;
+            this.txtpa1.TabIndex = 201;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(530, 113);
+            this.label11.Location = new System.Drawing.Point(530, 115);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 24);
-            this.label11.TabIndex = 234;
+            this.label11.TabIndex = 200;
             this.label11.Text = "Parada:";
             // 
             // labtotal
@@ -110,10 +151,10 @@
             this.labtotal.AutoSize = true;
             this.labtotal.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labtotal.ForeColor = System.Drawing.SystemColors.Window;
-            this.labtotal.Location = new System.Drawing.Point(596, 403);
+            this.labtotal.Location = new System.Drawing.Point(596, 405);
             this.labtotal.Name = "labtotal";
             this.labtotal.Size = new System.Drawing.Size(74, 24);
-            this.labtotal.TabIndex = 233;
+            this.labtotal.TabIndex = 199;
             this.labtotal.Text = "L Total";
             this.labtotal.Visible = false;
             // 
@@ -122,10 +163,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(494, 371);
+            this.label10.Location = new System.Drawing.Point(494, 373);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(298, 24);
-            this.label10.TabIndex = 232;
+            this.label10.TabIndex = 198;
             this.label10.Text = "El Monto Total con ISV es de";
             // 
             // label7
@@ -133,29 +174,29 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(52, 371);
+            this.label7.Location = new System.Drawing.Point(52, 373);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(169, 24);
-            this.label7.TabIndex = 231;
+            this.label7.TabIndex = 197;
             this.label7.Text = "Monto Mensual";
             // 
             // txtmontom
             // 
             this.txtmontom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmontom.Location = new System.Drawing.Point(56, 403);
+            this.txtmontom.Location = new System.Drawing.Point(56, 405);
             this.txtmontom.Name = "txtmontom";
             this.txtmontom.Size = new System.Drawing.Size(128, 22);
-            this.txtmontom.TabIndex = 230;
-            this.txtmontom.TextChanged += new System.EventHandler(this.Txtmontom_TextChanged_1);
+            this.txtmontom.TabIndex = 196;
+            this.txtmontom.TextChanged += new System.EventHandler(this.Txtmontom_TextChanged);
             // 
             // txtfechafin
             // 
             this.txtfechafin.Enabled = false;
             this.txtfechafin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfechafin.Location = new System.Drawing.Point(301, 471);
+            this.txtfechafin.Location = new System.Drawing.Point(301, 473);
             this.txtfechafin.Name = "txtfechafin";
             this.txtfechafin.Size = new System.Drawing.Size(145, 22);
-            this.txtfechafin.TabIndex = 229;
+            this.txtfechafin.TabIndex = 195;
             // 
             // combhora2
             // 
@@ -163,21 +204,21 @@
             this.combhora2.Enabled = false;
             this.combhora2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combhora2.FormattingEnabled = true;
-            this.combhora2.Location = new System.Drawing.Point(214, 261);
+            this.combhora2.Location = new System.Drawing.Point(214, 263);
             this.combhora2.Name = "combhora2";
             this.combhora2.Size = new System.Drawing.Size(122, 25);
-            this.combhora2.TabIndex = 227;
-            this.combhora2.SelectedIndexChanged += new System.EventHandler(this.Combhora2_SelectedIndexChanged_1);
+            this.combhora2.TabIndex = 193;
+            this.combhora2.SelectedIndexChanged += new System.EventHandler(this.Combhora2_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(210, 234);
+            this.label5.Location = new System.Drawing.Point(210, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 24);
-            this.label5.TabIndex = 228;
+            this.label5.TabIndex = 194;
             this.label5.Text = "Horario:";
             // 
             // combruta2
@@ -186,21 +227,21 @@
             this.combruta2.Enabled = false;
             this.combruta2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combruta2.FormattingEnabled = true;
-            this.combruta2.Location = new System.Drawing.Point(56, 261);
+            this.combruta2.Location = new System.Drawing.Point(56, 263);
             this.combruta2.Name = "combruta2";
             this.combruta2.Size = new System.Drawing.Size(122, 25);
-            this.combruta2.TabIndex = 225;
-            this.combruta2.SelectedIndexChanged += new System.EventHandler(this.Combruta2_SelectedIndexChanged_1);
+            this.combruta2.TabIndex = 191;
+            this.combruta2.SelectedIndexChanged += new System.EventHandler(this.Combruta2_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(52, 234);
+            this.label6.Location = new System.Drawing.Point(52, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 24);
-            this.label6.TabIndex = 226;
+            this.label6.TabIndex = 192;
             this.label6.Text = "Ruta:";
             // 
             // labv2
@@ -208,10 +249,10 @@
             this.labv2.AutoSize = true;
             this.labv2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labv2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.labv2.Location = new System.Drawing.Point(355, 300);
+            this.labv2.Location = new System.Drawing.Point(355, 302);
             this.labv2.Name = "labv2";
             this.labv2.Size = new System.Drawing.Size(31, 19);
-            this.labv2.TabIndex = 224;
+            this.labv2.TabIndex = 190;
             this.labv2.Text = "Fin";
             this.labv2.Visible = false;
             // 
@@ -221,21 +262,21 @@
             this.combveh2.Enabled = false;
             this.combveh2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combveh2.FormattingEnabled = true;
-            this.combveh2.Location = new System.Drawing.Point(370, 261);
+            this.combveh2.Location = new System.Drawing.Point(370, 263);
             this.combveh2.Name = "combveh2";
             this.combveh2.Size = new System.Drawing.Size(122, 25);
-            this.combveh2.TabIndex = 221;
-            this.combveh2.SelectedIndexChanged += new System.EventHandler(this.Combveh2_SelectedIndexChanged_1);
+            this.combveh2.TabIndex = 187;
+            this.combveh2.SelectedIndexChanged += new System.EventHandler(this.Combveh2_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(366, 234);
+            this.label8.Location = new System.Drawing.Point(366, 236);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 24);
-            this.label8.TabIndex = 223;
+            this.label8.TabIndex = 189;
             this.label8.Text = "Vehículo:";
             // 
             // label9
@@ -243,10 +284,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(52, 193);
+            this.label9.Location = new System.Drawing.Point(52, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 24);
-            this.label9.TabIndex = 222;
+            this.label9.TabIndex = 188;
             this.label9.Text = "Vuelta";
             // 
             // combhora1
@@ -254,21 +295,21 @@
             this.combhora1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combhora1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combhora1.FormattingEnabled = true;
-            this.combhora1.Location = new System.Drawing.Point(214, 140);
+            this.combhora1.Location = new System.Drawing.Point(214, 142);
             this.combhora1.Name = "combhora1";
             this.combhora1.Size = new System.Drawing.Size(122, 25);
-            this.combhora1.TabIndex = 219;
-            this.combhora1.SelectedIndexChanged += new System.EventHandler(this.Combhora1_SelectedIndexChanged_1);
+            this.combhora1.TabIndex = 185;
+            this.combhora1.SelectedIndexChanged += new System.EventHandler(this.Combhora1_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(210, 113);
+            this.label2.Location = new System.Drawing.Point(210, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 24);
-            this.label2.TabIndex = 220;
+            this.label2.TabIndex = 186;
             this.label2.Text = "Horario:";
             // 
             // combruta1
@@ -276,21 +317,21 @@
             this.combruta1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combruta1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combruta1.FormattingEnabled = true;
-            this.combruta1.Location = new System.Drawing.Point(56, 140);
+            this.combruta1.Location = new System.Drawing.Point(56, 142);
             this.combruta1.Name = "combruta1";
             this.combruta1.Size = new System.Drawing.Size(122, 25);
-            this.combruta1.TabIndex = 217;
-            this.combruta1.SelectedIndexChanged += new System.EventHandler(this.Combruta1_SelectedIndexChanged_1);
+            this.combruta1.TabIndex = 183;
+            this.combruta1.SelectedIndexChanged += new System.EventHandler(this.Combruta1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(52, 113);
+            this.label1.Location = new System.Drawing.Point(52, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 24);
-            this.label1.TabIndex = 218;
+            this.label1.TabIndex = 184;
             this.label1.Text = "Ruta:";
             // 
             // combservicio
@@ -301,10 +342,10 @@
             this.combservicio.Items.AddRange(new object[] {
             "Bus Completo",
             "Medio Bus"});
-            this.combservicio.Location = new System.Drawing.Point(250, 27);
+            this.combservicio.Location = new System.Drawing.Point(370, 31);
             this.combservicio.Name = "combservicio";
             this.combservicio.Size = new System.Drawing.Size(146, 25);
-            this.combservicio.TabIndex = 216;
+            this.combservicio.TabIndex = 182;
             this.combservicio.SelectedIndexChanged += new System.EventHandler(this.Combservicio_SelectedIndexChanged);
             // 
             // labv1
@@ -312,60 +353,61 @@
             this.labv1.AutoSize = true;
             this.labv1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labv1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.labv1.Location = new System.Drawing.Point(355, 179);
+            this.labv1.Location = new System.Drawing.Point(355, 181);
             this.labv1.Name = "labv1";
             this.labv1.Size = new System.Drawing.Size(31, 19);
-            this.labv1.TabIndex = 215;
+            this.labv1.TabIndex = 180;
             this.labv1.Text = "Fin";
             this.labv1.Visible = false;
             // 
             // dtpinicio
             // 
-            this.dtpinicio.Location = new System.Drawing.Point(301, 402);
+            this.dtpinicio.Location = new System.Drawing.Point(301, 404);
             this.dtpinicio.Name = "dtpinicio";
             this.dtpinicio.Size = new System.Drawing.Size(145, 20);
-            this.dtpinicio.TabIndex = 214;
-            this.dtpinicio.ValueChanged += new System.EventHandler(this.Dtpinicio_ValueChanged_1);
+            this.dtpinicio.TabIndex = 179;
+            this.dtpinicio.ValueChanged += new System.EventHandler(this.Dtpinicio_ValueChanged);
             // 
             // combveh1
             // 
             this.combveh1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combveh1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combveh1.FormattingEnabled = true;
-            this.combveh1.Location = new System.Drawing.Point(370, 140);
+            this.combveh1.Location = new System.Drawing.Point(370, 142);
             this.combveh1.Name = "combveh1";
             this.combveh1.Size = new System.Drawing.Size(122, 25);
-            this.combveh1.TabIndex = 204;
-            this.combveh1.SelectedIndexChanged += new System.EventHandler(this.Combveh1_SelectedIndexChanged);
+            this.combveh1.TabIndex = 5;
+            this.combveh1.SelectedIndexChanged += new System.EventHandler(this.Combvh1r1_SelectedIndexChanged);
+            this.combveh1.SelectedValueChanged += new System.EventHandler(this.Combvh1r1_SelectedValueChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.Window;
-            this.label22.Location = new System.Drawing.Point(366, 113);
+            this.label22.Location = new System.Drawing.Point(366, 115);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(108, 24);
-            this.label22.TabIndex = 213;
+            this.label22.TabIndex = 154;
             this.label22.Text = "Vehículo:";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 352);
+            this.panel2.Location = new System.Drawing.Point(0, 354);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(831, 3);
-            this.panel2.TabIndex = 212;
+            this.panel2.TabIndex = 153;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.Window;
-            this.label18.Location = new System.Drawing.Point(152, 27);
+            this.label18.Location = new System.Drawing.Point(272, 31);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(92, 24);
-            this.label18.TabIndex = 207;
+            this.label18.TabIndex = 133;
             this.label18.Text = "Servicio:";
             // 
             // label3
@@ -373,10 +415,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(297, 442);
+            this.label3.Location = new System.Drawing.Point(297, 444);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 24);
-            this.label3.TabIndex = 210;
+            this.label3.TabIndex = 136;
             this.label3.Text = "Finalización";
             // 
             // label19
@@ -384,10 +426,10 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.Window;
-            this.label19.Location = new System.Drawing.Point(52, 73);
+            this.label19.Location = new System.Drawing.Point(52, 75);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(43, 24);
-            this.label19.TabIndex = 208;
+            this.label19.TabIndex = 134;
             this.label19.Text = "Ida";
             // 
             // botcrear
@@ -396,148 +438,66 @@
             this.botcrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
-            this.botcrear.Location = new System.Drawing.Point(578, 458);
+            this.botcrear.Location = new System.Drawing.Point(578, 460);
             this.botcrear.Name = "botcrear";
             this.botcrear.Size = new System.Drawing.Size(109, 42);
-            this.botcrear.TabIndex = 211;
+            this.botcrear.TabIndex = 137;
             this.botcrear.Text = "Crear";
             this.botcrear.UseVisualStyleBackColor = false;
-            this.botcrear.Click += new System.EventHandler(this.Botcrear_Click_1);
+            this.botcrear.Click += new System.EventHandler(this.Botcrear_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.Window;
-            this.label17.Location = new System.Drawing.Point(52, 442);
+            this.label17.Location = new System.Drawing.Point(52, 444);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(209, 24);
-            this.label17.TabIndex = 206;
+            this.label17.TabIndex = 132;
             this.label17.Text = "Cantidad de Meses";
             // 
             // txtcantm
             // 
             this.txtcantm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcantm.Location = new System.Drawing.Point(56, 471);
+            this.txtcantm.Location = new System.Drawing.Point(56, 473);
             this.txtcantm.Name = "txtcantm";
             this.txtcantm.Size = new System.Drawing.Size(128, 22);
-            this.txtcantm.TabIndex = 205;
-            this.txtcantm.TextChanged += new System.EventHandler(this.Txtcantm_TextChanged_1);
-            this.txtcantm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcantm_KeyPress_1);
+            this.txtcantm.TabIndex = 129;
+            this.txtcantm.TextChanged += new System.EventHandler(this.Txtcantm_TextChanged);
+            this.txtcantm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcantm_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(297, 371);
+            this.label4.Location = new System.Drawing.Point(297, 373);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 24);
-            this.label4.TabIndex = 209;
+            this.label4.TabIndex = 135;
             this.label4.Text = "Inicio";
             // 
-            // combcliente
-            // 
-            this.combcliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combcliente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combcliente.FormattingEnabled = true;
-            this.combcliente.Items.AddRange(new object[] {
-            "Bus Completo",
-            "Medio Bus"});
-            this.combcliente.Location = new System.Drawing.Point(534, 26);
-            this.combcliente.Name = "combcliente";
-            this.combcliente.Size = new System.Drawing.Size(146, 25);
-            this.combcliente.TabIndex = 239;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(436, 26);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 24);
-            this.label13.TabIndex = 238;
-            this.label13.Text = "Cliente:";
-            // 
-            // nuevocontrato
+            // form_nuevo_clienteT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(831, 528);
-            this.Controls.Add(this.combcliente);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtpa2);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtpa1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.labtotal);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtmontom);
-            this.Controls.Add(this.txtfechafin);
-            this.Controls.Add(this.combhora2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.combruta2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.labv2);
-            this.Controls.Add(this.combveh2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.combhora1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.combruta1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.combservicio);
-            this.Controls.Add(this.labv1);
-            this.Controls.Add(this.dtpinicio);
-            this.Controls.Add(this.combveh1);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.botcrear);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.txtcantm);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(828, 527);
+            this.Controls.Add(this.cliente2_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "nuevocontrato";
-            this.Text = "nuevocontrato";
-            this.Load += new System.EventHandler(this.Nuevocontrato_Load);
+            this.Name = "form_nuevo_clienteT";
+            this.Text = "form_nuevo_cliente2";
+            this.Load += new System.EventHandler(this.Form_nuevo_cliente2_Load);
+            this.cliente2_panel.ResumeLayout(false);
+            this.cliente2_panel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtpa2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtpa1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label labtotal;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtmontom;
-        private System.Windows.Forms.TextBox txtfechafin;
-        private System.Windows.Forms.ComboBox combhora2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox combruta2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label labv2;
-        private System.Windows.Forms.ComboBox combveh2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox combhora1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox combruta1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox combservicio;
-        private System.Windows.Forms.Label labv1;
-        private System.Windows.Forms.DateTimePicker dtpinicio;
+        private System.Windows.Forms.Panel cliente2_panel;
         private System.Windows.Forms.ComboBox combveh1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel2;
@@ -548,7 +508,29 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtcantm;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox combcliente;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker dtpinicio;
+        private System.Windows.Forms.Label labv1;
+        private System.Windows.Forms.ComboBox combhora1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox combruta1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox combservicio;
+        private System.Windows.Forms.ComboBox combhora2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox combruta2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labv2;
+        private System.Windows.Forms.ComboBox combveh2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtfechafin;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtmontom;
+        private System.Windows.Forms.Label labtotal;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtpa2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtpa1;
+        private System.Windows.Forms.Label label11;
     }
 }

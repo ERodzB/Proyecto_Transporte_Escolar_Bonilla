@@ -27,11 +27,6 @@ namespace Transporte_Escolar_Bonilla
         //Carga
         private void Form_nueva_ruta_Load(object sender, EventArgs e)
         {
-            //Llenar Combobox de Contrato
-            combcontrato.DataSource = consul.Combobox_Contrato();
-            combcontrato.DisplayMember = "Contratos"; //Mostrara los nombres en el combobox    
-            combcontrato.SelectedIndex = -1; //No muestra nada al inicio 
-
             //Llenar Combobox de Vehiculos
             combveh1.DataSource = consul.Combobox_Vehiculos();
             combveh1.DisplayMember = "Codigo_vehiculo";
@@ -105,12 +100,6 @@ namespace Transporte_Escolar_Bonilla
             {
                 cont++;
                 error += "Fin - "; 
-            }
-
-            if(combcontrato.SelectedIndex == -1)
-            {
-                cont++;
-                error += "Contrato - "; 
             }
 
             //Validar Horarios
@@ -204,17 +193,17 @@ namespace Transporte_Escolar_Bonilla
                 if(DialogResult == DialogResult.Yes)
                 {
                     //Guardar Ruta con Contrato
-                    ing.NuevaRuta(txtinicio.Text + txtfin.Text, txtinicio.Text + " - " + txtfin.Text, "Puntos clave desde " + txtinicio.Text + " hasta " + txtfin.Text, combcontrato.Text, " "," ", 2);
+                    ing.NuevaRuta(txtinicio.Text + txtfin.Text, txtinicio.Text + " - " + txtfin.Text, "Ruta desde " + txtinicio.Text + " hasta " + txtfin.Text, "Temporal");
 
                     //Guardar Ruta con Horarios Y Vehiculos 
                     if (dtphoras1.Checked)
-                        ing.AsignarHoraVeh(txtinicio.Text + txtfin.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text);
+                        ing.AsignarHoraVeh(txtinicio.Text + txtfin.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, 0);
 
                     if (dtphoras2.Checked)
-                        ing.AsignarHoraVeh(txtinicio.Text + txtfin.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text);
+                        ing.AsignarHoraVeh(txtinicio.Text + txtfin.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text, 0);
 
                     if (dtphoras3.Checked)
-                        ing.AsignarHoraVeh(txtinicio.Text + txtfin.Text, combveh3.Text, dtphoras3.Text, dtphorae3.Text);
+                        ing.AsignarHoraVeh(txtinicio.Text + txtfin.Text, combveh3.Text, dtphoras3.Text, dtphorae3.Text, 0); 
 
                     MessageBox.Show("Ruta creada con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
 
@@ -231,7 +220,6 @@ namespace Transporte_Escolar_Bonilla
                     labv2.Visible = false;
                     labv3.Visible = false;
 
-                    combcontrato.SelectedIndex = -1;
                     combveh1.SelectedIndex = -1;
                     combveh2.SelectedIndex = -1;
                     combveh3.SelectedIndex = -1;

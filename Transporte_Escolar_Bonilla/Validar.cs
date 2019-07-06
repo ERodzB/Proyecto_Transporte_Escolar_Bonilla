@@ -171,6 +171,27 @@ namespace Transporte_Escolar_Bonilla
             return x;
         }
 
+        //Validar capacidad Vehiculo
+        public int validarCap(string cod, int pa)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarCap", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", cod);
+                cmd.Parameters.AddWithValue("@Pasajeros", pa);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+
+            return x;
+        }
+
         //Validar Horarios Repetidos para un mismo vehiculo
         public void ValidarHora(DateTimePicker h1, DateTimePicker h2, ComboBox va, ComboBox vb)
         {

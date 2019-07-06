@@ -48,7 +48,8 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table; 
         }
-   
+
+        //Llenar Combobox de Clientes
         public DataTable combox_Clientes()
         {
             table = new DataTable();
@@ -57,7 +58,8 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table;
         }
-        //Llenar Combobox de Clientes
+
+        //Llenar Combobox de Estados
         public DataTable combox_estados()
         {
             table = new DataTable();
@@ -110,15 +112,27 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Llenar ComboBox de Horarios
-        //public DataTable Combobox_Horarios(string ruta)
-        //{
-        //    table = new DataTable();
-        //    Adapter = new SqlDataAdapter("ComboboxHorarios", conexionBD);
-        //    Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //    Adapter.SelectCommand.Parameters.AddWithValue("@Codigo_Ruta", ruta);  
-        //    Adapter.Fill(table);
-        //    return table;
-        //}
+        public DataTable Combobox_Horarios(string ruta)
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxHorarios", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.SelectCommand.Parameters.AddWithValue("@Codigo_Ruta", ruta);
+            Adapter.Fill(table);
+            return table;
+        }
+
+        //LLenar ComboBox Vehiculos segun Ruta y Horario
+        public DataTable Combobox_VehiculosRH(string codr, string horario)
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxVehiculosRH", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.SelectCommand.Parameters.AddWithValue("@Codigo_Ruta", codr);
+            Adapter.SelectCommand.Parameters.AddWithValue("@Horario", horario);
+            Adapter.Fill(table);
+            return table;
+        }
 
         public DataTable llenarPerfiles()
         {

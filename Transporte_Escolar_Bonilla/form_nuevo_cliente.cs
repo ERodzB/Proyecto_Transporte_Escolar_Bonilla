@@ -15,10 +15,12 @@ namespace Transporte_Escolar_Bonilla
         Estetica Estetics = new Estetica();
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
+        Consultar consul = new Consultar();
 
-        //Llevar id y nombre de cliente para asociarlo al contrato
+        //Llevar id, nombre de cliente y tipo contrato para asociarlo al contrato
         static public string id;
         static public string nomc;
+        static public int tipoc;
 
         public form_nuevo_cliente()
         {
@@ -28,6 +30,11 @@ namespace Transporte_Escolar_Bonilla
         //Carga
         private void Form_nuevo_cliente_Load(object sender, EventArgs e)
         {
+            //Llenar Combobox de Tipo de Contrato
+            combTipoContrato.DataSource = consul.Combobox_TipoContrato();
+            combTipoContrato.DisplayMember = "Tipo_Contrato";
+            combTipoContrato.SelectedIndex = -1;
+
             txtid.Focus();
         } 
 
@@ -70,17 +77,21 @@ namespace Transporte_Escolar_Bonilla
             if (string.IsNullOrEmpty(txtid.Text))
                 cont++;
             else
-                if (string.IsNullOrEmpty(txtnom.Text)) 
+                if (string.IsNullOrEmpty(txtnom.Text))
                 cont++;
             else
                 if (string.IsNullOrEmpty(txtdir.Text))
-                cont++; 
+                cont++;
             else
-                if (string.IsNullOrEmpty(txttel.Text))        
+                if (string.IsNullOrEmpty(txttel.Text))
+                cont++;
+            else
+                if (combTipoContrato.SelectedIndex == -1)
                 cont++;
 
+
             if (cont > 0) 
-                MessageBox.Show("Debe Llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 if(val.validarCliente(txtid.Text) == 1)
@@ -101,9 +112,10 @@ namespace Transporte_Escolar_Bonilla
                          
                         MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        //Guardar id y nombre
+                        //Guardar id, nombre y tipoc 
                         id = txtid.Text;
-                        nomc = txtnom.Text;     
+                        nomc = txtnom.Text;
+                        tipoc = combTipoContrato.SelectedIndex + 1;
 
                         //Limpieza
                         txtnom.Clear();
@@ -111,9 +123,18 @@ namespace Transporte_Escolar_Bonilla
                         txtdir.Clear();
                         txttel.Clear();
                         txtcorreo.Clear();
+                        combTipoContrato.SelectedIndex = -1;
 
-                        form_nuevo_cliente2 cli2 = new form_nuevo_cliente2();
-                        Estetics.AbrirFormularios(cli2, cliente1_panel);
+                        if(combTipoContrato.Text == "Temporal")
+                        {
+                            form_nuevo_clienteT cliT = new form_nuevo_clienteT();
+                            Estetics.AbrirFormularios(cliT, cliente1_panel);
+                        }
+                        else
+                        {
+                            form_nuevo_clienteP clip = new form_nuevo_clienteP();
+                            Estetics.AbrirFormularios(clip, cliente1_panel);
+                        }
                     }
                 }
             }

@@ -128,11 +128,17 @@
     <Compile Include="form_nuevo_cliente.Designer.cs">
       <DependentUpon>form_nuevo_cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_nuevo_cliente2.cs">
+    <Compile Include="form_nuevo_clienteP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_nuevo_cliente2.Designer.cs">
-      <DependentUpon>form_nuevo_cliente2.cs</DependentUpon>
+    <Compile Include="form_nuevo_clienteP.Designer.cs">
+      <DependentUpon>form_nuevo_clienteP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_nuevo_clienteT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_nuevo_clienteT.Designer.cs">
+      <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
     </Compile>
     <Compile Include="Ingresar.cs" />
     <Compile Include="Modificar.cs" />
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="nuevocontrato.Designer.cs">
       <DependentUpon>nuevocontrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nuevoviaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nuevoviaje.Designer.cs">
+      <DependentUpon>nuevoviaje.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,8 +232,11 @@
     <EmbeddedResource Include="form_nuevo_cliente.resx">
       <DependentUpon>form_nuevo_cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_nuevo_cliente2.resx">
-      <DependentUpon>form_nuevo_cliente2.cs</DependentUpon>
+    <EmbeddedResource Include="form_nuevo_clienteP.resx">
+      <DependentUpon>form_nuevo_clienteP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_nuevo_clienteT.resx">
+      <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarPerfiles_frm.resx">
       <DependentUpon>modificarPerfiles_frm.cs</DependentUpon>
@@ -234,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nuevocontrato.resx">
       <DependentUpon>nuevocontrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nuevoviaje.resx">
+      <DependentUpon>nuevoviaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

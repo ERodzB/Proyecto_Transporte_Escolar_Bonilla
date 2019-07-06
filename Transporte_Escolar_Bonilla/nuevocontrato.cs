@@ -14,425 +14,284 @@ namespace Transporte_Escolar_Bonilla
     {
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
-        Validar val = new Validar();
 
-        //Variables Globales
-        int cambio1 = 0, cambio2 = 0, cambio3 = 0, cambio4 = 0;  
+        bool borrar = false;
+        double total = 0;
 
         public nuevocontrato()
         {
             InitializeComponent();
         }
 
-        private void Botcrear_Click(object sender, EventArgs e)
-        {
-            int contc = 0, conth = 0, tipoc = 0;
-            string errorc = "", errorh = "\n\n", anio="", nomcli="", codcliente="";
 
-            val.igual = 0; //Para validar horarios duplicados de un vehiculo   
+        private void Nuevocontrato_Load(object sender, EventArgs e)
+        {
+            combservicio.SelectedIndex = -1;
+
+            //Llenar ComboBox de Rutas
+            combruta1.DataSource = consul.Combobox_Rutas();
+            combruta1.DisplayMember = "Codigo_Ruta";
+            combruta1.SelectedIndex = -1;
+
+            combruta2.DataSource = consul.Combobox_Rutas();
+            combruta2.DisplayMember = "Codigo_Ruta";
+            combruta2.SelectedIndex = -1;
+
+            //Llenar ComboBox Clientes
+            combcliente.DataSource = consul.combox_Clientes();
+            combcliente.DisplayMember = "Nombre_Cliente";
+            combcliente.ValueMember = "Codigo_Cliente";
+            combcliente.SelectedIndex = -1;
+        }
+
+        private void Combveh1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consul.DescVehiculos(combveh1.Text, labv1);
+            labv1.Visible = true;
+        }
+
+
+        private void Combservicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Bus completo
+            if (combservicio.SelectedIndex == 0)
+            {
+                combruta2.Enabled = true;
+                combhora2.Enabled = true;
+                combveh2.Enabled = true;
+                txtpa2.Enabled = true;
+            }
+            else
+            {
+                combruta2.Enabled = false;
+                combhora2.Enabled = false;
+                combveh2.Enabled = false;
+                txtpa2.Enabled = false;
+                labv2.Visible = false;
+
+                combruta2.SelectedIndex = -1;
+                combhora2.SelectedIndex = -1;
+                combveh2.SelectedIndex = -1;
+                txtpa2.Text = "";
+            }
+        }
+
+        //Selecciona Ruta de Ida - Se llenan Horarios de ese Ruta
+        private void Combruta1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            //Llenar ComboBox de Horarios con Horario de la Ruta Seleccionada
+            combhora1.DataSource = consul.Combobox_Horarios(combruta1.Text);
+            combhora1.DisplayMember = "Horarios";
+            combhora1.SelectedIndex = -1;
+        }
+
+        //Seleccionar Horario Ida -  Se llenan vehiculos de ese Horario
+        private void Combhora1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            combveh1.DataSource = consul.Combobox_VehiculosRH(combruta1.Text, combhora1.Text);
+            combveh1.DisplayMember = "Codigo_vehiculo";
+            combveh1.SelectedIndex = -1;
+        }
+
+        //Selecciona Ruta de Vuelta - Se llenan Horarios de ese Ruta
+        private void Combruta2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            //Llenar ComboBox de Horarios con Horario de la Ruta Seleccionada
+            combhora2.DataSource = consul.Combobox_Horarios(combruta2.Text);
+            combhora2.DisplayMember = "Horarios";
+            combhora2.SelectedIndex = -1;
+        }
+
+        //Seleccionar Horario Vuelta -  Se llenan vehiculos de ese Horario
+        private void Combhora2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            combveh2.DataSource = consul.Combobox_VehiculosRH(combruta2.Text, combhora2.Text);
+            combveh2.DisplayMember = "Codigo_vehiculo";
+            combveh2.SelectedIndex = -1;
+        }
+
+
+        //Si se presiona tecla borrar en cantmeses
+        private void Txtcantm_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                borrar = true;
+                //MessageBox.Show("TECLA: " + e.KeyChar);
+            }
+
+            else
+                borrar = false;
+        }
+
+        //Selecciona fecha Inicio
+        private void Dtpinicio_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (txtcantm.Text != "")
+                txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");
+        }
+
+        //Se escribe cantidad de meses
+        private void Txtcantm_TextChanged_1(object sender, EventArgs e)
+        {
+            //Para calcular Monto Total
+            if (txtmontom.Text != "" && txtcantm.Text != "")
+            {
+                total = double.Parse(txtmontom.Text) * int.Parse(txtcantm.Text);
+                total += (total * 0.15);
+                labtotal.Text = "L " + total;
+                labtotal.Visible = true;
+            }
+
+            //Para calcular fecha de finalizacion (Se toma en cuenta si se presiona borrar)
+            if (txtcantm.Text == "")
+                txtfechafin.Text = "";
+
+            if (borrar == false)
+            {
+                if (txtcantm.Text != " ")
+                    txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");  
+            }
+            else
+            {
+                if (txtcantm.Text != "")
+                    txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");
+            }
+        }
+
+        //Se escribe monto mensual
+        private void Txtmontom_TextChanged_1(object sender, EventArgs e)
+        {
+            //Para calcular Monto Total
+            if (txtmontom.Text != "" && txtcantm.Text != "")
+            {
+                total = double.Parse(txtmontom.Text) * int.Parse(txtcantm.Text);
+                total += (total * 0.15);
+                labtotal.Text = "L " + total;
+                labtotal.Visible = true;
+            }
+        }
+
+        //Seleccionar vehiculo 2
+        private void Combveh2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            consul.DescVehiculos(combveh2.Text, labv2);
+            labv2.Visible = true;
+        }
+
+
+        //Boton Crear
+        private void Botcrear_Click_1(object sender, EventArgs e)
+        {
+            int contc = 0, contr = 0;
+            string errorc = "", error = "\n\n", anio = "", codcli = ""; 
 
             //Campos de Texto y TipoContrato Vacio
-            if (string.IsNullOrEmpty(txtinicio1.Text) && string.IsNullOrEmpty(txtfin1.Text) && string.IsNullOrEmpty(txtini2.Text) && string.IsNullOrEmpty(txtfin2.Text))
+            if (combservicio.SelectedIndex == -1)
                 contc++;
 
-            if (string.IsNullOrEmpty(txtmonto.Text) || double.Parse(txtmonto.Text) <= 0)
+            if (combcliente.SelectedIndex == -1)
                 contc++;
 
-            if ((txtinicio1.Text == "" && txtfin1.Text != "") || (txtinicio1.Text != "" && txtfin1.Text == ""))
+            if (txtmontom.Text == "" || double.Parse(txtmontom.Text) <= 0)
                 contc++;
 
-            if ((txtini2.Text == "" && txtfin2.Text != "") || (txtini2.Text != "" && txtfin2.Text == ""))
+            if (txtcantm.Text == "")
                 contc++;
-
-            if (combTipoContrato.SelectedIndex == -1 && CMBDueno.SelectedIndex== -1)
+            else
+                if (int.Parse(txtcantm.Text) <= 0)
                 contc++;
-
-            //Validar Fechas 
-            if (dtpfin.Value < dtpinicio.Value) 
-                contc++; 
-
-            //else
-            //    if (string.IsNullOrEmpty(txtfin1.Text)) 
-            //    contc++;
-            //else
-            //    if (string.IsNullOrEmpty(txtini2.Text))
-            //    contc++;
-            //else
-            //    if (string.IsNullOrEmpty(txtfin2.Text))
-            //    contc++;
 
             if (contc > 0)
             {
                 MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //errorc += "Debe llenar correctamente los datos -"; 
             }
             else
             {
-                //Horarios incorrectos
-                if ((dtpsh1r1.Checked == true && dtpeh1r1.Checked == false) || (dtpsh1r1.Checked == false && dtpeh1r1.Checked == true) || (dtpsh1r1.Checked == true && dtpeh1r1.Checked == true && combvh1r1.SelectedIndex == -1) || (dtpsh1r1.Checked == true && dtpeh1r1.Checked == true && dtpsh1r1.Text == dtpeh1r1.Text))
+                //Medio Bus
+                if (combservicio.SelectedIndex == 1)
                 {
-                    conth++;
-                    errorh += "Error Horario 1/Ruta #1\n";
+                    //Todos Vacios
+                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && txtpa1.Text == "")
+                        contr++;
+
+                    //Algunos vacios
+                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || txtpa1.Text == "")
+                        contr++;
                 }
 
-                if ((dtpsh2r1.Checked == true && dtpeh2r1.Checked == false) || (dtpsh2r1.Checked == false && dtpeh2r1.Checked == true) || (dtpsh2r1.Checked == true && dtpeh2r1.Checked == true && combvh2r1.SelectedIndex == -1) || (dtpsh2r1.Checked == true && dtpeh2r1.Checked == true && dtpsh2r1.Text == dtpeh2r1.Text))
+                //Bus Completo
+                if (combservicio.SelectedIndex == 0)
                 {
-                    conth++;
-                    errorh += "Error Horario 2/Ruta #1\n";
-                }
+                    //Todos Vacios
+                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && txtpa1.Text == "" &&
+                        combruta2.SelectedIndex == -1 && combhora2.SelectedIndex == -1 && combveh2.SelectedIndex == -1 && txtpa2.Text == "")
+                        contr++;
 
-                if ((dtpsh1r2.Checked == true && dtpeh1r2.Checked == false) || (dtpsh1r2.Checked == false && dtpeh1r2.Checked == true) || (dtpsh1r2.Checked == true && dtpeh1r2.Checked == true && combvh1r2.SelectedIndex == -1) || (dtpsh1r2.Checked == true && dtpeh1r2.Checked == true && dtpsh1r2.Text == dtpeh1r2.Text))
-                {
-                    conth++;
-                    errorh += "Error Horario 1/Ruta #2\n";
-                }
+                    //Algunos vacios
+                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || txtpa1.Text == "" ||
+                        combruta2.SelectedIndex == -1 || combhora2.SelectedIndex == -1 || combveh2.SelectedIndex == -1 || txtpa2.Text == "")
+                        contr++;
 
-                if ((dtpsh2r2.Checked == true && dtpeh2r2.Checked == false) || (dtpsh2r2.Checked == false && dtpeh2r2.Checked == true) || (dtpsh2r2.Checked == true && dtpeh2r2.Checked == true && combvh2r2.SelectedIndex == -1) || (dtpsh2r2.Checked == true && dtpeh2r2.Checked == true && dtpsh2r2.Text == dtpeh2r2.Text))
-                {
-                    conth++;
-                    errorh += "Error Horario 2/Ruta #2\n"; 
-                }
-
-                if ((txtinicio1.Text != "" && txtfin1.Text != "") && ((dtpsh1r1.Checked == false && dtpeh1r1.Checked == false) && (dtpsh2r1.Checked == false && dtpeh2r1.Checked == false)))
-                {
-                    conth++;
-                    errorh += "Debe ingresar al menos 1 Horario de la Ruta #1\n";
-                }
-
-                if ((txtini2.Text != "" && txtfin2.Text != "") && ((dtpsh1r2.Checked == false && dtpeh1r2.Checked == false) && (dtpsh2r2.Checked == false && dtpeh2r2.Checked == false)))
-                {
-                    conth++;
-                    errorh += "Debe ingresar al menos 1 Horario de la Ruta #2\n";
+                    //Rutas Iguales
+                    if (combruta1.Text == combruta2.Text)
+                        contr++;
                 }
 
 
-                //Al menos una ruta
-                if ((dtpsh1r1.Checked == false && dtpeh1r1.Checked == false && combvh1r1.SelectedIndex == -1) && (dtpsh2r1.Checked == false && dtpeh2r1.Checked == false && combvh2r1.SelectedIndex == -1) && (dtpsh1r2.Checked == false && dtpeh1r2.Checked == false && combvh1r2.SelectedIndex == -1) && (dtpsh1r2.Checked == false && dtpeh2r2.Checked == false && combvh2r2.SelectedIndex == -1))
-                {
-                    conth++;
-                    errorh += "Debe ingresar al menos 1 Ruta\n"; 
-                }
-
-
-                //Horarios 1 y 2 Iguales en Rutas 
-                if ((dtpsh1r1.Checked == true && dtpsh2r1.Checked == true) && (dtpsh1r1.Value.ToString() == dtpsh2r1.Value.ToString()) && (combvh1r1.Text == combvh2r1.Text))
-                {
-                    conth++;
-                    errorh += "Horario duplicado para el Vehículo en la Ruta #1\n";
-                }
-
-                if ((dtpsh1r2.Checked == true && dtpsh2r2.Checked == true) && (dtpsh1r2.Value.ToString() == dtpsh2r2.Value.ToString()) && (combvh1r2.Text == combvh2r2.Text))
-                {
-                    conth++;
-                    errorh += "Horario duplicado para el Vehículo en la Ruta #2\n";
-                }
-
-                //Horarios Iguales entre Rutas 
-                val.ValidarHora(dtpsh1r1, dtpsh1r2, combvh1r1, combvh1r2);   
-                val.ValidarHora(dtpsh1r1, dtpsh2r2, combvh1r1, combvh2r2);
-                val.ValidarHora(dtpsh2r1, dtpsh1r2, combvh2r1, combvh1r2);
-                val.ValidarHora(dtpsh2r1, dtpsh2r2, combvh2r1, combvh2r2);
-
-                if (val.igual > 0)
-                {
-                    conth++;
-                    errorh += "Horario duplicado entre rutas para el vehículo\n";
-                }
-
-
-                //Rutas Existentes
-                if (val.validarRuta(txtinicio1.Text + txtfin1.Text) == 1)
-                {
-                    errorh += "La Ruta #1 ya existe\n";
-
-                    txtinicio1.Clear();
-                    txtfin1.Clear();
-                    txtinicio1.Focus();
-
-                    conth++;
-                }
-
-                if (val.validarRuta(txtini2.Text + txtfin2.Text) == 1)
-                {
-                    errorh += "La Ruta #2 ya existe\n";
-
-                    txtini2.Clear();
-                    txtfin2.Clear();
-                    txtini2.Focus();
-
-                    conth++;
-                }
-
-
-                //Horarios para Vehiculos ya existentes
-                if (dtpsh1r1.Checked == true)
-                {
-                    if (val.validarHorariosVeh(combvh1r1.Text, dtpsh1r1.Text) == 1)
-                    {
-                        conth++;
-                        errorh += "Ruta #1 - El Vehiculo ya realiza una ruta en el Horario 1\n";
-                    }
-                }
-
-                if (dtpsh2r1.Checked == true)
-                {
-                    if (val.validarHorariosVeh(combvh2r1.Text, dtpsh2r1.Text) == 1)
-                    {
-                        conth++;
-                        errorh += "Ruta #1 - El Vehiculo ya realiza una ruta en el Horario 2\n";
-                    }
-                }
-
-                if (dtpsh1r2.Checked == true)
-                {
-                    if (val.validarHorariosVeh(combvh1r2.Text, dtpsh1r2.Text) == 1)
-                    {
-                        conth++;
-                        errorh += "Ruta #2 - El Vehiculo ya realiza una ruta en el Horario 1\n";
-                    }
-                }
-
-                if (dtpsh2r2.Checked == true)
-                {
-                    if (val.validarHorariosVeh(combvh2r2.Text, dtpsh2r2.Text) == 1)
-                    {
-                        conth++;
-                        errorh += "Ruta #2 - El Vehiculo ya realiza una ruta en el Horario 2\n";
-                    }
-                }      
-
-
-
-                //Mostrar mensajes de Error
-                if (/*contc > 0 ||*/ conth > 0)
-                    MessageBox.Show(/*errorc +*/ errorh, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Mostrar mensaje de Error
+                if (contr > 0)
+                    MessageBox.Show("Debe llenar correctamente los datos de la Ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (DialogResult == DialogResult.Yes)
                     {
-                        tipoc = combTipoContrato.SelectedIndex;
                         anio = dtpinicio.Value.Year.ToString();
-                        nomcli = CMBDueno.Text;
+                        codcli = combcliente.SelectedValue.ToString();
 
-                        codcliente = CMBDueno.SelectedValue.ToString();
+                        //Guardar datos de Contrato 
+                        ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
+                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00);
 
-                        //Guardar datos de Contrato
-                        ing.NuevoContrato(anio, nomcli, codcliente, tipoc + 1, Convert.ToDateTime(dtpinicio.Text), double.Parse(txtmonto.Text), Convert.ToDateTime(dtpfin.Text));
+                        //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
+                        ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, combcliente.Text);
+                        ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);
 
-                        //Guardar Ruta #1 y Horarios
-                        if (txtinicio1.Text != "" && txtfin1.Text != "")
+                        //Si es Bus completo - Se asocia ruta de Vuelta al contrato tambien y actualizar pasajeros
+                        if (combservicio.SelectedIndex == 0)
                         {
-                            ing.NuevaRuta(txtinicio1.Text + txtfin1.Text, txtinicio1.Text + " - " + txtfin1.Text, "Puntos clave desde " + txtinicio1.Text + " hasta " + txtfin1.Text, " ", anio, nomcli, 1);
-
-                            if (dtpsh1r1.Checked)
-                                ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh1r1.Text, dtpsh1r1.Text, dtpeh1r1.Text);
-
-                            if (dtpsh2r1.Checked)
-                                ing.AsignarHoraVeh(txtinicio1.Text + txtfin1.Text, combvh2r1.Text, dtpsh2r1.Text, dtpeh2r1.Text);
-
+                            ing.RutaContrato(combruta2.Text, txtpa2.Text, anio, combcliente.Text);
+                            ing.Pasajeros(combruta2.Text, combveh2.Text, combhora2.Text);
                         }
 
-                        //Guardar Ruta #2 y Horarios
-                        if (txtini2.Text != "" && txtfin2.Text != "")
-                        {
-                            ing.NuevaRuta(txtini2.Text + txtfin2.Text, txtini2.Text + " - " + txtfin2.Text, "Puntos clave desde " + txtini2.Text + " hasta " + txtfin2.Text, " ", anio, nomcli, 1);
+                        MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            if (dtpsh1r2.Checked)
-                                ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh1r2.Text, dtpsh1r2.Text, dtpeh1r2.Text);
+                        //Limpiar
+                        combservicio.SelectedIndex = -1;
+                        combcliente.SelectedIndex = -1;
+                        combruta1.SelectedIndex = -1;
+                        combruta2.SelectedIndex = -1;
+                        combhora1.SelectedIndex = -1;
+                        combhora2.SelectedIndex = -1; 
+                        combveh1.SelectedIndex = -1;
+                        combveh2.SelectedIndex = -1;
 
-                            if (dtpsh2r2.Checked)
-                                ing.AsignarHoraVeh(txtini2.Text + txtfin2.Text, combvh2r2.Text, dtpsh2r2.Text, dtpeh2r2.Text);
+                        txtpa1.Clear();
+                        txtpa2.Clear();
+                        txtmontom.Text="0";  
+                        txtcantm.Text = "0";
+                        txtfechafin.Clear();
+                        labtotal.Visible = false;
 
-                        }
-
-                        MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information); 
-
-                        //Limpieza  
-                        dtpsh1r1.Checked = false;
-                        dtpeh1r1.Checked = false;
-                        dtpsh2r1.Checked = false;
-                        dtpeh2r1.Checked = false;
-                        dtpsh1r2.Checked = false;
-                        dtpeh1r2.Checked = false;
-                        dtpsh2r2.Checked = false;
-                        dtpeh2r2.Checked = false;
-
-                        cambio1 = 2;
-                        cambio2 = 2;
-                        cambio3 = 2;
-                        cambio4 = 2;
-
-                        labv1.Visible = false;
-                        labv2.Visible = false;
-                        labv3.Visible = false;
-                        labv4.Visible = false;
-
-                        combvh1r1.SelectedIndex = -1;
-                        combvh2r1.SelectedIndex = -1;
-                        combvh1r2.SelectedIndex = -1;
-                        combvh2r2.SelectedIndex = -1;
-                        combTipoContrato.SelectedIndex = -1;
-                        CMBDueno.SelectedIndex = -1; 
-
-                        //MessageBox.Show(cambio1.ToString() + "\n" + cambio2.ToString() + "\n" + cambio3.ToString() + "\n" + cambio4.ToString(), "CAMBIOS");
-
-                        cambio1 = 3;
-                        cambio2 = 3;
-                        cambio3 = 3;
-                        cambio4 = 3;
-
-                        //MessageBox.Show(cambio1.ToString() + "\n" + cambio2.ToString() + "\n" + cambio3.ToString() + "\n" + cambio4.ToString(), "CAMBIOS");
-
-                        txtinicio1.Clear();
-                        txtfin1.Clear();
-                        txtini2.Clear();
-                        txtfin2.Clear();
-                        txtmonto.Clear();
-
-                        txtinicio1.Focus();
+                        combruta2.Enabled = false;
+                        combhora2.Enabled = false;
+                        combveh2.Enabled = false;
+                        txtpa1.Enabled = false;
                     }
 
                 }
-            }
-        }
-
-        private void Nuevocontrato_Load(object sender, EventArgs e)
-        {
-            /*Colocar el formato de Hora en el DateTimePicker
-            Si quiere que se muestre AM y PM tiene que ir a Panel de Control - Cambiar formatos de Fecha, Hora y Número - Configuracion adicional y poner AM Y PM*/
-            dtpsh1r1.Format = DateTimePickerFormat.Custom;
-            dtpsh1r1.CustomFormat = "h:mm tt";
-            dtpsh1r1.ShowUpDown = true;
-            dtpsh1r1.ShowCheckBox = true; //Aparece un cheque
-            dtpsh1r1.Checked = false; //Deschequearlo
-
-            dtpeh1r1.Format = DateTimePickerFormat.Custom;
-            dtpeh1r1.CustomFormat = "h:mm tt";
-            dtpeh1r1.ShowUpDown = true;
-            dtpeh1r1.ShowCheckBox = true;
-            dtpeh1r1.Checked = false;
-
-            dtpsh2r1.Format = DateTimePickerFormat.Custom;
-            dtpsh2r1.CustomFormat = "h:mm tt";
-            dtpsh2r1.ShowUpDown = true;
-            dtpsh2r1.ShowCheckBox = true;
-            dtpsh2r1.Checked = false;
-
-            dtpeh2r1.Format = DateTimePickerFormat.Custom;
-            dtpeh2r1.CustomFormat = "h:mm tt";
-            dtpeh2r1.ShowUpDown = true;
-            dtpeh2r1.ShowCheckBox = true;
-            dtpeh2r1.Checked = false;
-
-            dtpsh1r2.Format = DateTimePickerFormat.Custom;
-            dtpsh1r2.CustomFormat = "h:mm tt";
-            dtpsh1r2.ShowUpDown = true;
-            dtpsh1r2.ShowCheckBox = true;
-            dtpsh1r2.Checked = false;
-
-            dtpeh1r2.Format = DateTimePickerFormat.Custom;
-            dtpeh1r2.CustomFormat = "h:mm tt";
-            dtpeh1r2.ShowUpDown = true;
-            dtpeh1r2.ShowCheckBox = true;
-            dtpeh1r2.Checked = false;
-
-            dtpsh2r2.Format = DateTimePickerFormat.Custom;
-            dtpsh2r2.CustomFormat = "h:mm tt";
-            dtpsh2r2.ShowUpDown = true;
-            dtpsh2r2.ShowCheckBox = true;
-            dtpsh2r2.Checked = false;
-
-            dtpeh2r2.Format = DateTimePickerFormat.Custom;
-            dtpeh2r2.CustomFormat = "h:mm tt";
-            dtpeh2r2.ShowUpDown = true;
-            dtpeh2r2.ShowCheckBox = true;
-            dtpeh2r2.Checked = false;
-
-            //Llenar Combobox de Vehiculos
-            combvh1r1.DataSource = consul.Combobox_Vehiculos();
-            combvh1r1.DisplayMember = "Codigo_vehiculo"; //Mostrara los nombres en el combobox 
-            combvh1r1.SelectedIndex = -1; //No muestra nada al inicio 
-
-            combvh2r1.DataSource = consul.Combobox_Vehiculos();
-            combvh2r1.DisplayMember = "Codigo_vehiculo";
-            combvh2r1.SelectedIndex = -1;
-
-            combvh1r2.DataSource = consul.Combobox_Vehiculos();
-            combvh1r2.DisplayMember = "Codigo_vehiculo";
-            combvh1r2.SelectedIndex = -1;
-
-            combvh2r2.DataSource = consul.Combobox_Vehiculos();
-            combvh2r2.DisplayMember = "Codigo_vehiculo";
-            combvh2r2.SelectedIndex = -1; 
-
-            //Llenar Combobox de Tipo de Contrato
-            combTipoContrato.DataSource = consul.Combobox_TipoContrato();
-            combTipoContrato.DisplayMember = "Tipo_Contrato";
-            combTipoContrato.SelectedIndex = -1;
-
-            CMBDueno.DataSource = consul.combox_Clientes();
-            CMBDueno.DisplayMember = "Nombre_Cliente";
-            CMBDueno.ValueMember = "Codigo_Cliente";
-            CMBDueno.SelectedIndex = -1;
-
-            txtinicio1.Focus();
-        }
-
-        //Seleccionar Vehiculo 1 
-        private void Combvh1r1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Cambio se refiere a cada vez que cambia el indice del Combobox. Por cada uno su texto cambia
-            cambio1++;
-
-            //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
-            if (cambio1 > 3)
-            {
-                consul.DescVehiculos(combvh1r1.Text, labv1);
-                labv1.Visible = true;
-            }
-        }
-
-        //Seleccionar Vehiculo 2
-        private void Combvh2r1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Cambio se refiere a cada vez que cambia el indice del Combobox. Por cada uno su texto cambia
-            cambio2++;
-
-            //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
-            if (cambio2 > 3)
-            {
-                consul.DescVehiculos(combvh2r1.Text, labv2);
-                labv2.Visible = true;
-            }
-        }
-
-        //Seleccionar Vehiculo 3
-        private void Combvh1r2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Cambio se refiere a cada vez que cambia el indice del Combobox. Por cada uno su texto cambia
-            cambio3++;
-
-            //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
-            if (cambio3 > 3)
-            {
-                consul.DescVehiculos(combvh1r2.Text, labv3);
-                labv3.Visible = true;
-            }
-        }
-
-        //Seleccionar Vehiculo 4
-        private void Combvh2r2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Cambio se refiere a cada vez que cambia el indice del Combobox. Por cada uno su texto cambia
-            cambio4++;
-
-            //cambio 1: System.Data.DataRowView, cambio 2: PrimerDato, cambio 3: Vacio (Por el Index = -1)  
-            if (cambio4 > 3)
-            {
-                consul.DescVehiculos(combvh2r2.Text, labv4);
-                labv4.Visible = true;
             }
         }
     }
