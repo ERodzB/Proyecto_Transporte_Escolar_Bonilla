@@ -117,15 +117,10 @@ namespace Transporte_Escolar_Bonilla
                         nomc = txtnom.Text;
                         tipoc = combTipoContrato.SelectedIndex + 1;
 
-                        //Limpieza
-                        txtnom.Clear();
-                        txtid.Clear();
-                        txtdir.Clear();
-                        txttel.Clear();
-                        txtcorreo.Clear();
-                        combTipoContrato.SelectedIndex = -1;
+                        
+                        
 
-                        if(combTipoContrato.Text == "Temporal")
+                        if(combTipoContrato.Text.Equals("Temporal"))
                         {
                             form_nuevo_clienteT cliT = new form_nuevo_clienteT();
                             Estetics.AbrirFormularios(cliT, cliente1_panel);
@@ -135,6 +130,13 @@ namespace Transporte_Escolar_Bonilla
                             form_nuevo_clienteP clip = new form_nuevo_clienteP();
                             Estetics.AbrirFormularios(clip, cliente1_panel);
                         }
+                        //Limpieza
+                        txtnom.Clear();
+                        txtid.Clear();
+                        txtdir.Clear();
+                        txttel.Clear();
+                        txtcorreo.Clear();
+                        combTipoContrato.SelectedIndex = -1;
                     }
                 }
             }
@@ -150,6 +152,11 @@ namespace Transporte_Escolar_Bonilla
         private void Labsiguiente_MouseLeave(object sender, EventArgs e)
         {
             labsiguiente.ForeColor = Color.FromArgb(12, 24, 94); 
+        }
+
+        private void CombTipoContrato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

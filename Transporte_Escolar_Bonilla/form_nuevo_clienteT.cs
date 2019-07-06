@@ -118,7 +118,7 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("Debe llenar correctamente los datos de la Ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult = MessageBox.Show("¿Desea Crear el Contrato con esos Datos?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (DialogResult == DialogResult.Yes)
                     {
@@ -238,13 +238,7 @@ namespace Transporte_Escolar_Bonilla
         private void Txtmontom_TextChanged(object sender, EventArgs e)
         {
             //Para calcular Monto Total
-            if (txtmontom.Text != "" && txtcantm.Text != "")
-            {
-                total = double.Parse(txtmontom.Text) * int.Parse(txtcantm.Text);
-                total += (total * 0.15);
-                labtotal.Text = "L " + total;
-                labtotal.Visible = true;
-            }
+         
 
         }
 
@@ -252,13 +246,7 @@ namespace Transporte_Escolar_Bonilla
         private void Txtcantm_TextChanged(object sender, EventArgs e)
         {
             //Para calcular Monto Total
-            if (txtmontom.Text != "" && txtcantm.Text != "")
-            {
-                total = double.Parse(txtmontom.Text) * int.Parse(txtcantm.Text);
-                total += (total * 0.15);
-                labtotal.Text = "L "+ total;
-                labtotal.Visible = true;
-            }
+            
 
             //Para calcular fecha de finalizacion (Se toma en cuenta si se presiona borrar)
             if (txtcantm.Text == "")

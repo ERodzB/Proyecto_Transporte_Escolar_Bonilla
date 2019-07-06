@@ -135,14 +135,7 @@ namespace Transporte_Escolar_Bonilla
         private void Txtcantm_TextChanged_1(object sender, EventArgs e)
         {
             //Para calcular Monto Total
-            if (txtmontom.Text != "" && txtcantm.Text != "")
-            {
-                total = double.Parse(txtmontom.Text) * int.Parse(txtcantm.Text);
-                total += (total * 0.15);
-                labtotal.Text = "L " + total;
-                labtotal.Visible = true;
-            }
-
+         
             //Para calcular fecha de finalizacion (Se toma en cuenta si se presiona borrar)
             if (txtcantm.Text == "")
                 txtfechafin.Text = "";
@@ -162,14 +155,7 @@ namespace Transporte_Escolar_Bonilla
         //Se escribe monto mensual
         private void Txtmontom_TextChanged_1(object sender, EventArgs e)
         {
-            //Para calcular Monto Total
-            if (txtmontom.Text != "" && txtcantm.Text != "")
-            {
-                total = double.Parse(txtmontom.Text) * int.Parse(txtcantm.Text);
-                total += (total * 0.15);
-                labtotal.Text = "L " + total;
-                labtotal.Visible = true;
-            }
+
         }
 
         //Seleccionar vehiculo 2
@@ -283,7 +269,6 @@ namespace Transporte_Escolar_Bonilla
                         txtmontom.Text="0";  
                         txtcantm.Text = "0";
                         txtfechafin.Clear();
-                        labtotal.Visible = false;
 
                         combruta2.Enabled = false;
                         combhora2.Enabled = false;

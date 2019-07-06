@@ -15,7 +15,6 @@ begin
 	values (@Codigo_Cliente, @Nombre_Cliente, @Direccion_Cliente, @Telefono_Cliente, @Correo_Cliente)
 end
 GO
-
 /*---------------------------------------------Procedimiento Llenar ComboBox de Contrato------------------------------------------------*/
 create procedure ComboboxContratos
 as
@@ -41,6 +40,19 @@ begin
 	select Codigo_Vehiculo from Vehiculos
 end
 GO 
+/*---------------------------------------------Procedimiento Llenar ComboBox de Vehiculos según Ruta y Horario ------------------------------------------------*/
+create procedure ComboboxVehiculosRH
+@Codigo_Ruta varchar(50),
+@Horario varchar(15)
+as
+begin
+	select vr.Codigo_Vehiculo from Vehiculos_Rutas vr
+	inner join Vehiculos v on vr.Codigo_Vehiculo = v.Codigo_Vehiculo
+	where (vr.Codigo_Ruta = @Codigo_Ruta) and (CONVERT(varchar(15),CAST(vr.Horario_Salida AS TIME),100)+' '+CONVERT(varchar(15),CAST(vr.Horario_Entrada AS TIME),100) = @Horario)
+	and (vr.Cantidad_Pasajeros_Actuales < v.Capacidad_Vehiculo)    
+end
+GO 
+
 
 /*---------------------------------------------Procedimiento Etiqueta Descripcion de Vehiculos------------------------------------------------*/
 create procedure DescVehiculos
@@ -51,7 +63,6 @@ begin
 	where Codigo_Vehiculo = @Codigo_Vehiculo 
 end 
 GO
-
 /*---------------------------------------------Procedimiento Ingreso de Nuevo Contrato------------------------------------------------*/
 create procedure NuevoContrato
 @Anio_Contrato varchar(4),
@@ -60,12 +71,17 @@ create procedure NuevoContrato
 @Tipo_Contrato int,
 @Fecha_Inicio_Contrato date,
 @Monto_Contrato money,
-@Fecha_Vencimiento date   
+@Fecha_Vencimiento date,
+@Monto_Mensual money,
+@Meses_Pagados int,
+@Servicio varchar(50),
+@Anticipo money
 as 
-begin 
+BEGIN 
 	insert into Contratos 
-	select CONCAT(@Anio_Contrato,'-',COUNT(*)+1,'-',SUBSTRING(@Nombre_Cliente_Contrato,1,1)), @Id_Cliente_Contrato, @Tipo_Contrato, @Fecha_Inicio_Contrato, @Monto_Contrato, @Fecha_Vencimiento, '1', 'CTr' from Contratos
-end 
+	select CONCAT(@Anio_Contrato,'-',COUNT(*)+1,'-',SUBSTRING(@Nombre_Cliente_Contrato,1,1)), @Id_Cliente_Contrato, @Tipo_Contrato, @Monto_Mensual, 
+	@Meses_Pagados, @Servicio, @Anticipo, @Fecha_Inicio_Contrato, @Monto_Contrato, @Fecha_Vencimiento, '1', 'CTr' from Contratos
+END 
 GO  
 
 /*--------------------------------------Procedimiento para Crear una nueva Ruta---------------------------------------------------*/
@@ -73,58 +89,76 @@ create procedure NuevaRuta
 	@Codigo_ruta varchar(50),
 	@Nombre_Ruta varchar(100),
 	@Descripcion_Ruta varchar(200),
-	@Codigo_Contrato varchar(50),
-	@Anio_Contrato varchar(4),
-	@Nombre_Cliente_Contrato varchar(100),      
-	@Opcion int
+	@Tipo_Ruta varchar(50)
 as
-BEGIN
+begin
+	insert into Rutas (Codigo_Ruta, Nombre_Ruta, Descripcion_Ruta, Tipo_Ruta)
+	values (@Codigo_ruta, @Nombre_Ruta, @Descripcion_Ruta, @Tipo_Ruta)
+end
+GO
+/*--------------------------------------Procedimiento para Vincular Ruta con Contrato---------------------------------------------------*/
+create procedure RutaContrato
+	@Codigo_ruta varchar(50),
+	@Parada_Contrato varchar(50),
+	@Anio_Contrato varchar(4),
+	@Nombre_Cliente_Contrato varchar(100)      
+as
+begin
+	--Variable para sacar el Contrato que se acaba de crear  
 	declare @Cod_Contrato as varchar(50)
 		
 	set @Cod_Contrato = (select CONCAT(@Anio_Contrato,'-',COUNT(*),'-',SUBSTRING(@Nombre_Cliente_Contrato,1,1)) from Contratos)
 
-	if(@Opcion=1) --Ruta guardada junto con el contrato
-	begin
-		insert into Rutas (Codigo_Ruta, Nombre_Ruta, Descripcion_Ruta, Codigo_Contrato)
-		values (@Codigo_ruta, @Nombre_Ruta, @Descripcion_Ruta, @Cod_Contrato)  
-	end
-
-	if(@Opcion=2) --Ruta creada despues, donde se selecciona el contrato al que esta asociada
-	begin
-		insert into Rutas (Codigo_Ruta, Nombre_Ruta, Descripcion_Ruta, Codigo_Contrato)
-		values (@Codigo_ruta, @Nombre_Ruta, @Descripcion_Ruta, (select SUBSTRING(@Codigo_Contrato,1,charindex(' ',@Codigo_Contrato,1)-1))) 
-		--ComboBox fuente lleno con Nombre de Cliente para mejor Visualización (Ver PA ComboboxContratos), se realiza esto para obtener solo el codigo de Contrato
-
-		--charindex busca una subcadena dentro de una cadena y devuelve la posicion en la que se encuentra
-		--Charindex(substring, string, start)
-		--select charindex('M','Hola Mundo',1)   
-	end   
-END  
+	insert into Rutas_Contratos(Codigo_Ruta, Codigo_Contrato, Parada_Contrato)
+	values (@Codigo_ruta, @Cod_Contrato, @Parada_Contrato)   
+end 
 GO
-
-/*--------------------------------------Procedimiento para Asignar Horarios y Vehiculos a una Ruta---------------------------------------------------*/
+/*--------------------------------------Procedimiento para Asignar Horarios y Vehiculos a una Nueva Ruta---------------------------------------------------*/
 create procedure AsignarHoraVeh
 	@Codigo_ruta varchar(50),
 	@Codigo_Vehiculo varchar(50),
 	@Horario_Salida time(7),
-	@Horario_Entrada time(7)
+	@Horario_Entrada time(7),
+	@Pasajeros int
 as
 begin
-	insert into Vehiculos_Rutas (Codigo_Ruta, Codigo_Vehiculo, Horario_Salida, Horario_Entrada)
-	values (@Codigo_ruta, @Codigo_Vehiculo, @Horario_Salida, @Horario_Entrada)
+	insert into Vehiculos_Rutas (Codigo_Ruta, Codigo_Vehiculo, Horario_Salida, Horario_Entrada, Cantidad_Pasajeros_Actuales)
+	values (@Codigo_ruta, @Codigo_Vehiculo, @Horario_Salida, @Horario_Entrada, @Pasajeros)
+end
+GO 
+/*--------------------------------------Procedimiento para Actualizar cantidad de pasajeros de una Ruta---------------------------------------------------*/
+create procedure Pasajeros
+	@Codigo_ruta varchar(50),
+	@Codigo_Vehiculo varchar(50),
+	@Horario varchar(50) 
+as
+begin
+	update Vehiculos_Rutas
+	set Cantidad_Pasajeros_Actuales = Cantidad_Pasajeros_Actuales + 1
+	where (Codigo_Ruta = @Codigo_ruta) and (Codigo_Vehiculo = @Codigo_Vehiculo) and (CONVERT(varchar(15),CAST(Horario_Salida AS TIME),100)+' '+CONVERT(varchar(15),CAST(Horario_Entrada AS TIME),100) = @Horario)
 end
 GO
-
+--VERIFICAR CANT DE PASAJEROS IF EXCEDE CAPACIDAD VEHICULO RETURN 1 ELSE 0
 
 /*---------------------------------------------Procedimiento Llenar ComboBox Rutas------------------------------------------------*/
-create procedure  ComboboxRutas
+create procedure ComboboxRutas
 as 
 begin
 	select Codigo_Ruta from Rutas
+	where Tipo_Ruta = 'Temporal'
 	group by Codigo_Ruta
 end 
 GO  
-
+/*---------------------------------------------Procedimiento Llenar ComboBox Horarios------------------------------------------------*/
+create procedure ComboboxHorarios
+@Codigo_Ruta varchar(50)
+as
+begin
+	select CONVERT(varchar(15),CAST(Horario_Salida AS TIME),100)+' '+CONVERT(varchar(15),CAST(Horario_Entrada AS TIME),100) 'Horarios'
+	from Vehiculos_Rutas
+	where Codigo_Ruta = @Codigo_Ruta   
+end
+GO
 /*--------------------------------------------- Procedimiento Verificar Cliente Existente ------------------------------------------------*/
 create procedure VerificarCliente
 @Codigo_Cliente varchar(50)
@@ -133,7 +167,6 @@ begin
 	select COUNT(*) from Cliente where Codigo_Cliente = @Codigo_Cliente
 end
 GO
-
 /*--------------------------------------------- Procedimiento Verificar Ruta Existente ------------------------------------------------*/
 create procedure VerificarRuta
 @Codigo_Ruta varchar(50)
@@ -142,7 +175,6 @@ begin
 	select COUNT(*) from Rutas where Codigo_Ruta = @Codigo_Ruta
 end
 GO
-
 /*--------------------------------------------- Procedimiento Verificar Horario Existente para Vehiculos ------------------------------------------------*/
 create procedure VerificarHoraVeh
 @Codigo_Vehiculo varchar(50),
@@ -152,11 +184,22 @@ begin
 	select COUNT(*) from Vehiculos_Rutas where (Codigo_Vehiculo = @Codigo_Vehiculo) and ( @Horario_Salida between (CONVERT(varchar(15),CAST([Horario_Salida] AS TIME),100)) and (CONVERT(varchar(15),CAST([Horario_Entrada] AS TIME),100)))    
 end 
 GO
+/*--------------------------------------------- Procedimiento Verificar Capacidad para Vehiculos en Viajes------------------------------------------------*/
+create procedure VerificarCap
+@Codigo_Vehiculo varchar(50),
+@Pasajeros int
+as
+begin
+	declare @cap as int
 
-
-
- 
-
+	set @cap = (select Capacidad_Vehiculo from Vehiculos where Codigo_Vehiculo = @Codigo_Vehiculo)
+	
+	if(@Pasajeros > @cap)
+		select 1;
+	else
+		select 0;
+end
+GO
 /* ----------------------------------------------------Procedimientos Almacenados USUARIOS---------------------------------------------------------- */
 
 /*Procedimiento para el Inicio del Sitema*/
