@@ -62,10 +62,12 @@
             this.txtIdentidad.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentidad.Location = new System.Drawing.Point(230, 310);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdentidad.MaxLength = 13;
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(737, 41);
             this.txtIdentidad.TabIndex = 1;
             this.txtIdentidad.TabStop = false;
+            this.txtIdentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdentidad_KeyPress);
             // 
             // txtNombre
             // 
@@ -200,7 +202,7 @@
             this.label6.Location = new System.Drawing.Point(33, 39);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(568, 40);
+            this.label6.Size = new System.Drawing.Size(549, 39);
             this.label6.TabIndex = 13;
             this.label6.Text = "Seleccione el Cliente a Modificar";
             // 

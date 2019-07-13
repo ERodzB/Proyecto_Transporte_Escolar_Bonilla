@@ -76,17 +76,15 @@ namespace Transporte_Escolar_Bonilla
             //No dejar Campos Vacios
             if (string.IsNullOrEmpty(txtid.Text))
                 cont++;
-            else
-                if (string.IsNullOrEmpty(txtnom.Text))
+            if (string.IsNullOrEmpty(txtcorreo.Text))
                 cont++;
-            else
-                if (string.IsNullOrEmpty(txtdir.Text))
+            if (string.IsNullOrEmpty(txtnom.Text))
                 cont++;
-            else
-                if (string.IsNullOrEmpty(txttel.Text))
+            if (string.IsNullOrEmpty(txtdir.Text))
                 cont++;
-            else
-                if (combTipoContrato.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(txttel.Text))
+                cont++;
+            if (combTipoContrato.SelectedIndex == -1)
                 cont++;
 
 
@@ -117,8 +115,6 @@ namespace Transporte_Escolar_Bonilla
                         nomc = txtnom.Text;
                         tipoc = combTipoContrato.SelectedIndex + 1;
 
-                        
-                        
 
                         if(combTipoContrato.Text.Equals("Temporal"))
                         {
@@ -157,6 +153,46 @@ namespace Transporte_Escolar_Bonilla
         private void CombTipoContrato_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txtid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtnom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtdir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txttel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtcorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='@') && !(e.KeyChar=='.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

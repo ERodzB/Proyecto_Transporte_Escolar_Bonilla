@@ -116,6 +116,7 @@
             this.txtMonto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonto.Location = new System.Drawing.Point(167, 442);
             this.txtMonto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMonto.MaxLength = 9;
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(141, 32);
             this.txtMonto.TabIndex = 5;
@@ -249,6 +250,7 @@
             this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInicio.Location = new System.Drawing.Point(167, 361);
             this.dtpInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpInicio.MinDate = new System.DateTime(2013, 8, 1, 0, 0, 0, 0);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(141, 32);
             this.dtpInicio.TabIndex = 19;
@@ -261,7 +263,7 @@
             this.dtpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFinal.Location = new System.Drawing.Point(624, 361);
             this.dtpFinal.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpFinal.MinDate = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
+            this.dtpFinal.MinDate = new System.DateTime(2013, 8, 1, 0, 0, 0, 0);
             this.dtpFinal.Name = "dtpFinal";
             this.dtpFinal.Size = new System.Drawing.Size(141, 32);
             this.dtpFinal.TabIndex = 18;

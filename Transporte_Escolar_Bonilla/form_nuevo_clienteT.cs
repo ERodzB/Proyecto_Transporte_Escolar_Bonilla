@@ -263,7 +263,7 @@ namespace Transporte_Escolar_Bonilla
 
             if (borrar == false)
             {
-                if (txtcantm.Text != " ")
+                if (txtcantm.Text != "")
                     txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");
             }
             else
@@ -286,14 +286,19 @@ namespace Transporte_Escolar_Bonilla
         //Si se presiona tecla borrar en cantmeses
         private void Txtcantm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Back))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                borrar = true;
-                //MessageBox.Show("TECLA: " + e.KeyChar);
+                e.Handled = true;
+                if (e.KeyChar == Convert.ToChar(Keys.Back))
+                {
+                    borrar = true;
+                    //MessageBox.Show("TECLA: " + e.KeyChar);
+                }
+
+                else
+                    borrar = false;
+
             }
-                
-            else
-                borrar = false;
 
             //MessageBox.Show("TECLA DESPUES: " + e.KeyChar);
             ////Si no se presiona borrar (Para que no mande un dato vacio)
@@ -324,6 +329,31 @@ namespace Transporte_Escolar_Bonilla
                 label7.Text = "Monto Total";
                 label17.Text = "Meses a Pagar";
             }
+        }
+
+        private void Txtpa1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtpa2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtmontom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtmontom.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
         }
     }
 }

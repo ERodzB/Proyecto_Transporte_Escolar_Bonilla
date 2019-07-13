@@ -72,9 +72,11 @@
             this.txtpa2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpa2.Location = new System.Drawing.Point(712, 325);
             this.txtpa2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpa2.MaxLength = 50;
             this.txtpa2.Name = "txtpa2";
             this.txtpa2.Size = new System.Drawing.Size(320, 26);
             this.txtpa2.TabIndex = 237;
+            this.txtpa2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpa2_KeyPress);
             // 
             // label12
             // 
@@ -93,9 +95,11 @@
             this.txtpa1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpa1.Location = new System.Drawing.Point(712, 176);
             this.txtpa1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpa1.MaxLength = 50;
             this.txtpa1.Name = "txtpa1";
             this.txtpa1.Size = new System.Drawing.Size(320, 26);
             this.txtpa1.TabIndex = 235;
+            this.txtpa1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpa1_KeyPress);
             // 
             // label11
             // 
@@ -126,10 +130,12 @@
             this.txtmontom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmontom.Location = new System.Drawing.Point(285, 501);
             this.txtmontom.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmontom.MaxLength = 9;
             this.txtmontom.Name = "txtmontom";
             this.txtmontom.Size = new System.Drawing.Size(169, 26);
             this.txtmontom.TabIndex = 230;
             this.txtmontom.TextChanged += new System.EventHandler(this.Txtmontom_TextChanged_1);
+            this.txtmontom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmontom_KeyPress);
             // 
             // txtfechafin
             // 
@@ -319,8 +325,9 @@
             // 
             // dtpinicio
             // 
-            this.dtpinicio.Location = new System.Drawing.Point(611, 500);
+            this.dtpinicio.Location = new System.Drawing.Point(611, 505);
             this.dtpinicio.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpinicio.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpinicio.Name = "dtpinicio";
             this.dtpinicio.Size = new System.Drawing.Size(192, 22);
             this.dtpinicio.TabIndex = 214;
@@ -418,15 +425,16 @@
             this.label17.Location = new System.Drawing.Point(279, 549);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(275, 33);
+            this.label17.Size = new System.Drawing.Size(206, 33);
             this.label17.TabIndex = 206;
-            this.label17.Text = "Cantidad de Meses";
+            this.label17.Text = "Meses a Pagar";
             // 
             // txtcantm
             // 
             this.txtcantm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcantm.Location = new System.Drawing.Point(285, 585);
             this.txtcantm.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcantm.MaxLength = 9;
             this.txtcantm.Name = "txtcantm";
             this.txtcantm.Size = new System.Drawing.Size(169, 26);
             this.txtcantm.TabIndex = 205;

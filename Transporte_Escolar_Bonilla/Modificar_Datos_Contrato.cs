@@ -15,6 +15,7 @@ namespace Transporte_Escolar_Bonilla
         Estetica estetics = new Estetica();
         Consultar con = new Consultar();
         Modificar modif = new Modificar();
+
         public Modificar_Datos_Contrato()
         {
             InitializeComponent();
@@ -67,17 +68,24 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtMonto.Text!="" && cmbEstado.Text!="" && dtpInicio.Value>dtpFinal.Value)
             {
-                string estado;
-                estado = cmbEstado.SelectedValue.ToString();
-                modif.ModificarContrato(txtContrato.Text, double.Parse(txtMonto.Text), DateTime.Parse(dtpFinal.Text), int.Parse(estado));
+                if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string estado;
+                    estado = cmbEstado.SelectedValue.ToString();
+                    modif.ModificarContrato(txtContrato.Text, double.Parse(txtMonto.Text), DateTime.Parse(dtpFinal.Text), int.Parse(estado));
+                }
+            }
+            else
+            {
+                MessageBox.Show("ERROR. No deje ningun campo vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void TxtMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.' || (char.IsControl(e.KeyChar) && e.KeyChar != (char)Keys.Back))
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtMonto.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
             }
