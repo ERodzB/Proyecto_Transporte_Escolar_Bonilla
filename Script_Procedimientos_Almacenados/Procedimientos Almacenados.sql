@@ -625,6 +625,7 @@ begin
 	end
 	
 end
+GO
 /*---------------------------------------------Procedimiento LLenar DGV Empleados Actualizado------------------------------------------------*/
 create procedure DatosDVGEmpleados
 as

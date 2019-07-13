@@ -126,11 +126,11 @@ INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ru
 INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Cerro Grande-La Sosa', N'	Cerro Grande - Mall Premier - UNAH - La Sosa', N'Sin Especificar', N'Temporal')
 INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Viaje-1', N'Viaje Jorge Salgado', N'Tegucigalpa-Comoyagua', N'Viaje')
 GO
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAF5039', CAST(N'04:30:00' AS Time), CAST(N'06:00:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAT5457', CAST(N'06:00:00' AS Time), CAST(N'07:30:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAF5039', CAST(N'07:30:00' AS Time), CAST(N'09:00:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'	San Francisco - El Centro', N'PAW4234', CAST(N'06:00:00' AS Time), CAST(N'09:00:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'	San Francisco - El Centro', N'PAF5039', CAST(N'09:30:00' AS Time), CAST(N'12:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman-El Centro', N'PAF5039', CAST(N'04:30:00' AS Time), CAST(N'06:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman-El Centro', N'PAT5457', CAST(N'06:00:00' AS Time), CAST(N'07:30:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman-El Centro', N'PAF5039', CAST(N'07:30:00' AS Time), CAST(N'09:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'San Francisco-El Centro', N'PAW4234', CAST(N'06:00:00' AS Time), CAST(N'09:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'San Francisco-El Centro', N'PAF5039', CAST(N'09:30:00' AS Time), CAST(N'12:00:00' AS Time), 0)
 INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Viaje-1', N'PAT5457', CAST(N'06:00:00' AS Time), CAST(N'12:00:00' AS Time), NULL)
 GO
 INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0705199000015', N'Allan Castellanos', N'Col. Linda Vista, Calle Principal, Casa #3', N'22334545', N'afcastellanos@hotmail.com')
@@ -158,7 +158,7 @@ INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_de_Cuota], [Codigo_Contrato], [Cod
 INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_de_Cuota], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI], [Descripcion de Recibo]) VALUES (2, 1, N'2019-2-B', N'RCTr', CAST(N'2019-06-06' AS Date), 2500.0000, N'1', N'Anticipo de viaje privado')
 INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_de_Cuota], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI], [Descripcion de Recibo]) VALUES (3, 1, N'2019-2-B', N'RCTr', CAST(N'2019-06-07' AS Date), 2000.0000, N'1', N'Pago Restante de Viaje')
 GO
-INSERT [dbo].[Rutas_Contratos] ([Codigo_Ruta], [Codigo_Contrato], [Parada_Contrato]) VALUES (N'	San Francisco - El Centro', N'2019-1-E', N'El Centro')
+INSERT [dbo].[Rutas_Contratos] ([Codigo_Ruta], [Codigo_Contrato], [Parada_Contrato]) VALUES (N'San Francisco-El Centro', N'2019-1-E', N'El Centro')
 INSERT [dbo].[Rutas_Contratos] ([Codigo_Ruta], [Codigo_Contrato], [Parada_Contrato]) VALUES (N'Viaje-1', N'2019-2-B', N'Centro Comercial Comayagua')
 GO
 
