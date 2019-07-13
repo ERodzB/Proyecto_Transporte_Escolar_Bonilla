@@ -68,6 +68,48 @@ namespace Transporte_Escolar_Bonilla
 
             }
         }
+        public void ModificarEmpleado(string id, string nom, int genero, string tel, string correo, string dir, int puesto, double salario, string Lic, DateTime fechaLic)
+        {
+            try
+            {
+                cmd = new SqlCommand("ModificarEmpleado", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@identidad", id);
+                cmd.Parameters.AddWithValue("@Nombr", nom);
+                cmd.Parameters.AddWithValue("@Genero", genero);
+                cmd.Parameters.AddWithValue("@Telefono", tel);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@Direccion", dir);
+                cmd.Parameters.AddWithValue("@Puesto", puesto);
+                cmd.Parameters.AddWithValue("@Salario", salario);
+                cmd.Parameters.AddWithValue("@Licencia", Lic);
+                cmd.Parameters.AddWithValue("@FechaVLic", fechaLic);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, algo a salido mal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+        }
+        public void ModificarVAsigDevol(int Tipo,string Empleado,string Placa)
+        {
+            try
+            {
+                cmd = new SqlCommand("devolverasignarunidades", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tipo", Tipo);
+                cmd.Parameters.AddWithValue("@empleado", Empleado);
+                cmd.Parameters.AddWithValue("@placa", Placa);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, algo a salido mal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+        }
+
 
         public void ModificarPerfiles(int Codigo_Perfil,int Nivel_Acceso, string Nombre_Perfil, string Descripcion_Perfil)
         {

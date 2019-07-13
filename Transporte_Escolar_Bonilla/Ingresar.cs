@@ -50,7 +50,7 @@ namespace Transporte_Escolar_Bonilla
             mensaje = "Datos del Cliente guardados con Éxito"; 
         }
 
-        public void NuevoEmpleado(string id, string nom, DateTime fecha, string genero, string tel, string correo, string dir, int puesto, double salario)
+        public void NuevoEmpleado(string id, string nom, DateTime fecha, int genero, string tel, string correo, string dir, int puesto, double salario,string Lic, DateTime fechaLic)
         {
             try
             {
@@ -65,6 +65,8 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Direccion",dir);
                 cmd.Parameters.AddWithValue("@Puesto", puesto);
                 cmd.Parameters.AddWithValue("@Salario", salario);
+                cmd.Parameters.AddWithValue("@Licencia", Lic);
+                cmd.Parameters.AddWithValue("@FechaVLic", fechaLic);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

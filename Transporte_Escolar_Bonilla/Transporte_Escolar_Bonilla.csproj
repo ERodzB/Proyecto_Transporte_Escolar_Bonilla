@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="asignacionunidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asignacionunidades.Designer.cs">
+      <DependentUpon>asignacionunidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="clientes_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
     </Compile>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Consultar.cs" />
+    <Compile Include="consultartransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultartransporte.Designer.cs">
+      <DependentUpon>consultartransporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="consultarcontrato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,12 @@
       <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
     </Compile>
     <Compile Include="Ingresar.cs" />
+    <Compile Include="Modficar_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modficar_Empleado.Designer.cs">
+      <DependentUpon>Modficar_Empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modificar.cs" />
     <Compile Include="modificarPerfiles_frm.cs">
       <SubType>Form</SubType>
@@ -211,11 +229,17 @@
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Validar.cs" />
+    <EmbeddedResource Include="asignacionunidades.resx">
+      <DependentUpon>asignacionunidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="clientes_frm.resx">
       <DependentUpon>clientes_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="conductores_frm.resx">
       <DependentUpon>conductores_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consultartransporte.resx">
+      <DependentUpon>consultartransporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="consultarcontrato.resx">
       <DependentUpon>consultarcontrato.cs</DependentUpon>
@@ -261,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_nuevo_clienteT.resx">
       <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modficar_Empleado.resx">
+      <DependentUpon>Modficar_Empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarPerfiles_frm.resx">
       <DependentUpon>modificarPerfiles_frm.cs</DependentUpon>

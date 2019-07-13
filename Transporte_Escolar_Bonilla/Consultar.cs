@@ -56,7 +56,47 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table;
         }
+        public DataTable ComboboxGeneros()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("cargarGenero", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
 
+        public DataTable ComboboxMVehiculos()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxMVehiculos", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+        public DataTable ComboboxTVehiculos()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxTVehiculos", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+        public DataTable ComboboxEVehiculos()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxEVehiculos", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+        public DataTable ComboboEncVehiculos()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboEncVehiculos", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
         public DataTable combox_Clientes()
         {
             table = new DataTable();
@@ -117,6 +157,15 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table;
         }
+        //Llenar ComboBox de Empleados
+        public DataTable Combobox_Empleados()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxEmpleados", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
 
         //Llenar ComboBox de Horarios
         public DataTable Combobox_Horarios(string ruta)
@@ -160,13 +209,39 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.Fill(table);
                 Nombre_Usuario.Text = table.Rows[0][0].ToString();
                 Contrasena_Usuario.Text = table.Rows[0][1].ToString();
-                Perfil_cmb.SelectedItem = table.Rows[0][2].ToString();
+                Perfil_cmb.SelectedItem = table.Rows[0][2].ToString()+1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex);
             }
             
+        }
+        public void BuscarEmpleado(String Codigo_Empleado, TextBox Nombre, ComboBox Genero, TextBox telefono,TextBox Correo, TextBox direccion
+            ,TextBox salario, ComboBox puesto,TextBox licencia, DateTimePicker fecha)
+        {
+            try
+            {
+                table = new DataTable();
+                Adapter = new SqlDataAdapter("BuscarEmpleado", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@Codigo_Empleado", Codigo_Empleado);
+                Adapter.Fill(table);
+                Nombre.Text = table.Rows[0][0].ToString();
+                Genero.SelectedIndex = int.Parse(table.Rows[0][1].ToString())-1;
+                telefono.Text = table.Rows[0][2].ToString();
+                Correo.Text = table.Rows[0][3].ToString();
+                direccion.Text = table.Rows[0][4].ToString();
+                puesto.SelectedIndex = int.Parse(table.Rows[0][5].ToString()) - 1;
+                salario.Text = table.Rows[0][6].ToString();
+                licencia.Text = table.Rows[0][7].ToString();
+                fecha.Text = table.Rows[0][8].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+
         }
 
         public void BuscarPerfiles(int Codigo_Perfil, ComboBox Nivel_Acceso, TextBox Nombre_Perfil, TextBox Descripcion_Perfil)
@@ -259,6 +334,55 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
+        public void cargardvgvehiculo(DataGridView dgvConsulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("LLenarDVGvehiculos", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void dvgdatosasignar(DataGridView dgvConsulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("DatosVehiculosSencillosAsignar", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void dvgdatosdevolver(DataGridView dgvConsulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("DatosVehiculosSencillosdevolver", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
         public void cargardvgempleado(DataGridView dgvConsulta)
         {
             try
@@ -276,6 +400,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
+
         public void filtrarcontrato(DataGridView dgvConsulta, string tipo,string filtro)
         {
             try
@@ -283,6 +408,43 @@ namespace Transporte_Escolar_Bonilla
                 Consultar consultar = new Consultar();
                 table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
                 Adapter = new SqlDataAdapter("filtrarcontratos", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@tipobusqueda", tipo);
+                Adapter.SelectCommand.Parameters.AddWithValue("@filtro", filtro);
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void filtrarempleado(DataGridView dgvConsulta,int filtro)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("FiltrarDatosDVGEmpleados", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@puesto", filtro);
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void filtrarvehiculos(DataGridView dgvConsulta, string tipo, string filtro)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("filtrarvehiculos", conexionBD); //Buscar Informacion de que hace especificamente un adapter
                 Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 Adapter.SelectCommand.Parameters.AddWithValue("@tipobusqueda", tipo);
                 Adapter.SelectCommand.Parameters.AddWithValue("@filtro", filtro);

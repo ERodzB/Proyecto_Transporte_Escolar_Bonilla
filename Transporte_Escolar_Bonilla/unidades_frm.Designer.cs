@@ -126,6 +126,7 @@
             this.consultasUnidades_btn.TabIndex = 1;
             this.consultasUnidades_btn.Text = "Consultas";
             this.consultasUnidades_btn.UseVisualStyleBackColor = false;
+            this.consultasUnidades_btn.Click += new System.EventHandler(this.ConsultasUnidades_btn_Click);
             // 
             // mainUnidades_panel
             // 

@@ -71,6 +71,7 @@
             this.entregaUnidad_btn.TabIndex = 6;
             this.entregaUnidad_btn.Text = "Entrega de Unidad";
             this.entregaUnidad_btn.UseVisualStyleBackColor = false;
+            this.entregaUnidad_btn.Click += new System.EventHandler(this.EntregaUnidad_btn_Click);
             // 
             // asignarConductor_btn
             // 
@@ -86,6 +87,7 @@
             this.asignarConductor_btn.TabIndex = 5;
             this.asignarConductor_btn.Text = "Asignar Unidad";
             this.asignarConductor_btn.UseVisualStyleBackColor = false;
+            this.asignarConductor_btn.Click += new System.EventHandler(this.AsignarConductor_btn_Click);
             // 
             // modificarConductores_btn
             // 
@@ -101,6 +103,7 @@
             this.modificarConductores_btn.TabIndex = 4;
             this.modificarConductores_btn.Text = "Modificar Empleado";
             this.modificarConductores_btn.UseVisualStyleBackColor = false;
+            this.modificarConductores_btn.Click += new System.EventHandler(this.ModificarConductores_btn_Click);
             // 
             // nuevoConductor_btn
             // 

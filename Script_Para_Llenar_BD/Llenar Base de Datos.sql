@@ -1,8 +1,83 @@
 USE Transporte_Bonilla
 GO
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (1, N'Asistente Tecnico', N'Trabaja con IT')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (2, N'Gerente de IT', N'Jefe de IT')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (3, N'Asistente de RRHH', N'Asiste al gerente de IT')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (4, N'Gerente de RRHH', N'Jefe de RRHH')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (5, N'Aseador', N'Asea las oficinas')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (6, N'Guardias', N'Cuida las oficinas')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (7, N'Portero', N'Abre las puertas')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (8, N'Cajero', N'Empleado que cobra en caja')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (9, N'Conductor', N'Maneja los vehiculos de la empresa')
+INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (10, N'Desarrollador', N'Desarrolla Cosas')
+GO
+INSERT [dbo].[Genero] ([CodGenero], [Genero], [Descripcion_Genero]) VALUES (1, N'Masculino', N'Hombre')
+INSERT [dbo].[Genero] ([CodGenero], [Genero], [Descripcion_Genero]) VALUES (2, N'Femenino', N'Mujer')
+INSERT [dbo].[Genero] ([CodGenero], [Genero], [Descripcion_Genero]) VALUES (3, N'Otros', N'LGBT')
+GO
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'0301199901357', N'Eric Isaac Rodríguez Bonilla ', CAST(N'1990-04-30' AS Date), 1, N'95091516', N'pineapplebakerman@gmail.com', N'x', 5, 15000.0000, N'N/A', NULL)
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'0801199502729', N'Alejandra Amador Salinas Garcia', CAST(N'2019-07-05' AS Date), 3, N'78789652', N'aamador@yahoo.com', N'Residencial Las Colinas, Casa 2432', 1, 3400.0000, N'N/A', NULL)
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'0801199601515', N'Maria Alejandra Lupiac Garcia', CAST(N'1996-07-16' AS Date), 2, N'97665876', N'M.LupiacG@gmail.com', N'Colonia Hato En Medio, Casa #33', 9, 11000.0000, N'0801199601515', CAST(N'2025-06-05' AS Date))
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'0801199701568', N'Bryan Adalberto Montoya Rivera', CAST(N'1997-01-26' AS Date), 3, N'98785469', N'b.montoya@gmail.com', N'Colonia Los Llanos, Bloque Z, Casa 2311', 9, 11500.0000, N'0801199701568', CAST(N'2024-07-12' AS Date))
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'0801199802725', N'Jorge Eduardo Salgado Romero', CAST(N'1998-01-26' AS Date), 1, N'33967131', N'jesalgadoromero26@gmail.com', N'Colonia Bella Oriente, Bloque J, Casa 4513', 9, 25000.0000, N'0801199802725', CAST(N'2024-06-13' AS Date))
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'0801199810682', N'Stephan Marcel Duarte Peña ', CAST(N'1998-05-29' AS Date), 1, N'99207373', N'stephan.1998@outlook.com', N'Colonia Altos de Toncontin, Bloque F, Casa #2114', 4, 19000.0000, N'N/A', NULL)
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'0801199919518', N'Anthony Wylberth Rodríguez Thompson', CAST(N'1999-09-07' AS Date), 1, N'87345567', N'awrodriguezt@gmail.com', N'Residencial Plaza, Bloque 70, Casa #2350', 1, 14000.0000, N'N/A', NULL)
+INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia]) VALUES (N'1502199600657', N'Lidia Nicole Mejía Carrasco', CAST(N'1996-05-29' AS Date), 2, N'99723232', N'lidiamejia29@yahoo.com', N'Residencial Centroamérica Este, Bloque 31, Casa #1813', 2, 18000.0000, N'N/A', NULL)
+GO
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (1, N'Cambio Aceite', N'Cambio de aceite quemado')
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (2, N'Cambio de llantas', N'Cambio de llantas gastadas')
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (3, N'Cambio de asientos', N'Cambio de asientos maltratados')
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (4, N'Arreglos Electricos', N'Aparatos Electricos')
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (5, N'Pintura', N'Retoques de Pintura')
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (6, N'Suspension', N'Arreglar Suspension')
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (7, N'Transmision', N'Mantenimiento a Transmision')
+INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (8, N'Motor', N'Mantenimiento al motor del vehiculo')
+GO
+INSERT [dbo].[Tipo_Pago] ([TipoPago], [NombrePago], [DescripcionPago]) VALUES (1, N'Pago Mensual', N'Pago monto Mensual por tiempo estipulado')
+INSERT [dbo].[Tipo_Pago] ([TipoPago], [NombrePago], [DescripcionPago]) VALUES (2, N'Pago Completo', N'Pago todo el monto completo y se le dio un descuento')
+GO
+INSERT [dbo].[Tipo_Ruta] ([Tipo_Ruta], [Descripcion_Tipo_Ruta]) VALUES (N'Temporal', N'Contrato por Plazo de Meses')
+INSERT [dbo].[Tipo_Ruta] ([Tipo_Ruta], [Descripcion_Tipo_Ruta]) VALUES (N'Viaje', N'Viaje Privado')
+GO
+INSERT [dbo].[TipoContrato] ([Cod_Contrato], [Tipo_Contrato], [Descripcion_Contrato]) VALUES (1, N'Temporal', N'Contrato por un Tiempo Establecido')
+INSERT [dbo].[TipoContrato] ([Cod_Contrato], [Tipo_Contrato], [Descripcion_Contrato]) VALUES (2, N'Viaje', N'Contrato por un viaje privado')
+GO
+INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (1, N'Super', N'Gasolina Super')
+INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (2, N'Regular', N'Gasolina Regular')
+INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (3, N'Diesel', N'Gasolina Diesel')
+INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (4, N'Aeroplano', N'Gasolina de Aeronave')
+GO
+INSERT [dbo].[TipoServicio] ([TipoServicio], [Descripcion]) VALUES (N'Bus Completo', N'Bus de salida y regreso')
+INSERT [dbo].[TipoServicio] ([TipoServicio], [Descripcion]) VALUES (N'Medio Bus', N'Bus solo de salida, o solo de regreso')
+INSERT [dbo].[TipoServicio] ([TipoServicio], [Descripcion]) VALUES (N'Salida o Regreso', N'Bus solo de Salida o solo de regreso')
+INSERT [dbo].[TipoServicio] ([TipoServicio], [Descripcion]) VALUES (N'Salida y Regreso', N'Bus recoge los clientes y los retorna al mismo punto')
+GO
+INSERT [dbo].[TipoTransmision] ([CodTransmision], [NombreTransmision], [DescripcionTransmision]) VALUES (1, N'Manual', N'Tiene palanca de Cambios')
+INSERT [dbo].[TipoTransmision] ([CodTransmision], [NombreTransmision], [DescripcionTransmision]) VALUES (2, N'Automatico', N'Solo pongalo en D')
+INSERT [dbo].[TipoTransmision] ([CodTransmision], [NombreTransmision], [DescripcionTransmision]) VALUES (3, N'CVT', N'Automatico Falso')
+INSERT [dbo].[TipoTransmision] ([CodTransmision], [NombreTransmision], [DescripcionTransmision]) VALUES (4, N'RVT', N'Automatico Fancy')
+GO
+INSERT [dbo].[TipoVehiculo] ([CodVehiculo], [Tipo_Vehiculo], [Descripcion_Tipo_Vehiculo]) VALUES (1, N'Microbus', N'Bus de Bajo Rodaje')
+INSERT [dbo].[TipoVehiculo] ([CodVehiculo], [Tipo_Vehiculo], [Descripcion_Tipo_Vehiculo]) VALUES (2, N'Coaster', N'Bus de Medio Rodaje')
+INSERT [dbo].[TipoVehiculo] ([CodVehiculo], [Tipo_Vehiculo], [Descripcion_Tipo_Vehiculo]) VALUES (3, N'Bus', N'Bus de Alto Rodaje')
+GO
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (1, N'Alto', N'Acceso Completo')
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (2, N'Medio', N'Acceso de consultor')
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (3, N'Bajo', N'Acceso Superficial')
+GO
+INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (1, 1, N'Administrador', N'Tiene acceso completo')
+INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (2, 2, N'Consultor', N'Puede hacer consultas')
+INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (3, 2, N'Digitalizador', N'Puede ingresar datos')
+INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (4, 2, N'Auditor', N'Puede modifcar datos')
+INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (5, 2, N'Empleado', N'Puede Ingresar, Modificar y Consultar')
+INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (6, 3, N'Invitado', N'Solo puede ver notificaciones')
+INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (7, 3, N'Pasante ', N'Invitado con usuario')
+GO
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199919518', N'athompson', N'1', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0301199901357', N'ebonilla', N'1', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199802725', N'esalgado', N'1', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'1502199600657', N'lmejia', N'1', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199810682', N'sduarte', N'1', 1)
 GO
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'CT', N'Contrato')
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'DC', N'Documentos')
@@ -12,12 +87,6 @@ INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'MT',
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'PG', N'Pagos')
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'RT', N'Rutas')
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'VE', N'Vehiculos')
-GO
-INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0705199000015', N'Allan Castellanos', N'Col. Linda Vista, Calle Principal, Casa #3', N'22334545', N'afcastellanos@hotmail.com')
-INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0801199000001', N'Berta Romero', N'Col. Hato del Medio, Sector 7', N'96273132', N'maro@yahoo.com')
-INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0801199802725', N'Eduardo Salgado', N'Nowhere', N'33967131', N'esalgado@dowalschool.net')
-INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0801199802726', N'Jorge Romero', N'Col. Bella Oriente, Bloque J, Casa 4513', N'22555684', N'jesalgadoromero26@gmail.com')
-INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0802199900011', N'Juanita Marina', N'Col. Bella Oriente, Bloque J, Casa 4513', N'22555684', N'jmarina@hotmail.com')
 GO
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (1, N'CT', N'Vigente', N'Contrato Vigente')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (2, N'CT', N'No Vigente', N'Contrato No Vigente')
@@ -42,6 +111,34 @@ INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [De
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (702, N'VE', N'Disponible', N'El vehiculo esta listo para rodar')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (703, N'VE', N'Dañado', N'El vehiculo esta fuera de servicio')
 GO
+INSERT [dbo].[Vehiculos] ([Codigo_Vehiculo], [Tipo_Vehiculo], [Anio_Vehiculo], [Marca_Vehiculo], [Modelo_Vehiculo], [Capacidad_Vehiculo], [Transmision_Vehiculo], [Combustible_Vehiculo], [Color_Vehiculo], [Anio_Adquisicion], [Estado_Vehiculo], [Emision_Permiso], [Vencimiento_Permiso], [Responsable_Vehiculo]) VALUES (N'PAF5039', 1, 1991, N'Toyota', N'Sorento', 15, 1, 1, N'Rojo', 2010, 701, CAST(N'2015-01-26' AS Date), CAST(N'2020-01-26' AS Date), NULL)
+INSERT [dbo].[Vehiculos] ([Codigo_Vehiculo], [Tipo_Vehiculo], [Anio_Vehiculo], [Marca_Vehiculo], [Modelo_Vehiculo], [Capacidad_Vehiculo], [Transmision_Vehiculo], [Combustible_Vehiculo], [Color_Vehiculo], [Anio_Adquisicion], [Estado_Vehiculo], [Emision_Permiso], [Vencimiento_Permiso], [Responsable_Vehiculo]) VALUES (N'PAT5457', 2, 2010, N'Nissan', N'Centra', 25, 2, 2, N'Azul', 2011, 702, CAST(N'2012-01-01' AS Date), CAST(N'2032-01-01' AS Date), NULL)
+INSERT [dbo].[Vehiculos] ([Codigo_Vehiculo], [Tipo_Vehiculo], [Anio_Vehiculo], [Marca_Vehiculo], [Modelo_Vehiculo], [Capacidad_Vehiculo], [Transmision_Vehiculo], [Combustible_Vehiculo], [Color_Vehiculo], [Anio_Adquisicion], [Estado_Vehiculo], [Emision_Permiso], [Vencimiento_Permiso], [Responsable_Vehiculo]) VALUES (N'PAW4234', 3, 2010, N'Mazda', N'Corolla', 40, 3, 3, N'Amarillo', 2011, 702, CAST(N'2012-01-01' AS Date), CAST(N'2032-01-01' AS Date), N'0801199802725')
+GO
+INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'ChoqueV001', N'Choque Vehiculo', N'Colision', N'Choque con Bolo', CAST(N'2019-05-30' AS Date), CAST(N'2019-06-30' AS Date), 304, N'0801199802725', N'PAW4234')
+INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'ExtravioV001', N'Extravio de Llaves', N'Extravio de Llaves', N'Laves Perdidas', CAST(N'2019-01-01' AS Date), CAST(N'2019-01-02' AS Date), 305, N'0801199919518', N'PAF5039')
+INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'PrestamoV001', N'Prestamo Vehiculo', N'Extravio Llaves', N'Llaves Perdidas', CAST(N'2019-01-26' AS Date), CAST(N'2019-01-30' AS Date), 305, N'0801199802725', N'PAF5039')
+GO
+INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'San Francisco-El Centro', N'	San Francisco - El Centro', N'Sin Especificar', N'Temporal')
+INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Aleman-El Centro', N'Aleman - Los Llanos - La Isla - El Centro	', N'Sin Especificar', N'Temporal')
+INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Anillo Periferico-Carrizal', N'	Anillo Periferico - UNAH - La Sosa - Ulloa - Carrizal', N'Sin Especificar', N'Temporal')
+INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Carrizal-Miraflores', N'	Carrizal - El Centro - Miraflores', N'Sin Especificar', N'Temporal')
+INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Cerro Grande-La Sosa', N'	Cerro Grande - Mall Premier - UNAH - La Sosa', N'Sin Especificar', N'Temporal')
+INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Viaje-1', N'Viaje Jorge Salgado', N'Tegucigalpa-Comoyagua', N'Viaje')
+GO
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAF5039', CAST(N'04:30:00' AS Time), CAST(N'06:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAT5457', CAST(N'06:00:00' AS Time), CAST(N'07:30:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAF5039', CAST(N'07:30:00' AS Time), CAST(N'09:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'	San Francisco - El Centro', N'PAW4234', CAST(N'06:00:00' AS Time), CAST(N'09:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'	San Francisco - El Centro', N'PAF5039', CAST(N'09:30:00' AS Time), CAST(N'12:00:00' AS Time), 0)
+INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Viaje-1', N'PAT5457', CAST(N'06:00:00' AS Time), CAST(N'12:00:00' AS Time), NULL)
+GO
+INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0705199000015', N'Allan Castellanos', N'Col. Linda Vista, Calle Principal, Casa #3', N'22334545', N'afcastellanos@hotmail.com')
+INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0801199000001', N'Berta Romero', N'Col. Hato del Medio, Sector 7', N'96273132', N'maro@yahoo.com')
+INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0801199802725', N'Eduardo Salgado', N'Nowhere', N'33967131', N'esalgado@dowalschool.net')
+INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0801199802726', N'Jorge Romero', N'Col. Bella Oriente, Bloque J, Casa 4513', N'22555684', N'jesalgadoromero26@gmail.com')
+INSERT [dbo].[Cliente] ([Codigo_Cliente], [Nombre_Cliente], [Direccion_Cliente], [Telefono_Cliente], [Correo_Cliente]) VALUES (N'0802199900011', N'Juanita Marina', N'Col. Bella Oriente, Bloque J, Casa 4513', N'22555684', N'jmarina@hotmail.com')
+GO
 INSERT [dbo].[Documentos] ([Codigo_Documento], [Nombre_Documento]) VALUES (N'AP', N'Ante. Penales')
 INSERT [dbo].[Documentos] ([Codigo_Documento], [Nombre_Documento]) VALUES (N'APl', N'Ante. Policiales')
 INSERT [dbo].[Documentos] ([Codigo_Documento], [Nombre_Documento]) VALUES (N'CCP', N'Carta Compromiso')
@@ -51,81 +148,17 @@ INSERT [dbo].[Documentos] ([Codigo_Documento], [Nombre_Documento]) VALUES (N'ID'
 INSERT [dbo].[Documentos] ([Codigo_Documento], [Nombre_Documento]) VALUES (N'IHSS', N'Carnet Seguro')
 INSERT [dbo].[Documentos] ([Codigo_Documento], [Nombre_Documento]) VALUES (N'RCTr', N'Recibo de Pago de un Contrato')
 GO
-INSERT [dbo].[TipoContrato] ([Cod_Contrato], [Tipo_Contrato], [Descripcion_Contrato]) VALUES (1, N'Temporal', N'Contrato por un Tiempo Establecido')
-INSERT [dbo].[TipoContrato] ([Cod_Contrato], [Tipo_Contrato], [Descripcion_Contrato]) VALUES (2, N'Viaje', N'Contrato por un viaje privado')
-GO
-INSERT [dbo].[Contratos] ([Codigo_Contrato], [Cliente_Contrato], [Tipo_Contrato], [Monto Mensual], [Cuotas_Mesuales], [Servicio], [Anticipo], [Fecha_Inicio_Contrato], [Monto_Contrato], [Fecha_Vencimiento], [Estado_Contrato], [Cod_Documento],[Tipo_Pago_Contrato]) VALUES (N'2019-1-E', N'0801199802725', 1, 1200.0000, 5, N'Bus Completo', 0.0000, CAST(N'2019-01-01' AS Date), 6000.0000, CAST(N'2019-06-01' AS Date), 1, N'CTr',N'Mensual')
-INSERT [dbo].[Contratos] ([Codigo_Contrato], [Cliente_Contrato], [Tipo_Contrato], [Monto Mensual], [Cuotas_Mesuales], [Servicio], [Anticipo], [Fecha_Inicio_Contrato], [Monto_Contrato], [Fecha_Vencimiento], [Estado_Contrato], [Cod_Documento],[Tipo_Pago_Contrato]) VALUES (N'2019-2-B', N'0801199000001', 2, 0.0000, 0, N'Ida y Vuelta', 2500.0000, CAST(N'2019-06-06' AS Date), 4500.0000, CAST(N'2019-06-07' AS Date), 2, N'CTr',null)
-GO
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (1, N'Asistente Tecnico', N'Trabaja con IT')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (2, N'Gerente de IT', N'Jefe de IT')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (3, N'Asistente de RRHH', N'Asiste al gerente de IT')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (4, N'Gerente de RRHH', N'Jefe de RRHH')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (5, N'Aseador', N'Asea las oficinas')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (6, N'Guardias', N'Cuida las oficinas')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (7, N'Portero', N'Abre las puertas')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (8, N'Cajero', N'Empleado que cobra en caja')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (9, N'Chofer', N'Maneja los vehiculos de la empresa')
-INSERT [dbo].[Puesto] ([Codigo_Puesto], [Nombre_Puesto], [Descripcion_Puesto]) VALUES (10, N'Desarrollador', N'Desarrolla Cosas')
-GO
-INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario]) VALUES (N'0301199901357', N'Eric Isaac Rodríguez Bonilla ', CAST(N'1990-04-30' AS Date), N'Otros', N'95091516', N'pineapplebakerman@gmail.com', N'x', 5, 15000.0000)
-INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario]) VALUES (N'0801199802725', N'Jorge Eduardo Salgado Romero', CAST(N'1998-01-26' AS Date), N'Masculino', N'33967131', N'jesalgadoromero26@gmail.com', N'Colonia Bella Oriente, Bloque J, Casa 4513', 3, 16000.0000)
-INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario]) VALUES (N'0801199810682', N'Stephan Marcel Duarte Peña ', CAST(N'1998-05-29' AS Date), N'Masculino', N'99207373', N'stephan.1998@outlook.com', N'Colonia Altos de Toncontin, Bloque F, Casa #2114', 4, 19000.0000)
-INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario]) VALUES (N'0801199919518', N'Anthony Wylberth Rodríguez Thompson', CAST(N'1999-09-07' AS Date), N'Masculino', N'87345567', N'awrodriguezt@gmail.com', N'Residencial Plaza, Bloque 70, Casa #2350', 1, 14000.0000)
-INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario]) VALUES (N'1502199600657', N'Lidia Nicole Mejía Carrasco', CAST(N'1996-05-29' AS Date), N'Femenino', N'99723232', N'lidiamejia29@yahoo.com', N'Residencial Centroamérica Este, Bloque 31, Casa #1813', 2, 18000.0000)
-GO
-INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'	San Francisco - El Centro', N'	San Francisco - El Centro', N'Sin Especificar', N'Temporal')
-INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Aleman - El Centro', N'Aleman - Los Llanos - La Isla - El Centro	', N'Sin Especificar', N'Temporal')
-INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Anillo Periferico - Carrizal', N'	Anillo Periferico - UNAH - La Sosa - Ulloa - Carrizal', N'Sin Especificar', N'Temporal')
-INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Carrizal - Miraflores', N'	Carrizal - El Centro - Miraflores', N'Sin Especificar', N'Temporal')
-INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Cerro Grande - La Sosa', N'	Cerro Grande - Mall Premier - UNAH - La Sosa', N'Sin Especificar', N'Temporal')
-INSERT [dbo].[Rutas] ([Codigo_Ruta], [Nombre_Ruta], [Descripcion_Ruta], [Tipo_Ruta]) VALUES (N'Viaje-1', N'Viaje Jorge Salgado', N'Tegucigalpa-Comoyagua', N'Viaje')
-GO
-INSERT [dbo].[Rutas_Contratos] ([Codigo_Ruta], [Codigo_Contrato], [Parada_Contrato]) VALUES (N'	San Francisco - El Centro', N'2019-1-E', N'El Centro')
-INSERT [dbo].[Rutas_Contratos] ([Codigo_Ruta], [Codigo_Contrato], [Parada_Contrato]) VALUES (N'Aleman - El Centro', N'2019-2-B', N'Los Llanos')
-GO
-INSERT [dbo].[Vehiculos] ([Codigo_Vehiculo], [Tipo_Vehiculo], [Anio_Vehiculo], [Marca_Vehiculo], [Modelo_Vehiculo], [Capacidad_Vehiculo], [Transmision_Vehiculo], [Combustible_Vehiculo], [Color_Vehiculo], [Anio_Adquisicion], [Estado_Vehiculo], [Emision_Permiso], [Vencimiento_Permiso], [Responsable_Vehiculo]) VALUES (N'PAF5039', N'Microbus', 1991, N'Toyota', N'Sorento', 20, N'Manual', N'Regular', N'Rojo', 2010, 701, CAST(N'2015-01-26' AS Date), CAST(N'2020-01-26' AS Date), N'0301199901357')
-INSERT [dbo].[Vehiculos] ([Codigo_Vehiculo], [Tipo_Vehiculo], [Anio_Vehiculo], [Marca_Vehiculo], [Modelo_Vehiculo], [Capacidad_Vehiculo], [Transmision_Vehiculo], [Combustible_Vehiculo], [Color_Vehiculo], [Anio_Adquisicion], [Estado_Vehiculo], [Emision_Permiso], [Vencimiento_Permiso], [Responsable_Vehiculo]) VALUES (N'PAT5457', N'Bus', 2010, N'Nissan', N'Centra', 40, N'Automatico', N'Super', N'Azul', 2011, 702, CAST(N'2012-01-01' AS Date), CAST(N'2032-01-01' AS Date), N'0801199810682')
-INSERT [dbo].[Vehiculos] ([Codigo_Vehiculo], [Tipo_Vehiculo], [Anio_Vehiculo], [Marca_Vehiculo], [Modelo_Vehiculo], [Capacidad_Vehiculo], [Transmision_Vehiculo], [Combustible_Vehiculo], [Color_Vehiculo], [Anio_Adquisicion], [Estado_Vehiculo], [Emision_Permiso], [Vencimiento_Permiso], [Responsable_Vehiculo]) VALUES (N'PAW4234', N'Bus', 2010, N'Mazda', N'Corolla', 40, N'Automatico', N'Super', N'Amarillo', 2011, 702, CAST(N'2012-01-01' AS Date), CAST(N'2032-01-01' AS Date), N'1502199600657')
-GO
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAF5039', CAST(N'04:30:00' AS Time), CAST(N'06:00:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAT5457', CAST(N'06:00:00' AS Time), CAST(N'07:30:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Aleman - El Centro', N'PAF5039', CAST(N'07:30:00' AS Time), CAST(N'09:00:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'	San Francisco - El Centro', N'PAW4234', CAST(N'06:00:00' AS Time), CAST(N'09:00:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'	San Francisco - El Centro', N'PAF5039', CAST(N'09:30:00' AS Time), CAST(N'12:00:00' AS Time), 0)
-INSERT [dbo].[Vehiculos_Rutas] ([Codigo_Ruta], [Codigo_Vehiculo], [Horario_Salida], [Horario_Entrada], [Cantidad_Pasajeros_Actuales]) VALUES (N'Viaje-1', N'PAT5457', CAST(N'06:00:00' AS Time), CAST(N'12:00:00' AS Time), NULL)
-GO
-INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'ChoqueV001', N'Choque Vehiculo', N'Colision', N'Choque con Bolo', CAST(N'2019-05-30' AS Date), CAST(N'2019-06-30' AS Date), 304, N'0801199802725', N'PAW4234')
-INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'ExtravioV001', N'Extravio de Llaves', N'Extravio de Llaves', N'Laves Perdidas', CAST(N'2019-01-01' AS Date), CAST(N'2019-01-02' AS Date), 305, N'0801199919518', N'PAF5039')
-INSERT [dbo].[Eventos] ([Cod_Evento], [Nombre_Evento], [Motivo_Evento], [Descripcion_Evento], [Inicio_Evento], [Conclusion_Evento], [Estado_Evento], [Responsable_Evento], [Vehiculo_Evento]) VALUES (N'PrestamoV001', N'Prestamo Vehiculo', N'Extravio Llaves', N'Llaves Perdidas', CAST(N'2019-01-26' AS Date), CAST(N'2019-01-30' AS Date), 305, N'0801199802725', N'PAF5039')
-GO
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (1, N'Cambio Aceite', N'Cambio de aceite quemado')
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (2, N'Cambio de llantas', N'Cambio de llantas gastadas')
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (3, N'Cambio de asientos', N'Cambio de asientos maltratados')
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (4, N'Arreglos Electricos', N'Aparatos Electricos')
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (5, N'Pintura', N'Retoques de Pintura')
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (6, N'Suspension', N'Arreglar Suspension')
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (7, N'Transmision', N'Mantenimiento a Transmision')
-INSERT [dbo].[Tipo_Mantenimientos] ([Codigo_Tipo_Mantenimiento], [Nombre_Mantenimiento], [Descripcion_Mantenimiento]) VALUES (8, N'Motor', N'Mantenimiento al motor del vehiculo')
+INSERT [dbo].[Contratos] ([Codigo_Contrato], [Cliente_Contrato], [Tipo_Contrato], [Monto Mensual], [Meses Pagados], [Servicio], [Anticipo], [Fecha_Inicio_Contrato], [Monto_Contrato], [Fecha_Vencimiento], [Estado_Contrato], [Cod_Documento], [Tipo_Pago]) VALUES (N'2019-1-E', N'0801199802725', 1, 1200.0000, 5, N'Bus Completo', 0.0000, CAST(N'2019-01-01' AS Date), 6000.0000, CAST(N'2019-06-01' AS Date), 1, N'CTr', 1)
+INSERT [dbo].[Contratos] ([Codigo_Contrato], [Cliente_Contrato], [Tipo_Contrato], [Monto Mensual], [Meses Pagados], [Servicio], [Anticipo], [Fecha_Inicio_Contrato], [Monto_Contrato], [Fecha_Vencimiento], [Estado_Contrato], [Cod_Documento], [Tipo_Pago]) VALUES (N'2019-2-B', N'0801199000001', 2, 0.0000, 0, N'Salida y Regreso', 2500.0000, CAST(N'2019-06-06' AS Date), 4500.0000, CAST(N'2019-06-07' AS Date), 2, N'CTr', 2)
 GO
 INSERT [dbo].[Mantenimientos] ([Codigo_Mantenimiento], [Tipo_Mantenimiento], [Fecha_Mantenimiento], [Codigo_Vehiculo], [Costo_Mantenimiento], [Estado_Mantenimiento]) VALUES (1, 1, CAST(N'2019-01-27' AS Date), N'PAF5039', 1500.0000, 402)
 INSERT [dbo].[Mantenimientos] ([Codigo_Mantenimiento], [Tipo_Mantenimiento], [Fecha_Mantenimiento], [Codigo_Vehiculo], [Costo_Mantenimiento], [Estado_Mantenimiento]) VALUES (2, 5, CAST(N'2019-01-27' AS Date), N'PAW4234', 9000.0000, 403)
 GO
-INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (1, 1, N'Administrador', N'Tiene acceso completo')
-INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (2, 2, N'Consultor', N'Puede hacer consultas')
-INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (3, 2, N'Digitalizador', N'Puede ingresar datos')
-INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (4, 2, N'Auditor', N'Puede modifcar datos')
-INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (5, 2, N'Empleado', N'Puede Ingresar, Modificar y Consultar')
-INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (6, 3, N'Invitado', N'Solo puede ver notificaciones')
-INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (7, 3, N'Pasante ', N'Invitado con usuario')
+INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_de_Cuota], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI], [Descripcion de Recibo]) VALUES (1, 1, N'2019-1-E', N'RCTr', CAST(N'2019-01-01' AS Date), 6000.0000, N'1', N'Pago de Mensualidad por 6 meses')
+INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_de_Cuota], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI], [Descripcion de Recibo]) VALUES (2, 1, N'2019-2-B', N'RCTr', CAST(N'2019-06-06' AS Date), 2500.0000, N'1', N'Anticipo de viaje privado')
+INSERT [dbo].[Recibos] ([Num_Recibo], [Numero_de_Cuota], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI], [Descripcion de Recibo]) VALUES (3, 1, N'2019-2-B', N'RCTr', CAST(N'2019-06-07' AS Date), 2000.0000, N'1', N'Pago Restante de Viaje')
 GO
-INSERT [dbo].[Recibos] ([Num_Recibo], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI],[Descripcion_Recibo]) VALUES (1, N'2019-1-E', N'RCTr', CAST(N'2019-01-01' AS Date), 6000.0000, N'1', N'Pago de Mensualidad por 6 meses')
-INSERT [dbo].[Recibos] ([Num_Recibo], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI], [Descripcion_Recibo]) VALUES (2, N'2019-2-B', N'RCTr', CAST(N'2019-06-06' AS Date), 2500.0000, N'1', N'Anticipo de viaje privado')
-INSERT [dbo].[Recibos] ([Num_Recibo], [Codigo_Contrato], [Codigo_Documento], [Fecha_Recibo], [Monto], [Numero_CAI], [Descripcion_Recibo]) VALUES (3, N'2019-2-B', N'RCTr', CAST(N'2019-06-07' AS Date), 2000.0000, N'1', N'Pago Restante de Viaje')
+INSERT [dbo].[Rutas_Contratos] ([Codigo_Ruta], [Codigo_Contrato], [Parada_Contrato]) VALUES (N'	San Francisco - El Centro', N'2019-1-E', N'El Centro')
+INSERT [dbo].[Rutas_Contratos] ([Codigo_Ruta], [Codigo_Contrato], [Parada_Contrato]) VALUES (N'Viaje-1', N'2019-2-B', N'Centro Comercial Comayagua')
 GO
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199919518', N'athompson', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0301199901357', N'ebonilla', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199802725', N'esalgado', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'1502199600657', N'lmejia', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199810682', N'sduarte', N'1', 1)
-GO
+

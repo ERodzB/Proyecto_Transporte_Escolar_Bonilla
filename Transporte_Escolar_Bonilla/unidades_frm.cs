@@ -12,6 +12,7 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class unidades_frm : Form
     {
+        Estetica estetica = new Estetica();
         public unidades_frm()
         {
             InitializeComponent();
@@ -47,6 +48,12 @@ namespace Transporte_Escolar_Bonilla
         private void MainUnidades_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ConsultasUnidades_btn_Click(object sender, EventArgs e)
+        {
+            consultartransporte transporte = new consultartransporte();
+            estetica.AbrirFormularios(transporte, mainUnidades_panel);
         }
     }
 }

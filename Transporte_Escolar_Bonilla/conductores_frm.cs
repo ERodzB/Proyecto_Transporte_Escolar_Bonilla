@@ -60,5 +60,23 @@ namespace Transporte_Escolar_Bonilla
             Consultar_empleados empleados = new Consultar_empleados();
             Estetics.AbrirFormularios(empleados, conductorMain_Panel);
         }
+
+        private void ModificarConductores_btn_Click(object sender, EventArgs e)
+        {
+            Modficar_Empleado mempleados = new Modficar_Empleado();
+            Estetics.AbrirFormularios(mempleados, conductorMain_Panel);
+        }
+
+        private void AsignarConductor_btn_Click(object sender, EventArgs e)
+        {
+            asignacionunidades aunidades = new asignacionunidades(1);
+            Estetics.AbrirFormularios(aunidades, conductorMain_Panel);
+        }
+
+        private void EntregaUnidad_btn_Click(object sender, EventArgs e)
+        {
+            asignacionunidades aunidades = new asignacionunidades(2);
+            Estetics.AbrirFormularios(aunidades, conductorMain_Panel);
+        }
     }
 }
