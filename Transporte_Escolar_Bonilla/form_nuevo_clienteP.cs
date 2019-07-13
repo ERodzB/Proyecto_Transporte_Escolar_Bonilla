@@ -90,11 +90,15 @@ namespace Transporte_Escolar_Bonilla
                     contc++;
             }
 
-            if (txtpa.Text == "" || int.Parse(txtpa.Text) <= 0)
+            if (txtpa.Text == "" || double.Parse(txtpa.Text) <= 0)
                 contc++;
 
             //Validar Fechas 
-            if (dtpfin.Value < dtpinicio.Value)
+            if (dtpfin.Value > dtpinicio.Value)
+                contc++;
+
+            //Validar que no sea menor el precio que el anticipo
+            if (double.Parse(txtant.Text) > double.Parse(txttotal.Text))
                 contc++;
 
             if (contc > 0)
@@ -269,6 +273,48 @@ namespace Transporte_Escolar_Bonilla
         {
             consul.DescVehiculos(combveh2.Text, labv2);
             labv2.Visible = true;
+        }
+
+        private void Txtpa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtorigen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtdestino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txttotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txttotal.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+
+        private void Txtant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtant.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
         }
     }
 }

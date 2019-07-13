@@ -114,14 +114,19 @@ namespace Transporte_Escolar_Bonilla
         //Si se presiona tecla borrar en cantmeses
         private void Txtcantm_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Back))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                borrar = true;
-                //MessageBox.Show("TECLA: " + e.KeyChar);
-            }
+                e.Handled=true;
+                if (e.KeyChar == Convert.ToChar(Keys.Delete))
+                {
+                    borrar = true;
+                    //MessageBox.Show("TECLA: " + e.KeyChar);
+                }
 
-            else
-                borrar = false;
+                else
+                    borrar = false;
+
+            }
         }
 
         //Selecciona fecha Inicio
@@ -135,14 +140,15 @@ namespace Transporte_Escolar_Bonilla
         private void Txtcantm_TextChanged_1(object sender, EventArgs e)
         {
             //Para calcular Monto Total
-         
+
             //Para calcular fecha de finalizacion (Se toma en cuenta si se presiona borrar)
+
             if (txtcantm.Text == "")
                 txtfechafin.Text = "";
 
             if (borrar == false)
             {
-                if (txtcantm.Text != " ")
+                if (txtcantm.Text != "")
                     txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");  
             }
             else
@@ -224,6 +230,7 @@ namespace Transporte_Escolar_Bonilla
                         contr++;
                 }
 
+                //if ()
 
                 //Mostrar mensaje de Error
                 if (contr > 0)
@@ -292,12 +299,11 @@ namespace Transporte_Escolar_Bonilla
         private void Pago_cmb_SelectedValueChanged(object sender, EventArgs e)
         {
             if (pago_cmb.SelectedItem.Equals("Mensual")) { 
-                label7.Text = "Cantidad de Meses";
+                label7.Text = "Monto por mes";
             }
             else
             {
                 label7.Text = "Monto Total";
-                label17.Text = "Meses a Pagar";
             }
         }
 
@@ -309,6 +315,31 @@ namespace Transporte_Escolar_Bonilla
         private void Label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txtpa1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtpa2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtmontom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtmontom.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
         }
     }
 }

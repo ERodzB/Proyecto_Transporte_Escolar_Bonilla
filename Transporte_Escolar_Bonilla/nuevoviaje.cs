@@ -105,6 +105,8 @@ namespace Transporte_Escolar_Bonilla
             {
                 consul.DescVehiculos(combveh1.Text, labv1);
                 labv1.Visible = true;
+                if(combservicio.SelectedIndex==1)
+                    combveh2.SelectedIndex = combveh1.SelectedIndex;
             }
         }
 
@@ -121,6 +123,50 @@ namespace Transporte_Escolar_Bonilla
                 labv2.Visible = true;
             }
         }
+
+        private void Txtpa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtorigen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtdestino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txttotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txttotal.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+    
+
+        private void Txtant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtant.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+    
 
         //Crear
         private void Botcrear_Click(object sender, EventArgs e)
@@ -144,6 +190,9 @@ namespace Transporte_Escolar_Bonilla
             if (txtdestino.Text == "")
                 contc++;
 
+            if (txtpa.Text == "")
+                contc++;
+
             if (txttotal.Text == "" || double.Parse(txttotal.Text) <= 0)
                 contc++;
 
@@ -153,6 +202,10 @@ namespace Transporte_Escolar_Bonilla
             //Validar Fechas 
             if (dtpfin.Value < dtpinicio.Value)
                 contc++;
+            
+            //Validar anticipo no mayor que monto total
+            if (Double.Parse(txtant.Text) > Double.Parse(txttotal.Text))
+               contc++; 
 
             if (contc > 0)
                 MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -239,7 +292,6 @@ namespace Transporte_Escolar_Bonilla
 
                     conth++;
                 }
-
                 if (conth > 0)
                     MessageBox.Show("Debe llenar correctamente los Horarios\n\n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else

@@ -14,6 +14,7 @@ namespace Transporte_Escolar_Bonilla
     {
         Estetica estetics = new Estetica();
         public static string codc, nombrecli, fechaini, monto, fechafin, estado;
+        public int x = 0;
 
         private void BtnSeleccionar_Click_1(object sender, EventArgs e)
         {
@@ -31,7 +32,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvContrato_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            btnSeleccionar.Enabled = true;
         }
 
         private void Contratos_panel_Paint(object sender, PaintEventArgs e)
@@ -58,6 +59,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Form_Modificar_Contrato_Load(object sender, EventArgs e)
         {
+            x = 0;
             Consultar con = new Consultar();
 
             con.CargadgvContrato(dgvContrato);

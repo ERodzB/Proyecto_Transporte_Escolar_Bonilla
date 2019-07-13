@@ -99,5 +99,13 @@ namespace Transporte_Escolar_Bonilla
         {
 
         }
+
+        private void TxtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

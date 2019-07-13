@@ -142,6 +142,7 @@
             this.Correo_tb.Size = new System.Drawing.Size(310, 38);
             this.Correo_tb.TabIndex = 13;
             this.Correo_tb.Visible = false;
+            this.Correo_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Correo_tb_KeyPress);
             // 
             // correo_lbl
             // 
