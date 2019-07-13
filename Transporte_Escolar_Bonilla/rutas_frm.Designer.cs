@@ -69,6 +69,7 @@
             this.modificarRuta_btn.TabIndex = 3;
             this.modificarRuta_btn.Text = "Modificar Rutas";
             this.modificarRuta_btn.UseVisualStyleBackColor = false;
+            this.modificarRuta_btn.Click += new System.EventHandler(this.ModificarRuta_btn_Click);
             // 
             // nuevaRuta_btn
             // 
@@ -131,7 +132,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.bus;
-            this.pictureBox1.Location = new System.Drawing.Point(341, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(358, 46);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(427, 423);

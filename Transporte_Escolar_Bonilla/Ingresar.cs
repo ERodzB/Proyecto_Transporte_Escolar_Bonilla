@@ -176,6 +176,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Horario_Entrada", horae);
                 cmd.Parameters.AddWithValue("@Pasajeros", pa);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Horario creado exitosamente");
             }
             catch (Exception ex)
             {

@@ -200,6 +200,26 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex);
             }
         }
-
+        public void ModificarHorario(string Codigo_Ruta, string Codigo_Vehiculo,string Horario_Salida,string Horario_Entrada, DateTime Horario_Salida_Nuevo, DateTime Horario_Entrada_Nuevo,string Decision)
+        {
+            try
+            {
+                cmd = new SqlCommand("Mantenimiento_Horarios", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Ruta", Codigo_Ruta);
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", Codigo_Vehiculo);
+                cmd.Parameters.AddWithValue("@Horario_Salida", Horario_Salida);
+                cmd.Parameters.AddWithValue("@Horario_Entrada", Horario_Entrada);
+                cmd.Parameters.AddWithValue("@Horario_Entrada_Nuevo", Horario_Entrada_Nuevo);
+                cmd.Parameters.AddWithValue("Horario_Salida_Nuevo", Horario_Salida_Nuevo);
+                cmd.Parameters.AddWithValue("@Decision", Decision);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha "+Decision+" correctamente el Horario");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
     }
 }
