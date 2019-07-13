@@ -94,7 +94,7 @@ namespace Transporte_Escolar_Bonilla
                 contc++;
 
             //Validar Fechas 
-            if (dtpfin.Value > dtpinicio.Value)
+            if (dtpinicio.Value > dtpfin.Value)
                 contc++;
 
             //Validar que no sea menor el precio que el anticipo
@@ -209,7 +209,7 @@ namespace Transporte_Escolar_Bonilla
                             ant = double.Parse(txtant.Text);
 
                         ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
-                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant, "Otros");
+                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant, 2);
 
                         /****** RUTA ******/
                         ing.NuevaRuta(txtorigen.Text + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");
@@ -315,6 +315,11 @@ namespace Transporte_Escolar_Bonilla
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtant.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+
+        private void Cliente3_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

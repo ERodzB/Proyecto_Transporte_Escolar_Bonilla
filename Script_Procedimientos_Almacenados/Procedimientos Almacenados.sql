@@ -935,3 +935,24 @@ begin
 	end
 end
 GO
+/*--------------------------------------Procedimiento de Pagos-------------------------------------------------*/
+create procedure NuevoPago
+	@Codigo_Contrato varchar(50),
+	@Numero_Cuota int,
+	@Fecha_Recibo date,
+	@Monto money,
+	@Descripcion_Recibo varchar(200)
+	as
+	begin
+	insert into Recibos
+		select COUNT(*)+1,@Numero_Cuota,@Codigo_Contrato,'RCTr',@Fecha_Recibo,@Monto,'DFCA9C-C556B3-7744AB-61D5D6-61F4A7-F5',
+		@Descripcion_Recibo from Recibos
+	end
+	GO
+create procedure TotalRecibosContratos
+	@Codigo_Contrato varchar(50)
+	as
+	begin
+		select COUNT(*) from Recibos where Codigo_Contrato=@Codigo_Contrato
+	end
+	GO

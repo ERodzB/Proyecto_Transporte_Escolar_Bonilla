@@ -38,6 +38,9 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
+        private void Consultar_clientes_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

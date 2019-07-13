@@ -72,5 +72,11 @@ namespace Transporte_Escolar_Bonilla
             contrato_panel modcon = new contrato_panel();
             estetics.AbrirFormularios(modcon, contratosMain_panel);
         }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            pagos_frm pago = new pagos_frm();
+            estetics.AbrirFormularios(pago, contratosMain_panel);
+        }
     }
 }

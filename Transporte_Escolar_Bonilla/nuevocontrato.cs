@@ -42,6 +42,11 @@ namespace Transporte_Escolar_Bonilla
             combcliente.DisplayMember = "Nombre_Cliente";
             combcliente.ValueMember = "Codigo_Cliente";
             combcliente.SelectedIndex = -1;
+
+            pago_cmb.DataSource = consul.combox_tipo_pago();
+            pago_cmb.DisplayMember = "NombrePago";
+            pago_cmb.ValueMember = "TipoPago";
+            pago_cmb.SelectedIndex = -1;
         }
 
         private void Combveh1_SelectedIndexChanged(object sender, EventArgs e)
@@ -245,16 +250,16 @@ namespace Transporte_Escolar_Bonilla
                         codcli = combcliente.SelectedValue.ToString();
 
                         //Guardar datos de Contrato 
-                        if (pago_cmb.SelectedItem.Equals("Mensual"))
+                        if (pago_cmb.SelectedIndex==0)
                         {
-                            ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
-                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedItem.ToString());
+                            ing.NuevoContrato(anio, combcliente.Text, codcli, 1, dtpinicio.Value, total,
+                                          DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedIndex+1);
 
                         }
                         else
                         {
                             ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
-                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedItem.ToString());
+                                          DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex+1);
 
                         }
                         //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
@@ -284,7 +289,7 @@ namespace Transporte_Escolar_Bonilla
                         txtpa2.Clear();
                         txtmontom.Text="0";  
                         txtcantm.Text = "0";
-                        txtfechafin.Clear();
+                       
 
                         combruta2.Enabled = false;
                         combhora2.Enabled = false;
@@ -298,7 +303,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Pago_cmb_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (pago_cmb.SelectedItem.Equals("Mensual")) { 
+            if (pago_cmb.SelectedIndex==0) { 
                 label7.Text = "Monto por mes";
             }
             else

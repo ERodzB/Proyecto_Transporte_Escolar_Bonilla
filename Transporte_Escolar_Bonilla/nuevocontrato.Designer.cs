@@ -34,7 +34,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtmontom = new System.Windows.Forms.TextBox();
-            this.txtfechafin = new System.Windows.Forms.TextBox();
             this.combhora2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.combruta2 = new System.Windows.Forms.ComboBox();
@@ -64,6 +63,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pago_cmb = new System.Windows.Forms.ComboBox();
+            this.txtfechafin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtpa2
@@ -118,7 +118,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(279, 462);
+            this.label7.Location = new System.Drawing.Point(351, 462);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(218, 33);
@@ -128,7 +128,7 @@
             // txtmontom
             // 
             this.txtmontom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmontom.Location = new System.Drawing.Point(285, 501);
+            this.txtmontom.Location = new System.Drawing.Point(357, 501);
             this.txtmontom.Margin = new System.Windows.Forms.Padding(4);
             this.txtmontom.MaxLength = 9;
             this.txtmontom.Name = "txtmontom";
@@ -136,16 +136,6 @@
             this.txtmontom.TabIndex = 230;
             this.txtmontom.TextChanged += new System.EventHandler(this.Txtmontom_TextChanged_1);
             this.txtmontom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmontom_KeyPress);
-            // 
-            // txtfechafin
-            // 
-            this.txtfechafin.Enabled = false;
-            this.txtfechafin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfechafin.Location = new System.Drawing.Point(611, 585);
-            this.txtfechafin.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfechafin.Name = "txtfechafin";
-            this.txtfechafin.Size = new System.Drawing.Size(192, 26);
-            this.txtfechafin.TabIndex = 229;
             // 
             // combhora2
             // 
@@ -327,7 +317,7 @@
             // 
             this.dtpinicio.Location = new System.Drawing.Point(611, 505);
             this.dtpinicio.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpinicio.MinDate = System.DateTime.Today;
+            this.dtpinicio.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpinicio.Name = "dtpinicio";
             this.dtpinicio.Size = new System.Drawing.Size(192, 22);
             this.dtpinicio.TabIndex = 214;
@@ -422,7 +412,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.Window;
-            this.label17.Location = new System.Drawing.Point(279, 549);
+            this.label17.Location = new System.Drawing.Point(351, 549);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(206, 33);
@@ -432,7 +422,7 @@
             // txtcantm
             // 
             this.txtcantm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcantm.Location = new System.Drawing.Point(285, 585);
+            this.txtcantm.Location = new System.Drawing.Point(357, 585);
             this.txtcantm.Margin = new System.Windows.Forms.Padding(4);
             this.txtcantm.MaxLength = 9;
             this.txtcantm.Name = "txtcantm";
@@ -484,7 +474,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(44, 494);
+            this.label10.Location = new System.Drawing.Point(25, 494);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(192, 33);
@@ -500,12 +490,22 @@
             this.pago_cmb.Items.AddRange(new object[] {
             "Mensual",
             "Completo"});
-            this.pago_cmb.Location = new System.Drawing.Point(50, 545);
+            this.pago_cmb.Location = new System.Drawing.Point(31, 549);
             this.pago_cmb.Name = "pago_cmb";
-            this.pago_cmb.Size = new System.Drawing.Size(175, 39);
+            this.pago_cmb.Size = new System.Drawing.Size(272, 39);
             this.pago_cmb.TabIndex = 241;
             this.pago_cmb.SelectedIndexChanged += new System.EventHandler(this.Pago_cmb_SelectedIndexChanged);
             this.pago_cmb.SelectedValueChanged += new System.EventHandler(this.Pago_cmb_SelectedValueChanged);
+            // 
+            // txtfechafin
+            // 
+            this.txtfechafin.Enabled = false;
+            this.txtfechafin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfechafin.Location = new System.Drawing.Point(611, 585);
+            this.txtfechafin.Margin = new System.Windows.Forms.Padding(4);
+            this.txtfechafin.Name = "txtfechafin";
+            this.txtfechafin.Size = new System.Drawing.Size(192, 26);
+            this.txtfechafin.TabIndex = 229;
             // 
             // nuevocontrato
             // 
@@ -567,7 +567,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtmontom;
-        private System.Windows.Forms.TextBox txtfechafin;
         private System.Windows.Forms.ComboBox combhora2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox combruta2;
@@ -597,5 +596,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox pago_cmb;
+        private System.Windows.Forms.TextBox txtfechafin;
     }
 }

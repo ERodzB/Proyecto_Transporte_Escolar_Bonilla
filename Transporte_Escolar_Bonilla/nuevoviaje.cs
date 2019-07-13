@@ -310,7 +310,7 @@ namespace Transporte_Escolar_Bonilla
                             ant = double.Parse(txtant.Text);
 
                         ing.NuevoContrato(anio, combcliente.Text, codcli, 2, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
-                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant,"Otros");
+                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant,2);
 
                         /****** RUTA ******/
                         ing.NuevaRuta(txtorigen.Text + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");

@@ -565,6 +565,25 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table;
         }
+
+        public int NumeroCuota(string Codigo_Contrato)
+        {
+            int nc = 0;
+
+            try
+            {
+                cmd = new SqlCommand("TotalRecibosContratos", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Contrato", Codigo_Contrato);
+                nc = (int)cmd.ExecuteScalar()+1;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error :" + ex);
+            }
+
+            return nc;
+        }
       
     }
 }

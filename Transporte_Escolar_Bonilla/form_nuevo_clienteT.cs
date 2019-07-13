@@ -38,6 +38,11 @@ namespace Transporte_Escolar_Bonilla
             combruta2.DataSource = consul.Combobox_Rutas();
             combruta2.DisplayMember = "Codigo_Ruta";
             combruta2.SelectedIndex = -1;
+
+            pago_cmb.DataSource = consul.combox_tipo_pago();
+            pago_cmb.DisplayMember = "NombrePago";
+            pago_cmb.ValueMember = "TipoPago";
+            pago_cmb.SelectedIndex = -1;
         }
 
         private void Labatras_Click(object sender, EventArgs e)
@@ -126,16 +131,16 @@ namespace Transporte_Escolar_Bonilla
 
                         //Guardar datos de Contrato 
                         
-                        if (pago_cmb.SelectedItem.Equals("Mensual"))
+                        if (pago_cmb.SelectedItem.Equals("Pago Mensual"))
                         {
                             ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
-                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00,pago_cmb.SelectedItem.ToString());
+                                          DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), Convert.ToInt32(txtcantm.Text), combservicio.Text, 0.00,pago_cmb.SelectedIndex+1);
 
                         }
                         else
                         {
                             ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
-                                          Convert.ToDateTime(txtfechafin.Text), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedItem.ToString());
+                                          DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex+1);
 
                         }
                         //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
@@ -148,7 +153,7 @@ namespace Transporte_Escolar_Bonilla
                             ing.RutaContrato(combruta2.Text, txtpa2.Text, anio, form_nuevo_cliente.nomc);
                             ing.Pasajeros(combruta2.Text, combveh2.Text, combhora2.Text);  
                         }                          
-
+                        
                         MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
 
                         form_nuevo_cliente cli1 = new form_nuevo_cliente();
@@ -319,7 +324,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Pago_cmb_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (pago_cmb.SelectedItem.Equals("Mensual"))
+            if (pago_cmb.SelectedIndex==0)
             {
                 label7.Text = "Cantidad de Meses";
                 label7.Text = "Monto Mensual";
@@ -354,6 +359,11 @@ namespace Transporte_Escolar_Bonilla
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtmontom.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+
+        private void Pago_cmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

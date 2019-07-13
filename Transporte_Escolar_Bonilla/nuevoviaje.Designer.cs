@@ -445,8 +445,8 @@
             this.combservicio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combservicio.FormattingEnabled = true;
             this.combservicio.Items.AddRange(new object[] {
-            "Ida",
-            "Ida y Vuelta"});
+            "Salida o Regreso",
+            "Salida y Regreso"});
             this.combservicio.Location = new System.Drawing.Point(160, 46);
             this.combservicio.Margin = new System.Windows.Forms.Padding(4);
             this.combservicio.Name = "combservicio";
