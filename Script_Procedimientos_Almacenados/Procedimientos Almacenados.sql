@@ -156,7 +156,7 @@ create procedure ModificarRutas
 	begin
 		select * from Rutas
 	end
-
+GO
 /*--------------------------------------Procedimiento para Asignar Horarios y Vehiculos a una Nueva Ruta---------------------------------------------------*/
 create procedure AsignarHoraVeh
 	@Codigo_ruta varchar(50),
@@ -584,15 +584,7 @@ begin
 	from CLiente 
 end
 GO
-/*
-select * from Estado
-*/
-
 /*--------------------------------Procedimiento Modificar Contrato------------------------------------*/
-select * from Contratos
-
-exec [dbo].[ModificarContratoTemporal] '2019-3-S', 1300, 'Medio Bus', '2019-01-01', 7000, '2020-05-01', 1, 'Completo'
-
 Create procedure ModificarContratoTemporal
 @Codigo_Contrato varchar(50),
 @Monto_Mensual money,
@@ -608,14 +600,14 @@ begin
 	set [Monto Mensual] = @Monto_Mensual,
 	Fecha_Inicio_Contrato = @Fecha_Inicio_Contrato,
 	Fecha_Vencimiento = @Fecha_Vencimiento,
-	Cuotas_Mesuales = DATEDIFF(mm, @Fecha_Inicio_Contrato, @Fecha_Vencimiento),
+	Cuotas_Mensuales = DATEDIFF(mm, @Fecha_Inicio_Contrato, @Fecha_Vencimiento),
 	Servicio = @Servicio,
 	Monto_Contrato = @Monto_Contrato,
 	Estado_Contrato = @Estado_Contrato,
-	Tipo_Pago_Contrato = @Tipo_Pago_Contrato
+	Tipo_Pago = @Tipo_Pago_Contrato
 	where Codigo_Contrato = @Codigo_Contrato
 end
-
+GO
 Create procedure ModificarContratoViaje
 @Codigo_Contrato varchar(50),
 @Servicio varchar(50), 
@@ -635,6 +627,16 @@ begin
 	Estado_Contrato = @Estado_Contrato
 	where Codigo_Contrato = @Codigo_Contrato
 end
+GO
+/*--------------------Procedimiento para ComboBox Tipo de Pago ------------------------------*/
+create procedure ComboboxTipoPago
+as
+begin
+	
+	select TipoPago, NombrePago from Tipo_Pago
+end
+GO
+
 
 /*-----------------Carga dgv Contrato------------------*/
 Create procedure CargadgvContrato1
@@ -646,28 +648,23 @@ end
 GO
 
 /*-------------------Carga dgv Datos contrato del cliente------------------*/
-select * from Contratos
-select * from Cliente
-
-select * from TipoContrato
-
 create procedure CargadgvDatoContratoCliente
 @Cod_Cliente varchar(50)
 as
 begin
-	select c.Codigo_Contrato'Nombre del Contrato', tp.Tipo_Contrato'Tipo de Contrato', c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mesuales'Cuotoas Mensuales', 
-	c.Servicio'Servicio', c.Anticipo'Anticipo', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato', c.Monto_Contrato'Monto del Contrato', 
-	Fecha_Vencimiento'Fecha de Vencimiento Contrato',e.Nombre_Estado'Estado del Contrato', c.Tipo_Pago_Contrato'Tipo de Pago'
+	select c.Codigo_Contrato'Nombre del Contrato', tp.Tipo_Contrato'Tipo de Contrato', 
+	c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotoas Mensuales', 
+	c.Servicio'Servicio', c.Anticipo'Anticipo', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato',
+	 c.Monto_Contrato'Monto del Contrato', 
+	Fecha_Vencimiento'Fecha de Vencimiento Contrato',e.Nombre_Estado'Estado del Contrato', 
+	c.Tipo_Pago'Tipo de Pago',c.Estado_Contrato
 	from Contratos c
 	inner join Estado e on c.Estado_Contrato = e.Codigo_Estado
 	inner join TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join Estado es on es.Codigo_Estado=c.Estado_Contrato
 	where Cliente_Contrato = @Cod_Cliente
 end
 GO
-
-
-exec[dbo].[CargadgvDatoContratoCliente] '0801199802725'
-
 /*-------------------Carga Combobox Modificar Contrato--------------------------*/
 create procedure ComboModContrato
 As

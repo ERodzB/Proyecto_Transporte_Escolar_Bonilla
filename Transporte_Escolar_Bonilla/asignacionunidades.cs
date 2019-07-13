@@ -69,11 +69,16 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvConsultaU_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+
+        }
+
+        private void DgvConsultaU_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             txtPlaca.Text = dgvConsultaU.CurrentRow.Cells[0].Value.ToString();
             txtDescripcion.Text = dgvConsultaU.CurrentRow.Cells[1].Value.ToString();
             txtEstado.Text = dgvConsultaU.CurrentRow.Cells[3].Value.ToString();
-            cmbempleado.Text =dgvConsultaU.CurrentRow.Cells[4].Value.ToString() ;
-
+            cmbempleado.Text = dgvConsultaU.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

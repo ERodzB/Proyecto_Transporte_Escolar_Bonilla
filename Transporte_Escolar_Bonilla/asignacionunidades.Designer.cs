@@ -88,6 +88,7 @@
             this.dgvConsultaU.RowTemplate.Height = 24;
             this.dgvConsultaU.Size = new System.Drawing.Size(1084, 218);
             this.dgvConsultaU.TabIndex = 6;
+            this.dgvConsultaU.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsultaU_CellClick);
             this.dgvConsultaU.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsultaU_CellContentClick);
             // 
             // btnDevolver
