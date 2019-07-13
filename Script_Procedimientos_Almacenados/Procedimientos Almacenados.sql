@@ -67,7 +67,7 @@ as
 begin
 	select vr.Codigo_Vehiculo from Vehiculos_Rutas vr
 	inner join Vehiculos v on vr.Codigo_Vehiculo = v.Codigo_Vehiculo
-	where (vr.Codigo_Ruta = @Codigo_Ruta) and (CONVERT(varchar(15),CAST(vr.Horario_Salida AS TIME),100)+' '+CONVERT(varchar(15),CAST(vr.Horario_Entrada AS TIME),100) = @Horario)
+	where (vr.Codigo_Ruta = @Codigo_Ruta) and (CONVERT(varchar(15),CAST(vr.Horario_Salida as time(0)),100)+' '+CONVERT(varchar(15),CAST(vr.Horario_Entrada as time(0)),100) = @Horario)
 	and (vr.Cantidad_Pasajeros_Actuales < v.Capacidad_Vehiculo)    
 end
 GO 
@@ -133,12 +133,54 @@ begin
 	values (@Codigo_ruta, @Cod_Contrato, @Parada_Contrato)   
 end 
 GO
+/*--------------------------------Procedimiento para Extrar Inicio y Fin----------------------------------------------------------------------*/
+create procedure InicioFinRuta
+	@Codigo_Ruta varchar(50)
+	as
+begin
+	select SUBSTRING(Codigo_Ruta,0,PATINDEX('%-%',Codigo_Ruta)),SUBSTRING(Codigo_Ruta,PATINDEX('%-%',Codigo_Ruta)+1,LEN(Codigo_Ruta)) 
+	from Rutas WHERE Tipo_Ruta='Temporal' and Codigo_Ruta=@Codigo_Ruta
+end
+GO
+/*---------------------------------------Procedimiento para Modificar Horarios-----------------------------------*/
+create procedure Mantenimiento_Horarios
+	@Codigo_Ruta varchar(50),
+	@Codigo_Vehiculo varchar(50),
+	@Horario_Salida time(7),
+	@Horario_Entrada time(7),
+	@Horario_Salida_Nuevo time(7),
+	@Horario_Entrada_Nuevo time(7),
+	@Decision as varchar(50)
+	as
+	if(@Decision='Modificar')
+	begin
+		update Vehiculos_Rutas
+		set Codigo_Ruta=@Codigo_Ruta, Codigo_Vehiculo=@Codigo_Vehiculo, Horario_Salida=@Horario_Salida_Nuevo,Horario_Entrada=@Horario_Entrada_Nuevo
+		where @Horario_Salida=CONVERT(varchar(15),Horario_Salida,100) and @Horario_Entrada=CONVERT(varchar(15),Horario_Entrada,100)
+	end
+	if(@Decision='Eliminar')
+	begin
+		delete from Vehiculos_Rutas
+		where @Horario_Salida=CONVERT(varchar(15),Horario_Salida,100) and @Horario_Entrada=CONVERT(varchar(15),Horario_Entrada,100) and Codigo_Ruta=@Codigo_Ruta
+	end
+GO
+/*-----------------------------------------------Modificar Rutas----------------------------------------*/
+create procedure ModificarRutas
+	@Codigo_Ruta varchar(50),
+	@Nombre_Ruta varchar(100),
+	@Descripcion_Ruta varchar(200),
+	@Tipo_Ruta varchar(50)
+	as
+	begin
+		select * from Rutas
+	end
+
 /*--------------------------------------Procedimiento para Asignar Horarios y Vehiculos a una Nueva Ruta---------------------------------------------------*/
 create procedure AsignarHoraVeh
 	@Codigo_ruta varchar(50),
 	@Codigo_Vehiculo varchar(50),
-	@Horario_Salida time(7),
-	@Horario_Entrada time(7),
+	@Horario_Salida time(0),
+	@Horario_Entrada time(0),
 	@Pasajeros int
 as
 begin
@@ -155,7 +197,7 @@ as
 begin
 	update Vehiculos_Rutas
 	set Cantidad_Pasajeros_Actuales = Cantidad_Pasajeros_Actuales + 1
-	where (Codigo_Ruta = @Codigo_ruta) and (Codigo_Vehiculo = @Codigo_Vehiculo) and (CONVERT(varchar(15),CAST(Horario_Salida AS TIME),100)+' '+CONVERT(varchar(15),CAST(Horario_Entrada AS TIME),100) = @Horario)
+	where (Codigo_Ruta = @Codigo_ruta) and (Codigo_Vehiculo = @Codigo_Vehiculo) and (CONVERT(varchar(15),CAST(Horario_Salida as time(0)),100)+' '+CONVERT(varchar(15),CAST(Horario_Entrada AS TIME),100) = @Horario)
 end
 GO
 --VERIFICAR CANT DE PASAJEROS IF EXCEDE CAPACIDAD VEHICULO RETURN 1 ELSE 0
@@ -174,7 +216,7 @@ create procedure ComboboxHorarios
 @Codigo_Ruta varchar(50)
 as
 begin
-	select CONVERT(varchar(15),CAST(Horario_Salida AS TIME),100)+' '+CONVERT(varchar(15),CAST(Horario_Entrada AS TIME),100) 'Horarios'
+	select CONVERT(varchar(15),CAST(Horario_Salida as time(0)),100)+' '+CONVERT(varchar(15),CAST(Horario_Entrada as time(0)),100) 'Horarios'
 	from Vehiculos_Rutas
 	where Codigo_Ruta = @Codigo_Ruta   
 end

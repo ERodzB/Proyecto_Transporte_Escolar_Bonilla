@@ -376,6 +376,23 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table;
         }
-
+        
+        public void CargarInicioFinRuta(string Codigo_Ruta, TextBox Inicio_tb, TextBox Fin_tb)
+        {
+            try
+            {
+                table = new DataTable();
+                Adapter = new SqlDataAdapter("InicioFinRuta", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@Codigo_Ruta", Codigo_Ruta);
+                Adapter.Fill(table);
+                Inicio_tb.Text = table.Rows[0][0].ToString();
+                Fin_tb.Text = table.Rows[0][1].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
     }
 }

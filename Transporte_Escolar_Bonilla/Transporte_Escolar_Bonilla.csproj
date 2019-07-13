@@ -160,6 +160,12 @@
     <Compile Include="modificarPerfiles_frm.Designer.cs">
       <DependentUpon>modificarPerfiles_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="modificarRutas_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificarRutas_frm.Designer.cs">
+      <DependentUpon>modificarRutas_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="modificarUsuario_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modificarPerfiles_frm.resx">
       <DependentUpon>modificarPerfiles_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificarRutas_frm.resx">
+      <DependentUpon>modificarRutas_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarUsuario_frm.resx">
       <DependentUpon>modificarUsuario_frm.cs</DependentUpon>

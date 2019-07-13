@@ -51,5 +51,11 @@ namespace Transporte_Escolar_Bonilla
             consultar_rutas cruta = new consultar_rutas();
             Estetics.AbrirFormularios(cruta, mainRutas_panel);
         }
+
+        private void ModificarRuta_btn_Click(object sender, EventArgs e)
+        {
+            modificarRutas_frm mrutas = new modificarRutas_frm();
+            Estetics.AbrirFormularios(mrutas, mainRutas_panel);
+        }
     }
 }
