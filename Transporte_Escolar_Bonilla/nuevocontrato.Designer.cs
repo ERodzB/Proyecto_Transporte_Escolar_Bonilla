@@ -327,7 +327,7 @@
             // 
             this.dtpinicio.Location = new System.Drawing.Point(611, 505);
             this.dtpinicio.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpinicio.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
+            this.dtpinicio.MinDate = System.DateTime.Today;
             this.dtpinicio.Name = "dtpinicio";
             this.dtpinicio.Size = new System.Drawing.Size(192, 22);
             this.dtpinicio.TabIndex = 214;
