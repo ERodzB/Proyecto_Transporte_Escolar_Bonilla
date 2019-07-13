@@ -110,14 +110,42 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void ModificarContrato(string id, double monto, DateTime fechafin, int estado)
+        public void ModificarContratoTemporal(string id,double montomensual, string servicio, DateTime fechaini, double monto, string fechafin, int estado, int tipopago)
         {
             
             try
             {
-                cmd = new SqlCommand("ModificarContrato", conexionBD);
+                cmd = new SqlCommand("ModificarContratoTemporal", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Contrato", id);
+                cmd.Parameters.AddWithValue("@Monto_Mensual", montomensual);
+                cmd.Parameters.AddWithValue("@Servicio", servicio);
+                cmd.Parameters.AddWithValue("@Fecha_Inicio_Contrato", fechaini);
+                cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
+                cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechafin);
+                cmd.Parameters.AddWithValue("@Estado_Contrato", estado);
+                cmd.Parameters.AddWithValue("@Tipo_Pago_Contrato", tipopago);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha Modificado correctamente el Contrato");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+
+        public void ModificarContratoViaje(string id,double anticipo, string servicio, DateTime fechaini, double monto, string fechafin, int estado)
+        {
+
+            try
+            {
+                cmd = new SqlCommand("ModificarContratoTemporal", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Contrato", id);
+                cmd.Parameters.AddWithValue("@Servicio", servicio);
+                cmd.Parameters.AddWithValue("@Anticipo", anticipo);
+                cmd.Parameters.AddWithValue("@Fecha_Inicio_Contrato", fechaini);
                 cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
                 cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechafin);
                 cmd.Parameters.AddWithValue("@Estado_Contrato", estado);                

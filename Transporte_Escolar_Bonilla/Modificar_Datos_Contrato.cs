@@ -28,9 +28,9 @@ namespace Transporte_Escolar_Bonilla
         private void Modificar_Datos_Contrato_Load(object sender, EventArgs e)
         {
             txtCliente.Text = contrato_panel.nombrecli;
-
+                        
             con.CargadgvDatosContrato(dgvDatosContrato, contrato_panel.codc);
-
+            
             /*cmbEstado.DataSource = con.combox_mod_contrato(txtContrato.Text);
             cmbEstado.DisplayMember = "Nombre_Estado";
             cmbEstado.ValueMember = "Codigo_Estado";
@@ -48,8 +48,69 @@ namespace Transporte_Escolar_Bonilla
         }
 
         private void DgvDatosContrato_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        {            
+            if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() =="Temporal")
+            {                
+                txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
+                txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();
+                txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();                
+                cmbTipoServicio.Items.Add("Bus Completo");
+                cmbTipoServicio.Items.Add("Medio Bus");
+                cmbTipoServicio.Enabled = true;                
+                dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
+                txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
+                //dtpFinal.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[8].Value.ToString());
+
+
+                txtCuota.Enabled = true;
+                txtMontoMensual.Enabled = true;
+                txtMonto.Enabled = true;
+                dtpInicio.Enabled = true;
+                //dtpFinal.Enabled = true;
+
+                cmbEstado.DataSource = con.combox_mod_contrato();
+                cmbEstado.DisplayMember = "Nombre_Estado";
+                cmbEstado.ValueMember = "Codigo_Estado";
+                cmbEstado.SelectedIndex = -1;
+                cmbEstado.Enabled = true;
+
+                cmbTipoPago.DataSource = con.combox_tipo_pago();
+                cmbTipoPago.DisplayMember = "NombrePago";
+                cmbTipoPago.ValueMember = "TipoPago";
+                cmbTipoPago.SelectedIndex = -1;
+                cmbTipoPago.Enabled = true;
+                
+
+            }
+            else if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() == "Viaje")
+            {
+                txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
+                txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();   
+                txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
+                cmbTipoServicio.Items.Add("Ida y Vuelta");
+                cmbTipoServicio.Items.Add("Ida");
+                
+                txtAnticipo.Text = dgvDatosContrato.CurrentRow.Cells[5].Value.ToString();
+                dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
+                txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
+                //dtpFinal.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[8].Value.ToString());
+
+                dtpInicio.Enabled = true;
+                //dtpFinal.Enabled = true;
+                txtMonto.Enabled = true;
+
+                cmbTipoServicio.Enabled = true;
+
+
+                cmbEstado.DataSource = con.combox_mod_contrato();
+                cmbEstado.DisplayMember = "Nombre_Estado";
+                cmbEstado.ValueMember = "Codigo_Estado";
+                cmbEstado.SelectedIndex = -1;
+                cmbEstado.Enabled = true;
+
+            }
+
+            /*
             txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
             dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString());
             txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();
@@ -63,15 +124,28 @@ namespace Transporte_Escolar_Bonilla
             cmbEstado.ValueMember = "Codigo_Estado";
             cmbEstado.SelectedIndex = -1;
             cmbEstado.Enabled = true;
+            */
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string estado;
-                estado = cmbEstado.SelectedValue.ToString();
-                modif.ModificarContrato(txtContrato.Text, double.Parse(txtMonto.Text), DateTime.Parse(dtpFinal.Text), int.Parse(estado));
+                if(txtTipoContrato.Text == "Temporal")
+                {
+                    string estado, tipopago;
+                    estado = cmbEstado.SelectedValue.ToString();
+                    tipopago = cmbTipoPago.SelectedValue.ToString();
+                    modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago));
+
+                }
+                if(txtTipoContrato.Text == "Viaje")
+                {
+                    string estado;
+                    estado = cmbEstado.SelectedValue.ToString();
+                    modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
+
+                }
             }
         }
 
@@ -82,6 +156,28 @@ namespace Transporte_Escolar_Bonilla
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtMonto.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+
+        private void DgvDatosContrato_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DtpFinal_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TxtCuota_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCuota.Text != " ")
+                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
+        }
+
+        private void DtpInicio_ValueChanged(object sender, EventArgs e)
+        {
+            if (txtCuota.Text != "")
+                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
         }
     }
 }

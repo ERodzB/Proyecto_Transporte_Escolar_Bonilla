@@ -377,5 +377,14 @@ namespace Transporte_Escolar_Bonilla
             return table;
         }
 
+        public DataTable combox_tipo_pago()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxTipoPago", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+      
     }
 }

@@ -574,21 +574,52 @@ select * from Estado
 */
 
 /*--------------------------------Procedimiento Modificar Contrato------------------------------------*/
+select * from Contratos
 
-Create procedure ModificarContrato
+exec [dbo].[ModificarContratoTemporal] '2019-3-S', 1300, 'Medio Bus', '2019-01-01', 7000, '2020-05-01', 1, 'Completo'
+
+Create procedure ModificarContratoTemporal
 @Codigo_Contrato varchar(50),
+@Monto_Mensual money,
+@Servicio varchar(50),
+@Fecha_Inicio_Contrato date,
+@Monto_Contrato money,
+@Fecha_Vencimiento date,
+@Estado_Contrato int,
+@Tipo_Pago_Contrato varchar(50)
+as
+begin
+	update Contratos
+	set [Monto Mensual] = @Monto_Mensual,
+	Fecha_Inicio_Contrato = @Fecha_Inicio_Contrato,
+	Fecha_Vencimiento = @Fecha_Vencimiento,
+	Cuotas_Mesuales = DATEDIFF(mm, @Fecha_Inicio_Contrato, @Fecha_Vencimiento),
+	Servicio = @Servicio,
+	Monto_Contrato = @Monto_Contrato,
+	Estado_Contrato = @Estado_Contrato,
+	Tipo_Pago_Contrato = @Tipo_Pago_Contrato
+	where Codigo_Contrato = @Codigo_Contrato
+end
+
+Create procedure ModificarContratoViaje
+@Codigo_Contrato varchar(50),
+@Servicio varchar(50), 
+@Anticipo money,
+@Fecha_Inicio_Contrato date,
 @Monto_Contrato money,
 @Fecha_Vencimiento date,
 @Estado_Contrato int
 as
 begin
 	update Contratos
-	set Monto_Contrato = @Monto_Contrato,
+	set Servicio = @Servicio,	
+	Anticipo = @Anticipo,
+	Fecha_Inicio_Contrato = @Fecha_Inicio_Contrato,
+	Monto_Contrato = @Monto_Contrato,
 	Fecha_Vencimiento = @Fecha_Vencimiento,
 	Estado_Contrato = @Estado_Contrato
 	where Codigo_Contrato = @Codigo_Contrato
 end
-GO
 
 /*-----------------Carga dgv Contrato------------------*/
 Create procedure CargadgvContrato1
@@ -598,24 +629,30 @@ begin
 	from Cliente cli
 end
 GO
+
 /*-------------------Carga dgv Datos contrato del cliente------------------*/
-/*
 select * from Contratos
-*/
+select * from Cliente
+
+select * from TipoContrato
+
 create procedure CargadgvDatoContratoCliente
 @Cod_Cliente varchar(50)
 as
 begin
-	select c.Codigo_Contrato'Nombre del Contrato', c.Fecha_Inicio_Contrato'Fecha de inicio del Contrato', c.Monto_Contrato'Monto del Contrato', 
-	c.Fecha_Vencimiento'Fecha de vencimiento del contrato' , e.Nombre_Estado'Estado del Contrato'
+	select c.Codigo_Contrato'Nombre del Contrato', tp.Tipo_Contrato'Tipo de Contrato', c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mesuales'Cuotoas Mensuales', 
+	c.Servicio'Servicio', c.Anticipo'Anticipo', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato', c.Monto_Contrato'Monto del Contrato', 
+	Fecha_Vencimiento'Fecha de Vencimiento Contrato',e.Nombre_Estado'Estado del Contrato', c.Tipo_Pago_Contrato'Tipo de Pago'
 	from Contratos c
 	inner join Estado e on c.Estado_Contrato = e.Codigo_Estado
+	inner join TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
 	where Cliente_Contrato = @Cod_Cliente
 end
 GO
-/*
-exec CargadgvDatoContratoCliente '0002'
-*/
+
+
+exec[dbo].[CargadgvDatoContratoCliente] '0801199802725'
+
 /*-------------------Carga Combobox Modificar Contrato--------------------------*/
 create procedure ComboModContrato
 As
