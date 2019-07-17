@@ -53,6 +53,12 @@
     <Compile Include="asignacionunidades.Designer.cs">
       <DependentUpon>asignacionunidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="BitacoraModulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitacoraModulos.Designer.cs">
+      <DependentUpon>BitacoraModulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="clientes_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     <Compile Include="Validar.cs" />
     <EmbeddedResource Include="asignacionunidades.resx">
       <DependentUpon>asignacionunidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitacoraModulos.resx">
+      <DependentUpon>BitacoraModulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clientes_frm.resx">
       <DependentUpon>clientes_frm.cs</DependentUpon>

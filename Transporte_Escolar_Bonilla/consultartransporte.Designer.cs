@@ -74,7 +74,8 @@
             "Marca Vehiculo",
             "Tipo Vehiculo",
             "Estado Vehiculo",
-            "Responsable Vehiculo"});
+            "Responsable Vehiculo",
+            "Sin Asignar"});
             this.CBFiltrox.Location = new System.Drawing.Point(569, 82);
             this.CBFiltrox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBFiltrox.Name = "CBFiltrox";
@@ -156,8 +157,8 @@
             this.CMBFiltro.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.CMBFiltro.FormattingEnabled = true;
             this.CMBFiltro.Items.AddRange(new object[] {
-            "Clientes",
-            "Contratos por Cliente"});
+            "Sin Asignar",
+            "Sin Asignar"});
             this.CMBFiltro.Location = new System.Drawing.Point(569, 142);
             this.CMBFiltro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CMBFiltro.Name = "CMBFiltro";

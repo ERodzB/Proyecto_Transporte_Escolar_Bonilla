@@ -13,6 +13,7 @@ namespace Transporte_Escolar_Bonilla
     public partial class nuevoempleado : Form
     {
         Consultar consultar = new Consultar();
+        Modificar modify = new Modificar();
         public nuevoempleado()
         {
             InitializeComponent();
@@ -22,14 +23,43 @@ namespace Transporte_Escolar_Bonilla
         {
             Ingresar ingresar = new Ingresar();
             Validar validar = new Validar();
+            int varlicencia=0;
 
-            if(cmbPuesto.SelectedIndex==8)
+
+            if (cmbPuesto.SelectedIndex==0)
             {
+                if(RBLiviana.Checked==false && RBPesada.Checked==false)
+                {
+                    MessageBox.Show("Error, debe seleccionar el tipo de licencia");
+                }
+                else
+                if (CBInter.Checked == true && RBLiviana.Checked == true)
+                {
+                    varlicencia = 3;
+                }
+                else
+                if (CBInter.Checked == true && RBPesada.Checked == true)
+                {
+                    varlicencia = 4;
+                }
+                else
+                if (CBInter.Checked == false && RBPesada.Checked == true)
+                {
+                    varlicencia = 2;
+                }
+                else
+                if (CBInter.Checked == false && RBLiviana.Checked == true)
+                {
+                    varlicencia = 1;
+                }
+
+                
                 if (txtcorreo.Text != "" && txtdireccion.Text != "" && txtidentidad.Text != "" && txtlicencia.Text != "" && txtnombre.Text != ""
-                    && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1)
+                    && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true)
                 {
                     ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text),
-                        txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text));
+                        txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text),varlicencia);
+                    modify.BitacoraModulo("Contratacion", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, "N/A", "N/A", "N/A", "N/A");                
                     MessageBox.Show("Empleado Guardado con Exito", "Guardado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtcorreo.Text = "";
                     txtdireccion.Text = "";
@@ -56,7 +86,9 @@ namespace Transporte_Escolar_Bonilla
                 if (txtcorreo.Text != "" && txtdireccion.Text != "" && txtidentidad.Text != "" && txtnombre.Text != ""
                    && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1)
                 {
-                    ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Value.ToString()));
+                    ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, 
+                        Convert.ToDateTime(dtpvencimiento.Value.ToString()),0);
+                    modify.BitacoraModulo("Contratacion", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, "N/A", "N/A", "N/A", "N/A");
                     MessageBox.Show("Empleado Guardado con Exito", "Guardado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtcorreo.Text = "";
                     txtdireccion.Text = "";
@@ -85,7 +117,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void CmbPuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbPuesto.SelectedIndex==8)
+            if(cmbPuesto.SelectedIndex==0)
             {
                 DAdicionales.Visible = true;
                 LBLLicencia.Visible = true;
@@ -93,6 +125,8 @@ namespace Transporte_Escolar_Bonilla
                 txtlicencia.Visible = true;
                 lblVencimiento.Visible = true;
                 txtlicencia.Text = txtidentidad.Text;
+                lbltipolic.Visible = true;
+                GBlicencia.Visible = true;
             }
             else
             {
@@ -101,7 +135,24 @@ namespace Transporte_Escolar_Bonilla
                 dtpvencimiento.Visible = false;
                 txtlicencia.Visible = false;
                 lblVencimiento.Visible = false;
+                lbltipolic.Visible = false;
+                GBlicencia.Visible = false;
             }
+        }
+
+        private void GBlicencia_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RBLiviana_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CBInter_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

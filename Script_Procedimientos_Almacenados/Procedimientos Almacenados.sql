@@ -675,7 +675,7 @@ end
 GO
 /*-------------------------------------LO MIO DE MI PARTE--------------------------*/
 /*---------------------------------------------Procedimiento Ingreso de Nuevo Empleado Actualizado------------------------------------------------*/
-CREATE procedure [dbo].[NuevoEmpleado]
+Create procedure [dbo].[NuevoEmpleado]
 @Identidad varchar(50),   
 @Nombr varchar(100),
 @FNacimiento date,
@@ -686,18 +686,21 @@ CREATE procedure [dbo].[NuevoEmpleado]
 @Puesto int,
 @Salario money,
 @Licencia varchar(50),
-@FechaVLic as Date
-as 
+@FechaVLic as Date,
+@tipolic as int
+as
+declare @filtro as int
+set  @filtro=(Select p.Codigo_Puesto from Puesto p where p.Nombre_Puesto='Conductor' )
 begin
-	if(@Puesto=9)
+	if(@Puesto=@filtro)
 	begin
 	insert into Empleado values
-	(@Identidad,@Nombr,@FNacimiento,@Genero,@Telefono,@Correo,@Direccion,@Puesto,@Salario,@Licencia,@FechaVLic)
+	(@Identidad,@Nombr,@FNacimiento,@Genero,@Telefono,@Correo,@Direccion,@Puesto,@Salario,@Licencia,@FechaVLic,@tipolic)
 	end
 	else
 	begin
 	insert into Empleado values
-	(@Identidad,@Nombr,@FNacimiento,@Genero,@Telefono,@Correo,@Direccion,@Puesto,@Salario,'N/A',null)
+	(@Identidad,@Nombr,@FNacimiento,@Genero,@Telefono,@Correo,@Direccion,@Puesto,@Salario,'N/A',null,0)
 	end
 	
 end
@@ -714,12 +717,12 @@ begin
 end
 GO
 /*---------------------------------------------Procedimiento Buscar Empleado------------------------------------------------*/
-create procedure [dbo].[BuscarEmpleado]
+Create procedure [dbo].[BuscarEmpleado]
 @Codigo_Empleado  varchar(100)
 as
 begin
 	select e.Nombre_Empleado,e.Genero,e.Telefono,e.Correo,e.Direccion,e.Puesto_Empleado,
-	e.salario,e.Licencia,e.Fecha_Vencimiento_Licencia from Empleado e
+	e.salario,e.Licencia,e.Fecha_Vencimiento_Licencia,e.Tipo_Licencia from Empleado e
 	where e.Identidad_Empleado=@Codigo_Empleado
 end
 GO
@@ -734,9 +737,9 @@ go
 create procedure [dbo].[ComboboEncVehiculos]
 as
 begin
-	select e.Identidad_Empleado'Identidad',e.Nombre_Empleado'Nombre' from Empleado e
-	inner join Vehiculos v on e.Identidad_Empleado = v.Responsable_Vehiculo
-	group by e.Nombre_Empleado,e.Identidad_Empleado
+select e.Identidad_Empleado'Identidad',e.Nombre_Empleado'Nombre' from Empleado e
+inner join Puesto p on e.Puesto_Empleado = p.Codigo_Puesto
+where p.Nombre_Puesto='Conductor'
 end
 go
 /*---------------------------------------------Procedimiento Filtro Empleados Conductores------------------------------------------------*/
@@ -744,7 +747,8 @@ CREATE procedure [dbo].[ComboboxEmpleados]
 as
 begin
 select e.Identidad_Empleado'codigo',e.Nombre_Empleado'Nombre' from Empleado e
-where e.Puesto_Empleado=9;
+inner join Puesto p on e.Puesto_Empleado = p.Codigo_Puesto
+where p.Nombre_Puesto='Conductor'
 end
 Go
 /*---------------------------------------------Procedimiento Filtro Estado Vehiculos------------------------------------------------*/
@@ -760,6 +764,7 @@ create procedure [dbo].[ComboboxMVehiculos]
 as
 begin
 	select v.Marca_Vehiculo'Marca' from Vehiculos v
+	group by v.Marca_Vehiculo
 end
 GO
 /*---------------------------------------------Procedimiento Filtro Tipo Vehiculos------------------------------------------------*/
@@ -787,7 +792,7 @@ CREATE procedure [dbo].[DatosVehiculosSencillosAsignar]
 as
 begin
 select v.Codigo_Vehiculo'Placa',CONCAT(tv.Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripcion Vehiculo',tt.NombreTransmision 'Transmision',
-e.Nombre_Estado 'Estado Vehiculo','Sin Asignar' as 'Responsable' from Vehiculos v
+'Sin Asignar' as 'Responsable',e.Nombre_Estado 'Estado Vehiculo' from Vehiculos v
 inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
 inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
 inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
@@ -795,10 +800,10 @@ where v.Responsable_Vehiculo is null
 end
 GO
 /*---------------------------------------------Procedimiento Datagridview Datos al Devolver un Vehiculo------------------------------------------------*/
-Create procedure [dbo].[DatosVehiculosSencillosdevolver]
+create procedure [dbo].[DatosVehiculosSencillosdevolver]
 as
 begin
-select v.Codigo_Vehiculo'Placa',CONCAT(tv.Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripcion Vehiculo',tt.NombreTransmision'Transmision',e.Nombre_Estado'Estado Vehiculo',ep.Nombre_Empleado'Responsable' from Vehiculos v
+select v.Codigo_Vehiculo'Placa',CONCAT(tv.Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripcion Vehiculo',tt.NombreTransmision'Transmision',ep.Nombre_Empleado'Responsable' from Vehiculos v
 inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
 inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
 inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
@@ -811,7 +816,8 @@ GO
 Create procedure [dbo].[devolverasignarunidades]
 @tipo as int,
 @empleado as varchar(50),
-@placa as varchar(50)
+@placa as varchar(50),
+@estado as int
 as
 begin
 if(@tipo=1)
@@ -822,7 +828,8 @@ where Codigo_Vehiculo=@placa;
 end
 if(@tipo=2)
 update Vehiculos
-set Responsable_Vehiculo=NULL
+set Responsable_Vehiculo=NULL,
+Estado_Vehiculo=@estado
 where Codigo_Vehiculo=@placa;
 end
 GO
@@ -830,13 +837,25 @@ GO
 Create procedure [dbo].[FiltrarDatosDVGEmpleados]
 @puesto as int
 as
+declare @filtro as int
+set  @filtro=(Select p.Codigo_Puesto from Puesto p where p.Nombre_Puesto='Conductor' )
 begin
+	if(@puesto =@filtro)
+	select e.Identidad_Empleado'Identidad Empleado',e.Nombre_Empleado'Nombre Empleado',e.Fecha_Nacimiento'Fecha Nacimiento',
+	g.Genero,E.Telefono,e.Correo,e.Direccion,p.Nombre_Puesto'Puesto Empleado',ROUND(e.Salario,2)'Salario', tl.TipoLicencia'Tipo de Licencia'
+	from Empleado E
+	inner join Puesto p on E.Puesto_Empleado = P.Codigo_Puesto
+	inner join Genero g on e.Genero = g.CodGenero
+	inner join TipoLicencia tl on e.Tipo_Licencia = tl.CodTipoLicencia
+	where e.Puesto_Empleado=@puesto;
+	else
 	select e.Identidad_Empleado'Identidad Empleado',e.Nombre_Empleado'Nombre Empleado',e.Fecha_Nacimiento'Fecha Nacimiento',
 	g.Genero,E.Telefono,e.Correo,e.Direccion,p.Nombre_Puesto'Puesto Empleado',ROUND(e.Salario,2)'Salario'
 	from Empleado E
 	inner join Puesto p on E.Puesto_Empleado = P.Codigo_Puesto
 	inner join Genero g on e.Genero = g.CodGenero
 	where e.Puesto_Empleado=@puesto;
+
 end
 GO
 /*---------------------------------------------Procedimiento Filtrar Datos DGV Vehiculos------------------------------------------------*/
@@ -846,33 +865,51 @@ create procedure [dbo].[filtrarvehiculos]
 	as
 begin
 	if @tipobusqueda = 'Marca Vehiculo'
-	select v.Codigo_Vehiculo'Placa',v.Tipo_Vehiculo'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',v.Capacidad_Vehiculo'Capacidad Vehiculo',
-	v.Transmision_Vehiculo'Transmision Vehiculo',v.Combustible_Vehiculo'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
-	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',ep.Nombre_Empleado'Reponsable' from Vehiculos v
+	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
+	tt.NombreTransmision 'Transmision Vehiculo',tg.NombreGasolina 'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
+	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',e.Nombre_Estado'Estado' from Vehiculos v
+	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
+	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
+	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
-	inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 	where v.Marca_Vehiculo=@filtro;
 	if @tipobusqueda = 'Tipo Vehiculo'
-	select v.Codigo_Vehiculo'Placa',v.Tipo_Vehiculo'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',v.Capacidad_Vehiculo'Capacidad Vehiculo',
-	v.Transmision_Vehiculo'Transmision Vehiculo',v.Combustible_Vehiculo'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
-	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',ep.Nombre_Empleado'Reponsable' from Vehiculos v
+	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
+	tt.NombreTransmision 'Transmision Vehiculo',tg.NombreGasolina 'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
+	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',e.Nombre_Estado'Estado' from Vehiculos v
+	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
+	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
+	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
-	inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 	where v.Tipo_Vehiculo=@filtro;
 	if @tipobusqueda = 'Estado Vehiculo'
-	select v.Codigo_Vehiculo'Placa',v.Tipo_Vehiculo'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',v.Capacidad_Vehiculo'Capacidad Vehiculo',
-	v.Transmision_Vehiculo'Transmision Vehiculo',v.Combustible_Vehiculo'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
-	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',ep.Nombre_Empleado'Reponsable' from Vehiculos v
+	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
+	tt.NombreTransmision 'Transmision Vehiculo',tg.NombreGasolina 'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
+	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',e.Nombre_Estado'Estado' from Vehiculos v
+	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
+	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
+	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
-	inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 	where v.Estado_Vehiculo=@filtro;
 	if @tipobusqueda = 'Responsable Vehiculo'
-	select v.Codigo_Vehiculo'Placa',v.Tipo_Vehiculo'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',v.Capacidad_Vehiculo'Capacidad Vehiculo',
-	v.Transmision_Vehiculo'Transmision Vehiculo',v.Combustible_Vehiculo'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
-	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',ep.Nombre_Empleado'Reponsable' from Vehiculos v
+	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
+	tt.NombreTransmision 'Transmision Vehiculo',tg.NombreGasolina 'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
+	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',e.Nombre_Estado'Estado',ep.Nombre_Empleado'Reponsable' from Vehiculos v
+	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
+	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
+	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 	inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 	where v.Responsable_Vehiculo=@filtro;
+	if @tipobusqueda = 'Sin Asignar'
+	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
+	tt.NombreTransmision 'Transmision Vehiculo',tg.NombreGasolina 'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
+	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',e.Nombre_Estado'Estado','Sin Asignar'as'Reponsable' from Vehiculos v
+	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
+	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
+	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
+	where v.Responsable_Vehiculo is null;
 end
 GO
 /*---------------------------------------------Procedimient Llenar Datos DGV Vehiculos Completos------------------------------------------------*/
@@ -900,10 +937,13 @@ Create procedure [dbo].[ModificarEmpleado]
 @Puesto int,
 @Salario money,
 @Licencia varchar(50),
-@FechaVLic as Date
+@FechaVLic as Date,
+@tipolicencia as int
 as 
+declare @filtro as int
+set  @filtro=(Select p.Codigo_Puesto from Puesto p where p.Nombre_Puesto='Conductor' )
 begin
-	if(@Puesto=9)
+	if(@Puesto=@filtro)
 	begin
 	update Empleado 
 	set
@@ -915,7 +955,8 @@ begin
 	Puesto_Empleado= @Puesto,
 	Salario= @Salario,
 	Licencia= @Licencia,
-	Fecha_Vencimiento_Licencia= @FechaVLic
+	Fecha_Vencimiento_Licencia= @FechaVLic,
+	Tipo_Licencia =@tipolicencia
 	where Identidad_Empleado=@Identidad
 	end
 	else
@@ -930,7 +971,8 @@ begin
 	Puesto_Empleado= @Puesto,
 	Salario= @Salario,
 	Licencia= 'N/A',
-	Fecha_Vencimiento_Licencia= NULL
+	Fecha_Vencimiento_Licencia= NULL,
+	Tipo_Licencia = 0
 	where Identidad_Empleado=@Identidad
 	end
 end
@@ -956,3 +998,47 @@ create procedure TotalRecibosContratos
 		select COUNT(*) from Recibos where Codigo_Contrato=@Codigo_Contrato
 	end
 	GO
+/*--------------------------------------Procedimiento de Bitacora-------------------------------------------------*/
+Create procedure [dbo].[actualizarbitacora]
+@desc as varchar(50),
+@tipo as int,
+@dato1 as varchar(100),
+@dato2 as varchar(100),
+@dato3 as varchar(100),
+@dato4 as varchar(100),
+@dato5 as varchar(100),
+@dato6 as varchar(100)
+as
+begin
+declare @contador as int
+if(@tipo=1)
+begin
+if(@tipo=3)
+begin
+set @contador=(select count(*) from Eventos where TipoEvento=3)+1
+select @contador
+insert into Eventos values
+(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,NULL,null,null,null)
+end
+if(@tipo=8)
+begin
+set @contador=(select count(*) from Eventos where TipoEvento=8)+1
+select @contador
+insert into Eventos values
+(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
+end
+if(@tipo=9)
+begin
+set @contador=(select count(*) from Eventos where TipoEvento=9)+1
+select @contador
+insert into Eventos values
+(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
+end
+if(@tipo=10)
+begin
+set @contador=(select count(*) from Eventos where TipoEvento=10)+1
+select @contador
+insert into Eventos values
+(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,null,null,null,null)
+end
+end

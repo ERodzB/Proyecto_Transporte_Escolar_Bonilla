@@ -46,17 +46,23 @@
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtlicencia = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.busqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.lbltipolic = new System.Windows.Forms.Label();
+            this.GBlicencia = new System.Windows.Forms.GroupBox();
+            this.CBInter = new System.Windows.Forms.CheckBox();
+            this.RBPesada = new System.Windows.Forms.RadioButton();
+            this.RBLiviana = new System.Windows.Forms.RadioButton();
+            this.GBlicencia.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpvencimiento
             // 
             this.dtpvencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpvencimiento.Location = new System.Drawing.Point(481, 503);
+            this.dtpvencimiento.Location = new System.Drawing.Point(401, 502);
             this.dtpvencimiento.Name = "dtpvencimiento";
             this.dtpvencimiento.Size = new System.Drawing.Size(520, 36);
             this.dtpvencimiento.TabIndex = 43;
@@ -80,7 +86,9 @@
             this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuesto.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPuesto.FormattingEnabled = true;
-            this.cmbPuesto.Location = new System.Drawing.Point(481, 377);
+            this.cmbPuesto.Items.AddRange(new object[] {
+            "Conductor"});
+            this.cmbPuesto.Location = new System.Drawing.Point(401, 377);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(520, 35);
             this.cmbPuesto.TabIndex = 34;
@@ -95,7 +103,7 @@
             "Masculino",
             "Femenino",
             "Otros"});
-            this.cmbGenero.Location = new System.Drawing.Point(481, 210);
+            this.cmbGenero.Location = new System.Drawing.Point(401, 210);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(520, 35);
             this.cmbGenero.TabIndex = 29;
@@ -103,7 +111,7 @@
             // txtsalario
             // 
             this.txtsalario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsalario.Location = new System.Drawing.Point(481, 418);
+            this.txtsalario.Location = new System.Drawing.Point(401, 418);
             this.txtsalario.MaxLength = 13;
             this.txtsalario.Name = "txtsalario";
             this.txtsalario.Size = new System.Drawing.Size(520, 36);
@@ -134,7 +142,7 @@
             // txtdireccion
             // 
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdireccion.Location = new System.Drawing.Point(481, 335);
+            this.txtdireccion.Location = new System.Drawing.Point(401, 335);
             this.txtdireccion.MaxLength = 100;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(520, 36);
@@ -154,7 +162,7 @@
             // txtcorreo
             // 
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcorreo.Location = new System.Drawing.Point(481, 293);
+            this.txtcorreo.Location = new System.Drawing.Point(401, 293);
             this.txtcorreo.MaxLength = 100;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(520, 36);
@@ -175,7 +183,7 @@
             // txttelefono
             // 
             this.txttelefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefono.Location = new System.Drawing.Point(481, 251);
+            this.txttelefono.Location = new System.Drawing.Point(401, 251);
             this.txttelefono.MaxLength = 100;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(520, 36);
@@ -218,7 +226,7 @@
             // txtnombre
             // 
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.Location = new System.Drawing.Point(481, 168);
+            this.txtnombre.Location = new System.Drawing.Point(401, 168);
             this.txtnombre.MaxLength = 100;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(520, 36);
@@ -238,23 +246,24 @@
             // txtlicencia
             // 
             this.txtlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlicencia.Location = new System.Drawing.Point(481, 460);
+            this.txtlicencia.Location = new System.Drawing.Point(401, 460);
             this.txtlicencia.MaxLength = 100;
             this.txtlicencia.Name = "txtlicencia";
             this.txtlicencia.Size = new System.Drawing.Size(520, 36);
             this.txtlicencia.TabIndex = 45;
             this.txtlicencia.Visible = false;
             // 
-            // button1
+            // btnModificar
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.button1.Location = new System.Drawing.Point(936, 545);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 46);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnModificar.Enabled = false;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnModificar.Location = new System.Drawing.Point(936, 566);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(142, 46);
+            this.btnModificar.TabIndex = 46;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // busqueda
             // 
@@ -287,16 +296,78 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // lbltipolic
+            // 
+            this.lbltipolic.AutoSize = true;
+            this.lbltipolic.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltipolic.ForeColor = System.Drawing.Color.White;
+            this.lbltipolic.Location = new System.Drawing.Point(44, 566);
+            this.lbltipolic.Name = "lbltipolic";
+            this.lbltipolic.Size = new System.Drawing.Size(217, 30);
+            this.lbltipolic.TabIndex = 50;
+            this.lbltipolic.Text = "Tipo de Licencia:";
+            this.lbltipolic.Visible = false;
+            // 
+            // GBlicencia
+            // 
+            this.GBlicencia.Controls.Add(this.CBInter);
+            this.GBlicencia.Controls.Add(this.RBPesada);
+            this.GBlicencia.Controls.Add(this.RBLiviana);
+            this.GBlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.GBlicencia.Location = new System.Drawing.Point(401, 544);
+            this.GBlicencia.Name = "GBlicencia";
+            this.GBlicencia.Size = new System.Drawing.Size(520, 60);
+            this.GBlicencia.TabIndex = 51;
+            this.GBlicencia.TabStop = false;
+            this.GBlicencia.Visible = false;
+            // 
+            // CBInter
+            // 
+            this.CBInter.AutoSize = true;
+            this.CBInter.ForeColor = System.Drawing.Color.White;
+            this.CBInter.Location = new System.Drawing.Point(301, 20);
+            this.CBInter.Name = "CBInter";
+            this.CBInter.Size = new System.Drawing.Size(193, 34);
+            this.CBInter.TabIndex = 2;
+            this.CBInter.Text = "Internacional";
+            this.CBInter.UseVisualStyleBackColor = true;
+            // 
+            // RBPesada
+            // 
+            this.RBPesada.AutoSize = true;
+            this.RBPesada.ForeColor = System.Drawing.Color.White;
+            this.RBPesada.Location = new System.Drawing.Point(128, 20);
+            this.RBPesada.Name = "RBPesada";
+            this.RBPesada.Size = new System.Drawing.Size(122, 34);
+            this.RBPesada.TabIndex = 1;
+            this.RBPesada.TabStop = true;
+            this.RBPesada.Text = "Pesada";
+            this.RBPesada.UseVisualStyleBackColor = true;
+            // 
+            // RBLiviana
+            // 
+            this.RBLiviana.AutoSize = true;
+            this.RBLiviana.ForeColor = System.Drawing.Color.White;
+            this.RBLiviana.Location = new System.Drawing.Point(3, 19);
+            this.RBLiviana.Name = "RBLiviana";
+            this.RBLiviana.Size = new System.Drawing.Size(119, 34);
+            this.RBLiviana.TabIndex = 0;
+            this.RBLiviana.TabStop = true;
+            this.RBLiviana.Text = "Liviana";
+            this.RBLiviana.UseVisualStyleBackColor = true;
+            // 
             // Modficar_Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.GBlicencia);
+            this.Controls.Add(this.lbltipolic);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.busqueda);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtlicencia);
             this.Controls.Add(this.dtpvencimiento);
             this.Controls.Add(this.lblVencimiento);
@@ -320,6 +391,8 @@
             this.Name = "Modficar_Empleado";
             this.Text = "Modficar_Empleado";
             this.Load += new System.EventHandler(this.Modficar_Empleado_Load);
+            this.GBlicencia.ResumeLayout(false);
+            this.GBlicencia.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,9 +418,14 @@
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtlicencia;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox busqueda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbltipolic;
+        private System.Windows.Forms.GroupBox GBlicencia;
+        private System.Windows.Forms.CheckBox CBInter;
+        private System.Windows.Forms.RadioButton RBPesada;
+        private System.Windows.Forms.RadioButton RBLiviana;
     }
 }

@@ -68,7 +68,7 @@ namespace Transporte_Escolar_Bonilla
 
             }
         }
-        public void ModificarEmpleado(string id, string nom, int genero, string tel, string correo, string dir, int puesto, double salario, string Lic, DateTime fechaLic)
+        public void ModificarEmpleado(string id, string nom, int genero, string tel, string correo, string dir, int puesto, double salario, string Lic, DateTime fechaLic, int TLic)
         {
             try
             {
@@ -84,6 +84,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Salario", salario);
                 cmd.Parameters.AddWithValue("@Licencia", Lic);
                 cmd.Parameters.AddWithValue("@FechaVLic", fechaLic);
+                cmd.Parameters.AddWithValue("@tipolicencia", TLic);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -92,7 +93,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
         }
-        public void ModificarVAsigDevol(int Tipo,string Empleado,string Placa)
+        public void ModificarVAsigDevol(int Tipo,string Empleado,string Placa, int estado)
         {
             try
             {
@@ -101,6 +102,29 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@tipo", Tipo);
                 cmd.Parameters.AddWithValue("@empleado", Empleado);
                 cmd.Parameters.AddWithValue("@placa", Placa);
+                cmd.Parameters.AddWithValue("@estado", estado);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, algo a salido mal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR: " + ex.ToString());
+            }
+        }
+        public void BitacoraModulo(string Evento, int tipo, string d1, string d2, string d3, string d4, string d5,string d6)
+        {
+            try
+            {
+                cmd = new SqlCommand("actualizarbitacora", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@desc", Evento);
+                cmd.Parameters.AddWithValue("@tipo", tipo);
+                cmd.Parameters.AddWithValue("@dato1", d1);
+                cmd.Parameters.AddWithValue("@dato2", d2);
+                cmd.Parameters.AddWithValue("@dato3", d3);
+                cmd.Parameters.AddWithValue("@dato4", d4);
+                cmd.Parameters.AddWithValue("@dato5", d5);
+                cmd.Parameters.AddWithValue("@dato6", d6);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

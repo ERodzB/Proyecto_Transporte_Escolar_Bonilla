@@ -15,6 +15,7 @@ namespace Transporte_Escolar_Bonilla
         private SqlDataAdapter Adapter;
         private DataTable table;
         private SqlCommand cmd;
+        public int lic;
 
         public Consultar()
         {
@@ -222,6 +223,7 @@ namespace Transporte_Escolar_Bonilla
         {
             try
             {
+
                 table = new DataTable();
                 Adapter = new SqlDataAdapter("BuscarEmpleado", conexionBD);
                 Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -236,6 +238,7 @@ namespace Transporte_Escolar_Bonilla
                 salario.Text = table.Rows[0][6].ToString();
                 licencia.Text = table.Rows[0][7].ToString();
                 fecha.Text = table.Rows[0][8].ToString();
+                lic =int.Parse( table.Rows[0][9].ToString());
             }
             catch (Exception ex)
             {
