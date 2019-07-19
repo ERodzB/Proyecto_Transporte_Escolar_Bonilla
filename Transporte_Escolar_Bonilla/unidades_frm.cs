@@ -55,5 +55,25 @@ namespace Transporte_Escolar_Bonilla
             consultartransporte transporte = new consultartransporte();
             estetica.AbrirFormularios(transporte, mainUnidades_panel);
         }
+
+        //Nueva Unidad
+        private void NuevaUnidad_btn_Click(object sender, EventArgs e)
+        {
+            form_nueva_unidad uni = new form_nueva_unidad();
+            estetica.AbrirFormularios(uni, mainUnidades_panel);
+        }
+
+        //Asignar una ruta a la Unidad
+        private void AsignarUnidad_btn_Click(object sender, EventArgs e)
+        {
+            form_asignar_ruta ruta = new form_asignar_ruta();
+            estetica.AbrirFormularios(ruta, mainUnidades_panel);
+        }
+
+        private void MantenimientoUnidades_btn_Click(object sender, EventArgs e)
+        {
+            form_mantenimiento_unidad mant = new form_mantenimiento_unidad();
+            estetica.AbrirFormularios(mant, mainUnidades_panel);
+        }
     }
 }

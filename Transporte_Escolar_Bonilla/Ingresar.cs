@@ -176,12 +176,65 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Horario_Entrada", horae);
                 cmd.Parameters.AddWithValue("@Pasajeros", pa);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Horario creado exitosamente");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
+        }
+
+        //Nueva Unidad de Transporte
+        public void NuevaUnidad(string mat, int tipo, int anioveh, string marca, string modelo, int cap, int trans, int gas, string color, int anioad,
+                                int estado, DateTime emipermiso, DateTime vencpermiso)
+        {
+            try
+            {
+                cmd = new SqlCommand("NuevaUnidad", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", mat);
+                cmd.Parameters.AddWithValue("@Tipo_Vehiculo", tipo);
+                cmd.Parameters.AddWithValue("@Anio_Vehiculo", anioveh);
+                cmd.Parameters.AddWithValue("@Marca_Vehiculo", marca);
+                cmd.Parameters.AddWithValue("@Modelo_Vehiculo", modelo);
+                cmd.Parameters.AddWithValue("@Capacidad_Vehiculo", cap);
+                cmd.Parameters.AddWithValue("@Transmision_Vehiculo", trans);
+                cmd.Parameters.AddWithValue("@Combustible_Vehiculo", gas);
+                cmd.Parameters.AddWithValue("@Color_Vehiculo", color);
+                cmd.Parameters.AddWithValue("@Anio_Adquisicion", anioad);
+                cmd.Parameters.AddWithValue("@Estado_Vehiculo", estado);
+                cmd.Parameters.AddWithValue("@Emision_Permiso", emipermiso);
+                cmd.Parameters.AddWithValue("@Vencimiento_Permiso", vencpermiso); 
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+
+            mensaje = "Vehículo guardado con Éxito";
+        }
+
+        //Nuevo Mantenimiento
+        public void NuevoMantenimiento(int tipo, DateTime fecha, string veh, double costo, int estado)
+        {
+            try
+            {
+                cmd = new SqlCommand("NuevoMantenimiento", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Tipo_Mantenimiento", tipo);
+                cmd.Parameters.AddWithValue("@Fecha_Mantenimiento", fecha);
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", veh);
+                cmd.Parameters.AddWithValue("@Costo_Mantenimiento", costo);
+                cmd.Parameters.AddWithValue("@Estado_Mantenimiento", estado);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+
+            mensaje = "Mantenimiento ingresado con Éxito";
         }
 
         public void login(string Codigo, string password)

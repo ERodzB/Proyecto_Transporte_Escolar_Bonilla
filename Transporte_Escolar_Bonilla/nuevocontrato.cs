@@ -28,6 +28,7 @@ namespace Transporte_Escolar_Bonilla
         {
             combservicio.SelectedIndex = -1;
             pago_cmb.SelectedIndex = 0;
+
             //Llenar ComboBox de Rutas
             combruta1.DataSource = consul.Combobox_Rutas();
             combruta1.DisplayMember = "Codigo_Ruta";
@@ -262,6 +263,7 @@ namespace Transporte_Escolar_Bonilla
                                           DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex+1);
 
                         }
+
                         //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
                         ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, combcliente.Text);
                         ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);

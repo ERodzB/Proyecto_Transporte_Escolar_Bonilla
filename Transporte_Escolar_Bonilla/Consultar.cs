@@ -190,6 +190,68 @@ namespace Transporte_Escolar_Bonilla
             return table;
         }
 
+        //Llenar Combobox Tipo de Vehiculo
+        public DataTable Combobox_TipoVehiculo()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxTipoVeh", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table; 
+        }
+
+        //Llenar Combobox Tipo de Transmision
+        public DataTable Combobox_TipoTrans()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxTipoTrans", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+
+        //Llenar Combobox Tipo de Combustible
+        public DataTable Combobox_TipoGas()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxTipoGas", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+
+        //Llenar Combobox Estado del vehiculo
+        public DataTable Combobox_EstadoVeh()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxEstadoVeh", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+
+        //Llenar Combobox Tipo de Mantenimiento
+        public DataTable Combobox_TipoMant()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxTipoMant", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+
+        //Llenar Combobox Estado de Mantenimiento
+        public DataTable Combobox_EstadoMant()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxEstadoMant", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+
+
+
         public DataTable llenarPerfiles()
         {
             table = new DataTable();
