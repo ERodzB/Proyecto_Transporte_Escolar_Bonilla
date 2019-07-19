@@ -1010,35 +1010,37 @@ Create procedure [dbo].[actualizarbitacora]
 @dato6 as varchar(100)
 as
 begin
-declare @contador as int
-if(@tipo=1)
-begin
-if(@tipo=3)
-begin
-set @contador=(select count(*) from Eventos where TipoEvento=3)+1
-select @contador
-insert into Eventos values
-(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,NULL,null,null,null)
+	declare @contador as int
+	if(@tipo=1)
+		begin
+		if(@tipo=3)
+		begin
+			set @contador=(select count(*) from Eventos where TipoEvento=3)+1
+			select @contador
+			insert into Eventos values
+			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,NULL,null,null,null)
+		end
+		if(@tipo=8)
+		begin
+			set @contador=(select count(*) from Eventos where TipoEvento=8)+1
+			select @contador
+			insert into Eventos values
+			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
+		end
+		if(@tipo=9)
+		begin
+			set @contador=(select count(*) from Eventos where TipoEvento=9)+1
+			select @contador
+			insert into Eventos values
+			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
+		end
+		if(@tipo=10)
+		begin
+			set @contador=(select count(*) from Eventos where TipoEvento=10)+1
+			select @contador
+			insert into Eventos values
+			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,null,null,null,null)
+		end
+	end
 end
-if(@tipo=8)
-begin
-set @contador=(select count(*) from Eventos where TipoEvento=8)+1
-select @contador
-insert into Eventos values
-(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
-end
-if(@tipo=9)
-begin
-set @contador=(select count(*) from Eventos where TipoEvento=9)+1
-select @contador
-insert into Eventos values
-(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
-end
-if(@tipo=10)
-begin
-set @contador=(select count(*) from Eventos where TipoEvento=10)+1
-select @contador
-insert into Eventos values
-(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,null,null,null,null)
-end
-end
+GO
