@@ -956,3 +956,46 @@ create procedure TotalRecibosContratos
 		select COUNT(*) from Recibos where Codigo_Contrato=@Codigo_Contrato
 	end
 	GO
+
+/*------------------------------------------Modificar Vehiculo-------------------------------------------*/
+
+create procedure ModificarVehiculo
+@Cod_Vehiculo varchar(50),
+@Color_Vehiculo varchar (100),
+@Estado_Vehiculo int,
+@Emision_Permiso date,
+@Vencimiento_Permiso date
+as
+begin
+	Update Vehiculos
+	set Color_Vehiculo = @Color_Vehiculo,
+	Estado_Vehiculo = @Estado_Vehiculo,
+	Emision_Permiso = @Emision_Permiso,
+	Vencimiento_Permiso = @Vencimiento_Permiso
+	where Codigo_Vehiculo = @Cod_Vehiculo
+end
+
+
+/*----------------------------------Combobox Estado Vehiculo---------------------------------------*/
+create procedure ComboModVehiculo
+As
+begin
+	select Codigo_Estado,Nombre_Estado from dbo.Estado
+	where Codigo_Categoria ='VE' 
+end
+GO
+
+/*----------------------Cargar dgv Vehiculos----------------------------*/
+
+Create Procedure CargaDgvModVehiculo
+as
+begin
+	select v.Codigo_Vehiculo'Placa Vehicul', tv.Tipo_Vehiculo'Tipo de Vehiculo', v.Anio_Vehiculo'Año del Vehiculo', v.Marca_Vehiculo'Marca del Vehiculo', v.Modelo_Vehiculo'Modelo del Vehiculo',
+	v.Capacidad_Vehiculo'Capacidad del Vehiculo', tt.NombreTransmision'Transmision del Vehiculo', tg.NombreGasolina'Combustible del Vehiculo', v.Color_Vehiculo,
+	v.Anio_Adquisicion, e.Nombre_Estado'Estado del Vehiculo', v.Emision_Permiso'Emision del Permiso', v.Vencimiento_Permiso'Vencimiento del Permiso', v.Responsable_Vehiculo'Responsable del Vehiculo'
+	from Vehiculos v
+	inner join TipoVehiculo tv on v.Tipo_Vehiculo = tv.CodVehiculo
+	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
+	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
+end

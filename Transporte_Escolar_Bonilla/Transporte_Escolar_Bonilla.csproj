@@ -196,6 +196,12 @@
     <Compile Include="Modificar_Datos_Contrato.Designer.cs">
       <DependentUpon>Modificar_Datos_Contrato.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modificar_UnidadFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_UnidadFrm.Designer.cs">
+      <DependentUpon>Modificar_UnidadFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="nuevocontrato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar_Datos_Contrato.resx">
       <DependentUpon>Modificar_Datos_Contrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_UnidadFrm.resx">
+      <DependentUpon>Modificar_UnidadFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nuevocontrato.resx">
       <DependentUpon>nuevocontrato.cs</DependentUpon>

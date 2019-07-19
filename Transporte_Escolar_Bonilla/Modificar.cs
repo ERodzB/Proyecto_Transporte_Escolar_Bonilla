@@ -30,13 +30,13 @@ namespace Transporte_Escolar_Bonilla
             string nuevaContra = "<h2>Su nueva contraseña es: </h2>";
             try
             {
-                
+
                 cmd = new SqlCommand("CambioContrasena", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Nombre_Usuario", Nombre_Usuario);
                 nuevaContra += (string)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
@@ -44,7 +44,7 @@ namespace Transporte_Escolar_Bonilla
 
             return nuevaContra;
         }
-        public void ModificarUsuario(string Codigo_Empleado, string Nombre_Usuario,string Contrasena_Usuario, int Perfil_Acceso)
+        public void ModificarUsuario(string Codigo_Empleado, string Nombre_Usuario, string Contrasena_Usuario, int Perfil_Acceso)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Se ha Modificado correctamente el usuario");
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Validar valido = new Validar();
                 if (valido.validarUsuario(Nombre_Usuario) == 1)
@@ -92,7 +92,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
         }
-        public void ModificarVAsigDevol(int Tipo,string Empleado,string Placa)
+        public void ModificarVAsigDevol(int Tipo, string Empleado, string Placa)
         {
             try
             {
@@ -111,7 +111,7 @@ namespace Transporte_Escolar_Bonilla
         }
 
 
-        public void ModificarPerfiles(int Codigo_Perfil,int Nivel_Acceso, string Nombre_Perfil, string Descripcion_Perfil)
+        public void ModificarPerfiles(int Codigo_Perfil, int Nivel_Acceso, string Nombre_Perfil, string Descripcion_Perfil)
         {
             try
             {
@@ -125,13 +125,13 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Se ha Modificado correctamente el perfil");
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
         }
 
-        public void ModificarClientes(string id ,string nombre, string direccion, string telfono, string correo)
+        public void ModificarClientes(string id, string nombre, string direccion, string telfono, string correo)
         {
             try
             {
@@ -152,9 +152,9 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void ModificarContratoTemporal(string id,double montomensual, string servicio, DateTime fechaini, double monto, string fechafin, int estado, int tipopago)
+        public void ModificarContratoTemporal(string id, double montomensual, string servicio, DateTime fechaini, double monto, string fechafin, int estado, int tipopago)
         {
-            
+
             try
             {
                 cmd = new SqlCommand("ModificarContratoTemporal", conexionBD);
@@ -177,7 +177,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void ModificarContratoViaje(string id,double anticipo, string servicio, DateTime fechaini, double monto, string fechafin, int estado)
+        public void ModificarContratoViaje(string id, double anticipo, string servicio, DateTime fechaini, double monto, string fechafin, int estado)
         {
 
             try
@@ -190,7 +190,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Fecha_Inicio_Contrato", fechaini);
                 cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
                 cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechafin);
-                cmd.Parameters.AddWithValue("@Estado_Contrato", estado);                
+                cmd.Parameters.AddWithValue("@Estado_Contrato", estado);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se ha Modificado correctamente el Contrato");
 
@@ -200,7 +200,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex);
             }
         }
-        public void ModificarHorario(string Codigo_Ruta, string Codigo_Vehiculo,string Horario_Salida,string Horario_Entrada, DateTime Horario_Salida_Nuevo, DateTime Horario_Entrada_Nuevo,string Decision)
+        public void ModificarHorario(string Codigo_Ruta, string Codigo_Vehiculo, string Horario_Salida, string Horario_Entrada, DateTime Horario_Salida_Nuevo, DateTime Horario_Entrada_Nuevo, string Decision)
         {
             try
             {
@@ -214,9 +214,31 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("Horario_Salida_Nuevo", Horario_Salida_Nuevo);
                 cmd.Parameters.AddWithValue("@Decision", Decision);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha "+Decision+" correctamente el Horario");
+                MessageBox.Show("Se ha " + Decision + " correctamente el Horario");
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+
+        public void ModificarVehiculo(string placa, string color, int estado, DateTime emision, DateTime vencimiento)
+        {
+
+            try
+            {
+                cmd = new SqlCommand("ModificarVehiculo", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Cod_Vehiculo", placa);
+                cmd.Parameters.AddWithValue("@Color_Vehiculo", color);
+                cmd.Parameters.AddWithValue("@Estado_Vehiculo", estado);
+                cmd.Parameters.AddWithValue("@Emision_Permiso", emision);
+                cmd.Parameters.AddWithValue("@Vencimiento_Permiso", vencimiento);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha Modificado correctamente el Contrato");
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }

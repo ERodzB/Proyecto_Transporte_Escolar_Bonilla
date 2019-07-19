@@ -504,7 +504,6 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 Adapter.Fill(table);
                 dgvContrato.DataSource = table;
-                //MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             catch (Exception ex)
             {
@@ -522,7 +521,6 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.SelectCommand.Parameters.AddWithValue("@Cod_Cliente", cod);
                 Adapter.Fill(table);
                 dgvContrato.DataSource = table;
-                //MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             catch (Exception ex)
             {
@@ -584,6 +582,35 @@ namespace Transporte_Escolar_Bonilla
 
             return nc;
         }
-      
+
+
+        public void CargadgvModVehiculos(DataGridView dgvContrato)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); Adapter = new SqlDataAdapter("CargaDgvModVehiculo", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvContrato.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+
+
+        public DataTable combox_mod_vehiculo()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboModVehiculo", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+
+
+
     }
 }
