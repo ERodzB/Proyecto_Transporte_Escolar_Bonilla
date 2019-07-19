@@ -998,6 +998,121 @@ create procedure TotalRecibosContratos
 		select COUNT(*) from Recibos where Codigo_Contrato=@Codigo_Contrato
 	end
 	GO
+
+
+/* Procedimientos Almacenados UNIDADES DE TRANSPORTE */ 
+
+/*--------------------------------------Procedimiento Llenar ComboBox Tipo de Vehiculo-------------------------------------------------*/
+create procedure ComboboxTipoVeh
+as
+begin
+	select CodVehiculo 'Codigo' , Tipo_Vehiculo 'Tipo' from TipoVehiculo
+end
+GO
+
+/*--------------------------------------Procedimiento Llenar Trasnmision de Vehiculo-------------------------------------------------*/
+create procedure ComboboxTipoTrans
+as
+begin
+	select CodTransmision 'Codigo', NombreTransmision 'Transmision' from TipoTransmision
+end
+GO
+
+/*--------------------------------------Procedimiento Llenar ComboBox Combustible de Vehiculo-------------------------------------------------*/
+create procedure ComboboxTipoGas
+as
+begin
+	select CodGasolina 'Codigo', NombreGasolina 'Gasolina' from TipoGasolina
+end
+GO
+
+/*--------------------------------------Procedimiento Llenar ComboBox Estado de Vehiculo-------------------------------------------------*/
+create procedure ComboboxEstadoVeh
+as
+begin
+	select Codigo_Estado 'Codigo', Nombre_Estado 'Estado' from Estado
+	where Codigo_Categoria = 'VE'
+end
+GO
+
+/*-------------------------------------Procedimiento Verificar Vehiculo Existente-------------------------------------------------*/
+create procedure VerificarVehiculo
+@Codigo_Vehiculo varchar(50)
+as
+begin
+	select COUNT(*) from Vehiculos where Codigo_Vehiculo = @Codigo_Vehiculo
+end
+GO
+
+
+/*--------------------------------------Procedimiento Nuevo Vehiculo-------------------------------------------------*/
+create procedure NuevaUnidad
+@Codigo_Vehiculo varchar(50),
+@Tipo_Vehiculo int,
+@Anio_Vehiculo int,
+@Marca_Vehiculo varchar(100),
+@Modelo_Vehiculo varchar(100),
+@Capacidad_Vehiculo int,
+@Transmision_Vehiculo int,
+@Combustible_Vehiculo int,
+@Color_Vehiculo varchar(100),
+@Anio_Adquisicion int,
+@Estado_Vehiculo int,
+@Emision_Permiso date,
+@Vencimiento_Permiso date
+as
+begin
+	insert into Vehiculos (Codigo_Vehiculo, Tipo_Vehiculo, Anio_Vehiculo, Marca_Vehiculo, Modelo_Vehiculo, Capacidad_Vehiculo, Transmision_Vehiculo, 
+	                       Combustible_Vehiculo, Color_Vehiculo, Anio_Adquisicion, Estado_Vehiculo, Emision_Permiso, Vencimiento_Permiso)
+	values (@Codigo_Vehiculo, @Tipo_Vehiculo, @Anio_Vehiculo, @Marca_Vehiculo, @Modelo_Vehiculo, @Capacidad_Vehiculo, @Transmision_Vehiculo,
+	        @Combustible_Vehiculo, @Color_Vehiculo, @Anio_Adquisicion, @Estado_Vehiculo, @Emision_Permiso, @Vencimiento_Permiso)
+end
+GO
+
+
+/*--------------------------------------Procedimiento Llenar ComboBox Tipo de Mantenimiento-------------------------------------------------*/
+create procedure ComboboxTipoMant
+as
+begin
+	select Codigo_Tipo_Mantenimiento 'Codigo', Nombre_Mantenimiento 'Mantenimiento' from Tipo_Mantenimientos
+end
+GO
+
+/*--------------------------------------Procedimiento Llenar ComboBox Estado de Mantenimiento-------------------------------------------------*/
+create procedure ComboboxEstadoMant
+as
+begin
+	select Codigo_Estado 'Codigo', Nombre_Estado 'Estado' from Estado
+	where Codigo_Categoria = 'MT'
+end
+GO
+
+/*--------------------------------------Procedimiento Llenar Guardar Mantenimiento-------------------------------------------------*/
+create procedure NuevoMantenimiento
+@Tipo_Mantenimiento int,
+@Fecha_Mantenimiento date,
+@Codigo_Vehiculo varchar(50),
+@Costo_Mantenimiento money,
+@Estado_Mantenimiento int
+as
+begin
+	insert into Mantenimientos (Codigo_Mantenimiento, Tipo_Mantenimiento, Fecha_Mantenimiento, Codigo_Vehiculo, Costo_Mantenimiento, Estado_Mantenimiento)
+	values ( (select COUNT(*)+1 from Mantenimientos), @Tipo_Mantenimiento, @Fecha_Mantenimiento, @Codigo_Vehiculo, @Costo_Mantenimiento, @Estado_Mantenimiento)
+end
+GO
+
+/*--------------------------------------Procedimiento Llenar Poner Vehiculo en Mantenimiento-------------------------------------------------*/
+--701
+create procedure VehEnMantenimiento
+@Codigo_Vehiculo varchar(50)
+as
+begin
+	update Vehiculos
+	set Estado_Vehiculo = 701
+	where Codigo_Vehiculo = @Codigo_Vehiculo
+end
+GO
+	GO
 /*--------------------------------------Procedimiento de Bitacora-------------------------------------------------*/
 Create procedure [dbo].[actualizarbitacora]
 @desc as varchar(50),

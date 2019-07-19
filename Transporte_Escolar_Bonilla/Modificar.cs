@@ -267,5 +267,22 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex);
             }
         }
+
+        //Modificar Estado de Vehiculo a "En Mantenimiento"
+        public void ModificarEstadoVeh(string matricula)
+        {
+            try
+            {
+                cmd = new SqlCommand("VehEnMantenimiento", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", matricula);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+
     }
 }

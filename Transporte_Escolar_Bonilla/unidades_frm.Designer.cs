@@ -79,12 +79,13 @@
             this.asignarUnidad_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asignarUnidad_btn.ForeColor = System.Drawing.Color.White;
             this.asignarUnidad_btn.Location = new System.Drawing.Point(451, 0);
-            this.asignarUnidad_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.asignarUnidad_btn.Margin = new System.Windows.Forms.Padding(2);
             this.asignarUnidad_btn.Name = "asignarUnidad_btn";
             this.asignarUnidad_btn.Size = new System.Drawing.Size(131, 77);
             this.asignarUnidad_btn.TabIndex = 4;
             this.asignarUnidad_btn.Text = "Asignar Unidad";
             this.asignarUnidad_btn.UseVisualStyleBackColor = false;
+            this.asignarUnidad_btn.Click += new System.EventHandler(this.AsignarUnidad_btn_Click);
             // 
             // nuevaUnidad_btn
             // 
@@ -95,12 +96,13 @@
             this.nuevaUnidad_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaUnidad_btn.ForeColor = System.Drawing.Color.White;
             this.nuevaUnidad_btn.Location = new System.Drawing.Point(320, 0);
-            this.nuevaUnidad_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nuevaUnidad_btn.Margin = new System.Windows.Forms.Padding(2);
             this.nuevaUnidad_btn.Name = "nuevaUnidad_btn";
             this.nuevaUnidad_btn.Size = new System.Drawing.Size(131, 77);
             this.nuevaUnidad_btn.TabIndex = 3;
             this.nuevaUnidad_btn.Text = "Nueva Unidad";
             this.nuevaUnidad_btn.UseVisualStyleBackColor = false;
+            this.nuevaUnidad_btn.Click += new System.EventHandler(this.NuevaUnidad_btn_Click);
             // 
             // mantenimientoUnidades_btn
             // 
@@ -111,12 +113,13 @@
             this.mantenimientoUnidades_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientoUnidades_btn.ForeColor = System.Drawing.Color.White;
             this.mantenimientoUnidades_btn.Location = new System.Drawing.Point(130, 0);
-            this.mantenimientoUnidades_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mantenimientoUnidades_btn.Margin = new System.Windows.Forms.Padding(2);
             this.mantenimientoUnidades_btn.Name = "mantenimientoUnidades_btn";
             this.mantenimientoUnidades_btn.Size = new System.Drawing.Size(190, 77);
             this.mantenimientoUnidades_btn.TabIndex = 2;
             this.mantenimientoUnidades_btn.Text = "Mantenimiento de Unidad";
             this.mantenimientoUnidades_btn.UseVisualStyleBackColor = false;
+            this.mantenimientoUnidades_btn.Click += new System.EventHandler(this.MantenimientoUnidades_btn_Click);
             // 
             // consultasUnidades_btn
             // 
@@ -139,7 +142,7 @@
             // 
             this.mainUnidades_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainUnidades_panel.Location = new System.Drawing.Point(0, 77);
-            this.mainUnidades_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainUnidades_panel.Margin = new System.Windows.Forms.Padding(2);
             this.mainUnidades_panel.Name = "mainUnidades_panel";
             this.mainUnidades_panel.Size = new System.Drawing.Size(831, 528);
             this.mainUnidades_panel.TabIndex = 6;

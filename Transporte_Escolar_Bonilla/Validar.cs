@@ -199,6 +199,26 @@ namespace Transporte_Escolar_Bonilla
                 igual++;
         }
 
+        //Validar Vehiculos
+        public int validarVeh(string mat)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarVehiculo", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", mat);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+
+            return x;
+        }
+
         public int validarContrasena(string cont, string ID)
         {
             x = 0;
