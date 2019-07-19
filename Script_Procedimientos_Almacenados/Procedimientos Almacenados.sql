@@ -1063,7 +1063,7 @@ begin
 	Vencimiento_Permiso = @Vencimiento_Permiso
 	where Codigo_Vehiculo = @Cod_Vehiculo
 end
-
+GO
 
 /*----------------------------------Combobox Estado Vehiculo---------------------------------------*/
 create procedure ComboModVehiculo
@@ -1088,3 +1088,4 @@ begin
 	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 end
+GO
