@@ -92,6 +92,7 @@
             this.contra_tb.Location = new System.Drawing.Point(466, 249);
             this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
+            this.contra_tb.PasswordChar = '*';
             this.contra_tb.Size = new System.Drawing.Size(451, 41);
             this.contra_tb.TabIndex = 7;
             this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
@@ -149,6 +150,7 @@
             this.confirm_tb.Location = new System.Drawing.Point(466, 313);
             this.confirm_tb.MaxLength = 20;
             this.confirm_tb.Name = "confirm_tb";
+            this.confirm_tb.PasswordChar = '*';
             this.confirm_tb.Size = new System.Drawing.Size(451, 41);
             this.confirm_tb.TabIndex = 8;
             this.confirm_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Conform_tb_KeyPress);
