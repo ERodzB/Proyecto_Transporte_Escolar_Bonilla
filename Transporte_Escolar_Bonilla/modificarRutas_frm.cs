@@ -26,24 +26,42 @@ namespace Transporte_Escolar_Bonilla
         {
             if (agregar_rb.Checked == true)
             {
-                ingreso.AsignarHoraVeh(rutasModificar_cmb.Text, vehiculo_cmb.Text, horaSalida_dtp.Text, llegadaHorario_dtp.Text, 0);
-                Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
-                Horario_cmb.DisplayMember = "Horarios";
-
+                if (rutasModificar_cmb.Text!="" && horaSalida_dtp.Checked==true && llegadaHorario_dtp.Checked==true && vehiculo_cmb.Text!="" && (horaSalida_dtp.Value!=llegadaHorario_dtp.Value))
+                {
+                    ingreso.AsignarHoraVeh(rutasModificar_cmb.Text, vehiculo_cmb.Text, horaSalida_dtp.Text, llegadaHorario_dtp.Text, 0);
+                    Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                    Horario_cmb.DisplayMember = "Horarios";
+                }
+                else
+                {
+                    MessageBox.Show("Favor ingresar todos los datos necesarios correctamente","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             if (eliminarHorario_rb.Checked == true)
             {
-                modifico.ModificarHorario(rutasModificar_cmb.Text," ",Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")),Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ")+1),Convert.ToDateTime("5:00 AM"), Convert.ToDateTime("5:00 AM"), "Eliminar");
-                Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
-                Horario_cmb.DisplayMember = "Horarios";
+                if (rutasModificar_cmb.Text != "" && Horario_cmb.Text != "") 
+                {
+                    modifico.ModificarHorario(rutasModificar_cmb.Text, " ", Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")), Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ") + 1), Convert.ToDateTime("5:00 AM"), Convert.ToDateTime("5:00 AM"), "Eliminar");
+                    Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                    Horario_cmb.DisplayMember = "Horarios";
+                }
+                else
+                {
+                    MessageBox.Show("Favor ingresar todos los datos necesarios correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             if (modiHorario_rb.Checked == true)
             {
-                
-                modifico.ModificarHorario(rutasModificar_cmb.Text, vehiculo_cmb.Text,Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")),Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ")+1), horaSalida_dtp.Value, llegadaHorario_dtp.Value,"Modificar");
-               
-                Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
-                Horario_cmb.DisplayMember = "Horarios";
+                if (horaSalida_dtp.Checked == true && llegadaHorario_dtp.Checked == true && rutasModificar_cmb.Text != "" && Horario_cmb.Text != "" && vehiculo_cmb.Text != "" && (horaSalida_dtp.Value != llegadaHorario_dtp.Value))
+                {
+                    modifico.ModificarHorario(rutasModificar_cmb.Text, vehiculo_cmb.Text, Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")), Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ") + 1), horaSalida_dtp.Value, llegadaHorario_dtp.Value, "Modificar");
+                    Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                    Horario_cmb.DisplayMember = "Horarios";
+                }
+                else
+                {
+                    MessageBox.Show("Favor ingresar todos los datos necesarios correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -184,9 +202,9 @@ namespace Transporte_Escolar_Bonilla
                 if (agregar_rb.Checked == true && rutasModificar_cmb.SelectedIndex != -1)
                 {
                     consulto.DescVehiculos(vehiculo_cmb.Text, vehiculo_lbl);
-                vehiculo_cmb.SelectedIndex = -1;
+                    vehiculo_cmb.SelectedIndex = -1;
                     horaSalida_dtp.ResetText();
-                   llegadaHorario_dtp.ResetText();
+                    llegadaHorario_dtp.ResetText();
                     Horario_cmb.Visible = false;
                     horario_lbl.Visible = false;
                     entradaHorario_lbl.Visible = true;

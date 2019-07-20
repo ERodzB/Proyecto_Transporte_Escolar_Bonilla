@@ -49,7 +49,7 @@
             this.dtphorae1.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.dtphorae1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtphorae1.Location = new System.Drawing.Point(563, 358);
-            this.dtphorae1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtphorae1.Margin = new System.Windows.Forms.Padding(4);
             this.dtphorae1.Name = "dtphorae1";
             this.dtphorae1.Size = new System.Drawing.Size(243, 41);
             this.dtphorae1.TabIndex = 5;
@@ -95,10 +95,11 @@
             // 
             this.txtfin.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtfin.Location = new System.Drawing.Point(552, 186);
-            this.txtfin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtfin.Margin = new System.Windows.Forms.Padding(4);
             this.txtfin.Name = "txtfin";
             this.txtfin.Size = new System.Drawing.Size(336, 34);
             this.txtfin.TabIndex = 2;
+            this.txtfin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtfin_KeyPress);
             // 
             // label2
             // 
@@ -119,7 +120,7 @@
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
             this.botcrear.Location = new System.Drawing.Point(589, 549);
-            this.botcrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botcrear.Margin = new System.Windows.Forms.Padding(4);
             this.botcrear.Name = "botcrear";
             this.botcrear.Size = new System.Drawing.Size(217, 70);
             this.botcrear.TabIndex = 13;
@@ -132,7 +133,7 @@
             this.dtphoras1.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.dtphoras1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtphoras1.Location = new System.Drawing.Point(563, 299);
-            this.dtphoras1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtphoras1.Margin = new System.Windows.Forms.Padding(4);
             this.dtphoras1.Name = "dtphoras1";
             this.dtphoras1.Size = new System.Drawing.Size(243, 41);
             this.dtphoras1.TabIndex = 4;
@@ -142,10 +143,11 @@
             // 
             this.txtinicio.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtinicio.Location = new System.Drawing.Point(552, 128);
-            this.txtinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtinicio.Margin = new System.Windows.Forms.Padding(4);
             this.txtinicio.Name = "txtinicio";
             this.txtinicio.Size = new System.Drawing.Size(336, 34);
             this.txtinicio.TabIndex = 1;
+            this.txtinicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtinicio_KeyPress);
             // 
             // label1
             // 
@@ -178,7 +180,7 @@
             this.combveh1.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combveh1.FormattingEnabled = true;
             this.combveh1.Location = new System.Drawing.Point(563, 444);
-            this.combveh1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combveh1.Margin = new System.Windows.Forms.Padding(4);
             this.combveh1.Name = "combveh1";
             this.combveh1.Size = new System.Drawing.Size(243, 39);
             this.combveh1.TabIndex = 6;
@@ -230,7 +232,7 @@
             this.Controls.Add(this.txtinicio);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_nueva_ruta";
             this.Text = "form_nueva_ruta";
             this.Load += new System.EventHandler(this.Form_nueva_ruta_Load);

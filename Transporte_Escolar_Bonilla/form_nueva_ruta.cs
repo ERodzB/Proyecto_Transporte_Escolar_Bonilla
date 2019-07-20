@@ -17,7 +17,7 @@ namespace Transporte_Escolar_Bonilla
         Validar val = new Validar();
 
         //Variables Globales
-        int cambio1 = 0, cambio2 = 0, cambio3 = 0, cambio4 = 0;
+        int cambio1 = 0;
 
         public form_nueva_ruta()
         {
@@ -37,6 +37,22 @@ namespace Transporte_Escolar_Bonilla
         private void Label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txtinicio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtfin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         //Carga
@@ -100,6 +116,12 @@ namespace Transporte_Escolar_Bonilla
                 error += "Debe ingresar al menos 1 Horario\n";
             }
 
+            if ((dtphoras1.Checked == false || dtphorae1.Checked == false || combveh1.SelectedIndex == -1))
+            {
+                cont++;
+                error += "No deje elementos sin ingresar\n";
+            }
+
 
             //Ruta Existente
             if (val.validarRuta(txtinicio.Text + txtfin.Text) == 1)
@@ -145,9 +167,6 @@ namespace Transporte_Escolar_Bonilla
                     txtfin.Clear();
 
                     cambio1 = 2;
-                    cambio2 = 2;
-                    cambio3 = 2;
-                    cambio4 = 2;
 
                     labv1.Visible = false;
 
@@ -155,9 +174,6 @@ namespace Transporte_Escolar_Bonilla
 
 
                     cambio1 = 3;
-                    cambio2 = 3;
-                    cambio3 = 3;
-                    cambio4 = 3;
 
                     dtphoras1.Checked = false;
                     dtphorae1.Checked = false;
