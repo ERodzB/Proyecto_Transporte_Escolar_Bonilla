@@ -55,6 +55,7 @@
             // dtpvencimiento
             // 
             this.dtpvencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpvencimiento.Enabled = false;
             this.dtpvencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Location = new System.Drawing.Point(481, 503);
             this.dtpvencimiento.Name = "dtpvencimiento";
@@ -78,6 +79,7 @@
             // cmbPuesto
             // 
             this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuesto.Enabled = false;
             this.cmbPuesto.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Location = new System.Drawing.Point(481, 377);
@@ -89,6 +91,7 @@
             // cmbGenero
             // 
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGenero.Enabled = false;
             this.cmbGenero.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
@@ -102,6 +105,7 @@
             // 
             // txtsalario
             // 
+            this.txtsalario.Enabled = false;
             this.txtsalario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalario.Location = new System.Drawing.Point(481, 418);
             this.txtsalario.MaxLength = 13;
@@ -133,6 +137,7 @@
             // 
             // txtdireccion
             // 
+            this.txtdireccion.Enabled = false;
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdireccion.Location = new System.Drawing.Point(481, 335);
             this.txtdireccion.MaxLength = 100;
@@ -153,6 +158,7 @@
             // 
             // txtcorreo
             // 
+            this.txtcorreo.Enabled = false;
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.Location = new System.Drawing.Point(481, 293);
             this.txtcorreo.MaxLength = 100;
@@ -174,6 +180,7 @@
             // 
             // txttelefono
             // 
+            this.txttelefono.Enabled = false;
             this.txttelefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelefono.Location = new System.Drawing.Point(481, 251);
             this.txttelefono.MaxLength = 100;
@@ -217,6 +224,7 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.Enabled = false;
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(481, 168);
             this.txtnombre.MaxLength = 100;
@@ -237,9 +245,10 @@
             // 
             // txtlicencia
             // 
+            this.txtlicencia.Enabled = false;
             this.txtlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlicencia.Location = new System.Drawing.Point(481, 460);
-            this.txtlicencia.MaxLength = 100;
+            this.txtlicencia.MaxLength = 15;
             this.txtlicencia.Name = "txtlicencia";
             this.txtlicencia.Size = new System.Drawing.Size(520, 36);
             this.txtlicencia.TabIndex = 45;
@@ -247,6 +256,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F);
             this.button1.Location = new System.Drawing.Point(936, 545);
             this.button1.Name = "button1";

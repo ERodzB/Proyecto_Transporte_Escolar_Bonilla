@@ -63,6 +63,7 @@
             this.txtidentidad.Name = "txtidentidad";
             this.txtidentidad.Size = new System.Drawing.Size(520, 36);
             this.txtidentidad.TabIndex = 1;
+            this.txtidentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtidentidad_KeyPress);
             // 
             // label2
             // 
@@ -79,10 +80,11 @@
             // 
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(482, 92);
-            this.txtnombre.MaxLength = 100;
+            this.txtnombre.MaxLength = 50;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(520, 36);
             this.txtnombre.TabIndex = 2;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnombre_KeyPress);
             // 
             // label1
             // 
@@ -121,10 +123,11 @@
             // 
             this.txttelefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelefono.Location = new System.Drawing.Point(482, 217);
-            this.txttelefono.MaxLength = 100;
+            this.txttelefono.MaxLength = 8;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(520, 36);
             this.txttelefono.TabIndex = 5;
+            this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txttelefono_KeyPress);
             // 
             // label5
             // 
@@ -141,10 +144,11 @@
             // 
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.Location = new System.Drawing.Point(482, 259);
-            this.txtcorreo.MaxLength = 100;
+            this.txtcorreo.MaxLength = 50;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(520, 36);
             this.txtcorreo.TabIndex = 6;
+            this.txtcorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcorreo_KeyPress);
             // 
             // label6
             // 
@@ -161,10 +165,11 @@
             // 
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdireccion.Location = new System.Drawing.Point(482, 301);
-            this.txtdireccion.MaxLength = 100;
+            this.txtdireccion.MaxLength = 50;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(520, 36);
             this.txtdireccion.TabIndex = 7;
+            this.txtdireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtdireccion_KeyPress);
             // 
             // label7
             // 
@@ -196,6 +201,7 @@
             this.txtsalario.Name = "txtsalario";
             this.txtsalario.Size = new System.Drawing.Size(520, 36);
             this.txtsalario.TabIndex = 9;
+            this.txtsalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtsalario_KeyPress);
             // 
             // label9
             // 
@@ -259,6 +265,7 @@
             this.dtpvencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Location = new System.Drawing.Point(482, 526);
+            this.dtpvencimiento.MinDate = System.DateTime.Today;
             this.dtpvencimiento.Name = "dtpvencimiento";
             this.dtpvencimiento.Size = new System.Drawing.Size(520, 36);
             this.dtpvencimiento.TabIndex = 11;
@@ -286,6 +293,7 @@
             this.txtlicencia.Size = new System.Drawing.Size(520, 36);
             this.txtlicencia.TabIndex = 10;
             this.txtlicencia.Visible = false;
+            this.txtlicencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtlicencia_KeyPress);
             // 
             // LBLLicencia
             // 

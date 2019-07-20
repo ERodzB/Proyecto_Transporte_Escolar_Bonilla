@@ -102,6 +102,7 @@
             this.contra_tb.Location = new System.Drawing.Point(566, 391);
             this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
+            this.contra_tb.PasswordChar = '*';
             this.contra_tb.Size = new System.Drawing.Size(451, 41);
             this.contra_tb.TabIndex = 27;
             this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
@@ -172,6 +173,7 @@
             this.nueva_tb.Location = new System.Drawing.Point(566, 331);
             this.nueva_tb.MaxLength = 20;
             this.nueva_tb.Name = "nueva_tb";
+            this.nueva_tb.PasswordChar = '*';
             this.nueva_tb.Size = new System.Drawing.Size(451, 41);
             this.nueva_tb.TabIndex = 26;
             this.nueva_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nueva_tb_KeyPress);
@@ -194,6 +196,7 @@
             this.actual_tb.Location = new System.Drawing.Point(566, 268);
             this.actual_tb.MaxLength = 20;
             this.actual_tb.Name = "actual_tb";
+            this.actual_tb.PasswordChar = '*';
             this.actual_tb.Size = new System.Drawing.Size(451, 41);
             this.actual_tb.TabIndex = 25;
             this.actual_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Actual_tb_KeyPress);
