@@ -212,19 +212,19 @@ namespace Transporte_Escolar_Bonilla
                                           Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant, 2);
 
                         /****** RUTA ******/
-                        ing.NuevaRuta(txtorigen.Text + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");
+                        ing.NuevaRuta(txtorigen.Text + "-" + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");
 
 
                         /****** RUTA CONTRATO ******/
-                        ing.RutaContrato(txtorigen.Text + txtdestino.Text, " ", anio, form_nuevo_cliente.nomc);
+                        ing.RutaContrato(txtorigen.Text + "-" + txtdestino.Text, " ", anio, form_nuevo_cliente.nomc);
 
 
                         /****** RUTA VEHICULO HORARIO ******/
                         if (dtphoras1.Checked)
-                            ing.AsignarHoraVeh(txtorigen.Text + txtdestino.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, int.Parse(txtpa.Text));
+                            ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, int.Parse(txtpa.Text));
 
                         if (dtphoras2.Checked)
-                            ing.AsignarHoraVeh(txtorigen.Text + txtdestino.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text, int.Parse(txtpa.Text));
+                            ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text, int.Parse(txtpa.Text));
 
                         MessageBox.Show("Contrato creado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information); 
 

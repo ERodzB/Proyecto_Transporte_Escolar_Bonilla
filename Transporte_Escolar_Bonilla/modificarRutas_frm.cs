@@ -41,6 +41,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 
                 modifico.ModificarHorario(rutasModificar_cmb.Text, vehiculo_cmb.Text,Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")),Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ")+1), horaSalida_dtp.Value, llegadaHorario_dtp.Value,"Modificar");
+               
                 Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
                 Horario_cmb.DisplayMember = "Horarios";
             }
