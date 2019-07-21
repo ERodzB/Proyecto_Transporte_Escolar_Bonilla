@@ -62,13 +62,13 @@ namespace Transporte_Escolar_Bonilla
             if (combtipo.SelectedIndex == -1)
                 cont++;
 
-            if (txtcosto.Text == " ")
+            if (txtcosto.Text == " " || double.Parse(txtcosto.Text) <= 0)
                 cont++; 
-            else
-                if (double.Parse(txtcosto.Text) <= 0)
-                cont++;
 
             if (combestado.SelectedIndex == -1)
+                cont++;
+
+            if (dtpfecha.Value < System.DateTime.Today)
                 cont++;
 
             if (cont > 0)
@@ -98,6 +98,15 @@ namespace Transporte_Escolar_Bonilla
                     combestado.SelectedIndex = -1;
                 }
             }
+        }
+
+        private void Txtcosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtcosto.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
         }
     }
 }

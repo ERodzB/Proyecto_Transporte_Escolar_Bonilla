@@ -47,6 +47,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void CBFiltrox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if(CBFiltrox.SelectedItem.ToString()== "Marca Vehiculo")
             {
                 CMBFiltro.DataSource = con.ComboboxMVehiculos();

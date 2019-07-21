@@ -84,10 +84,7 @@ namespace Transporte_Escolar_Bonilla
             if (txtcolor.Text == "")
                 cont++;
 
-            if (txtcap.Text == "")
-                cont++;
-            else
-                if (int.Parse(txtcap.Text) <= 0)
+            if (txtcap.Text == "" || int.Parse(txtcap.Text) <= 0)
                 cont++;
 
             if (combtipotra.SelectedIndex == -1)
@@ -99,8 +96,20 @@ namespace Transporte_Escolar_Bonilla
             if (combestado.SelectedIndex == -1)
                 cont++;
 
+            if (dtpanioveh.Value.Year > System.DateTime.Today.Year)
+                cont++;
+
+            if (dtpanioad.Value.Year > System.DateTime.Today.Year)
+                cont++;
+
+            if (dtpemision.Value > System.DateTime.Today)
+                cont++;
+
+            if (dtpvenc.Value < System.DateTime.Today)
+                cont++;
+
             //Validar fechas de emision y vencimiento del permiso
-            if (dtpvenc.Value < dtpemision.Value)
+            if (dtpvenc.Value <= dtpemision.Value)
                 cont++;
 
             if (cont > 0)
@@ -143,6 +152,46 @@ namespace Transporte_Escolar_Bonilla
                         txtmat.Focus();
                     }
                 } 
+            }
+        }
+
+        private void Txtmat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtmarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtmodelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtcolor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !(e.KeyChar=='-'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtcap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

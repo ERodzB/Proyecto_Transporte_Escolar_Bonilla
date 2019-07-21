@@ -21,15 +21,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtColor.Text!="" && dtpEmision.Value <= System.DateTime.Today && dtpVencimiento.Value > System.DateTime.Today && cmbEstadoVehiculo.Text!="")
             {
-                string estado;
-                estado = cmbEstadoVehiculo.SelectedValue.ToString();
-                mod.ModificarVehiculo(txtPlaca.Text , txtColor.Text, int.Parse(estado), DateTime.Parse(dtpEmision.Text), DateTime.Parse(dtpVencimiento.Text));
-
+                if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    mod.ModificarVehiculo(txtPlaca.Text, txtColor.Text, int.Parse(cmbEstadoVehiculo.SelectedValue.ToString()), DateTime.Parse(dtpEmision.Text), DateTime.Parse(dtpVencimiento.Text));
+                }
             }
-
         }
 
         private void Modificar_UnidadFrm_Load(object sender, EventArgs e)
