@@ -90,5 +90,13 @@ namespace Transporte_Escolar_Bonilla
             txtDescripcion.Text = dgvConsultaU.CurrentRow.Cells[1].Value.ToString();
             cmbempleado.Text = dgvConsultaU.CurrentRow.Cells[3].Value.ToString();
         }
+
+        private void TxtObservaciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -61,6 +61,7 @@
             // dtpvencimiento
             // 
             this.dtpvencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpvencimiento.Enabled = false;
             this.dtpvencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Location = new System.Drawing.Point(401, 502);
             this.dtpvencimiento.Name = "dtpvencimiento";
@@ -84,6 +85,7 @@
             // cmbPuesto
             // 
             this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuesto.Enabled = false;
             this.cmbPuesto.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Items.AddRange(new object[] {
@@ -97,6 +99,7 @@
             // cmbGenero
             // 
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGenero.Enabled = false;
             this.cmbGenero.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
@@ -110,12 +113,14 @@
             // 
             // txtsalario
             // 
+            this.txtsalario.Enabled = false;
             this.txtsalario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalario.Location = new System.Drawing.Point(401, 418);
             this.txtsalario.MaxLength = 13;
             this.txtsalario.Name = "txtsalario";
             this.txtsalario.Size = new System.Drawing.Size(520, 36);
             this.txtsalario.TabIndex = 35;
+            this.txtsalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtsalario_KeyPress);
             // 
             // label9
             // 
@@ -141,12 +146,14 @@
             // 
             // txtdireccion
             // 
+            this.txtdireccion.Enabled = false;
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdireccion.Location = new System.Drawing.Point(401, 335);
-            this.txtdireccion.MaxLength = 100;
+            this.txtdireccion.MaxLength = 50;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(520, 36);
             this.txtdireccion.TabIndex = 32;
+            this.txtdireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtdireccion_KeyPress);
             // 
             // label7
             // 
@@ -161,13 +168,15 @@
             // 
             // txtcorreo
             // 
+            this.txtcorreo.Enabled = false;
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.Location = new System.Drawing.Point(401, 293);
-            this.txtcorreo.MaxLength = 100;
+            this.txtcorreo.MaxLength = 30;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(520, 36);
             this.txtcorreo.TabIndex = 31;
             this.txtcorreo.TextChanged += new System.EventHandler(this.Txtcorreo_TextChanged);
+            this.txtcorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcorreo_KeyPress);
             // 
             // label6
             // 
@@ -182,12 +191,14 @@
             // 
             // txttelefono
             // 
+            this.txttelefono.Enabled = false;
             this.txttelefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelefono.Location = new System.Drawing.Point(401, 251);
-            this.txttelefono.MaxLength = 100;
+            this.txttelefono.MaxLength = 8;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(520, 36);
             this.txttelefono.TabIndex = 30;
+            this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txttelefono_KeyPress);
             // 
             // label5
             // 
@@ -225,12 +236,14 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.Enabled = false;
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(401, 168);
-            this.txtnombre.MaxLength = 100;
+            this.txtnombre.MaxLength = 50;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(520, 36);
             this.txtnombre.TabIndex = 27;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnombre_KeyPress);
             // 
             // label1
             // 
@@ -245,13 +258,15 @@
             // 
             // txtlicencia
             // 
+            this.txtlicencia.Enabled = false;
             this.txtlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlicencia.Location = new System.Drawing.Point(401, 460);
-            this.txtlicencia.MaxLength = 100;
+            this.txtlicencia.MaxLength = 20;
             this.txtlicencia.Name = "txtlicencia";
             this.txtlicencia.Size = new System.Drawing.Size(520, 36);
             this.txtlicencia.TabIndex = 45;
             this.txtlicencia.Visible = false;
+            this.txtlicencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtlicencia_KeyPress);
             // 
             // btnModificar
             // 
@@ -269,10 +284,12 @@
             // 
             this.busqueda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busqueda.Location = new System.Drawing.Point(481, 61);
-            this.busqueda.MaxLength = 100;
+            this.busqueda.MaxLength = 13;
             this.busqueda.Name = "busqueda";
             this.busqueda.Size = new System.Drawing.Size(520, 36);
             this.busqueda.TabIndex = 47;
+            this.busqueda.TextChanged += new System.EventHandler(this.Busqueda_TextChanged);
+            this.busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Busqueda_KeyPress);
             // 
             // label2
             // 
@@ -324,6 +341,7 @@
             // CBInter
             // 
             this.CBInter.AutoSize = true;
+            this.CBInter.Enabled = false;
             this.CBInter.ForeColor = System.Drawing.Color.White;
             this.CBInter.Location = new System.Drawing.Point(301, 20);
             this.CBInter.Name = "CBInter";
@@ -335,6 +353,7 @@
             // RBPesada
             // 
             this.RBPesada.AutoSize = true;
+            this.RBPesada.Enabled = false;
             this.RBPesada.ForeColor = System.Drawing.Color.White;
             this.RBPesada.Location = new System.Drawing.Point(128, 20);
             this.RBPesada.Name = "RBPesada";
@@ -347,6 +366,7 @@
             // RBLiviana
             // 
             this.RBLiviana.AutoSize = true;
+            this.RBLiviana.Enabled = false;
             this.RBLiviana.ForeColor = System.Drawing.Color.White;
             this.RBLiviana.Location = new System.Drawing.Point(3, 19);
             this.RBLiviana.Name = "RBLiviana";

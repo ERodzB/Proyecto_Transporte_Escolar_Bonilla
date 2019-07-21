@@ -57,6 +57,7 @@
             this.dgvContrato.Location = new System.Drawing.Point(167, 193);
             this.dgvContrato.Margin = new System.Windows.Forms.Padding(4);
             this.dgvContrato.Name = "dgvContrato";
+            this.dgvContrato.ReadOnly = true;
             this.dgvContrato.RowHeadersWidth = 51;
             this.dgvContrato.Size = new System.Drawing.Size(329, 348);
             this.dgvContrato.TabIndex = 4;

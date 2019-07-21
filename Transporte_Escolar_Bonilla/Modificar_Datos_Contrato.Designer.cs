@@ -68,8 +68,9 @@
             this.dgvDatosContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosContrato.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDatosContrato.Location = new System.Drawing.Point(77, 54);
-            this.dgvDatosContrato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDatosContrato.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDatosContrato.Name = "dgvDatosContrato";
+            this.dgvDatosContrato.ReadOnly = true;
             this.dgvDatosContrato.RowHeadersWidth = 51;
             this.dgvDatosContrato.Size = new System.Drawing.Size(411, 401);
             this.dgvDatosContrato.TabIndex = 0;
@@ -93,7 +94,7 @@
             this.txtCliente.Enabled = false;
             this.txtCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.Location = new System.Drawing.Point(528, 82);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(200, 32);
             this.txtCliente.TabIndex = 2;
@@ -103,7 +104,7 @@
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnModificar.Location = new System.Drawing.Point(837, 561);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(168, 52);
             this.btnModificar.TabIndex = 3;
@@ -128,7 +129,7 @@
             this.txtMonto.Enabled = false;
             this.txtMonto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonto.Location = new System.Drawing.Point(527, 506);
-            this.txtMonto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(4);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(141, 32);
             this.txtMonto.TabIndex = 5;
@@ -151,7 +152,7 @@
             this.txtContrato.Enabled = false;
             this.txtContrato.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrato.Location = new System.Drawing.Point(811, 82);
-            this.txtContrato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrato.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrato.Name = "txtContrato";
             this.txtContrato.Size = new System.Drawing.Size(195, 32);
             this.txtContrato.TabIndex = 7;
@@ -185,7 +186,7 @@
             this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnAtras.Location = new System.Drawing.Point(84, 564);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(125, 49);
             this.btnAtras.TabIndex = 13;
@@ -212,7 +213,7 @@
             this.cmbEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(809, 503);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(195, 31);
             this.cmbEstado.TabIndex = 17;
@@ -248,7 +249,7 @@
             this.datos_contrato_panel.Controls.Add(this.label1);
             this.datos_contrato_panel.Controls.Add(this.dgvDatosContrato);
             this.datos_contrato_panel.Location = new System.Drawing.Point(3, 1);
-            this.datos_contrato_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datos_contrato_panel.Margin = new System.Windows.Forms.Padding(4);
             this.datos_contrato_panel.Name = "datos_contrato_panel";
             this.datos_contrato_panel.Size = new System.Drawing.Size(1104, 649);
             this.datos_contrato_panel.TabIndex = 0;
@@ -259,7 +260,7 @@
             this.txtFechaFinal.Enabled = false;
             this.txtFechaFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaFinal.Location = new System.Drawing.Point(527, 420);
-            this.txtFechaFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFechaFinal.Margin = new System.Windows.Forms.Padding(4);
             this.txtFechaFinal.Name = "txtFechaFinal";
             this.txtFechaFinal.Size = new System.Drawing.Size(143, 32);
             this.txtFechaFinal.TabIndex = 32;
@@ -281,7 +282,7 @@
             this.txtAnticipo.Enabled = false;
             this.txtAnticipo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnticipo.Location = new System.Drawing.Point(809, 422);
-            this.txtAnticipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnticipo.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnticipo.Name = "txtAnticipo";
             this.txtAnticipo.Size = new System.Drawing.Size(141, 32);
             this.txtAnticipo.TabIndex = 30;
@@ -303,7 +304,7 @@
             this.txtCuota.Enabled = false;
             this.txtCuota.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuota.Location = new System.Drawing.Point(809, 342);
-            this.txtCuota.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCuota.Margin = new System.Windows.Forms.Padding(4);
             this.txtCuota.Name = "txtCuota";
             this.txtCuota.Size = new System.Drawing.Size(141, 32);
             this.txtCuota.TabIndex = 28;
@@ -340,7 +341,7 @@
             this.cmbTipoPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoPago.FormattingEnabled = true;
             this.cmbTipoPago.Location = new System.Drawing.Point(811, 252);
-            this.cmbTipoPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoPago.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(195, 31);
             this.cmbTipoPago.TabIndex = 25;
@@ -353,7 +354,7 @@
             this.cmbTipoServicio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoServicio.FormattingEnabled = true;
             this.cmbTipoServicio.Location = new System.Drawing.Point(528, 252);
-            this.cmbTipoServicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoServicio.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoServicio.Name = "cmbTipoServicio";
             this.cmbTipoServicio.Size = new System.Drawing.Size(195, 31);
             this.cmbTipoServicio.TabIndex = 24;
@@ -375,7 +376,7 @@
             this.txtMontoMensual.Enabled = false;
             this.txtMontoMensual.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMontoMensual.Location = new System.Drawing.Point(811, 161);
-            this.txtMontoMensual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMontoMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoMensual.Name = "txtMontoMensual";
             this.txtMontoMensual.Size = new System.Drawing.Size(195, 32);
             this.txtMontoMensual.TabIndex = 22;
@@ -397,7 +398,7 @@
             this.txtTipoContrato.Enabled = false;
             this.txtTipoContrato.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoContrato.Location = new System.Drawing.Point(529, 161);
-            this.txtTipoContrato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTipoContrato.Margin = new System.Windows.Forms.Padding(4);
             this.txtTipoContrato.Name = "txtTipoContrato";
             this.txtTipoContrato.Size = new System.Drawing.Size(200, 32);
             this.txtTipoContrato.TabIndex = 20;
@@ -409,7 +410,7 @@
             this.dtpInicio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInicio.Location = new System.Drawing.Point(528, 340);
-            this.dtpInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpInicio.Margin = new System.Windows.Forms.Padding(4);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(141, 32);
             this.dtpInicio.TabIndex = 19;
@@ -435,7 +436,7 @@
             this.ClientSize = new System.Drawing.Size(1108, 650);
             this.Controls.Add(this.datos_contrato_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Modificar_Datos_Contrato";
             this.Text = "Modificar_Datos_Contrato";
             this.Load += new System.EventHandler(this.Modificar_Datos_Contrato_Load);

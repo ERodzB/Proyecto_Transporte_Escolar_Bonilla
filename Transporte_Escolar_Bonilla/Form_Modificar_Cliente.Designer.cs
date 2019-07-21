@@ -187,6 +187,7 @@
             this.dgvCargaCliente.Location = new System.Drawing.Point(230, 101);
             this.dgvCargaCliente.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCargaCliente.Name = "dgvCargaCliente";
+            this.dgvCargaCliente.ReadOnly = true;
             this.dgvCargaCliente.RowHeadersWidth = 51;
             this.dgvCargaCliente.Size = new System.Drawing.Size(737, 185);
             this.dgvCargaCliente.TabIndex = 12;

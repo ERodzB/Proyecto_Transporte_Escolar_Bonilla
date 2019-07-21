@@ -211,6 +211,7 @@
             this.txtObservaciones.Size = new System.Drawing.Size(281, 218);
             this.txtObservaciones.TabIndex = 22;
             this.txtObservaciones.Text = "Ninguna";
+            this.txtObservaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtObservaciones_KeyPress);
             // 
             // label2
             // 

@@ -54,6 +54,7 @@
             this.cliente_dgv.Location = new System.Drawing.Point(48, 73);
             this.cliente_dgv.Margin = new System.Windows.Forms.Padding(4);
             this.cliente_dgv.Name = "cliente_dgv";
+            this.cliente_dgv.ReadOnly = true;
             this.cliente_dgv.RowHeadersWidth = 51;
             this.cliente_dgv.Size = new System.Drawing.Size(337, 184);
             this.cliente_dgv.TabIndex = 2;
@@ -70,6 +71,7 @@
             this.contratos_dgv.Location = new System.Drawing.Point(41, 305);
             this.contratos_dgv.Margin = new System.Windows.Forms.Padding(4);
             this.contratos_dgv.Name = "contratos_dgv";
+            this.contratos_dgv.ReadOnly = true;
             this.contratos_dgv.RowHeadersWidth = 51;
             this.contratos_dgv.Size = new System.Drawing.Size(967, 134);
             this.contratos_dgv.TabIndex = 3;

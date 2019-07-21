@@ -26,7 +26,7 @@ namespace Transporte_Escolar_Bonilla
             int varlicencia=0;
 
 
-            if (cmbPuesto.SelectedIndex==0)
+            if (cmbPuesto.Text=="Conductor")
             {
                 if(RBLiviana.Checked==false && RBPesada.Checked==false)
                 {
@@ -54,11 +54,12 @@ namespace Transporte_Escolar_Bonilla
                 }
 
                 
-                if (txtcorreo.Text != "" && txtdireccion.Text != "" && txtidentidad.Text != "" && txtlicencia.Text != "" && txtnombre.Text != ""
-                    && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true)
+                if (txtcorreo.Text!="" && txtdireccion.TextLength > 15 && txtidentidad.Text != "" && txtlicencia.Text != "" && txtnombre.Text != ""
+                    && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true
+                    && dateTimePicker1.Value<System.DateTime.Today && dtpvencimiento.Value>System.DateTime.Today)
                 {
                     ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text),
-                        txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text),varlicencia);
+                    txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text),varlicencia);
                     modify.BitacoraModulo("Contratacion", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, "N/A", "N/A", "N/A", "N/A");                
                     MessageBox.Show("Empleado Guardado con Exito", "Guardado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtcorreo.Text = "";
@@ -79,12 +80,13 @@ namespace Transporte_Escolar_Bonilla
                     lblVencimiento.Visible = false;
                 }
                 else
-                    MessageBox.Show("Error, porfavor llene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error, porfavor llene todos los campos apropiadamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (txtcorreo.Text != "" && txtdireccion.Text != "" && txtidentidad.Text != "" && txtnombre.Text != ""
-                   && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1)
+                if (txtcorreo.Text != "" && txtdireccion.TextLength > 15 && txtidentidad.Text != "" && txtnombre.Text != ""
+                   && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1
+                   && dateTimePicker1.Value<System.DateTime.Today)
                 {
                     ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, 
                         Convert.ToDateTime(dtpvencimiento.Value.ToString()),0);
@@ -101,7 +103,7 @@ namespace Transporte_Escolar_Bonilla
                     dateTimePicker1.ResetText();
                 }
                 else
-                    MessageBox.Show("Error, porfavor llene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error, porfavor llene todos los campos apropiadamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             
@@ -117,7 +119,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void CmbPuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbPuesto.SelectedIndex==0)
+            if(cmbPuesto.Text=="Conductor")
             {
                 DAdicionales.Visible = true;
                 LBLLicencia.Visible = true;
@@ -153,6 +155,63 @@ namespace Transporte_Escolar_Bonilla
         private void CBInter_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txtidentidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txttelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtcorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar=='@'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtdireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txtsalario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtsalario.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+
+        private void Txtlicencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='-'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
