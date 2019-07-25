@@ -139,7 +139,7 @@ namespace Transporte_Escolar_Bonilla
                     {
                         Licencia = 1;
                     }
-                    if(txtnombre.Text!="" && cmbGenero.Text!="" && txttelefono.Text!="" && txtcorreo.Text!="" && txtdireccion.TextLength> 15 && cmbPuesto.Text!="" && txtsalario.Text!="" && txtlicencia.Text!="" && dtpvencimiento.Value>System.DateTime.Today)
+                    if(txtnombre.Text!="" && cmbGenero.Text!="" && txttelefono.Text!="" && txtcorreo.Text!="" && txtdireccion.TextLength> 15 && cmbPuesto.Text!="" && txtsalario.Text!="" && txtlicencia.Text!="" && dtpvencimiento.Value>System.DateTime.Today && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                     {
                         modify.ModificarEmpleado(busqueda.Text, txtnombre.Text, Int32.Parse(cmbGenero.SelectedValue.ToString()), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Value.ToString()), Licencia);
                         modify.BitacoraModulo("Modificacion", 10, "Modificacion de Empleado", busqueda.Text, "N/A", "N/A", "N/A", "N/A");
@@ -169,13 +169,17 @@ namespace Transporte_Escolar_Bonilla
                         RBLiviana.Enabled = false;
                         CBInter.Enabled = false;
                     }
+                    else
+                    {
+                        MessageBox.Show("Ingrese todos los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
-                if (txtnombre.Text != "" && cmbGenero.Text != "" && txttelefono.Text != "" && txtcorreo.Text != "" && txtdireccion.TextLength > 15 && cmbPuesto.Text != "" && txtsalario.Text != "")
+                if (txtnombre.Text != "" && cmbGenero.Text != "" && txttelefono.Text != "" && txtcorreo.Text != "" && txtdireccion.TextLength > 15 && cmbPuesto.Text != "" && txtsalario.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
-                    modify.ModificarEmpleado(busqueda.Text, txtnombre.Text, Int32.Parse(cmbGenero.SelectedValue.ToString()), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), "N/A", Convert.ToDateTime(null), 0);
+                    modify.ModificarEmpleado(busqueda.Text, txtnombre.Text, Int32.Parse(cmbGenero.SelectedValue.ToString()), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), "N/A", dtpvencimiento.MinDate, 0);
                     modify.BitacoraModulo("Modificacion", 10, "Modificacion de Empleado", busqueda.Text, "N/A", "N/A", "N/A", "N/A");
                     MessageBox.Show("Modificacion Realizada con Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtcorreo.Text = "";
@@ -185,7 +189,7 @@ namespace Transporte_Escolar_Bonilla
                     txtsalario.Text = "";
                     txttelefono.Text = "";
                     busqueda.Text = "";
-                    cmbGenero.SelectedIndex = -1;
+                    cmbGenero.SelectedIndex = -1;   
                     cmbPuesto.SelectedIndex = -1;
                     busqueda.Focus();
                     btnModificar.Enabled = false;
@@ -201,6 +205,10 @@ namespace Transporte_Escolar_Bonilla
                     RBPesada.Enabled = false;
                     RBLiviana.Enabled = false;
                     CBInter.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese todos los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -175,7 +175,7 @@ namespace Transporte_Escolar_Bonilla
         private void Correo_tb_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='@') && !(e.KeyChar=='.'))
-                {
+            {
                 e.Handled = true;
             }
         }

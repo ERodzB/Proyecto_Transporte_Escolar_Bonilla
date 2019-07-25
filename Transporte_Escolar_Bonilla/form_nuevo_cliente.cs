@@ -108,38 +108,46 @@ namespace Transporte_Escolar_Bonilla
                     }
                     else
                     {
-                        DialogResult = MessageBox.Show("Procederá a crear el Contrato y ya no podrá regresar\n\n¿Está seguro de los datos ingresados?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                        if (DialogResult == DialogResult.Yes)
+                        if(System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
-                            //Guardar Datos del Cliente
-                            ing.NuevoCliente(txtid.Text, txtnom.Text, txtdir.Text, txttel.Text, txtcorreo.Text);
+                            MessageBox.Show("Direccion de correro invalida. Favor corregirlo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtcorreo.Focus();
+                        }
+                        else
+                        {
+                            DialogResult = MessageBox.Show("Procederá a crear el Contrato y ya no podrá regresar\n\n¿Está seguro de los datos ingresados?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                            MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            //Guardar id, nombre y tipoc 
-                            id = txtid.Text;
-                            nomc = txtnom.Text;
-                            tipoc = combTipoContrato.SelectedIndex + 1;
-
-
-                            if (combTipoContrato.Text.Equals("Temporal"))
+                            if (DialogResult == DialogResult.Yes)
                             {
-                                form_nuevo_clienteT cliT = new form_nuevo_clienteT();
-                                Estetics.AbrirFormularios(cliT, cliente1_panel);
+                                //Guardar Datos del Cliente
+                                ing.NuevoCliente(txtid.Text, txtnom.Text, txtdir.Text, txttel.Text, txtcorreo.Text);
+
+                                MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                //Guardar id, nombre y tipoc 
+                                id = txtid.Text;
+                                nomc = txtnom.Text;
+                                tipoc = combTipoContrato.SelectedIndex + 1;
+
+
+                                if (combTipoContrato.Text.Equals("Temporal"))
+                                {
+                                    form_nuevo_clienteT cliT = new form_nuevo_clienteT();
+                                    Estetics.AbrirFormularios(cliT, cliente1_panel);
+                                }
+                                else
+                                {
+                                    form_nuevo_clienteP clip = new form_nuevo_clienteP();
+                                    Estetics.AbrirFormularios(clip, cliente1_panel);
+                                }
+                                //Limpieza
+                                txtnom.Clear();
+                                txtid.Clear();
+                                txtdir.Clear();
+                                txttel.Clear();
+                                txtcorreo.Clear();
+                                combTipoContrato.SelectedIndex = -1;
                             }
-                            else
-                            {
-                                form_nuevo_clienteP clip = new form_nuevo_clienteP();
-                                Estetics.AbrirFormularios(clip, cliente1_panel);
-                            }
-                            //Limpieza
-                            txtnom.Clear();
-                            txtid.Clear();
-                            txtdir.Clear();
-                            txttel.Clear();
-                            txtcorreo.Clear();
-                            combTipoContrato.SelectedIndex = -1;
                         }
                     }
                 }

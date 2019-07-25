@@ -31,9 +31,17 @@ namespace Transporte_Escolar_Bonilla
                 {
                     if (txtDireccion.TextLength < 15)
                     {
-                        if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
-                            mod.ModificarClientes(txtIdentidad.Text, txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text);
+                            if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                mod.ModificarClientes(txtIdentidad.Text, txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La direccion de correo es invalida. Favor corregir", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtCorreo.Focus();
                         }
                     }
                     else

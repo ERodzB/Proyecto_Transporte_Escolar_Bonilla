@@ -56,7 +56,8 @@ namespace Transporte_Escolar_Bonilla
                 
                 if (txtcorreo.Text!="" && txtdireccion.TextLength > 15 && txtidentidad.Text != "" && txtlicencia.Text != "" && txtnombre.Text != ""
                     && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true
-                    && dateTimePicker1.Value<System.DateTime.Today && dtpvencimiento.Value>System.DateTime.Today)
+                    && dateTimePicker1.Value<System.DateTime.Today && dtpvencimiento.Value>System.DateTime.Today && 
+                    System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
                     ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text),
                     txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text),varlicencia);
@@ -86,7 +87,8 @@ namespace Transporte_Escolar_Bonilla
             {
                 if (txtcorreo.Text != "" && txtdireccion.TextLength > 15 && txtidentidad.Text != "" && txtnombre.Text != ""
                    && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1
-                   && dateTimePicker1.Value<System.DateTime.Today)
+                   && dateTimePicker1.Value<System.DateTime.Today &&
+                   System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
                     ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, 
                         Convert.ToDateTime(dtpvencimiento.Value.ToString()),0);
