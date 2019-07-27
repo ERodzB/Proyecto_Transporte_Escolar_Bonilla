@@ -137,12 +137,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.ClientSize = new System.Drawing.Size(1106, 745);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.cmbfiltro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvConsultaU);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BitacoraModulos";
             this.Text = "BitacoraModulos";
             this.Load += new System.EventHandler(this.BitacoraModulos_Load);

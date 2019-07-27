@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.top_panel = new System.Windows.Forms.Panel();
-            this.salir_btn = new System.Windows.Forms.Button();
             this.center_panel = new System.Windows.Forms.Panel();
             this.enviar_linklbl = new System.Windows.Forms.LinkLabel();
             this.regresar_linklbl = new System.Windows.Forms.LinkLabel();
@@ -51,6 +50,7 @@
             this.unidades_btn = new System.Windows.Forms.Button();
             this.rutas_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.salir_btn = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
             this.center_panel.SuspendLayout();
             this.left_panel.SuspendLayout();
@@ -66,22 +66,6 @@
             this.top_panel.Name = "top_panel";
             this.top_panel.Size = new System.Drawing.Size(1420, 35);
             this.top_panel.TabIndex = 2;
-            // 
-            // salir_btn
-            // 
-            this.salir_btn.BackColor = System.Drawing.Color.Transparent;
-            this.salir_btn.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.remove_symbol;
-            this.salir_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.salir_btn.FlatAppearance.BorderSize = 0;
-            this.salir_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.salir_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.salir_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salir_btn.Location = new System.Drawing.Point(1387, 6);
-            this.salir_btn.Name = "salir_btn";
-            this.salir_btn.Size = new System.Drawing.Size(24, 21);
-            this.salir_btn.TabIndex = 0;
-            this.salir_btn.UseVisualStyleBackColor = false;
-            this.salir_btn.Click += new System.EventHandler(this.Salir_btn_Click);
             // 
             // center_panel
             // 
@@ -101,6 +85,7 @@
             this.center_panel.Name = "center_panel";
             this.center_panel.Size = new System.Drawing.Size(1106, 745);
             this.center_panel.TabIndex = 3;
+            this.center_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Center_panel_Paint);
             // 
             // enviar_linklbl
             // 
@@ -166,7 +151,7 @@
             this.olvidadoLogin_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.olvidadoLogin_linklbl.ForeColor = System.Drawing.Color.White;
             this.olvidadoLogin_linklbl.LinkColor = System.Drawing.Color.White;
-            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(629, 456);
+            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(630, 456);
             this.olvidadoLogin_linklbl.Name = "olvidadoLogin_linklbl";
             this.olvidadoLogin_linklbl.Size = new System.Drawing.Size(243, 23);
             this.olvidadoLogin_linklbl.TabIndex = 16;
@@ -381,18 +366,35 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.remove_symbol;
+            this.button1.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.book;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1357, 6);
+            this.button1.Location = new System.Drawing.Point(1346, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(24, 21);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // salir_btn
+            // 
+            this.salir_btn.BackColor = System.Drawing.Color.Transparent;
+            this.salir_btn.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.remove_symbol;
+            this.salir_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.salir_btn.FlatAppearance.BorderSize = 0;
+            this.salir_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.salir_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.salir_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salir_btn.Location = new System.Drawing.Point(1387, 6);
+            this.salir_btn.Name = "salir_btn";
+            this.salir_btn.Size = new System.Drawing.Size(24, 21);
+            this.salir_btn.TabIndex = 0;
+            this.salir_btn.UseVisualStyleBackColor = false;
+            this.salir_btn.Click += new System.EventHandler(this.Salir_btn_Click);
             // 
             // Principal_frm
             // 
