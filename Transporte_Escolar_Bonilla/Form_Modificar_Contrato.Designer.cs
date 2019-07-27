@@ -79,6 +79,7 @@
             // 
             // btnSeleccionar
             // 
+            this.btnSeleccionar.Enabled = false;
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.btnSeleccionar.Location = new System.Drawing.Point(721, 467);

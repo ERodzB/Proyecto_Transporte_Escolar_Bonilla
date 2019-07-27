@@ -139,35 +139,42 @@ namespace Transporte_Escolar_Bonilla
                     {
                         Licencia = 1;
                     }
-                    if(txtnombre.Text!="" && cmbGenero.Text!="" && txttelefono.Text!="" && txtcorreo.Text!="" && txtdireccion.TextLength> 15 && cmbPuesto.Text!="" && txtsalario.Text!="" && txtlicencia.Text!="" && dtpvencimiento.Value>System.DateTime.Today && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                    if(txtnombre.Text!="" && cmbGenero.Text!="" && txttelefono.Text!="" && txtcorreo.Text!="" && txtdireccion.TextLength> 15 && cmbPuesto.Text!="" && txtsalario.Text!="" && Double.Parse(txtsalario.Text)>0 && txtlicencia.Text!="" && dtpvencimiento.Value>System.DateTime.Today && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                     {
-                        modify.ModificarEmpleado(busqueda.Text, txtnombre.Text, Int32.Parse(cmbGenero.SelectedValue.ToString()), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Value.ToString()), Licencia);
-                        modify.BitacoraModulo("Modificacion", 10, "Modificacion de Empleado", busqueda.Text, "N/A", "N/A", "N/A", "N/A");
-                        MessageBox.Show("Modificacion Realizada con Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtcorreo.Text = "";
-                        txtdireccion.Text = "";
-                        txtlicencia.Text = "";
-                        txtnombre.Text = "";
-                        txtsalario.Text = "";
-                        txttelefono.Text = "";
-                        busqueda.Text = "";
-                        cmbGenero.SelectedIndex = -1;
-                        cmbPuesto.SelectedIndex = -1;
-                        dtpvencimiento.ResetText();
-                        busqueda.Focus();
-                        btnModificar.Enabled = false;
-                        txtnombre.Enabled = false;
-                        txtcorreo.Enabled = false;
-                        txtdireccion.Enabled = false;
-                        txtlicencia.Enabled = false;
-                        txtsalario.Enabled = false;
-                        txttelefono.Enabled = false;
-                        cmbGenero.Enabled = false;
-                        cmbPuesto.Enabled = false;
-                        dtpvencimiento.Enabled = false;
-                        RBPesada.Enabled = false;
-                        RBLiviana.Enabled = false;
-                        CBInter.Enabled = false;
+                        if (MessageBox.Show("Esta seguro de los cambios realizados?","Pregunta",MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                        {
+                            modify.ModificarEmpleado(busqueda.Text, txtnombre.Text, Int32.Parse(cmbGenero.SelectedValue.ToString()), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Value.ToString()), Licencia);
+                            modify.BitacoraModulo("Modificacion", 10, "Modificacion de Empleado", busqueda.Text, "N/A", "N/A", "N/A", "N/A");
+                            MessageBox.Show("Modificacion Realizada con Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtcorreo.Text = "";
+                            txtdireccion.Text = "";
+                            txtlicencia.Text = "";
+                            txtnombre.Text = "";
+                            txtsalario.Text = "";
+                            txttelefono.Text = "";
+                            busqueda.Text = "";
+                            cmbGenero.SelectedIndex = -1;
+                            cmbPuesto.SelectedIndex = -1;
+                            dtpvencimiento.ResetText();
+                            busqueda.Focus();
+                            btnModificar.Enabled = false;
+                            txtnombre.Enabled = false;
+                            txtcorreo.Enabled = false;
+                            txtdireccion.Enabled = false;
+                            txtlicencia.Enabled = false;
+                            txtsalario.Enabled = false;
+                            txttelefono.Enabled = false;
+                            cmbGenero.Enabled = false;
+                            cmbPuesto.Enabled = false;
+                            dtpvencimiento.Enabled = false;
+                            RBPesada.Enabled = false;
+                            RBLiviana.Enabled = false;
+                            CBInter.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingrese todos los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
@@ -177,7 +184,7 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                if (txtnombre.Text != "" && cmbGenero.Text != "" && txttelefono.Text != "" && txtcorreo.Text != "" && txtdireccion.TextLength > 15 && cmbPuesto.Text != "" && txtsalario.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                if (txtnombre.Text != "" && cmbGenero.Text != "" && txttelefono.Text != "" && txtcorreo.Text != "" && txtdireccion.TextLength > 15 && cmbPuesto.Text != "" && txtsalario.Text != "" && Double.Parse(txtsalario.Text)>0 && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
                     modify.ModificarEmpleado(busqueda.Text, txtnombre.Text, Int32.Parse(cmbGenero.SelectedValue.ToString()), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), "N/A", dtpvencimiento.MinDate, 0);
                     modify.BitacoraModulo("Modificacion", 10, "Modificacion de Empleado", busqueda.Text, "N/A", "N/A", "N/A", "N/A");
@@ -260,7 +267,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtsalario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            if (char.IsNumber(e.KeyChar))
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtsalario.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
             }

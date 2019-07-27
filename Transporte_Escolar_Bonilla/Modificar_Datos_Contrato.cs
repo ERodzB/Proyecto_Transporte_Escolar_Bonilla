@@ -98,7 +98,7 @@ namespace Transporte_Escolar_Bonilla
                 cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
                 cmbTipoPago.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString()) - 1;
                 txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
-                MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString());
+                //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString());
                 cmbEstado.SelectedIndex = 1;
                 dtpInicio.Enabled = true;
                 txtMonto.Enabled = true;
@@ -112,23 +112,30 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (double.Parse(txtMonto.Text)>0 && Double.Parse(txtMontoMensual.Text) > 0 && txtCuota.Text!="" && dtpInicio.Value.CompareTo(7/1/2013)>0)
             {
-                if(txtTipoContrato.Text == "Temporal")
+                if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string estado, tipopago;
-                    estado = cmbEstado.SelectedValue.ToString();
-                    tipopago = cmbTipoPago.SelectedValue.ToString();
-                    modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago));
-
+                    if (txtTipoContrato.Text == "Temporal")
+                    {
+                        string estado, tipopago;
+                        estado = cmbEstado.SelectedValue.ToString();
+                        tipopago = cmbTipoPago.SelectedValue.ToString();
+                        modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago));
+                        MessageBox.Show("El cambio se ha realizado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    if (txtTipoContrato.Text == "Viaje")
+                    {
+                        string estado;
+                        estado = cmbEstado.SelectedValue.ToString();
+                        modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
+                        MessageBox.Show("El cambio se ha realizado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                if(txtTipoContrato.Text == "Viaje")
-                {
-                    string estado;
-                    estado = cmbEstado.SelectedValue.ToString();
-                    modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
-
-                }
+            }
+            else
+            {
+                MessageBox.Show("Favor ingrese todos los datos correctamente","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -153,7 +160,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void TxtCuota_TextChanged(object sender, EventArgs e)
         {
-            if (txtCuota.Text != " ")
+            if (txtCuota.Text != "")
                 txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
         }
 
@@ -166,6 +173,14 @@ namespace Transporte_Escolar_Bonilla
         private void CmbTipoPago_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtCuota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
