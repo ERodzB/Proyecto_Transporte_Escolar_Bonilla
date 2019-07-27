@@ -771,8 +771,12 @@ GO
 create procedure [dbo].[ComboboxTVehiculos]
 as
 begin
-	select v.Tipo_Vehiculo'Tipo' from Vehiculos v
-	group by v.Tipo_Vehiculo
+begin
+	select v.Tipo_Vehiculo'Codigo',tv.Tipo_Vehiculo'Tipo' from Vehiculos v
+	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
+	group by v.Tipo_Vehiculo,tv.Tipo_Vehiculo
+end
+
 end
 GO
 /*---------------------------------------------Procedimiento Datagridview Datos Simples Vehiculos------------------------------------------------*/
@@ -913,17 +917,16 @@ begin
 end
 GO
 /*---------------------------------------------Procedimient Llenar Datos DGV Vehiculos Completos------------------------------------------------*/
-CREATE procedure [dbo].[LLenarDVGvehiculos]
+create procedure [dbo].[LLenarDVGvehiculos]
 as
 begin
 	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripcion',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
 	tt.NombreTransmision 'Transmision Vehiculo',tg.NombreGasolina 'Combustible Vehiculo',V.Anio_Adquisicion'Adquirido en: ' ,
-	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',e.Nombre_Estado'Estado',ep.Nombre_Empleado'Reponsable' from Vehiculos v
+	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehiculo',e.Nombre_Estado'Estado' from Vehiculos v
 	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
 	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
 	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
-	inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 end
 GO
 /*---------------------------------------------Procedimient Modificar Datos de un Empleado------------------------------------------------*/
@@ -1114,7 +1117,7 @@ end
 GO
 	GO
 /*--------------------------------------Procedimiento de Bitacora-------------------------------------------------*/
-Create procedure [dbo].[actualizarbitacora]
+create procedure [dbo].[actualizarbitacora]
 @desc as varchar(50),
 @tipo as int,
 @dato1 as varchar(100),
@@ -1127,39 +1130,78 @@ as
 begin
 	declare @contador as int
 	if(@tipo=1)
-		begin
-		if(@tipo=3)
-		begin
-			set @contador=(select count(*) from Eventos where TipoEvento=3)+1
-			select @contador
-			insert into Eventos values
-			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,NULL,null,null,null)
-		end
-		if(@tipo=8)
-		begin
-			set @contador=(select count(*) from Eventos where TipoEvento=8)+1
-			select @contador
-			insert into Eventos values
-			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
-		end
-		if(@tipo=9)
-		begin
-			set @contador=(select count(*) from Eventos where TipoEvento=9)+1
-			select @contador
-			insert into Eventos values
-			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,null,null,null)
-		end
-		if(@tipo=10)
-		begin
-			set @contador=(select count(*) from Eventos where TipoEvento=10)+1
-			select @contador
-			insert into Eventos values
-			(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,null,null,null,null)
-		end
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=1)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
+	if(@tipo=2)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=2)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=3)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=3)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=4)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=4)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=5)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=5)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=6)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=6)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=7)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=7)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=8)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=8)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=9)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=9)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+	if(@tipo=10)
+	begin
+		set @contador=(select count(*) from Eventos where TipoEvento=10)+1
+		select @contador
+		insert into Eventos values
+		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
+	end
+
 end
-GO
-	GO
+go
 
 /*------------------------------------------Modificar Vehiculo-------------------------------------------*/
 
@@ -1188,6 +1230,24 @@ begin
 	where Codigo_Categoria ='VE' 
 end
 GO
+/*----------------------------------Combobox Tipos de Eventos---------------------------------------*/
+create procedure ComboTipoEventos
+As
+begin
+	select tv.CodTipoEvento'Codigo',tv.TipoEvento'Nombre' from dbo.TipoEvento tv
+end
+GO
+/*----------------------------------Datagrid Eventos---------------------------------------*/
+Create procedure dgvEventos
+@filtro as int
+As
+begin
+	select e.CodEvento'Codigo Evento',e.FechaEvento'Fecha del Evento',e.Dato1'Descripcion Evento',e.Dato2'Clave del Afectado'
+	,e.Dato3'Informacion Adicional',e.Dato4'Observaciones Adicionales' from Eventos e
+	where e.TipoEvento = @filtro;
+end
+GO
+
 
 /*----------------------Cargar dgv Vehiculos----------------------------*/
 

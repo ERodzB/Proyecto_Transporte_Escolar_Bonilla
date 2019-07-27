@@ -15,6 +15,7 @@ namespace Transporte_Escolar_Bonilla
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
+        Modificar modifico = new Modificar();
 
         //Variables Globales
         int cambio1 = 0;
@@ -161,6 +162,8 @@ namespace Transporte_Escolar_Bonilla
                     if (dtphoras1.Checked)
                         ing.AsignarHoraVeh(txtinicio.Text + "-" + txtfin.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, 0);
                     MessageBox.Show("Ruta creada con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    modifico.BitacoraModulo("Creación", 4, "Creación de una Ruta", txtinicio.Text + "-" + txtfin.Text, combveh1.Text, "N/A", "N/A", "N/A");
 
                     //Limpieza
                     txtinicio.Clear();

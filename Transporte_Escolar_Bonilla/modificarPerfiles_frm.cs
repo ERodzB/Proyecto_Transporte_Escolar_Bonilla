@@ -42,6 +42,8 @@ namespace Transporte_Escolar_Bonilla
                 Modificar mperfiles = new Modificar();
 
                 mperfiles.ModificarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb.SelectedIndex + 1, nombrePerfil_tb.Text, desPerfil_tb.Text);
+                mperfiles.BitacoraModulo("Modificación - Perfiles", 10, "Modificación de Información del Perfil ", "Perfil Modificado: " + nombrePerfil_tb.Text, "N/A", "N/A", "N/A", "N/A");
+
                 Perfiles_cmb.SelectedIndex = -1;
                 nivelAcceso_cmb.SelectedIndex = -1;
                 nombrePerfil_tb.Clear();
