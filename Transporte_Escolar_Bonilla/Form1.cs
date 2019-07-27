@@ -179,5 +179,11 @@ namespace Transporte_Escolar_Bonilla
                 e.Handled = true;
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            BitacoraModulos bmodulos = new BitacoraModulos();
+            bmodulos.Show();
+        }
     }
 }

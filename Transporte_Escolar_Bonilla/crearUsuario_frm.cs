@@ -21,6 +21,7 @@ namespace Transporte_Escolar_Bonilla
         {
             Ingresar ingreso = new Ingresar();
             Validar valido = new Validar();
+            Modificar mod = new Modificar();
             if (valido.validarEmpleado(identidad_tb.Text) == 1)
             {
                 if (valido.validarUsuario_Empleado(identidad_tb.Text) == 0)
@@ -28,6 +29,7 @@ namespace Transporte_Escolar_Bonilla
                     if (valido.validarUsuario(nombre_tb.Text) == 0)
                     {
                         ingreso.NuevoUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Convert.ToInt32(Perfil_cmb.SelectedIndex.ToString()) + 1);
+                        mod.BitacoraModulo("Creación Usuario", 5, "Creación de un Nuevo Usuario", nombre_tb.Text, "N/A", "N/A", "N/A", "N/A");
                         contra_tb.Clear();
                         nombre_tb.Clear();
                         Perfil_cmb.SelectedIndex = -1;

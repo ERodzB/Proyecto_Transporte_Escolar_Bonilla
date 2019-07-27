@@ -16,6 +16,7 @@ namespace Transporte_Escolar_Bonilla
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
+        Modificar mod = new Modificar();
 
         //Variables Globales
         int cambio1 = 0, cambio2 = 0;
@@ -311,6 +312,7 @@ namespace Transporte_Escolar_Bonilla
 
                         ing.NuevoContrato(anio, combcliente.Text, codcli, 2, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
                                           Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant,2);
+                        mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", combcliente.Text,"N/A", "N/A", "N/A", "N/A");
 
                         /****** RUTA ******/
                         ing.NuevaRuta(txtorigen.Text + "-" + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");

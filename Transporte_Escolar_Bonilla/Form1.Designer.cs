@@ -50,6 +50,7 @@
             this.conductores_btn = new System.Windows.Forms.Button();
             this.unidades_btn = new System.Windows.Forms.Button();
             this.rutas_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
             this.center_panel.SuspendLayout();
             this.left_panel.SuspendLayout();
@@ -58,6 +59,7 @@
             // top_panel
             // 
             this.top_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.top_panel.Controls.Add(this.button1);
             this.top_panel.Controls.Add(this.salir_btn);
             this.top_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_panel.Location = new System.Drawing.Point(0, 0);
@@ -376,6 +378,22 @@
             this.rutas_btn.UseVisualStyleBackColor = false;
             this.rutas_btn.Click += new System.EventHandler(this.Rutas_btn_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.remove_symbol;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(1357, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 21);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Principal_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -423,6 +441,7 @@
         private System.Windows.Forms.Button ingresarLogin_btn;
         private System.Windows.Forms.TextBox userLogin_tb;
         private System.Windows.Forms.Label userLogin_lbl;
+        private System.Windows.Forms.Button button1;
     }
 }
 

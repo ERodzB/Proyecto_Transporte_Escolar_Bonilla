@@ -16,6 +16,7 @@ namespace Transporte_Escolar_Bonilla
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
         Consultar consul = new Consultar();
+        Modificar mod = new Modificar();
 
         //Llevar id, nombre de cliente y tipo contrato para asociarlo al contrato
         static public string id;
@@ -121,6 +122,7 @@ namespace Transporte_Escolar_Bonilla
                             {
                                 //Guardar Datos del Cliente
                                 ing.NuevoCliente(txtid.Text, txtnom.Text, txtdir.Text, txttel.Text, txtcorreo.Text);
+                                mod.BitacoraModulo("Nuevo Cliente", 7, "Ingreso de Nuevo Cliente", txtid.Text,"N/A", "N/A", "N/A", "N/A");
 
                                 MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

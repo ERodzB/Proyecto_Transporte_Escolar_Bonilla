@@ -49,6 +49,14 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table; 
         }
+        public DataTable Combobox_TipoEvento()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboTipoEventos", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
         public DataTable ComboboxPuestos()
         {
             table = new DataTable();
@@ -355,6 +363,24 @@ namespace Transporte_Escolar_Bonilla
                 Adapter = new SqlDataAdapter("consultaclientes", conexionBD); //Buscar Informacion de que hace especificamente un adapter
                 Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 Adapter.SelectCommand.Parameters.AddWithValue("@consultacliente", consulta);
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+        public void consultabitacora(DataGridView dgvConsulta, int consulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable(); //Comando para almacenar la informacion de un select en un DGV
+                Adapter = new SqlDataAdapter("dgvEventos", conexionBD); //Buscar Informacion de que hace especificamente un adapter
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@filtro", consulta);
                 Adapter.Fill(table);
                 dgvConsulta.DataSource = table;
                 MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

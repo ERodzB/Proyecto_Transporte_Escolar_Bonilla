@@ -21,13 +21,15 @@ namespace Transporte_Escolar_Bonilla
         {
             Ingresar ingreso = new Ingresar();
             Validar valido = new Validar();
-
+            Modificar mod = new Modificar();
             if (valido.validarPerfil(nombrePerfil_tb.Text) == 0)
             {
                 ingreso.NuevoPerfil(nivelAcceso_cmb.SelectedIndex+1, nombrePerfil_tb.Text, desPerfil_tb.Text);
+                mod.BitacoraModulo("Creación Perfil", 6, "Creación de nuevo perfil", nombrePerfil_tb.Text, "N/A", "N/A", "N/A", "N/A");
                 nivelAcceso_cmb.SelectedIndex = -1;
                 nombrePerfil_tb.Clear();
                 desPerfil_tb.Clear();
+
 
             }
             else
