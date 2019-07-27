@@ -21,23 +21,19 @@ namespace Transporte_Escolar_Bonilla
         {
             Ingresar ingreso = new Ingresar();
             Validar valido = new Validar();
-            if (nombrePerfil_tb.Text!="" && desPerfil_tb.Text!="")
-            {
-                if (valido.validarPerfil(nombrePerfil_tb.Text) == 0)
-                {
-                    ingreso.NuevoPerfil(nivelAcceso_cmb.SelectedIndex + 1, nombrePerfil_tb.Text, desPerfil_tb.Text);
-                    nivelAcceso_cmb.SelectedIndex = -1;
-                    nombrePerfil_tb.Clear();
-                    desPerfil_tb.Clear();
 
-                }
-                else
-                {
-                    MessageBox.Show("Ya existe ese perfil");
-                }
+            if (valido.validarPerfil(nombrePerfil_tb.Text) == 0)
+            {
+                ingreso.NuevoPerfil(nivelAcceso_cmb.SelectedIndex+1, nombrePerfil_tb.Text, desPerfil_tb.Text);
+                nivelAcceso_cmb.SelectedIndex = -1;
+                nombrePerfil_tb.Clear();
+                desPerfil_tb.Clear();
+
             }
             else
-                MessageBox.Show("Ingrese todos los datos necesarios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show("Ya existe ese perfil");
+            }
         }
 
         private void NombrePerfil_tb_KeyPress(object sender, KeyPressEventArgs e)

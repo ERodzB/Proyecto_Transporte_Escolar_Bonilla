@@ -29,7 +29,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 if (txtNombre.Text!="" && txtDireccion.Text!="" && txtTelefono.Text!="" && txtCorreo.Text!="")
                 {
-                    if (txtDireccion.TextLength > 15)
+                    if (txtDireccion.TextLength < 15)
                     {
                         if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {

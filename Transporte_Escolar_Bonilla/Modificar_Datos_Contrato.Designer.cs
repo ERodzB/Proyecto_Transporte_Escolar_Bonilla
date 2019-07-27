@@ -309,7 +309,6 @@
             this.txtCuota.Size = new System.Drawing.Size(141, 32);
             this.txtCuota.TabIndex = 28;
             this.txtCuota.TextChanged += new System.EventHandler(this.TxtCuota_TextChanged);
-            this.txtCuota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCuota_KeyPress);
             // 
             // label11
             // 
