@@ -1264,3 +1264,47 @@ begin
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 end
 GO
+
+/*----------------------Ver si vehiculo esta en mantenimiento----------------------------*/
+create procedure BuscaMantenimiento
+	@matricula varchar (50)
+	as
+	Begin
+		select Count(*) from Mantenimientos
+		where Mantenimientos.Estado_Mantenimiento != 403 and Mantenimientos.Codigo_Vehiculo=@matricula
+	End
+	GO
+
+
+/*----------------------Asignar solo licencias livianas a carros livianos----------------------------*/
+create procedure LicenciaLiviana
+	@NomEmp varchar (50)
+	as
+	Begin
+		select count(*) from Empleado e
+		where e.Nombre_Empleado=@NomEmp and (e.Tipo_Licencia=1 or e.Tipo_Licencia=3)
+	End
+	GO
+
+
+/*----------------------Asignar solo licencias livianas a carros livianos----------------------------*/
+create procedure VehiculosPesados
+	@matricula varchar (50)
+	as
+	Begin
+		select count(*) from Vehiculos v
+		where v.Codigo_Vehiculo=@matricula and (v.Tipo_Vehiculo!=1 or v.Tipo_Vehiculo!=2)
+	End
+	GO
+
+
+
+
+
+
+
+
+
+
+
+
