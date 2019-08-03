@@ -1264,3 +1264,81 @@ begin
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 end
 GO
+
+
+
+/******************************************************* MANTENIMIENTOS CREAR Y MODIFICAR **********************************************/
+
+/*----------------------Cargar dgv Mantenimientos----------------------------*/
+create procedure ComboboxMant
+as
+begin
+	select Nombre_Mantenimiento 'Mantenimiento' from Tipo_Mantenimientos
+end
+GO
+
+
+/*----------------------Guardar nuevo Mantenimiento----------------------------*/
+create procedure NuevoTipoMantenimiento
+@nombre varchar(100),
+@descripcion varchar(200)
+as
+begin
+	insert into Tipo_Mantenimientos (Codigo_Tipo_Mantenimiento, Nombre_Mantenimiento, Descripcion_Mantenimiento)
+	values ( (select COUNT(*)+1 from Tipo_Mantenimientos), @nombre, @descripcion )
+end
+GO
+
+/*----------------------Obtener Datos de Mantenimiento Existente----------------------------*/
+create procedure DatosMantenimiento
+@codigo int
+as
+begin
+	select Nombre_Mantenimiento 'Nombre', Descripcion_Mantenimiento 'Descripcion' from Tipo_Mantenimientos
+	where Codigo_Tipo_Mantenimiento = @codigo
+end
+GO
+
+
+/*----------------------Modificar Mantenimiento Existente----------------------------*/
+create procedure ModificarMantenimiento
+@codigo int,
+@nombre varchar(100),
+@descripcion varchar(200)
+as
+begin
+	UPDATE Tipo_Mantenimientos set Nombre_Mantenimiento = @nombre, Descripcion_Mantenimiento = @descripcion
+	where Codigo_Tipo_Mantenimiento = @codigo
+end
+GO
+
+/*----------------------Verificar Mantenimiento Existente----------------------------*/
+create procedure VerificarMantenimiento
+@codigo int,
+@nombre varchar(100),
+@opcion int
+as
+begin
+	if(@opcion = 1) --Nuevo
+	BEGIN
+		select COUNT(*) from Tipo_Mantenimientos where (Nombre_Mantenimiento = @nombre)
+	END
+
+	if(@opcion = 2) --Modifica
+	BEGIN
+		select COUNT(*) from Tipo_Mantenimientos where (Nombre_Mantenimiento = @nombre and Codigo_Tipo_Mantenimiento != @codigo)
+	END
+end
+GO
+
+/*----------------------Verificar Si Cambio Mantenimiento Existente----------------------------*/
+create procedure CambiosMantenimiento
+@nombre varchar(100),
+@descripcion varchar(200)
+as
+begin
+	select COUNT(*) from Tipo_Mantenimientos where (Nombre_Mantenimiento = @nombre and Descripcion_Mantenimiento = @descripcion)
+end
+GO
+
+

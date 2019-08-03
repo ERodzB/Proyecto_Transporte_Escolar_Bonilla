@@ -81,5 +81,11 @@ namespace Transporte_Escolar_Bonilla
             Modificar_UnidadFrm modunidad = new Modificar_UnidadFrm();
             estetica.AbrirFormularios(modunidad, mainUnidades_panel);
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            form_mantenimientos mant = new form_mantenimientos();
+            estetica.AbrirFormularios(mant, mainUnidades_panel);
+        }
     }
 }
