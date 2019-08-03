@@ -739,5 +739,23 @@ namespace Transporte_Escolar_Bonilla
         }
 
 
+        public void cargardvggenerarcotnrato(DataGridView dgvConsulta)
+        {
+            try
+            {
+                Consultar consultar = new Consultar();
+                table = new DataTable();
+                Adapter = new SqlDataAdapter("CargaGenerarContrato", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.Fill(table);
+                dgvConsulta.DataSource = table;
+                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+
     }
 }
