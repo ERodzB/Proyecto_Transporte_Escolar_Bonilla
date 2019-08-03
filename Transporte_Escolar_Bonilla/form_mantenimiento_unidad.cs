@@ -81,8 +81,7 @@ namespace Transporte_Escolar_Bonilla
                 {
                     //Guardar mantenimiento
                     ing.NuevoMantenimiento(int.Parse(combtipo.SelectedValue.ToString()), dtpfecha.Value, combveh.Text, double.Parse(txtcosto.Text), 
-                                           int.Parse(combestado.SelectedValue.ToString()));
-                    mod.BitacoraModulo("Mantenimiento", 1, "Mantenimiento a un Vehiculo", combveh.Text, "N/A", "N/A", "N/A", "N/A");
+                                           int.Parse(combestado.SelectedValue.ToString())); 
 
                     //Cambiar estado del vehiculo a "En Mantenimiento"
                     mod.ModificarEstadoVeh(combveh.Text);

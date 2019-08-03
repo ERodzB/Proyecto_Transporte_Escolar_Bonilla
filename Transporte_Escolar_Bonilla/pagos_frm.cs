@@ -13,7 +13,6 @@ namespace Transporte_Escolar_Bonilla
     public partial class pagos_frm : Form
     {
         Consultar consulto = new Consultar();
-        Modificar mod = new Modificar();
         public pagos_frm()
         {
             InitializeComponent();
@@ -52,13 +51,11 @@ namespace Transporte_Escolar_Bonilla
             if(descripcion_tb.Text!=" " || monto_tb.Text!=" ")
             {
                 ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(Cuota_tb.Text), DateTime.Now, Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
-                mod.BitacoraModulo("Pago Cliente", 7, "Pago Recibido del Cliente", cliente_dgv.CurrentRow.Cells[0].Value.ToString(), "N/A", "N/A", "N/A", "N/A");
                 descripcion_tb.Clear();
                 monto_tb.Clear();
                 pagar_btn.Enabled = false;
                 descripcion_tb.Enabled = false;
                 monto_tb.Enabled = false;
-               
             }
             else
             {

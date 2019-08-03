@@ -14,7 +14,6 @@ namespace Transporte_Escolar_Bonilla
     {
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
-        Modificar mod = new Modificar();
 
         bool borrar = false;
         double total = 0;
@@ -256,13 +255,13 @@ namespace Transporte_Escolar_Bonilla
                         {
                             ing.NuevoContrato(anio, combcliente.Text, codcli, 1, dtpinicio.Value, total,
                                           DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedIndex+1);
-                            mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", combcliente.Text, "N/A", "N/A", "N/A", "N/A");
+
                         }
                         else
                         {
                             ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
                                           DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex+1);
-                            mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", combcliente.Text, "N/A", "N/A", "N/A", "N/A");
+
                         }
 
                         //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros

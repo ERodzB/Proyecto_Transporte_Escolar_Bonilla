@@ -15,7 +15,7 @@ namespace Transporte_Escolar_Bonilla
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
-        Modificar mod = new Modificar();
+
         public form_nueva_unidad()
         {
             InitializeComponent();
@@ -134,7 +134,6 @@ namespace Transporte_Escolar_Bonilla
                                         int.Parse(txtcap.Text), int.Parse(combtipotra.SelectedValue.ToString()), int.Parse(combtipocom.SelectedValue.ToString()),
                                         txtcolor.Text, int.Parse(dtpanioad.Text), int.Parse(combestado.SelectedValue.ToString()), Convert.ToDateTime(dtpemision.Text),
                                         Convert.ToDateTime(dtpvenc.Text));
-                        mod.BitacoraModulo("Ingreso Vehiculo", 1, "Ingreso de Nuevo Vehiculo Adquirido", txtmat.Text, "N/A", "N/A", "N/A", "N/A");
 
                         MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

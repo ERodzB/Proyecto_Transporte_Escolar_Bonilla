@@ -29,50 +29,34 @@ namespace Transporte_Escolar_Bonilla
                 if (rutasModificar_cmb.Text!="" && horaSalida_dtp.Checked==true && llegadaHorario_dtp.Checked==true && vehiculo_cmb.Text!="" && (horaSalida_dtp.Value!=llegadaHorario_dtp.Value))
                 {
                     ingreso.AsignarHoraVeh(rutasModificar_cmb.Text, vehiculo_cmb.Text, horaSalida_dtp.Text, llegadaHorario_dtp.Text, 0);
-                    modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Agregar Horario", "Ruta Modificada: "+rutasModificar_cmb.Text, "Vehiculo Asignado: "+vehiculo_cmb.Text, "N/A", "N/A", "N/A");
                     Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
                     Horario_cmb.DisplayMember = "Horarios";
-                    MessageBox.Show("Horario Agregado con Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    no_rb.Checked = true;
-                    rutasModificar_cmb.SelectedIndex = -1;
-
                 }
                 else
                 {
                     MessageBox.Show("Favor ingresar todos los datos necesarios correctamente","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
-
             }
             if (eliminarHorario_rb.Checked == true)
             {
                 if (rutasModificar_cmb.Text != "" && Horario_cmb.Text != "") 
                 {
                     modifico.ModificarHorario(rutasModificar_cmb.Text, " ", Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")), Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ") + 1), Convert.ToDateTime("5:00 AM"), Convert.ToDateTime("5:00 AM"), "Eliminar");
-                    modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Eliminar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Horario Eliminado: "+Horario_cmb.Text, "N/A", "N/A", "N/A");
                     Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
                     Horario_cmb.DisplayMember = "Horarios";
-                    no_rb.Checked = true;
-                    rutasModificar_cmb.SelectedIndex = -1;
-
                 }
                 else
                 {
                     MessageBox.Show("Favor ingresar todos los datos necesarios correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             if (modiHorario_rb.Checked == true)
             {
                 if (horaSalida_dtp.Checked == true && llegadaHorario_dtp.Checked == true && rutasModificar_cmb.Text != "" && Horario_cmb.Text != "" && vehiculo_cmb.Text != "" && (horaSalida_dtp.Value != llegadaHorario_dtp.Value))
                 {
                     modifico.ModificarHorario(rutasModificar_cmb.Text, vehiculo_cmb.Text, Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")), Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ") + 1), horaSalida_dtp.Value, llegadaHorario_dtp.Value, "Modificar");
-                    modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Modificar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Vehiculo Asignado: " + vehiculo_cmb.Text, "N/A", "N/A", "N/A");
                     Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
                     Horario_cmb.DisplayMember = "Horarios";
-                    no_rb.Checked = true;
-                    rutasModificar_cmb.SelectedIndex = -1;
-
                 }
                 else
                 {
@@ -118,13 +102,11 @@ namespace Transporte_Escolar_Bonilla
                 {
                     MessageBox.Show("No hay horarios en esa ruta para eliminar, porfavor escoja una que si", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     no_rb.Checked = true;
-                    rutasModificar_cmb.SelectedIndex = -1;
                 }
                 if (cont >= 3 && modiHorario_rb.Checked == true && Horario_cmb.Items.Count==0)
                 {
                     MessageBox.Show("La ruta escogida para modificar no tiene Horarios, porfavor escoja una que si", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    no_rb.Checked = true;
-                    rutasModificar_cmb.SelectedIndex = -1;
+                    no_rb.Checked = true;                                       
                 }
                 else
                 {

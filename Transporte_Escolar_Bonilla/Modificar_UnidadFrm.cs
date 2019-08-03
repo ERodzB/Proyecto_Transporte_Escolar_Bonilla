@@ -26,14 +26,6 @@ namespace Transporte_Escolar_Bonilla
                 if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     mod.ModificarVehiculo(txtPlaca.Text, txtColor.Text, int.Parse(cmbEstadoVehiculo.SelectedValue.ToString()), DateTime.Parse(dtpEmision.Text), DateTime.Parse(dtpVencimiento.Text));
-                    mod.BitacoraModulo("Modificación - Unidad", 10, "Modificación de Informacion de Un Vehiculo", "Vehiculo Modificado: " + txtPlaca.Text, "N/A", "N/A", "N/A", "N/A");
-                    txtPlaca.Text = "";
-                    txtColor.Text = "";
-                    cmbEstadoVehiculo.SelectedIndex = -1;
-                    dtpEmision.ResetText();
-                    dtpEmision.Enabled = false;
-                    dtpVencimiento.ResetText();
-                    dtpVencimiento.Enabled = false;
                 }
             }
         }

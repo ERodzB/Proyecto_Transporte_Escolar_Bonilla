@@ -121,7 +121,6 @@ namespace Transporte_Escolar_Bonilla
             if (ConexionBD.Acceso == 1 || ConexionBD.Acceso == 2 || ConexionBD.Acceso == 3)
             {
                 center_panel.Controls.Clear();
-                button1.Visible = true;
                 rutas_btn.Enabled = true;
                 unidades_btn.Enabled = true;
                 conductores_btn.Enabled = true;
@@ -179,17 +178,6 @@ namespace Transporte_Escolar_Bonilla
             {
                 e.Handled = true;
             }
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            BitacoraModulos bmodulos = new BitacoraModulos();
-            Estetics.AbrirFormularios(bmodulos,center_panel);
-        }
-
-        private void Center_panel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

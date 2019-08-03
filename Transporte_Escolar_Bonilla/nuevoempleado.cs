@@ -61,7 +61,7 @@ namespace Transporte_Escolar_Bonilla
                 {
                     ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text),
                     txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text),varlicencia);
-                    modify.BitacoraModulo("Contratación", 3, "Contratación Nuevo Empleado", txtidentidad.Text,txtsalario.Text, "N/A", "N/A", "N/A");                
+                    modify.BitacoraModulo("Contratacion", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, "N/A", "N/A", "N/A", "N/A");                
                     MessageBox.Show("Empleado Guardado con Exito", "Guardado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtcorreo.Text = "";
                     txtdireccion.Text = "";
@@ -92,7 +92,7 @@ namespace Transporte_Escolar_Bonilla
                 {
                     ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, 
                         Convert.ToDateTime(dtpvencimiento.Value.ToString()),0);
-                    modify.BitacoraModulo("Contratación", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, txtsalario.Text, "N/A", "N/A", "N/A");
+                    modify.BitacoraModulo("Contratacion", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, "N/A", "N/A", "N/A", "N/A");
                     MessageBox.Show("Empleado Guardado con Exito", "Guardado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtcorreo.Text = "";
                     txtdireccion.Text = "";

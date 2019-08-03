@@ -253,5 +253,41 @@ namespace Transporte_Escolar_Bonilla
             }
             return x;
         }
+
+        public int validarLicenciaLiviana(string NombreEmp)
+        {
+            x = 0;
+            try
+            {
+                cmd = new SqlCommand("LicenciaLiviana", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@NomEmp", NombreEmp);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            return x;
+        }
+
+
+        public int validarVehiculoPesado(string CodVeh)
+        {
+            x = 0;
+            try
+            {
+                cmd = new SqlCommand("VehiculosPesados", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@matricula", CodVeh);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            return x;
+        }
+
     }
 }

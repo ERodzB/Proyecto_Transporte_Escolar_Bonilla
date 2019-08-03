@@ -15,7 +15,6 @@ namespace Transporte_Escolar_Bonilla
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
-        Modificar MOD = new Modificar();
 
         public form_asignar_ruta()
         {
@@ -86,7 +85,7 @@ namespace Transporte_Escolar_Bonilla
                     {
                         ing.AsignarHoraVeh(combruta.Text, combveh.Text, combhorario.Text.Substring(0, combhorario.Text.IndexOf(" ")),
                                            combhorario.Text.Substring(combhorario.Text.IndexOf(" ") + 1, 6), 0);
-                        MOD.BitacoraModulo("Asignacion Vehiculo - Ruta", 1, "Asignacion de Vehiculo a una ruta", combveh.Text, "N/A", "N/A", "N/A", "N/A");
+
                         MessageBox.Show("Ruta Asignada Con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information); 
 
                         //Limpiar

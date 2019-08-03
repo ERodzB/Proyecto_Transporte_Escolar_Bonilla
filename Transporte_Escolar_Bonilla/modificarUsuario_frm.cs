@@ -49,8 +49,6 @@ namespace Transporte_Escolar_Bonilla
                 {
                     Modificar modify = new Modificar();
                     modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
-                    modify.BitacoraModulo("Modificación - Usuario", 10, "Modificación de Información del Usuario ", "Usuario Modificado: " + nombre_tb.Text, "N/A", "N/A", "N/A", "N/A");
-                    
                     identidad_tb.Clear();
                     nombre_tb.Clear();
                     contra_tb.Clear();

@@ -200,7 +200,7 @@
             this.realizar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.realizar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.realizar_btn.ForeColor = System.Drawing.Color.White;
-            this.realizar_btn.Location = new System.Drawing.Point(865, 445);
+            this.realizar_btn.Location = new System.Drawing.Point(833, 467);
             this.realizar_btn.Name = "realizar_btn";
             this.realizar_btn.Size = new System.Drawing.Size(186, 69);
             this.realizar_btn.TabIndex = 40;
