@@ -121,14 +121,14 @@ namespace Transporte_Escolar_Bonilla
                     estado = cmbEstado.SelectedValue.ToString();
                     tipopago = cmbTipoPago.SelectedValue.ToString();
                     modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago));
-
+                    modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
                 }
                 if(txtTipoContrato.Text == "Viaje")
                 {
                     string estado;
                     estado = cmbEstado.SelectedValue.ToString();
                     modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
-
+                    modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
                 }
             }
         }

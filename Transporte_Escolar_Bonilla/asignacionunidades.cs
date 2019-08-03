@@ -56,7 +56,7 @@ namespace Transporte_Escolar_Bonilla
         private void BtnAsignar_Click(object sender, EventArgs e)
         {
             modify.ModificarVAsigDevol(Tipo, cmbempleado.SelectedValue.ToString(), txtPlaca.Text,702);
-            modify.BitacoraModulo("Asignacion", 8, "Asignacion de Unidad", txtPlaca.Text, cmbempleado.SelectedValue.ToString(),txtObservaciones.Text, "N/A", "N/A");
+            modify.BitacoraModulo("Asignacion", 8, "Asignacion de Vehiculo a Empleado", txtPlaca.Text, cmbempleado.SelectedValue.ToString(),txtObservaciones.Text, "N/A", "N/A");
             MessageBox.Show("La unidad a sido asignada exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.dvgdatosasignar(dgvConsultaU);
             txtPlaca.Text = "";
@@ -68,7 +68,7 @@ namespace Transporte_Escolar_Bonilla
         private void BtnDevolver_Click(object sender, EventArgs e)
         {
             modify.ModificarVAsigDevol(Tipo, cmbempleado.Text, txtPlaca.Text,int.Parse(cmbestado.SelectedValue.ToString()));
-            modify.BitacoraModulo("Devolucion", 9, "Devolucion de Unidad", txtPlaca.Text, cmbempleado.SelectedValue.ToString(), txtObservaciones.Text, "N/A", "N/A");
+            modify.BitacoraModulo("Devolucion", 9, "Devolucion de Vehiculo por Empelado", txtPlaca.Text, cmbempleado.SelectedValue.ToString(), txtObservaciones.Text, "N/A", "N/A");
             MessageBox.Show("La unidad a sido entregada exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.dvgdatosdevolver(dgvConsultaU);
             txtPlaca.Text = "";

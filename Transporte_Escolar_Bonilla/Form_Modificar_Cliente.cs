@@ -36,6 +36,12 @@ namespace Transporte_Escolar_Bonilla
                             if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
                                 mod.ModificarClientes(txtIdentidad.Text, txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text);
+                                mod.BitacoraModulo("Modificación - Cliente", 10, "Modificación Información del Cliente", "Cliente Modificado: " + txtIdentidad.Text, "N/A", "N/A", "N/A", "N/A");
+                                txtIdentidad.Text = "";
+                                txtDireccion.Text = "";
+                                txtNombre.Text = "";
+                                txtTelefono.Text = "";
+                                txtCorreo.Text = "";
                             }
                         }
                         else
