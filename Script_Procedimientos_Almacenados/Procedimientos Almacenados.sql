@@ -1264,3 +1264,16 @@ begin
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 end
 GO
+
+/*----------------------------------Carga Generar Contrato-------------------------*/
+Create Procedure CargaGenerarContrato
+as
+begin
+	select c.Codigo_Contrato'Codigo del Contrato', cli.Nombre_Cliente'Nombre del Cliente', tp.Tipo_Contrato'Tipo del Contrato', c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotas Mensuales',
+	c.Servicio'Servicio', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato', c.Monto_Contrato'Monto del Contrato', c.Fecha_Vencimiento'Fecha de Vencimiento del Contrato', rut.Codigo_Ruta'Ruta', rut.Parada_Contrato'Parada'  from Contratos c
+	inner join Rutas_Contratos rut on c.Codigo_Contrato = rut.Codigo_Contrato
+	inner join TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join Cliente cli on c.Cliente_Contrato = cli.Codigo_Cliente
+end
+
+

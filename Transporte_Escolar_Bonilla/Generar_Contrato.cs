@@ -15,13 +15,13 @@ namespace Transporte_Escolar_Bonilla
     public partial class Generar_Contrato : Form
     {
         Consultar con = new Consultar();
-        string codcontrato, cliente, tipocon, mensualidad, cuotas, servicio, fechaini, montocontrato, fechafin;
+        string cliente, tipocon, mensualidad, cuotas, servicio, fechaini, montocontrato, fechafin, ruta, parada;
 
         private void BtnGenerar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Esta seguro que desea Generar el Contrato?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (tipocon == "Temporal")
+                if (tipocon == "Temporal" && servicio == "Medio Bus")
                 {
                     object oMissing = System.Reflection.Missing.Value;
                     object oEndOfDoc = "\\endofdoc";
@@ -62,7 +62,8 @@ namespace Transporte_Escolar_Bonilla
                     oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
                     oPara3.Range.Font.Bold = 0;
                     oPara3.Range.Text = "Con este Contrato damos a Conocer los terminos en que la persona " + cliente + " esta dispuesta a aceptar los terminos y condiciones " +
-                        "que le brinda la Empresa Transporte Bonilla Representado legalmente en el presente documento";
+                        "que le brinda la Empresa Transporte Bonilla Representado legalmente en el presente documento. El contrato es de tipo de: "+tipocon+" que presenta el servicio de: "+servicio+" El cual dispondra de la ruta: "+ruta+
+                        " Y parara en: "+parada+" El cual se le asignaran un monto mensual de: "+mensualidad+" El cual pagara durante: "+cuotas+" De las cuales deberan ser pagadas en el tiempo estipulado.";
                     oPara3.Range.Font.Bold = 0;
                     oPara3.Format.SpaceAfter = 15;
                     oPara3.Range.InsertParagraphAfter();
@@ -70,69 +71,68 @@ namespace Transporte_Escolar_Bonilla
                     Word.Paragraph oPara5;
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara5 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara5.Range.Text = "Se presenta el servicio de: " + tipocon + " de Dicho Contrato";
+                    oPara5.Range.Text = "El contrato Estara entrara valido desde: "+fechaini+" Hasta el plazo de: "+fechafin+" Se recomienda atencio y responsabilidad en el cumplimiento del contrato";
                     oPara5.Range.Font.Bold = 0;
                     oPara5.Format.SpaceAfter = 15;
                     oPara5.Range.InsertParagraphAfter();
 
-                    Word.Paragraph oPara6;
-                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-                    oPara6 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara6.Range.Text = "Con una Mensualidad de: " + mensualidad;
-                    oPara6.Range.Font.Bold = 0;
-                    oPara6.Format.SpaceAfter = 15;
-                    oPara6.Range.InsertParagraphAfter();
-
-                    Word.Paragraph oPara7;
-                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-                    oPara7 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara7.Range.Text = "Se presenta el servicio de: " + tipocon + " de Dicho Contrato";
-                    oPara7.Range.Font.Bold = 0;
-                    oPara7.Format.SpaceAfter = 15;
-                    oPara7.Range.InsertParagraphAfter();
-
-                    Word.Paragraph oPara8;
-                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-                    oPara8 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara8.Range.Text = "Numero de cuotas a pagar: " + cuotas;
-                    oPara8.Range.Font.Bold = 0;
-                    oPara8.Format.SpaceAfter = 15;
-                    oPara8.Range.InsertParagraphAfter();
-
-                    Word.Paragraph oPara9;
-                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-                    oPara9 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara9.Range.Text = "Servicio que dispondra: " + servicio;
-                    oPara9.Range.Font.Bold = 0;
-                    oPara9.Format.SpaceAfter = 15;
-                    oPara9.Range.InsertParagraphAfter();
-
-                    Word.Paragraph oPara10;
-                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-                    oPara10 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara10.Range.Text = "Fecha de Inicio del Contrato" + fechaini;
-                    oPara10.Range.Font.Bold = 0;
-                    oPara10.Format.SpaceAfter = 15;
-                    oPara10.Range.InsertParagraphAfter();
-
-                    Word.Paragraph oPara11;
-                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-                    oPara11 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara11.Range.Text = "Monto Total del Contrato" + montocontrato;
-                    oPara11.Range.Font.Bold = 0;
-                    oPara11.Format.SpaceAfter = 15;
-                    oPara11.Range.InsertParagraphAfter();
-
-                    Word.Paragraph oPara12;
-                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-                    oPara12 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara12.Range.Text = "Fecha de Finalizacion del Contrato" + fechafin;
-                    oPara12.Range.Font.Bold = 0;
-                    oPara12.Format.SpaceAfter = 15;
-                    oPara12.Range.InsertParagraphAfter();
-
                 }
-                if(tipocon == "Viaje")
+                if (tipocon == "Temporal" && servicio == "Bus Completo")
+                {
+                    object oMissing = System.Reflection.Missing.Value;
+                    object oEndOfDoc = "\\endofdoc";
+
+                    Word._Application oWord;
+                    Word._Document oDoc;
+                    oWord = new Word.Application();
+                    oWord.Visible = true;
+                    oDoc = oWord.Documents.Add(ref oMissing, ref oMissing, ref oMissing, ref oMissing);
+
+                    Word.Paragraph oPara1;
+                    oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
+                    oPara1.Range.Text = "Transporte Bonilla";
+                    oPara1.Range.Font.Bold = 1;
+                    oPara1.Format.SpaceAfter = 24;
+                    oPara1.Range.Paragraphs.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                    oPara1.Range.InsertParagraphAfter();
+
+                    Word.Paragraph oPara2;
+                    oPara2 = oDoc.Content.Paragraphs.Add(ref oMissing);
+                    oPara2.Range.Text = "Contrato de Servicios";
+                    oPara2.Range.Font.Bold = 1;
+                    oPara2.Format.SpaceAfter = 24;
+                    oPara2.Range.InsertParagraphAfter();
+
+                    Word.Paragraph oPara3;
+                    object oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+                    oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
+                    oPara3.Range.Text = "Contrato hecho para" + ": " + cliente;
+                    oPara3.Range.Font.Bold = 1;
+                    oPara3.Format.SpaceAfter = 6;
+                    oPara3.Range.InsertParagraphAfter();
+                    oPara1.Range.Paragraphs.Alignment = Word.WdParagraphAlignment.wdAlignParagraphThaiJustify;
+
+                    Word.Paragraph oPara4;
+                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+                    oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
+                    oPara3.Range.Font.Bold = 0;
+                    oPara3.Range.Text = "Con este Contrato damos a Conocer los terminos en que la persona " + cliente + " esta dispuesta a aceptar los terminos y condiciones " +
+                        "que le brinda la Empresa Transporte Bonilla Representado legalmente en el presente documento. El contrato es de tipo de: " + tipocon + " que presenta el servicio de: " + servicio + " El cual dispondra de la ruta: " + ruta +
+                        " Y parara en: " + parada + " El cual se le asignaran un monto mensual de: " + mensualidad + " El cual pagara durante: " + cuotas + " De las cuales deberan ser pagadas en el tiempo estipulado. El Monto total que dispondra el contrato sera de: "+montocontrato;
+                    oPara3.Range.Font.Bold = 0;
+                    oPara3.Format.SpaceAfter = 15;
+                    oPara3.Range.InsertParagraphAfter();
+
+                    Word.Paragraph oPara5;
+                    oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+                    oPara5 = oDoc.Content.Paragraphs.Add(ref oRng);
+                    oPara5.Range.Text = "El contrato Estara entrara valido desde: " + fechaini + " Hasta el plazo de: " + fechafin + " Se recomienda atencio y responsabilidad en el cumplimiento del contrato";
+                    oPara5.Range.Font.Bold = 0;
+                    oPara5.Format.SpaceAfter = 15;
+                    oPara5.Range.InsertParagraphAfter();
+                }
+                if (tipocon == "Viaje")
                 {
                     object oMissing = System.Reflection.Missing.Value;
                     object oEndOfDoc = "\\endofdoc";
@@ -250,15 +250,16 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvGenerarContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            codcontrato = dgvGenerarContrato.CurrentRow.Cells[0].Value.ToString();
             cliente = dgvGenerarContrato.CurrentRow.Cells[1].Value.ToString();
             tipocon = dgvGenerarContrato.CurrentRow.Cells[2].Value.ToString();
             mensualidad = dgvGenerarContrato.CurrentRow.Cells[3].Value.ToString();
             cuotas = dgvGenerarContrato.CurrentRow.Cells[4].Value.ToString();
             servicio = dgvGenerarContrato.CurrentRow.Cells[5].Value.ToString();
-            fechaini = dgvGenerarContrato.CurrentRow.Cells[7].Value.ToString();
-            montocontrato = dgvGenerarContrato.CurrentRow.Cells[8].Value.ToString();
-            fechafin = dgvGenerarContrato.CurrentRow.Cells[9].Value.ToString();
+            fechaini = dgvGenerarContrato.CurrentRow.Cells[6].Value.ToString();
+            montocontrato = dgvGenerarContrato.CurrentRow.Cells[7].Value.ToString();
+            fechafin = dgvGenerarContrato.CurrentRow.Cells[8].Value.ToString();
+            ruta = dgvGenerarContrato.CurrentRow.Cells[9].Value.ToString();
+            parada = dgvGenerarContrato.CurrentRow.Cells[10].Value.ToString();
 
             btnGenerar.Enabled = true;
         }
