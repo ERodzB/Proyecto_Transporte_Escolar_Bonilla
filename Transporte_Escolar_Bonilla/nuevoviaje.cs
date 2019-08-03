@@ -202,7 +202,7 @@ namespace Transporte_Escolar_Bonilla
             
             //Validar anticipo no mayor que monto total
             if((txtant.Text == "" || double.Parse(txtant.Text) <= 0) || (txttotal.Text == "" || double.Parse(txttotal.Text) <= 0) || Double.Parse(txtant.Text) > Double.Parse(txttotal.Text))
-               contc++; 
+               contc++;
 
             if (contc > 0)
                 MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -293,67 +293,72 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("Debe llenar correctamente los Horarios\n\n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if (DialogResult == DialogResult.Yes)
+                    if (val.validarMantenimiento(combveh1.Text) > 0)
+                        MessageBox.Show("El vehiculo no esta disponible para viajar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
                     {
-                        /****** CONTRATO ******/
-                        anio = dtpinicio.Value.Year.ToString();
-                        codcli = combcliente.SelectedValue.ToString();
+                        DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        if (txtant.Text == "")
-                            ant = 0.00;
-                        else
-                            ant = double.Parse(txtant.Text);
+                        if (DialogResult == DialogResult.Yes)
+                        {
+                            /****** CONTRATO ******/
+                            anio = dtpinicio.Value.Year.ToString();
+                            codcli = combcliente.SelectedValue.ToString();
 
-                        ing.NuevoContrato(anio, combcliente.Text, codcli, 2, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
-                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant,2);
+                            if (txtant.Text == "")
+                                ant = 0.00;
+                            else
+                                ant = double.Parse(txtant.Text);
 
-                        /****** RUTA ******/
-                        ing.NuevaRuta(txtorigen.Text + "-" + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");
+                            ing.NuevoContrato(anio, combcliente.Text, codcli, 2, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
+                                              Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant, 2);
 
-
-                        /****** RUTA CONTRATO ******/
-                        ing.RutaContrato(txtorigen.Text + "-" + txtdestino.Text, " ", anio, combcliente.Text);
-
-
-                        /****** RUTA VEHICULO HORARIO ******/
-                        if (dtphoras1.Checked)
-                            ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, int.Parse(txtpa.Text));
-
-                        if (dtphoras2.Checked)
-                            ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text, int.Parse(txtpa.Text));
-
-                        MessageBox.Show("Contrato creado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        //Limpieza
-                        txtorigen.Clear(); 
-                        txtdestino.Clear();
-                        txttotal.Clear();
-                        txtant.Clear();
-                        txtpa.Clear();  
-
-                        cambio1 = 2;
-                        cambio2 = 2;
+                            /****** RUTA ******/
+                            ing.NuevaRuta(txtorigen.Text + "-" + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");
 
 
-                        labv1.Visible = false;
-                        labv2.Visible = false;
+                            /****** RUTA CONTRATO ******/
+                            ing.RutaContrato(txtorigen.Text + "-" + txtdestino.Text, " ", anio, combcliente.Text);
 
-                        combservicio.SelectedIndex = -1;
-                        combcliente.SelectedIndex = -1;
-                        combveh1.SelectedIndex = -1;
-                        combveh2.SelectedIndex = -1;
 
-                        cambio1 = 3;
-                        cambio2 = 3;
+                            /****** RUTA VEHICULO HORARIO ******/
+                            if (dtphoras1.Checked)
+                                ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, int.Parse(txtpa.Text));
 
-                        dtphoras1.Checked = false;
-                        dtphorae1.Checked = false;
-                        dtphoras2.Checked = false;
-                        dtphorae2.Checked = false;
+                            if (dtphoras2.Checked)
+                                ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text, int.Parse(txtpa.Text));
 
-                        txtorigen.Focus();
+                            MessageBox.Show("Contrato creado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            //Limpieza
+                            txtorigen.Clear();
+                            txtdestino.Clear();
+                            txttotal.Clear();
+                            txtant.Clear();
+                            txtpa.Clear();
+
+                            cambio1 = 2;
+                            cambio2 = 2;
+
+
+                            labv1.Visible = false;
+                            labv2.Visible = false;
+
+                            combservicio.SelectedIndex = -1;
+                            combcliente.SelectedIndex = -1;
+                            combveh1.SelectedIndex = -1;
+                            combveh2.SelectedIndex = -1;
+
+                            cambio1 = 3;
+                            cambio2 = 3;
+
+                            dtphoras1.Checked = false;
+                            dtphorae1.Checked = false;
+                            dtphoras2.Checked = false;
+                            dtphorae2.Checked = false;
+
+                            txtorigen.Focus();
+                        }
                     }
                 }
             }

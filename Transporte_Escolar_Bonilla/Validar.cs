@@ -236,5 +236,22 @@ namespace Transporte_Escolar_Bonilla
             }
             return x;
         }
+
+        public int validarMantenimiento(string CodVeh)
+        {
+            x = 0;
+            try
+            {
+                cmd = new SqlCommand("BuscaMantenimiento", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@matricula", CodVeh);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            return x;
+        }
     }
 }

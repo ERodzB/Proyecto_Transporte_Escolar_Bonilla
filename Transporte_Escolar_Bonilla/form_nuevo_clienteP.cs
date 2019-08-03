@@ -196,42 +196,47 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("Debe llenar correctamente los Horarios\n\n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if (DialogResult == DialogResult.Yes)
+                    if (val.validarMantenimiento(combveh1.Text) > 0)
+                        MessageBox.Show("El vehiculo no puede realizar viajes por los momentos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
                     {
-                        /****** CONTRATO ******/
-                        anio = dtpinicio.Value.Year.ToString(); 
+                        DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        if (txtant.Text == "")
-                            ant = 0.00;
-                        else
-                            ant = double.Parse(txtant.Text);
+                        if (DialogResult == DialogResult.Yes)
+                        {
+                            /****** CONTRATO ******/
+                            anio = dtpinicio.Value.Year.ToString();
 
-                        ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
-                                          Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant, 2);
+                            if (txtant.Text == "")
+                                ant = 0.00;
+                            else
+                                ant = double.Parse(txtant.Text);
 
-                        /****** RUTA ******/
-                        ing.NuevaRuta(txtorigen.Text + "-" + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");
+                            ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), double.Parse(txttotal.Text),
+                                              Convert.ToDateTime(dtpfin.Text), 0.00, 0, combservicio.Text, ant, 2);
+
+                            /****** RUTA ******/
+                            ing.NuevaRuta(txtorigen.Text + "-" + txtdestino.Text, txtorigen.Text + " - " + txtdestino.Text, "Viaje desde " + txtorigen.Text + " hasta " + txtdestino.Text, "Viaje");
 
 
-                        /****** RUTA CONTRATO ******/
-                        ing.RutaContrato(txtorigen.Text + "-" + txtdestino.Text, " ", anio, form_nuevo_cliente.nomc);
+                            /****** RUTA CONTRATO ******/
+                            ing.RutaContrato(txtorigen.Text + "-" + txtdestino.Text, " ", anio, form_nuevo_cliente.nomc);
 
 
-                        /****** RUTA VEHICULO HORARIO ******/
-                        if (dtphoras1.Checked)
-                            ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, int.Parse(txtpa.Text));
+                            /****** RUTA VEHICULO HORARIO ******/
+                            if (dtphoras1.Checked)
+                                ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, int.Parse(txtpa.Text));
 
-                        if (dtphoras2.Checked)
-                            ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text, int.Parse(txtpa.Text));
+                            if (dtphoras2.Checked)
+                                ing.AsignarHoraVeh(txtorigen.Text + "-" + txtdestino.Text, combveh2.Text, dtphoras2.Text, dtphorae2.Text, int.Parse(txtpa.Text));
 
-                        MessageBox.Show("Contrato creado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                            MessageBox.Show("Contrato creado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        form_nuevo_cliente cli1 = new form_nuevo_cliente();
-                        Estetics.AbrirFormularios(cli1, cliente3_panel);
+                            form_nuevo_cliente cli1 = new form_nuevo_cliente();
+                            Estetics.AbrirFormularios(cli1, cliente3_panel);
 
-                        this.Close(); 
+                            this.Close();
+                        }
                     }
                 }
             }
