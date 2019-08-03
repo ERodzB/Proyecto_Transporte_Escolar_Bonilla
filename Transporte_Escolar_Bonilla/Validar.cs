@@ -219,6 +219,50 @@ namespace Transporte_Escolar_Bonilla
             return x;
         }
 
+        //Verificar Mantenimiento Existente
+        public int VerificarMantenimiento(int cod, string nom, int opcion)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarMantenimiento", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", cod);
+                cmd.Parameters.AddWithValue("@nombre", nom);
+                cmd.Parameters.AddWithValue("@opcion", opcion);
+
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+
+            return x;
+        }
+
+        //Verificar Cambios Realizados
+        public int CambiosMantenimiento(string nom, string desc)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("CambiosMantenimiento", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;               
+                cmd.Parameters.AddWithValue("@nombre", nom);
+                cmd.Parameters.AddWithValue("@descripcion", desc);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+
+            return x;
+        }
+
         public int validarContrasena(string cont, string ID)
         {
             x = 0;

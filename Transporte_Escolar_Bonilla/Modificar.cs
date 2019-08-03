@@ -284,5 +284,24 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
+        //Modificar Tipo de Mantenimiento
+        public void ModificarMantenimiento(int cod, string nom, string desc)
+        {
+            try
+            {
+                cmd = new SqlCommand("ModificarMantenimiento", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", cod);
+                cmd.Parameters.AddWithValue("@nombre", nom);
+                cmd.Parameters.AddWithValue("@descripcion", desc);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+
     }
 }

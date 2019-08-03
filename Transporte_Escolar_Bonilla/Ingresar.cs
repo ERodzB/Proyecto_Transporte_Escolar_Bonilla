@@ -238,6 +238,26 @@ namespace Transporte_Escolar_Bonilla
             mensaje = "Mantenimiento ingresado con Éxito";
         }
 
+
+        //Ingreso de Nuevo Tipo de Mantenimiento
+        public void NuevoTipoMant(string nom, string desc)
+        {
+            try
+            {
+                cmd = new SqlCommand("NuevoTipoMantenimiento", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombre", nom);
+                cmd.Parameters.AddWithValue("@descripcion", desc);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+        }
+
         public void login(string Codigo, string password)
         {
 

@@ -260,6 +260,35 @@ namespace Transporte_Escolar_Bonilla
         }
 
 
+        //Llenar ComboBox de Mantenimientos
+        public DataTable Combobox_Mant()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("ComboboxMant", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
+
+        //Consultar Datos Mantenimiento Seleccionado 
+        public void DatosMantenimiento(int cod, TextBox nom, TextBox desc)
+        {
+            try
+            {
+                table = new DataTable();
+                Adapter = new SqlDataAdapter("DatosMantenimiento", conexionBD);
+                Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                Adapter.SelectCommand.Parameters.AddWithValue("@codigo", cod);
+                Adapter.Fill(table);
+
+                nom.Text = table.Rows[0][0].ToString();
+                desc.Text = table.Rows[0][1].ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Codigo que recibe: " + cod + "\n\nERROR: " + ex);
+            }
+        }
 
         public DataTable llenarPerfiles()
         {
