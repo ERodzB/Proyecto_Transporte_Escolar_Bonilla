@@ -1264,6 +1264,43 @@ begin
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 end
 GO
+/*------------------------------Procedimiento de Notificaciones -----------------------------------*/
+create procedure Notificaciones
+as
+begin
+	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
+	' esta en mantenimiento de ', tp.Nombre_Mantenimiento , ' hace ',
+	DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE()),' dias') as 'Notificaciones' from Vehiculos v
+	inner join Mantenimientos m on v.Codigo_Vehiculo = m.Codigo_Vehiculo
+	inner join Tipo_Mantenimientos tp on tp.[Codigo_Tipo_Mantenimiento] =[Tipo_Mantenimiento]
+	where v.Estado_Vehiculo = 701 and  DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE())!=0
+	union
+	select CONCAT('El cliente ',cl.Nombre_Cliente,' no ha pagado el mes de ',DATENAME(month,getdate()),' del contrato ', c.Codigo_Contrato,' de Tipo ', tp.Tipo_Contrato) from Contratos c
+	left join Cliente cl on c.Cliente_Contrato=cl.Codigo_Cliente
+	left join Recibos r on r.Codigo_Contrato = c.Codigo_Contrato
+	left join TipoContrato tp on tp.Cod_Contrato=c.Tipo_Contrato
+	group by c.Codigo_Contrato, cl.Nombre_Cliente, c.Fecha_Inicio_Contrato, C.Cuotas_Mensuales, tp.Tipo_Contrato
+	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo),c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo)
+	union
+	select CONCAT('Ya se acerca la fecha de Pago del mes de ',DATENAME(MONTH,DATEADD(month,1,getdate())),' hacelo saber a tus clientes')
+	where DATEPART(DAY,GETDATE())>=25
+	union
+	select CONCAT('El Conductor/a ',e.Nombre_Empleado,' se le aproxima la fecha de vencimiento de su licencia el ', DATEPART(day,e.Fecha_Vencimiento_Licencia),' de ',DATENAME(month, e.Fecha_Vencimiento_Licencia), ' ',DATEPART(year,e.Fecha_Vencimiento_Licencia)) from Empleado e
+	inner join Puesto p on e.Puesto_Empleado=p.Codigo_Puesto
+	where p.Codigo_Puesto=1 and e.Fecha_Vencimiento_Licencia is not null and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,e.Fecha_Vencimiento_Licencia) AND DATEPART(YEAR,GETDATE())=DATEPART(YEAR,e.Fecha_Vencimiento_Licencia) and DATEPART(DAY,GETDATE())<DATEPART(DAY,e.Fecha_Vencimiento_Licencia)
+	union
+	select CONCAT('El Conductor/a ',e.Nombre_Empleado,' tiene su licencia vencidad desde el ', DATEPART(day,e.Fecha_Vencimiento_Licencia),' de ',DATENAME(month, e.Fecha_Vencimiento_Licencia), ' ',DATEPART(year,e.Fecha_Vencimiento_Licencia)) from Empleado e
+	inner join Puesto p on e.Puesto_Empleado=p.Codigo_Puesto
+	where p.Codigo_Puesto=1 and DATEPART(YEAR,GETDATE())>=DATEPART(YEAR,e.Fecha_Vencimiento_Licencia) and (DATEPART(DAY,GETDATE())>=DATEPART(DAY,e.Fecha_Vencimiento_Licencia) or DATEPART(MONTH,GETDATE())>DATEPART(MONTH,e.Fecha_Vencimiento_Licencia))
+	union
+	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,' se le aproxima la fecha de vencimiento de su permiso el ', DATEPART(day,v.Vencimiento_Permiso),' de ',DATENAME(month, v.Vencimiento_Permiso), ' ',DATEPART(year,v.Vencimiento_Permiso)) from Vehiculos v
+	where DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,v.Vencimiento_Permiso) AND DATEPART(YEAR,GETDATE())=DATEPART(YEAR,v.Vencimiento_Permiso) and DATEPART(DAY,GETDATE())>DATEPART(DAY,v.Vencimiento_Permiso)
+	union
+	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,' tiene su permiso vencido desde el ', DATEPART(day,v.Vencimiento_Permiso),' de ',DATENAME(month, v.Vencimiento_Permiso), ' ',DATEPART(year,v.Vencimiento_Permiso)) from Vehiculos v
+	where DATEPART(YEAR,GETDATE())>=DATEPART(YEAR,v.Vencimiento_Permiso) and DATEPART(DAY,GETDATE())>=DATEPART(DAY,v.Vencimiento_Permiso) and DATEPART(MONTH,GETDATE())>DATEPART(MONTH,v.Vencimiento_Permiso)
+end
+go
+GO
 
 
 

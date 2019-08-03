@@ -19,13 +19,11 @@ namespace Transporte_Escolar_Bonilla
         int contrasena_key_press = 0;
 
         Estetica Estetics = new Estetica();//Clase que manejara lo estetico de el proyecto
+        Consultar consulto = new Consultar();
         public Principal_frm()
         {
             InitializeComponent();
             //bar_panel.Visible = false;
-            
-            
-
         }
         
        
@@ -130,6 +128,8 @@ namespace Transporte_Escolar_Bonilla
                 usuarios_btn.Enabled = true;
                 bar_panel.Visible = true;
                 close_btn.Enabled = true;
+                btnNoti.Visible = true;
+           
             }
         }
 
@@ -187,9 +187,10 @@ namespace Transporte_Escolar_Bonilla
             Estetics.AbrirFormularios(bmodulos,center_panel);
         }
 
-        private void Center_panel_Paint(object sender, PaintEventArgs e)
+        private void BtnNoti_Click(object sender, EventArgs e)
         {
-
+            frmNotificaciones noti = new frmNotificaciones();
+            Estetics.AbrirFormularios(noti, center_panel);
         }
     }
 }

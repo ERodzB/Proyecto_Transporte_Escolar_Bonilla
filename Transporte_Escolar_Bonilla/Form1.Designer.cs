@@ -49,6 +49,7 @@
             this.conductores_btn = new System.Windows.Forms.Button();
             this.unidades_btn = new System.Windows.Forms.Button();
             this.rutas_btn = new System.Windows.Forms.Button();
+            this.btnNoti = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.salir_btn = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
@@ -59,6 +60,7 @@
             // top_panel
             // 
             this.top_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.top_panel.Controls.Add(this.btnNoti);
             this.top_panel.Controls.Add(this.button1);
             this.top_panel.Controls.Add(this.salir_btn);
             this.top_panel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -85,7 +87,6 @@
             this.center_panel.Name = "center_panel";
             this.center_panel.Size = new System.Drawing.Size(1106, 745);
             this.center_panel.TabIndex = 3;
-            this.center_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Center_panel_Paint);
             // 
             // enviar_linklbl
             // 
@@ -363,6 +364,23 @@
             this.rutas_btn.UseVisualStyleBackColor = false;
             this.rutas_btn.Click += new System.EventHandler(this.Rutas_btn_Click);
             // 
+            // btnNoti
+            // 
+            this.btnNoti.BackColor = System.Drawing.Color.Transparent;
+            this.btnNoti.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.musical_bell_outline;
+            this.btnNoti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNoti.FlatAppearance.BorderSize = 0;
+            this.btnNoti.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnNoti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnNoti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoti.Location = new System.Drawing.Point(1302, 8);
+            this.btnNoti.Name = "btnNoti";
+            this.btnNoti.Size = new System.Drawing.Size(24, 21);
+            this.btnNoti.TabIndex = 2;
+            this.btnNoti.UseVisualStyleBackColor = false;
+            this.btnNoti.Visible = false;
+            this.btnNoti.Click += new System.EventHandler(this.BtnNoti_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -444,6 +462,7 @@
         private System.Windows.Forms.TextBox userLogin_tb;
         private System.Windows.Forms.Label userLogin_lbl;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNoti;
     }
 }
 

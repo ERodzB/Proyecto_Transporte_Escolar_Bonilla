@@ -232,6 +232,12 @@
     <Compile Include="Modificar_UnidadFrm.Designer.cs">
       <DependentUpon>Modificar_UnidadFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotificaciones.Designer.cs">
+      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="nuevocontrato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     <EmbeddedResource Include="form_nuevo_clienteT.resx">
       <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNotificaciones.resx">
+      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modficar_Empleado.resx">
       <DependentUpon>Modficar_Empleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -437,6 +446,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musical-bell-outline.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

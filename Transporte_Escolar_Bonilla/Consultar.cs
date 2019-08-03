@@ -729,7 +729,14 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table;
         }
-
+        public DataTable Notificaciones()
+        {
+            table = new DataTable();
+            Adapter = new SqlDataAdapter("Notificaciones", conexionBD);
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            Adapter.Fill(table);
+            return table;
+        }
 
 
     }
