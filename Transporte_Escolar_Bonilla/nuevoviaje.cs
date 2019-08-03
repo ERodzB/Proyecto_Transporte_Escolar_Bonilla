@@ -193,9 +193,6 @@ namespace Transporte_Escolar_Bonilla
             if (txtpa.Text == "")
                 contc++;
 
-            if (txttotal.Text == "" || double.Parse(txttotal.Text) <= 0)
-                contc++;
-
             if (txtpa.Text == "" || int.Parse(txtpa.Text) <= 0)
                 contc++;
 
@@ -204,7 +201,7 @@ namespace Transporte_Escolar_Bonilla
                 contc++;
             
             //Validar anticipo no mayor que monto total
-            if (Double.Parse(txtant.Text) > Double.Parse(txttotal.Text))
+            if((txtant.Text == "" || double.Parse(txtant.Text) <= 0) || (txttotal.Text == "" || double.Parse(txttotal.Text) <= 0) || Double.Parse(txtant.Text) > Double.Parse(txttotal.Text))
                contc++; 
 
             if (contc > 0)

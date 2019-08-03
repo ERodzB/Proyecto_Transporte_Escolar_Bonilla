@@ -53,7 +53,8 @@ namespace Transporte_Escolar_Bonilla
         }
 
         private void DgvDatosContrato_CellClick(object sender, DataGridViewCellEventArgs e)
-        {            
+        {
+            btnModificar.Enabled = true;
             if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() =="Temporal")
             {                
                 txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();

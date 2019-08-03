@@ -44,6 +44,7 @@ namespace Transporte_Escolar_Bonilla
         {
             codc = dgvContrato.CurrentRow.Cells[0].Value.ToString();
             nombrecli = dgvContrato.CurrentRow.Cells[1].Value.ToString();
+            btnSeleccionar.Enabled = true;
         }
 
         public contrato_panel()

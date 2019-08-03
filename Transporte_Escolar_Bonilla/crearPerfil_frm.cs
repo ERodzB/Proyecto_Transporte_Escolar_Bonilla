@@ -22,17 +22,20 @@ namespace Transporte_Escolar_Bonilla
             Ingresar ingreso = new Ingresar();
             Validar valido = new Validar();
 
-            if (valido.validarPerfil(nombrePerfil_tb.Text) == 0)
+            if (nombrePerfil_tb.Text!="" && desPerfil_tb.Text!="" && nivelAcceso_cmb.Text!="")
             {
-                ingreso.NuevoPerfil(nivelAcceso_cmb.SelectedIndex+1, nombrePerfil_tb.Text, desPerfil_tb.Text);
-                nivelAcceso_cmb.SelectedIndex = -1;
-                nombrePerfil_tb.Clear();
-                desPerfil_tb.Clear();
+                if (valido.validarPerfil(nombrePerfil_tb.Text) == 0)
+                {
+                    ingreso.NuevoPerfil(nivelAcceso_cmb.SelectedIndex + 1, nombrePerfil_tb.Text, desPerfil_tb.Text);
+                    nivelAcceso_cmb.SelectedIndex = -1;
+                    nombrePerfil_tb.Clear();
+                    desPerfil_tb.Clear();
 
-            }
-            else
-            {
-                MessageBox.Show("Ya existe ese perfil");
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe ese perfil");
+                }
             }
         }
 

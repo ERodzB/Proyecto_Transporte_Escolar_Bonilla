@@ -29,7 +29,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 if (txtNombre.Text!="" && txtDireccion.Text!="" && txtTelefono.Text!="" && txtCorreo.Text!="")
                 {
-                    if (txtDireccion.TextLength < 15)
+                    if (txtDireccion.TextLength >= 15)
                     {
                         if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
@@ -66,6 +66,8 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvCargaCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnModificar.Enabled = true;
+
             txtIdentidad.Text = dgvCargaCliente.CurrentRow.Cells[0].Value.ToString();
             txtNombre.Text = dgvCargaCliente.CurrentRow.Cells[1].Value.ToString();
             txtDireccion.Text = dgvCargaCliente.CurrentRow.Cells[2].Value.ToString();
