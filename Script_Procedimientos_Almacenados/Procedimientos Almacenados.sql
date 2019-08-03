@@ -1393,3 +1393,47 @@ begin
 end
 GO
 
+/*****-----------------------Actualizar Matricula -----------------------------------*/
+create procedure ActualizacionMatricula
+	@Codigo_Vehiculo_Anterior varchar(50),
+	@Codigo_Vehiculo_Nuevo varchar(50)
+	as
+	begin
+
+		insert into [dbo].[Vehiculos]
+		select @Codigo_Vehiculo_Nuevo,v.Tipo_Vehiculo,v.Anio_Vehiculo,v.Marca_Vehiculo,v.Modelo_Vehiculo, v.Capacidad_Vehiculo
+		,v.Transmision_Vehiculo, v.Combustible_Vehiculo, v.Color_Vehiculo, v.Anio_Adquisicion, v.Estado_Vehiculo, v.Emision_Permiso, v.Vencimiento_Permiso, v.Responsable_Vehiculo, @Codigo_Vehiculo_Anterior from Vehiculos v
+		where @Codigo_Vehiculo_Anterior=v.Codigo_Vehiculo
+
+		update [dbo].[Mantenimientos]
+		set
+		Codigo_Mantenimiento =	m.Codigo_Mantenimiento,
+		Tipo_Mantenimiento = m.Tipo_Mantenimiento,
+		Fecha_Mantenimiento = m.Fecha_Mantenimiento,
+		Codigo_Vehiculo=@Codigo_Vehiculo_Nuevo,
+		Costo_Mantenimiento=m.Costo_Mantenimiento,
+		Estado_Mantenimiento=m.Estado_Mantenimiento
+		from Mantenimientos m
+		where m.Codigo_Vehiculo=@Codigo_Vehiculo_Anterior
+
+		update [dbo].[Vehiculos_Rutas]
+		set
+		Codigo_Ruta=vr.Codigo_Ruta,
+		Codigo_Vehiculo=@Codigo_Vehiculo_Nuevo,
+		Horario_Salida=vr.Horario_Salida,
+		Horario_Entrada=vr.Horario_Entrada,
+		Cantidad_Pasajeros_Actuales=vr.Cantidad_Pasajeros_Actuales
+		from [dbo].[Vehiculos_Rutas] vr
+		where vr.Codigo_Vehiculo=@Codigo_Vehiculo_Anterior
+
+		delete from[dbo].[Vehiculos] 
+		where Codigo_Vehiculo=@Codigo_Vehiculo_Anterior
+		
+
+		delete from Vehiculos_Rutas
+		where Codigo_Vehiculo=@Codigo_Vehiculo_Anterior
+
+		delete from Mantenimientos
+		where Codigo_Vehiculo=@Codigo_Vehiculo_Anterior
+
+	end
