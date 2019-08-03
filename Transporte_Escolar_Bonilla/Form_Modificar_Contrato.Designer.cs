@@ -59,6 +59,7 @@
             this.dgvContrato.Name = "dgvContrato";
             this.dgvContrato.ReadOnly = true;
             this.dgvContrato.RowHeadersWidth = 51;
+            this.dgvContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContrato.Size = new System.Drawing.Size(329, 348);
             this.dgvContrato.TabIndex = 4;
             this.dgvContrato.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContrato_CellClick_1);

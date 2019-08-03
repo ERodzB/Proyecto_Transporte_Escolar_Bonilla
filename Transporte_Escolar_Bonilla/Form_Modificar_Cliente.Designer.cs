@@ -190,6 +190,7 @@
             this.dgvCargaCliente.Name = "dgvCargaCliente";
             this.dgvCargaCliente.ReadOnly = true;
             this.dgvCargaCliente.RowHeadersWidth = 51;
+            this.dgvCargaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCargaCliente.Size = new System.Drawing.Size(737, 185);
             this.dgvCargaCliente.TabIndex = 12;
             this.dgvCargaCliente.TabStop = false;

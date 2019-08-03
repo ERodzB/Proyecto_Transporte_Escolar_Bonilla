@@ -62,7 +62,7 @@
             this.mod_unidad_panel.Controls.Add(this.label1);
             this.mod_unidad_panel.Controls.Add(this.dgvVehiculos);
             this.mod_unidad_panel.Location = new System.Drawing.Point(0, 0);
-            this.mod_unidad_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mod_unidad_panel.Margin = new System.Windows.Forms.Padding(4);
             this.mod_unidad_panel.Name = "mod_unidad_panel";
             this.mod_unidad_panel.Size = new System.Drawing.Size(1088, 603);
             this.mod_unidad_panel.TabIndex = 0;
@@ -73,7 +73,7 @@
             this.dtpVencimiento.Enabled = false;
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVencimiento.Location = new System.Drawing.Point(461, 418);
-            this.dtpVencimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpVencimiento.Name = "dtpVencimiento";
             this.dtpVencimiento.Size = new System.Drawing.Size(197, 22);
             this.dtpVencimiento.TabIndex = 12;
@@ -108,7 +108,7 @@
             this.cmbEstadoVehiculo.Enabled = false;
             this.cmbEstadoVehiculo.FormattingEnabled = true;
             this.cmbEstadoVehiculo.Location = new System.Drawing.Point(107, 502);
-            this.cmbEstadoVehiculo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstadoVehiculo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstadoVehiculo.Name = "cmbEstadoVehiculo";
             this.cmbEstadoVehiculo.Size = new System.Drawing.Size(267, 24);
             this.cmbEstadoVehiculo.TabIndex = 9;
@@ -141,7 +141,7 @@
             // 
             this.txtColor.Enabled = false;
             this.txtColor.Location = new System.Drawing.Point(461, 324);
-            this.txtColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtColor.Margin = new System.Windows.Forms.Padding(4);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(267, 22);
             this.txtColor.TabIndex = 6;
@@ -164,7 +164,7 @@
             this.dtpEmision.Enabled = false;
             this.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEmision.Location = new System.Drawing.Point(107, 418);
-            this.dtpEmision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEmision.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEmision.Name = "dtpEmision";
             this.dtpEmision.Size = new System.Drawing.Size(197, 22);
             this.dtpEmision.TabIndex = 4;
@@ -175,7 +175,7 @@
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.btnModificar.Location = new System.Drawing.Point(803, 508);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(133, 60);
             this.btnModificar.TabIndex = 3;
@@ -187,7 +187,7 @@
             // 
             this.txtPlaca.Enabled = false;
             this.txtPlaca.Location = new System.Drawing.Point(107, 324);
-            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(267, 22);
             this.txtPlaca.TabIndex = 2;
@@ -208,10 +208,11 @@
             // 
             this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehiculos.Location = new System.Drawing.Point(107, 86);
-            this.dgvVehiculos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvVehiculos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.ReadOnly = true;
             this.dgvVehiculos.RowHeadersWidth = 51;
+            this.dgvVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVehiculos.Size = new System.Drawing.Size(829, 185);
             this.dgvVehiculos.TabIndex = 0;
             this.dgvVehiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVehiculos_CellClick);
@@ -224,7 +225,7 @@
             this.ClientSize = new System.Drawing.Size(1087, 602);
             this.Controls.Add(this.mod_unidad_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Modificar_UnidadFrm";
             this.Text = "Modificar_UnidadFrm";
             this.Load += new System.EventHandler(this.Modificar_UnidadFrm_Load);
