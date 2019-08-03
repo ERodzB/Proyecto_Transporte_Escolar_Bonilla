@@ -1270,7 +1270,7 @@ as
 begin
 	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
 	' esta en mantenimiento de ', tp.Nombre_Mantenimiento , ' hace ',
-	DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE()),' dias') from Vehiculos v
+	DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE()),' dias') as 'Notificaciones' from Vehiculos v
 	inner join Mantenimientos m on v.Codigo_Vehiculo = m.Codigo_Vehiculo
 	inner join Tipo_Mantenimientos tp on tp.[Codigo_Tipo_Mantenimiento] =[Tipo_Mantenimiento]
 	where v.Estado_Vehiculo = 701 and  DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE())!=0
