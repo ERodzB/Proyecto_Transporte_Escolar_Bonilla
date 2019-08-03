@@ -198,6 +198,12 @@
     <Compile Include="form_nuevo_clienteT.Designer.cs">
       <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNuevaPlaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevaPlaca.Designer.cs">
+      <DependentUpon>frmNuevaPlaca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generar_Contrato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_nuevo_clienteT.resx">
       <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevaPlaca.resx">
+      <DependentUpon>frmNuevaPlaca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Generar_Contrato.resx">
       <DependentUpon>Generar_Contrato.cs</DependentUpon>

@@ -302,6 +302,22 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex);
             }
         }
-
+        public void ActualizarMatricula(string Codigo_Vehiculo_Anterior, string Codigo_Vehiculo_Nuevo)
+        {
+            try
+            {
+                cmd = new SqlCommand("ActualizacionMatricula", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo_Anterior", Codigo_Vehiculo_Anterior);
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo_Nuevo", Codigo_Vehiculo_Nuevo);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cambios realizado con exitos", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+    
     }
 }

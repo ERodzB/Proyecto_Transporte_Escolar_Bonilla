@@ -87,5 +87,11 @@ namespace Transporte_Escolar_Bonilla
             form_mantenimientos mant = new form_mantenimientos();
             estetica.AbrirFormularios(mant, mainUnidades_panel);
         }
+
+        private void BtnNuevaPlaca_Click(object sender, EventArgs e)
+        {
+            frmNuevaPlaca nplaca = new frmNuevaPlaca();
+            estetica.AbrirFormularios(nplaca, mainUnidades_panel);
+        }
     }
 }
