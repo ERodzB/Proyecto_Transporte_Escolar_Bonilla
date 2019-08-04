@@ -40,7 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contratos_dgv)).BeginInit();
             this.SuspendLayout();
@@ -61,14 +60,7 @@
             this.cliente_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cliente_dgv.Size = new System.Drawing.Size(337, 184);
             this.cliente_dgv.TabIndex = 2;
-            this.cliente_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cliente_dgv_CellContentClick);
-            this.cliente_dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cliente_dgv_CellDoubleClick);
             this.cliente_dgv.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Cliente_dgv_CellMouseClick);
-            this.cliente_dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Cliente_dgv_RowHeaderMouseClick);
-            this.cliente_dgv.SelectionChanged += new System.EventHandler(this.Cliente_dgv_SelectionChanged);
-            this.cliente_dgv.TabIndexChanged += new System.EventHandler(this.Cliente_dgv_TabIndexChanged);
-            this.cliente_dgv.Click += new System.EventHandler(this.Cliente_dgv_Click);
-            this.cliente_dgv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Cliente_dgv_MouseClick);
             // 
             // contratos_dgv
             // 
@@ -207,25 +199,12 @@
             this.label14.TabIndex = 268;
             this.label14.Text = "Pagos de Contrato Mensual";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(404, 193);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(526, 44);
-            this.label4.TabIndex = 269;
-            this.label4.Text = "Pagos de Contrato Mensual";
-            // 
             // pagos_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1108, 650);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -263,6 +242,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label4;
     }
 }

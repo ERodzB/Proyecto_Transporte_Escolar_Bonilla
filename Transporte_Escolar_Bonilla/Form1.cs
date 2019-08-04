@@ -118,6 +118,7 @@ namespace Transporte_Escolar_Bonilla
             ingreso.login(userLogin_tb.Text, contra_tb.Text);
             if (ConexionBD.Acceso == 1 || ConexionBD.Acceso == 2 || ConexionBD.Acceso == 3)
             {
+                ingreso.ActualizarContratos();
                 center_panel.Controls.Clear();
                 button1.Visible = true;
                 rutas_btn.Enabled = true;
@@ -191,6 +192,11 @@ namespace Transporte_Escolar_Bonilla
         {
             frmNotificaciones noti = new frmNotificaciones();
             Estetics.AbrirFormularios(noti, center_panel);
+        }
+
+        private void Center_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

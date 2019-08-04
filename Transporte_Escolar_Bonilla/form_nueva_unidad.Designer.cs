@@ -77,9 +77,9 @@
             this.label12.Location = new System.Drawing.Point(60, 96);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 33);
+            this.label12.Size = new System.Drawing.Size(90, 33);
             this.label12.TabIndex = 204;
-            this.label12.Text = "Matricula";
+            this.label12.Text = "Placa";
             // 
             // label2
             // 

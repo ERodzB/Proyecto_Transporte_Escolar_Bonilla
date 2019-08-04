@@ -473,5 +473,32 @@
   <ItemGroup>
     <None Include="Resources\musical-bell-outline.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unidades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contratos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rutas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contratos1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

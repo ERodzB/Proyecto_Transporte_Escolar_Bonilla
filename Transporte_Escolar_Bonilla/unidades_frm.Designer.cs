@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.unidadesTop_panel = new System.Windows.Forms.Panel();
+            this.btnNuevaPlaca = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.modificarUnidad_btn = new System.Windows.Forms.Button();
             this.asignarUnidad_btn = new System.Windows.Forms.Button();
@@ -36,8 +37,11 @@
             this.mantenimientoUnidades_btn = new System.Windows.Forms.Button();
             this.consultasUnidades_btn = new System.Windows.Forms.Button();
             this.mainUnidades_panel = new System.Windows.Forms.Panel();
-            this.btnNuevaPlaca = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.unidadesTop_panel.SuspendLayout();
+            this.mainUnidades_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // unidadesTop_panel
@@ -56,6 +60,23 @@
             this.unidadesTop_panel.Name = "unidadesTop_panel";
             this.unidadesTop_panel.Size = new System.Drawing.Size(1108, 95);
             this.unidadesTop_panel.TabIndex = 0;
+            // 
+            // btnNuevaPlaca
+            // 
+            this.btnNuevaPlaca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
+            this.btnNuevaPlaca.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNuevaPlaca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(129)))));
+            this.btnNuevaPlaca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaPlaca.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaPlaca.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaPlaca.Location = new System.Drawing.Point(950, 0);
+            this.btnNuevaPlaca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevaPlaca.Name = "btnNuevaPlaca";
+            this.btnNuevaPlaca.Size = new System.Drawing.Size(163, 95);
+            this.btnNuevaPlaca.TabIndex = 7;
+            this.btnNuevaPlaca.Text = "Nueva Placa";
+            this.btnNuevaPlaca.UseVisualStyleBackColor = false;
+            this.btnNuevaPlaca.Click += new System.EventHandler(this.BtnNuevaPlaca_Click);
             // 
             // button1
             // 
@@ -161,6 +182,8 @@
             // 
             // mainUnidades_panel
             // 
+            this.mainUnidades_panel.Controls.Add(this.label1);
+            this.mainUnidades_panel.Controls.Add(this.pictureBox1);
             this.mainUnidades_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainUnidades_panel.Location = new System.Drawing.Point(0, 95);
             this.mainUnidades_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -169,22 +192,29 @@
             this.mainUnidades_panel.TabIndex = 6;
             this.mainUnidades_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainUnidades_panel_Paint);
             // 
-            // btnNuevaPlaca
+            // label1
             // 
-            this.btnNuevaPlaca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
-            this.btnNuevaPlaca.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNuevaPlaca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(129)))));
-            this.btnNuevaPlaca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaPlaca.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaPlaca.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaPlaca.Location = new System.Drawing.Point(950, 0);
-            this.btnNuevaPlaca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNuevaPlaca.Name = "btnNuevaPlaca";
-            this.btnNuevaPlaca.Size = new System.Drawing.Size(163, 95);
-            this.btnNuevaPlaca.TabIndex = 7;
-            this.btnNuevaPlaca.Text = "Nueva Placa";
-            this.btnNuevaPlaca.UseVisualStyleBackColor = false;
-            this.btnNuevaPlaca.Click += new System.EventHandler(this.BtnNuevaPlaca_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(46, 505);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(954, 80);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Bienvenido al Módulo de Unidades\r\nSeleccione la acción que desea realizar del men" +
+    "ú superior\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.unidades;
+            this.pictureBox1.Location = new System.Drawing.Point(313, 53);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(427, 423);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // unidades_frm
             // 
@@ -199,6 +229,9 @@
             this.Name = "unidades_frm";
             this.Text = "unidades_frm";
             this.unidadesTop_panel.ResumeLayout(false);
+            this.mainUnidades_panel.ResumeLayout(false);
+            this.mainUnidades_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +247,7 @@
         private System.Windows.Forms.Panel mainUnidades_panel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnNuevaPlaca;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

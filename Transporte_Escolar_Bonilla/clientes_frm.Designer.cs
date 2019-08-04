@@ -48,9 +48,9 @@
             this.clienteTop_panel.Controls.Add(this.consultasClientes_btn);
             this.clienteTop_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.clienteTop_panel.Location = new System.Drawing.Point(0, 0);
-            this.clienteTop_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clienteTop_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clienteTop_panel.Name = "clienteTop_panel";
-            this.clienteTop_panel.Size = new System.Drawing.Size(831, 77);
+            this.clienteTop_panel.Size = new System.Drawing.Size(1108, 95);
             this.clienteTop_panel.TabIndex = 0;
             // 
             // modificarCliente_btn
@@ -61,10 +61,10 @@
             this.modificarCliente_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificarCliente_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificarCliente_btn.ForeColor = System.Drawing.Color.White;
-            this.modificarCliente_btn.Location = new System.Drawing.Point(264, 0);
-            this.modificarCliente_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modificarCliente_btn.Location = new System.Drawing.Point(352, 0);
+            this.modificarCliente_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modificarCliente_btn.Name = "modificarCliente_btn";
-            this.modificarCliente_btn.Size = new System.Drawing.Size(132, 77);
+            this.modificarCliente_btn.Size = new System.Drawing.Size(176, 95);
             this.modificarCliente_btn.TabIndex = 6;
             this.modificarCliente_btn.Text = "Modificar Clientes";
             this.modificarCliente_btn.UseVisualStyleBackColor = false;
@@ -78,10 +78,10 @@
             this.nuevoCliente_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuevoCliente_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoCliente_btn.ForeColor = System.Drawing.Color.White;
-            this.nuevoCliente_btn.Location = new System.Drawing.Point(132, 0);
-            this.nuevoCliente_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nuevoCliente_btn.Location = new System.Drawing.Point(176, 0);
+            this.nuevoCliente_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nuevoCliente_btn.Name = "nuevoCliente_btn";
-            this.nuevoCliente_btn.Size = new System.Drawing.Size(132, 77);
+            this.nuevoCliente_btn.Size = new System.Drawing.Size(176, 95);
             this.nuevoCliente_btn.TabIndex = 5;
             this.nuevoCliente_btn.Text = "Nuevo Cliente";
             this.nuevoCliente_btn.UseVisualStyleBackColor = false;
@@ -96,9 +96,9 @@
             this.consultasClientes_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasClientes_btn.ForeColor = System.Drawing.Color.White;
             this.consultasClientes_btn.Location = new System.Drawing.Point(0, 0);
-            this.consultasClientes_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.consultasClientes_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.consultasClientes_btn.Name = "consultasClientes_btn";
-            this.consultasClientes_btn.Size = new System.Drawing.Size(132, 77);
+            this.consultasClientes_btn.Size = new System.Drawing.Size(176, 95);
             this.consultasClientes_btn.TabIndex = 4;
             this.consultasClientes_btn.Text = "Consultas";
             this.consultasClientes_btn.UseVisualStyleBackColor = false;
@@ -109,10 +109,10 @@
             this.clienteMain_panel.Controls.Add(this.label1);
             this.clienteMain_panel.Controls.Add(this.pictureBox1);
             this.clienteMain_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clienteMain_panel.Location = new System.Drawing.Point(0, 77);
-            this.clienteMain_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clienteMain_panel.Location = new System.Drawing.Point(0, 95);
+            this.clienteMain_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clienteMain_panel.Name = "clienteMain_panel";
-            this.clienteMain_panel.Size = new System.Drawing.Size(831, 528);
+            this.clienteMain_panel.Size = new System.Drawing.Size(1108, 650);
             this.clienteMain_panel.TabIndex = 7;
             // 
             // label1
@@ -120,10 +120,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(28, 404);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(37, 497);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(783, 66);
+            this.label1.Size = new System.Drawing.Size(954, 80);
             this.label1.TabIndex = 4;
             this.label1.Text = "Bienvenido al Módulo de Clientes\r\nSeleccione la acción que desea realizar del men" +
     "ú superior\r\n";
@@ -131,25 +130,25 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.community_icon_white;
-            this.pictureBox1.Location = new System.Drawing.Point(252, 70);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.Usuarios;
+            this.pictureBox1.Location = new System.Drawing.Point(323, 48);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 344);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(427, 423);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // clientes_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(831, 605);
+            this.ClientSize = new System.Drawing.Size(1108, 745);
             this.Controls.Add(this.clienteMain_panel);
             this.Controls.Add(this.clienteTop_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "clientes_frm";
             this.Text = "clientes_frm";
             this.clienteTop_panel.ResumeLayout(false);

@@ -162,11 +162,11 @@
             // 
             // PB1
             // 
-            this.PB1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources._5b59571fbd286354a8e2f1df_Icon_group;
-            this.PB1.Location = new System.Drawing.Point(336, 86);
+            this.PB1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.usuarios1;
+            this.PB1.Location = new System.Drawing.Point(327, 111);
             this.PB1.Name = "PB1";
             this.PB1.Size = new System.Drawing.Size(426, 323);
-            this.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB1.TabIndex = 0;
             this.PB1.TabStop = false;
             // 

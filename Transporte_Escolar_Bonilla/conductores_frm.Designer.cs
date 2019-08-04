@@ -152,7 +152,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(74, 472);
+            this.label1.Location = new System.Drawing.Point(34, 472);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(954, 80);
             this.label1.TabIndex = 9;
@@ -162,12 +162,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.makefg;
-            this.pictureBox1.Location = new System.Drawing.Point(339, 47);
+            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.empleados;
+            this.pictureBox1.Location = new System.Drawing.Point(320, 47);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(427, 423);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 

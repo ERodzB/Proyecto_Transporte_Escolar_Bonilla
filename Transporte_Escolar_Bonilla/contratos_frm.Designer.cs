@@ -36,8 +36,8 @@
             this.Contratos_btn = new System.Windows.Forms.Button();
             this.consultaContratos_btn = new System.Windows.Forms.Button();
             this.contratosMain_panel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contratosTop_panel.SuspendLayout();
             this.contratosMain_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -172,23 +172,12 @@
             this.contratosMain_panel.Size = new System.Drawing.Size(1108, 650);
             this.contratosMain_panel.TabIndex = 7;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.contract_icon_white_01;
-            this.pictureBox1.Location = new System.Drawing.Point(336, 86);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(405, 379);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(37, 497);
+            this.label1.Location = new System.Drawing.Point(54, 495);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(954, 80);
             this.label1.TabIndex = 5;
@@ -196,6 +185,17 @@
     "nú superior\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.contratos1;
+            this.pictureBox1.Location = new System.Drawing.Point(393, 120);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(331, 307);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // contratos_frm
             // 

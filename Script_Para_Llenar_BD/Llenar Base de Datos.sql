@@ -163,8 +163,8 @@ INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VAL
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (2, N'Medio', N'Acceso de consultor')
 INSERT [dbo].[Acceso] ([Codigo_Acceso], [Tipo_Acceso], [Descripcion_Acceso]) VALUES (3, N'Bajo', N'Acceso Superficial')
 GO
-INSERT [dbo].[Mantenimientos] ([Codigo_Mantenimiento], [Tipo_Mantenimiento], [Fecha_Mantenimiento], [Codigo_Vehiculo], [Costo_Mantenimiento], [Estado_Mantenimiento]) VALUES (1, 1, CAST(N'2019-01-27' AS Date), N'ATB9978', 1500.0000, 402)
-INSERT [dbo].[Mantenimientos] ([Codigo_Mantenimiento], [Tipo_Mantenimiento], [Fecha_Mantenimiento], [Codigo_Vehiculo], [Costo_Mantenimiento], [Estado_Mantenimiento]) VALUES (2, 5, CAST(N'2019-01-27' AS Date), N'ATH6757', 9000.0000, 403)
+INSERT [dbo].[Mantenimientos] ([Codigo_Mantenimiento], [Tipo_Mantenimiento], [Fecha_Mantenimiento], [Codigo_Vehiculo], [Costo_Mantenimiento]) VALUES (1, 1, CAST(N'2019-01-27' AS Date), N'ATB9978', 1500.0000)
+INSERT [dbo].[Mantenimientos] ([Codigo_Mantenimiento], [Tipo_Mantenimiento], [Fecha_Mantenimiento], [Codigo_Vehiculo], [Costo_Mantenimiento]) VALUES (2, 5, CAST(N'2019-01-27' AS Date), N'ATH6757', 9000.0000)
 GO
 INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (1, 1, N'Administrador', N'Tiene acceso completo')
 INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (2, 2, N'Consultor', N'Puede hacer consultas')

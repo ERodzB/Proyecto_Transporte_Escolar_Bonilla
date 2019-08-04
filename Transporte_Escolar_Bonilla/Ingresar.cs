@@ -24,7 +24,7 @@ namespace Transporte_Escolar_Bonilla
 
             catch (Exception ex) //Tira error en caso que el try no funcione correctamente
             {
-                MessageBox.Show("Desconectado: " + ex.ToString());   
+                MessageBox.Show("Desconectado: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);   
             }
         }
 
@@ -44,7 +44,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch(Exception ex)
             {
-                MessageBox.Show("ERROR: "+ex.ToString());
+                MessageBox.Show("ERROR: "+ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             mensaje = "Datos del Cliente guardados con Éxito"; 
@@ -72,7 +72,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             mensaje = "Datos del Cliente guardados con Éxito";
@@ -101,7 +101,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             mensaje = "Contrato guardado con Éxito";
@@ -122,7 +122,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch(Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -160,7 +160,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -180,7 +180,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -209,14 +209,14 @@ namespace Transporte_Escolar_Bonilla
             }
             catch(Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex);
+                MessageBox.Show("ERROR: " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             mensaje = "Vehículo guardado con Éxito";
         }
 
         //Nuevo Mantenimiento
-        public void NuevoMantenimiento(int tipo, DateTime fecha, string veh, double costo, int estado)
+        public void NuevoMantenimiento(int tipo, DateTime fecha, string veh, double costo)
         {
             try
             {
@@ -226,13 +226,12 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Fecha_Mantenimiento", fecha);
                 cmd.Parameters.AddWithValue("@Codigo_Vehiculo", veh);
                 cmd.Parameters.AddWithValue("@Costo_Mantenimiento", costo);
-                cmd.Parameters.AddWithValue("@Estado_Mantenimiento", estado);
 
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex);
+                MessageBox.Show("ERROR: " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             mensaje = "Mantenimiento ingresado con Éxito";
@@ -254,7 +253,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch(Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex);
+                MessageBox.Show("ERROR: " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -274,10 +273,10 @@ namespace Transporte_Escolar_Bonilla
             {
                 if (Acceso == 0)
                 {
-                    MessageBox.Show("Error no se encontro el usuario");
+                    MessageBox.Show("Error no se encontro el usuario", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Error" + ex);
+                    MessageBox.Show("Error" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
          }
         public void NuevoUsuario(string Codigo_Usuario, string Nombre_Usuario, string contra_usuario, int Codigo_Perfil)
@@ -291,12 +290,12 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Contrasena_Usuario", contra_usuario);
                 cmd.Parameters.AddWithValue("@Codigo_Perfil", Codigo_Perfil);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha Ingresado correctamente el usuario");
+                MessageBox.Show("Se ha Ingresado correctamente el usuario", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
 
             {
-                MessageBox.Show("Error" + ex);
+                MessageBox.Show("Error" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -310,11 +309,11 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Nombre_Perfil", Nombre_Perfil);
                 cmd.Parameters.AddWithValue("@Descripcion_Perfil", Descripcion_Perfil);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha creado correctamente el Perfil");
+                MessageBox.Show("Se ha creado correctamente el Perfil", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
              catch(Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show("Error: " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -330,13 +329,27 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Monto", Monto);
                 cmd.Parameters.AddWithValue("@Descripcion_Recibo", Descripcion_Recibo);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha realizado el pago");
+                MessageBox.Show("Se ha realizado el pago","INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
             catch(Exception ex)
             {
-                MessageBox.Show("Error : " + ex);
+                MessageBox.Show("Error : " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ActualizarContratos()
+        {
+            try
+            {
+                cmd = new SqlCommand("VencimientoContratos", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
       

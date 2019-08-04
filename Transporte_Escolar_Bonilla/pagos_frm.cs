@@ -26,26 +26,34 @@ namespace Transporte_Escolar_Bonilla
 
         private void Cliente_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            consulto.CargadgvDatosContrato(contratos_dgv, cliente_dgv.CurrentRow.Cells[0].Value.ToString());
+            
             
         }
 
         private void Contratos_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
 
-                if (DateTime.Now >= Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) - 1) && DateTime.Now < Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1) || DateTime.Now.Day >= 25)
+
+            if (contratos_dgv.CurrentRow.Cells[6].Value.ToString().Equals("1"))
+            {
+                if (DateTime.Now >= Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) - 1) && DateTime.Now < Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1) || DateTime.Now.Day + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1 >= 25 + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1)
                 {
                     Cuota_tb.Text = Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()));
                     descripcion_tb.Text = "Pago #" + Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString())) + " a los " + DateTime.Now.Day + " dias" + " del Mes " + DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Year;
                     pagar_btn.Enabled = true;
-                      monto_tb.Enabled = true;
+                    monto_tb.Enabled = true;
+                    monto_tb.Text = contratos_dgv.CurrentRow.Cells[2].Value.ToString();
 
                 }
                 else
                 {
-                    MessageBox.Show("Ya pago ese contrato este mes");
+                    MessageBox.Show("Ya pago ese contrato este mes", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Ese contrato ya Expiró", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             
             
         }
@@ -69,7 +77,7 @@ namespace Transporte_Escolar_Bonilla
                 }
                 else
                 {
-                    MessageBox.Show("Rellene los datos necesarios");
+                    MessageBox.Show("Rellene los datos necesarios","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         
@@ -86,75 +94,11 @@ namespace Transporte_Escolar_Bonilla
 
         }
 
-        private void Cliente_dgv_Click(object sender, EventArgs e)
-        {
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-        }
-
-        private void Cliente_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-        }
-
-        private void Cliente_dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-        }
-
-        private void Cliente_dgv_SelectionChanged(object sender, EventArgs e)
-        {
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-        }
-
-        private void Cliente_dgv_MouseClick(object sender, MouseEventArgs e)
-        {
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-        }
 
         private void Cliente_dgv_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-            Cuota_tb.Clear();
+            consulto.CargadgvDatosContrato(contratos_dgv, cliente_dgv.CurrentRow.Cells[0].Value.ToString());
 
-        }
-
-        private void Cliente_dgv_TabIndexChanged(object sender, EventArgs e)
-        {
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-            Cuota_tb.Clear();
-
-        }
-
-        private void Cliente_dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
             descripcion_tb.Clear();
             monto_tb.Clear();
             pagar_btn.Enabled = false;

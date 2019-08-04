@@ -15,7 +15,7 @@ namespace Transporte_Escolar_Bonilla
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
         Modificar mod = new Modificar();
-
+        Validar val = new Validar();
         public form_mantenimiento_unidad()
         {
             InitializeComponent();
@@ -35,11 +35,6 @@ namespace Transporte_Escolar_Bonilla
             combtipo.ValueMember = "Codigo";
             combtipo.SelectedIndex = -1;
 
-            //Llenar Combobox de Estado de Mantenimiento
-            combestado.DataSource = consul.Combobox_EstadoMant();
-            combestado.DisplayMember = "Estado";
-            combestado.ValueMember = "Codigo";
-            combestado.SelectedIndex = -1;
         }
 
         //Elige un Vehiculo
@@ -58,36 +53,56 @@ namespace Transporte_Escolar_Bonilla
             //Validar campos vacios
             if (combveh.SelectedIndex == -1)
                 cont++;
-
+            else
+            {
+                if (val.VehiculoConductor(combveh.Text) == 0)
+                {
+                    cont++;
+                }
+            }
             if (combtipo.SelectedIndex == -1)
                 cont++;
 
-            if (txtcosto.Text == " " || double.Parse(txtcosto.Text) <= 0)
-                cont++; 
-
-            if (combestado.SelectedIndex == -1)
+            if (txtcosto.Text == " " || txtcosto.Text=="")
                 cont++;
+            else
+            {
+                if (double.Parse(txtcosto.Text) <= 0)
+                    cont++;
+            }
+           
+
+            
 
             if (dtpfecha.Value < System.DateTime.Today)
                 cont++;
-
+            
             if (cont > 0)
-                MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                if (val.VehiculoConductor(combveh.Text) == 0 && combveh.SelectedIndex!=-1)
+                {
+                    MessageBox.Show("Asigne un conductor encargado antes de enviarlo a Mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
             else
             {
                 DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if(DialogResult == DialogResult.Yes)
+                if (DialogResult == DialogResult.Yes)
                 {
                     //Guardar mantenimiento
-                    ing.NuevoMantenimiento(int.Parse(combtipo.SelectedValue.ToString()), dtpfecha.Value, combveh.Text, double.Parse(txtcosto.Text), 
-                                           int.Parse(combestado.SelectedValue.ToString()));
+                    ing.NuevoMantenimiento(int.Parse(combtipo.SelectedValue.ToString()), dtpfecha.Value, combveh.Text, double.Parse(txtcosto.Text));
                     mod.BitacoraModulo("Mantenimiento", 1, "Mantenimiento a un Vehiculo", combveh.Text, "N/A", "N/A", "N/A", "N/A");
 
                     //Cambiar estado del vehiculo a "En Mantenimiento"
                     mod.ModificarEstadoVeh(combveh.Text);
 
-                    MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                    MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //Limpiar
                     lab1.Visible = false;
@@ -96,7 +111,6 @@ namespace Transporte_Escolar_Bonilla
 
                     combveh.SelectedIndex = -1;
                     combtipo.SelectedIndex = -1;
-                    combestado.SelectedIndex = -1;
                 }
             }
         }

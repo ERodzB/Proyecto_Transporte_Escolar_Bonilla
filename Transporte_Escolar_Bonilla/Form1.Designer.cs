@@ -137,6 +137,7 @@
             this.center_panel.Name = "center_panel";
             this.center_panel.Size = new System.Drawing.Size(1106, 745);
             this.center_panel.TabIndex = 3;
+            this.center_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Center_panel_Paint);
             // 
             // enviar_linklbl
             // 

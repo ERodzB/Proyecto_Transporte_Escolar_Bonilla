@@ -35,9 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtcosto = new System.Windows.Forms.TextBox();
-            this.combestado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.botingresar = new System.Windows.Forms.Button();
             this.dtpfecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -126,20 +124,6 @@
             this.txtcosto.TabIndex = 193;
             this.txtcosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcosto_KeyPress);
             // 
-            // combestado
-            // 
-            this.combestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combestado.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combestado.FormattingEnabled = true;
-            this.combestado.Items.AddRange(new object[] {
-            "Bus Completo",
-            "Medio Bus"});
-            this.combestado.Location = new System.Drawing.Point(560, 468);
-            this.combestado.Margin = new System.Windows.Forms.Padding(4);
-            this.combestado.Name = "combestado";
-            this.combestado.Size = new System.Drawing.Size(288, 39);
-            this.combestado.TabIndex = 233;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -151,18 +135,6 @@
             this.label4.Size = new System.Drawing.Size(395, 36);
             this.label4.TabIndex = 232;
             this.label4.Text = "Fecha del Mantenimiento:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(124, 468);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(401, 36);
-            this.label10.TabIndex = 231;
-            this.label10.Text = "Estado del Mantenimiento:";
             // 
             // botingresar
             // 
@@ -211,9 +183,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpfecha);
             this.Controls.Add(this.botingresar);
-            this.Controls.Add(this.combestado);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtcosto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.combtipo);
@@ -240,9 +210,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtcosto;
-        private System.Windows.Forms.ComboBox combestado;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button botingresar;
         private System.Windows.Forms.DateTimePicker dtpfecha;
         private System.Windows.Forms.Label label1;

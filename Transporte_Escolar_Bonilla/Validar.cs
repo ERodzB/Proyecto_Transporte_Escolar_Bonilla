@@ -331,5 +331,23 @@ namespace Transporte_Escolar_Bonilla
             }
             return x;
         }
+
+
+        public int VehiculoConductor(string CodVeh)
+        {
+            int x=0;
+            try
+            {
+                cmd = new SqlCommand("VehiculoConductor", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Vehiculo", CodVeh);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            return x;
+        }
     }
 }

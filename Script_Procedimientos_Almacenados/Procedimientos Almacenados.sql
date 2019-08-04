@@ -1095,12 +1095,11 @@ create procedure NuevoMantenimiento
 @Tipo_Mantenimiento int,
 @Fecha_Mantenimiento date,
 @Codigo_Vehiculo varchar(50),
-@Costo_Mantenimiento money,
-@Estado_Mantenimiento int
+@Costo_Mantenimiento money
 as
 begin
-	insert into Mantenimientos (Codigo_Mantenimiento, Tipo_Mantenimiento, Fecha_Mantenimiento, Codigo_Vehiculo, Costo_Mantenimiento, Estado_Mantenimiento)
-	values ( (select COUNT(*)+1 from Mantenimientos), @Tipo_Mantenimiento, @Fecha_Mantenimiento, @Codigo_Vehiculo, @Costo_Mantenimiento, @Estado_Mantenimiento)
+	insert into Mantenimientos (Codigo_Mantenimiento, Tipo_Mantenimiento, Fecha_Mantenimiento, Codigo_Vehiculo, Costo_Mantenimiento)
+	values ( (select COUNT(*)+1 from Mantenimientos), @Tipo_Mantenimiento, @Fecha_Mantenimiento, @Codigo_Vehiculo, @Costo_Mantenimiento)
 end
 GO
 
@@ -1285,8 +1284,8 @@ select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehicu
 	left join Cliente cl on c.Cliente_Contrato=cl.Codigo_Cliente
 	left join Recibos r on r.Codigo_Contrato = c.Codigo_Contrato
 	left join TipoContrato tp on tp.Cod_Contrato=c.Tipo_Contrato
-	group by c.Codigo_Contrato, cl.Nombre_Cliente, c.Fecha_Inicio_Contrato, C.Cuotas_Mensuales, tp.Tipo_Contrato
-	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo)-1,c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo)
+	group by c.Codigo_Contrato, cl.Nombre_Cliente, c.Fecha_Inicio_Contrato, C.Cuotas_Mensuales, tp.Tipo_Contrato, c.Estado_Contrato
+	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo)-1,c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo) and c.Estado_Contrato=1
 	union
 	select CONCAT('Ya se acerca la fecha de Pago del mes de ',DATENAME(MONTH,DATEADD(month,1,getdate())),' hacelo saber a tus clientes')
 	where DATEPART(DAY,GETDATE())>=25
@@ -1417,8 +1416,7 @@ create procedure ActualizacionMatricula
 		Tipo_Mantenimiento = m.Tipo_Mantenimiento,
 		Fecha_Mantenimiento = m.Fecha_Mantenimiento,
 		Codigo_Vehiculo=@Codigo_Vehiculo_Nuevo,
-		Costo_Mantenimiento=m.Costo_Mantenimiento,
-		Estado_Mantenimiento=m.Estado_Mantenimiento
+		Costo_Mantenimiento=m.Costo_Mantenimiento
 		from Mantenimientos m
 		where m.Codigo_Vehiculo=@Codigo_Vehiculo_Anterior
 
@@ -1451,7 +1449,7 @@ create procedure BuscaMantenimiento
 	as
 	Begin
 		select Count(*) from Mantenimientos
-		where Mantenimientos.Estado_Mantenimiento != 403 and Mantenimientos.Codigo_Vehiculo=@matricula
+		where Mantenimientos.Codigo_Vehiculo=@matricula
 	End
 	GO
 
@@ -1476,3 +1474,22 @@ create procedure VehiculosPesados
 		where v.Codigo_Vehiculo=@matricula and v.Tipo_Vehiculo!=1 and v.Tipo_Vehiculo!=2
 	End
 	GO
+/*-----------------------------------------Vencimiento de Contratos--------------------------------------------------------*/
+create procedure VencimientoContratos
+	as
+	begin
+		update[dbo].[Contratos]
+		set Estado_Contrato=2
+		where GETDATE()> Fecha_Vencimiento
+	end
+	GO
+/*---------------------------------------------Validacion VehiculoConductor--------------------------------------------------*/
+
+create procedure VehiculoConductor
+	@Codigo_Vehiculo varchar(50)
+	as
+	begin
+		select COUNT(v.Responsable_Vehiculo) from Vehiculos v
+		where v.Codigo_Vehiculo=@Codigo_Vehiculo
+	end
+	go
