@@ -1253,7 +1253,7 @@ GO
 Create Procedure CargaDgvModVehiculo
 as
 begin
-	select v.Codigo_Vehiculo'Placa Vehicul', tv.Tipo_Vehiculo'Tipo de Vehiculo', v.Anio_Vehiculo'Año del Vehiculo', v.Marca_Vehiculo'Marca del Vehiculo', v.Modelo_Vehiculo'Modelo del Vehiculo',
+	select v.Codigo_Vehiculo'Placa Vehiculo', tv.Tipo_Vehiculo'Tipo de Vehiculo', v.Anio_Vehiculo'Año del Vehiculo', v.Marca_Vehiculo'Marca del Vehiculo', v.Modelo_Vehiculo'Modelo del Vehiculo',
 	v.Capacidad_Vehiculo'Capacidad del Vehiculo', tt.NombreTransmision'Transmision del Vehiculo', tg.NombreGasolina'Combustible del Vehiculo', v.Color_Vehiculo,
 	v.Anio_Adquisicion, e.Nombre_Estado'Estado del Vehiculo', v.Emision_Permiso'Emision del Permiso', v.Vencimiento_Permiso'Vencimiento del Permiso', v.Responsable_Vehiculo'Responsable del Vehiculo'
 	from Vehiculos v
@@ -1267,7 +1267,7 @@ GO
 create procedure Notificaciones
 as
 begin
-select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
+	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
 	' entro a mantenimiento de ', tp.Nombre_Mantenimiento) as 'Notificaciones' from Vehiculos v
 	inner join Mantenimientos m on v.Codigo_Vehiculo = m.Codigo_Vehiculo
 	inner join Tipo_Mantenimientos tp on tp.[Codigo_Tipo_Mantenimiento] =[Tipo_Mantenimiento]
@@ -1303,6 +1303,24 @@ select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehicu
 	union
 	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,' tiene su permiso vencido desde el ', DATEPART(day,v.Vencimiento_Permiso),' de ',DATENAME(month, v.Vencimiento_Permiso), ' ',DATEPART(year,v.Vencimiento_Permiso)) from Vehiculos v
 	where DATEPART(YEAR,GETDATE())>=DATEPART(YEAR,v.Vencimiento_Permiso) and DATEPART(DAY,GETDATE())>=DATEPART(DAY,v.Vencimiento_Permiso) and DATEPART(MONTH,GETDATE())>DATEPART(MONTH,v.Vencimiento_Permiso)
+	union
+	select  CONCAT('El vehiculo ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' con placa ',v.Codigo_Vehiculo,' lleva 3 meses sin mantenimiento aceite') from Vehiculos v
+	left join Mantenimientos m on m.Codigo_Vehiculo=v.Codigo_Vehiculo
+	left join Tipo_Mantenimientos tp on m.Tipo_Mantenimiento=tp.Codigo_Tipo_Mantenimiento 
+	where  GETDATE()>=DATEADD(MONTH,3,m.Fecha_Mantenimiento) and  tp.Codigo_Tipo_Mantenimiento=1
+	group by CONCAT('El vehiculo ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' con placa ',v.Codigo_Vehiculo,' lleva 3 meses sin mantenimiento aceite')
+	union
+	select  CONCAT('El vehiculo ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' con placa ',v.Codigo_Vehiculo,' lleva 6 meses sin mantenimiento de llantas') from Vehiculos v
+	left join Mantenimientos m on m.Codigo_Vehiculo=v.Codigo_Vehiculo
+	left join Tipo_Mantenimientos tp on m.Tipo_Mantenimiento=tp.Codigo_Tipo_Mantenimiento 
+	where  GETDATE()>=DATEADD(MONTH,3,m.Fecha_Mantenimiento) and  tp.Codigo_Tipo_Mantenimiento=2
+	group by CONCAT('El vehiculo ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' con placa ',v.Codigo_Vehiculo,' lleva 6 meses sin mantenimiento de llantas')
+	union
+	select  CONCAT('El vehiculo ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' con placa ',v.Codigo_Vehiculo,' nunca se ha llevado a mantenimiento') from Vehiculos v
+	left join Mantenimientos m on m.Codigo_Vehiculo=v.Codigo_Vehiculo
+	left join Tipo_Mantenimientos tp on m.Tipo_Mantenimiento=tp.Codigo_Tipo_Mantenimiento 
+	group by CONCAT('El vehiculo ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' con placa ',v.Codigo_Vehiculo,' nunca se ha llevado a mantenimiento')
+	having COUNT(m.Codigo_Vehiculo)=0
 end
 go
 GO
