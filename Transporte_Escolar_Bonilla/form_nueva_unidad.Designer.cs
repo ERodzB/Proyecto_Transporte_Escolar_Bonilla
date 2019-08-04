@@ -298,11 +298,12 @@
             // 
             // dtpanioad
             // 
+            this.dtpanioad.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpanioad.Location = new System.Drawing.Point(65, 437);
             this.dtpanioad.Margin = new System.Windows.Forms.Padding(4);
             this.dtpanioad.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpanioad.Name = "dtpanioad";
-            this.dtpanioad.Size = new System.Drawing.Size(276, 22);
+            this.dtpanioad.Size = new System.Drawing.Size(276, 41);
             this.dtpanioad.TabIndex = 10;
             // 
             // label13
@@ -360,18 +361,20 @@
             // 
             // dtpemision
             // 
+            this.dtpemision.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpemision.Location = new System.Drawing.Point(404, 437);
             this.dtpemision.Margin = new System.Windows.Forms.Padding(4);
             this.dtpemision.Name = "dtpemision";
-            this.dtpemision.Size = new System.Drawing.Size(276, 22);
+            this.dtpemision.Size = new System.Drawing.Size(276, 41);
             this.dtpemision.TabIndex = 230;
             // 
             // dtpvenc
             // 
+            this.dtpvenc.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvenc.Location = new System.Drawing.Point(741, 437);
             this.dtpvenc.Margin = new System.Windows.Forms.Padding(4);
             this.dtpvenc.Name = "dtpvenc";
-            this.dtpvenc.Size = new System.Drawing.Size(276, 22);
+            this.dtpvenc.Size = new System.Drawing.Size(276, 41);
             this.dtpvenc.TabIndex = 231;
             // 
             // label15
