@@ -19,7 +19,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnGenerar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea Generar el Contrato?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea Generar el Contrato?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (tipocon == "Temporal" && servicio == "Medio Bus")
                 {
@@ -61,9 +61,9 @@ namespace Transporte_Escolar_Bonilla
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
                     oPara3.Range.Font.Bold = 0;
-                    oPara3.Range.Text = "Con este Contrato damos a Conocer los terminos en que la persona " + cliente + " esta dispuesta a aceptar los terminos y condiciones " +
-                        "que le brinda la Empresa Transporte Bonilla Representado legalmente en el presente documento. El contrato es de tipo de: "+tipocon+" que presenta el servicio de: "+servicio+" El cual dispondra de la ruta: "+ruta+
-                        " Y parara en: "+parada+" El cual se le asignaran un monto mensual de: "+mensualidad+" El cual pagara durante: "+cuotas+" De las cuales deberan ser pagadas en el tiempo estipulado.";
+                    oPara3.Range.Text = "Con este Contrato damos a conocer los términos en que la persona " + cliente + " está dispuesta a aceptar los términos y condiciones " +
+                        "que le brinda la Empresa Transporte Bonilla representado legalmente en el presente documento. El contrato es de tipo de: "+tipocon+" que presenta el servicio de: "+servicio+" El cual dispondrá de la ruta: "+ruta+
+                        " Y parará en: "+parada+" Al cual se le asignará un monto mensual de: "+mensualidad+" El cual pagará durante: "+cuotas+" De las cuales deberán ser pagadas en el tiempo estipulado.";
                     oPara3.Range.Font.Bold = 0;
                     oPara3.Format.SpaceAfter = 15;
                     oPara3.Range.InsertParagraphAfter();
@@ -71,7 +71,7 @@ namespace Transporte_Escolar_Bonilla
                     Word.Paragraph oPara5;
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara5 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara5.Range.Text = "El contrato Estara entrara valido desde: "+fechaini+" Hasta el plazo de: "+fechafin+" Se recomienda atencio y responsabilidad en el cumplimiento del contrato";
+                    oPara5.Range.Text = "El contrato será válido desde: "+fechaini+" Hasta el plazo de: "+fechafin+" Se recomienda atención y responsabilidad en el cumplimiento del contrato";
                     oPara5.Range.Font.Bold = 0;
                     oPara5.Format.SpaceAfter = 15;
                     oPara5.Range.InsertParagraphAfter();
@@ -117,9 +117,9 @@ namespace Transporte_Escolar_Bonilla
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
                     oPara3.Range.Font.Bold = 0;
-                    oPara3.Range.Text = "Con este Contrato damos a Conocer los terminos en que la persona " + cliente + " esta dispuesta a aceptar los terminos y condiciones " +
-                        "que le brinda la Empresa Transporte Bonilla Representado legalmente en el presente documento. El contrato es de tipo de: " + tipocon + " que presenta el servicio de: " + servicio + " El cual dispondra de la ruta: " + ruta +
-                        " Y parara en: " + parada + " El cual se le asignaran un monto mensual de: " + mensualidad + " El cual pagara durante: " + cuotas + " De las cuales deberan ser pagadas en el tiempo estipulado. El Monto total que dispondra el contrato sera de: "+montocontrato;
+                    oPara3.Range.Text = "Con este Contrato damos a conocer los términos en que la persona " + cliente + " está dispuesta a aceptar los términos y condiciones " +
+                        "que le brinda la Empresa Transporte Bonilla representado legalmente en el presente documento. El contrato es de tipo de: " + tipocon + " que presenta el servicio de: " + servicio + " El cual dispondrá de la ruta: " + ruta +
+                        " Y parara en: " + parada + " Al cual se le asignará un monto mensual de: " + mensualidad + " El cual pagará durante: " + cuotas + " De las cuales deberan ser pagadas en el tiempo estipulado. El Monto total que dispondrá el contrato será de: "+montocontrato;
                     oPara3.Range.Font.Bold = 0;
                     oPara3.Format.SpaceAfter = 15;
                     oPara3.Range.InsertParagraphAfter();
@@ -127,7 +127,7 @@ namespace Transporte_Escolar_Bonilla
                     Word.Paragraph oPara5;
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara5 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara5.Range.Text = "El contrato Estara entrara valido desde: " + fechaini + " Hasta el plazo de: " + fechafin + " Se recomienda atencio y responsabilidad en el cumplimiento del contrato";
+                    oPara5.Range.Text = "El contrato será válido desde: " + fechaini + " Hasta el plazo de: " + fechafin + " Se recomienda atención y responsabilidad en el cumplimiento del contrato";
                     oPara5.Range.Font.Bold = 0;
                     oPara5.Format.SpaceAfter = 15;
                     oPara5.Range.InsertParagraphAfter();
@@ -172,8 +172,8 @@ namespace Transporte_Escolar_Bonilla
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara4 = oDoc.Content.Paragraphs.Add(ref oRng);
                     oPara4.Range.Font.Bold = 0;
-                    oPara4.Range.Text = "Con este Contrato damos a Conocer los terminos en que la persona " + cliente + " esta dispuesta a aceptar los terminos y condiciones " +
-                        "que le brinda la Empresa Transporte Bonilla Representado legalmente en el presente documento";
+                    oPara4.Range.Text = "Con este Contrato damos a conocer los términos en que la persona " + cliente + " esta dispuesta a aceptar los términos y condiciones " +
+                        "que le brinda la Empresa Transporte Bonilla representado legalmente en el presente documento";
                     oPara4.Range.Font.Bold = 0;
                     oPara4.Format.SpaceAfter = 15;
                     oPara4.Range.InsertParagraphAfter();
@@ -181,7 +181,7 @@ namespace Transporte_Escolar_Bonilla
                     Word.Paragraph oPara5;
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara5 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara5.Range.Text = "Se presenta el servicio de: " + tipocon + " de Dicho Contrato";
+                    oPara5.Range.Text = "Se presenta el servicio de: " + tipocon + " de dicho Contrato";
                     oPara5.Range.Font.Bold = 0;
                     oPara5.Format.SpaceAfter = 15;
                     oPara5.Range.InsertParagraphAfter();
@@ -189,7 +189,7 @@ namespace Transporte_Escolar_Bonilla
                     Word.Paragraph oPara6;
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara6 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara6.Range.Text = "Se presenta el servicio de: " + tipocon + " de Dicho Contrato";
+                    oPara6.Range.Text = "Se presenta el servicio de: " + tipocon + " de dicho Contrato";
                     oPara6.Range.Font.Bold = 0;
                     oPara6.Format.SpaceAfter = 15;
                     oPara6.Range.InsertParagraphAfter();
@@ -198,7 +198,7 @@ namespace Transporte_Escolar_Bonilla
                     Word.Paragraph oPara7;
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara7 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara7.Range.Text = "Servicio que dispondra: " + servicio;
+                    oPara7.Range.Text = "Servicio que dispondrá: " + servicio;
                     oPara7.Range.Font.Bold = 0;
                     oPara7.Format.SpaceAfter = 15;
                     oPara7.Range.InsertParagraphAfter();
@@ -222,7 +222,7 @@ namespace Transporte_Escolar_Bonilla
                     Word.Paragraph oPara11;
                     oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                     oPara11 = oDoc.Content.Paragraphs.Add(ref oRng);
-                    oPara11.Range.Text = "Fecha de Finalizacion del Contrato: " + fechafin;
+                    oPara11.Range.Text = "Fecha de Finalización del Contrato: " + fechafin;
                     oPara11.Range.Font.Bold = 0;
                     oPara11.Format.SpaceAfter = 15;
                     oPara11.Range.InsertParagraphAfter();

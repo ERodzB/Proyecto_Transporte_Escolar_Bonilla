@@ -47,6 +47,9 @@ namespace Transporte_Escolar_Bonilla
                 mperfiles.ModificarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb.SelectedIndex + 1, nombrePerfil_tb.Text, desPerfil_tb.Text);
                 mperfiles.BitacoraModulo("Modificación - Perfiles", 10, "Modificación de Información del Perfil ", "Perfil Modificado: " + nombrePerfil_tb.Text, "N/A", "N/A", "N/A", "N/A");
 
+                Perfiles_cmb.DataSource = consulto.llenarPerfiles();
+                Perfiles_cmb.DisplayMember = "Nombre_Perfil";
+                Perfiles_cmb.ValueMember = "Codigo_Perfil";
                 Perfiles_cmb.SelectedIndex = -1;
                 nivelAcceso_cmb.SelectedIndex = -1;
                 nombrePerfil_tb.Clear();
@@ -54,7 +57,7 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                MessageBox.Show("ERROR! Ingrese toda la informacion requerida");
+                MessageBox.Show("Ingrese todos los datos requeridos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

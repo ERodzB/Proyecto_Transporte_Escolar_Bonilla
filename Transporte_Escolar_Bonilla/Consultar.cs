@@ -309,7 +309,7 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.Fill(table);
                 Nombre_Usuario.Text = table.Rows[0][0].ToString();
                 Contrasena_Usuario.Text = table.Rows[0][1].ToString();
-                Perfil_cmb.SelectedItem = table.Rows[0][2].ToString()+1;
+                Perfil_cmb.SelectedIndex = (int)table.Rows[0][2]-1;
             }
             catch (Exception ex)
             {

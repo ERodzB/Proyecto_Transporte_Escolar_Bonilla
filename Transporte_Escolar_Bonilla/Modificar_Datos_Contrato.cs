@@ -12,7 +12,7 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Modificar_Datos_Contrato : Form
     {
-        Estetica estetics = new Estetica();
+        Estetica estetics = new Estetica(); 
         Consultar con = new Consultar();
         Modificar modif = new Modificar();
         public Modificar_Datos_Contrato()
@@ -22,7 +22,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void Modificar_Datos_Contrato_Load(object sender, EventArgs e)
@@ -38,8 +38,13 @@ namespace Transporte_Escolar_Bonilla
             cmbEstado.DisplayMember = "Nombre_Estado";
             cmbEstado.ValueMember = "Codigo_Estado";
             cmbEstado.SelectedIndex = -1;
-            cmbTipoServicio.Items.Add("Bus Completo");
-            cmbTipoServicio.Items.Add("Salida y Regreso");
+
+            //MessageBox.Show("CARGA", "Atención", MessageBoxButtons.YesNo);
+
+            //cmbTipoServicio.Enabled = true;
+            //cmbTipoServicio.Items.Clear();
+            //cmbTipoServicio.Items.Add("Bus Completo");
+            //cmbTipoServicio.Items.Add("Medio Bus");
 
         }
 
@@ -56,16 +61,22 @@ namespace Transporte_Escolar_Bonilla
         {
             btnModificar.Enabled = true;
             if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() =="Temporal")
-            {                
+            {
+                cmbTipoServicio.Items.Clear();
+                cmbTipoServicio.Items.Add("Bus Completo");
+                cmbTipoServicio.Items.Add("Medio Bus");
+
                 txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
                 txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();
                 txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
 
                 //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[4].Value.ToString());
                 cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
-                cmbTipoPago.SelectedIndex= Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString())-1;
+                cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
+                //cmbTipoPago.SelectedIndex= Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString())-1;
                 txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
-                cmbEstado.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString()) - 1;
+                cmbEstado.Text = dgvDatosContrato.CurrentRow.Cells[9].Value.ToString();
+                //cmbEstado.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString()) - 1;
                 cmbTipoServicio.Enabled = true;                
                 dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
                 txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
@@ -88,6 +99,10 @@ namespace Transporte_Escolar_Bonilla
             }
             else if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() == "Viaje")
             {
+                cmbTipoServicio.Items.Clear();
+                cmbTipoServicio.Items.Add("Salida o Regreso");
+                cmbTipoServicio.Items.Add("Salida y Regreso");
+
                 txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
                 txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();   
                 txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
@@ -97,9 +112,10 @@ namespace Transporte_Escolar_Bonilla
                 dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
                 txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
                 cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
-                cmbTipoPago.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString()) - 1;
+                //cmbTipoPago.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString()) - 1;
+                cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
                 txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
-                MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString());
+                //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString());
                 cmbEstado.SelectedIndex = 1;
                 dtpInicio.Enabled = true;
                 txtMonto.Enabled = true;
@@ -113,7 +129,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea guardar los cambios\nSi guarda los cambios, ya no podrá revertirlos?", "ATENCIÓN", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if(txtTipoContrato.Text == "Temporal")
                 {

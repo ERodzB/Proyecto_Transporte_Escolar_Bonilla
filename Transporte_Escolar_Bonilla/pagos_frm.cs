@@ -32,60 +32,76 @@ namespace Transporte_Escolar_Bonilla
 
         private void Contratos_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //MessageBox.Show(contratos_dgv.CurrentRow.Cells[6].Value.ToString(), "CELDA CLIC COMPARA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-            if (contratos_dgv.CurrentRow.Cells[6].Value.ToString().Equals("1"))
+            if (contratos_dgv.Rows.Count != 0)
             {
-                if (DateTime.Now >= Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) - 1) && DateTime.Now < Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1) || DateTime.Now.Day + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1 >= 25 + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1)
-                {
-                    Cuota_tb.Text = Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()));
-                    descripcion_tb.Text = "Pago #" + Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString())) + " a los " + DateTime.Now.Day + " dias" + " del Mes " + DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Year;
-                    pagar_btn.Enabled = true;
-                    monto_tb.Enabled = true;
-                    monto_tb.Text = contratos_dgv.CurrentRow.Cells[2].Value.ToString();
 
+                if (contratos_dgv.CurrentRow.Cells[9].Value.ToString().Equals("Vigente"))
+                {
+                    if (DateTime.Now >= Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) - 1) && DateTime.Now < Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1) || DateTime.Now.Day + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1 >= 25 + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1)
+                    {
+                        Cuota_tb.Text = Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()));
+                        descripcion_tb.Text = "Pago #" + Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString())) + " a los " + DateTime.Now.Day + " días" + " del Mes " + DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Year;
+                        pagar_btn.Enabled = true;
+                        monto_tb.Enabled = true;
+                        monto_tb.Text = contratos_dgv.CurrentRow.Cells[2].Value.ToString();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya pago ese contrato este mes", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ya pago ese contrato este mes", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ese contrato ya Expiró", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
-            {
-                MessageBox.Show("Ese contrato ya Expiró", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
             
         }
 
         private void Pagar_btn_Click(object sender, EventArgs e)
         {
             Ingresar ingreso = new Ingresar();
-            if (Convert.ToDouble(monto_tb.Text) == Convert.ToDouble(contratos_dgv.CurrentRow.Cells[2].Value.ToString()))
-            {
-                if (descripcion_tb.Text != " " || monto_tb.Text != " ")
-                {
-                    ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(Cuota_tb.Text), DateTime.Now, Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
-                    mod.BitacoraModulo("Pago Cliente", 7, "Pago Recibido del Cliente", cliente_dgv.CurrentRow.Cells[0].Value.ToString(), "N/A", "N/A", "N/A", "N/A");
-                    descripcion_tb.Clear();
-                    monto_tb.Clear();
-                    pagar_btn.Enabled = false;
-                    descripcion_tb.Enabled = false;
-                    monto_tb.Enabled = false;
-                    Cuota_tb.Clear();
 
+            if (monto_tb.Text.Trim() != String.Empty) 
+            {
+
+                if (Convert.ToDouble(monto_tb.Text) == Convert.ToDouble(contratos_dgv.CurrentRow.Cells[2].Value.ToString()))
+                {
+                    if (descripcion_tb.Text != " " || monto_tb.Text != " ")
+                    {
+                        ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(Cuota_tb.Text), DateTime.Now, Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
+                        mod.BitacoraModulo("Pago Cliente", 7, "Pago Recibido del Cliente", cliente_dgv.CurrentRow.Cells[0].Value.ToString(), "N/A", "N/A", "N/A", "N/A");
+                        descripcion_tb.Clear();
+                        monto_tb.Clear();
+                        pagar_btn.Enabled = false;
+                        descripcion_tb.Enabled = false;
+                        monto_tb.Enabled = false;
+                        Cuota_tb.Clear();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese los datos necesarios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+
+
                 else
                 {
-                    MessageBox.Show("Rellene los datos necesarios","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ingrese el monto mensual acordado a pagar en el contrato : L." + contratos_dgv.CurrentRow.Cells[2].Value.ToString(), "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    monto_tb.Clear();
+                    monto_tb.Focus();
+
                 }
             }
-        
-            
             else
             {
-                MessageBox.Show("Ingrese el monto mensual en cual acordo a pagar el contrato : L." + contratos_dgv.CurrentRow.Cells[2].Value.ToString(),"INFORMACION",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
+                MessageBox.Show("Debe ingresar el valor del Monto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                monto_tb.Clear();
+                monto_tb.Focus();
             }
         }
 

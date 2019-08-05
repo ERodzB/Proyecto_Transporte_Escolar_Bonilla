@@ -38,41 +38,50 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                MessageBox.Show("El empleado no existe");
+                MessageBox.Show("El empleado no existe","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                identidad_tb.Clear();
+                identidad_tb.Focus();
             }
         }
         private void Modificar_btn_Click(object sender, EventArgs e)
         {
             if (nombre_tb.Text!="" && contra_tb.Text!="" && Perfil_cmb.Text!="")
             {
-                if (nueva_tb.Text.Equals(contra_tb.Text) && valido.validarContrasena(actual_tb.Text, identidad_tb.Text)==1)
+                if (nueva_tb.Text.Length >= 8)
                 {
-                    Modificar modify = new Modificar();
-                    modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
-                    modify.BitacoraModulo("Modificación - Usuario", 10, "Modificación de Información del Usuario ", "Usuario Modificado: " + nombre_tb.Text, "N/A", "N/A", "N/A", "N/A");
-                    
-                    identidad_tb.Clear();
-                    nombre_tb.Clear();
-                    contra_tb.Clear();
-                    identidad_tb.Enabled = true;
-                    nombre_tb.Enabled = true;
-                    contra_tb.Enabled = false;
-                    Perfil_cmb.Enabled = false;
-                    Perfil_cmb.SelectedIndex = -1;
-                    modificar_btn.Enabled = false;
-                    actual_tb.Clear();
-                    actual_tb.Enabled = false;
-                    nueva_tb.Clear();
-                    nueva_tb.Enabled = false;
+                    if (nueva_tb.Text.Equals(contra_tb.Text) && valido.validarContrasena(actual_tb.Text, identidad_tb.Text) == 1)
+                    {
+                        Modificar modify = new Modificar();
+                        modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
+                        modify.BitacoraModulo("Modificación - Usuario", 10, "Modificación de Información del Usuario ", "Usuario Modificado: " + nombre_tb.Text, "N/A", "N/A", "N/A", "N/A");
+
+                        identidad_tb.Clear();
+                        nombre_tb.Clear();
+                        contra_tb.Clear();
+                        identidad_tb.Enabled = true;
+                        nombre_tb.Enabled = true;
+                        contra_tb.Enabled = false;
+                        Perfil_cmb.Enabled = false;
+                        Perfil_cmb.SelectedIndex = -1;
+                        modificar_btn.Enabled = false;
+                        actual_tb.Clear();
+                        actual_tb.Enabled = false;
+                        nueva_tb.Clear();
+                        nueva_tb.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese nuevamente su contraseña actual, su nueva contraseña y la confirmación", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("ERROR! Ingrese nuevamente su contraseña actual, su nueva contraseña y la confirmacion");
+                    MessageBox.Show("Ingrese una contraseña de 8 caracteres mínimo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("ERROR! Ingrese todos los datos requeridos");
+                MessageBox.Show("Ingrese todos los datos requeridos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

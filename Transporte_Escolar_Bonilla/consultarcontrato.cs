@@ -32,7 +32,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (CMBFiltro.SelectedIndex == -1 || CBFiltrox.SelectedIndex == -1)
             {
-                MessageBox.Show("Porfavor seleccione una opcion del menu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor seleccione un Dato Filtro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

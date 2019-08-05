@@ -104,17 +104,12 @@ namespace Transporte_Escolar_Bonilla
                 {
                     if (txtdir.TextLength < 15)
                     {
-                        MessageBox.Show("Favor ingresar una direccion mayor a 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe ingresar una dirección mayor a 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtdir.Focus();
                     }
                     else
                     {
                         if(System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
-                        {
-                            MessageBox.Show("Direccion de correro invalida. Favor corregirlo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtcorreo.Focus();
-                        }
-                        else
                         {
                             DialogResult = MessageBox.Show("Procederá a crear el Contrato y ya no podrá regresar\n\n¿Está seguro de los datos ingresados?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -122,7 +117,7 @@ namespace Transporte_Escolar_Bonilla
                             {
                                 //Guardar Datos del Cliente
                                 ing.NuevoCliente(txtid.Text, txtnom.Text, txtdir.Text, txttel.Text, txtcorreo.Text);
-                                mod.BitacoraModulo("Nuevo Cliente", 7, "Ingreso de Nuevo Cliente", txtid.Text,"N/A", "N/A", "N/A", "N/A");
+                                mod.BitacoraModulo("Nuevo Cliente", 7, "Ingreso de Nuevo Cliente", txtid.Text, "N/A", "N/A", "N/A", "N/A");
 
                                 MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -149,7 +144,12 @@ namespace Transporte_Escolar_Bonilla
                                 txttel.Clear();
                                 txtcorreo.Clear();
                                 combTipoContrato.SelectedIndex = -1;
-                            }
+                            }                         
+                        }
+                        else
+                        {
+                            MessageBox.Show("Dirección de correo inválida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtcorreo.Focus();
                         }
                     }
                 }

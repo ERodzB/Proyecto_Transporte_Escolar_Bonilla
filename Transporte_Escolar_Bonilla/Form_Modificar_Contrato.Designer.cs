@@ -41,10 +41,9 @@
             this.contratos_panel.Controls.Add(this.dgvContrato);
             this.contratos_panel.Controls.Add(this.label1);
             this.contratos_panel.Controls.Add(this.btnSeleccionar);
-            this.contratos_panel.Location = new System.Drawing.Point(3, -2);
-            this.contratos_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.contratos_panel.Location = new System.Drawing.Point(2, -2);
             this.contratos_panel.Name = "contratos_panel";
-            this.contratos_panel.Size = new System.Drawing.Size(1106, 652);
+            this.contratos_panel.Size = new System.Drawing.Size(830, 530);
             this.contratos_panel.TabIndex = 4;
             this.contratos_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Contratos_panel_Paint);
             // 
@@ -54,13 +53,12 @@
             this.dgvContrato.AllowUserToDeleteRows = false;
             this.dgvContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContrato.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvContrato.Location = new System.Drawing.Point(167, 193);
-            this.dgvContrato.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvContrato.Location = new System.Drawing.Point(125, 157);
             this.dgvContrato.Name = "dgvContrato";
             this.dgvContrato.ReadOnly = true;
             this.dgvContrato.RowHeadersWidth = 51;
             this.dgvContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContrato.Size = new System.Drawing.Size(329, 348);
+            this.dgvContrato.Size = new System.Drawing.Size(247, 283);
             this.dgvContrato.TabIndex = 4;
             this.dgvContrato.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContrato_CellClick_1);
             this.dgvContrato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContrato_CellContentClick);
@@ -70,12 +68,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(122, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(92, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(842, 37);
+            this.label1.Size = new System.Drawing.Size(679, 28);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Seleccione el Cliente al Cual se le Modificara el Contrato";
+            this.label1.Text = "Seleccione el Cliente al Cual se le Modificará el Contrato";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // btnSeleccionar
@@ -84,10 +81,9 @@
             this.btnSeleccionar.Enabled = false;
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(721, 467);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSeleccionar.Location = new System.Drawing.Point(541, 379);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(215, 74);
+            this.btnSeleccionar.Size = new System.Drawing.Size(161, 60);
             this.btnSeleccionar.TabIndex = 5;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -95,13 +91,12 @@
             // 
             // contrato_panel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.ClientSize = new System.Drawing.Size(831, 528);
             this.Controls.Add(this.contratos_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "contrato_panel";
             this.Text = "Form_Modificar_Contrato";
             this.Load += new System.EventHandler(this.Form_Modificar_Contrato_Load);

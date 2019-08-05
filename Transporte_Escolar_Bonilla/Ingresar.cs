@@ -273,7 +273,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 if (Acceso == 0)
                 {
-                    MessageBox.Show("Error no se encontro el usuario", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario o Contraseña Inválidos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                     MessageBox.Show("Error" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);

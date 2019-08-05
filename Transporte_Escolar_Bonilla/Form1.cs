@@ -99,6 +99,7 @@ namespace Transporte_Escolar_Bonilla
             contra_lbl.Visible = false;
             regresar_linklbl.Visible = true;
             olvidadoLogin_linklbl.Visible = false;
+            ingresarLogin_btn.Visible = false;
         }
 
         private void Regresar_linklbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -110,6 +111,7 @@ namespace Transporte_Escolar_Bonilla
             contra_tb.Visible = true;
             contra_lbl.Visible = true;
             olvidadoLogin_linklbl.Visible = true;
+            ingresarLogin_btn.Visible = true;
         }
 
         private void IngresarLogin_btn_Click(object sender, EventArgs e)
@@ -149,12 +151,12 @@ namespace Transporte_Escolar_Bonilla
                 mail.Credentials = ntc; // le pasa las credenciales para poder enviar el correo
                 mail.EnableSsl = true;// No estoy seguro de esto
                 mail.Send(mensaje);//Envia el mensaje creado
-                MessageBox.Show("Nueva Contraseña enviada");
+                MessageBox.Show("Su Nueva Contraseña ha sido enviada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Restart();//Reinicia la aplicacion
                 
             }else
             {
-                MessageBox.Show("El usuario o correo introducido son incorrectos");
+                MessageBox.Show("El usuario o correo introducido son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

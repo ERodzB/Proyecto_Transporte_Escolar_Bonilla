@@ -50,10 +50,10 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(850, 201);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFiltrar.Location = new System.Drawing.Point(638, 163);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(176, 54);
+            this.btnFiltrar.Size = new System.Drawing.Size(132, 44);
             this.btnFiltrar.TabIndex = 11;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -64,9 +64,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(367, 31);
+            this.label1.Location = new System.Drawing.Point(275, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 33);
+            this.label1.Size = new System.Drawing.Size(263, 24);
             this.label1.TabIndex = 10;
             this.label1.Text = "Contratos de la Empresa";
             // 
@@ -78,10 +79,10 @@
             this.CBFiltrox.Items.AddRange(new object[] {
             "Clientes",
             "Estados"});
-            this.CBFiltrox.Location = new System.Drawing.Point(569, 82);
-            this.CBFiltrox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CBFiltrox.Location = new System.Drawing.Point(427, 67);
+            this.CBFiltrox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CBFiltrox.Name = "CBFiltrox";
-            this.CBFiltrox.Size = new System.Drawing.Size(458, 40);
+            this.CBFiltrox.Size = new System.Drawing.Size(344, 32);
             this.CBFiltrox.TabIndex = 9;
             this.CBFiltrox.SelectedIndexChanged += new System.EventHandler(this.CBFiltrox_SelectedIndexChanged);
             // 
@@ -111,8 +112,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvConsultaU.Location = new System.Drawing.Point(45, 273);
-            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvConsultaU.Location = new System.Drawing.Point(34, 222);
+            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -126,7 +127,7 @@
             this.dgvConsultaU.RowHeadersWidth = 51;
             this.dgvConsultaU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvConsultaU.RowTemplate.Height = 24;
-            this.dgvConsultaU.Size = new System.Drawing.Size(981, 338);
+            this.dgvConsultaU.Size = new System.Drawing.Size(736, 275);
             this.dgvConsultaU.TabIndex = 8;
             // 
             // label2
@@ -134,9 +135,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(12, 89);
+            this.label2.Location = new System.Drawing.Point(9, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(286, 33);
+            this.label2.Size = new System.Drawing.Size(218, 24);
             this.label2.TabIndex = 12;
             this.label2.Text = "Filtrar Contratos por: ";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
@@ -146,9 +148,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(12, 149);
+            this.label3.Location = new System.Drawing.Point(9, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(341, 33);
+            this.label3.Size = new System.Drawing.Size(263, 24);
             this.label3.TabIndex = 13;
             this.label3.Text = "Seleccione el Dato Filtro:";
             // 
@@ -161,10 +164,10 @@
             this.CMBFiltro.Items.AddRange(new object[] {
             "Clientes",
             "Contratos por Cliente"});
-            this.CMBFiltro.Location = new System.Drawing.Point(569, 142);
-            this.CMBFiltro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CMBFiltro.Location = new System.Drawing.Point(427, 115);
+            this.CMBFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CMBFiltro.Name = "CMBFiltro";
-            this.CMBFiltro.Size = new System.Drawing.Size(458, 40);
+            this.CMBFiltro.Size = new System.Drawing.Size(344, 32);
             this.CMBFiltro.TabIndex = 14;
             this.CMBFiltro.SelectedIndexChanged += new System.EventHandler(this.CMBFiltro_SelectedIndexChanged);
             // 
@@ -173,20 +176,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(340, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(223, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(469, 44);
+            this.label4.Size = new System.Drawing.Size(373, 37);
             this.label4.TabIndex = 94;
             this.label4.Text = "Contratos de la Empresa";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // consultarcontrato
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.ClientSize = new System.Drawing.Size(831, 528);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CMBFiltro);
             this.Controls.Add(this.label3);
@@ -196,7 +198,7 @@
             this.Controls.Add(this.CBFiltrox);
             this.Controls.Add(this.dgvConsultaU);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "consultarcontrato";
             this.Text = "consultarcontrato";
             this.Load += new System.EventHandler(this.Consultarcontrato_Load);

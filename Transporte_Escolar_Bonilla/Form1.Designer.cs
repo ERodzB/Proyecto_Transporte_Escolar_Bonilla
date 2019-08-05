@@ -65,8 +65,9 @@
             this.top_panel.Controls.Add(this.salir_btn);
             this.top_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_panel.Location = new System.Drawing.Point(0, 0);
+            this.top_panel.Margin = new System.Windows.Forms.Padding(2);
             this.top_panel.Name = "top_panel";
-            this.top_panel.Size = new System.Drawing.Size(1420, 35);
+            this.top_panel.Size = new System.Drawing.Size(1065, 28);
             this.top_panel.TabIndex = 2;
             // 
             // btnNoti
@@ -78,9 +79,10 @@
             this.btnNoti.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnNoti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnNoti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoti.Location = new System.Drawing.Point(1302, 8);
+            this.btnNoti.Location = new System.Drawing.Point(976, 6);
+            this.btnNoti.Margin = new System.Windows.Forms.Padding(2);
             this.btnNoti.Name = "btnNoti";
-            this.btnNoti.Size = new System.Drawing.Size(24, 21);
+            this.btnNoti.Size = new System.Drawing.Size(18, 17);
             this.btnNoti.TabIndex = 2;
             this.btnNoti.UseVisualStyleBackColor = false;
             this.btnNoti.Visible = false;
@@ -95,9 +97,10 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1346, 6);
+            this.button1.Location = new System.Drawing.Point(1010, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 21);
+            this.button1.Size = new System.Drawing.Size(18, 17);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
@@ -112,9 +115,10 @@
             this.salir_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.salir_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.salir_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salir_btn.Location = new System.Drawing.Point(1387, 6);
+            this.salir_btn.Location = new System.Drawing.Point(1040, 5);
+            this.salir_btn.Margin = new System.Windows.Forms.Padding(2);
             this.salir_btn.Name = "salir_btn";
-            this.salir_btn.Size = new System.Drawing.Size(24, 21);
+            this.salir_btn.Size = new System.Drawing.Size(18, 17);
             this.salir_btn.TabIndex = 0;
             this.salir_btn.UseVisualStyleBackColor = false;
             this.salir_btn.Click += new System.EventHandler(this.Salir_btn_Click);
@@ -133,9 +137,10 @@
             this.center_panel.Controls.Add(this.userLogin_tb);
             this.center_panel.Controls.Add(this.userLogin_lbl);
             this.center_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.center_panel.Location = new System.Drawing.Point(314, 35);
+            this.center_panel.Location = new System.Drawing.Point(235, 28);
+            this.center_panel.Margin = new System.Windows.Forms.Padding(2);
             this.center_panel.Name = "center_panel";
-            this.center_panel.Size = new System.Drawing.Size(1106, 745);
+            this.center_panel.Size = new System.Drawing.Size(830, 606);
             this.center_panel.TabIndex = 3;
             this.center_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Center_panel_Paint);
             // 
@@ -147,9 +152,10 @@
             this.enviar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enviar_linklbl.ForeColor = System.Drawing.Color.White;
             this.enviar_linklbl.LinkColor = System.Drawing.Color.White;
-            this.enviar_linklbl.Location = new System.Drawing.Point(621, 496);
+            this.enviar_linklbl.Location = new System.Drawing.Point(466, 403);
+            this.enviar_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.enviar_linklbl.Name = "enviar_linklbl";
-            this.enviar_linklbl.Size = new System.Drawing.Size(252, 23);
+            this.enviar_linklbl.Size = new System.Drawing.Size(202, 21);
             this.enviar_linklbl.TabIndex = 17;
             this.enviar_linklbl.TabStop = true;
             this.enviar_linklbl.Text = "Pedir Nueva Contraseña";
@@ -164,9 +170,10 @@
             this.regresar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regresar_linklbl.ForeColor = System.Drawing.Color.White;
             this.regresar_linklbl.LinkColor = System.Drawing.Color.White;
-            this.regresar_linklbl.Location = new System.Drawing.Point(528, 456);
+            this.regresar_linklbl.Location = new System.Drawing.Point(396, 370);
+            this.regresar_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.regresar_linklbl.Name = "regresar_linklbl";
-            this.regresar_linklbl.Size = new System.Drawing.Size(95, 23);
+            this.regresar_linklbl.Size = new System.Drawing.Size(78, 21);
             this.regresar_linklbl.TabIndex = 15;
             this.regresar_linklbl.TabStop = true;
             this.regresar_linklbl.Text = "Regresar";
@@ -176,9 +183,10 @@
             // Correo_tb
             // 
             this.Correo_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.Correo_tb.Location = new System.Drawing.Point(562, 398);
+            this.Correo_tb.Location = new System.Drawing.Point(422, 323);
+            this.Correo_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Correo_tb.Name = "Correo_tb";
-            this.Correo_tb.Size = new System.Drawing.Size(310, 38);
+            this.Correo_tb.Size = new System.Drawing.Size(234, 32);
             this.Correo_tb.TabIndex = 13;
             this.Correo_tb.Visible = false;
             this.Correo_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Correo_tb_KeyPress);
@@ -188,11 +196,12 @@
             this.correo_lbl.AutoSize = true;
             this.correo_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.correo_lbl.ForeColor = System.Drawing.Color.White;
-            this.correo_lbl.Location = new System.Drawing.Point(204, 396);
+            this.correo_lbl.Location = new System.Drawing.Point(153, 322);
+            this.correo_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.correo_lbl.Name = "correo_lbl";
-            this.correo_lbl.Size = new System.Drawing.Size(324, 40);
+            this.correo_lbl.Size = new System.Drawing.Size(262, 33);
             this.correo_lbl.TabIndex = 16;
-            this.correo_lbl.Text = "Correo Electronico";
+            this.correo_lbl.Text = "Correo Electrónico";
             this.correo_lbl.Visible = false;
             // 
             // olvidadoLogin_linklbl
@@ -203,22 +212,24 @@
             this.olvidadoLogin_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.olvidadoLogin_linklbl.ForeColor = System.Drawing.Color.White;
             this.olvidadoLogin_linklbl.LinkColor = System.Drawing.Color.White;
-            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(630, 456);
+            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(472, 370);
+            this.olvidadoLogin_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.olvidadoLogin_linklbl.Name = "olvidadoLogin_linklbl";
-            this.olvidadoLogin_linklbl.Size = new System.Drawing.Size(243, 23);
+            this.olvidadoLogin_linklbl.Size = new System.Drawing.Size(193, 21);
             this.olvidadoLogin_linklbl.TabIndex = 16;
             this.olvidadoLogin_linklbl.TabStop = true;
-            this.olvidadoLogin_linklbl.Text = "¿Olvido su contraseña?";
+            this.olvidadoLogin_linklbl.Text = "¿Olvidó su contraseña?";
             this.olvidadoLogin_linklbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OlvidadoLogin_linklbl_LinkClicked);
             // 
             // contra_tb
             // 
             this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.contra_tb.Location = new System.Drawing.Point(562, 329);
+            this.contra_tb.Location = new System.Drawing.Point(422, 267);
+            this.contra_tb.Margin = new System.Windows.Forms.Padding(2);
             this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
             this.contra_tb.PasswordChar = '*';
-            this.contra_tb.Size = new System.Drawing.Size(310, 38);
+            this.contra_tb.Size = new System.Drawing.Size(234, 32);
             this.contra_tb.TabIndex = 12;
             this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
             // 
@@ -227,9 +238,10 @@
             this.contra_lbl.AutoSize = true;
             this.contra_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.contra_lbl.ForeColor = System.Drawing.Color.White;
-            this.contra_lbl.Location = new System.Drawing.Point(295, 329);
+            this.contra_lbl.Location = new System.Drawing.Point(221, 267);
+            this.contra_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.contra_lbl.Name = "contra_lbl";
-            this.contra_lbl.Size = new System.Drawing.Size(212, 40);
+            this.contra_lbl.Size = new System.Drawing.Size(169, 33);
             this.contra_lbl.TabIndex = 13;
             this.contra_lbl.Text = "Contraseña";
             // 
@@ -239,9 +251,10 @@
             this.ingresarLogin_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ingresarLogin_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingresarLogin_btn.ForeColor = System.Drawing.Color.White;
-            this.ingresarLogin_btn.Location = new System.Drawing.Point(712, 549);
+            this.ingresarLogin_btn.Location = new System.Drawing.Point(476, 443);
+            this.ingresarLogin_btn.Margin = new System.Windows.Forms.Padding(2);
             this.ingresarLogin_btn.Name = "ingresarLogin_btn";
-            this.ingresarLogin_btn.Size = new System.Drawing.Size(160, 57);
+            this.ingresarLogin_btn.Size = new System.Drawing.Size(120, 46);
             this.ingresarLogin_btn.TabIndex = 14;
             this.ingresarLogin_btn.Text = "Ingresar";
             this.ingresarLogin_btn.UseVisualStyleBackColor = false;
@@ -250,10 +263,11 @@
             // userLogin_tb
             // 
             this.userLogin_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.userLogin_tb.Location = new System.Drawing.Point(562, 257);
+            this.userLogin_tb.Location = new System.Drawing.Point(422, 209);
+            this.userLogin_tb.Margin = new System.Windows.Forms.Padding(2);
             this.userLogin_tb.MaxLength = 10;
             this.userLogin_tb.Name = "userLogin_tb";
-            this.userLogin_tb.Size = new System.Drawing.Size(310, 38);
+            this.userLogin_tb.Size = new System.Drawing.Size(234, 32);
             this.userLogin_tb.TabIndex = 11;
             this.userLogin_tb.TextChanged += new System.EventHandler(this.UserLogin_tb_TextChanged);
             this.userLogin_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserLogin_tb_KeyPress);
@@ -263,9 +277,10 @@
             this.userLogin_lbl.AutoSize = true;
             this.userLogin_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.userLogin_lbl.ForeColor = System.Drawing.Color.White;
-            this.userLogin_lbl.Location = new System.Drawing.Point(362, 257);
+            this.userLogin_lbl.Location = new System.Drawing.Point(272, 209);
+            this.userLogin_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userLogin_lbl.Name = "userLogin_lbl";
-            this.userLogin_lbl.Size = new System.Drawing.Size(134, 40);
+            this.userLogin_lbl.Size = new System.Drawing.Size(108, 33);
             this.userLogin_lbl.TabIndex = 10;
             this.userLogin_lbl.Text = "Usuario";
             // 
@@ -281,9 +296,10 @@
             this.left_panel.Controls.Add(this.unidades_btn);
             this.left_panel.Controls.Add(this.rutas_btn);
             this.left_panel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.left_panel.Location = new System.Drawing.Point(0, 35);
+            this.left_panel.Location = new System.Drawing.Point(0, 28);
+            this.left_panel.Margin = new System.Windows.Forms.Padding(2);
             this.left_panel.Name = "left_panel";
-            this.left_panel.Size = new System.Drawing.Size(315, 745);
+            this.left_panel.Size = new System.Drawing.Size(236, 606);
             this.left_panel.TabIndex = 4;
             // 
             // close_btn
@@ -295,9 +311,10 @@
             this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_btn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.close_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.close_btn.Location = new System.Drawing.Point(0, 678);
+            this.close_btn.Location = new System.Drawing.Point(0, 552);
+            this.close_btn.Margin = new System.Windows.Forms.Padding(2);
             this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(315, 67);
+            this.close_btn.Size = new System.Drawing.Size(236, 54);
             this.close_btn.TabIndex = 7;
             this.close_btn.Text = "Cerrar Sesión";
             this.close_btn.UseVisualStyleBackColor = false;
@@ -307,8 +324,9 @@
             // 
             this.bar_panel.BackColor = System.Drawing.Color.White;
             this.bar_panel.Location = new System.Drawing.Point(0, 0);
+            this.bar_panel.Margin = new System.Windows.Forms.Padding(2);
             this.bar_panel.Name = "bar_panel";
-            this.bar_panel.Size = new System.Drawing.Size(12, 113);
+            this.bar_panel.Size = new System.Drawing.Size(9, 92);
             this.bar_panel.TabIndex = 6;
             this.bar_panel.Visible = false;
             // 
@@ -321,9 +339,10 @@
             this.usuarios_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usuarios_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarios_btn.ForeColor = System.Drawing.Color.White;
-            this.usuarios_btn.Location = new System.Drawing.Point(0, 565);
+            this.usuarios_btn.Location = new System.Drawing.Point(0, 460);
+            this.usuarios_btn.Margin = new System.Windows.Forms.Padding(2);
             this.usuarios_btn.Name = "usuarios_btn";
-            this.usuarios_btn.Size = new System.Drawing.Size(315, 113);
+            this.usuarios_btn.Size = new System.Drawing.Size(236, 92);
             this.usuarios_btn.TabIndex = 5;
             this.usuarios_btn.Text = "Usuarios";
             this.usuarios_btn.UseVisualStyleBackColor = false;
@@ -338,9 +357,10 @@
             this.contratos_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contratos_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic);
             this.contratos_btn.ForeColor = System.Drawing.Color.White;
-            this.contratos_btn.Location = new System.Drawing.Point(0, 452);
+            this.contratos_btn.Location = new System.Drawing.Point(0, 368);
+            this.contratos_btn.Margin = new System.Windows.Forms.Padding(2);
             this.contratos_btn.Name = "contratos_btn";
-            this.contratos_btn.Size = new System.Drawing.Size(315, 113);
+            this.contratos_btn.Size = new System.Drawing.Size(236, 92);
             this.contratos_btn.TabIndex = 4;
             this.contratos_btn.Text = "Contratos";
             this.contratos_btn.UseVisualStyleBackColor = false;
@@ -355,9 +375,10 @@
             this.clientes_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clientes_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic);
             this.clientes_btn.ForeColor = System.Drawing.Color.White;
-            this.clientes_btn.Location = new System.Drawing.Point(0, 339);
+            this.clientes_btn.Location = new System.Drawing.Point(0, 276);
+            this.clientes_btn.Margin = new System.Windows.Forms.Padding(2);
             this.clientes_btn.Name = "clientes_btn";
-            this.clientes_btn.Size = new System.Drawing.Size(315, 113);
+            this.clientes_btn.Size = new System.Drawing.Size(236, 92);
             this.clientes_btn.TabIndex = 3;
             this.clientes_btn.Text = "Clientes";
             this.clientes_btn.UseVisualStyleBackColor = false;
@@ -372,9 +393,10 @@
             this.conductores_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.conductores_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic);
             this.conductores_btn.ForeColor = System.Drawing.Color.White;
-            this.conductores_btn.Location = new System.Drawing.Point(0, 226);
+            this.conductores_btn.Location = new System.Drawing.Point(0, 184);
+            this.conductores_btn.Margin = new System.Windows.Forms.Padding(2);
             this.conductores_btn.Name = "conductores_btn";
-            this.conductores_btn.Size = new System.Drawing.Size(315, 113);
+            this.conductores_btn.Size = new System.Drawing.Size(236, 92);
             this.conductores_btn.TabIndex = 2;
             this.conductores_btn.Text = "Empleados";
             this.conductores_btn.UseVisualStyleBackColor = false;
@@ -389,9 +411,10 @@
             this.unidades_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unidades_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unidades_btn.ForeColor = System.Drawing.Color.White;
-            this.unidades_btn.Location = new System.Drawing.Point(0, 113);
+            this.unidades_btn.Location = new System.Drawing.Point(0, 92);
+            this.unidades_btn.Margin = new System.Windows.Forms.Padding(2);
             this.unidades_btn.Name = "unidades_btn";
-            this.unidades_btn.Size = new System.Drawing.Size(315, 113);
+            this.unidades_btn.Size = new System.Drawing.Size(236, 92);
             this.unidades_btn.TabIndex = 1;
             this.unidades_btn.Text = "Unidades de \r\nTransporte\r\n";
             this.unidades_btn.UseVisualStyleBackColor = false;
@@ -407,8 +430,9 @@
             this.rutas_btn.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rutas_btn.ForeColor = System.Drawing.Color.White;
             this.rutas_btn.Location = new System.Drawing.Point(0, 0);
+            this.rutas_btn.Margin = new System.Windows.Forms.Padding(2);
             this.rutas_btn.Name = "rutas_btn";
-            this.rutas_btn.Size = new System.Drawing.Size(315, 113);
+            this.rutas_btn.Size = new System.Drawing.Size(236, 92);
             this.rutas_btn.TabIndex = 0;
             this.rutas_btn.Text = "Rutas";
             this.rutas_btn.UseVisualStyleBackColor = false;
@@ -416,15 +440,16 @@
             // 
             // Principal_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(80)))), ((int)(((byte)(144)))));
-            this.ClientSize = new System.Drawing.Size(1420, 780);
+            this.ClientSize = new System.Drawing.Size(1065, 634);
             this.Controls.Add(this.left_panel);
             this.Controls.Add(this.center_panel);
             this.Controls.Add(this.top_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Principal_frm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -49,9 +49,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(215, 246);
+            this.label1.Location = new System.Drawing.Point(161, 200);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 40);
+            this.label1.Size = new System.Drawing.Size(169, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Contraseña";
             // 
@@ -60,41 +61,45 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(46, 121);
+            this.label2.Location = new System.Drawing.Point(34, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(373, 40);
+            this.label2.Size = new System.Drawing.Size(310, 33);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Numero de  Identidad";
+            this.label2.Text = "Número de  Identidad";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(201, 379);
+            this.label4.Location = new System.Drawing.Point(151, 308);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(218, 40);
+            this.label4.Size = new System.Drawing.Size(181, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tipo de Perfil";
             // 
             // identidad_tb
             // 
             this.identidad_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.identidad_tb.Location = new System.Drawing.Point(466, 120);
+            this.identidad_tb.Location = new System.Drawing.Point(350, 98);
+            this.identidad_tb.Margin = new System.Windows.Forms.Padding(2);
             this.identidad_tb.MaxLength = 13;
             this.identidad_tb.Name = "identidad_tb";
-            this.identidad_tb.Size = new System.Drawing.Size(451, 41);
+            this.identidad_tb.Size = new System.Drawing.Size(339, 34);
             this.identidad_tb.TabIndex = 5;
             this.identidad_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Identidad_tb_KeyPress);
             // 
             // contra_tb
             // 
             this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contra_tb.Location = new System.Drawing.Point(466, 249);
+            this.contra_tb.Location = new System.Drawing.Point(350, 202);
+            this.contra_tb.Margin = new System.Windows.Forms.Padding(2);
             this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
             this.contra_tb.PasswordChar = '*';
-            this.contra_tb.Size = new System.Drawing.Size(451, 41);
+            this.contra_tb.Size = new System.Drawing.Size(339, 34);
             this.contra_tb.TabIndex = 7;
             this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
             // 
@@ -104,9 +109,10 @@
             this.ingresar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ingresar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingresar_btn.ForeColor = System.Drawing.Color.White;
-            this.ingresar_btn.Location = new System.Drawing.Point(768, 490);
+            this.ingresar_btn.Location = new System.Drawing.Point(576, 398);
+            this.ingresar_btn.Margin = new System.Windows.Forms.Padding(2);
             this.ingresar_btn.Name = "ingresar_btn";
-            this.ingresar_btn.Size = new System.Drawing.Size(149, 70);
+            this.ingresar_btn.Size = new System.Drawing.Size(112, 57);
             this.ingresar_btn.TabIndex = 10;
             this.ingresar_btn.Text = "Ingresar";
             this.ingresar_btn.UseVisualStyleBackColor = false;
@@ -115,10 +121,11 @@
             // nombre_tb
             // 
             this.nombre_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_tb.Location = new System.Drawing.Point(466, 185);
+            this.nombre_tb.Location = new System.Drawing.Point(350, 150);
+            this.nombre_tb.Margin = new System.Windows.Forms.Padding(2);
             this.nombre_tb.MaxLength = 10;
             this.nombre_tb.Name = "nombre_tb";
-            this.nombre_tb.Size = new System.Drawing.Size(451, 41);
+            this.nombre_tb.Size = new System.Drawing.Size(339, 34);
             this.nombre_tb.TabIndex = 6;
             this.nombre_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre_tb_KeyPress);
             // 
@@ -127,9 +134,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(98, 185);
+            this.label6.Location = new System.Drawing.Point(74, 150);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(325, 40);
+            this.label6.Size = new System.Drawing.Size(267, 33);
             this.label6.TabIndex = 11;
             this.label6.Text = "Nombre de Usuario";
             // 
@@ -138,20 +146,22 @@
             this.Perfil_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Perfil_cmb.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Perfil_cmb.FormattingEnabled = true;
-            this.Perfil_cmb.Location = new System.Drawing.Point(545, 379);
+            this.Perfil_cmb.Location = new System.Drawing.Point(409, 308);
+            this.Perfil_cmb.Margin = new System.Windows.Forms.Padding(2);
             this.Perfil_cmb.Name = "Perfil_cmb";
-            this.Perfil_cmb.Size = new System.Drawing.Size(372, 45);
+            this.Perfil_cmb.Size = new System.Drawing.Size(280, 38);
             this.Perfil_cmb.TabIndex = 9;
             this.Perfil_cmb.SelectedIndexChanged += new System.EventHandler(this.Perfil_cmb_SelectedIndexChanged);
             // 
             // confirm_tb
             // 
             this.confirm_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirm_tb.Location = new System.Drawing.Point(466, 313);
+            this.confirm_tb.Location = new System.Drawing.Point(350, 254);
+            this.confirm_tb.Margin = new System.Windows.Forms.Padding(2);
             this.confirm_tb.MaxLength = 20;
             this.confirm_tb.Name = "confirm_tb";
             this.confirm_tb.PasswordChar = '*';
-            this.confirm_tb.Size = new System.Drawing.Size(451, 41);
+            this.confirm_tb.Size = new System.Drawing.Size(339, 34);
             this.confirm_tb.TabIndex = 8;
             this.confirm_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Conform_tb_KeyPress);
             // 
@@ -160,9 +170,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(58, 310);
+            this.label3.Location = new System.Drawing.Point(44, 252);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(368, 40);
+            this.label3.Size = new System.Drawing.Size(301, 33);
             this.label3.TabIndex = 12;
             this.label3.Text = "Confirmar contraseña";
             // 
@@ -172,9 +183,10 @@
             this.OJO1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.OJO1.FlatAppearance.BorderSize = 0;
             this.OJO1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OJO1.Location = new System.Drawing.Point(932, 249);
+            this.OJO1.Location = new System.Drawing.Point(699, 202);
+            this.OJO1.Margin = new System.Windows.Forms.Padding(2);
             this.OJO1.Name = "OJO1";
-            this.OJO1.Size = new System.Drawing.Size(52, 41);
+            this.OJO1.Size = new System.Drawing.Size(39, 33);
             this.OJO1.TabIndex = 13;
             this.OJO1.TabStop = false;
             this.OJO1.UseVisualStyleBackColor = true;
@@ -186,9 +198,10 @@
             this.OJO2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.OJO2.FlatAppearance.BorderSize = 0;
             this.OJO2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OJO2.Location = new System.Drawing.Point(932, 313);
+            this.OJO2.Location = new System.Drawing.Point(699, 254);
+            this.OJO2.Margin = new System.Windows.Forms.Padding(2);
             this.OJO2.Name = "OJO2";
-            this.OJO2.Size = new System.Drawing.Size(52, 41);
+            this.OJO2.Size = new System.Drawing.Size(39, 33);
             this.OJO2.TabIndex = 14;
             this.OJO2.TabStop = false;
             this.OJO2.UseVisualStyleBackColor = true;
@@ -199,20 +212,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(368, 39);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(250, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(394, 44);
+            this.label5.Size = new System.Drawing.Size(313, 37);
             this.label5.TabIndex = 95;
             this.label5.Text = "Creación de Usuario";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // crearUsuario_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.ClientSize = new System.Drawing.Size(831, 528);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.OJO2);
             this.Controls.Add(this.OJO1);
@@ -228,6 +240,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "crearUsuario_frm";
             this.Text = "crearUsuario_frm";
             this.Load += new System.EventHandler(this.CrearUsuario_frm_Load);

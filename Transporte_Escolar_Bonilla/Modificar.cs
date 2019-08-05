@@ -55,14 +55,14 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Contrasena_Usuario", Contrasena_Usuario);
                 cmd.Parameters.AddWithValue("@Perfil_Acceso", Perfil_Acceso);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha Modificado correctamente el usuario");
+                MessageBox.Show("Se ha Modificado correctamente el usuario", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
             {
                 Validar valido = new Validar();
                 if (valido.validarUsuario(Nombre_Usuario) == 1)
-                    MessageBox.Show("Ya existe ese usuario");
+                    MessageBox.Show("Ya existe ese usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("Error" + ex);
 
@@ -129,7 +129,7 @@ namespace Transporte_Escolar_Bonilla
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error, algo a salido mal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error, algo ha salido mal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
         }
@@ -146,7 +146,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Nombre_Perfil", Nombre_Perfil);
                 cmd.Parameters.AddWithValue("@Descripcion_Perfil", Descripcion_Perfil);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha Modificado correctamente el perfil");
+                MessageBox.Show("Se ha Modificado correctamente el perfil", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)

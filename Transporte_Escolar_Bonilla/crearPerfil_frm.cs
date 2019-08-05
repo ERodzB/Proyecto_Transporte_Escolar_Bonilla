@@ -34,8 +34,12 @@ namespace Transporte_Escolar_Bonilla
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe ese perfil");
+                    MessageBox.Show("Ya existe ese perfil", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese todos los datos requeridos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

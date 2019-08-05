@@ -37,21 +37,23 @@ namespace Transporte_Escolar_Bonilla
                     }
                     else
                     {
-                        MessageBox.Show("Ya existe un usuario con ese nombre");
+                        MessageBox.Show("Ya existe un usuario con ese nombre", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         nombre_tb.Clear();
                         nombre_tb.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error ese empleado ya tiene un usuario");
+                    MessageBox.Show("El empleado ya tiene un usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     identidad_tb.Clear();
                     identidad_tb.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("El empleado no existe");
+                MessageBox.Show("El empleado no existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                identidad_tb.Clear();
+                identidad_tb.Focus();
             }
             
         }

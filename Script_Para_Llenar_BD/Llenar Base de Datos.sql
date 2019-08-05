@@ -32,7 +32,7 @@ GO
 INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (1, N'Super', N'Gasolina Super')
 INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (2, N'Regular', N'Gasolina Regular')
 INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (3, N'Diesel', N'Gasolina Diesel')
-INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (4, N'Aeroplano', N'Gasolina de Aeronave')
+INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (4, N'Gas', N'Gas LPG')
 GO
 INSERT [dbo].[TipoLicencia] ([CodTipoLicencia], [TipoLicencia]) VALUES (1, N'Liviana')
 INSERT [dbo].[TipoLicencia] ([CodTipoLicencia], [TipoLicencia]) VALUES (2, N'Pesada')
