@@ -192,7 +192,22 @@ begin
 	where Tipo_Ruta = 'Temporal'
 	group by Codigo_Ruta
 end 
-GO  
+GO
+
+
+/*---------------------------------------------Procedimiento Verificar si la Ruta se puede modificar------------------------------------------------*/
+create procedure VerificarModiRuta
+@codigo_ruta varchar(50)
+as 
+begin
+	select COUNT(*) from Rutas_Contratos cr
+	inner join Contratos c on cr.Codigo_Contrato = c.Codigo_Contrato
+	where cr.Codigo_Ruta = @codigo_ruta and c.Estado_Contrato = 1
+end 
+GO
+
+
+
 /*---------------------------------------------Procedimiento Llenar ComboBox Horarios------------------------------------------------*/
 create procedure ComboboxHorarios
 @Codigo_Ruta varchar(50)
@@ -593,14 +608,15 @@ Create procedure ModificarContratoTemporal
 @Monto_Contrato money,
 @Fecha_Vencimiento date,
 @Estado_Contrato int,
-@Tipo_Pago_Contrato varchar(50)
+@Tipo_Pago_Contrato varchar(50),
+@Cuotas_Mensuales int
 as
 begin
 	update Contratos
 	set [Monto Mensual] = @Monto_Mensual,
 	Fecha_Inicio_Contrato = @Fecha_Inicio_Contrato,
 	Fecha_Vencimiento = @Fecha_Vencimiento,
-	Cuotas_Mensuales = DATEDIFF(mm, @Fecha_Inicio_Contrato, @Fecha_Vencimiento),
+	Cuotas_Mensuales = @Cuotas_Mensuales,
 	Servicio = @Servicio,
 	Monto_Contrato = @Monto_Contrato,
 	Estado_Contrato = @Estado_Contrato,

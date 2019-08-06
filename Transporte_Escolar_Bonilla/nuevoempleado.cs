@@ -54,8 +54,8 @@ namespace Transporte_Escolar_Bonilla
                 }
 
                 
-                if (txtcorreo.Text!="" && txtdireccion.TextLength > 15 && txtidentidad.Text != "" && txtlicencia.Text != "" && txtnombre.Text != ""
-                    && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true
+                if (txtcorreo.Text!="" && txtdireccion.TextLength > 15 && txtidentidad.TextLength == 13 && txtlicencia.Text != "" && txtnombre.TextLength > 2
+                    && txtsalario.Text != "" && txttelefono.TextLength == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true
                     && dateTimePicker1.Value<System.DateTime.Today && dtpvencimiento.Value>System.DateTime.Today && 
                     System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
@@ -85,8 +85,8 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                if (txtcorreo.Text != "" && txtdireccion.TextLength > 15 && txtidentidad.Text != "" && txtnombre.Text != ""
-                   && txtsalario.Text != "" && txttelefono.Text != "" && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1
+                if (txtcorreo.Text != "" && txtdireccion.TextLength > 15 && txtidentidad.TextLength == 13 && txtnombre.TextLength > 2
+                   && txtsalario.Text != "" && txttelefono.TextLength == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1
                    && dateTimePicker1.Value<System.DateTime.Today &&
                    System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {

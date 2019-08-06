@@ -64,9 +64,10 @@
             this.dtpvencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Enabled = false;
             this.dtpvencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpvencimiento.Location = new System.Drawing.Point(367, 499);
+            this.dtpvencimiento.Location = new System.Drawing.Point(275, 405);
+            this.dtpvencimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpvencimiento.Name = "dtpvencimiento";
-            this.dtpvencimiento.Size = new System.Drawing.Size(520, 36);
+            this.dtpvencimiento.Size = new System.Drawing.Size(391, 30);
             this.dtpvencimiento.TabIndex = 43;
             this.dtpvencimiento.Visible = false;
             // 
@@ -75,9 +76,10 @@
             this.lblVencimiento.AutoSize = true;
             this.lblVencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVencimiento.ForeColor = System.Drawing.Color.White;
-            this.lblVencimiento.Location = new System.Drawing.Point(40, 493);
+            this.lblVencimiento.Location = new System.Drawing.Point(30, 401);
+            this.lblVencimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVencimiento.Name = "lblVencimiento";
-            this.lblVencimiento.Size = new System.Drawing.Size(289, 60);
+            this.lblVencimiento.Size = new System.Drawing.Size(220, 44);
             this.lblVencimiento.TabIndex = 44;
             this.lblVencimiento.Text = "Fecha de Vencimiento\r\n de Licencia:";
             this.lblVencimiento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,9 +93,10 @@
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Items.AddRange(new object[] {
             "Conductor"});
-            this.cmbPuesto.Location = new System.Drawing.Point(367, 374);
+            this.cmbPuesto.Location = new System.Drawing.Point(275, 304);
+            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbPuesto.Name = "cmbPuesto";
-            this.cmbPuesto.Size = new System.Drawing.Size(520, 35);
+            this.cmbPuesto.Size = new System.Drawing.Size(391, 29);
             this.cmbPuesto.TabIndex = 34;
             this.cmbPuesto.SelectedIndexChanged += new System.EventHandler(this.CmbPuesto_SelectedIndexChanged);
             // 
@@ -107,19 +110,21 @@
             "Masculino",
             "Femenino",
             "Otros"});
-            this.cmbGenero.Location = new System.Drawing.Point(367, 207);
+            this.cmbGenero.Location = new System.Drawing.Point(275, 168);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(520, 35);
+            this.cmbGenero.Size = new System.Drawing.Size(391, 29);
             this.cmbGenero.TabIndex = 29;
             // 
             // txtsalario
             // 
             this.txtsalario.Enabled = false;
             this.txtsalario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsalario.Location = new System.Drawing.Point(367, 415);
+            this.txtsalario.Location = new System.Drawing.Point(275, 337);
+            this.txtsalario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtsalario.MaxLength = 13;
             this.txtsalario.Name = "txtsalario";
-            this.txtsalario.Size = new System.Drawing.Size(520, 36);
+            this.txtsalario.Size = new System.Drawing.Size(391, 30);
             this.txtsalario.TabIndex = 35;
             this.txtsalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtsalario_KeyPress);
             // 
@@ -128,9 +133,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(40, 421);
+            this.label9.Location = new System.Drawing.Point(30, 342);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 30);
+            this.label9.Size = new System.Drawing.Size(79, 22);
             this.label9.TabIndex = 42;
             this.label9.Text = "Salario :";
             // 
@@ -139,9 +145,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(40, 380);
+            this.label8.Location = new System.Drawing.Point(30, 309);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 30);
+            this.label8.Size = new System.Drawing.Size(81, 22);
             this.label8.TabIndex = 41;
             this.label8.Text = "Puesto :";
             // 
@@ -149,10 +156,11 @@
             // 
             this.txtdireccion.Enabled = false;
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdireccion.Location = new System.Drawing.Point(367, 332);
+            this.txtdireccion.Location = new System.Drawing.Point(275, 270);
+            this.txtdireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtdireccion.MaxLength = 50;
             this.txtdireccion.Name = "txtdireccion";
-            this.txtdireccion.Size = new System.Drawing.Size(520, 36);
+            this.txtdireccion.Size = new System.Drawing.Size(391, 30);
             this.txtdireccion.TabIndex = 32;
             this.txtdireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtdireccion_KeyPress);
             // 
@@ -161,20 +169,22 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(40, 338);
+            this.label7.Location = new System.Drawing.Point(30, 275);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 30);
+            this.label7.Size = new System.Drawing.Size(106, 22);
             this.label7.TabIndex = 40;
-            this.label7.Text = "Direccion :";
+            this.label7.Text = "Dirección :";
             // 
             // txtcorreo
             // 
             this.txtcorreo.Enabled = false;
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcorreo.Location = new System.Drawing.Point(367, 290);
+            this.txtcorreo.Location = new System.Drawing.Point(275, 236);
+            this.txtcorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtcorreo.MaxLength = 30;
             this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.Size = new System.Drawing.Size(520, 36);
+            this.txtcorreo.Size = new System.Drawing.Size(391, 30);
             this.txtcorreo.TabIndex = 31;
             this.txtcorreo.TextChanged += new System.EventHandler(this.Txtcorreo_TextChanged);
             this.txtcorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcorreo_KeyPress);
@@ -184,9 +194,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(44, 296);
+            this.label6.Location = new System.Drawing.Point(33, 240);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 30);
+            this.label6.Size = new System.Drawing.Size(78, 22);
             this.label6.TabIndex = 39;
             this.label6.Text = "Correo:";
             // 
@@ -194,10 +205,11 @@
             // 
             this.txttelefono.Enabled = false;
             this.txttelefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefono.Location = new System.Drawing.Point(367, 248);
+            this.txttelefono.Location = new System.Drawing.Point(275, 202);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txttelefono.MaxLength = 8;
             this.txttelefono.Name = "txttelefono";
-            this.txttelefono.Size = new System.Drawing.Size(520, 36);
+            this.txttelefono.Size = new System.Drawing.Size(391, 30);
             this.txttelefono.TabIndex = 30;
             this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txttelefono_KeyPress);
             // 
@@ -206,31 +218,34 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(40, 254);
+            this.label5.Location = new System.Drawing.Point(30, 206);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 30);
+            this.label5.Size = new System.Drawing.Size(97, 22);
             this.label5.TabIndex = 38;
-            this.label5.Text = "Telefono :";
+            this.label5.Text = "Teléfono :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 213);
+            this.label4.Location = new System.Drawing.Point(30, 173);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 30);
+            this.label4.Size = new System.Drawing.Size(91, 22);
             this.label4.TabIndex = 37;
-            this.label4.Text = "Genero :";
+            this.label4.Text = "Género :";
             // 
             // LBLLicencia
             // 
             this.LBLLicencia.AutoSize = true;
             this.LBLLicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLLicencia.ForeColor = System.Drawing.Color.White;
-            this.LBLLicencia.Location = new System.Drawing.Point(40, 463);
+            this.LBLLicencia.Location = new System.Drawing.Point(30, 376);
+            this.LBLLicencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLLicencia.Name = "LBLLicencia";
-            this.LBLLicencia.Size = new System.Drawing.Size(310, 30);
+            this.LBLLicencia.Size = new System.Drawing.Size(235, 22);
             this.LBLLicencia.TabIndex = 36;
             this.LBLLicencia.Text = "# Licencia de Conducir :";
             this.LBLLicencia.Visible = false;
@@ -239,10 +254,11 @@
             // 
             this.txtnombre.Enabled = false;
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.Location = new System.Drawing.Point(367, 165);
+            this.txtnombre.Location = new System.Drawing.Point(275, 134);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtnombre.MaxLength = 50;
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(520, 36);
+            this.txtnombre.Size = new System.Drawing.Size(391, 30);
             this.txtnombre.TabIndex = 27;
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnombre_KeyPress);
             // 
@@ -251,9 +267,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 171);
+            this.label1.Location = new System.Drawing.Point(30, 139);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 30);
+            this.label1.Size = new System.Drawing.Size(192, 22);
             this.label1.TabIndex = 33;
             this.label1.Text = "Nombre Empleado :";
             // 
@@ -261,10 +278,11 @@
             // 
             this.txtlicencia.Enabled = false;
             this.txtlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlicencia.Location = new System.Drawing.Point(367, 457);
+            this.txtlicencia.Location = new System.Drawing.Point(275, 371);
+            this.txtlicencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtlicencia.MaxLength = 20;
             this.txtlicencia.Name = "txtlicencia";
-            this.txtlicencia.Size = new System.Drawing.Size(520, 36);
+            this.txtlicencia.Size = new System.Drawing.Size(391, 30);
             this.txtlicencia.TabIndex = 45;
             this.txtlicencia.Visible = false;
             this.txtlicencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtlicencia_KeyPress);
@@ -277,9 +295,10 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 13.8F);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(935, 550);
+            this.btnModificar.Location = new System.Drawing.Point(701, 447);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(147, 59);
+            this.btnModificar.Size = new System.Drawing.Size(110, 48);
             this.btnModificar.TabIndex = 46;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -288,10 +307,11 @@
             // busqueda
             // 
             this.busqueda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busqueda.Location = new System.Drawing.Point(367, 105);
+            this.busqueda.Location = new System.Drawing.Point(275, 85);
+            this.busqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.busqueda.MaxLength = 13;
             this.busqueda.Name = "busqueda";
-            this.busqueda.Size = new System.Drawing.Size(520, 36);
+            this.busqueda.Size = new System.Drawing.Size(391, 30);
             this.busqueda.TabIndex = 47;
             this.busqueda.TextChanged += new System.EventHandler(this.Busqueda_TextChanged);
             this.busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Busqueda_KeyPress);
@@ -301,9 +321,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(362, 62);
+            this.label2.Location = new System.Drawing.Point(272, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(414, 30);
+            this.label2.Size = new System.Drawing.Size(320, 22);
             this.label2.TabIndex = 48;
             this.label2.Text = "Identidad de Empleado a buscar:";
             // 
@@ -314,9 +335,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(935, 98);
+            this.button2.Location = new System.Drawing.Point(701, 80);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 46);
+            this.button2.Size = new System.Drawing.Size(106, 37);
             this.button2.TabIndex = 49;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = false;
@@ -327,9 +349,10 @@
             this.lbltipolic.AutoSize = true;
             this.lbltipolic.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltipolic.ForeColor = System.Drawing.Color.White;
-            this.lbltipolic.Location = new System.Drawing.Point(44, 566);
+            this.lbltipolic.Location = new System.Drawing.Point(33, 460);
+            this.lbltipolic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltipolic.Name = "lbltipolic";
-            this.lbltipolic.Size = new System.Drawing.Size(217, 30);
+            this.lbltipolic.Size = new System.Drawing.Size(162, 22);
             this.lbltipolic.TabIndex = 50;
             this.lbltipolic.Text = "Tipo de Licencia:";
             this.lbltipolic.Visible = false;
@@ -340,9 +363,11 @@
             this.GBlicencia.Controls.Add(this.RBPesada);
             this.GBlicencia.Controls.Add(this.RBLiviana);
             this.GBlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.GBlicencia.Location = new System.Drawing.Point(367, 541);
+            this.GBlicencia.Location = new System.Drawing.Point(275, 440);
+            this.GBlicencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GBlicencia.Name = "GBlicencia";
-            this.GBlicencia.Size = new System.Drawing.Size(520, 60);
+            this.GBlicencia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GBlicencia.Size = new System.Drawing.Size(390, 49);
             this.GBlicencia.TabIndex = 51;
             this.GBlicencia.TabStop = false;
             this.GBlicencia.Visible = false;
@@ -352,9 +377,10 @@
             this.CBInter.AutoSize = true;
             this.CBInter.Enabled = false;
             this.CBInter.ForeColor = System.Drawing.Color.White;
-            this.CBInter.Location = new System.Drawing.Point(301, 20);
+            this.CBInter.Location = new System.Drawing.Point(226, 16);
+            this.CBInter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CBInter.Name = "CBInter";
-            this.CBInter.Size = new System.Drawing.Size(193, 34);
+            this.CBInter.Size = new System.Drawing.Size(151, 26);
             this.CBInter.TabIndex = 2;
             this.CBInter.Text = "Internacional";
             this.CBInter.UseVisualStyleBackColor = true;
@@ -364,9 +390,10 @@
             this.RBPesada.AutoSize = true;
             this.RBPesada.Enabled = false;
             this.RBPesada.ForeColor = System.Drawing.Color.White;
-            this.RBPesada.Location = new System.Drawing.Point(128, 20);
+            this.RBPesada.Location = new System.Drawing.Point(96, 16);
+            this.RBPesada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RBPesada.Name = "RBPesada";
-            this.RBPesada.Size = new System.Drawing.Size(122, 34);
+            this.RBPesada.Size = new System.Drawing.Size(97, 26);
             this.RBPesada.TabIndex = 1;
             this.RBPesada.TabStop = true;
             this.RBPesada.Text = "Pesada";
@@ -377,9 +404,10 @@
             this.RBLiviana.AutoSize = true;
             this.RBLiviana.Enabled = false;
             this.RBLiviana.ForeColor = System.Drawing.Color.White;
-            this.RBLiviana.Location = new System.Drawing.Point(3, 19);
+            this.RBLiviana.Location = new System.Drawing.Point(2, 15);
+            this.RBLiviana.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RBLiviana.Name = "RBLiviana";
-            this.RBLiviana.Size = new System.Drawing.Size(119, 34);
+            this.RBLiviana.Size = new System.Drawing.Size(94, 26);
             this.RBLiviana.TabIndex = 0;
             this.RBLiviana.TabStop = true;
             this.RBLiviana.Text = "Liviana";
@@ -388,21 +416,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(297, 18);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(262, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(564, 44);
+            this.label3.Size = new System.Drawing.Size(416, 32);
             this.label3.TabIndex = 52;
-            this.label3.Text = "Modificar Datos de Empleado";
+            this.label3.Text = "Modificar Datos de Empleados";
             // 
             // Modficar_Empleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.ClientSize = new System.Drawing.Size(831, 528);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GBlicencia);
             this.Controls.Add(this.lbltipolic);
@@ -430,6 +457,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(1, 0);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Modficar_Empleado";
             this.Text = "Modficar_Empleado";
             this.Load += new System.EventHandler(this.Modficar_Empleado_Load);

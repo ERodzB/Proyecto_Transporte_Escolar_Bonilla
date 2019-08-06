@@ -59,6 +59,8 @@ namespace Transporte_Escolar_Bonilla
             dtphorae2.ShowUpDown = true;
             dtphorae2.ShowCheckBox = true;
             dtphorae2.Checked = false;
+
+            MessageBox.Show("CARGA", "CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 
@@ -67,7 +69,7 @@ namespace Transporte_Escolar_Bonilla
         {
             double ant = 0;
             int contc = 0, conth = 0;
-            string error = "", anio = "";
+            string error = "", anio = ""; 
 
             val.igual = 0;
 
@@ -75,13 +77,15 @@ namespace Transporte_Escolar_Bonilla
             if (combservicio.SelectedIndex == -1)
                 contc++;
 
-            if (txtorigen.Text == "")
+            if (txtorigen.TextLength < 3)
                 contc++;
 
-            if (txtdestino.Text == "")
+            if (txtdestino.TextLength < 3)
                 contc++;
 
-            if (txttotal.Text == "" || double.Parse(txttotal.Text) <= 0)
+            MessageBox.Show("Tamanio ORIGEN: "+ txtorigen.TextLength+"TAMANIO DESTINO: "+ txtdestino.TextLength, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            if (txttotal.Text == "" || double.Parse(txttotal.Text) <= 0)        
                 contc++;
 
             if (txtant.Text != "")

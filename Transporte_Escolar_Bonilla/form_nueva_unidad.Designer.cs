@@ -61,12 +61,12 @@
             // txtmat
             // 
             this.txtmat.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmat.Location = new System.Drawing.Point(65, 129);
-            this.txtmat.Margin = new System.Windows.Forms.Padding(4);
-            this.txtmat.MaxLength = 10;
+            this.txtmat.Location = new System.Drawing.Point(49, 105);
+            this.txtmat.MaxLength = 7;
             this.txtmat.Name = "txtmat";
-            this.txtmat.Size = new System.Drawing.Size(276, 26);
+            this.txtmat.Size = new System.Drawing.Size(208, 22);
             this.txtmat.TabIndex = 1;
+            this.txtmat.TextChanged += new System.EventHandler(this.Txtmat_TextChanged);
             this.txtmat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmat_KeyPress);
             // 
             // label12
@@ -74,10 +74,9 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(60, 96);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(45, 78);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 33);
+            this.label12.Size = new System.Drawing.Size(69, 24);
             this.label12.TabIndex = 204;
             this.label12.Text = "Placa";
             // 
@@ -86,10 +85,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(399, 96);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(299, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 33);
+            this.label2.Size = new System.Drawing.Size(182, 24);
             this.label2.TabIndex = 206;
             this.label2.Text = "Tipo de Vehículo";
             // 
@@ -101,10 +99,9 @@
             this.combtipoveh.Items.AddRange(new object[] {
             "Bus Completo",
             "Medio Bus"});
-            this.combtipoveh.Location = new System.Drawing.Point(404, 129);
-            this.combtipoveh.Margin = new System.Windows.Forms.Padding(4);
+            this.combtipoveh.Location = new System.Drawing.Point(303, 105);
             this.combtipoveh.Name = "combtipoveh";
-            this.combtipoveh.Size = new System.Drawing.Size(276, 28);
+            this.combtipoveh.Size = new System.Drawing.Size(208, 25);
             this.combtipoveh.TabIndex = 2;
             // 
             // label3
@@ -112,30 +109,27 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(737, 96);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(553, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 33);
+            this.label3.Size = new System.Drawing.Size(190, 24);
             this.label3.TabIndex = 208;
             this.label3.Text = "Año del Vehículo";
             // 
             // dtpanioveh
             // 
-            this.dtpanioveh.Location = new System.Drawing.Point(743, 129);
-            this.dtpanioveh.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpanioveh.Location = new System.Drawing.Point(557, 105);
             this.dtpanioveh.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpanioveh.Name = "dtpanioveh";
-            this.dtpanioveh.Size = new System.Drawing.Size(276, 22);
+            this.dtpanioveh.Size = new System.Drawing.Size(208, 20);
             this.dtpanioveh.TabIndex = 3;
             // 
             // txtmarca
             // 
             this.txtmarca.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmarca.Location = new System.Drawing.Point(65, 230);
-            this.txtmarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmarca.Location = new System.Drawing.Point(49, 187);
             this.txtmarca.MaxLength = 20;
             this.txtmarca.Name = "txtmarca";
-            this.txtmarca.Size = new System.Drawing.Size(276, 26);
+            this.txtmarca.Size = new System.Drawing.Size(208, 22);
             this.txtmarca.TabIndex = 4;
             this.txtmarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmarca_KeyPress);
             // 
@@ -144,21 +138,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(60, 197);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(45, 160);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 33);
+            this.label4.Size = new System.Drawing.Size(77, 24);
             this.label4.TabIndex = 210;
             this.label4.Text = "Marca";
             // 
             // txtmodelo
             // 
             this.txtmodelo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmodelo.Location = new System.Drawing.Point(404, 230);
-            this.txtmodelo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmodelo.Location = new System.Drawing.Point(303, 187);
             this.txtmodelo.MaxLength = 20;
             this.txtmodelo.Name = "txtmodelo";
-            this.txtmodelo.Size = new System.Drawing.Size(276, 26);
+            this.txtmodelo.Size = new System.Drawing.Size(208, 22);
             this.txtmodelo.TabIndex = 5;
             this.txtmodelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmodelo_KeyPress);
             // 
@@ -167,21 +159,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(399, 197);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(299, 160);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 33);
+            this.label5.Size = new System.Drawing.Size(90, 24);
             this.label5.TabIndex = 212;
             this.label5.Text = "Modelo";
             // 
             // txtcap
             // 
             this.txtcap.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcap.Location = new System.Drawing.Point(65, 331);
-            this.txtcap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcap.Location = new System.Drawing.Point(49, 269);
             this.txtcap.MaxLength = 5;
             this.txtcap.Name = "txtcap";
-            this.txtcap.Size = new System.Drawing.Size(276, 26);
+            this.txtcap.Size = new System.Drawing.Size(208, 22);
             this.txtcap.TabIndex = 7;
             this.txtcap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcap_KeyPress);
             // 
@@ -190,10 +180,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(60, 298);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(45, 242);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 33);
+            this.label6.Size = new System.Drawing.Size(128, 24);
             this.label6.TabIndex = 214;
             this.label6.Text = "Capacidad";
             // 
@@ -205,10 +194,9 @@
             this.combtipocom.Items.AddRange(new object[] {
             "Bus Completo",
             "Medio Bus"});
-            this.combtipocom.Location = new System.Drawing.Point(743, 331);
-            this.combtipocom.Margin = new System.Windows.Forms.Padding(4);
+            this.combtipocom.Location = new System.Drawing.Point(557, 269);
             this.combtipocom.Name = "combtipocom";
-            this.combtipocom.Size = new System.Drawing.Size(276, 28);
+            this.combtipocom.Size = new System.Drawing.Size(208, 25);
             this.combtipocom.TabIndex = 9;
             // 
             // label7
@@ -216,10 +204,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(737, 298);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(553, 242);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(287, 33);
+            this.label7.Size = new System.Drawing.Size(219, 24);
             this.label7.TabIndex = 216;
             this.label7.Text = "Tipo de Combustible";
             // 
@@ -231,10 +218,9 @@
             this.combtipotra.Items.AddRange(new object[] {
             "Bus Completo",
             "Medio Bus"});
-            this.combtipotra.Location = new System.Drawing.Point(404, 331);
-            this.combtipotra.Margin = new System.Windows.Forms.Padding(4);
+            this.combtipotra.Location = new System.Drawing.Point(303, 269);
             this.combtipotra.Name = "combtipotra";
-            this.combtipotra.Size = new System.Drawing.Size(276, 28);
+            this.combtipotra.Size = new System.Drawing.Size(208, 25);
             this.combtipotra.TabIndex = 8;
             // 
             // label8
@@ -242,21 +228,19 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(399, 298);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(299, 242);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(264, 33);
+            this.label8.Size = new System.Drawing.Size(200, 24);
             this.label8.TabIndex = 218;
             this.label8.Text = "Tipo de Transmisión";
             // 
             // txtcolor
             // 
             this.txtcolor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcolor.Location = new System.Drawing.Point(743, 230);
-            this.txtcolor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcolor.Location = new System.Drawing.Point(557, 187);
             this.txtcolor.MaxLength = 20;
             this.txtcolor.Name = "txtcolor";
-            this.txtcolor.Size = new System.Drawing.Size(276, 26);
+            this.txtcolor.Size = new System.Drawing.Size(208, 22);
             this.txtcolor.TabIndex = 6;
             this.txtcolor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcolor_KeyPress);
             // 
@@ -265,10 +249,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(737, 197);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(553, 160);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 33);
+            this.label9.Size = new System.Drawing.Size(66, 24);
             this.label9.TabIndex = 220;
             this.label9.Text = "Color";
             // 
@@ -277,10 +260,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(232, 524);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(174, 426);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 33);
+            this.label10.Size = new System.Drawing.Size(78, 24);
             this.label10.TabIndex = 222;
             this.label10.Text = "Estado";
             // 
@@ -289,21 +271,19 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(60, 401);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(45, 326);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(270, 33);
+            this.label11.Size = new System.Drawing.Size(206, 24);
             this.label11.TabIndex = 224;
             this.label11.Text = "Año de Adquisición";
             // 
             // dtpanioad
             // 
             this.dtpanioad.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpanioad.Location = new System.Drawing.Point(65, 437);
-            this.dtpanioad.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpanioad.Location = new System.Drawing.Point(49, 355);
             this.dtpanioad.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpanioad.Name = "dtpanioad";
-            this.dtpanioad.Size = new System.Drawing.Size(276, 41);
+            this.dtpanioad.Size = new System.Drawing.Size(208, 34);
             this.dtpanioad.TabIndex = 10;
             // 
             // label13
@@ -311,10 +291,9 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(399, 401);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(299, 326);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(270, 33);
+            this.label13.Size = new System.Drawing.Size(206, 24);
             this.label13.TabIndex = 226;
             this.label13.Text = "Emisión del Permiso";
             // 
@@ -323,10 +302,9 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.Window;
-            this.label14.Location = new System.Drawing.Point(736, 401);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(552, 326);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(344, 33);
+            this.label14.Size = new System.Drawing.Size(264, 24);
             this.label14.TabIndex = 228;
             this.label14.Text = "Vencimiento del Permiso";
             // 
@@ -336,10 +314,9 @@
             this.botcrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
-            this.botcrear.Location = new System.Drawing.Point(807, 527);
-            this.botcrear.Margin = new System.Windows.Forms.Padding(4);
+            this.botcrear.Location = new System.Drawing.Point(605, 428);
             this.botcrear.Name = "botcrear";
-            this.botcrear.Size = new System.Drawing.Size(145, 52);
+            this.botcrear.Size = new System.Drawing.Size(109, 42);
             this.botcrear.TabIndex = 14;
             this.botcrear.Text = "Crear";
             this.botcrear.UseVisualStyleBackColor = false;
@@ -353,28 +330,25 @@
             this.combestado.Items.AddRange(new object[] {
             "Bus Completo",
             "Medio Bus"});
-            this.combestado.Location = new System.Drawing.Point(344, 527);
-            this.combestado.Margin = new System.Windows.Forms.Padding(4);
+            this.combestado.Location = new System.Drawing.Point(258, 428);
             this.combestado.Name = "combestado";
-            this.combestado.Size = new System.Drawing.Size(276, 28);
+            this.combestado.Size = new System.Drawing.Size(208, 25);
             this.combestado.TabIndex = 229;
             // 
             // dtpemision
             // 
             this.dtpemision.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpemision.Location = new System.Drawing.Point(404, 437);
-            this.dtpemision.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpemision.Location = new System.Drawing.Point(303, 355);
             this.dtpemision.Name = "dtpemision";
-            this.dtpemision.Size = new System.Drawing.Size(276, 41);
+            this.dtpemision.Size = new System.Drawing.Size(208, 34);
             this.dtpemision.TabIndex = 230;
             // 
             // dtpvenc
             // 
             this.dtpvenc.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpvenc.Location = new System.Drawing.Point(741, 437);
-            this.dtpvenc.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpvenc.Location = new System.Drawing.Point(556, 355);
             this.dtpvenc.Name = "dtpvenc";
-            this.dtpvenc.Size = new System.Drawing.Size(276, 41);
+            this.dtpvenc.Size = new System.Drawing.Size(208, 34);
             this.dtpvenc.TabIndex = 231;
             // 
             // label15
@@ -382,20 +356,19 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.Window;
-            this.label15.Location = new System.Drawing.Point(162, 39);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(122, 32);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(747, 44);
+            this.label15.Size = new System.Drawing.Size(593, 37);
             this.label15.TabIndex = 232;
             this.label15.Text = "Ingreso de Nueva Unidad de Transporte";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // form_nueva_unidad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.ClientSize = new System.Drawing.Size(831, 528);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dtpvenc);
             this.Controls.Add(this.dtpemision);
@@ -425,7 +398,6 @@
             this.Controls.Add(this.txtmat);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_nueva_unidad";
             this.Text = "form_nueva_unidad";
             this.Load += new System.EventHandler(this.Form_nueva_unidad_Load);

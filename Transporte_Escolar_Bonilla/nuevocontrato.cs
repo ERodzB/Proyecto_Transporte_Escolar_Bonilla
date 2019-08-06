@@ -287,6 +287,7 @@ namespace Transporte_Escolar_Bonilla
                         combhora2.SelectedIndex = -1; 
                         combveh1.SelectedIndex = -1;
                         combveh2.SelectedIndex = -1;
+                        pago_cmb.SelectedIndex = -1;
 
                         txtpa1.Clear();
                         txtpa2.Clear();

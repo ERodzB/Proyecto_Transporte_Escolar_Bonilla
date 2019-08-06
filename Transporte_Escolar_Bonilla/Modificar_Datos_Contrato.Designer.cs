@@ -105,7 +105,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(640, 462);
+            this.btnModificar.Location = new System.Drawing.Point(496, 458);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(126, 42);
             this.btnModificar.TabIndex = 3;
@@ -159,7 +159,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(405, 268);
+            this.label4.Location = new System.Drawing.Point(405, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(179, 22);
             this.label4.TabIndex = 8;
@@ -305,10 +305,12 @@
             this.txtCuota.Enabled = false;
             this.txtCuota.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuota.Location = new System.Drawing.Point(619, 297);
+            this.txtCuota.MaxLength = 2;
             this.txtCuota.Name = "txtCuota";
             this.txtCuota.Size = new System.Drawing.Size(107, 27);
             this.txtCuota.TabIndex = 28;
             this.txtCuota.TextChanged += new System.EventHandler(this.TxtCuota_TextChanged);
+            this.txtCuota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCuota_KeyPress);
             // 
             // label11
             // 

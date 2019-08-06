@@ -14,12 +14,17 @@ namespace Transporte_Escolar_Bonilla
     {
         Consultar consul = new Consultar();
         Modificar modifico = new Modificar();
+        Validar val = new Validar();
+
         public frmNuevaPlaca()
         {
             InitializeComponent();
+
             combveh.DataSource = consul.Combobox_Vehiculos();
             combveh.DisplayMember = "Codigo_vehiculo";
             combveh.SelectedIndex = -1;
+
+            txtNuevaMatricula.Focus();
 
         }
 
@@ -34,26 +39,36 @@ namespace Transporte_Escolar_Bonilla
             int cant = 0;
             if (txtNuevaMatricula.Equals(""))
             {
-                MessageBox.Show("Error no ingrese datos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar la nueva Placa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cant++;
             }
-            if (txtNuevaMatricula.Text.Length <= 5)
+            if (txtNuevaMatricula.Text.Length < 7 || val.ValidarPlaca(txtNuevaMatricula.Text) == 0)
             {
-                MessageBox.Show("Error Ingrese una matricula correcta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese una placa correcta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cant++;
             }
             if (combveh.SelectedIndex == -1)
             {
-                MessageBox.Show("Error seleccione una matricula para actualizar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar una Placa para actualizar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cant++;
             }
             if (cant == 0)
             {
                 modifico.ActualizarMatricula(combveh.Text, txtNuevaMatricula.Text);
-                combveh.SelectedIndex = -1;
+
+                combveh.DataSource = consul.Combobox_Vehiculos();
+                combveh.DisplayMember = "Codigo_vehiculo";
+                combveh.SelectedIndex = -1; 
+
                 lab1.Visible = false;
                 txtNuevaMatricula.Clear();
             }
+        }
+
+        private void TxtNuevaMatricula_TextChanged(object sender, EventArgs e)
+        {
+            //COLOCAR LETRAS EN MAYUSCULA AL ESCRIBIR
+            txtNuevaMatricula.CharacterCasing = CharacterCasing.Upper;
         }
     }
 }

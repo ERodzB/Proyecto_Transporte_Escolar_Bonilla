@@ -12,9 +12,11 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Modificar_Datos_Contrato : Form
     {
-        Estetica estetics = new Estetica(); 
+        Estetica estetics = new Estetica();
         Consultar con = new Consultar();
         Modificar modif = new Modificar();
+
+
         public Modificar_Datos_Contrato()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void Modificar_Datos_Contrato_Load(object sender, EventArgs e)
@@ -45,21 +47,22 @@ namespace Transporte_Escolar_Bonilla
             //cmbTipoServicio.Items.Clear();
             //cmbTipoServicio.Items.Add("Bus Completo");
             //cmbTipoServicio.Items.Add("Medio Bus");
-
         }
 
         private void BtnAtras_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea Regresar?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea Regresar?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 contrato_panel modcon = new contrato_panel();
-                estetics.AbrirFormularios(modcon, datos_contrato_panel);
+                estetics.AbrirFormularios(modcon, datos_contrato_panel); 
             }
         }
 
+        //DA CLICK AL CONTRATO
         private void DgvDatosContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnModificar.Enabled = true;
+
             if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() =="Temporal")
             {
                 cmbTipoServicio.Items.Clear();
@@ -120,33 +123,55 @@ namespace Transporte_Escolar_Bonilla
                 dtpInicio.Enabled = true;
                 txtMonto.Enabled = true;
 
-                cmbTipoServicio.Enabled = true;
+                cmbTipoServicio.Enabled = true;   
 
 
 
             }
         }
 
-        private void BtnModificar_Click(object sender, EventArgs e)
+        private void BtnModificar_Click(object sender, EventArgs e) 
         {
-            if (MessageBox.Show("¿Está seguro que desea guardar los cambios\nSi guarda los cambios, ya no podrá revertirlos?", "ATENCIÓN", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
                 if(txtTipoContrato.Text == "Temporal")
                 {
-                    string estado, tipopago;
-                    estado = cmbEstado.SelectedValue.ToString();
-                    tipopago = cmbTipoPago.SelectedValue.ToString();
-                    modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago));
-                    modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
+                    if (txtMonto.Text.Trim().Length == 0 || double.Parse(txtMonto.Text) <= 0 || txtMontoMensual.Text.Trim().Length == 0 || double.Parse(txtMontoMensual.Text) <= 0 || txtCuota.Text.Trim().Length == 0 || double.Parse(txtCuota.Text) <= 0)
+                        MessageBox.Show("Debe ingresar los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        if (int.Parse(txtCuota.Text) > 12)
+                            MessageBox.Show("El Máximo de Cuotas permitidas es 12", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                        {
+                            if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                 string estado, tipopago;
+                                 estado = cmbEstado.SelectedValue.ToString();
+                                 tipopago = cmbTipoPago.SelectedValue.ToString();
+                                 modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago), int.Parse(txtCuota.Text));
+                                 modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
+                            }
+                        }
+                    }
+                         
+                    
                 }
+
+
                 if(txtTipoContrato.Text == "Viaje")
                 {
-                    string estado;
-                    estado = cmbEstado.SelectedValue.ToString();
-                    modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
-                    modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
+                    if (txtMonto.Text.Trim().Length == 0 || double.Parse(txtMonto.Text) <= 0)
+                        MessageBox.Show("Debe ingresar un monto válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            string estado;
+                            estado = cmbEstado.SelectedValue.ToString();
+                            modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
+                            modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
+                        }
+                    }                 
                 }
-            }
         }
 
         private void TxtMonto_KeyPress(object sender, KeyPressEventArgs e)
@@ -170,19 +195,27 @@ namespace Transporte_Escolar_Bonilla
 
         private void TxtCuota_TextChanged(object sender, EventArgs e)
         {
-            if (txtCuota.Text != " ")
-                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
+            if (txtCuota.Text.Trim().Length != 0 && int.Parse(txtCuota.Text) <= 12)
+                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy"); 
         }
 
         private void DtpInicio_ValueChanged(object sender, EventArgs e)
         {
-            if (txtCuota.Text != "")
+            if (txtCuota.Text.Trim().Length != 0 && int.Parse(txtCuota.Text) <= 12)
                 txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
         }
 
         private void CmbTipoPago_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtCuota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

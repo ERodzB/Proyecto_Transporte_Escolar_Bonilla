@@ -22,7 +22,7 @@ namespace Transporte_Escolar_Bonilla
             Ingresar ingreso = new Ingresar();
             Validar valido = new Validar();
 
-            if (nombrePerfil_tb.Text!="" && desPerfil_tb.Text!="" && nivelAcceso_cmb.Text!="")
+            if (nombrePerfil_tb.TextLength > 2 && desPerfil_tb.TextLength > 2 && nivelAcceso_cmb.Text!="")
             {
                 if (valido.validarPerfil(nombrePerfil_tb.Text) == 0)
                 {
@@ -39,7 +39,7 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                MessageBox.Show("Ingrese todos los datos requeridos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese un mínimo de 3 caracteres por campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

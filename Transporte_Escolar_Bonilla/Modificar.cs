@@ -176,7 +176,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void ModificarContratoTemporal(string id, double montomensual, string servicio, DateTime fechaini, double monto, string fechafin, int estado, int tipopago)
+        public void ModificarContratoTemporal(string id, double montomensual, string servicio, DateTime fechaini, double monto, string fechafin, int estado, int tipopago, int cuotas)
         {
 
             try
@@ -191,8 +191,9 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechafin);
                 cmd.Parameters.AddWithValue("@Estado_Contrato", estado);
                 cmd.Parameters.AddWithValue("@Tipo_Pago_Contrato", tipopago);
+                cmd.Parameters.AddWithValue("@Cuotas_Mensuales", cuotas); 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha Modificado correctamente el Contrato");
+                MessageBox.Show("Se ha Modificado correctamente el Contrato", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -206,7 +207,7 @@ namespace Transporte_Escolar_Bonilla
 
             try
             {
-                cmd = new SqlCommand("ModificarContratoTemporal", conexionBD);
+                cmd = new SqlCommand("ModificarContratoViaje", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Contrato", id);
                 cmd.Parameters.AddWithValue("@Servicio", servicio);
@@ -216,7 +217,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechafin);
                 cmd.Parameters.AddWithValue("@Estado_Contrato", estado);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha Modificado correctamente el Contrato");
+                MessageBox.Show("Se ha Modificado correctamente el Contrato", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)

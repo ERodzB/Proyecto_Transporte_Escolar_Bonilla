@@ -25,15 +25,16 @@ namespace Transporte_Escolar_Bonilla
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             Modificar mod = new Modificar();
-            if(txtIdentidad.Text !="")
+
+            if(txtIdentidad.TextLength == 13)
             {
-                if (txtNombre.Text!="" && txtDireccion.Text!="" && txtTelefono.Text!="" && txtCorreo.Text!="")
+                if (txtNombre.TextLength > 2 && txtDireccion.Text!="" && txtTelefono.TextLength == 8 && txtCorreo.Text!="")
                 {
                     if (txtDireccion.TextLength >= 15)
                     {
                         if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
-                            if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            if (MessageBox.Show("¿Está seguro que desea guardar los cambios\nSi guarda los cambios ya no podrá revertirlos", "ATENCIÓN", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
                                 mod.ModificarClientes(txtIdentidad.Text, txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text);
                                 mod.BitacoraModulo("Modificación - Cliente", 10, "Modificación Información del Cliente", "Cliente Modificado: " + txtIdentidad.Text, "N/A", "N/A", "N/A", "N/A");
@@ -46,19 +47,19 @@ namespace Transporte_Escolar_Bonilla
                         }
                         else
                         {
-                            MessageBox.Show("La direccion de correo es invalida. Favor corregir", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("La dirección de correo es inválida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtCorreo.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese una direccion mayor a 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ingrese una dirección mayor a 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDireccion.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error. Favor no dejar ningun valor vacio","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe ingresar los datos correctamente","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

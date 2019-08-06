@@ -50,11 +50,11 @@
             this.opc_gp.Controls.Add(this.radno);
             this.opc_gp.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opc_gp.ForeColor = System.Drawing.Color.White;
-            this.opc_gp.Location = new System.Drawing.Point(87, 103);
-            this.opc_gp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.opc_gp.Location = new System.Drawing.Point(65, 84);
+            this.opc_gp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.opc_gp.Name = "opc_gp";
-            this.opc_gp.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.opc_gp.Size = new System.Drawing.Size(931, 111);
+            this.opc_gp.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opc_gp.Size = new System.Drawing.Size(698, 90);
             this.opc_gp.TabIndex = 15;
             this.opc_gp.TabStop = false;
             this.opc_gp.Text = "Mantenimiento";
@@ -62,10 +62,10 @@
             // radagregar
             // 
             this.radagregar.AutoSize = true;
-            this.radagregar.Location = new System.Drawing.Point(231, 50);
-            this.radagregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radagregar.Location = new System.Drawing.Point(173, 41);
+            this.radagregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radagregar.Name = "radagregar";
-            this.radagregar.Size = new System.Drawing.Size(320, 34);
+            this.radagregar.Size = new System.Drawing.Size(250, 26);
             this.radagregar.TabIndex = 10;
             this.radagregar.Text = "Agregar Mantenimiento";
             this.radagregar.UseVisualStyleBackColor = true;
@@ -74,10 +74,10 @@
             // radmodi
             // 
             this.radmodi.AutoSize = true;
-            this.radmodi.Location = new System.Drawing.Point(579, 50);
-            this.radmodi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radmodi.Location = new System.Drawing.Point(434, 41);
+            this.radmodi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radmodi.Name = "radmodi";
-            this.radmodi.Size = new System.Drawing.Size(339, 34);
+            this.radmodi.Size = new System.Drawing.Size(257, 26);
             this.radmodi.TabIndex = 8;
             this.radmodi.Text = "Modificar Mantenimiento";
             this.radmodi.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@
             // 
             this.radno.AutoSize = true;
             this.radno.Checked = true;
-            this.radno.Location = new System.Drawing.Point(20, 50);
-            this.radno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radno.Location = new System.Drawing.Point(15, 41);
+            this.radno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radno.Name = "radno";
-            this.radno.Size = new System.Drawing.Size(189, 34);
+            this.radno.Size = new System.Drawing.Size(144, 26);
             this.radno.TabIndex = 7;
             this.radno.TabStop = true;
             this.radno.Text = "No Modificar";
@@ -102,10 +102,9 @@
             this.combmant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combmant.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combmant.FormattingEnabled = true;
-            this.combmant.Location = new System.Drawing.Point(464, 260);
-            this.combmant.Margin = new System.Windows.Forms.Padding(4);
+            this.combmant.Location = new System.Drawing.Point(348, 211);
             this.combmant.Name = "combmant";
-            this.combmant.Size = new System.Drawing.Size(379, 39);
+            this.combmant.Size = new System.Drawing.Size(285, 31);
             this.combmant.TabIndex = 189;
             this.combmant.Visible = false;
             this.combmant.SelectedIndexChanged += new System.EventHandler(this.Combmant_SelectedIndexChanged);
@@ -115,10 +114,9 @@
             this.labmant.AutoSize = true;
             this.labmant.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.labmant.ForeColor = System.Drawing.SystemColors.Window;
-            this.labmant.Location = new System.Drawing.Point(197, 260);
-            this.labmant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labmant.Location = new System.Drawing.Point(148, 211);
             this.labmant.Name = "labmant";
-            this.labmant.Size = new System.Drawing.Size(244, 36);
+            this.labmant.Size = new System.Drawing.Size(194, 27);
             this.labmant.TabIndex = 190;
             this.labmant.Text = "Mantenimiento:";
             this.labmant.Visible = false;
@@ -128,10 +126,9 @@
             this.labnom.AutoSize = true;
             this.labnom.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.labnom.ForeColor = System.Drawing.SystemColors.Window;
-            this.labnom.Location = new System.Drawing.Point(309, 334);
-            this.labnom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labnom.Location = new System.Drawing.Point(232, 271);
             this.labnom.Name = "labnom";
-            this.labnom.Size = new System.Drawing.Size(138, 36);
+            this.labnom.Size = new System.Drawing.Size(110, 27);
             this.labnom.TabIndex = 194;
             this.labnom.Text = "Nombre:";
             this.labnom.Visible = false;
@@ -141,10 +138,9 @@
             this.labdesc.AutoSize = true;
             this.labdesc.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.labdesc.ForeColor = System.Drawing.SystemColors.Window;
-            this.labdesc.Location = new System.Drawing.Point(252, 401);
-            this.labdesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labdesc.Location = new System.Drawing.Point(189, 326);
             this.labdesc.Name = "labdesc";
-            this.labdesc.Size = new System.Drawing.Size(192, 36);
+            this.labdesc.Size = new System.Drawing.Size(153, 27);
             this.labdesc.TabIndex = 196;
             this.labdesc.Text = "Descripción:";
             this.labdesc.Visible = false;
@@ -155,10 +151,9 @@
             this.botingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botingresar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botingresar.ForeColor = System.Drawing.Color.Transparent;
-            this.botingresar.Location = new System.Drawing.Point(533, 484);
-            this.botingresar.Margin = new System.Windows.Forms.Padding(4);
+            this.botingresar.Location = new System.Drawing.Point(400, 393);
             this.botingresar.Name = "botingresar";
-            this.botingresar.Size = new System.Drawing.Size(236, 79);
+            this.botingresar.Size = new System.Drawing.Size(177, 64);
             this.botingresar.TabIndex = 236;
             this.botingresar.Text = "Ingresar";
             this.botingresar.UseVisualStyleBackColor = false;
@@ -168,20 +163,18 @@
             // txtnom
             // 
             this.txtnom.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnom.Location = new System.Drawing.Point(464, 334);
-            this.txtnom.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnom.Location = new System.Drawing.Point(348, 271);
             this.txtnom.Name = "txtnom";
-            this.txtnom.Size = new System.Drawing.Size(379, 34);
+            this.txtnom.Size = new System.Drawing.Size(285, 28);
             this.txtnom.TabIndex = 237;
             this.txtnom.Visible = false;
             // 
             // txtdesc
             // 
             this.txtdesc.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdesc.Location = new System.Drawing.Point(464, 400);
-            this.txtdesc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtdesc.Location = new System.Drawing.Point(348, 325);
             this.txtdesc.Name = "txtdesc";
-            this.txtdesc.Size = new System.Drawing.Size(379, 34);
+            this.txtdesc.Size = new System.Drawing.Size(285, 28);
             this.txtdesc.TabIndex = 238;
             this.txtdesc.Visible = false;
             // 
@@ -190,20 +183,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(420, 45);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(303, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(312, 44);
+            this.label4.Size = new System.Drawing.Size(248, 37);
             this.label4.TabIndex = 239;
             this.label4.Text = "Mantenimientos";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // form_mantenimientos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.ClientSize = new System.Drawing.Size(831, 528);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtdesc);
             this.Controls.Add(this.txtnom);
@@ -214,7 +206,6 @@
             this.Controls.Add(this.labmant);
             this.Controls.Add(this.opc_gp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_mantenimientos";
             this.Text = "form_mantenimientos";
             this.Load += new System.EventHandler(this.Form_mantenimientos_Load);

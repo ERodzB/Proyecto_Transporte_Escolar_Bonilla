@@ -75,22 +75,22 @@ namespace Transporte_Escolar_Bonilla
             int cont = 0;
 
             //No dejar Campos Vacios
-            if (string.IsNullOrEmpty(txtid.Text))
+            if (txtid.TextLength < 13)
                 cont++;
             if (string.IsNullOrEmpty(txtcorreo.Text))
                 cont++;
-            if (string.IsNullOrEmpty(txtnom.Text))
+            if (txtnom.TextLength < 3)
                 cont++;
-            if (string.IsNullOrEmpty(txtdir.Text))
+            if (txtdir.TextLength < 15)
                 cont++;
-            if (string.IsNullOrEmpty(txttel.Text))
+            if (txttel.TextLength < 8)
                 cont++;
             if (combTipoContrato.SelectedIndex == -1)
                 cont++;
 
 
             if (cont > 0) 
-                MessageBox.Show("Debe llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe llenar todos los campos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 if(val.validarCliente(txtid.Text) == 1)

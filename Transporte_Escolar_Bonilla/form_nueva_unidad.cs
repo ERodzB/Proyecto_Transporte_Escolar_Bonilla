@@ -69,19 +69,19 @@ namespace Transporte_Escolar_Bonilla
             int cont = 0;
 
             //Validar campos y combobox vacios vacios
-            if (txtmat.Text == "")
+            if (txtmat.Text == "" || val.ValidarPlaca(txtmat.Text) == 0) //Si la placa esta vacia o mal escrita
                 cont++;
 
             if (combtipoveh.SelectedIndex == -1)
                 cont++;
 
-            if (txtmarca.Text == "")
+            if (txtmarca.TextLength < 3)
                 cont++;
 
-            if (txtmodelo.Text == "")
+            if (txtmodelo.TextLength < 3)
                 cont++;
 
-            if (txtcolor.Text == "")
+            if (txtcolor.TextLength < 3)
                 cont++;
 
             if (txtcap.Text == "" || int.Parse(txtcap.Text) <= 0)
@@ -194,6 +194,12 @@ namespace Transporte_Escolar_Bonilla
             {
                 e.Handled = true;
             }
+        }
+
+        private void Txtmat_TextChanged(object sender, EventArgs e)
+        {
+            //COLOCAR LETRAS EN MAYUSCULA AL ESCRIBIR
+            txtmat.CharacterCasing = CharacterCasing.Upper;
         }
     }
 }

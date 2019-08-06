@@ -32,7 +32,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (CMBFiltro.SelectedIndex == -1 || CBFiltrox.SelectedIndex == -1)
             {
-                MessageBox.Show("Porfavor seleccione una opcion del menu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor seleccione los filtros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -48,7 +48,7 @@ namespace Transporte_Escolar_Bonilla
         private void CBFiltrox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if(CBFiltrox.SelectedItem.ToString()== "Marca Vehiculo")
+            if(CBFiltrox.SelectedItem.ToString()== "Marca Vehículo")
             {
                 CMBFiltro.DataSource = con.ComboboxMVehiculos();
                 CMBFiltro.DisplayMember = "Marca";
@@ -58,7 +58,7 @@ namespace Transporte_Escolar_Bonilla
                 CMBFiltro.Visible = true;
                 label3.Visible = true;
             }
-            if (CBFiltrox.SelectedItem.ToString() == "Tipo Vehiculo")
+            if (CBFiltrox.SelectedItem.ToString() == "Tipo Vehículo")
             {
                 CMBFiltro.DataSource = con.ComboboxTVehiculos();
                 CMBFiltro.DisplayMember = "Tipo";
@@ -68,7 +68,7 @@ namespace Transporte_Escolar_Bonilla
                 CMBFiltro.Visible = true;
                 label3.Visible = true;
             }
-            if (CBFiltrox.SelectedItem.ToString() == "Estado Vehiculo")
+            if (CBFiltrox.SelectedItem.ToString() == "Estado Vehículo")
             {
                 CMBFiltro.DataSource = con.ComboboxEVehiculos();
                 CMBFiltro.DisplayMember = "Estado";
@@ -78,7 +78,7 @@ namespace Transporte_Escolar_Bonilla
                 CMBFiltro.Visible = true;
                 label3.Visible = true;
             }
-            if (CBFiltrox.SelectedItem.ToString() == "Responsable Vehiculo")
+            if (CBFiltrox.SelectedItem.ToString() == "Responsable Vehículo")
             {
                 CMBFiltro.DataSource = con.ComboboEncVehiculos();
                 CMBFiltro.DisplayMember = "Nombre";

@@ -219,6 +219,26 @@ namespace Transporte_Escolar_Bonilla
             return x;
         }
 
+        //Validar Placa de Vehiculo
+        public int ValidarPlaca(String placa)
+        {
+            int num = 0, letra = 0, i = 0;
+
+            for(i=0; i<placa.Length; i++)
+            {
+                if (char.IsLetter(placa[i]))
+                    letra++;
+                else
+                    num++;
+            }
+
+            //Devuelve 1 si esta bien escrito
+            if (letra == 3 && num == 4)
+                return 1;
+            else
+                return 0;
+        }
+
         //Verificar Mantenimiento Existente
         public int VerificarMantenimiento(int cod, string nom, int opcion)
         {
@@ -347,6 +367,27 @@ namespace Transporte_Escolar_Bonilla
             {
                 MessageBox.Show("Error" + ex);
             }
+            return x;
+        }
+
+
+        //Validar si se Modifica Ruta 
+        public int VerificarModiRuta(string codr)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarModiRuta", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo_ruta", codr);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+
             return x;
         }
     }

@@ -92,37 +92,37 @@ namespace Transporte_Escolar_Bonilla
             val.igual = 0;
 
             //Validar datos vacios
-            if (txtinicio.Text == "")
+            if (txtinicio.Text.Trim().Length < 3)
             {
                 cont++;
-                error += "Inicio - ";
+                error += "Debe ingresar al menos 3 caracteres en Inicio\n";
             }
 
-            if (txtfin.Text == "")
+            if (txtfin.Text.Trim().Length < 3)
             {
                 cont++;
-                error += "Fin - ";
+                error += "Debe ingresar al menos 3 caracteres en Fin\n";
             }
 
             //Validar Horarios
             if (((dtphoras1.Checked == true && dtphorae1.Checked == false) || (dtphoras1.Checked == false && dtphorae1.Checked == true)) || (dtphoras1.Checked == true && dtphorae1.Checked == true && combveh1.SelectedIndex == -1) || (dtphoras1.Checked == true && dtphorae1.Checked == true && dtphoras1.Text == dtphorae1.Text))
             {
                 cont++;
-                error += "Horario 1 - ";
+                error += "Horario de la Ruta\n";
             }
 
             //Al menos un Horario
             if ((dtphoras1.Checked == false && dtphorae1.Checked == false && combveh1.SelectedIndex == -1))
             {
                 cont++;
-                error += "Debe ingresar al menos 1 Horario\n";
+                error += "Debe ingresar al menos 1 Horario\n"; 
             }
 
-            if ((dtphoras1.Checked == false || dtphorae1.Checked == false || combveh1.SelectedIndex == -1))
-            {
-                cont++;
-                error += "No deje elementos sin ingresar\n";
-            }
+            //if ((dtphoras1.Checked == false || dtphorae1.Checked == false || combveh1.SelectedIndex == -1))
+            //{
+            //    cont++;
+            //    error += "No deje elementos sin ingresar\n";
+            //}
 
 
             //Ruta Existente
@@ -144,12 +144,12 @@ namespace Transporte_Escolar_Bonilla
                 if (val.validarHorariosVeh(combveh1.Text, dtphoras1.Text) == 1)
                 {
                     cont++;
-                    error += "El Vehiculo ya realiza una ruta en el Horario 1\n";
+                    error += "El Vehiculo ya realiza una ruta en ese Horario\n";
                 }
             }
 
             if (cont > 0)
-                MessageBox.Show("ERROR EN: " + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR EN: \n\n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -178,6 +178,25 @@ namespace Transporte_Escolar_Bonilla
                             dtphoras1.Checked = false;
                             
                             cant = 1;
+                        }
+                        else
+                        {
+                            txtinicio.Clear();
+                            txtfin.Clear();
+
+                            cambio1 = 2;
+
+                            labv1.Visible = false;
+
+                            combveh1.SelectedIndex = -1;
+
+
+                            cambio1 = 3;
+
+                            dtphoras1.Checked = false;
+                            dtphorae1.Checked = false;
+
+                            txtinicio.Focus();
                         }
                     }                   
                     else

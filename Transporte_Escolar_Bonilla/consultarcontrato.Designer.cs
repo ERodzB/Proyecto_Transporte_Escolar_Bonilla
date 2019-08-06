@@ -51,7 +51,7 @@
             this.btnFiltrar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
             this.btnFiltrar.Location = new System.Drawing.Point(638, 163);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(132, 44);
             this.btnFiltrar.TabIndex = 11;
@@ -80,7 +80,7 @@
             "Clientes",
             "Estados"});
             this.CBFiltrox.Location = new System.Drawing.Point(427, 67);
-            this.CBFiltrox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBFiltrox.Margin = new System.Windows.Forms.Padding(2);
             this.CBFiltrox.Name = "CBFiltrox";
             this.CBFiltrox.Size = new System.Drawing.Size(344, 32);
             this.CBFiltrox.TabIndex = 9;
@@ -113,7 +113,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvConsultaU.Location = new System.Drawing.Point(34, 222);
-            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -165,7 +165,7 @@
             "Clientes",
             "Contratos por Cliente"});
             this.CMBFiltro.Location = new System.Drawing.Point(427, 115);
-            this.CMBFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CMBFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.CMBFiltro.Name = "CMBFiltro";
             this.CMBFiltro.Size = new System.Drawing.Size(344, 32);
             this.CMBFiltro.TabIndex = 14;
@@ -176,7 +176,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(223, 14);
+            this.label4.Location = new System.Drawing.Point(207, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(373, 37);
             this.label4.TabIndex = 94;
@@ -198,7 +198,7 @@
             this.Controls.Add(this.CBFiltrox);
             this.Controls.Add(this.dgvConsultaU);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "consultarcontrato";
             this.Text = "consultarcontrato";
             this.Load += new System.EventHandler(this.Consultarcontrato_Load);

@@ -18,10 +18,10 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnSeleccionar_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea Modificar los contratos de este Cliente?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea Modificar los contratos de este Cliente?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Modificar_Datos_Contrato moddato = new Modificar_Datos_Contrato();
-                estetics.AbrirFormularios(moddato, contratos_panel);
+                estetics.AbrirFormularios(moddato, contratos_panel); 
             }
         }
 
@@ -61,6 +61,7 @@ namespace Transporte_Escolar_Bonilla
         private void Form_Modificar_Contrato_Load(object sender, EventArgs e)
         {
             x = 0;
+
             Consultar con = new Consultar();
 
             con.CargadgvContrato(dgvContrato);

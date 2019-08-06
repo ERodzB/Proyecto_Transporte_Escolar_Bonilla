@@ -106,9 +106,9 @@ namespace Transporte_Escolar_Bonilla
                 //INGRESAR NUEVO
                 if(botingresar.Text.Equals("Ingresar"))
                 {
-                    //Validaciones
-                    if (txtnom.Text == "" || txtdesc.Text == "")
-                        MessageBox.Show("Debe llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Validaciones
+                if (txtnom.TextLength < 3 || txtdesc.TextLength < 3)
+                        MessageBox.Show("Debe ingresar mínimo 3 caracteres por campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
                         //Validar Existente
@@ -154,8 +154,8 @@ namespace Transporte_Escolar_Bonilla
                 else
                 {
                     //Validaciones 
-                    if (txtnom.Text == "" || txtdesc.Text == "" || combmant.SelectedIndex == -1)
-                        MessageBox.Show("Debe llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (txtnom.TextLength < 3 || txtdesc.TextLength < 3 || combmant.SelectedIndex == -1)
+                        MessageBox.Show("Debe ingresar mínimo 3 caracteres por campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
 
