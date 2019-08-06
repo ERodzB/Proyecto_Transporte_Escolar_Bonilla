@@ -45,29 +45,32 @@ namespace Transporte_Escolar_Bonilla
         }
         private void Modificar_btn_Click(object sender, EventArgs e)
         {
-            if (nombre_tb.Text!="" && contra_tb.Text!="" && Perfil_cmb.Text!="")
+            if (nombre_tb.Text.Trim().Length > 2 && contra_tb.Text.Trim().Length != 0 && Perfil_cmb.Text!="")
             {
-                if (nueva_tb.Text.Length >= 8)
+                if (nueva_tb.Text.Length >= 8) 
                 {
                     if (nueva_tb.Text.Equals(contra_tb.Text) && valido.validarContrasena(actual_tb.Text, identidad_tb.Text) == 1)
                     {
-                        Modificar modify = new Modificar();
-                        modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
-                        modify.BitacoraModulo("Modificación - Usuario", 10, "Modificación de Información del Usuario ", "Usuario Modificado: " + nombre_tb.Text, "N/A", "N/A", "N/A", "N/A");
+                        if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            Modificar modify = new Modificar();
+                            modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
+                            modify.BitacoraModulo("Modificación - Usuario", 10, "Modificación de Información del Usuario ", "Usuario Modificado: " + nombre_tb.Text, "N/A", "N/A", "N/A", "N/A");
 
-                        identidad_tb.Clear();
-                        nombre_tb.Clear();
-                        contra_tb.Clear();
-                        identidad_tb.Enabled = true;
-                        nombre_tb.Enabled = true;
-                        contra_tb.Enabled = false;
-                        Perfil_cmb.Enabled = false;
-                        Perfil_cmb.SelectedIndex = -1;
-                        modificar_btn.Enabled = false;
-                        actual_tb.Clear();
-                        actual_tb.Enabled = false;
-                        nueva_tb.Clear();
-                        nueva_tb.Enabled = false;
+                            identidad_tb.Clear();
+                            nombre_tb.Clear();
+                            contra_tb.Clear();
+                            identidad_tb.Enabled = true;
+                            nombre_tb.Enabled = true;
+                            contra_tb.Enabled = false;
+                            Perfil_cmb.Enabled = false; 
+                            Perfil_cmb.SelectedIndex = -1;
+                            modificar_btn.Enabled = false;
+                            actual_tb.Clear();
+                            actual_tb.Enabled = false;
+                            nueva_tb.Clear();
+                            nueva_tb.Enabled = false;
+                        }      
                     }
                     else
                     {

@@ -40,7 +40,7 @@ namespace Transporte_Escolar_Bonilla
                         modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Agregar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Vehiculo Asignado: " + vehiculo_cmb.Text, "N/A", "N/A", "N/A");
                         Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
                         Horario_cmb.DisplayMember = "Horarios";
-                        MessageBox.Show("Horario Agregado con Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Horario Agregado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         no_rb.Checked = true;
                         rutasModificar_cmb.SelectedIndex = -1;
                     }

@@ -21,9 +21,9 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            if (txtColor.Text!="" && dtpEmision.Value <= System.DateTime.Today && dtpVencimiento.Value > System.DateTime.Today && cmbEstadoVehiculo.Text!="")
+            if (txtColor.Text.Trim().Length > 2 && dtpEmision.Value <= System.DateTime.Today && dtpVencimiento.Value > System.DateTime.Today && cmbEstadoVehiculo.Text!="")
             {
-                if (MessageBox.Show("¿Esta seguro que desea guardar los cambios\nSi guarda los cambios, no podrá revertir los cambios?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     mod.ModificarVehiculo(txtPlaca.Text, txtColor.Text, int.Parse(cmbEstadoVehiculo.SelectedValue.ToString()), DateTime.Parse(dtpEmision.Text), DateTime.Parse(dtpVencimiento.Text));
                     mod.BitacoraModulo("Modificación - Unidad", 10, "Modificación de Informacion de Un Vehiculo", "Vehiculo Modificado: " + txtPlaca.Text, "N/A", "N/A", "N/A", "N/A");
@@ -33,9 +33,11 @@ namespace Transporte_Escolar_Bonilla
                     dtpEmision.ResetText();
                     dtpEmision.Enabled = false;
                     dtpVencimiento.ResetText();
-                    dtpVencimiento.Enabled = false;
+                    dtpVencimiento.Enabled = false; 
                 }
             }
+            else
+                MessageBox.Show("Debe ingresar los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Modificar_UnidadFrm_Load(object sender, EventArgs e)

@@ -167,7 +167,7 @@
             this.botcrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
-            this.botcrear.Location = new System.Drawing.Point(503, 433);
+            this.botcrear.Location = new System.Drawing.Point(587, 426);
             this.botcrear.Name = "botcrear";
             this.botcrear.Size = new System.Drawing.Size(109, 42);
             this.botcrear.TabIndex = 260;

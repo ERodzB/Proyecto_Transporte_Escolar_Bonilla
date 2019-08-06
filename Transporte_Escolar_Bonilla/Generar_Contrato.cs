@@ -245,7 +245,6 @@ namespace Transporte_Escolar_Bonilla
         private void Generar_Contrato_Load(object sender, EventArgs e)
         {
             con.cargardvggenerarcotnrato(dgvGenerarContrato);
-
         }
 
         private void DgvGenerarContrato_CellClick(object sender, DataGridViewCellEventArgs e)

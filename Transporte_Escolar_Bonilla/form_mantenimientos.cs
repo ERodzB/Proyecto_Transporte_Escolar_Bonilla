@@ -107,7 +107,7 @@ namespace Transporte_Escolar_Bonilla
                 if(botingresar.Text.Equals("Ingresar"))
                 {
                 //Validaciones
-                if (txtnom.TextLength < 3 || txtdesc.TextLength < 3)
+                if (txtnom.Text.Trim().Length < 3 || txtdesc.Text.Trim().Length < 3)
                         MessageBox.Show("Debe ingresar mínimo 3 caracteres por campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
@@ -154,7 +154,7 @@ namespace Transporte_Escolar_Bonilla
                 else
                 {
                     //Validaciones 
-                    if (txtnom.TextLength < 3 || txtdesc.TextLength < 3 || combmant.SelectedIndex == -1)
+                    if (txtnom.Text.Trim().Length < 3 || txtdesc.Text.Trim().Length < 3 || combmant.SelectedIndex == -1)
                         MessageBox.Show("Debe ingresar mínimo 3 caracteres por campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {

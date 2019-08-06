@@ -38,9 +38,9 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        private void Modificar_btn_Click(object sender, EventArgs e)
+        private void Modificar_btn_Click(object sender, EventArgs e) 
         {
-            if (nombrePerfil_tb.Text!="" && desPerfil_tb.Text!="" && nivelAcceso_cmb.Text!="" && Perfiles_cmb.Text!="")
+            if (nombrePerfil_tb.Text.Trim().Length > 2 && desPerfil_tb.Text.Trim().Length > 2 && nivelAcceso_cmb.Text!="" && Perfiles_cmb.Text!="")
             {
                 Modificar mperfiles = new Modificar();
 
@@ -57,7 +57,7 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                MessageBox.Show("Ingrese todos los datos requeridos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese todos los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

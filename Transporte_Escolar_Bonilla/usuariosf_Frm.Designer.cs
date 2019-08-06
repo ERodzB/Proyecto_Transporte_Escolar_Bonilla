@@ -52,8 +52,9 @@
             this.usariosTop_Panel.Controls.Add(this.consultasUsuarios_btn);
             this.usariosTop_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.usariosTop_Panel.Location = new System.Drawing.Point(0, 0);
+            this.usariosTop_Panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usariosTop_Panel.Name = "usariosTop_Panel";
-            this.usariosTop_Panel.Size = new System.Drawing.Size(1106, 95);
+            this.usariosTop_Panel.Size = new System.Drawing.Size(830, 77);
             this.usariosTop_Panel.TabIndex = 1;
             // 
             // modificarPerfil_btn
@@ -64,9 +65,10 @@
             this.modificarPerfil_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificarPerfil_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificarPerfil_btn.ForeColor = System.Drawing.Color.White;
-            this.modificarPerfil_btn.Location = new System.Drawing.Point(704, 0);
+            this.modificarPerfil_btn.Location = new System.Drawing.Point(528, 0);
+            this.modificarPerfil_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modificarPerfil_btn.Name = "modificarPerfil_btn";
-            this.modificarPerfil_btn.Size = new System.Drawing.Size(176, 95);
+            this.modificarPerfil_btn.Size = new System.Drawing.Size(132, 77);
             this.modificarPerfil_btn.TabIndex = 8;
             this.modificarPerfil_btn.Text = "Modificar\r\nPerfil";
             this.modificarPerfil_btn.UseVisualStyleBackColor = false;
@@ -80,9 +82,10 @@
             this.crearPerfil_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crearPerfil_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crearPerfil_btn.ForeColor = System.Drawing.Color.White;
-            this.crearPerfil_btn.Location = new System.Drawing.Point(528, 0);
+            this.crearPerfil_btn.Location = new System.Drawing.Point(396, 0);
+            this.crearPerfil_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.crearPerfil_btn.Name = "crearPerfil_btn";
-            this.crearPerfil_btn.Size = new System.Drawing.Size(176, 95);
+            this.crearPerfil_btn.Size = new System.Drawing.Size(132, 77);
             this.crearPerfil_btn.TabIndex = 7;
             this.crearPerfil_btn.Text = "Crear \r\nPerfil";
             this.crearPerfil_btn.UseVisualStyleBackColor = false;
@@ -96,9 +99,10 @@
             this.modificarUsuarios_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificarUsuarios_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificarUsuarios_btn.ForeColor = System.Drawing.Color.White;
-            this.modificarUsuarios_btn.Location = new System.Drawing.Point(352, 0);
+            this.modificarUsuarios_btn.Location = new System.Drawing.Point(264, 0);
+            this.modificarUsuarios_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modificarUsuarios_btn.Name = "modificarUsuarios_btn";
-            this.modificarUsuarios_btn.Size = new System.Drawing.Size(176, 95);
+            this.modificarUsuarios_btn.Size = new System.Drawing.Size(132, 77);
             this.modificarUsuarios_btn.TabIndex = 6;
             this.modificarUsuarios_btn.Text = "Modificar Usuario";
             this.modificarUsuarios_btn.UseVisualStyleBackColor = false;
@@ -112,9 +116,10 @@
             this.crearUsuarios_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crearUsuarios_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crearUsuarios_btn.ForeColor = System.Drawing.Color.White;
-            this.crearUsuarios_btn.Location = new System.Drawing.Point(176, 0);
+            this.crearUsuarios_btn.Location = new System.Drawing.Point(132, 0);
+            this.crearUsuarios_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.crearUsuarios_btn.Name = "crearUsuarios_btn";
-            this.crearUsuarios_btn.Size = new System.Drawing.Size(176, 95);
+            this.crearUsuarios_btn.Size = new System.Drawing.Size(132, 77);
             this.crearUsuarios_btn.TabIndex = 5;
             this.crearUsuarios_btn.Text = "Crear Usuario";
             this.crearUsuarios_btn.UseVisualStyleBackColor = false;
@@ -129,8 +134,9 @@
             this.consultasUsuarios_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasUsuarios_btn.ForeColor = System.Drawing.Color.White;
             this.consultasUsuarios_btn.Location = new System.Drawing.Point(0, 0);
+            this.consultasUsuarios_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.consultasUsuarios_btn.Name = "consultasUsuarios_btn";
-            this.consultasUsuarios_btn.Size = new System.Drawing.Size(176, 95);
+            this.consultasUsuarios_btn.Size = new System.Drawing.Size(132, 77);
             this.consultasUsuarios_btn.TabIndex = 4;
             this.consultasUsuarios_btn.Text = "Consultas";
             this.consultasUsuarios_btn.UseVisualStyleBackColor = false;
@@ -141,9 +147,10 @@
             this.mainUsuarios_panel.Controls.Add(this.label1);
             this.mainUsuarios_panel.Controls.Add(this.PB1);
             this.mainUsuarios_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainUsuarios_panel.Location = new System.Drawing.Point(0, 95);
+            this.mainUsuarios_panel.Location = new System.Drawing.Point(0, 77);
+            this.mainUsuarios_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainUsuarios_panel.Name = "mainUsuarios_panel";
-            this.mainUsuarios_panel.Size = new System.Drawing.Size(1106, 650);
+            this.mainUsuarios_panel.Size = new System.Drawing.Size(830, 528);
             this.mainUsuarios_panel.TabIndex = 7;
             // 
             // label1
@@ -151,9 +158,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(38, 497);
+            this.label1.Location = new System.Drawing.Point(25, 404);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(954, 80);
+            this.label1.Size = new System.Drawing.Size(783, 66);
             this.label1.TabIndex = 3;
             this.label1.Text = "Bienvenido al Módulo de Usuarios \r\nSeleccione la acción que desea realizar del me" +
     "nú superior\r\n";
@@ -163,22 +171,24 @@
             // PB1
             // 
             this.PB1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.usuarios1;
-            this.PB1.Location = new System.Drawing.Point(327, 111);
+            this.PB1.Location = new System.Drawing.Point(245, 90);
+            this.PB1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PB1.Name = "PB1";
-            this.PB1.Size = new System.Drawing.Size(426, 323);
+            this.PB1.Size = new System.Drawing.Size(320, 262);
             this.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB1.TabIndex = 0;
             this.PB1.TabStop = false;
             // 
             // usuarios_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1106, 745);
+            this.ClientSize = new System.Drawing.Size(830, 605);
             this.Controls.Add(this.mainUsuarios_panel);
             this.Controls.Add(this.usariosTop_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "usuarios_frm";
             this.Text = "usuarios_frm";
             this.usariosTop_Panel.ResumeLayout(false);

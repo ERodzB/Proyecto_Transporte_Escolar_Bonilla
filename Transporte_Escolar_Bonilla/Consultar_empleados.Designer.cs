@@ -66,7 +66,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvConsultaU.Location = new System.Drawing.Point(40, 80);
-            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -88,12 +88,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(35, 437);
+            this.label2.Location = new System.Drawing.Point(35, 439);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 24);
+            this.label2.Size = new System.Drawing.Size(213, 24);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Filtrar por el puesto : ";
+            this.label2.Text = "Filtrar por el puesto: ";
             // 
             // btnFiltrar
             // 
@@ -102,7 +102,7 @@
             this.btnFiltrar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
             this.btnFiltrar.Location = new System.Drawing.Point(643, 427);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(118, 48);
             this.btnFiltrar.TabIndex = 14;
@@ -119,7 +119,7 @@
             "Clientes",
             "Estados"});
             this.cmbpuesto.Location = new System.Drawing.Point(275, 437);
-            this.cmbpuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbpuesto.Margin = new System.Windows.Forms.Padding(2);
             this.cmbpuesto.Name = "cmbpuesto";
             this.cmbpuesto.Size = new System.Drawing.Size(344, 32);
             this.cmbpuesto.TabIndex = 13;
@@ -148,7 +148,7 @@
             this.Controls.Add(this.cmbpuesto);
             this.Controls.Add(this.dgvConsultaU);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Consultar_empleados";
             this.Text = "Consultar_empleados";
             this.Load += new System.EventHandler(this.Consultar_empleados_Load);

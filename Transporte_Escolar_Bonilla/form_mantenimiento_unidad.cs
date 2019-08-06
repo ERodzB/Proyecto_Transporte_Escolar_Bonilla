@@ -63,7 +63,7 @@ namespace Transporte_Escolar_Bonilla
             if (combtipo.SelectedIndex == -1)
                 cont++;
 
-            if (txtcosto.Text == " " || txtcosto.Text=="")
+            if (txtcosto.Text.Trim().Length == 0) 
                 cont++;
             else
             {

@@ -26,15 +26,15 @@ namespace Transporte_Escolar_Bonilla
         {
             Modificar mod = new Modificar();
 
-            if(txtIdentidad.TextLength == 13)
+            if(txtIdentidad.Text.Trim().Length == 13)
             {
-                if (txtNombre.TextLength > 2 && txtDireccion.Text!="" && txtTelefono.TextLength == 8 && txtCorreo.Text!="")
+                if (txtNombre.Text.Trim().Length > 2 && txtDireccion.Text!="" && txtTelefono.Text.Trim().Length == 8 && txtCorreo.Text!="")
                 {
                     if (txtDireccion.TextLength >= 15)
                     {
                         if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
-                            if (MessageBox.Show("¿Está seguro que desea guardar los cambios\nSi guarda los cambios ya no podrá revertirlos", "ATENCIÓN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                             {
                                 mod.ModificarClientes(txtIdentidad.Text, txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text);
                                 mod.BitacoraModulo("Modificación - Cliente", 10, "Modificación Información del Cliente", "Cliente Modificado: " + txtIdentidad.Text, "N/A", "N/A", "N/A", "N/A");

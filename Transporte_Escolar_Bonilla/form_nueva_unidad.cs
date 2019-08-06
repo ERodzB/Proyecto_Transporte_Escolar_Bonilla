@@ -75,16 +75,16 @@ namespace Transporte_Escolar_Bonilla
             if (combtipoveh.SelectedIndex == -1)
                 cont++;
 
-            if (txtmarca.TextLength < 3)
+            if (txtmarca.Text.Trim().Length < 3)
                 cont++;
 
-            if (txtmodelo.TextLength < 3)
+            if (txtmodelo.Text.Trim().Length < 3)
                 cont++;
 
-            if (txtcolor.TextLength < 3)
+            if (txtcolor.Text.Trim().Length < 3)
                 cont++;
 
-            if (txtcap.Text == "" || int.Parse(txtcap.Text) <= 0)
+            if (txtcap.Text.Trim().Length == 0 || int.Parse(txtcap.Text) <= 0) 
                 cont++;
 
             if (combtipotra.SelectedIndex == -1)

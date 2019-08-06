@@ -239,7 +239,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("Horario_Salida_Nuevo", Horario_Salida_Nuevo);
                 cmd.Parameters.AddWithValue("@Decision", Decision);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha " + Decision + " correctamente el Horario","MODIFICACION",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Se ha " + Decision + " correctamente el Horario","GUARDADO",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

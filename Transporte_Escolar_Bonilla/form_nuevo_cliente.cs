@@ -75,15 +75,15 @@ namespace Transporte_Escolar_Bonilla
             int cont = 0;
 
             //No dejar Campos Vacios
-            if (txtid.TextLength < 13)
+            if (txtid.Text.Trim().Length < 13)
                 cont++;
             if (string.IsNullOrEmpty(txtcorreo.Text))
                 cont++;
-            if (txtnom.TextLength < 3)
+            if (txtnom.Text.Trim().Length < 3)
                 cont++;
-            if (txtdir.TextLength < 15)
+            if (txtdir.Text.Trim().Length < 15)
                 cont++;
-            if (txttel.TextLength < 8)
+            if (txttel.Text.Trim().Length < 8)
                 cont++;
             if (combTipoContrato.SelectedIndex == -1)
                 cont++;

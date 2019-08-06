@@ -77,24 +77,24 @@ namespace Transporte_Escolar_Bonilla
             if (combservicio.SelectedIndex == -1)
                 contc++;
 
-            if (txtorigen.TextLength < 3)
+            if (txtorigen.Text.Trim().Length < 3)
                 contc++;
 
-            if (txtdestino.TextLength < 3)
+            if (txtdestino.Text.Trim().Length < 3)
                 contc++;
 
             MessageBox.Show("Tamanio ORIGEN: "+ txtorigen.TextLength+"TAMANIO DESTINO: "+ txtdestino.TextLength, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            if (txttotal.Text == "" || double.Parse(txttotal.Text) <= 0)        
+            if (txttotal.Text.Trim().Length == 0 || double.Parse(txttotal.Text) <= 0)        
                 contc++;
 
-            if (txtant.Text != "")
+            if (txtant.Text.Trim().Length != 0)
             {
                 if (double.Parse(txtant.Text) <= 0)
                     contc++;
             }
 
-            if (txtpa.Text == "" || double.Parse(txtpa.Text) <= 0)
+            if (txtpa.Text.Trim().Length == 0 || double.Parse(txtpa.Text) <= 0)
                 contc++;
 
             //Validar Fechas 

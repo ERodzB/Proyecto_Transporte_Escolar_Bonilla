@@ -50,7 +50,7 @@ namespace Transporte_Escolar_Bonilla
                     }
                     else
                     {
-                        MessageBox.Show("Ya pago ese contrato este mes", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("El pago de este mes ya fue cancelado", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -70,7 +70,7 @@ namespace Transporte_Escolar_Bonilla
 
                 if (Convert.ToDouble(monto_tb.Text) == Convert.ToDouble(contratos_dgv.CurrentRow.Cells[2].Value.ToString()))
                 {
-                    if (descripcion_tb.Text != " " || monto_tb.Text != " ")
+                    if (descripcion_tb.Text.Trim().Length != 0 || monto_tb.Text.Trim().Length != 0)
                     {
                         ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(Cuota_tb.Text), DateTime.Now, Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
                         mod.BitacoraModulo("Pago Cliente", 7, "Pago Recibido del Cliente", cliente_dgv.CurrentRow.Cells[0].Value.ToString(), "N/A", "N/A", "N/A", "N/A");
@@ -78,7 +78,7 @@ namespace Transporte_Escolar_Bonilla
                         monto_tb.Clear();
                         pagar_btn.Enabled = false;
                         descripcion_tb.Enabled = false;
-                        monto_tb.Enabled = false;
+                        monto_tb.Enabled = false; 
                         Cuota_tb.Clear();
 
                     }

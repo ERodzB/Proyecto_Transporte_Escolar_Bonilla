@@ -19,7 +19,7 @@ namespace Transporte_Escolar_Bonilla
             InitializeComponent();
         }
 
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e) 
         {
             Ingresar ingresar = new Ingresar();
             Validar validar = new Validar();
@@ -30,7 +30,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 if(RBLiviana.Checked==false && RBPesada.Checked==false)
                 {
-                    MessageBox.Show("Error, debe seleccionar el tipo de licencia");
+                    MessageBox.Show("Debe seleccionar el Tipo de Licencia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 if (CBInter.Checked == true && RBLiviana.Checked == true)
@@ -54,58 +54,64 @@ namespace Transporte_Escolar_Bonilla
                 }
 
                 
-                if (txtcorreo.Text!="" && txtdireccion.TextLength > 15 && txtidentidad.TextLength == 13 && txtlicencia.Text != "" && txtnombre.TextLength > 2
-                    && txtsalario.Text != "" && txttelefono.TextLength == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true
+                if (txtcorreo.Text!="" && txtdireccion.Text.Trim().Length > 15 && txtidentidad.Text.Trim().Length == 13 && txtlicencia.Text.Trim().Length != 0 && txtnombre.Text.Trim().Length > 2
+                    && txtsalario.Text.Trim().Length != 0 && double.Parse(txtsalario.Text) > 0 && txttelefono.Text.Trim().Length == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true
                     && dateTimePicker1.Value<System.DateTime.Today && dtpvencimiento.Value>System.DateTime.Today && 
                     System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
-                    ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text),
-                    txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text),varlicencia);
-                    modify.BitacoraModulo("Contratación", 3, "Contratación Nuevo Empleado", txtidentidad.Text,txtsalario.Text, "N/A", "N/A", "N/A");                
-                    MessageBox.Show("Empleado Guardado con Exito", "Guardado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtcorreo.Text = "";
-                    txtdireccion.Text = "";
-                    txtidentidad.Text = "";
-                    txtnombre.Text = "";
-                    txtsalario.Text = "";
-                    txttelefono.Text = "";
-                    txtlicencia.Text = "";
-                    dtpvencimiento.ResetText();
-                    cmbGenero.SelectedIndex = -1;
-                    cmbPuesto.SelectedIndex = -1;
-                    dateTimePicker1.ResetText();
-                    DAdicionales.Visible = false;
-                    LBLLicencia.Visible = false;
-                    dtpvencimiento.Visible = false;
-                    txtlicencia.Visible = false;
-                    lblVencimiento.Visible = false;
+                    if (MessageBox.Show("¿Está seguro de los datos ingresados?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text),
+                        txtlicencia.Text, Convert.ToDateTime(dtpvencimiento.Text), varlicencia);
+                        modify.BitacoraModulo("Contratación", 3, "Contratación Nuevo Empleado", txtidentidad.Text, txtsalario.Text, "N/A", "N/A", "N/A");
+                        MessageBox.Show("Empleado Guardado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtcorreo.Text = "";
+                        txtdireccion.Text = "";
+                        txtidentidad.Text = "";
+                        txtnombre.Text = "";
+                        txtsalario.Text = "";
+                        txttelefono.Text = "";
+                        txtlicencia.Text = "";
+                        dtpvencimiento.ResetText();
+                        cmbGenero.SelectedIndex = -1;
+                        cmbPuesto.SelectedIndex = -1;
+                        dateTimePicker1.ResetText();
+                        DAdicionales.Visible = false;
+                        LBLLicencia.Visible = false;
+                        dtpvencimiento.Visible = false;
+                        txtlicencia.Visible = false;
+                        lblVencimiento.Visible = false;
+                    }             
                 }
                 else
-                    MessageBox.Show("Error, porfavor llene todos los campos apropiadamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe llenar los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (txtcorreo.Text != "" && txtdireccion.TextLength > 15 && txtidentidad.TextLength == 13 && txtnombre.TextLength > 2
-                   && txtsalario.Text != "" && txttelefono.TextLength == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1
+                if (txtcorreo.Text != "" && txtdireccion.Text.Trim().Length > 15 && txtidentidad.Text.Trim().Length == 13 && txtnombre.Text.Trim().Length > 2
+                   && txtsalario.Text.Trim().Length != 0 && double.Parse(txtsalario.Text) > 0 && txttelefono.Text.Trim().Length == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1
                    && dateTimePicker1.Value<System.DateTime.Today &&
                    System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
-                    ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text, 
-                        Convert.ToDateTime(dtpvencimiento.Value.ToString()),0);
-                    modify.BitacoraModulo("Contratación", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, txtsalario.Text, "N/A", "N/A", "N/A");
-                    MessageBox.Show("Empleado Guardado con Exito", "Guardado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtcorreo.Text = "";
-                    txtdireccion.Text = "";
-                    txtidentidad.Text = "";
-                    txtnombre.Text = "";
-                    txtsalario.Text = "";
-                    txttelefono.Text = "";
-                    cmbGenero.SelectedIndex = -1;
-                    cmbPuesto.SelectedIndex = -1;
-                    dateTimePicker1.ResetText();
+                    if (MessageBox.Show("¿Está seguro de los datos ingresados?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        ingresar.NuevoEmpleado(txtidentidad.Text, txtnombre.Text, Convert.ToDateTime(dateTimePicker1.Text), (cmbGenero.SelectedIndex + 1), txttelefono.Text, txtcorreo.Text, txtdireccion.Text, Int32.Parse(cmbPuesto.SelectedValue.ToString()), Double.Parse(txtsalario.Text), txtlicencia.Text,
+                        Convert.ToDateTime(dtpvencimiento.Value.ToString()), 0);
+                        modify.BitacoraModulo("Contratación", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, txtsalario.Text, "N/A", "N/A", "N/A");
+                        MessageBox.Show("Empleado Guardado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtcorreo.Text = "";
+                        txtdireccion.Text = "";
+                        txtidentidad.Text = "";
+                        txtnombre.Text = ""; 
+                        txtsalario.Text = "";
+                        txttelefono.Text = "";
+                        cmbGenero.SelectedIndex = -1;
+                        cmbPuesto.SelectedIndex = -1;
+                        dateTimePicker1.ResetText();
+                    }        
                 }
                 else
-                    MessageBox.Show("Error, porfavor llene todos los campos apropiadamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe llenar los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             

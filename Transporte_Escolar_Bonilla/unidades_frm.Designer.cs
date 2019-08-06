@@ -56,9 +56,9 @@
             this.unidadesTop_panel.Controls.Add(this.consultasUnidades_btn);
             this.unidadesTop_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.unidadesTop_panel.Location = new System.Drawing.Point(0, 0);
-            this.unidadesTop_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unidadesTop_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unidadesTop_panel.Name = "unidadesTop_panel";
-            this.unidadesTop_panel.Size = new System.Drawing.Size(1108, 95);
+            this.unidadesTop_panel.Size = new System.Drawing.Size(831, 77);
             this.unidadesTop_panel.TabIndex = 0;
             // 
             // btnNuevaPlaca
@@ -69,10 +69,10 @@
             this.btnNuevaPlaca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaPlaca.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaPlaca.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaPlaca.Location = new System.Drawing.Point(950, 0);
-            this.btnNuevaPlaca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevaPlaca.Location = new System.Drawing.Point(713, 0);
+            this.btnNuevaPlaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevaPlaca.Name = "btnNuevaPlaca";
-            this.btnNuevaPlaca.Size = new System.Drawing.Size(163, 95);
+            this.btnNuevaPlaca.Size = new System.Drawing.Size(122, 77);
             this.btnNuevaPlaca.TabIndex = 7;
             this.btnNuevaPlaca.Text = "Nueva Placa";
             this.btnNuevaPlaca.UseVisualStyleBackColor = false;
@@ -86,10 +86,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(740, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(555, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 95);
+            this.button1.Size = new System.Drawing.Size(158, 77);
             this.button1.TabIndex = 6;
             this.button1.Text = "Mantenimientos";
             this.button1.UseVisualStyleBackColor = false;
@@ -103,10 +103,10 @@
             this.modificarUnidad_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificarUnidad_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificarUnidad_btn.ForeColor = System.Drawing.Color.White;
-            this.modificarUnidad_btn.Location = new System.Drawing.Point(614, 0);
-            this.modificarUnidad_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.modificarUnidad_btn.Location = new System.Drawing.Point(461, 0);
+            this.modificarUnidad_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modificarUnidad_btn.Name = "modificarUnidad_btn";
-            this.modificarUnidad_btn.Size = new System.Drawing.Size(126, 95);
+            this.modificarUnidad_btn.Size = new System.Drawing.Size(94, 77);
             this.modificarUnidad_btn.TabIndex = 5;
             this.modificarUnidad_btn.Text = "Modificar Unidad";
             this.modificarUnidad_btn.UseVisualStyleBackColor = false;
@@ -120,10 +120,10 @@
             this.asignarUnidad_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.asignarUnidad_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asignarUnidad_btn.ForeColor = System.Drawing.Color.White;
-            this.asignarUnidad_btn.Location = new System.Drawing.Point(481, 0);
-            this.asignarUnidad_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.asignarUnidad_btn.Location = new System.Drawing.Point(361, 0);
+            this.asignarUnidad_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.asignarUnidad_btn.Name = "asignarUnidad_btn";
-            this.asignarUnidad_btn.Size = new System.Drawing.Size(133, 95);
+            this.asignarUnidad_btn.Size = new System.Drawing.Size(100, 77);
             this.asignarUnidad_btn.TabIndex = 4;
             this.asignarUnidad_btn.Text = "Asignar Ruta";
             this.asignarUnidad_btn.UseVisualStyleBackColor = false;
@@ -137,10 +137,10 @@
             this.nuevaUnidad_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuevaUnidad_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaUnidad_btn.ForeColor = System.Drawing.Color.White;
-            this.nuevaUnidad_btn.Location = new System.Drawing.Point(360, 0);
-            this.nuevaUnidad_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nuevaUnidad_btn.Location = new System.Drawing.Point(270, 0);
+            this.nuevaUnidad_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nuevaUnidad_btn.Name = "nuevaUnidad_btn";
-            this.nuevaUnidad_btn.Size = new System.Drawing.Size(121, 95);
+            this.nuevaUnidad_btn.Size = new System.Drawing.Size(91, 77);
             this.nuevaUnidad_btn.TabIndex = 3;
             this.nuevaUnidad_btn.Text = "Nueva Unidad";
             this.nuevaUnidad_btn.UseVisualStyleBackColor = false;
@@ -154,10 +154,10 @@
             this.mantenimientoUnidades_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mantenimientoUnidades_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientoUnidades_btn.ForeColor = System.Drawing.Color.White;
-            this.mantenimientoUnidades_btn.Location = new System.Drawing.Point(143, 0);
-            this.mantenimientoUnidades_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mantenimientoUnidades_btn.Location = new System.Drawing.Point(107, 0);
+            this.mantenimientoUnidades_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mantenimientoUnidades_btn.Name = "mantenimientoUnidades_btn";
-            this.mantenimientoUnidades_btn.Size = new System.Drawing.Size(217, 95);
+            this.mantenimientoUnidades_btn.Size = new System.Drawing.Size(163, 77);
             this.mantenimientoUnidades_btn.TabIndex = 2;
             this.mantenimientoUnidades_btn.Text = "Mantenimiento de Unidad";
             this.mantenimientoUnidades_btn.UseVisualStyleBackColor = false;
@@ -172,9 +172,9 @@
             this.consultasUnidades_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasUnidades_btn.ForeColor = System.Drawing.Color.White;
             this.consultasUnidades_btn.Location = new System.Drawing.Point(0, 0);
-            this.consultasUnidades_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.consultasUnidades_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.consultasUnidades_btn.Name = "consultasUnidades_btn";
-            this.consultasUnidades_btn.Size = new System.Drawing.Size(143, 95);
+            this.consultasUnidades_btn.Size = new System.Drawing.Size(107, 77);
             this.consultasUnidades_btn.TabIndex = 1;
             this.consultasUnidades_btn.Text = "Consultas";
             this.consultasUnidades_btn.UseVisualStyleBackColor = false;
@@ -185,10 +185,10 @@
             this.mainUnidades_panel.Controls.Add(this.label1);
             this.mainUnidades_panel.Controls.Add(this.pictureBox1);
             this.mainUnidades_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainUnidades_panel.Location = new System.Drawing.Point(0, 95);
-            this.mainUnidades_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainUnidades_panel.Location = new System.Drawing.Point(0, 77);
+            this.mainUnidades_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainUnidades_panel.Name = "mainUnidades_panel";
-            this.mainUnidades_panel.Size = new System.Drawing.Size(1108, 650);
+            this.mainUnidades_panel.Size = new System.Drawing.Size(831, 528);
             this.mainUnidades_panel.TabIndex = 6;
             this.mainUnidades_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainUnidades_panel_Paint);
             // 
@@ -197,9 +197,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(46, 505);
+            this.label1.Location = new System.Drawing.Point(25, 411);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(954, 80);
+            this.label1.Size = new System.Drawing.Size(783, 66);
             this.label1.TabIndex = 12;
             this.label1.Text = "Bienvenido al Módulo de Unidades\r\nSeleccione la acción que desea realizar del men" +
     "ú superior\r\n";
@@ -208,24 +209,24 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.unidades;
-            this.pictureBox1.Location = new System.Drawing.Point(313, 53);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(235, 43);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(427, 423);
+            this.pictureBox1.Size = new System.Drawing.Size(320, 344);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
             // unidades_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1108, 745);
+            this.ClientSize = new System.Drawing.Size(831, 605);
             this.Controls.Add(this.mainUnidades_panel);
             this.Controls.Add(this.unidadesTop_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "unidades_frm";
             this.Text = "unidades_frm";
             this.unidadesTop_panel.ResumeLayout(false);
