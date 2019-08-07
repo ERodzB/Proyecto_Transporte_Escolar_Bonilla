@@ -56,34 +56,48 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnAsignar_Click(object sender, EventArgs e)
         {
-            if (val.validarLicenciaLiviana(cmbempleado.Text) > 0 && val.validarVehiculoPesado(txtPlaca.Text) > 0)
+            if (cmbempleado.SelectedIndex!=-1)
             {
-                MessageBox.Show("No se puede asignar un vehiculo pesado a un empleado con licencia liviana", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (val.validarLicenciaLiviana(cmbempleado.Text) > 0 && val.validarVehiculoPesado(txtPlaca.Text) > 0)
+                {
+                    MessageBox.Show("No se puede asignar un vehiculo pesado a un empleado con licencia liviana", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    modify.ModificarVAsigDevol(Tipo, cmbempleado.SelectedValue.ToString(), txtPlaca.Text, 702);
+                    modify.BitacoraModulo("Asignacion", 8, "Asignacion de Vehiculo a Empleado", txtPlaca.Text, cmbempleado.SelectedValue.ToString(), txtObservaciones.Text, "N/A", "N/A");
+                    MessageBox.Show("La unidad a sido asignada exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.dvgdatosasignar(dgvConsultaU);
+                    txtPlaca.Text = "";
+                    txtDescripcion.Text = "";
+                    txtObservaciones.Text = "Ninguna";
+                    cmbempleado.SelectedIndex = -1;
+                }
             }
             else
-            { 
-                modify.ModificarVAsigDevol(Tipo, cmbempleado.SelectedValue.ToString(), txtPlaca.Text, 702);
-                modify.BitacoraModulo("Asignacion", 8, "Asignacion de Vehiculo a Empleado", txtPlaca.Text, cmbempleado.SelectedValue.ToString(), txtObservaciones.Text, "N/A", "N/A");
-                MessageBox.Show("La unidad a sido asignada exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.dvgdatosasignar(dgvConsultaU);
-                txtPlaca.Text = "";
-                txtDescripcion.Text = "";
-                txtObservaciones.Text = "Ninguna";
-                cmbempleado.SelectedIndex = -1;
+            {
+                MessageBox.Show("Ingrese el empleado a quien se le va a asignar la unidad","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void BtnDevolver_Click(object sender, EventArgs e)
-        { 
-            modify.ModificarVAsigDevol(Tipo, cmbempleado.Text, txtPlaca.Text,int.Parse(cmbestado.SelectedValue.ToString()));
-            modify.BitacoraModulo("Devolucion", 9, "Devolucion de Vehiculo por Empelado", txtPlaca.Text, cmbempleado.SelectedValue.ToString(), txtObservaciones.Text, "N/A", "N/A");
-            MessageBox.Show("La unidad a sido entregada exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            con.dvgdatosdevolver(dgvConsultaU);
-            txtPlaca.Text = "";
-            txtDescripcion.Text = "";
-            txtObservaciones.Text = "Ninguna";
-            cmbestado.SelectedIndex = -1;
-            cmbempleado.SelectedIndex = -1;
+        {
+            if (cmbestado.SelectedIndex != -1)
+            {
+                modify.ModificarVAsigDevol(Tipo, cmbempleado.Text, txtPlaca.Text, int.Parse(cmbestado.SelectedValue.ToString()));
+                modify.BitacoraModulo("Devolucion", 9, "Devolucion de Vehiculo por Empelado", txtPlaca.Text, cmbempleado.SelectedValue.ToString(), txtObservaciones.Text, "N/A", "N/A");
+                MessageBox.Show("La unidad a sido entregada exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.dvgdatosdevolver(dgvConsultaU);
+                txtPlaca.Text = "";
+                txtDescripcion.Text = "";
+                txtObservaciones.Text = "Ninguna";
+                cmbestado.SelectedIndex = -1;
+                cmbempleado.SelectedIndex = -1;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese el estado en el cual el vehiculo es entregado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DgvConsultaU_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +108,8 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvConsultaU_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnAsignar.Enabled = true;
+            btnDevolver.Enabled = true;
             txtPlaca.Text = dgvConsultaU.CurrentRow.Cells[0].Value.ToString();
             txtDescripcion.Text = dgvConsultaU.CurrentRow.Cells[1].Value.ToString();
             cmbempleado.Text = dgvConsultaU.CurrentRow.Cells[3].Value.ToString();

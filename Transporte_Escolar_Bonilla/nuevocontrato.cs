@@ -201,6 +201,9 @@ namespace Transporte_Escolar_Bonilla
                 if (int.Parse(txtcantm.Text) <= 0)
                 contc++;
 
+            if (pago_cmb.SelectedIndex == -1)
+                contc++;
+
             if (contc > 0)
             {
                 MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
