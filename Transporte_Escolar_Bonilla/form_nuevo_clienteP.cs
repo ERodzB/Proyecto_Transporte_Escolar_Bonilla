@@ -59,8 +59,6 @@ namespace Transporte_Escolar_Bonilla
             dtphorae2.ShowUpDown = true;
             dtphorae2.ShowCheckBox = true;
             dtphorae2.Checked = false;
-
-            MessageBox.Show("CARGA", "CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 
@@ -69,7 +67,7 @@ namespace Transporte_Escolar_Bonilla
         {
             double ant = 0;
             int contc = 0, conth = 0;
-            string error = "", anio = ""; 
+            string error = "", anio = "";
 
             val.igual = 0;
 
@@ -77,33 +75,43 @@ namespace Transporte_Escolar_Bonilla
             if (combservicio.SelectedIndex == -1)
                 contc++;
 
-            if (txtorigen.Text.Trim().Length < 3)
+            if (txtorigen.Text == "")
                 contc++;
 
-            if (txtdestino.Text.Trim().Length < 3)
+            if (txtdestino.Text == "")
                 contc++;
 
-            MessageBox.Show("Tamanio ORIGEN: "+ txtorigen.TextLength+"TAMANIO DESTINO: "+ txtdestino.TextLength, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            if (txttotal.Text.Trim().Length == 0 || double.Parse(txttotal.Text) <= 0)        
+            if (txttotal.Text == "" )
                 contc++;
+            else
+            {
+                if (double.Parse(txttotal.Text) <= 0)
+                    contc++;
+            }
 
-            if (txtant.Text.Trim().Length != 0)
+            if (txtant.Text != "")
             {
                 if (double.Parse(txtant.Text) <= 0)
                     contc++;
             }
 
-            if (txtpa.Text.Trim().Length == 0 || double.Parse(txtpa.Text) <= 0)
+            if (txtpa.Text == "" )
                 contc++;
-
+            else
+            {
+                if (double.Parse(txtpa.Text) <= 0)
+                    contc++;
+            }
             //Validar Fechas 
             if (dtpinicio.Value > dtpfin.Value)
                 contc++;
 
             //Validar que no sea menor el precio que el anticipo
-            if (double.Parse(txtant.Text) > double.Parse(txttotal.Text))
-                contc++;
+            if (txtant.Text!="" && txttotal.Text!="")
+            {
+                if (double.Parse(txtant.Text) > double.Parse(txttotal.Text))
+                    contc++;
+            }
 
             if (contc > 0)
                 MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
