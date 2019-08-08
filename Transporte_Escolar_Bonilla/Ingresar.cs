@@ -317,7 +317,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void NuevoPago(string Codigo_Contrato, int Numero_Cuota, DateTime Fecha_Recibo, Double Monto, string Descripcion_Recibo)
+        public void NuevoPago(string Codigo_Contrato, int Numero_Cuota, Double Monto, string Descripcion_Recibo)
         {
             try
             {
@@ -325,7 +325,6 @@ namespace Transporte_Escolar_Bonilla
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Contrato", Codigo_Contrato);
                 cmd.Parameters.AddWithValue("@Numero_Cuota", Numero_Cuota);
-                cmd.Parameters.AddWithValue("@Fecha_Recibo", Fecha_Recibo);
                 cmd.Parameters.AddWithValue("@Monto", Monto);
                 cmd.Parameters.AddWithValue("@Descripcion_Recibo", Descripcion_Recibo);
                 cmd.ExecuteNonQuery();

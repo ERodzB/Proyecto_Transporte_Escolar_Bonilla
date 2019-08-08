@@ -1001,15 +1001,14 @@ end
 GO
 /*--------------------------------------Procedimiento de Pagos-------------------------------------------------*/
 create procedure NuevoPago
-	@Codigo_Contrato varchar(50),
+	@Codigo_Contrato nvarchar(50),
 	@Numero_Cuota int,
-	@Fecha_Recibo date,
 	@Monto money,
 	@Descripcion_Recibo varchar(200)
 	as
 	begin
 	insert into Recibos
-		select COUNT(*)+1,@Numero_Cuota,@Codigo_Contrato,'RCTr',@Fecha_Recibo,@Monto,'DFCA9C-C556B3-7744AB-61D5D6-61F4A7-F5',
+		select COUNT(*)+1,@Numero_Cuota,@Codigo_Contrato,'RCTr',GETDATE(),@Monto,'DFCA9C-C556B3-7744AB-61D5D6-61F4A7-F5',
 		@Descripcion_Recibo from Recibos
 	end
 	GO
@@ -1304,7 +1303,7 @@ begin
 	left join Recibos r on r.Codigo_Contrato = c.Codigo_Contrato
 	left join TipoContrato tp on tp.Cod_Contrato=c.Tipo_Contrato
 	group by c.Codigo_Contrato, cl.Nombre_Cliente, c.Fecha_Inicio_Contrato, C.Cuotas_Mensuales, tp.Tipo_Contrato, c.Estado_Contrato
-	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo)-1,c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo) and c.Estado_Contrato=1
+	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo),c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo) and c.Estado_Contrato=1
 	union
 	select CONCAT('Ya se acerca la fecha de Pago del mes de ',DATENAME(MONTH,DATEADD(month,1,getdate())),' hazlo saber a tus clientes')
 	where DATEPART(DAY,GETDATE())>=25

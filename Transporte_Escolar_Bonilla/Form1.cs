@@ -14,7 +14,8 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Principal_frm : Form
     {
-
+        int x = 0, y = 0;
+        bool mousedown;
         int usuario_key_press = 0;
         int contrasena_key_press = 0;
 
@@ -122,7 +123,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 ingreso.ActualizarContratos();
                 center_panel.Controls.Clear();
-                button1.Visible = true;
+                btnMax.Visible = true;
                 rutas_btn.Enabled = true;
                 unidades_btn.Enabled = true;
                 conductores_btn.Enabled = true;
@@ -132,7 +133,7 @@ namespace Transporte_Escolar_Bonilla
                 bar_panel.Visible = true;
                 close_btn.Enabled = true;
                 btnNoti.Visible = true;
-           
+                btnBitacora.Visible = true;
             }
         }
 
@@ -184,11 +185,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            BitacoraModulos bmodulos = new BitacoraModulos();
-            Estetics.AbrirFormularios(bmodulos,center_panel);
-        }
+    
 
         private void BtnNoti_Click(object sender, EventArgs e)
         {
@@ -200,5 +197,24 @@ namespace Transporte_Escolar_Bonilla
         {
 
         }
+
+        private void BtnMax_Click_1(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void BtnBitacora_Click(object sender, EventArgs e)
+        {
+            BitacoraModulos bmodulos = new BitacoraModulos();
+            Estetics.AbrirFormularios(bmodulos, center_panel);
+        }
+
     }
 }

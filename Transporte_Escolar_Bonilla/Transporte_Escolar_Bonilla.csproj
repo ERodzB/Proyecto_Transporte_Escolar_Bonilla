@@ -500,5 +500,8 @@
   <ItemGroup>
     <None Include="Resources\contratos1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
