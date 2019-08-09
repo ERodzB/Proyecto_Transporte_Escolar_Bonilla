@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal_frm));
             this.top_panel = new System.Windows.Forms.Panel();
+            this.btnBitacora = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnMax = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNoti = new System.Windows.Forms.Button();
+            this.salir_btn = new System.Windows.Forms.Button();
             this.center_panel = new System.Windows.Forms.Panel();
             this.enviar_linklbl = new System.Windows.Forms.LinkLabel();
             this.regresar_linklbl = new System.Windows.Forms.LinkLabel();
@@ -49,14 +58,6 @@
             this.conductores_btn = new System.Windows.Forms.Button();
             this.unidades_btn = new System.Windows.Forms.Button();
             this.rutas_btn = new System.Windows.Forms.Button();
-            this.btnNoti = new System.Windows.Forms.Button();
-            this.salir_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnBitacora = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnMax = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
             this.center_panel.SuspendLayout();
             this.left_panel.SuspendLayout();
@@ -81,6 +82,120 @@
             this.top_panel.Size = new System.Drawing.Size(1420, 34);
             this.top_panel.TabIndex = 2;
             // 
+            // btnBitacora
+            // 
+            this.btnBitacora.BackColor = System.Drawing.Color.Transparent;
+            this.btnBitacora.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.book;
+            this.btnBitacora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBitacora.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBitacora.FlatAppearance.BorderSize = 0;
+            this.btnBitacora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBitacora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBitacora.Location = new System.Drawing.Point(61, 3);
+            this.btnBitacora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBitacora.Name = "btnBitacora";
+            this.btnBitacora.Size = new System.Drawing.Size(22, 28);
+            this.btnBitacora.TabIndex = 18;
+            this.btnBitacora.UseVisualStyleBackColor = false;
+            this.btnBitacora.Visible = false;
+            this.btnBitacora.Click += new System.EventHandler(this.BtnBitacora_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label4.Location = new System.Drawing.Point(1309, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 17);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "   ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Location = new System.Drawing.Point(41, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 17);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "   ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label2.Location = new System.Drawing.Point(1329, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 17);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "   ";
+            // 
+            // btnMax
+            // 
+            this.btnMax.BackColor = System.Drawing.Color.Transparent;
+            this.btnMax.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.maximize;
+            this.btnMax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMax.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMax.FlatAppearance.BorderSize = 0;
+            this.btnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMax.Location = new System.Drawing.Point(1349, 3);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(24, 28);
+            this.btnMax.TabIndex = 18;
+            this.btnMax.UseVisualStyleBackColor = false;
+            this.btnMax.Click += new System.EventHandler(this.BtnMax_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Location = new System.Drawing.Point(1373, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "   ";
+            // 
+            // btnNoti
+            // 
+            this.btnNoti.BackColor = System.Drawing.Color.Transparent;
+            this.btnNoti.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.musical_bell_outline;
+            this.btnNoti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNoti.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNoti.FlatAppearance.BorderSize = 0;
+            this.btnNoti.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnNoti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnNoti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoti.Location = new System.Drawing.Point(3, 3);
+            this.btnNoti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNoti.Name = "btnNoti";
+            this.btnNoti.Size = new System.Drawing.Size(38, 28);
+            this.btnNoti.TabIndex = 2;
+            this.btnNoti.UseVisualStyleBackColor = false;
+            this.btnNoti.Visible = false;
+            this.btnNoti.Click += new System.EventHandler(this.BtnNoti_Click);
+            // 
+            // salir_btn
+            // 
+            this.salir_btn.BackColor = System.Drawing.Color.Transparent;
+            this.salir_btn.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.remove_symbol;
+            this.salir_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.salir_btn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.salir_btn.FlatAppearance.BorderSize = 0;
+            this.salir_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.salir_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.salir_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salir_btn.Location = new System.Drawing.Point(1393, 3);
+            this.salir_btn.Margin = new System.Windows.Forms.Padding(10);
+            this.salir_btn.Name = "salir_btn";
+            this.salir_btn.Padding = new System.Windows.Forms.Padding(3);
+            this.salir_btn.Size = new System.Drawing.Size(24, 28);
+            this.salir_btn.TabIndex = 0;
+            this.salir_btn.UseVisualStyleBackColor = false;
+            this.salir_btn.Click += new System.EventHandler(this.Salir_btn_Click);
+            // 
             // center_panel
             // 
             this.center_panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -95,11 +210,11 @@
             this.center_panel.Controls.Add(this.ingresarLogin_btn);
             this.center_panel.Controls.Add(this.userLogin_tb);
             this.center_panel.Controls.Add(this.userLogin_lbl);
-            this.center_panel.Location = new System.Drawing.Point(314, 34);
+            this.center_panel.Location = new System.Drawing.Point(312, 34);
             this.center_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.center_panel.MaximumSize = new System.Drawing.Size(1420, 797);
             this.center_panel.Name = "center_panel";
-            this.center_panel.Size = new System.Drawing.Size(1106, 797);
+            this.center_panel.Size = new System.Drawing.Size(1108, 797);
             this.center_panel.TabIndex = 3;
             this.center_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Center_panel_Paint);
             // 
@@ -391,120 +506,6 @@
             this.rutas_btn.UseVisualStyleBackColor = false;
             this.rutas_btn.Click += new System.EventHandler(this.Rutas_btn_Click);
             // 
-            // btnNoti
-            // 
-            this.btnNoti.BackColor = System.Drawing.Color.Transparent;
-            this.btnNoti.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.musical_bell_outline;
-            this.btnNoti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNoti.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNoti.FlatAppearance.BorderSize = 0;
-            this.btnNoti.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnNoti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnNoti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoti.Location = new System.Drawing.Point(3, 3);
-            this.btnNoti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNoti.Name = "btnNoti";
-            this.btnNoti.Size = new System.Drawing.Size(38, 28);
-            this.btnNoti.TabIndex = 2;
-            this.btnNoti.UseVisualStyleBackColor = false;
-            this.btnNoti.Visible = false;
-            this.btnNoti.Click += new System.EventHandler(this.BtnNoti_Click);
-            // 
-            // salir_btn
-            // 
-            this.salir_btn.BackColor = System.Drawing.Color.Transparent;
-            this.salir_btn.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.remove_symbol;
-            this.salir_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.salir_btn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.salir_btn.FlatAppearance.BorderSize = 0;
-            this.salir_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.salir_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.salir_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salir_btn.Location = new System.Drawing.Point(1393, 3);
-            this.salir_btn.Margin = new System.Windows.Forms.Padding(10);
-            this.salir_btn.Name = "salir_btn";
-            this.salir_btn.Padding = new System.Windows.Forms.Padding(3);
-            this.salir_btn.Size = new System.Drawing.Size(24, 28);
-            this.salir_btn.TabIndex = 0;
-            this.salir_btn.UseVisualStyleBackColor = false;
-            this.salir_btn.Click += new System.EventHandler(this.Salir_btn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Location = new System.Drawing.Point(1373, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "   ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Location = new System.Drawing.Point(1329, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 17);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "   ";
-            // 
-            // btnBitacora
-            // 
-            this.btnBitacora.BackColor = System.Drawing.Color.Transparent;
-            this.btnBitacora.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.book;
-            this.btnBitacora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBitacora.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnBitacora.FlatAppearance.BorderSize = 0;
-            this.btnBitacora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBitacora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBitacora.Location = new System.Drawing.Point(61, 3);
-            this.btnBitacora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBitacora.Name = "btnBitacora";
-            this.btnBitacora.Size = new System.Drawing.Size(22, 28);
-            this.btnBitacora.TabIndex = 18;
-            this.btnBitacora.UseVisualStyleBackColor = false;
-            this.btnBitacora.Visible = false;
-            this.btnBitacora.Click += new System.EventHandler(this.BtnBitacora_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Location = new System.Drawing.Point(41, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 17);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "   ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Location = new System.Drawing.Point(1309, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 17);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "   ";
-            // 
-            // btnMax
-            // 
-            this.btnMax.BackColor = System.Drawing.Color.Transparent;
-            this.btnMax.BackgroundImage = global::Transporte_Escolar_Bonilla.Properties.Resources.maximize;
-            this.btnMax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMax.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMax.FlatAppearance.BorderSize = 0;
-            this.btnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMax.Location = new System.Drawing.Point(1349, 3);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(24, 28);
-            this.btnMax.TabIndex = 18;
-            this.btnMax.UseVisualStyleBackColor = false;
-            this.btnMax.Click += new System.EventHandler(this.BtnMax_Click_1);
-            // 
             // Principal_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -516,6 +517,7 @@
             this.Controls.Add(this.center_panel);
             this.Controls.Add(this.top_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Principal_frm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

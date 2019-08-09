@@ -22,6 +22,9 @@ namespace Transporte_Escolar_Bonilla
                 consultaContratos_btn.Visible = true;
                 Contratos_btn.Visible = true;
                 ContratosPrivado_btn.Visible = true;
+                modificarContratos_btn.Visible = true;
+                pagos_btn.Visible = true;
+                btnGenerarContrato.Visible = true;
             }
 
             if (ConexionBD.Acceso == 2)
@@ -29,12 +32,18 @@ namespace Transporte_Escolar_Bonilla
                 consultaContratos_btn.Visible = true;
                 Contratos_btn.Visible = true;
                 ContratosPrivado_btn.Visible = true;
+                modificarContratos_btn.Visible = false;
+                pagos_btn.Visible = true;
+                btnGenerarContrato.Visible = true;
             }
             if (ConexionBD.Acceso == 3)
             {
-                consultaContratos_btn.Visible = true;
-                Contratos_btn.Visible = false;
-                ContratosPrivado_btn.Visible =false;
+                consultaContratos_btn.Visible = false;
+                Contratos_btn.Visible = true;
+                ContratosPrivado_btn.Visible = false;
+                modificarContratos_btn.Visible = false;
+                pagos_btn.Visible = true;
+                btnGenerarContrato.Visible = false;
             }
 
 

@@ -23,6 +23,8 @@ namespace Transporte_Escolar_Bonilla
                 nuevaUnidad_btn.Visible = true;
                 modificarUnidad_btn.Visible = true;
                 asignarUnidad_btn.Visible = true;
+                button1.Visible = true;
+                btnNuevaPlaca.Visible = true;
             }
 
             if (ConexionBD.Acceso == 2)
@@ -32,14 +34,18 @@ namespace Transporte_Escolar_Bonilla
                 nuevaUnidad_btn.Visible = true;
                 modificarUnidad_btn.Visible = true;
                 asignarUnidad_btn.Visible = true;
+                button1.Visible = false;
+                btnNuevaPlaca.Visible = false;
             }
             if (ConexionBD.Acceso == 3)
             {
-                consultasUnidades_btn.Visible = true;
+                consultasUnidades_btn.Visible = false;
                 mantenimientoUnidades_btn.Visible = true;
                 nuevaUnidad_btn.Visible = false;
                 modificarUnidad_btn.Visible = false;
                 asignarUnidad_btn.Visible = false;
+                button1.Visible = false;
+                btnNuevaPlaca.Visible = false;
             }
 
 

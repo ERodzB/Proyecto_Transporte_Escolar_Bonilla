@@ -12,7 +12,7 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class modificarPerfiles_frm : Form
     {
-        Consultar consulto = new Consultar();
+        Consultar consu = new Consultar();
         public modificarPerfiles_frm()
         {
             InitializeComponent();
@@ -20,8 +20,9 @@ namespace Transporte_Escolar_Bonilla
 
         private void ModificarPerfiles_frm_Load(object sender, EventArgs e)
         {
-            
-            Perfiles_cmb.DataSource = consulto.llenarPerfiles();
+
+           
+            Perfiles_cmb.DataSource = consu.llenarPerfiles();
             Perfiles_cmb.DisplayMember = "Nombre_Perfil";
             Perfiles_cmb.ValueMember = "Codigo_Perfil";
             Perfiles_cmb.SelectedIndex = -1;
@@ -32,9 +33,9 @@ namespace Transporte_Escolar_Bonilla
 
         private void Perfiles_cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Perfiles_cmb.SelectedIndex >=0)
+            if (Perfiles_cmb.SelectedIndex !=-1)
             {
-                consulto.BuscarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb, nombrePerfil_tb, desPerfil_tb);
+                consu.BuscarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb, nombrePerfil_tb, desPerfil_tb);
             }
         }
 
@@ -47,7 +48,7 @@ namespace Transporte_Escolar_Bonilla
                 mperfiles.ModificarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb.SelectedIndex + 1, nombrePerfil_tb.Text, desPerfil_tb.Text);
                 mperfiles.BitacoraModulo("Modificación - Perfiles", 10, "Modificación de Información del Perfil ", "Perfil Modificado: " + nombrePerfil_tb.Text, "N/A", "N/A", "N/A", "N/A");
 
-                Perfiles_cmb.DataSource = consulto.llenarPerfiles();
+                Perfiles_cmb.DataSource = consu.llenarPerfiles();
                 Perfiles_cmb.DisplayMember = "Nombre_Perfil";
                 Perfiles_cmb.ValueMember = "Codigo_Perfil";
                 Perfiles_cmb.SelectedIndex = -1;

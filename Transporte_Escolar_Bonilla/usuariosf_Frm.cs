@@ -29,12 +29,12 @@ namespace Transporte_Escolar_Bonilla
                 consultasUsuarios_btn.Visible = true;
                 crearUsuarios_btn.Visible = true;
                 modificarUsuarios_btn.Visible = true;
-                crearPerfil_btn.Visible = true;
+                crearPerfil_btn.Visible = false;
                 modificarPerfil_btn.Visible = false;
             }
             if (ConexionBD.Acceso == 3)
             {
-                consultasUsuarios_btn.Visible = true;
+                consultasUsuarios_btn.Visible = false;
                 crearUsuarios_btn.Visible = true;
                 modificarUsuarios_btn.Visible = false;
                 crearPerfil_btn.Visible = false;

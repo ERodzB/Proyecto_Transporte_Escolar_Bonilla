@@ -29,7 +29,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 consultaConductores_btn.Visible = true;
                 nuevoConductor_btn.Visible = true;
-                modificarConductores_btn.Visible = true;
+                modificarConductores_btn.Visible = false;
                 entregaUnidad_btn.Visible = true;
                 asignarConductor_btn.Visible = true;
             }

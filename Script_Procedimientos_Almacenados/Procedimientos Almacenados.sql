@@ -400,7 +400,7 @@ GO
 		@Nombre_Perfil as varchar(100)
 	as
 		begin
-			select COUNT(*) from Transporte_Bonilla.dbo.Perfiles p
+			select COUNT(*) from Perfiles p
 			where @Nombre_Perfil=p.Nombre_Perfil
 		end
 	GO
@@ -409,7 +409,7 @@ GO
 		@Codigo_Perfil int
 	as
 		begin
-			select  P.Nivel_Acceso,  P.Nombre_Perfil, P.Descripcion_Perfil from Transporte_Bonilla.dbo.Perfiles P 
+			select  P.Nivel_Acceso,  P.Nombre_Perfil, P.Descripcion_Perfil from Perfiles P 
 			where Codigo_Perfil=@Codigo_Perfil 
 		END
 	GO
@@ -422,7 +422,7 @@ GO
 	@Descripcion_Perfil varchar(200)
 	as
 	begin
-		update [Transporte_Bonilla].[dbo].[Perfiles]
+		update Perfiles
 		set Nivel_Acceso=@Nivel_Acceso,
 		Nombre_Perfil=@Nombre_Perfil,
 		Descripcion_Perfil=@Descripcion_Perfil
@@ -480,11 +480,11 @@ create procedure consultarutas
 	as
 begin
 	if @consultacliente = 'Rutas Generales'
-	select r.Codigo_Ruta'Código Ruta',r.Nombre_Ruta'Paradas de la Ruta' from Rutas r
+	select r.Codigo_Ruta'Codigo Ruta',r.Nombre_Ruta'Nombre de la Ruta' from Rutas r
 	where r.Tipo_Ruta='Temporal';
 	if @consultacliente ='Rutas de Clientes'
-	select r.Codigo_Ruta'Código Ruta',cl.Nombre_Cliente'Cliente de la Ruta',c.Codigo_Contrato'Contrato del Cliente', 
-	concat(v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Vehículo de la Ruta',concat(Cast(vr.Horario_Salida as time(0)),'-',cast(vr.Horario_Entrada as time(0)))'Hora de Ruta'
+	select r.Codigo_Ruta'Codigo Ruta',cl.Nombre_Cliente'Cliente de la Ruta',c.Codigo_Contrato'Contrato del Cliente', 
+	concat(v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Vehiculo de la Ruta',concat(Cast(vr.Horario_Salida as time(0)),'-',cast(vr.Horario_Entrada as time(0)))'Hora de Ruta'
 	, rc.Parada_Contrato'Se Baja en:',c.Servicio'Servicio de Ruta' from Rutas R
 	inner join Rutas_Contratos rc on r.Codigo_Ruta = rc.Codigo_Ruta
 	inner join Vehiculos_Rutas vr on r.Codigo_Ruta = vr.Codigo_Ruta
@@ -492,11 +492,10 @@ begin
 	inner join Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
 	inner join Vehiculos v on vr.Codigo_Vehiculo = v.Codigo_Vehiculo
 	if @consultacliente ='Rutas Viajes Privados'
-	select r.Codigo_Ruta'Código Viaje',r.Nombre_Ruta'Nombre de Viaje',r.Descripcion_Ruta'Descripción Viaje',rc.Parada_Contrato'Final de Viaje', c.Servicio'Tipo de Viaje' from Rutas r
+	select r.Codigo_Ruta'Codigo Viaje',r.Nombre_Ruta'Nombre de Viaje',r.Descripcion_Ruta'Descripcion Viaje',rc.Parada_Contrato'Final de Viaje', c.Servicio'Tipo de Viaje' from Rutas r
 	inner join Rutas_Contratos rc on r.Codigo_Ruta = rc.Codigo_Ruta
 	inner join Contratos c on rc.Codigo_Contrato = c.Codigo_Contrato
 	where r.Tipo_Ruta='Viaje';
-
 end
 GO
 /*---------------------------------------------Procedimiento Llenar ComboBox Clientes------------------------------------------------*/
@@ -1426,11 +1425,11 @@ GO
 Create Procedure CargaGenerarContrato
 as
 begin
-	select c.Codigo_Contrato'Código del Contrato', cli.Nombre_Cliente'Nombre del Cliente', tp.Tipo_Contrato'Tipo del Contrato', c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotas Mensuales',
-	c.Servicio'Servicio', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato', c.Monto_Contrato'Monto del Contrato', c.Fecha_Vencimiento'Fecha de Vencimiento del Contrato', rut.Codigo_Ruta'Ruta', rut.Parada_Contrato'Parada'  from Contratos c
+	select c.Codigo_Contrato'Código del Contrato',cli.Codigo_Cliente'Identidad del Cliente', cli.Nombre_Cliente'Nombre del Cliente', tp.Tipo_Contrato'Tipo del Contrato', c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotas Mensuales',
+	c.Servicio'Servicio', c.Monto_Contrato'Monto del Contrato', c.Fecha_Vencimiento'Fecha de Vencimiento del Contrato', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato', rut.Codigo_Ruta'Ruta', rut.Parada_Contrato'Parada', c.Anticipo'Anticipo'  from Contratos c
 	inner join Rutas_Contratos rut on c.Codigo_Contrato = rut.Codigo_Contrato
 	inner join TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
-	inner join Cliente cli on c.Cliente_Contrato = cli.Codigo_Cliente
+	inner join Cliente cli on c.Cliente_Contrato = cli.Codigo_Cliente	 
 end
 GO
 

@@ -50,7 +50,14 @@ namespace Transporte_Escolar_Bonilla
 
         }
 
-        private void DgvVehiculos_CellClick(object sender, DataGridViewCellEventArgs e)
+ 
+
+        private void DgvVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvVehiculos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             txtPlaca.Text = dgvVehiculos.CurrentRow.Cells[0].Value.ToString();
             txtColor.Text = dgvVehiculos.CurrentRow.Cells[8].Value.ToString();
@@ -63,7 +70,6 @@ namespace Transporte_Escolar_Bonilla
             dtpVencimiento.Enabled = true;
             cmbEstadoVehiculo.Enabled = true;
             btnModificar.Enabled = true;
-
         }
     }
 }

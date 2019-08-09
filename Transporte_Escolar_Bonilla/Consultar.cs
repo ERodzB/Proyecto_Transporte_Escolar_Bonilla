@@ -355,6 +355,7 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 Adapter.SelectCommand.Parameters.AddWithValue("Codigo_Perfil", Codigo_Perfil);
                 Adapter.Fill(table);
+                
                 Nivel_Acceso.SelectedIndex = Convert.ToInt32(table.Rows[0][0].ToString()) - 1;
                 Nombre_Perfil.Text = table.Rows[0][1].ToString();
                 Descripcion_Perfil.Text = table.Rows[0][2].ToString();
