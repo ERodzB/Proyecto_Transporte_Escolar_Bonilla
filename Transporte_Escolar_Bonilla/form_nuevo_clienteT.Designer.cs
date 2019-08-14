@@ -310,9 +310,9 @@
             this.label9.Location = new System.Drawing.Point(69, 240);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 33);
+            this.label9.Size = new System.Drawing.Size(129, 33);
             this.label9.TabIndex = 188;
-            this.label9.Text = "Vuelta";
+            this.label9.Text = "Regresar";
             // 
             // combhora1
             // 
@@ -466,9 +466,9 @@
             this.label19.Location = new System.Drawing.Point(69, 92);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 33);
+            this.label19.Size = new System.Drawing.Size(128, 33);
             this.label19.TabIndex = 134;
-            this.label19.Text = "Ida";
+            this.label19.Text = "Recoger";
             // 
             // botcrear
             // 

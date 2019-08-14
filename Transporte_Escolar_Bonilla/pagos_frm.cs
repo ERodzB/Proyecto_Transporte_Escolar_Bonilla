@@ -33,6 +33,10 @@ namespace Transporte_Escolar_Bonilla
             if(DateTime.Now>= Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString())-1) && DateTime.Now< Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString())+1))
             {
                 Cuota_tb.Text = Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()));
+                monto_tb.Enabled = true;
+                descripcion_tb.Enabled = true;
+                pagar_btn.Enabled = true;
+
             }
             else
             {
@@ -44,7 +48,19 @@ namespace Transporte_Escolar_Bonilla
         private void Pagar_btn_Click(object sender, EventArgs e)
         {
             Ingresar ingreso = new Ingresar();
-            ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(),Convert.ToInt32(Cuota_tb.Text),DateTime.Now,Convert.ToDouble(monto_tb.Text),descripcion_tb.Text);
+            if(descripcion_tb.Text!=" " || monto_tb.Text!=" ")
+            {
+                ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(Cuota_tb.Text), DateTime.Now, Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
+                descripcion_tb.Clear();
+                monto_tb.Clear();
+                pagar_btn.Enabled = false;
+                descripcion_tb.Enabled = false;
+                monto_tb.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Rellene los datos necesarios");
+            }
         }
 
         private void Label2_Click(object sender, EventArgs e)

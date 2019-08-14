@@ -27,15 +27,22 @@ namespace Transporte_Escolar_Bonilla
             if (agregar_rb.Checked == true)
             {
                 ingreso.AsignarHoraVeh(rutasModificar_cmb.Text, vehiculo_cmb.Text, horaSalida_dtp.Text, llegadaHorario_dtp.Text, 0);
-                
+                Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                Horario_cmb.DisplayMember = "Horarios";
+
             }
             if (eliminarHorario_rb.Checked == true)
             {
                 modifico.ModificarHorario(rutasModificar_cmb.Text," ",Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")),Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ")+1),Convert.ToDateTime("5:00 AM"), Convert.ToDateTime("5:00 AM"), "Eliminar");
+                Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                Horario_cmb.DisplayMember = "Horarios";
             }
             if (modiHorario_rb.Checked == true)
             {
+                
                 modifico.ModificarHorario(rutasModificar_cmb.Text, vehiculo_cmb.Text,Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")),Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ")+1), horaSalida_dtp.Value, llegadaHorario_dtp.Value,"Modificar");
+                Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                Horario_cmb.DisplayMember = "Horarios";
             }
         }
 

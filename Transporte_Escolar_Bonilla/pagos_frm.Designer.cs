@@ -89,11 +89,12 @@
             // 
             // monto_tb
             // 
+            this.monto_tb.Enabled = false;
             this.monto_tb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monto_tb.Location = new System.Drawing.Point(45, 577);
             this.monto_tb.Margin = new System.Windows.Forms.Padding(4);
             this.monto_tb.Name = "monto_tb";
-            this.monto_tb.Size = new System.Drawing.Size(141, 32);
+            this.monto_tb.Size = new System.Drawing.Size(186, 32);
             this.monto_tb.TabIndex = 11;
             // 
             // lblCuota
@@ -132,6 +133,7 @@
             // 
             // descripcion_tb
             // 
+            this.descripcion_tb.Enabled = false;
             this.descripcion_tb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descripcion_tb.Location = new System.Drawing.Point(323, 476);
             this.descripcion_tb.Margin = new System.Windows.Forms.Padding(4);
@@ -142,6 +144,7 @@
             // pagar_btn
             // 
             this.pagar_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
+            this.pagar_btn.Enabled = false;
             this.pagar_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pagar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
