@@ -40,7 +40,7 @@ namespace Transporte_Escolar_Bonilla
                 {
                     if (contratos_dgv.CurrentRow.Cells[1].Value.ToString().Equals("Temporal"))
                     {
-                        if (DateTime.Now >= Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) - 1) && DateTime.Now < Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1) || DateTime.Now.Day + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1 >= 25 + consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1)
+                        if (DateTime.Now >= Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) - 1) && DateTime.Now < Convert.ToDateTime(contratos_dgv.CurrentRow.Cells[6].Value.ToString()).AddMonths(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()) + 1))
                         {
 
                             Cuota_tb.Text = Convert.ToString(consulto.NumeroCuota(contratos_dgv.CurrentRow.Cells[0].Value.ToString()));
