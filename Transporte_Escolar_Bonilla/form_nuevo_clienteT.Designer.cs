@@ -63,11 +63,13 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtcantm = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.cliente2_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // cliente2_panel
             // 
+            this.cliente2_panel.Controls.Add(this.label13);
             this.cliente2_panel.Controls.Add(this.pago_cmb);
             this.cliente2_panel.Controls.Add(this.label10);
             this.cliente2_panel.Controls.Add(this.txtpa2);
@@ -137,7 +139,7 @@
             // 
             this.txtpa2.Enabled = false;
             this.txtpa2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpa2.Location = new System.Drawing.Point(712, 327);
+            this.txtpa2.Location = new System.Drawing.Point(719, 352);
             this.txtpa2.Margin = new System.Windows.Forms.Padding(4);
             this.txtpa2.MaxLength = 50;
             this.txtpa2.Name = "txtpa2";
@@ -150,7 +152,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(707, 290);
+            this.label12.Location = new System.Drawing.Point(714, 315);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(119, 33);
@@ -160,7 +162,7 @@
             // txtpa1
             // 
             this.txtpa1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpa1.Location = new System.Drawing.Point(712, 178);
+            this.txtpa1.Location = new System.Drawing.Point(719, 203);
             this.txtpa1.Margin = new System.Windows.Forms.Padding(4);
             this.txtpa1.MaxLength = 50;
             this.txtpa1.Name = "txtpa1";
@@ -173,7 +175,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(707, 142);
+            this.label11.Location = new System.Drawing.Point(714, 167);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(119, 33);
@@ -220,7 +222,7 @@
             this.combhora2.Enabled = false;
             this.combhora2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combhora2.FormattingEnabled = true;
-            this.combhora2.Location = new System.Drawing.Point(285, 324);
+            this.combhora2.Location = new System.Drawing.Point(292, 349);
             this.combhora2.Margin = new System.Windows.Forms.Padding(4);
             this.combhora2.Name = "combhora2";
             this.combhora2.Size = new System.Drawing.Size(161, 28);
@@ -232,7 +234,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(280, 290);
+            this.label5.Location = new System.Drawing.Point(287, 315);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 33);
@@ -245,7 +247,7 @@
             this.combruta2.Enabled = false;
             this.combruta2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combruta2.FormattingEnabled = true;
-            this.combruta2.Location = new System.Drawing.Point(75, 324);
+            this.combruta2.Location = new System.Drawing.Point(82, 349);
             this.combruta2.Margin = new System.Windows.Forms.Padding(4);
             this.combruta2.Name = "combruta2";
             this.combruta2.Size = new System.Drawing.Size(161, 28);
@@ -257,7 +259,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(69, 290);
+            this.label6.Location = new System.Drawing.Point(76, 315);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 33);
@@ -269,7 +271,7 @@
             this.labv2.AutoSize = true;
             this.labv2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labv2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.labv2.Location = new System.Drawing.Point(473, 372);
+            this.labv2.Location = new System.Drawing.Point(480, 397);
             this.labv2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labv2.Name = "labv2";
             this.labv2.Size = new System.Drawing.Size(36, 23);
@@ -283,7 +285,7 @@
             this.combveh2.Enabled = false;
             this.combveh2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combveh2.FormattingEnabled = true;
-            this.combveh2.Location = new System.Drawing.Point(493, 324);
+            this.combveh2.Location = new System.Drawing.Point(500, 349);
             this.combveh2.Margin = new System.Windows.Forms.Padding(4);
             this.combveh2.Name = "combveh2";
             this.combveh2.Size = new System.Drawing.Size(161, 28);
@@ -295,7 +297,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(488, 290);
+            this.label8.Location = new System.Drawing.Point(495, 315);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 33);
@@ -307,7 +309,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(69, 240);
+            this.label9.Location = new System.Drawing.Point(76, 265);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 33);
@@ -319,7 +321,7 @@
             this.combhora1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combhora1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combhora1.FormattingEnabled = true;
-            this.combhora1.Location = new System.Drawing.Point(285, 175);
+            this.combhora1.Location = new System.Drawing.Point(292, 200);
             this.combhora1.Margin = new System.Windows.Forms.Padding(4);
             this.combhora1.Name = "combhora1";
             this.combhora1.Size = new System.Drawing.Size(161, 28);
@@ -331,7 +333,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(280, 142);
+            this.label2.Location = new System.Drawing.Point(287, 167);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 33);
@@ -343,7 +345,7 @@
             this.combruta1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combruta1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combruta1.FormattingEnabled = true;
-            this.combruta1.Location = new System.Drawing.Point(75, 175);
+            this.combruta1.Location = new System.Drawing.Point(82, 200);
             this.combruta1.Margin = new System.Windows.Forms.Padding(4);
             this.combruta1.Name = "combruta1";
             this.combruta1.Size = new System.Drawing.Size(161, 28);
@@ -355,7 +357,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(69, 142);
+            this.label1.Location = new System.Drawing.Point(76, 167);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 33);
@@ -370,7 +372,7 @@
             this.combservicio.Items.AddRange(new object[] {
             "Bus Completo",
             "Medio Bus"});
-            this.combservicio.Location = new System.Drawing.Point(493, 38);
+            this.combservicio.Location = new System.Drawing.Point(500, 102);
             this.combservicio.Margin = new System.Windows.Forms.Padding(4);
             this.combservicio.Name = "combservicio";
             this.combservicio.Size = new System.Drawing.Size(193, 28);
@@ -382,7 +384,7 @@
             this.labv1.AutoSize = true;
             this.labv1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labv1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.labv1.Location = new System.Drawing.Point(473, 223);
+            this.labv1.Location = new System.Drawing.Point(480, 248);
             this.labv1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labv1.Name = "labv1";
             this.labv1.Size = new System.Drawing.Size(36, 23);
@@ -405,7 +407,7 @@
             this.combveh1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combveh1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combveh1.FormattingEnabled = true;
-            this.combveh1.Location = new System.Drawing.Point(493, 175);
+            this.combveh1.Location = new System.Drawing.Point(500, 200);
             this.combveh1.Margin = new System.Windows.Forms.Padding(4);
             this.combveh1.Name = "combveh1";
             this.combveh1.Size = new System.Drawing.Size(161, 28);
@@ -418,7 +420,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.Window;
-            this.label22.Location = new System.Drawing.Point(488, 142);
+            this.label22.Location = new System.Drawing.Point(495, 167);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(138, 33);
@@ -439,7 +441,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.Window;
-            this.label18.Location = new System.Drawing.Point(363, 38);
+            this.label18.Location = new System.Drawing.Point(370, 102);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(125, 33);
@@ -463,7 +465,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.Window;
-            this.label19.Location = new System.Drawing.Point(69, 92);
+            this.label19.Location = new System.Drawing.Point(76, 117);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(128, 33);
@@ -476,10 +478,10 @@
             this.botcrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
-            this.botcrear.Location = new System.Drawing.Point(930, 566);
+            this.botcrear.Location = new System.Drawing.Point(912, 530);
             this.botcrear.Margin = new System.Windows.Forms.Padding(4);
             this.botcrear.Name = "botcrear";
-            this.botcrear.Size = new System.Drawing.Size(145, 52);
+            this.botcrear.Size = new System.Drawing.Size(161, 81);
             this.botcrear.TabIndex = 137;
             this.botcrear.Text = "Crear";
             this.botcrear.UseVisualStyleBackColor = false;
@@ -521,12 +523,24 @@
             this.label4.TabIndex = 135;
             this.label4.Text = "Inicio";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Window;
+            this.label13.Location = new System.Drawing.Point(271, 19);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(585, 44);
+            this.label13.TabIndex = 266;
+            this.label13.Text = "Creación de Contrato Mensual";
+            // 
             // form_nuevo_clienteT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1104, 649);
+            this.ClientSize = new System.Drawing.Size(1108, 650);
             this.Controls.Add(this.cliente2_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -576,5 +590,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox pago_cmb;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
     }
 }

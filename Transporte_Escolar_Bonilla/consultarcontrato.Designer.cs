@@ -38,20 +38,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.CMBFiltro = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaU)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFiltrar
             // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.btnFiltrar.Enabled = false;
+            this.btnFiltrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnFiltrar.Location = new System.Drawing.Point(869, 201);
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
+            this.btnFiltrar.Location = new System.Drawing.Point(850, 201);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(157, 46);
+            this.btnFiltrar.Size = new System.Drawing.Size(176, 54);
             this.btnFiltrar.TabIndex = 11;
             this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
             // label1
@@ -163,12 +168,26 @@
             this.CMBFiltro.TabIndex = 14;
             this.CMBFiltro.SelectedIndexChanged += new System.EventHandler(this.CMBFiltro_SelectedIndexChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(340, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(469, 44);
+            this.label4.TabIndex = 94;
+            this.label4.Text = "Contratos de la Empresa";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // consultarcontrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.CMBFiltro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -196,5 +215,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CMBFiltro;
+        private System.Windows.Forms.Label label4;
     }
 }

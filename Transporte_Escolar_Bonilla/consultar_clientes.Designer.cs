@@ -35,19 +35,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbConsulta = new System.Windows.Forms.ComboBox();
             this.dgvConsultaU = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaU)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConsultar
             // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnConsultar.Location = new System.Drawing.Point(877, 97);
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(845, 148);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(157, 46);
+            this.btnConsultar.Size = new System.Drawing.Size(194, 55);
             this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
             // label1
@@ -55,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(77, 54);
+            this.label1.Location = new System.Drawing.Point(78, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(444, 33);
             this.label1.TabIndex = 6;
@@ -69,7 +73,7 @@
             this.cbConsulta.Items.AddRange(new object[] {
             "Clientes",
             "Contratos por Cliente"});
-            this.cbConsulta.Location = new System.Drawing.Point(637, 50);
+            this.cbConsulta.Location = new System.Drawing.Point(638, 95);
             this.cbConsulta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbConsulta.Name = "cbConsulta";
             this.cbConsulta.Size = new System.Drawing.Size(399, 40);
@@ -101,7 +105,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvConsultaU.Location = new System.Drawing.Point(55, 148);
+            this.dgvConsultaU.Location = new System.Drawing.Point(58, 223);
             this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
@@ -116,15 +120,29 @@
             this.dgvConsultaU.RowHeadersWidth = 51;
             this.dgvConsultaU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvConsultaU.RowTemplate.Height = 24;
-            this.dgvConsultaU.Size = new System.Drawing.Size(981, 404);
+            this.dgvConsultaU.Size = new System.Drawing.Size(981, 392);
             this.dgvConsultaU.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(349, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(440, 44);
+            this.label2.TabIndex = 94;
+            this.label2.Text = "Clientes de la Empresa";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // consultar_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1104, 649);
+            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbConsulta);
@@ -147,5 +165,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbConsulta;
         private System.Windows.Forms.DataGridView dgvConsultaU;
+        private System.Windows.Forms.Label label2;
     }
 }

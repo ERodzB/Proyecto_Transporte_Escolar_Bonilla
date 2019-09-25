@@ -1268,9 +1268,15 @@ GO
 create procedure Notificaciones
 as
 begin
+select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
+	' entro a mantenimiento de ', tp.Nombre_Mantenimiento) as 'Notificaciones' from Vehiculos v
+	inner join Mantenimientos m on v.Codigo_Vehiculo = m.Codigo_Vehiculo
+	inner join Tipo_Mantenimientos tp on tp.[Codigo_Tipo_Mantenimiento] =[Tipo_Mantenimiento]
+	where v.Estado_Vehiculo = 701 and  DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE())=0
+	union
 	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
 	' esta en mantenimiento de ', tp.Nombre_Mantenimiento , ' hace ',
-	DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE()),' dias') as 'Notificaciones' from Vehiculos v
+	DATEDIFF(DAY,GETDATE(),m.Fecha_Mantenimiento),' dias') as 'Notificaciones' from Vehiculos v
 	inner join Mantenimientos m on v.Codigo_Vehiculo = m.Codigo_Vehiculo
 	inner join Tipo_Mantenimientos tp on tp.[Codigo_Tipo_Mantenimiento] =[Tipo_Mantenimiento]
 	where v.Estado_Vehiculo = 701 and  DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE())!=0
@@ -1280,7 +1286,7 @@ begin
 	left join Recibos r on r.Codigo_Contrato = c.Codigo_Contrato
 	left join TipoContrato tp on tp.Cod_Contrato=c.Tipo_Contrato
 	group by c.Codigo_Contrato, cl.Nombre_Cliente, c.Fecha_Inicio_Contrato, C.Cuotas_Mensuales, tp.Tipo_Contrato
-	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo),c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo)
+	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo)-1,c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo)
 	union
 	select CONCAT('Ya se acerca la fecha de Pago del mes de ',DATENAME(MONTH,DATEADD(month,1,getdate())),' hacelo saber a tus clientes')
 	where DATEPART(DAY,GETDATE())>=25

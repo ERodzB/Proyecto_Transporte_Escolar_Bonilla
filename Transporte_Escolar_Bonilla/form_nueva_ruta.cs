@@ -16,6 +16,7 @@ namespace Transporte_Escolar_Bonilla
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
         Modificar modifico = new Modificar();
+        int cant = 0;
 
         //Variables Globales
         int cambio1 = 0;
@@ -161,27 +162,45 @@ namespace Transporte_Escolar_Bonilla
                     //Guardar Ruta con Horarios Y Vehiculos 
                     if (dtphoras1.Checked)
                         ing.AsignarHoraVeh(txtinicio.Text + "-" + txtfin.Text, combveh1.Text, dtphoras1.Text, dtphorae1.Text, 0);
+
                     MessageBox.Show("Ruta creada con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     modifico.BitacoraModulo("Creación", 4, "Creación de una Ruta", txtinicio.Text + "-" + txtfin.Text, combveh1.Text, "N/A", "N/A", "N/A");
+                   
+                    if(cant == 0)
+                    {
+                        if (MessageBox.Show("¿Desea crear la ruta de regreso?", "Información", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            String txtini = txtinicio.Text;
 
+                            txtinicio.Text = txtfin.Text;
+                            txtfin.Text = txtini;
+                            dtphorae1.Checked = false;
+                            dtphoras1.Checked = false;
+                            
+                            cant = 1;
+                        }
+                    }                   
+                    else
+                    {
+                        txtinicio.Clear();
+                        txtfin.Clear();
+
+                        cambio1 = 2;
+
+                        labv1.Visible = false;
+
+                        combveh1.SelectedIndex = -1;
+
+
+                        cambio1 = 3;
+
+                        dtphoras1.Checked = false;
+                        dtphorae1.Checked = false;
+
+                        txtinicio.Focus();
+                    }
                     //Limpieza
-                    txtinicio.Clear();
-                    txtfin.Clear();
-
-                    cambio1 = 2;
-
-                    labv1.Visible = false;
-
-                    combveh1.SelectedIndex = -1;
-
-
-                    cambio1 = 3;
-
-                    dtphoras1.Checked = false;
-                    dtphorae1.Checked = false;
-
-                    txtinicio.Focus();
+                    
                 }
             }
         }

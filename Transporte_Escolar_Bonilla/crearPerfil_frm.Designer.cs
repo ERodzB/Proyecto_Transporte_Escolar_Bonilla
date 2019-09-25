@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.desPerfil_tb = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nombrePerfil_tb
@@ -75,7 +76,6 @@
             // Crear_btn
             // 
             this.Crear_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
-            this.Crear_btn.FlatAppearance.BorderSize = 0;
             this.Crear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Crear_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Crear_btn.ForeColor = System.Drawing.Color.White;
@@ -119,12 +119,26 @@
             this.desPerfil_tb.TabIndex = 28;
             this.desPerfil_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesPerfil_tb_KeyPress);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(327, 43);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(478, 44);
+            this.label4.TabIndex = 95;
+            this.label4.Text = "Creación de Nuevo Perfil";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // crearPerfil_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1106, 650);
+            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.desPerfil_tb);
             this.Controls.Add(this.label1);
@@ -149,5 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox desPerfil_tb;
+        private System.Windows.Forms.Label label4;
     }
 }

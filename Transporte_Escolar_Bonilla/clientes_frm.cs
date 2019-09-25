@@ -44,18 +44,36 @@ namespace Transporte_Escolar_Bonilla
         {
             form_nuevo_cliente cli1 = new form_nuevo_cliente();
             Estetics.AbrirFormularios(cli1, clienteMain_panel);
+            nuevoCliente_btn.ForeColor = Color.FromArgb(12, 24, 94);
+            nuevoCliente_btn.BackColor = Color.White;
+            consultasClientes_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultasClientes_btn.ForeColor = Color.White;
+            modificarCliente_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarCliente_btn.ForeColor = Color.White;
         }
 
         private void ConsultasClientes_btn_Click(object sender, EventArgs e)
         {
             consultar_clientes ccliente = new consultar_clientes();
             Estetics.AbrirFormularios(ccliente, clienteMain_panel);
+            nuevoCliente_btn.BackColor = Color.FromArgb(12, 24, 94);
+            nuevoCliente_btn.ForeColor = Color.White;
+            consultasClientes_btn.ForeColor = Color.FromArgb(12, 24, 94);
+            consultasClientes_btn.BackColor = Color.White;
+            modificarCliente_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarCliente_btn.ForeColor = Color.White;
         }
 
         private void ModificarCliente_btn_Click(object sender, EventArgs e)
         {
             Form_Modificar_Cliente modcli = new Form_Modificar_Cliente();
             Estetics.AbrirFormularios(modcli, clienteMain_panel);
+            nuevoCliente_btn.BackColor = Color.FromArgb(12, 24, 94);
+            nuevoCliente_btn.ForeColor = Color.White;
+            consultasClientes_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultasClientes_btn.ForeColor = Color.White;
+            modificarCliente_btn.ForeColor = Color.FromArgb(12, 24, 94);
+            modificarCliente_btn.BackColor = Color.White;
         }
     }
 }

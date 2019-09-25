@@ -43,27 +43,31 @@
             // 
             // btnFiltrar
             // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.btnFiltrar.Enabled = false;
+            this.btnFiltrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
             this.btnFiltrar.Location = new System.Drawing.Point(869, 201);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(157, 46);
             this.btnFiltrar.TabIndex = 11;
             this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(299, 27);
+            this.label1.Location = new System.Drawing.Point(319, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(484, 33);
+            this.label1.Size = new System.Drawing.Size(447, 40);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Transporte Disponible en la Empresa";
+            this.label1.Text = "Transportes de la Empresa";
             // 
             // CBFiltrox
             // 

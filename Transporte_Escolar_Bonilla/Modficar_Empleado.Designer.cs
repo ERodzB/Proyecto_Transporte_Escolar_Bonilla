@@ -55,6 +55,7 @@
             this.CBInter = new System.Windows.Forms.CheckBox();
             this.RBPesada = new System.Windows.Forms.RadioButton();
             this.RBLiviana = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.GBlicencia.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             this.dtpvencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Enabled = false;
             this.dtpvencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpvencimiento.Location = new System.Drawing.Point(401, 502);
+            this.dtpvencimiento.Location = new System.Drawing.Point(367, 499);
             this.dtpvencimiento.Name = "dtpvencimiento";
             this.dtpvencimiento.Size = new System.Drawing.Size(520, 36);
             this.dtpvencimiento.TabIndex = 43;
@@ -90,7 +91,7 @@
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Items.AddRange(new object[] {
             "Conductor"});
-            this.cmbPuesto.Location = new System.Drawing.Point(401, 377);
+            this.cmbPuesto.Location = new System.Drawing.Point(367, 374);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(520, 35);
             this.cmbPuesto.TabIndex = 34;
@@ -106,7 +107,7 @@
             "Masculino",
             "Femenino",
             "Otros"});
-            this.cmbGenero.Location = new System.Drawing.Point(401, 210);
+            this.cmbGenero.Location = new System.Drawing.Point(367, 207);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(520, 35);
             this.cmbGenero.TabIndex = 29;
@@ -115,7 +116,7 @@
             // 
             this.txtsalario.Enabled = false;
             this.txtsalario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsalario.Location = new System.Drawing.Point(401, 418);
+            this.txtsalario.Location = new System.Drawing.Point(367, 415);
             this.txtsalario.MaxLength = 13;
             this.txtsalario.Name = "txtsalario";
             this.txtsalario.Size = new System.Drawing.Size(520, 36);
@@ -148,7 +149,7 @@
             // 
             this.txtdireccion.Enabled = false;
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdireccion.Location = new System.Drawing.Point(401, 335);
+            this.txtdireccion.Location = new System.Drawing.Point(367, 332);
             this.txtdireccion.MaxLength = 50;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(520, 36);
@@ -170,7 +171,7 @@
             // 
             this.txtcorreo.Enabled = false;
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcorreo.Location = new System.Drawing.Point(401, 293);
+            this.txtcorreo.Location = new System.Drawing.Point(367, 290);
             this.txtcorreo.MaxLength = 30;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(520, 36);
@@ -193,7 +194,7 @@
             // 
             this.txttelefono.Enabled = false;
             this.txttelefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefono.Location = new System.Drawing.Point(401, 251);
+            this.txttelefono.Location = new System.Drawing.Point(367, 248);
             this.txttelefono.MaxLength = 8;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(520, 36);
@@ -238,7 +239,7 @@
             // 
             this.txtnombre.Enabled = false;
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.Location = new System.Drawing.Point(401, 168);
+            this.txtnombre.Location = new System.Drawing.Point(367, 165);
             this.txtnombre.MaxLength = 50;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(520, 36);
@@ -260,7 +261,7 @@
             // 
             this.txtlicencia.Enabled = false;
             this.txtlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlicencia.Location = new System.Drawing.Point(401, 460);
+            this.txtlicencia.Location = new System.Drawing.Point(367, 457);
             this.txtlicencia.MaxLength = 20;
             this.txtlicencia.Name = "txtlicencia";
             this.txtlicencia.Size = new System.Drawing.Size(520, 36);
@@ -270,20 +271,24 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.btnModificar.Enabled = false;
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnModificar.Location = new System.Drawing.Point(936, 566);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(935, 550);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(142, 46);
+            this.btnModificar.Size = new System.Drawing.Size(147, 59);
             this.btnModificar.TabIndex = 46;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // busqueda
             // 
             this.busqueda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busqueda.Location = new System.Drawing.Point(481, 61);
+            this.busqueda.Location = new System.Drawing.Point(367, 105);
             this.busqueda.MaxLength = 13;
             this.busqueda.Name = "busqueda";
             this.busqueda.Size = new System.Drawing.Size(520, 36);
@@ -296,7 +301,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(40, 64);
+            this.label2.Location = new System.Drawing.Point(362, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(414, 30);
             this.label2.TabIndex = 48;
@@ -304,13 +309,17 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.button2.Location = new System.Drawing.Point(936, 103);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(935, 98);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(142, 46);
             this.button2.TabIndex = 49;
             this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // lbltipolic
@@ -331,7 +340,7 @@
             this.GBlicencia.Controls.Add(this.RBPesada);
             this.GBlicencia.Controls.Add(this.RBLiviana);
             this.GBlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.GBlicencia.Location = new System.Drawing.Point(401, 544);
+            this.GBlicencia.Location = new System.Drawing.Point(367, 541);
             this.GBlicencia.Name = "GBlicencia";
             this.GBlicencia.Size = new System.Drawing.Size(520, 60);
             this.GBlicencia.TabIndex = 51;
@@ -376,12 +385,25 @@
             this.RBLiviana.Text = "Liviana";
             this.RBLiviana.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(297, 18);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(564, 44);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Modificar Datos de Empleado";
+            // 
             // Modficar_Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.GBlicencia);
             this.Controls.Add(this.lbltipolic);
             this.Controls.Add(this.button2);
@@ -447,5 +469,6 @@
         private System.Windows.Forms.CheckBox CBInter;
         private System.Windows.Forms.RadioButton RBPesada;
         private System.Windows.Forms.RadioButton RBLiviana;
+        private System.Windows.Forms.Label label3;
     }
 }

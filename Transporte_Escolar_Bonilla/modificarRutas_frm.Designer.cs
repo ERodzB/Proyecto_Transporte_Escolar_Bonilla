@@ -45,6 +45,7 @@
             this.vehiculo_lbl = new System.Windows.Forms.Label();
             this.vehiculo_cmb = new System.Windows.Forms.ComboBox();
             this.vehi_lbl = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.opc_gp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(254, 42);
+            this.label1.Location = new System.Drawing.Point(253, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 34);
             this.label1.TabIndex = 0;
@@ -67,7 +68,7 @@
             this.opc_gp.Controls.Add(this.no_rb);
             this.opc_gp.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opc_gp.ForeColor = System.Drawing.Color.White;
-            this.opc_gp.Location = new System.Drawing.Point(89, 98);
+            this.opc_gp.Location = new System.Drawing.Point(88, 153);
             this.opc_gp.Name = "opc_gp";
             this.opc_gp.Size = new System.Drawing.Size(930, 111);
             this.opc_gp.TabIndex = 6;
@@ -124,7 +125,7 @@
             // 
             this.llegadaHorario_dtp.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.llegadaHorario_dtp.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llegadaHorario_dtp.Location = new System.Drawing.Point(521, 394);
+            this.llegadaHorario_dtp.Location = new System.Drawing.Point(520, 449);
             this.llegadaHorario_dtp.Margin = new System.Windows.Forms.Padding(4);
             this.llegadaHorario_dtp.Name = "llegadaHorario_dtp";
             this.llegadaHorario_dtp.Size = new System.Drawing.Size(243, 41);
@@ -136,7 +137,7 @@
             this.entradaHorario_lbl.AutoSize = true;
             this.entradaHorario_lbl.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.entradaHorario_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.entradaHorario_lbl.Location = new System.Drawing.Point(131, 399);
+            this.entradaHorario_lbl.Location = new System.Drawing.Point(130, 454);
             this.entradaHorario_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.entradaHorario_lbl.Name = "entradaHorario_lbl";
             this.entradaHorario_lbl.Size = new System.Drawing.Size(256, 36);
@@ -149,7 +150,7 @@
             this.salidaHorario_lbl.AutoSize = true;
             this.salidaHorario_lbl.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.salidaHorario_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.salidaHorario_lbl.Location = new System.Drawing.Point(131, 331);
+            this.salidaHorario_lbl.Location = new System.Drawing.Point(130, 386);
             this.salidaHorario_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.salidaHorario_lbl.Name = "salidaHorario_lbl";
             this.salidaHorario_lbl.Size = new System.Drawing.Size(225, 36);
@@ -162,7 +163,7 @@
             this.horario_lbl.AutoSize = true;
             this.horario_lbl.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.horario_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.horario_lbl.Location = new System.Drawing.Point(131, 267);
+            this.horario_lbl.Location = new System.Drawing.Point(130, 322);
             this.horario_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.horario_lbl.Name = "horario_lbl";
             this.horario_lbl.Size = new System.Drawing.Size(293, 36);
@@ -174,7 +175,7 @@
             // 
             this.horaSalida_dtp.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.horaSalida_dtp.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaSalida_dtp.Location = new System.Drawing.Point(521, 326);
+            this.horaSalida_dtp.Location = new System.Drawing.Point(520, 381);
             this.horaSalida_dtp.Margin = new System.Windows.Forms.Padding(4);
             this.horaSalida_dtp.Name = "horaSalida_dtp";
             this.horaSalida_dtp.Size = new System.Drawing.Size(243, 41);
@@ -186,7 +187,7 @@
             this.Horario_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Horario_cmb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Horario_cmb.FormattingEnabled = true;
-            this.Horario_cmb.Location = new System.Drawing.Point(521, 262);
+            this.Horario_cmb.Location = new System.Drawing.Point(520, 317);
             this.Horario_cmb.Name = "Horario_cmb";
             this.Horario_cmb.Size = new System.Drawing.Size(312, 41);
             this.Horario_cmb.TabIndex = 39;
@@ -200,7 +201,7 @@
             this.realizar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.realizar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.realizar_btn.ForeColor = System.Drawing.Color.White;
-            this.realizar_btn.Location = new System.Drawing.Point(865, 445);
+            this.realizar_btn.Location = new System.Drawing.Point(864, 500);
             this.realizar_btn.Name = "realizar_btn";
             this.realizar_btn.Size = new System.Drawing.Size(186, 69);
             this.realizar_btn.TabIndex = 40;
@@ -213,7 +214,7 @@
             this.rutasModificar_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rutasModificar_cmb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rutasModificar_cmb.FormattingEnabled = true;
-            this.rutasModificar_cmb.Location = new System.Drawing.Point(526, 42);
+            this.rutasModificar_cmb.Location = new System.Drawing.Point(525, 97);
             this.rutasModificar_cmb.Name = "rutasModificar_cmb";
             this.rutasModificar_cmb.Size = new System.Drawing.Size(337, 31);
             this.rutasModificar_cmb.TabIndex = 41;
@@ -225,7 +226,7 @@
             this.vehiculo_lbl.AutoSize = true;
             this.vehiculo_lbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehiculo_lbl.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.vehiculo_lbl.Location = new System.Drawing.Point(517, 526);
+            this.vehiculo_lbl.Location = new System.Drawing.Point(516, 581);
             this.vehiculo_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vehiculo_lbl.Name = "vehiculo_lbl";
             this.vehiculo_lbl.Size = new System.Drawing.Size(36, 23);
@@ -238,7 +239,7 @@
             this.vehiculo_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vehiculo_cmb.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.vehiculo_cmb.FormattingEnabled = true;
-            this.vehiculo_cmb.Location = new System.Drawing.Point(521, 464);
+            this.vehiculo_cmb.Location = new System.Drawing.Point(520, 519);
             this.vehiculo_cmb.Margin = new System.Windows.Forms.Padding(4);
             this.vehiculo_cmb.Name = "vehiculo_cmb";
             this.vehiculo_cmb.Size = new System.Drawing.Size(243, 39);
@@ -251,7 +252,7 @@
             this.vehi_lbl.AutoSize = true;
             this.vehi_lbl.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehi_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.vehi_lbl.Location = new System.Drawing.Point(130, 464);
+            this.vehi_lbl.Location = new System.Drawing.Point(129, 519);
             this.vehi_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vehi_lbl.Name = "vehi_lbl";
             this.vehi_lbl.Size = new System.Drawing.Size(362, 33);
@@ -259,12 +260,25 @@
             this.vehi_lbl.Text = "Vehículo a Realizar la Ruta";
             this.vehi_lbl.Visible = false;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(420, 30);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(300, 44);
+            this.label13.TabIndex = 187;
+            this.label13.Text = "Modificar Rutas";
+            // 
             // modificarRutas_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.vehiculo_lbl);
             this.Controls.Add(this.vehiculo_cmb);
             this.Controls.Add(this.vehi_lbl);
@@ -308,5 +322,6 @@
         private System.Windows.Forms.Label vehiculo_lbl;
         private System.Windows.Forms.ComboBox vehiculo_cmb;
         private System.Windows.Forms.Label vehi_lbl;
+        private System.Windows.Forms.Label label13;
     }
 }

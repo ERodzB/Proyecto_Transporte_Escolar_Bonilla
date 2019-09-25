@@ -65,12 +65,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.combcliente = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtpa
             // 
             this.txtpa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpa.Location = new System.Drawing.Point(464, 92);
+            this.txtpa.Location = new System.Drawing.Point(464, 124);
             this.txtpa.Margin = new System.Windows.Forms.Padding(4);
             this.txtpa.MaxLength = 3;
             this.txtpa.Name = "txtpa";
@@ -83,7 +84,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(420, 46);
+            this.label12.Location = new System.Drawing.Point(420, 78);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(196, 33);
@@ -93,7 +94,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 180);
+            this.panel2.Location = new System.Drawing.Point(0, 195);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1108, 4);
@@ -103,7 +104,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.ForeColor = System.Drawing.SystemColors.Window;
-            this.panel3.Location = new System.Drawing.Point(585, 182);
+            this.panel3.Location = new System.Drawing.Point(581, 199);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(4, 468);
@@ -396,7 +397,7 @@
             // txtdestino
             // 
             this.txtdestino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdestino.Location = new System.Drawing.Point(785, 94);
+            this.txtdestino.Location = new System.Drawing.Point(785, 126);
             this.txtdestino.Margin = new System.Windows.Forms.Padding(4);
             this.txtdestino.MaxLength = 50;
             this.txtdestino.Name = "txtdestino";
@@ -409,7 +410,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(645, 92);
+            this.label2.Location = new System.Drawing.Point(645, 124);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 33);
@@ -419,7 +420,7 @@
             // txtorigen
             // 
             this.txtorigen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtorigen.Location = new System.Drawing.Point(785, 41);
+            this.txtorigen.Location = new System.Drawing.Point(785, 73);
             this.txtorigen.Margin = new System.Windows.Forms.Padding(4);
             this.txtorigen.MaxLength = 50;
             this.txtorigen.Name = "txtorigen";
@@ -432,7 +433,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(655, 39);
+            this.label1.Location = new System.Drawing.Point(655, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 33);
@@ -447,7 +448,7 @@
             this.combservicio.Items.AddRange(new object[] {
             "Salida o Regreso",
             "Salida y Regreso"});
-            this.combservicio.Location = new System.Drawing.Point(160, 46);
+            this.combservicio.Location = new System.Drawing.Point(160, 78);
             this.combservicio.Margin = new System.Windows.Forms.Padding(4);
             this.combservicio.Name = "combservicio";
             this.combservicio.Size = new System.Drawing.Size(193, 28);
@@ -459,7 +460,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.Window;
-            this.label18.Location = new System.Drawing.Point(29, 46);
+            this.label18.Location = new System.Drawing.Point(13, 73);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(125, 33);
@@ -474,7 +475,7 @@
             this.combcliente.Items.AddRange(new object[] {
             "Bus Completo",
             "Medio Bus"});
-            this.combcliente.Location = new System.Drawing.Point(160, 94);
+            this.combcliente.Location = new System.Drawing.Point(160, 126);
             this.combcliente.Margin = new System.Windows.Forms.Padding(4);
             this.combcliente.Name = "combcliente";
             this.combcliente.Size = new System.Drawing.Size(193, 28);
@@ -485,12 +486,24 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(29, 94);
+            this.label13.Location = new System.Drawing.Point(29, 126);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(118, 33);
             this.label13.TabIndex = 300;
             this.label13.Text = "Cliente:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.Window;
+            this.label14.Location = new System.Drawing.Point(269, 9);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(585, 44);
+            this.label14.TabIndex = 302;
+            this.label14.Text = "Creación de Contrato de Viaje";
             // 
             // nuevoviaje
             // 
@@ -498,6 +511,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.combcliente);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtpa);
@@ -584,5 +598,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox combcliente;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }

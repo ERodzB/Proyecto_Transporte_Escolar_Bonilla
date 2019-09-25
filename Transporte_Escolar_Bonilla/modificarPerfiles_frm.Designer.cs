@@ -37,6 +37,7 @@
             this.Modificar_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.Perfiles_cmb = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -44,7 +45,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(104, 318);
+            this.label3.Location = new System.Drawing.Point(118, 387);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(343, 40);
             this.label3.TabIndex = 36;
@@ -53,7 +54,7 @@
             // desPerfil_tb
             // 
             this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desPerfil_tb.Location = new System.Drawing.Point(111, 374);
+            this.desPerfil_tb.Location = new System.Drawing.Point(125, 443);
             this.desPerfil_tb.MaxLength = 50;
             this.desPerfil_tb.Name = "desPerfil_tb";
             this.desPerfil_tb.Size = new System.Drawing.Size(864, 41);
@@ -65,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(104, 241);
+            this.label1.Location = new System.Drawing.Point(118, 310);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(283, 40);
             this.label1.TabIndex = 34;
@@ -74,7 +75,7 @@
             // nombrePerfil_tb
             // 
             this.nombrePerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombrePerfil_tb.Location = new System.Drawing.Point(524, 250);
+            this.nombrePerfil_tb.Location = new System.Drawing.Point(538, 319);
             this.nombrePerfil_tb.MaxLength = 20;
             this.nombrePerfil_tb.Name = "nombrePerfil_tb";
             this.nombrePerfil_tb.Size = new System.Drawing.Size(451, 41);
@@ -86,7 +87,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(104, 179);
+            this.label2.Location = new System.Drawing.Point(118, 248);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(277, 40);
             this.label2.TabIndex = 32;
@@ -101,7 +102,7 @@
             "1",
             "2",
             "3"});
-            this.nivelAcceso_cmb.Location = new System.Drawing.Point(603, 178);
+            this.nivelAcceso_cmb.Location = new System.Drawing.Point(617, 247);
             this.nivelAcceso_cmb.Name = "nivelAcceso_cmb";
             this.nivelAcceso_cmb.Size = new System.Drawing.Size(372, 45);
             this.nivelAcceso_cmb.TabIndex = 38;
@@ -109,11 +110,11 @@
             // Modificar_btn
             // 
             this.Modificar_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
-            this.Modificar_btn.FlatAppearance.BorderSize = 0;
+            this.Modificar_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Modificar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Modificar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar_btn.ForeColor = System.Drawing.Color.White;
-            this.Modificar_btn.Location = new System.Drawing.Point(781, 468);
+            this.Modificar_btn.Location = new System.Drawing.Point(795, 537);
             this.Modificar_btn.Name = "Modificar_btn";
             this.Modificar_btn.Size = new System.Drawing.Size(194, 63);
             this.Modificar_btn.TabIndex = 41;
@@ -126,7 +127,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(104, 99);
+            this.label4.Location = new System.Drawing.Point(118, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 40);
             this.label4.TabIndex = 38;
@@ -141,18 +142,31 @@
             "1",
             "2",
             "3"});
-            this.Perfiles_cmb.Location = new System.Drawing.Point(603, 98);
+            this.Perfiles_cmb.Location = new System.Drawing.Point(617, 167);
             this.Perfiles_cmb.Name = "Perfiles_cmb";
             this.Perfiles_cmb.Size = new System.Drawing.Size(372, 45);
             this.Perfiles_cmb.TabIndex = 37;
             this.Perfiles_cmb.SelectedIndexChanged += new System.EventHandler(this.Perfiles_cmb_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(342, 57);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(420, 38);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Modificaciones de Perfiles";
             // 
             // modificarPerfiles_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1106, 650);
+            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Perfiles_cmb);
             this.Controls.Add(this.label3);
@@ -182,5 +196,6 @@
         private System.Windows.Forms.Button Modificar_btn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox Perfiles_cmb;
+        private System.Windows.Forms.Label label5;
     }
 }

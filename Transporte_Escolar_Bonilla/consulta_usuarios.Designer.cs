@@ -35,6 +35,7 @@
             this.cbConsulta = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaU)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvConsultaU.Location = new System.Drawing.Point(59, 144);
+            this.dgvConsultaU.Location = new System.Drawing.Point(59, 224);
             this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
@@ -92,7 +93,7 @@
             "Usuarios",
             "Perfiles",
             "Niveles de Acceso"});
-            this.cbConsulta.Location = new System.Drawing.Point(643, 47);
+            this.cbConsulta.Location = new System.Drawing.Point(638, 97);
             this.cbConsulta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbConsulta.Name = "cbConsulta";
             this.cbConsulta.Size = new System.Drawing.Size(399, 40);
@@ -104,7 +105,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(83, 50);
+            this.label1.Location = new System.Drawing.Point(78, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(444, 33);
             this.label1.TabIndex = 2;
@@ -113,15 +114,31 @@
             // 
             // btnConsultar
             // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnConsultar.Location = new System.Drawing.Point(883, 94);
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(873, 155);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(157, 46);
+            this.btnConsultar.Size = new System.Drawing.Size(164, 48);
             this.btnConsultar.TabIndex = 3;
             this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(348, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(443, 44);
+            this.label2.TabIndex = 93;
+            this.label2.Text = "Usuarios de la Empresa";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // consulta_usuarios
             // 
@@ -129,6 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1106, 650);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbConsulta);
@@ -149,5 +167,6 @@
         private System.Windows.Forms.ComboBox cbConsulta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.txtmat = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,24 +55,14 @@
             this.combestado = new System.Windows.Forms.ComboBox();
             this.dtpemision = new System.Windows.Forms.DateTimePicker();
             this.dtpvenc = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(255, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(537, 33);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Ingreso de Nueva Unidad de Transporte";
             // 
             // txtmat
             // 
             this.txtmat.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmat.Location = new System.Drawing.Point(65, 129);
-            this.txtmat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmat.Margin = new System.Windows.Forms.Padding(4);
             this.txtmat.MaxLength = 10;
             this.txtmat.Name = "txtmat";
             this.txtmat.Size = new System.Drawing.Size(276, 26);
@@ -113,7 +102,7 @@
             "Bus Completo",
             "Medio Bus"});
             this.combtipoveh.Location = new System.Drawing.Point(404, 129);
-            this.combtipoveh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combtipoveh.Margin = new System.Windows.Forms.Padding(4);
             this.combtipoveh.Name = "combtipoveh";
             this.combtipoveh.Size = new System.Drawing.Size(276, 28);
             this.combtipoveh.TabIndex = 2;
@@ -133,7 +122,7 @@
             // dtpanioveh
             // 
             this.dtpanioveh.Location = new System.Drawing.Point(743, 129);
-            this.dtpanioveh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpanioveh.Margin = new System.Windows.Forms.Padding(4);
             this.dtpanioveh.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpanioveh.Name = "dtpanioveh";
             this.dtpanioveh.Size = new System.Drawing.Size(276, 22);
@@ -143,7 +132,7 @@
             // 
             this.txtmarca.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarca.Location = new System.Drawing.Point(65, 230);
-            this.txtmarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmarca.Margin = new System.Windows.Forms.Padding(4);
             this.txtmarca.MaxLength = 20;
             this.txtmarca.Name = "txtmarca";
             this.txtmarca.Size = new System.Drawing.Size(276, 26);
@@ -166,7 +155,7 @@
             // 
             this.txtmodelo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmodelo.Location = new System.Drawing.Point(404, 230);
-            this.txtmodelo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmodelo.Margin = new System.Windows.Forms.Padding(4);
             this.txtmodelo.MaxLength = 20;
             this.txtmodelo.Name = "txtmodelo";
             this.txtmodelo.Size = new System.Drawing.Size(276, 26);
@@ -189,7 +178,7 @@
             // 
             this.txtcap.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcap.Location = new System.Drawing.Point(65, 331);
-            this.txtcap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcap.Margin = new System.Windows.Forms.Padding(4);
             this.txtcap.MaxLength = 5;
             this.txtcap.Name = "txtcap";
             this.txtcap.Size = new System.Drawing.Size(276, 26);
@@ -217,7 +206,7 @@
             "Bus Completo",
             "Medio Bus"});
             this.combtipocom.Location = new System.Drawing.Point(743, 331);
-            this.combtipocom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combtipocom.Margin = new System.Windows.Forms.Padding(4);
             this.combtipocom.Name = "combtipocom";
             this.combtipocom.Size = new System.Drawing.Size(276, 28);
             this.combtipocom.TabIndex = 9;
@@ -243,7 +232,7 @@
             "Bus Completo",
             "Medio Bus"});
             this.combtipotra.Location = new System.Drawing.Point(404, 331);
-            this.combtipotra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combtipotra.Margin = new System.Windows.Forms.Padding(4);
             this.combtipotra.Name = "combtipotra";
             this.combtipotra.Size = new System.Drawing.Size(276, 28);
             this.combtipotra.TabIndex = 8;
@@ -264,7 +253,7 @@
             // 
             this.txtcolor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcolor.Location = new System.Drawing.Point(743, 230);
-            this.txtcolor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcolor.Margin = new System.Windows.Forms.Padding(4);
             this.txtcolor.MaxLength = 20;
             this.txtcolor.Name = "txtcolor";
             this.txtcolor.Size = new System.Drawing.Size(276, 26);
@@ -310,7 +299,7 @@
             // dtpanioad
             // 
             this.dtpanioad.Location = new System.Drawing.Point(65, 437);
-            this.dtpanioad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpanioad.Margin = new System.Windows.Forms.Padding(4);
             this.dtpanioad.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpanioad.Name = "dtpanioad";
             this.dtpanioad.Size = new System.Drawing.Size(276, 22);
@@ -347,7 +336,7 @@
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
             this.botcrear.Location = new System.Drawing.Point(807, 527);
-            this.botcrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botcrear.Margin = new System.Windows.Forms.Padding(4);
             this.botcrear.Name = "botcrear";
             this.botcrear.Size = new System.Drawing.Size(145, 52);
             this.botcrear.TabIndex = 14;
@@ -364,7 +353,7 @@
             "Bus Completo",
             "Medio Bus"});
             this.combestado.Location = new System.Drawing.Point(344, 527);
-            this.combestado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combestado.Margin = new System.Windows.Forms.Padding(4);
             this.combestado.Name = "combestado";
             this.combestado.Size = new System.Drawing.Size(276, 28);
             this.combestado.TabIndex = 229;
@@ -372,7 +361,7 @@
             // dtpemision
             // 
             this.dtpemision.Location = new System.Drawing.Point(404, 437);
-            this.dtpemision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpemision.Margin = new System.Windows.Forms.Padding(4);
             this.dtpemision.Name = "dtpemision";
             this.dtpemision.Size = new System.Drawing.Size(276, 22);
             this.dtpemision.TabIndex = 230;
@@ -380,17 +369,31 @@
             // dtpvenc
             // 
             this.dtpvenc.Location = new System.Drawing.Point(741, 437);
-            this.dtpvenc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpvenc.Margin = new System.Windows.Forms.Padding(4);
             this.dtpvenc.Name = "dtpvenc";
             this.dtpvenc.Size = new System.Drawing.Size(276, 22);
             this.dtpvenc.TabIndex = 231;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.Window;
+            this.label15.Location = new System.Drawing.Point(162, 39);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(747, 44);
+            this.label15.TabIndex = 232;
+            this.label15.Text = "Ingreso de Nueva Unidad de Transporte";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // form_nueva_unidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1104, 649);
+            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.dtpvenc);
             this.Controls.Add(this.dtpemision);
             this.Controls.Add(this.combestado);
@@ -418,9 +421,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtmat);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_nueva_unidad";
             this.Text = "form_nueva_unidad";
             this.Load += new System.EventHandler(this.Form_nueva_unidad_Load);
@@ -430,8 +432,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtmat;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
@@ -459,5 +459,6 @@
         private System.Windows.Forms.ComboBox combestado;
         private System.Windows.Forms.DateTimePicker dtpemision;
         private System.Windows.Forms.DateTimePicker dtpvenc;
+        private System.Windows.Forms.Label label15;
     }
 }

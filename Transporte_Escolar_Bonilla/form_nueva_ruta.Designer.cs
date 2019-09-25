@@ -42,13 +42,14 @@
             this.combveh1 = new System.Windows.Forms.ComboBox();
             this.labv1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtphorae1
             // 
             this.dtphorae1.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.dtphorae1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtphorae1.Location = new System.Drawing.Point(563, 358);
+            this.dtphorae1.Location = new System.Drawing.Point(551, 396);
             this.dtphorae1.Margin = new System.Windows.Forms.Padding(4);
             this.dtphorae1.Name = "dtphorae1";
             this.dtphorae1.Size = new System.Drawing.Size(243, 41);
@@ -59,7 +60,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(284, 361);
+            this.label7.Location = new System.Drawing.Point(272, 399);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(256, 36);
@@ -71,7 +72,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(284, 300);
+            this.label6.Location = new System.Drawing.Point(272, 338);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(225, 36);
@@ -83,7 +84,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(441, 239);
+            this.label3.Location = new System.Drawing.Point(429, 286);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 36);
@@ -94,7 +95,7 @@
             // txtfin
             // 
             this.txtfin.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtfin.Location = new System.Drawing.Point(552, 186);
+            this.txtfin.Location = new System.Drawing.Point(540, 238);
             this.txtfin.Margin = new System.Windows.Forms.Padding(4);
             this.txtfin.Name = "txtfin";
             this.txtfin.Size = new System.Drawing.Size(336, 34);
@@ -106,7 +107,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(228, 177);
+            this.label2.Location = new System.Drawing.Point(216, 229);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(283, 36);
@@ -117,12 +118,12 @@
             // 
             this.botcrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.botcrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botcrear.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botcrear.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
-            this.botcrear.Location = new System.Drawing.Point(589, 549);
+            this.botcrear.Location = new System.Drawing.Point(591, 552);
             this.botcrear.Margin = new System.Windows.Forms.Padding(4);
             this.botcrear.Name = "botcrear";
-            this.botcrear.Size = new System.Drawing.Size(217, 70);
+            this.botcrear.Size = new System.Drawing.Size(203, 76);
             this.botcrear.TabIndex = 13;
             this.botcrear.Text = "Crear Ruta";
             this.botcrear.UseVisualStyleBackColor = false;
@@ -132,7 +133,7 @@
             // 
             this.dtphoras1.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.dtphoras1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtphoras1.Location = new System.Drawing.Point(563, 299);
+            this.dtphoras1.Location = new System.Drawing.Point(551, 337);
             this.dtphoras1.Margin = new System.Windows.Forms.Padding(4);
             this.dtphoras1.Name = "dtphoras1";
             this.dtphoras1.Size = new System.Drawing.Size(243, 41);
@@ -142,7 +143,7 @@
             // txtinicio
             // 
             this.txtinicio.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtinicio.Location = new System.Drawing.Point(552, 128);
+            this.txtinicio.Location = new System.Drawing.Point(540, 180);
             this.txtinicio.Margin = new System.Windows.Forms.Padding(4);
             this.txtinicio.Name = "txtinicio";
             this.txtinicio.Size = new System.Drawing.Size(336, 34);
@@ -154,7 +155,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(228, 119);
+            this.label1.Location = new System.Drawing.Point(216, 171);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 36);
@@ -166,7 +167,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(181, 444);
+            this.label13.Location = new System.Drawing.Point(169, 459);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(362, 33);
@@ -179,7 +180,7 @@
             this.combveh1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combveh1.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combveh1.FormattingEnabled = true;
-            this.combveh1.Location = new System.Drawing.Point(563, 444);
+            this.combveh1.Location = new System.Drawing.Point(551, 459);
             this.combveh1.Margin = new System.Windows.Forms.Padding(4);
             this.combveh1.Name = "combveh1";
             this.combveh1.Size = new System.Drawing.Size(243, 39);
@@ -191,7 +192,7 @@
             this.labv1.AutoSize = true;
             this.labv1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labv1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.labv1.Location = new System.Drawing.Point(559, 504);
+            this.labv1.Location = new System.Drawing.Point(547, 519);
             this.labv1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labv1.Name = "labv1";
             this.labv1.Size = new System.Drawing.Size(36, 23);
@@ -204,12 +205,24 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(418, 49);
+            this.label4.Location = new System.Drawing.Point(406, 125);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(296, 36);
             this.label4.TabIndex = 184;
             this.label4.Text = "Trayecto a Recorrer";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(336, 46);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(472, 44);
+            this.label5.TabIndex = 185;
+            this.label5.Text = "Creación de Nueva Ruta";
             // 
             // form_nueva_ruta
             // 
@@ -217,6 +230,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labv1);
             this.Controls.Add(this.combveh1);
@@ -256,5 +270,6 @@
         private System.Windows.Forms.ComboBox combveh1;
         private System.Windows.Forms.Label labv1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

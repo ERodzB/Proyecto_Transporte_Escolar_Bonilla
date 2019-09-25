@@ -47,30 +47,80 @@ namespace Transporte_Escolar_Bonilla
         {
             crearUsuario_frm nusuario = new crearUsuario_frm();
             estetics.AbrirFormularios(nusuario, mainUsuarios_panel);
+            crearUsuarios_btn.BackColor = Color.White;
+            crearUsuarios_btn.ForeColor = Color.MidnightBlue;
+            consultasUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultasUsuarios_btn.ForeColor = Color.White;
+            modificarUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarUsuarios_btn.ForeColor = Color.White;
+            crearPerfil_btn.ForeColor = Color.White;
+            crearPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.ForeColor = Color.White;
         }
 
         private void ModificarUsuarios_btn_Click(object sender, EventArgs e)
         {
             modificarUsuario_frm modi = new modificarUsuario_frm();
             estetics.AbrirFormularios(modi, mainUsuarios_panel);
+            crearUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            crearUsuarios_btn.ForeColor = Color.White;
+            consultasUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultasUsuarios_btn.ForeColor = Color.White;
+            modificarUsuarios_btn.BackColor = Color.White;
+            modificarUsuarios_btn.ForeColor = Color.MidnightBlue;
+            crearPerfil_btn.ForeColor = Color.White;
+            crearPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.ForeColor = Color.White;
         }
 
         private void CrearPerfil_btn_Click(object sender, EventArgs e)
         {
             crearPerfil_frm cperfil = new crearPerfil_frm();
             estetics.AbrirFormularios(cperfil, mainUsuarios_panel);
+            crearUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            crearUsuarios_btn.ForeColor = Color.White;
+            consultasUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultasUsuarios_btn.ForeColor = Color.White;
+            modificarUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarUsuarios_btn.ForeColor = Color.White;
+            crearPerfil_btn.ForeColor = Color.MidnightBlue;
+            crearPerfil_btn.BackColor = Color.White; ;
+            modificarPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.ForeColor = Color.White;
         }
 
         private void ModificarPerfil_btn_Click(object sender, EventArgs e)
         {
             modificarPerfiles_frm mperfil = new modificarPerfiles_frm();
             estetics.AbrirFormularios(mperfil, mainUsuarios_panel);
+            crearUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            crearUsuarios_btn.ForeColor = Color.White;
+            consultasUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultasUsuarios_btn.ForeColor = Color.White;
+            modificarUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarUsuarios_btn.ForeColor = Color.White;
+            crearPerfil_btn.ForeColor = Color.White;
+            crearPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.BackColor = Color.White; 
+            modificarPerfil_btn.ForeColor = Color.MidnightBlue;
         }
 
         private void ConsultasUsuarios_btn_Click(object sender, EventArgs e)
         {
             consulta_usuarios cusuario = new consulta_usuarios();
             estetics.AbrirFormularios(cusuario, mainUsuarios_panel);
+            crearUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            crearUsuarios_btn.ForeColor = Color.White;
+            consultasUsuarios_btn.BackColor = Color.White;
+            consultasUsuarios_btn.ForeColor = Color.MidnightBlue;
+            modificarUsuarios_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarUsuarios_btn.ForeColor = Color.White;
+            crearPerfil_btn.ForeColor = Color.White;
+            crearPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarPerfil_btn.ForeColor = Color.White;
         }
 
         private void Label1_Click(object sender, EventArgs e)

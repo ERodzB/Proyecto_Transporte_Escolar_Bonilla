@@ -53,30 +53,80 @@ namespace Transporte_Escolar_Bonilla
         {
             nuevoempleado Nuevoempleado = new nuevoempleado();
             Estetics.AbrirFormularios(Nuevoempleado, conductorMain_Panel);
+            nuevoConductor_btn.BackColor = Color.White;
+            nuevoConductor_btn.ForeColor = Color.MidnightBlue;
+            consultaConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultaConductores_btn.ForeColor = Color.White;
+            modificarConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarConductores_btn.ForeColor = Color.White;
+            asignarConductor_btn.BackColor = Color.FromArgb(12, 24, 94);
+            asignarConductor_btn.ForeColor = Color.White;
+            entregaUnidad_btn.BackColor = Color.FromArgb(12, 24, 94);
+            entregaUnidad_btn.ForeColor = Color.White;
         }
 
         private void ConsultaConductores_btn_Click(object sender, EventArgs e)
         {
             Consultar_empleados empleados = new Consultar_empleados();
             Estetics.AbrirFormularios(empleados, conductorMain_Panel);
+            nuevoConductor_btn.BackColor = Color.FromArgb(12, 24, 94); ;
+            nuevoConductor_btn.ForeColor = Color.White;
+            consultaConductores_btn.BackColor = Color.White;
+            consultaConductores_btn.ForeColor = Color.MidnightBlue;
+            modificarConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarConductores_btn.ForeColor = Color.White;
+            asignarConductor_btn.BackColor = Color.FromArgb(12, 24, 94);
+            asignarConductor_btn.ForeColor = Color.White;
+            entregaUnidad_btn.BackColor = Color.FromArgb(12, 24, 94);
+            entregaUnidad_btn.ForeColor = Color.White;
         }
 
         private void ModificarConductores_btn_Click(object sender, EventArgs e)
         {
             Modficar_Empleado mempleados = new Modficar_Empleado();
             Estetics.AbrirFormularios(mempleados, conductorMain_Panel);
+            nuevoConductor_btn.BackColor = Color.FromArgb(12, 24, 94); ;
+            nuevoConductor_btn.ForeColor = Color.White;
+            consultaConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultaConductores_btn.ForeColor = Color.White;
+            modificarConductores_btn.BackColor = Color.White;
+            modificarConductores_btn.ForeColor = Color.MidnightBlue;
+            asignarConductor_btn.BackColor = Color.FromArgb(12, 24, 94);
+            asignarConductor_btn.ForeColor = Color.White;
+            entregaUnidad_btn.BackColor = Color.FromArgb(12, 24, 94);
+            entregaUnidad_btn.ForeColor = Color.White;
         }
 
         private void AsignarConductor_btn_Click(object sender, EventArgs e)
         {
             asignacionunidades aunidades = new asignacionunidades(1);
             Estetics.AbrirFormularios(aunidades, conductorMain_Panel);
+            nuevoConductor_btn.BackColor = Color.FromArgb(12, 24, 94); ;
+            nuevoConductor_btn.ForeColor = Color.White;
+            consultaConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultaConductores_btn.ForeColor = Color.White;
+            modificarConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarConductores_btn.ForeColor = Color.White;
+            asignarConductor_btn.BackColor = Color.White;
+            asignarConductor_btn.ForeColor = Color.MidnightBlue;
+            entregaUnidad_btn.BackColor = Color.FromArgb(12, 24, 94);
+            entregaUnidad_btn.ForeColor = Color.White;
         }
 
         private void EntregaUnidad_btn_Click(object sender, EventArgs e)
         {
             asignacionunidades aunidades = new asignacionunidades(2);
             Estetics.AbrirFormularios(aunidades, conductorMain_Panel);
+            nuevoConductor_btn.BackColor = Color.FromArgb(12, 24, 94); ;
+            nuevoConductor_btn.ForeColor = Color.White;
+            consultaConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultaConductores_btn.ForeColor = Color.White;
+            modificarConductores_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarConductores_btn.ForeColor = Color.White;
+            asignarConductor_btn.BackColor = Color.FromArgb(12, 24, 94);
+            asignarConductor_btn.ForeColor = Color.White;
+            entregaUnidad_btn.BackColor = Color.White;
+            entregaUnidad_btn.ForeColor = Color.MidnightBlue;
         }
     }
 }

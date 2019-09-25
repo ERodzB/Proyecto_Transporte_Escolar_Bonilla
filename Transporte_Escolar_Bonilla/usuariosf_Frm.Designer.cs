@@ -35,8 +35,8 @@
             this.crearUsuarios_btn = new System.Windows.Forms.Button();
             this.consultasUsuarios_btn = new System.Windows.Forms.Button();
             this.mainUsuarios_panel = new System.Windows.Forms.Panel();
-            this.PB1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.PB1 = new System.Windows.Forms.PictureBox();
             this.usariosTop_Panel.SuspendLayout();
             this.mainUsuarios_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB1)).BeginInit();
@@ -146,6 +146,20 @@
             this.mainUsuarios_panel.Size = new System.Drawing.Size(1106, 650);
             this.mainUsuarios_panel.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(38, 497);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(954, 80);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bienvenido al Módulo de Usuarios \r\nSeleccione la acción que desea realizar del me" +
+    "nú superior\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
             // PB1
             // 
             this.PB1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources._5b59571fbd286354a8e2f1df_Icon_group;
@@ -155,20 +169,6 @@
             this.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB1.TabIndex = 0;
             this.PB1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(38, 497);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(975, 80);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Bienvenido al Módulo de Usuarios \r\nSeleccione la acción que desea realizar del me" +
-    "nú superior\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // usuarios_frm
             // 

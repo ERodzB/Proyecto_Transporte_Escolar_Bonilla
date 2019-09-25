@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNuevaMatricula = new System.Windows.Forms.TextBox();
             this.botasignar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lab1
@@ -41,7 +42,7 @@
             this.lab1.AutoSize = true;
             this.lab1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lab1.Location = new System.Drawing.Point(575, 200);
+            this.lab1.Location = new System.Drawing.Point(585, 262);
             this.lab1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab1.Name = "lab1";
             this.lab1.Size = new System.Drawing.Size(46, 28);
@@ -54,7 +55,7 @@
             this.combveh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combveh.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combveh.FormattingEnabled = true;
-            this.combveh.Location = new System.Drawing.Point(604, 139);
+            this.combveh.Location = new System.Drawing.Point(614, 201);
             this.combveh.Margin = new System.Windows.Forms.Padding(4);
             this.combveh.Name = "combveh";
             this.combveh.Size = new System.Drawing.Size(243, 39);
@@ -66,29 +67,29 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(80, 139);
+            this.label13.Location = new System.Drawing.Point(90, 201);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(486, 36);
+            this.label13.Size = new System.Drawing.Size(430, 36);
             this.label13.TabIndex = 188;
-            this.label13.Text = "Vehiculo a Cambiar la Matricula";
+            this.label13.Text = "Vehiculo a Cambiar la Placa";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(98, 307);
+            this.label1.Location = new System.Drawing.Point(108, 369);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(444, 36);
+            this.label1.Size = new System.Drawing.Size(388, 36);
             this.label1.TabIndex = 190;
-            this.label1.Text = "Nueva Matricula del Vehiculo";
+            this.label1.Text = "Nueva Placa del Vehiculo";
             // 
             // txtNuevaMatricula
             // 
             this.txtNuevaMatricula.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNuevaMatricula.Location = new System.Drawing.Point(604, 307);
+            this.txtNuevaMatricula.Location = new System.Drawing.Point(614, 369);
             this.txtNuevaMatricula.Name = "txtNuevaMatricula";
             this.txtNuevaMatricula.Size = new System.Drawing.Size(243, 44);
             this.txtNuevaMatricula.TabIndex = 191;
@@ -99,7 +100,7 @@
             this.botasignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botasignar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botasignar.ForeColor = System.Drawing.Color.Transparent;
-            this.botasignar.Location = new System.Drawing.Point(630, 426);
+            this.botasignar.Location = new System.Drawing.Point(640, 488);
             this.botasignar.Margin = new System.Windows.Forms.Padding(4);
             this.botasignar.Name = "botasignar";
             this.botasignar.Size = new System.Drawing.Size(217, 70);
@@ -108,12 +109,25 @@
             this.botasignar.UseVisualStyleBackColor = false;
             this.botasignar.Click += new System.EventHandler(this.Botasignar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(397, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(341, 44);
+            this.label2.TabIndex = 267;
+            this.label2.Text = "Cambio de Placa";
+            // 
             // frmNuevaPlaca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1090, 603);
+            this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.botasignar);
             this.Controls.Add(this.txtNuevaMatricula);
             this.Controls.Add(this.label1);
@@ -136,5 +150,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNuevaMatricula;
         private System.Windows.Forms.Button botasignar;
+        private System.Windows.Forms.Label label2;
     }
 }

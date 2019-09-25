@@ -64,7 +64,7 @@
             this.mod_unidad_panel.Location = new System.Drawing.Point(0, 0);
             this.mod_unidad_panel.Margin = new System.Windows.Forms.Padding(4);
             this.mod_unidad_panel.Name = "mod_unidad_panel";
-            this.mod_unidad_panel.Size = new System.Drawing.Size(1088, 603);
+            this.mod_unidad_panel.Size = new System.Drawing.Size(1108, 650);
             this.mod_unidad_panel.TabIndex = 0;
             // 
             // dtpVencimiento
@@ -171,16 +171,17 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.btnModificar.Enabled = false;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.btnModificar.Location = new System.Drawing.Point(803, 508);
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(766, 514);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(133, 60);
+            this.btnModificar.Size = new System.Drawing.Size(170, 70);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // txtPlaca
@@ -222,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1087, 602);
+            this.ClientSize = new System.Drawing.Size(1108, 650);
             this.Controls.Add(this.mod_unidad_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
