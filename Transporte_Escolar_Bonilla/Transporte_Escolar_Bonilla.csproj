@@ -446,6 +446,89 @@
     <EmbeddedResource Include="nuevoviaje.resx">
       <DependentUpon>nuevoviaje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.asignacionunidades.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.BitacoraModulos.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.clientes_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.conductores_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.consultarcontrato.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.consultartransporte.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.consultar_clientes.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Consultar_empleados.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.consultar_rutas.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.consulta_usuarios.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.contratos_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.contrato_panel.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.crearPerfil_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.crearUsuario_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_asignar_ruta.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_mantenimientos.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_mantenimiento_unidad.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Form_Modificar_Cliente.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_nueva_ruta.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_nueva_unidad.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_nuevo_cliente.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_nuevo_cliente2.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_nuevo_clienteP.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.form_nuevo_clienteT.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.frmNotificaciones.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.frmNuevaPlaca.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Generar_Contrato.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Modficar_Empleado.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.modificarPerfiles_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.modificarRutas_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.modificarUsuario_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Modificar_Datos_Contrato.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Modificar_UnidadFrm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.nuevocontrato.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.nuevoempleado.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.nuevoviaje.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.pagos_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Principal_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.rutas_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.unidades_frm.resources" />
+    <EmbeddedResource Include="obj\Debug\Transporte_Escolar_Bonilla.usuarios_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.asignacionunidades.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.BitacoraModulos.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.clientes_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.conductores_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.consultarcontrato.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.consultartransporte.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.consultar_clientes.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Consultar_empleados.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.consultar_rutas.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.consulta_usuarios.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.contratos_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.contrato_panel.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.crearPerfil_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.crearUsuario_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_asignar_ruta.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_mantenimientos.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_mantenimiento_unidad.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Form_Modificar_Cliente.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_nueva_ruta.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_nueva_unidad.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_nuevo_cliente.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_nuevo_clienteP.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.form_nuevo_clienteT.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.frmNotificaciones.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.frmNuevaPlaca.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Generar_Contrato.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Modficar_Empleado.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.modificarPerfiles_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.modificarRutas_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.modificarUsuario_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Modificar_Datos_Contrato.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Modificar_UnidadFrm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.nuevocontrato.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.nuevoempleado.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.nuevoviaje.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.pagos_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Principal_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.rutas_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.unidades_frm.resources" />
+    <EmbeddedResource Include="obj\Release\Transporte_Escolar_Bonilla.usuarios_frm.resources" />
     <EmbeddedResource Include="pagos_frm.resx">
       <DependentUpon>pagos_frm.cs</DependentUpon>
     </EmbeddedResource>
@@ -468,7 +551,27 @@
     <EmbeddedResource Include="usuariosf_Frm.resx">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Release\Transporte_Escolar_Bonilla.application" />
+    <None Include="bin\Release\Transporte_Escolar_Bonilla.exe.config" />
+    <None Include="bin\Release\Transporte_Escolar_Bonilla.exe.manifest" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Transporte_Escolar_Bonilla.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Transporte_Escolar_Bonilla.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\Transporte_Escolar_Bonilla.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\Transporte_Escolar_Bonilla.application" />
+    <None Include="obj\Release\Transporte_Escolar_Bonilla.csproj.CopyComplete" />
+    <None Include="obj\Release\Transporte_Escolar_Bonilla.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\Transporte_Escolar_Bonilla.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\Transporte_Escolar_Bonilla.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\Transporte_Escolar_Bonilla.exe.manifest" />
     <None Include="packages.config" />
+    <None Include="packages\Dapper.1.60.6\.signature.p7s" />
+    <None Include="packages\Dapper.1.60.6\Dapper.1.60.6.nupkg" />
+    <None Include="packages\Microsoft.Office.Interop.Word.12.0.0\.signature.p7s" />
+    <None Include="packages\Microsoft.Office.Interop.Word.12.0.0\Microsoft.Office.Interop.Word.12.0.0.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -555,8 +658,22 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Release\app.publish\Transporte_Escolar_Bonilla.exe" />
+    <Content Include="bin\Release\Dapper.dll" />
+    <Content Include="bin\Release\Dapper.xml" />
+    <Content Include="bin\Release\Data\Transporte_Bonilla.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Release\Data\Transporte_Bonilla_log.ldf">
+      <DependentUpon>Transporte_Bonilla.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Release\Transporte_Escolar_Bonilla.exe" />
+    <Content Include="bin\Release\Transporte_Escolar_Bonilla.pdb" />
     <Content Include="Data\Transporte_Bonilla.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -567,6 +684,22 @@
     <Content Include="logoteb_I8K_icon.ico" />
     <Content Include="logo_Lv1_icon.ico" />
     <Content Include="logo_ZdI_icon.ico" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\Transporte_Escolar_Bonilla.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Transporte_Escolar_Bonilla.exe" />
+    <Content Include="obj\Debug\Transporte_Escolar_Bonilla.pdb" />
+    <Content Include="obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Release\Transporte_Escolar_Bonilla.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\Transporte_Escolar_Bonilla.exe" />
+    <Content Include="obj\Release\Transporte_Escolar_Bonilla.pdb" />
+    <Content Include="packages\Dapper.1.60.6\lib\net451\Dapper.dll" />
+    <Content Include="packages\Dapper.1.60.6\lib\net451\Dapper.xml" />
+    <Content Include="packages\Dapper.1.60.6\lib\netstandard1.3\Dapper.dll" />
+    <Content Include="packages\Dapper.1.60.6\lib\netstandard1.3\Dapper.xml" />
+    <Content Include="packages\Dapper.1.60.6\lib\netstandard2.0\Dapper.dll" />
+    <Content Include="packages\Dapper.1.60.6\lib\netstandard2.0\Dapper.xml" />
+    <Content Include="packages\Microsoft.Office.Interop.Word.12.0.0\lib\net11\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="packages\SQLServer2017-SSEI-Expr.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
