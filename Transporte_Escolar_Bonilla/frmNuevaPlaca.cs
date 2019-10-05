@@ -26,6 +26,8 @@ namespace Transporte_Escolar_Bonilla
 
             txtNuevaMatricula.Focus();
 
+            txtNuevaMatricula.ShortcutsEnabled = false;
+
         }
 
         private void Combveh_SelectedIndexChanged(object sender, EventArgs e)

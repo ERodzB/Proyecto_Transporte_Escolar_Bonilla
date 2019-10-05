@@ -16,6 +16,12 @@ namespace Transporte_Escolar_Bonilla
         public modificarUsuario_frm()
         {
             InitializeComponent();
+
+            identidad_tb.ShortcutsEnabled = false;
+            nombre_tb.ShortcutsEnabled = false;
+            actual_tb.ShortcutsEnabled = false;
+            nueva_tb.ShortcutsEnabled = false;
+            contra_tb.ShortcutsEnabled = false;
         }
         private void Ingresar_btn_Click(object sender, EventArgs e)
         {
@@ -29,7 +35,12 @@ namespace Transporte_Escolar_Bonilla
                 consulto.BuscarUsuario(identidad_tb.Text, nombre_tb, contra_tb, Perfil_cmb);
                 nombre_tb.Enabled = true;
                 contra_tb.Enabled = true;
-                Perfil_cmb.Enabled = true;
+
+                if(Principal_frm.nomusu.Equals(nombre_tb.Text))
+                    Perfil_cmb.Enabled = false;
+                else
+                    Perfil_cmb.Enabled = true;         
+
                 modificar_btn.Enabled = true;
                 identidad_tb.Enabled = false;
                 actual_tb.Enabled = true;

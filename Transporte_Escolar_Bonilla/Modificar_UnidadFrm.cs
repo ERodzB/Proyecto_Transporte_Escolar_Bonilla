@@ -17,6 +17,9 @@ namespace Transporte_Escolar_Bonilla
         public Modificar_UnidadFrm()
         {
             InitializeComponent();
+
+            txtPlaca.ShortcutsEnabled = false;
+            txtColor.ShortcutsEnabled = false;  
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

@@ -16,6 +16,9 @@ namespace Transporte_Escolar_Bonilla
         public modificarPerfiles_frm()
         {
             InitializeComponent();
+
+            nombrePerfil_tb.ShortcutsEnabled = false;
+            desPerfil_tb.ShortcutsEnabled = false;   
         }
 
         private void ModificarPerfiles_frm_Load(object sender, EventArgs e)

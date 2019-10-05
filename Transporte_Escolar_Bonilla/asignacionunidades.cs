@@ -21,6 +21,7 @@ namespace Transporte_Escolar_Bonilla
             InitializeComponent();
             Tipo = tipo;
     
+            txtObservaciones.ShortcutsEnabled = false;
         }
 
         private void Asignacionunidades_Load(object sender, EventArgs e)
@@ -108,11 +109,15 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvConsultaU_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnAsignar.Enabled = true;
-            btnDevolver.Enabled = true;
-            txtPlaca.Text = dgvConsultaU.CurrentRow.Cells[0].Value.ToString();
-            txtDescripcion.Text = dgvConsultaU.CurrentRow.Cells[1].Value.ToString();
-            cmbempleado.Text = dgvConsultaU.CurrentRow.Cells[3].Value.ToString();
+            if(dgvConsultaU.Rows.Count != 0)
+            {
+                btnAsignar.Enabled = true;
+                btnDevolver.Enabled = true;
+                txtPlaca.Text = dgvConsultaU.CurrentRow.Cells[0].Value.ToString();
+                txtDescripcion.Text = dgvConsultaU.CurrentRow.Cells[1].Value.ToString();
+                cmbempleado.Text = dgvConsultaU.CurrentRow.Cells[3].Value.ToString();
+            }
+            
         }
 
         private void TxtObservaciones_KeyPress(object sender, KeyPressEventArgs e)

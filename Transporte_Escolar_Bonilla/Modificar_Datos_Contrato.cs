@@ -20,6 +20,15 @@ namespace Transporte_Escolar_Bonilla
         public Modificar_Datos_Contrato()
         {
             InitializeComponent();
+
+            txtCliente.ShortcutsEnabled = false;
+            txtTipoContrato.ShortcutsEnabled = false;
+            txtFechaFinal.ShortcutsEnabled = false;
+            txtMonto.ShortcutsEnabled = false;
+            txtContrato.ShortcutsEnabled = false;
+            txtMontoMensual.ShortcutsEnabled = false;
+            txtCuota.ShortcutsEnabled = false;
+            txtAnticipo.ShortcutsEnabled = false;
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)

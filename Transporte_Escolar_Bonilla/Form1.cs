@@ -19,12 +19,18 @@ namespace Transporte_Escolar_Bonilla
         int usuario_key_press = 0;
         int contrasena_key_press = 0;
 
+        static public string nomusu = "";
+
         Estetica Estetics = new Estetica();//Clase que manejara lo estetico de el proyecto
         Consultar consulto = new Consultar();
         public Principal_frm()
         {
             InitializeComponent();
             //bar_panel.Visible = false;
+
+            userLogin_tb.ShortcutsEnabled = false;
+            contra_tb.ShortcutsEnabled = false;
+            Correo_tb.ShortcutsEnabled = false;           
         }
         
        
@@ -121,6 +127,8 @@ namespace Transporte_Escolar_Bonilla
             ingreso.login(userLogin_tb.Text, contra_tb.Text);
             if (ConexionBD.Acceso == 1 || ConexionBD.Acceso == 2 || ConexionBD.Acceso == 3)
             {
+                nomusu = userLogin_tb.Text;
+
                 ingreso.ActualizarContratos();
                 center_panel.Controls.Clear();
                 btnMax.Visible = true;
@@ -208,6 +216,11 @@ namespace Transporte_Escolar_Bonilla
             {
                 this.WindowState = FormWindowState.Maximized;
             }
+        }
+
+        private void userLogin_tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
 
         private void BtnBitacora_Click(object sender, EventArgs e)

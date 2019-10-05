@@ -15,6 +15,12 @@ namespace Transporte_Escolar_Bonilla
         public Form_Modificar_Cliente()
         {
             InitializeComponent();
+
+            txtIdentidad.ShortcutsEnabled = false;
+            txtNombre.ShortcutsEnabled = false;
+            txtDireccion.ShortcutsEnabled = false;
+            txtTelefono.ShortcutsEnabled = false;
+            txtCorreo.ShortcutsEnabled = false;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)

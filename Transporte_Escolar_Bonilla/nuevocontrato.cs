@@ -22,6 +22,11 @@ namespace Transporte_Escolar_Bonilla
         public nuevocontrato()
         {
             InitializeComponent();
+
+            txtpa1.ShortcutsEnabled = false;
+            txtpa2.ShortcutsEnabled = false;
+            txtmontom.ShortcutsEnabled = false;
+            txtcantm.ShortcutsEnabled = false;
         }
 
 

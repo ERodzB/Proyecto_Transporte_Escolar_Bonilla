@@ -65,7 +65,7 @@
             // 
             this.txtidentidad.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtidentidad.Location = new System.Drawing.Point(314, 41);
-            this.txtidentidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidentidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtidentidad.MaxLength = 13;
             this.txtidentidad.Name = "txtidentidad";
             this.txtidentidad.Size = new System.Drawing.Size(391, 30);
@@ -88,7 +88,7 @@
             // 
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(314, 75);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.MaxLength = 100;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(391, 30);
@@ -135,7 +135,7 @@
             // 
             this.txttelefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelefono.Location = new System.Drawing.Point(314, 176);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefono.MaxLength = 8;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(391, 30);
@@ -158,7 +158,7 @@
             // 
             this.txtcorreo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.Location = new System.Drawing.Point(314, 210);
-            this.txtcorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtcorreo.MaxLength = 100;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(391, 30);
@@ -181,7 +181,7 @@
             // 
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdireccion.Location = new System.Drawing.Point(314, 245);
-            this.txtdireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtdireccion.MaxLength = 100;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(391, 30);
@@ -216,7 +216,7 @@
             // 
             this.txtsalario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalario.Location = new System.Drawing.Point(314, 312);
-            this.txtsalario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsalario.Margin = new System.Windows.Forms.Padding(2);
             this.txtsalario.MaxLength = 13;
             this.txtsalario.Name = "txtsalario";
             this.txtsalario.Size = new System.Drawing.Size(391, 30);
@@ -242,7 +242,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(720, 471);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 48);
             this.btnGuardar.TabIndex = 12;
@@ -255,7 +255,7 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(314, 109);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(391, 30);
             this.dateTimePicker1.TabIndex = 3;
@@ -270,7 +270,7 @@
             "Femenino",
             "Otros"});
             this.cmbGenero.Location = new System.Drawing.Point(314, 143);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(391, 29);
             this.cmbGenero.TabIndex = 4;
@@ -283,7 +283,7 @@
             this.cmbPuesto.Items.AddRange(new object[] {
             "Conductor"});
             this.cmbPuesto.Location = new System.Drawing.Point(314, 279);
-            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(391, 29);
             this.cmbPuesto.TabIndex = 8;
@@ -294,7 +294,7 @@
             this.dtpvencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpvencimiento.Location = new System.Drawing.Point(314, 427);
-            this.dtpvencimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpvencimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dtpvencimiento.Name = "dtpvencimiento";
             this.dtpvencimiento.Size = new System.Drawing.Size(391, 30);
             this.dtpvencimiento.TabIndex = 11;
@@ -318,7 +318,7 @@
             // 
             this.txtlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlicencia.Location = new System.Drawing.Point(314, 385);
-            this.txtlicencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtlicencia.Margin = new System.Windows.Forms.Padding(2);
             this.txtlicencia.MaxLength = 100;
             this.txtlicencia.Name = "txtlicencia";
             this.txtlicencia.Size = new System.Drawing.Size(391, 30);
@@ -371,9 +371,9 @@
             this.GBlicencia.Controls.Add(this.RBLiviana);
             this.GBlicencia.Font = new System.Drawing.Font("Century Gothic", 13.8F);
             this.GBlicencia.Location = new System.Drawing.Point(314, 464);
-            this.GBlicencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GBlicencia.Margin = new System.Windows.Forms.Padding(2);
             this.GBlicencia.Name = "GBlicencia";
-            this.GBlicencia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GBlicencia.Padding = new System.Windows.Forms.Padding(2);
             this.GBlicencia.Size = new System.Drawing.Size(390, 49);
             this.GBlicencia.TabIndex = 53;
             this.GBlicencia.TabStop = false;
@@ -385,7 +385,7 @@
             this.CBInter.AutoSize = true;
             this.CBInter.ForeColor = System.Drawing.Color.White;
             this.CBInter.Location = new System.Drawing.Point(238, 16);
-            this.CBInter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBInter.Margin = new System.Windows.Forms.Padding(2);
             this.CBInter.Name = "CBInter";
             this.CBInter.Size = new System.Drawing.Size(151, 26);
             this.CBInter.TabIndex = 2;
@@ -398,7 +398,7 @@
             this.RBPesada.AutoSize = true;
             this.RBPesada.ForeColor = System.Drawing.Color.White;
             this.RBPesada.Location = new System.Drawing.Point(96, 16);
-            this.RBPesada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBPesada.Margin = new System.Windows.Forms.Padding(2);
             this.RBPesada.Name = "RBPesada";
             this.RBPesada.Size = new System.Drawing.Size(97, 26);
             this.RBPesada.TabIndex = 1;
@@ -411,7 +411,7 @@
             this.RBLiviana.AutoSize = true;
             this.RBLiviana.ForeColor = System.Drawing.Color.White;
             this.RBLiviana.Location = new System.Drawing.Point(2, 15);
-            this.RBLiviana.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBLiviana.Margin = new System.Windows.Forms.Padding(2);
             this.RBLiviana.Name = "RBLiviana";
             this.RBLiviana.Size = new System.Drawing.Size(94, 26);
             this.RBLiviana.TabIndex = 0;
@@ -468,7 +468,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(1, 0);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "nuevoempleado";
             this.Text = "nuevoempleado";
             this.Load += new System.EventHandler(this.Nuevoempleado_Load);

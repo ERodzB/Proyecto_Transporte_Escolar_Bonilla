@@ -19,6 +19,15 @@ namespace Transporte_Escolar_Bonilla
         public Modficar_Empleado()
         {
             InitializeComponent();
+
+            busqueda.ShortcutsEnabled = false;
+
+            txtnombre.ShortcutsEnabled = false;
+            txttelefono.ShortcutsEnabled = false;
+            txtdireccion.ShortcutsEnabled = false;
+            txtcorreo.ShortcutsEnabled = false;
+            txtsalario.ShortcutsEnabled = false;
+            txtlicencia.ShortcutsEnabled = false;
         }
 
         private void Txtcorreo_TextChanged(object sender, EventArgs e)
