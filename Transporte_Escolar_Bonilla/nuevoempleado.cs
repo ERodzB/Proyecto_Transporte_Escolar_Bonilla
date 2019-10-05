@@ -17,6 +17,14 @@ namespace Transporte_Escolar_Bonilla
         public nuevoempleado()
         {
             InitializeComponent();
+
+            txtidentidad.ShortcutsEnabled = false;
+            txtnombre.ShortcutsEnabled = false;
+            txttelefono.ShortcutsEnabled = false;
+            txtdireccion.ShortcutsEnabled = false;
+            txtcorreo.ShortcutsEnabled = false;
+            txtsalario.ShortcutsEnabled = false;
+            txtlicencia.ShortcutsEnabled = false;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e) 

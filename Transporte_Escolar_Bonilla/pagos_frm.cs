@@ -17,6 +17,10 @@ namespace Transporte_Escolar_Bonilla
         public pagos_frm()
         {
             InitializeComponent();
+
+            Cuota_tb.ShortcutsEnabled = false;
+            descripcion_tb.ShortcutsEnabled = false;
+            monto_tb.ShortcutsEnabled = false;
         }
 
         private void Pagos_frm_Load(object sender, EventArgs e)

@@ -23,6 +23,12 @@ namespace Transporte_Escolar_Bonilla
         public nuevoviaje()
         {
             InitializeComponent();
+
+            txtpa.ShortcutsEnabled = false;
+            txtorigen.ShortcutsEnabled = false;
+            txtdestino.ShortcutsEnabled = false;
+            txttotal.ShortcutsEnabled = false;
+            txtant.ShortcutsEnabled = false;
         }
 
         //Carga

@@ -24,6 +24,9 @@ namespace Transporte_Escolar_Bonilla
         public form_nueva_ruta()
         {
             InitializeComponent();
+
+            txtinicio.ShortcutsEnabled = false;
+            txtfin.ShortcutsEnabled = false;
         }
 
         private void Label3_Click(object sender, EventArgs e)

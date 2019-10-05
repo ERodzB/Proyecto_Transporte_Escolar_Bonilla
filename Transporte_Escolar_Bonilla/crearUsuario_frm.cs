@@ -15,6 +15,11 @@ namespace Transporte_Escolar_Bonilla
         public crearUsuario_frm()
         {
             InitializeComponent();
+
+            identidad_tb.ShortcutsEnabled = false;
+            nombre_tb.ShortcutsEnabled = false;
+            contra_tb.ShortcutsEnabled = false;
+            confirm_tb.ShortcutsEnabled = false;
         }
 
         private void Ingresar_btn_Click(object sender, EventArgs e)

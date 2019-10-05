@@ -15,6 +15,9 @@ namespace Transporte_Escolar_Bonilla
         public crearPerfil_frm()
         {
             InitializeComponent();
+
+            nombrePerfil_tb.ShortcutsEnabled = false;
+            desPerfil_tb.ShortcutsEnabled = false;
         }
 
         private void Crear_btn_Click(object sender, EventArgs e)

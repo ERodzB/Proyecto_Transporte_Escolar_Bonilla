@@ -19,6 +19,12 @@ namespace Transporte_Escolar_Bonilla
         public form_nueva_unidad()
         {
             InitializeComponent();
+
+            txtmat.ShortcutsEnabled = false;
+            txtmarca.ShortcutsEnabled = false;
+            txtmodelo.ShortcutsEnabled = false;
+            txtcolor.ShortcutsEnabled = false;
+            txtcap.ShortcutsEnabled = false;
         }
 
         //Carga
