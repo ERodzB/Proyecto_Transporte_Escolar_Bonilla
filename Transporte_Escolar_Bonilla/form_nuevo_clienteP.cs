@@ -44,25 +44,25 @@ namespace Transporte_Escolar_Bonilla
             /*Colocar el formato de Hora en el DateTimePicker
             Si quiere que se muestre AM y PM tiene que ir a Panel de Control - Cambiar formatos de Fecha, Hora y Número - Configuracion adicional y poner AM Y PM*/
             dtphoras1.Format = DateTimePickerFormat.Custom;
-            dtphoras1.CustomFormat = "HH:mm tt";
+            dtphoras1.CustomFormat = "HH:mm";
             dtphoras1.ShowUpDown = true;
             dtphoras1.ShowCheckBox = true; //Aparece un cheque
             dtphoras1.Checked = false; //Deschequearlo
 
             dtphorae1.Format = DateTimePickerFormat.Custom;
-            dtphorae1.CustomFormat = "HH:mm tt";
+            dtphorae1.CustomFormat = "HH:mm";
             dtphorae1.ShowUpDown = true;
             dtphorae1.ShowCheckBox = true;
             dtphorae1.Checked = false;
 
             dtphoras2.Format = DateTimePickerFormat.Custom;
-            dtphoras2.CustomFormat = "HH:mm tt";
+            dtphoras2.CustomFormat = "HH:mm";
             dtphoras2.ShowUpDown = true;
             dtphoras2.ShowCheckBox = true;
             dtphoras2.Checked = false;
 
             dtphorae2.Format = DateTimePickerFormat.Custom;
-            dtphorae2.CustomFormat = "HH:mm tt";
+            dtphorae2.CustomFormat = "HH:mm";
             dtphorae2.ShowUpDown = true;
             dtphorae2.ShowCheckBox = true;
             dtphorae2.Checked = false;
