@@ -16,7 +16,7 @@ namespace Transporte_Escolar_Bonilla
         Ingresar ingreso = new Ingresar();
         Modificar modifico = new Modificar();
         Validar val = new Validar();
-
+        
         DataTable table;
         int cont = 0;
 
@@ -28,68 +28,74 @@ namespace Transporte_Escolar_Bonilla
 
         private void Realizar_btn_Click(object sender, EventArgs e)
         {
-            if (agregar_rb.Checked == true)
+            string errores = "";
+            int conte = 0;
+            if (Horario_cmb.SelectedIndex == -1 && (modiHorario_rb.Checked == true || eliminarHorario_rb.Checked==true) )
             {
-                if (rutasModificar_cmb.Text!="" && horaSalida_dtp.Checked==true && llegadaHorario_dtp.Checked==true && vehiculo_cmb.Text!="" && (horaSalida_dtp.Value!=llegadaHorario_dtp.Value))
-                {
-                    if (val.validarHorariosVeh(vehiculo_cmb.Text, horaSalida_dtp.Text) == 1)
-                        MessageBox.Show("El Vehiculo ya realiza una ruta en ese Horario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                    {
-                        ingreso.AsignarHoraVeh(rutasModificar_cmb.Text, vehiculo_cmb.Text, horaSalida_dtp.Text, llegadaHorario_dtp.Text, 0);
-                        modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Agregar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Vehiculo Asignado: " + vehiculo_cmb.Text, "N/A", "N/A", "N/A");
-                        Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
-                        Horario_cmb.DisplayMember = "Horarios";
-                        MessageBox.Show("Horario Agregado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        no_rb.Checked = true;
-                        rutasModificar_cmb.SelectedIndex = -1;
-                    }
-             
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese los datos correctamente","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
-
+                errores += "*Seleccione un Horario a Modificar\n";
+                conte++;
             }
-            if (eliminarHorario_rb.Checked == true)
+            if(horaSalida_dtp.Checked == false && (agregar_rb.Checked==true || modiHorario_rb.Checked == true))
             {
-                if (rutasModificar_cmb.Text != "" && Horario_cmb.Text != "") 
+                conte++;
+                errores += "*Escoja una Hora de Salida\n";
+            }
+            if(llegadaHorario_dtp.Checked == false && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
+            {
+                conte++;
+                errores += "*Escoja una Hora de Llegada\n";
+            }
+            else
+            {
+                if ((llegadaHorario_dtp.Value >= horaSalida_dtp.Value.AddHours(8) || llegadaHorario_dtp.Value < horaSalida_dtp.Value) && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
+                {
+                    errores += "*La ruta no puede tener una duración mayor a 8 horas\n";
+                    conte++;
+                }
+            }
+            if (vehiculo_cmb.SelectedIndex == -1 && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
+            {
+                errores += "*Escoja un vehiculo a realizar la ruta\n";
+                conte++;
+            }
+            if (val.validarHorariosVeh(vehiculo_cmb.Text, horaSalida_dtp.Text) == 1 && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
+            {
+                errores += "*El Vehiculo ya realiza una ruta en ese Horario\n";
+                conte++;
+            }
+            if (conte > 0)
+            {
+                MessageBox.Show("ERROR EN: \n" + errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (agregar_rb.Checked == true)
+                {
+                    ingreso.AsignarHoraVeh(rutasModificar_cmb.Text, vehiculo_cmb.Text, horaSalida_dtp.Text, llegadaHorario_dtp.Text, 0);
+                    modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Agregar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Vehiculo Asignado: " + vehiculo_cmb.Text, "N/A", "N/A", "N/A");
+                    Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                    Horario_cmb.DisplayMember = "Horarios";
+                    MessageBox.Show("Horario Agregado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    no_rb.Checked = true;
+                    rutasModificar_cmb.SelectedIndex = -1;
+                }
+                if (eliminarHorario_rb.Checked == true)
                 {
                     modifico.ModificarHorario(rutasModificar_cmb.Text, " ", Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")), Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ") + 1), Convert.ToDateTime("5:00 AM"), Convert.ToDateTime("5:00 AM"), "Eliminar");
-                    modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Eliminar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Horario Eliminado: "+Horario_cmb.Text, "N/A", "N/A", "N/A");
+                    modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Eliminar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Horario Eliminado: " + Horario_cmb.Text, "N/A", "N/A", "N/A");
                     Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
                     Horario_cmb.DisplayMember = "Horarios";
                     no_rb.Checked = true;
                     rutasModificar_cmb.SelectedIndex = -1;
-
                 }
-                else
+                if (modiHorario_rb.Checked == true)
                 {
-                    MessageBox.Show("Ingrese los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-            if (modiHorario_rb.Checked == true)
-            {
-                if (horaSalida_dtp.Checked == true && llegadaHorario_dtp.Checked == true && rutasModificar_cmb.Text != "" && Horario_cmb.Text != "" && vehiculo_cmb.Text != "" && (horaSalida_dtp.Value != llegadaHorario_dtp.Value))
-                {
-                    if (val.validarHorariosVeh(vehiculo_cmb.Text, horaSalida_dtp.Text) == 1) 
-                        MessageBox.Show("El Vehiculo ya realiza una ruta en ese Horario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                    {
-                        modifico.ModificarHorario(rutasModificar_cmb.Text, vehiculo_cmb.Text, Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")), Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ") + 1), horaSalida_dtp.Value, llegadaHorario_dtp.Value, "Modificar");
-                        modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Modificar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Vehiculo Asignado: " + vehiculo_cmb.Text, "N/A", "N/A", "N/A");
-                        Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
-                        Horario_cmb.DisplayMember = "Horarios";
-                        no_rb.Checked = true;
-                        rutasModificar_cmb.SelectedIndex = -1;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    modifico.ModificarHorario(rutasModificar_cmb.Text, vehiculo_cmb.Text, Horario_cmb.Text.Substring(0, Horario_cmb.Text.IndexOf(" ")), Horario_cmb.Text.Substring(Horario_cmb.Text.IndexOf(" ") + 1), horaSalida_dtp.Value, llegadaHorario_dtp.Value, "Modificar");
+                    modifico.BitacoraModulo("Modificación - Ruta", 10, "Modificación de una Ruta: Modificar Horario", "Ruta Modificada: " + rutasModificar_cmb.Text, "Vehiculo Asignado: " + vehiculo_cmb.Text, "N/A", "N/A", "N/A");
+                    Horario_cmb.DataSource = consulto.Combobox_Horarios(rutasModificar_cmb.Text);
+                    Horario_cmb.DisplayMember = "Horarios";
+                    no_rb.Checked = true;
+                    rutasModificar_cmb.SelectedIndex = -1;
                 }
             }
         }
@@ -101,13 +107,13 @@ namespace Transporte_Escolar_Bonilla
             rutasModificar_cmb.SelectedIndex = -1;
 
             horaSalida_dtp.Format = DateTimePickerFormat.Custom;
-            horaSalida_dtp.CustomFormat = "h:mm tt";
+            horaSalida_dtp.CustomFormat = "HH:mm";
             horaSalida_dtp.ShowUpDown = true;
             horaSalida_dtp.ShowCheckBox = true; //Aparece un cheque
             horaSalida_dtp.Checked = false; //Deschequearlo
 
             llegadaHorario_dtp.Format = DateTimePickerFormat.Custom;
-            llegadaHorario_dtp.CustomFormat = "h:mm tt";
+            llegadaHorario_dtp.CustomFormat = "HH:mm";
             llegadaHorario_dtp.ShowUpDown = true;
             llegadaHorario_dtp.ShowCheckBox = true; //Aparece un cheque
             llegadaHorario_dtp.Checked = false; //Deschequearlo
