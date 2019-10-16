@@ -127,11 +127,11 @@ INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Desc
 INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (6, 3, N'Invitado', N'Solo puede ver notificaciones')
 INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (7, 3, N'Pasante ', N'Invitado con usuario')
 GO
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199919518', N'athompson', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0301199901357', N'ebonilla', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199802725', N'esalgado', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'1502199600657', N'lmejia', N'1', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199810682', N'sduarte', N'1', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199919518', N'athompson', N'12345678', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0301199901357', N'ebonilla', N'12345678', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199802725', N'esalgado', N'12345678', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'1502199600657', N'lmejia', N'12345678', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199810682', N'sduarte', N'12345678', 1)
 GO
 
 

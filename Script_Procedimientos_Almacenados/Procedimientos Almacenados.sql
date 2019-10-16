@@ -561,6 +561,20 @@ begin
 end
 GO
 
+/*-------------------------------- Verificar Cambios realizados en el Cliente-----------*/
+create procedure CambiosCliente
+@Codigo_Cliente varchar(50),
+@Nombre_Cliente varchar(100),
+@Direccion_Cliente varchar(200),
+@Telefono_Cliente varchar (20),
+@Correo_Cliente varchar (100)
+as
+begin
+	select COUNT(*) from Cliente where (Codigo_Cliente = @Codigo_Cliente and Nombre_Cliente = @Nombre_Cliente and Direccion_Cliente = @Direccion_Cliente 
+	                                   and Telefono_Cliente = @Telefono_Cliente and Correo_Cliente = @Correo_Cliente)
+end
+
+
 /*----------------------------------Modificar cliente-----------------------------------*/
 
 create procedure ModificarCliente

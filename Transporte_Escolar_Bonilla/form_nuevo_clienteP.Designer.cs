@@ -190,7 +190,7 @@
             // 
             this.txttotal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttotal.Location = new System.Drawing.Point(568, 285);
-            this.txttotal.MaxLength = 9;
+            this.txttotal.MaxLength = 8;
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(145, 22);
             this.txttotal.TabIndex = 258;
@@ -211,7 +211,7 @@
             // 
             this.txtant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtant.Location = new System.Drawing.Point(568, 360);
-            this.txtant.MaxLength = 9;
+            this.txtant.MaxLength = 8;
             this.txtant.Name = "txtant";
             this.txtant.Size = new System.Drawing.Size(145, 22);
             this.txtant.TabIndex = 256;
