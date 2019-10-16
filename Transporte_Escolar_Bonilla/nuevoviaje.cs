@@ -185,26 +185,26 @@ namespace Transporte_Escolar_Bonilla
 
             //Validar Campos
             if (combservicio.SelectedIndex == -1)
-                contc++;
+                MessageBox.Show("Seleccione un tipo de servicio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (combcliente.SelectedIndex == -1)
-                contc++;
+                MessageBox.Show("Seleccione un cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (txtorigen.Text.Trim().Length < 3)
-                contc++;
+                MessageBox.Show("Ingrese un origen de mas de 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (txtdestino.Text.Trim().Length < 3)
-                contc++;
+                MessageBox.Show("Ingrese un destino de mas de 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (txtpa.Text.Trim().Length == 0)
-                contc++;
+                MessageBox.Show("Ingrese un numero de pasajeros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (txtpa.Text.Trim().Length == 0 || int.Parse(txtpa.Text) <= 0) 
-                contc++;
+                MessageBox.Show("Ingrese un numero de pasajeros mayor a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             //Validar Fechas 
             if (dtpfin.Value < dtpinicio.Value)
-                contc++;
+                MessageBox.Show("El viaje no puede iniciar despues de que haya finalizado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
             //Validar anticipo no mayor que monto total
             if((txtant.Text.Trim().Length == 0 || double.Parse(txtant.Text) <= 0) || (txttotal.Text.Trim().Length == 0 || double.Parse(txttotal.Text) <= 0) || Double.Parse(txtant.Text) > Double.Parse(txttotal.Text))
