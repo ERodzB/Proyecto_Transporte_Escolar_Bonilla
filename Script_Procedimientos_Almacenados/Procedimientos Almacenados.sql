@@ -573,7 +573,7 @@ begin
 	select COUNT(*) from Cliente where (Codigo_Cliente = @Codigo_Cliente and Nombre_Cliente = @Nombre_Cliente and Direccion_Cliente = @Direccion_Cliente 
 	                                   and Telefono_Cliente = @Telefono_Cliente and Correo_Cliente = @Correo_Cliente)
 end
-
+GO
 
 /*----------------------------------Modificar cliente-----------------------------------*/
 
