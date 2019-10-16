@@ -184,7 +184,57 @@ namespace Transporte_Escolar_Bonilla
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese todos los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if(txtnombre.Text.Trim().Length <= 2)
+                        {
+                            MessageBox.Show("El Nombre debe ser mayor a 2 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                        if (cmbGenero.Text == "")
+                        {
+                            MessageBox.Show("El Combobox de Genero no puede quedar sin seleccionar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                        if (txttelefono.Text.Trim().Length != 8)
+                        {
+                            MessageBox.Show("El Telefono debe ser solamente los 8 numeros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                        if (txtdireccion.Text.Trim().Length <= 15)
+                        {
+                            MessageBox.Show("La direccion debe ser mas de 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                        if (cmbPuesto.Text == "")
+                        {
+                            MessageBox.Show("El puesto no puede quedar sin seleccionar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                        if (txtsalario.Text.Trim().Length == 0)
+                        {
+                            MessageBox.Show("El salario no puede quedar vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                        if (double.Parse(txtsalario.Text) < 1)
+                        {
+                            MessageBox.Show("El salario no puede ser menor a 1", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        else
+                        if (txtlicencia.Text == "")
+                        {
+                            MessageBox.Show("La licencia no puede quedar vacia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                        if (dtpvencimiento.Value <= System.DateTime.Today)
+                        {
+                            MessageBox.Show("La fecha de vencimiento de la licencia no puede ser menor al dia de hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        if (txtcorreo.Text == "")
+                        {
+                            MessageBox.Show("El correo no puede quedar vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Use un formato de correo valido \n abc@gmail.com", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+
+
+
                     }
                 }
             }
@@ -224,7 +274,53 @@ namespace Transporte_Escolar_Bonilla
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese todos los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (txtnombre.Text.Trim().Length <= 2)
+                    {
+                        MessageBox.Show("El Nombre debe ser mayor a 2 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                       if (cmbGenero.Text == "")
+                    {
+                        MessageBox.Show("El Combobox de Genero no puede quedar sin seleccionar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                       if (txttelefono.Text.Trim().Length != 8)
+                    {
+                        MessageBox.Show("El Telefono debe ser solamente los 8 numeros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                   
+                    else
+                       if (txtdireccion.Text.Trim().Length <= 15)
+                    {
+                        MessageBox.Show("La direccion debe ser mas de 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                       if (cmbPuesto.Text == "")
+                    {
+                        MessageBox.Show("El puesto no puede quedar sin seleccionar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                       if (txtsalario.Text.Trim().Length == 0)
+                    {
+                        MessageBox.Show("El salario no puede quedar vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                       if (double.Parse(txtsalario.Text) < 1)
+                    {
+                        MessageBox.Show("El salario no puede ser menor a 1", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                       if (txtcorreo.Text == "")
+                    {
+                        MessageBox.Show("El correo no puede quedar vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Use un formato de correo valido \n abc@gmail.com", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+
                 }
             }
         }

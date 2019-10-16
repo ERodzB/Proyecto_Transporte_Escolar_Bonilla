@@ -24,13 +24,13 @@ namespace Transporte_Escolar_Bonilla
             cmbpuesto.DataSource = con.ComboboxPuestos();
             cmbpuesto.DisplayMember = "Nombre_Puesto";
             cmbpuesto.ValueMember = "Codigo_Puesto";
-            cmbpuesto.SelectedIndex = -1;
+            cmbpuesto.SelectedIndex = 0;
         }
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
             con.filtrarempleado(dgvConsultaU, int.Parse(cmbpuesto.SelectedValue.ToString()));
-            cmbpuesto.SelectedIndex = -1;
+            cmbpuesto.SelectedIndex = int.Parse(cmbpuesto.SelectedValue.ToString())-1;
             cmbpuesto.Focus();
         }
     }
