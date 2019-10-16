@@ -18,7 +18,8 @@ namespace Transporte_Escolar_Bonilla
         Validar val = new Validar();
         Modificar modifico = new Modificar();
         int cant = 0;
-        string regRutas= @"^[a-zA-Z]{4}[a-zA-Z ]*$";
+        string regRutas= @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
+        string regLimRutas = @"^[\w ]{0,50}$";
         //Variables Globales
         int cambio1 = 0;
         
@@ -96,10 +97,11 @@ namespace Transporte_Escolar_Bonilla
             val.igual = 0;
 
             //Validar datos vacios
+           
             if (string.IsNullOrEmpty(txtinicio.Text))
             {
                 cont++;
-                error += "*No Ingrese espacios vacios o valores Nulos en Inicio de Ruta\n";
+                error += "*No Ingrese espacios vacios o valores Nulos en Origen de Ruta\n";
                 txtinicio.Clear();
                 txtinicio.Focus();
             }
@@ -108,16 +110,23 @@ namespace Transporte_Escolar_Bonilla
                 if((!Regex.IsMatch(txtinicio.Text, regRutas)))
                 {
                     cont++;
-                    error += "*Debe ingresar al menos 3 caracteres en Inicio de Ruta\n";
+                    error += "*Debe ingresar al menos 3 caracteres en Origen de Ruta\n";
                     txtinicio.Clear();
                     txtinicio.Focus();
                 }
                 
             }
+            if(!Regex.IsMatch(txtinicio.Text, regLimRutas))
+            {
+                cont++;
+                error += "*El nombre de la ruta de Origen es mayor a 50 letras\n";
+
+            }
+           
             if (string.IsNullOrEmpty(txtfin.Text))
             {
                 cont++;
-                error += "*No Ingrese espacios vacios o valores Nulos en Fin de Ruta\n";
+                error += "*No Ingrese espacios vacios o valores Nulos en Destino de Ruta\n";
                 txtfin.Clear();
                 txtfin.Focus();
             }
@@ -126,10 +135,15 @@ namespace Transporte_Escolar_Bonilla
                 if (!Regex.IsMatch(txtfin.Text, regRutas))
                 {
                     cont++;
-                    error += "*Debe ingresar al menos 3 caracteres en Fin de Ruta\n";
+                    error += "*Debe ingresar al menos 3 caracteres en Destino de Ruta\n";
                     txtfin.Clear();
                     txtfin.Focus();
                 }
+            }
+            if(!Regex.IsMatch(txtfin.Text, regLimRutas))
+            {
+                cont++;
+                error += "*El nombre de la ruta de Destino es mayor a 50 letras\n";
             }
             if (txtfin.Text == txtinicio.Text)
             {
