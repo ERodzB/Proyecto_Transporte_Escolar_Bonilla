@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -390,5 +391,60 @@ namespace Transporte_Escolar_Bonilla
 
             return x;
         }
+
+        public string valTextoVacioOMaximo(string txtValidar, string nombreTxt, string regex1, string regex2)
+        {
+            string resultado = "";
+            if (string.IsNullOrEmpty(txtValidar))
+            {
+                resultado = "*Error valor nulo o vacio en " + nombreTxt+"\n";
+            }
+            else
+            {
+                if (!Regex.IsMatch(txtValidar, regex1) && nombreTxt!= "Placa")
+                {
+                    resultado = "*Debe Ingresar minimo 3  caracteres en " + nombreTxt + "\n";
+                }
+                else
+                {
+                    if(!Regex.IsMatch(txtValidar, regex2) && nombreTxt != "Placa")
+                    {
+                        resultado = "*El maximo de caracteres es de 50 en " + nombreTxt + "\n";
+                    }
+                }
+            }
+            return resultado;
+        }
+        public string valCmbVacio(int a, string nombreCmb)
+        {
+            string resultado = "";
+            if (a == -1)
+            {
+                resultado = "*Error Escoja una opcion de " + nombreCmb + "\n";
+            }
+
+            return resultado;
+        }
+        public string valFechas(DateTimePicker dtp1, DateTimePicker dtp2)
+        {
+            string resultado = "";
+            if (dtp1.Value.Date == dtp2.Value.Date)
+            {
+                resultado = "*Escoja Fechas Diferentes\n";
+            }
+            return resultado;
+        }
+        public string regMatricula(string txtValidar, string regex)
+        {
+            string resultado = "";
+            if(!Regex.IsMatch(txtValidar, regex))
+            {
+                resultado = "*Ingrese una Placa valida Ejemplo ABC123 o ABC1234\n";
+            }
+            return resultado;
+        }
+
+        
+       
     }
 }

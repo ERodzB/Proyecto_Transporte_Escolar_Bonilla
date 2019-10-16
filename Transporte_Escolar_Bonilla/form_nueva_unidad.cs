@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -16,6 +17,10 @@ namespace Transporte_Escolar_Bonilla
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
         Modificar mod = new Modificar();
+        string regAsientos = @"^([1-9]{1}|[1-5]{1}[0-9]{1})$";
+        string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
+        string regLimMaximo = @"^[\w ]{0,50}$";
+        string regMatricula = @"^([a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{3}[0-9]{3})$";
         public form_nueva_unidad()
         {
             InitializeComponent();
@@ -58,81 +63,57 @@ namespace Transporte_Escolar_Bonilla
             //Colocar solo años en DateTimePicker
             dtpanioveh.Format = DateTimePickerFormat.Custom;
             dtpanioveh.CustomFormat = "yyyy";
-            dtpanioveh.MinDate = new DateTime(1900, 01, 01); //Colocar fecha minima (año, mes, dia)
+            dtpanioveh.MinDate = new DateTime(2000, 01, 01); //Colocar fecha minima (año, mes, dia)
             dtpanioveh.ShowUpDown = true; //para que muestre las flechitas
 
             dtpanioad.Format = DateTimePickerFormat.Custom;
             dtpanioad.CustomFormat = "yyyy";
-            dtpanioad.MinDate = new DateTime(1900, 01, 01);
+            dtpanioad.MinDate = new DateTime(2000, 01, 01);
             dtpanioad.ShowUpDown = true;
 
             txtmat.Focus();
+            dtpemision.MinDate= new DateTime(2015, 01, 01);
+            dtpemision.MaxDate = new DateTime(Convert.ToInt32(DateTime.Now.Year),Convert.ToInt32(DateTime.Now.Month), Convert.ToInt32(DateTime.Now.Day));
+
+            dtpvenc.MinDate = new DateTime(2018, 01, 01);
         }
 
         //Boton Crear
         private void Botcrear_Click(object sender, EventArgs e)
         {
-            int cont = 0;
+            string errores = "";
 
             //Validar campos y combobox vacios vacios
-            if (txtmat.Text == "" || val.ValidarPlaca(txtmat.Text) == 0) //Si la placa esta vacia o mal escrita
-                cont++;
+            errores += val.regMatricula(txtmat.Text, regMatricula);
+            errores += val.valTextoVacioOMaximo(txtmat.Text, "Placa", regTexto, regLimMaximo);
+            errores += val.valTextoVacioOMaximo(txtmarca.Text, "Marca", regTexto, regLimMaximo);
+            errores += val.valTextoVacioOMaximo(txtmodelo.Text, "Modelo", regTexto, regLimMaximo);
+            errores += val.valTextoVacioOMaximo(txtcolor.Text, "Color", regTexto, regLimMaximo);
+            errores += val.valCmbVacio(combtipoveh.SelectedIndex, "Tipo Vehiculo");
+            errores += val.valCmbVacio(combtipotra.SelectedIndex, "Tipo de Transmision");
+            errores += val.valCmbVacio(combtipocom.SelectedIndex, "Tipo de Combustible");
+            errores += val.valCmbVacio(combestado.SelectedIndex, "Estado de Vehiculo");
+            errores += val.valFechas(dtpemision, dtpvenc);
 
-            if (combtipoveh.SelectedIndex == -1)
-                cont++;
-
-            if (txtmarca.Text.Trim().Length < 3)
-                cont++;
-
-            if (txtmodelo.Text.Trim().Length < 3)
-                cont++;
-
-            if (txtcolor.Text.Trim().Length < 3)
-                cont++;
-
-            if (txtcap.Text.Trim().Length == 0 || int.Parse(txtcap.Text) <= 0) 
-                cont++;
-
-            if (combtipotra.SelectedIndex == -1)
-                cont++;
-
-            if (combtipocom.SelectedIndex == -1)
-                cont++;
-
-            if (combestado.SelectedIndex == -1)
-                cont++;
-
-            if (dtpanioveh.Value.Year > System.DateTime.Today.Year)
-                cont++;
-
-            if (dtpanioad.Value.Year > System.DateTime.Today.Year)
-                cont++;
-
-            if (dtpemision.Value > System.DateTime.Today)
-                cont++;
-
-            if (dtpvenc.Value < System.DateTime.Today)
-                cont++;
-
+            if (!Regex.IsMatch(txtcap.Text, regAsientos))
+            {
+                errores += "*Error la cantidad maxima de asientos es entre 1-60\n";
+            }
+            
+            
             //Validar fechas de emision y vencimiento del permiso
-            if (dtpvenc.Value <= dtpemision.Value)
-                cont++;
-
-            if (cont > 0)
-                MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+            //Validar si el Vehiculo ya Existe
+            if (val.validarVeh(txtmat.Text) == 1)
+            {
+                errores += "El Vehiculo ya fue registrado";
+            }
+            if (errores!="")
+                MessageBox.Show("Debe llenar correctamente los datos\n"+errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                //Validar si el Vehiculo ya Existe
-                if(val.validarVeh(txtmat.Text) == 1) 
-                {
-                    MessageBox.Show("El Vehiculo ya Existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtmat.Clear();
-                    txtmat.Focus();
-                }
-                else
-                {
+                
                     DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
                     if (DialogResult == DialogResult.Yes)
                     {
                         //Guardar datos en Vehiculos
@@ -158,7 +139,7 @@ namespace Transporte_Escolar_Bonilla
 
                         txtmat.Focus();
                     }
-                } 
+                 
             }
         }
 

@@ -15,7 +15,9 @@ namespace Transporte_Escolar_Bonilla
         Consultar consul = new Consultar();
         Modificar modifico = new Modificar();
         Validar val = new Validar();
-
+        string regMatricula = @"^([a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{3}[0-9]{3})$";
+        string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
+        string regLimMaximo = @"^[\w ]{0,50}$";
         public frmNuevaPlaca()
         {
             InitializeComponent();
@@ -38,23 +40,15 @@ namespace Transporte_Escolar_Bonilla
 
         private void Botasignar_Click(object sender, EventArgs e)
         {
-            int cant = 0;
-            if (txtNuevaMatricula.Equals(""))
+            string errores = "";
+            errores+= val.regMatricula(txtNuevaMatricula.Text, regMatricula);
+            errores += val.valTextoVacioOMaximo(txtNuevaMatricula.Text,"Placa", regTexto, regLimMaximo);
+            errores += val.valCmbVacio(combveh.SelectedIndex, "Vehiculo");
+            if (errores != "")
             {
-                MessageBox.Show("Debe ingresar la nueva Placa", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cant++;
+                MessageBox.Show("Debe llenar correctamente los datos\n" + errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (txtNuevaMatricula.Text.Length < 7 || val.ValidarPlaca(txtNuevaMatricula.Text) == 0)
-            {
-                MessageBox.Show("Ingrese una placa correcta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cant++;
-            }
-            if (combveh.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar una Placa para actualizar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cant++;
-            }
-            if (cant == 0)
+            else
             {
                 modifico.ActualizarMatricula(combveh.Text, txtNuevaMatricula.Text);
 

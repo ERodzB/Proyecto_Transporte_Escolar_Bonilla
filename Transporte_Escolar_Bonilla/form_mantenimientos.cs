@@ -16,7 +16,8 @@ namespace Transporte_Escolar_Bonilla
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
         Modificar modi = new Modificar();
-
+        string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
+        string regLimMaximo = @"^[\w ]{0,50}$";
         int cambio = 0;
 
         public form_mantenimientos()
@@ -105,110 +106,109 @@ namespace Transporte_Escolar_Bonilla
 
         private void Botingresar_Click(object sender, EventArgs e)
         {
-            
-                //INGRESAR NUEVO
-                if(botingresar.Text.Equals("Ingresar"))
+            string errores = "";
+            errores += val.valTextoVacioOMaximo(txtnom.Text, "Nombre de Mantenimiento", regTexto, regLimMaximo);
+            errores += val.valTextoVacioOMaximo(txtdesc.Text, "Descripcion de Mantenimiento", regTexto, regLimMaximo);
+            //INGRESAR NUEVO
+            if (botingresar.Text.Equals("Ingresar"))
+            {
+                if (val.VerificarMantenimiento(1, txtnom.Text, 1) == 1)
                 {
-                //Validaciones
-                if (txtnom.Text.Trim().Length < 3 || txtdesc.Text.Trim().Length < 3)
-                        MessageBox.Show("Debe ingresar mínimo 3 caracteres por campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                    {
-                        //Validar Existente
-                        if(val.VerificarMantenimiento(1,txtnom.Text,1) == 1)
-                        {
-                            MessageBox.Show("El Mantenimiento ya existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtnom.Clear();
-                            txtnom.Focus();
-                        }
-                            
-                        else
-                        {
-                            DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                            if (DialogResult == DialogResult.Yes)
-                            {
-                                //Guardar Mantenimiento
-                                ing.NuevoTipoMant(txtnom.Text, txtdesc.Text); 
-
-                                MessageBox.Show("Mantenimiento guardado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                //Limpiar
-
-                                cambio = 0;
-
-                                //Actializar comb mantenimiento
-                                combmant.DataSource = consul.Combobox_Mant();
-                                combmant.DisplayMember = "Mantenimiento";
-                                combmant.SelectedIndex = -1;     
-
-                                txtnom.Clear();
-                                txtdesc.Clear();
-
-                                txtnom.Focus();
-
-                                radno.Checked = true;
-                            }
-                        }   
-                    }    
+                    errores += "*El Mantenimiento ya existe\n";
+                    txtnom.Clear();
+                    txtnom.Focus();
                 }
-
-                //MODIFICAR 
+                if (errores != "")
+                {
+                    MessageBox.Show("Debe llenar correctamente los datos\n" + errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else
                 {
-                    //Validaciones 
-                    if (txtnom.Text.Trim().Length < 3 || txtdesc.Text.Trim().Length < 3 || combmant.SelectedIndex == -1)
-                        MessageBox.Show("Debe ingresar mínimo 3 caracteres por campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
+                    DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (DialogResult == DialogResult.Yes)
                     {
+                        //Guardar Mantenimiento
+                        ing.NuevoTipoMant(txtnom.Text, txtdesc.Text);
 
-                        //Validar ningun cambio realizado en el seleccionado
-                        if (val.CambiosMantenimiento(txtnom.Text, txtdesc.Text) == 1)
-                            MessageBox.Show("No se ha realizado ningún cambio en el Mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        
-                        else
-                        {
-                            //Validar Existente
-                            if (val.VerificarMantenimiento(combmant.SelectedIndex + 1, txtnom.Text, 2) == 1)
-                            {
-                                MessageBox.Show("El Mantenimiento ya existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                txtnom.Clear();
-                                txtnom.Focus();
-                            }
-                            else
-                            {
-                                DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        MessageBox.Show("Mantenimiento guardado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                if (DialogResult == DialogResult.Yes)
-                                {
-                                    //Modificar Mantenimiento
-                                    modi.ModificarMantenimiento(combmant.SelectedIndex + 1, txtnom.Text, txtdesc.Text);
+                        //Limpiar
 
-                                    MessageBox.Show("Mantenimiento modificado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cambio = 0;
 
-                                    //Limpiar
+                        //Actializar comb mantenimiento
+                        combmant.DataSource = consul.Combobox_Mant();
+                        combmant.DisplayMember = "Mantenimiento";
+                        combmant.SelectedIndex = -1;
 
-                                    cambio = 0;
+                        txtnom.Clear();
+                        txtdesc.Clear();
 
-                                    //Actializar comb mantenimiento
-                                    combmant.DataSource = consul.Combobox_Mant();
-                                    combmant.DisplayMember = "Mantenimiento";
-                                    combmant.SelectedIndex = -1;
+                        txtnom.Focus();
 
-                                    //cambio = 3;
-
-                                    txtnom.Clear();
-                                    txtdesc.Clear();
-
-                                    txtnom.Focus();
-
-                                    radno.Checked = true;
-                                }
-                            }
-                        
-                        }
+                        radno.Checked = true;
                     }
                 }
+
+
+
+
+            }
+
+            //MODIFICAR 
+            else
+            {
+                errores += val.valCmbVacio(combmant.SelectedIndex, "Mantenimientos");
+
+
+                //Validar ningun cambio realizado en el seleccionado
+                if (val.CambiosMantenimiento(txtnom.Text, txtdesc.Text) == 1)
+                    errores += "*No se ha realizado ningún cambio en el Mantenimiento\n";
+                //Validar Existente
+                if (val.VerificarMantenimiento(combmant.SelectedIndex + 1, txtnom.Text, 2) == 1)
+                {
+                    errores += "*El Mantenimiento ya existe\n";
+                    txtnom.Clear();
+                    txtnom.Focus();
+                }
+
+                if (errores != "")
+                {
+                    MessageBox.Show("Debe llenar correctamente los datos\n" + errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        //Modificar Mantenimiento
+                        modi.ModificarMantenimiento(combmant.SelectedIndex + 1, txtnom.Text, txtdesc.Text);
+
+                        MessageBox.Show("Mantenimiento modificado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //Limpiar
+
+                        cambio = 0;
+
+                        //Actializar comb mantenimiento
+                        combmant.DataSource = consul.Combobox_Mant();
+                        combmant.DisplayMember = "Mantenimiento";
+                        combmant.SelectedIndex = -1;
+
+                        //cambio = 3;
+
+                        txtnom.Clear();
+                        txtdesc.Clear();
+
+                        txtnom.Focus();
+
+                        radno.Checked = true;
+                    }
+                }
+
+            }
         }
 
         //Elige un Mantenimiento
