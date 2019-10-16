@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -14,6 +15,7 @@ namespace Transporte_Escolar_Bonilla
     {
         Consultar con = new Consultar();
         Modificar mod = new Modificar();
+
         public Modificar_UnidadFrm()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace Transporte_Escolar_Bonilla
                 {
                     mod.ModificarVehiculo(txtPlaca.Text, txtColor.Text, int.Parse(cmbEstadoVehiculo.SelectedValue.ToString()), DateTime.Parse(dtpEmision.Text), DateTime.Parse(dtpVencimiento.Text));
                     mod.BitacoraModulo("Modificación - Unidad", 10, "Modificación de Informacion de Un Vehiculo", "Vehiculo Modificado: " + txtPlaca.Text, "N/A", "N/A", "N/A", "N/A");
+
                     txtPlaca.Text = "";
                     txtColor.Text = "";
                     cmbEstadoVehiculo.SelectedIndex = -1;
@@ -62,17 +65,36 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvVehiculos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            txtPlaca.Text = dgvVehiculos.CurrentRow.Cells[0].Value.ToString();
-            txtColor.Text = dgvVehiculos.CurrentRow.Cells[8].Value.ToString();
-            dtpEmision.Value = DateTime.Parse(dgvVehiculos.CurrentRow.Cells[11].Value.ToString());
-            dtpVencimiento.Value = DateTime.Parse(dgvVehiculos.CurrentRow.Cells[12].Value.ToString());
-            cmbEstadoVehiculo.SelectedIndex = 1;
+            if(dgvVehiculos.Rows.Count > 0)
+            {
+                txtPlaca.Text = dgvVehiculos.CurrentRow.Cells[0].Value.ToString();
+                txtColor.Text = dgvVehiculos.CurrentRow.Cells[8].Value.ToString();
+                dtpEmision.Value = DateTime.Parse(dgvVehiculos.CurrentRow.Cells[11].Value.ToString());
+                dtpVencimiento.Value = DateTime.Parse(dgvVehiculos.CurrentRow.Cells[12].Value.ToString());
+                cmbEstadoVehiculo.SelectedIndex = 1;
 
-            txtColor.Enabled = true;
-            dtpEmision.Enabled = true;
-            dtpVencimiento.Enabled = true;
-            cmbEstadoVehiculo.Enabled = true;
-            btnModificar.Enabled = true;
+                txtColor.Enabled = true;
+                dtpEmision.Enabled = true;
+                dtpVencimiento.Enabled = true;
+                cmbEstadoVehiculo.Enabled = true;
+                btnModificar.Enabled = true;
+            }   
+        }
+
+        private void txtColor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Que no deje espacios en blanco al inicio
+            if (char.IsWhiteSpace(e.KeyChar) && txtColor.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
         }
     }
 }

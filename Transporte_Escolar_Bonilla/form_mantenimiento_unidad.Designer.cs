@@ -111,7 +111,7 @@
             // 
             this.txtcosto.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtcosto.Location = new System.Drawing.Point(420, 286);
-            this.txtcosto.MaxLength = 10;
+            this.txtcosto.MaxLength = 8;
             this.txtcosto.Name = "txtcosto";
             this.txtcosto.Size = new System.Drawing.Size(217, 29);
             this.txtcosto.TabIndex = 193;
@@ -150,6 +150,7 @@
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(216, 26);
             this.dtpfecha.TabIndex = 290;
+            this.dtpfecha.Value = new System.DateTime(2019, 10, 16, 0, 0, 0, 0);
             // 
             // label1
             // 

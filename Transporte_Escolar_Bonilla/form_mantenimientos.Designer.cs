@@ -51,9 +51,9 @@
             this.opc_gp.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opc_gp.ForeColor = System.Drawing.Color.White;
             this.opc_gp.Location = new System.Drawing.Point(65, 84);
-            this.opc_gp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opc_gp.Margin = new System.Windows.Forms.Padding(2);
             this.opc_gp.Name = "opc_gp";
-            this.opc_gp.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opc_gp.Padding = new System.Windows.Forms.Padding(2);
             this.opc_gp.Size = new System.Drawing.Size(698, 90);
             this.opc_gp.TabIndex = 15;
             this.opc_gp.TabStop = false;
@@ -63,7 +63,7 @@
             // 
             this.radagregar.AutoSize = true;
             this.radagregar.Location = new System.Drawing.Point(173, 41);
-            this.radagregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radagregar.Margin = new System.Windows.Forms.Padding(2);
             this.radagregar.Name = "radagregar";
             this.radagregar.Size = new System.Drawing.Size(250, 26);
             this.radagregar.TabIndex = 10;
@@ -75,7 +75,7 @@
             // 
             this.radmodi.AutoSize = true;
             this.radmodi.Location = new System.Drawing.Point(434, 41);
-            this.radmodi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radmodi.Margin = new System.Windows.Forms.Padding(2);
             this.radmodi.Name = "radmodi";
             this.radmodi.Size = new System.Drawing.Size(257, 26);
             this.radmodi.TabIndex = 8;
@@ -88,7 +88,7 @@
             this.radno.AutoSize = true;
             this.radno.Checked = true;
             this.radno.Location = new System.Drawing.Point(15, 41);
-            this.radno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radno.Margin = new System.Windows.Forms.Padding(2);
             this.radno.Name = "radno";
             this.radno.Size = new System.Drawing.Size(144, 26);
             this.radno.TabIndex = 7;
@@ -164,6 +164,7 @@
             // 
             this.txtnom.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnom.Location = new System.Drawing.Point(348, 271);
+            this.txtnom.MaxLength = 100;
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(285, 28);
             this.txtnom.TabIndex = 237;
@@ -173,6 +174,7 @@
             // 
             this.txtdesc.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdesc.Location = new System.Drawing.Point(348, 325);
+            this.txtdesc.MaxLength = 200;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.Size = new System.Drawing.Size(285, 28);
             this.txtdesc.TabIndex = 238;

@@ -21,6 +21,8 @@ namespace Transporte_Escolar_Bonilla
             InitializeComponent();
 
             txtcosto.ShortcutsEnabled = false;
+
+            dtpfecha.MaxDate = System.DateTime.Today;
         }
 
         //Carga
@@ -51,70 +53,64 @@ namespace Transporte_Escolar_Bonilla
         private void Botingresar_Click(object sender, EventArgs e)
         {
             int cont = 0;
+            string error = "";
 
             //Validar campos vacios
             if (combveh.SelectedIndex == -1)
                 cont++;
-            else
-            {
-                if (val.VehiculoConductor(combveh.Text) == 0)
-                {
-                    cont++;
-                }
-            }
+
             if (combtipo.SelectedIndex == -1)
                 cont++;
 
             if (txtcosto.Text.Trim().Length == 0) 
                 cont++;
-            else
-            {
-                if (double.Parse(txtcosto.Text) <= 0)
-                    cont++;
-            }
-           
-
-            
-
-            if (dtpfecha.Value < System.DateTime.Today)
-                cont++;
             
             if (cont > 0)
+                MessageBox.Show("Debe llenar todos los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else 
             {
-                if (val.VehiculoConductor(combveh.Text) == 0 && combveh.SelectedIndex!=-1)
-                {
-                    MessageBox.Show("Asigne un conductor encargado antes de enviarlo a Mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                if (double.Parse(txtcosto.Text) <= 0)
+                    MessageBox.Show("El Costo del Mantenimiento debe ser mayor que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //if (dtpfecha.Value < System.DateTime.Today)
+                    //    MessageBox.Show("No se admiten fechas anteriores al día de Hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //else
+                    //{
+                        if (val.VehiculoConductor(combveh.Text) == 0)
+                            MessageBox.Show("Asigne un conductor encargado antes de enviarlo a Mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                        {
+                            DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                            if (DialogResult == DialogResult.Yes)
+                            {
+                                //Guardar mantenimiento
+                                ing.NuevoMantenimiento(int.Parse(combtipo.SelectedValue.ToString()), dtpfecha.Value, combveh.Text, double.Parse(txtcosto.Text));
+                                mod.BitacoraModulo("Mantenimiento", 1, "Mantenimiento a un Vehiculo", combveh.Text, "N/A", "N/A", "N/A", "N/A");
+
+                                //Cambiar estado del vehiculo a "En Mantenimiento"
+                                mod.ModificarEstadoVeh(combveh.Text);
+
+                                MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                //Limpiar
+                                lab1.Visible = false;
+
+                                txtcosto.Clear();
+
+                                combveh.SelectedIndex = -1;
+                                combtipo.SelectedIndex = -1;
+                            }
+                        }
+                    //}
                 }
+
                 
             }
-            else
-            {
-                DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if (DialogResult == DialogResult.Yes)
-                {
-                    //Guardar mantenimiento
-                    ing.NuevoMantenimiento(int.Parse(combtipo.SelectedValue.ToString()), dtpfecha.Value, combveh.Text, double.Parse(txtcosto.Text));
-                    mod.BitacoraModulo("Mantenimiento", 1, "Mantenimiento a un Vehiculo", combveh.Text, "N/A", "N/A", "N/A", "N/A");
 
-                    //Cambiar estado del vehiculo a "En Mantenimiento"
-                    mod.ModificarEstadoVeh(combveh.Text);
-
-                    MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //Limpiar
-                    lab1.Visible = false;
-
-                    txtcosto.Clear();
-
-                    combveh.SelectedIndex = -1;
-                    combtipo.SelectedIndex = -1;
-                }
-            }
+               
         }
 
         private void Txtcosto_KeyPress(object sender, KeyPressEventArgs e)
