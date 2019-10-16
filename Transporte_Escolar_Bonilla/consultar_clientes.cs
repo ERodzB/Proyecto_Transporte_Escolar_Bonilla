@@ -22,7 +22,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (cbConsulta.SelectedIndex == -1)
             {
-                MessageBox.Show("Porfavor seleccione una opcion del menu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor seleccione una opcion del menú", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

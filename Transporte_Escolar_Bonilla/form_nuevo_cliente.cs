@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -78,28 +79,29 @@ namespace Transporte_Escolar_Bonilla
         //Click Siguiente
         private void Labsiguiente_Click(object sender, EventArgs e)
         { 
-            int cont = 0;
+            int cont = 0, conte = 0;
+            string error = "";
 
             //No dejar Campos Vacios
-            if (txtid.Text.Trim().Length < 13)
+            if (txtid.Text.Trim().Length == 0)
                 cont++;
-            if (string.IsNullOrEmpty(txtcorreo.Text))
+            if (txtcorreo.Text.Trim().Length == 0)
                 cont++;
-            if (txtnom.Text.Trim().Length < 3)
+            if (txtnom.Text.Trim().Length == 0)
                 cont++;
-            if (txtdir.Text.Trim().Length < 15)
+            if (txtdir.Text.Trim().Length == 0)
                 cont++;
-            if (txttel.Text.Trim().Length < 8)
+            if (txttel.Text.Trim().Length == 0)
                 cont++;
             if (combTipoContrato.SelectedIndex == -1)
                 cont++;
 
 
-            if (cont > 0) 
-                MessageBox.Show("Debe llenar todos los campos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (cont > 0)
+                MessageBox.Show("Debe llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                if(val.validarCliente(txtid.Text) == 1)
+                if (val.validarCliente(txtid.Text) == 1)
                 {
                     MessageBox.Show("El ID ingresado ya existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -108,12 +110,38 @@ namespace Transporte_Escolar_Bonilla
                 }
                 else
                 {
-                    if (txtdir.TextLength < 15)
+                    if(txtid.Text.Trim().Length < 13 || txtid.Text.Equals("0000000000000"))
                     {
-                        MessageBox.Show("Debe ingresar una dirección mayor a 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtdir.Focus();
+                        error += "Debe ingresar un Número de Identidad Válido\n";
+                        conte++;
                     }
-                    else
+
+                    if(txtnom.Text.Trim().Length < 3)
+                    {
+                        error += "Debe ingresar un Nombre mayor o igual a 3 caracteres\n";
+                        conte++;
+                    }
+
+                    //All verifica si todos los caracteres cumplen cierta condicion. Se toma cada letra en x y se verifica si cada una es un numero 
+                    if (txtdir.Text.Trim().Length < 15 || txtdir.Text.All(x => char.IsNumber(x))) 
+                    {
+                        error += "Debe ingresar una Dirección válida mayor o igual a 15 caracteres\n";
+                        conte++;
+                    }
+
+                    if(txttel.Text.Trim().Length < 8 || txttel.Text.Equals("00000000"))
+                    {
+                        error += "Debe ingresar un Teléfono Válido\n";
+                        conte++;
+                    }
+
+                    if(combTipoContrato.SelectedIndex == -1)
+                    {
+                        error += "Debe seleccionar un Tipo de Contrato\n";
+                        conte++;
+                    }
+
+                    if(conte == 0)
                     {
                         if(System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
@@ -154,10 +182,12 @@ namespace Transporte_Escolar_Bonilla
                         }
                         else
                         {
-                            MessageBox.Show("Dirección de correo inválida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Debe ingresar una dirección de correo válida. Ej: tucorreo@gmail.com", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtcorreo.Focus();
                         }
                     }
+                    else
+                        MessageBox.Show(error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -184,22 +214,39 @@ namespace Transporte_Escolar_Bonilla
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                SystemSounds.Hand.Play();
             }
         }
 
         private void Txtnom_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Que no deje espacios en blanco al inicio
+            if(char.IsWhiteSpace(e.KeyChar) && txtnom.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
+                SystemSounds.Hand.Play();
             }
         }
 
         private void Txtdir_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Que no deje espacios en blanco al inicio
+            if (char.IsWhiteSpace(e.KeyChar) && txtdir.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
             {
                 e.Handled = true;
+                SystemSounds.Hand.Play();
             }
         }
 
@@ -208,6 +255,7 @@ namespace Transporte_Escolar_Bonilla
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                SystemSounds.Hand.Play();
             }
         }
 
@@ -216,6 +264,7 @@ namespace Transporte_Escolar_Bonilla
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='@') && !(e.KeyChar=='.'))
             {
                 e.Handled = true;
+                SystemSounds.Hand.Play();
             }
         }
     }

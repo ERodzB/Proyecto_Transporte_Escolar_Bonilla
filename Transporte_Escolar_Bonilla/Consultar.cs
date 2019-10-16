@@ -599,7 +599,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void CargadgvCliente(DataGridView dgvCliente)
+        public void CargadgvCliente(DataGridView dgvCliente, bool refresh)
         {
             try
             {
@@ -608,7 +608,9 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 Adapter.Fill(table);
                 dgvCliente.DataSource = table;
-                MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                if(refresh == false)
+                    MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             catch (Exception ex)
             {

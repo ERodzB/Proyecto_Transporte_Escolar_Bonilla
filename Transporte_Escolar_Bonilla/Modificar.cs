@@ -167,7 +167,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Telefono_Cliente", telfono);
                 cmd.Parameters.AddWithValue("@Correo_Cliente", correo);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha Modificado correctamente el cliente");
+                MessageBox.Show("Se ha Modificado correctamente el cliente", "MODIFICACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
