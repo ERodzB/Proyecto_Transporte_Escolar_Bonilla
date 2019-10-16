@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,10 +18,11 @@ namespace Transporte_Escolar_Bonilla
         Validar val = new Validar();
         Modificar modifico = new Modificar();
         int cant = 0;
-
+        string regRutas= @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
+        string regLimRutas = @"^[\w ]{0,50}$";
         //Variables Globales
         int cambio1 = 0;
-
+        
         public form_nueva_ruta()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace Transporte_Escolar_Bonilla
         {
 
         }
-
+      
         private void Txtinicio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
@@ -71,13 +73,13 @@ namespace Transporte_Escolar_Bonilla
             /*Colocar el formato de Hora en el DateTimePicker
             Si quiere que se muestre AM y PM tiene que ir a Panel de Control - Cambiar formatos de Fecha, Hora y Número - Configuracion adicional y poner AM Y PM*/
             dtphoras1.Format = DateTimePickerFormat.Custom;
-            dtphoras1.CustomFormat = "h:mm tt";
+            dtphoras1.CustomFormat = "HH:mm";
             dtphoras1.ShowUpDown = true;
             dtphoras1.ShowCheckBox = true; //Aparece un cheque
             dtphoras1.Checked = false; //Deschequearlo
 
             dtphorae1.Format = DateTimePickerFormat.Custom;
-            dtphorae1.CustomFormat = "h:mm tt";
+            dtphorae1.CustomFormat = "HH:mm";
             dtphorae1.ShowUpDown = true;
             dtphorae1.ShowCheckBox = true;
             dtphorae1.Checked = false;
@@ -90,48 +92,96 @@ namespace Transporte_Escolar_Bonilla
         private void Botcrear_Click(object sender, EventArgs e)
         {
             int cont = 0;
-            string error = " ";
+            string error = "";
 
             val.igual = 0;
 
             //Validar datos vacios
-            if (txtinicio.Text.Trim().Length < 3)
+           
+            if (string.IsNullOrEmpty(txtinicio.Text))
             {
                 cont++;
-                error += "Debe ingresar al menos 3 caracteres en Inicio\n";
+                error += "*No Ingrese espacios vacios o valores Nulos en Origen de Ruta\n";
+                txtinicio.Clear();
+                txtinicio.Focus();
             }
-
-            if (txtfin.Text.Trim().Length < 3)
+           else
+            {
+                if((!Regex.IsMatch(txtinicio.Text, regRutas)))
+                {
+                    cont++;
+                    error += "*Debe ingresar al menos 3 caracteres en Origen de Ruta\n";
+                    txtinicio.Clear();
+                    txtinicio.Focus();
+                }
+                
+            }
+            if(!Regex.IsMatch(txtinicio.Text, regLimRutas))
             {
                 cont++;
-                error += "Debe ingresar al menos 3 caracteres en Fin\n";
-            }
+                error += "*El nombre de la ruta de Origen es mayor a 50 letras\n";
 
+            }
+           
+            if (string.IsNullOrEmpty(txtfin.Text))
+            {
+                cont++;
+                error += "*No Ingrese espacios vacios o valores Nulos en Destino de Ruta\n";
+                txtfin.Clear();
+                txtfin.Focus();
+            }
+            else
+            {
+                if (!Regex.IsMatch(txtfin.Text, regRutas))
+                {
+                    cont++;
+                    error += "*Debe ingresar al menos 3 caracteres en Destino de Ruta\n";
+                    txtfin.Clear();
+                    txtfin.Focus();
+                }
+            }
+            if(!Regex.IsMatch(txtfin.Text, regLimRutas))
+            {
+                cont++;
+                error += "*El nombre de la ruta de Destino es mayor a 50 letras\n";
+            }
+            if (txtfin.Text == txtinicio.Text)
+            {
+                cont++;
+                error += "*El nombre de las rutas debe de ser diferente\n";
+            }
             //Validar Horarios
-            if (((dtphoras1.Checked == true && dtphorae1.Checked == false) || (dtphoras1.Checked == false && dtphorae1.Checked == true)) || (dtphoras1.Checked == true && dtphorae1.Checked == true && combveh1.SelectedIndex == -1) || (dtphoras1.Checked == true && dtphorae1.Checked == true && dtphoras1.Text == dtphorae1.Text))
+            if (dtphoras1.Checked == false)
             {
                 cont++;
-                error += "Horario de la Ruta\n";
+                error += "*Escoja una Hora de Salida\n";
+                dtphoras1.Focus();
             }
 
-            //Al menos un Horario
-            if ((dtphoras1.Checked == false && dtphorae1.Checked == false && combveh1.SelectedIndex == -1))
+            if(dtphorae1.Checked == false)
             {
                 cont++;
-                error += "Debe ingresar al menos 1 Horario\n"; 
+                error += "*Escoja una Hora de Llegada\n";
             }
-
-            //if ((dtphoras1.Checked == false || dtphorae1.Checked == false || combveh1.SelectedIndex == -1))
-            //{
-            //    cont++;
-            //    error += "No deje elementos sin ingresar\n";
-            //}
-
-
+            if (dtphorae1.Value == dtphoras1.Value)
+            {
+                error += "*Los Horarios no pueden ser los iguales\n";
+                cont++;
+            }
+            if(dtphorae1.Value>=dtphoras1.Value.AddHours(8) || dtphorae1.Value < dtphoras1.Value)
+            {
+                error += "*La ruta no puede tener una duración mayor a 8 horas\n";
+                cont++;
+            }
+            if (combveh1.SelectedIndex == -1)
+            {
+                cont++;
+                error += "*Escoja un vehiculo a realizar la ruta\n";
+            }
             //Ruta Existente
             if (val.validarRuta(txtinicio.Text + txtfin.Text) == 1)
             {
-                error += "La Ruta ya existe\n";
+                error += "*La Ruta ya existe\n";
 
                 txtinicio.Clear();
                 txtfin.Clear();
@@ -139,7 +189,7 @@ namespace Transporte_Escolar_Bonilla
 
                 cont++;
             }
-
+           
 
             //Horarios para Vehiculos ya existentes
             if (dtphoras1.Checked == true)
@@ -147,12 +197,12 @@ namespace Transporte_Escolar_Bonilla
                 if (val.validarHorariosVeh(combveh1.Text, dtphoras1.Text) == 1)
                 {
                     cont++;
-                    error += "El Vehiculo ya realiza una ruta en ese Horario\n";
+                    error += "*El Vehiculo ya realiza una ruta en ese Horario\n";
                 }
             }
 
             if (cont > 0)
-                MessageBox.Show("ERROR EN: \n\n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR EN: \n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
