@@ -535,6 +535,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_frm_FormClosing);
             this.top_panel.ResumeLayout(false);
             this.top_panel.PerformLayout();
             this.center_panel.ResumeLayout(false);
