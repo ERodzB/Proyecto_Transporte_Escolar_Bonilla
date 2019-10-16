@@ -192,28 +192,24 @@ namespace Transporte_Escolar_Bonilla
 
             //Campos de Texto y TipoContrato Vacio
             if (combservicio.SelectedIndex == -1)
-                contc++;
+                MessageBox.Show("Seleccione un servicio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (combcliente.SelectedIndex == -1)
-                contc++;
+                MessageBox.Show("Seleccione un cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (txtmontom.Text.Trim().Length == 0 || double.Parse(txtmontom.Text) <= 0)
-                contc++;
+                MessageBox.Show("Ingrese un monto mayor a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (txtcantm.Text.Trim().Length == 0)
-                contc++;
+                MessageBox.Show("Ingrese una cantidad de meses", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 if (int.Parse(txtcantm.Text) <= 0)
-                contc++;
+                MessageBox.Show("Ingrese una cantidad de meses mayor a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (pago_cmb.SelectedIndex == -1)
-                contc++;
+                MessageBox.Show("Seleccione un tipo de pago", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            if (contc > 0)
-            {
-                MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
+
             {
                 //Medio Bus
                 if (combservicio.SelectedIndex == 1)
