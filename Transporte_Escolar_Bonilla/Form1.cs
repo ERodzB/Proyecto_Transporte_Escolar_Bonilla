@@ -37,7 +37,10 @@ namespace Transporte_Escolar_Bonilla
         
         private void Salir_btn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult = MessageBox.Show("¿Desea Cerrar el Programa?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(DialogResult == DialogResult.Yes)
+                Application.Exit();
         }
         
         private void Salir_btn_MouseHover(object sender, EventArgs e)
@@ -89,7 +92,10 @@ namespace Transporte_Escolar_Bonilla
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            DialogResult = MessageBox.Show("¿Desea Cerrar Sesión?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(DialogResult == DialogResult.Yes)
+                Application.Restart();
         }
 
         private void UserLogin_tb_TextChanged(object sender, EventArgs e)
@@ -221,6 +227,21 @@ namespace Transporte_Escolar_Bonilla
         private void userLogin_tb_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+
+        private void Principal_frm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string cierre = e.CloseReason.ToString(); 
+
+            if(cierre.Equals("UserClosing"))
+            {
+                DialogResult = MessageBox.Show("¿Desea Cerrar el Programa?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (DialogResult == DialogResult.Yes)
+                    Application.Exit();
+                else
+                    e.Cancel = true;
+            }
         }
 
         private void BtnBitacora_Click(object sender, EventArgs e)
