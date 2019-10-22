@@ -20,7 +20,8 @@ namespace Transporte_Escolar_Bonilla
         string regAsientos = @"^([1-9]{1}|[1-5]{1}[0-9]{1})$";
         string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
         string regLimMaximo = @"^[\w ]{0,50}$";
-        string regMatricula = @"^([a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{3}[0-9]{3})$";
+        string regMatricula = @"^([a-zA-Z]{2}[0-9]{4}|[a-zA-Z]{3}[0-9]{3}|[a-zA-Z]{2}[0-9]{5})$";
+
         public form_nueva_unidad()
         {
             InitializeComponent();

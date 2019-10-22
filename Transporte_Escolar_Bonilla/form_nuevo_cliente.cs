@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Text.RegularExpressions;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -23,6 +24,9 @@ namespace Transporte_Escolar_Bonilla
         static public string id;
         static public string nomc;
         static public int tipoc;
+        string regId = @"^[0-9]{13}$";
+        string regRTN = @"^[0-9]{14}$";
+
 
         public form_nuevo_cliente()
         {
@@ -45,37 +49,6 @@ namespace Transporte_Escolar_Bonilla
 
             txtid.Focus();
         } 
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Botcrear_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Combruta1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Combruta2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Combruta3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Click Siguiente
         private void Labsiguiente_Click(object sender, EventArgs e)
         { 
@@ -110,12 +83,17 @@ namespace Transporte_Escolar_Bonilla
                 }
                 else
                 {
-                    if(txtid.Text.Trim().Length < 13 || txtid.Text.Equals("0000000000000"))
+                    if (Convert.ToInt64(txtid.Text) < 101190000000)
                     {
-                        error += "Debe ingresar un Número de Identidad Válido\n";
+                        error += "Debe Ingresar un "+label1.Text+" valido\n";
                         conte++;
                     }
-
+                    if(txtid.Text.Trim().Length < 13)
+                    {
+                        error += "Debe ingresar un Número de Identidad de 13 numeros\n";
+                        conte++;
+                    }
+                 
                     if(txtnom.Text.Trim().Length < 3)
                     {
                         error += "Debe ingresar un Nombre mayor o igual a 3 caracteres\n";
@@ -216,6 +194,7 @@ namespace Transporte_Escolar_Bonilla
                 e.Handled = true;
                 SystemSounds.Hand.Play();
             }
+            
         }
 
         private void Txtnom_KeyPress(object sender, KeyPressEventArgs e)
@@ -266,6 +245,14 @@ namespace Transporte_Escolar_Bonilla
                 e.Handled = true;
                 SystemSounds.Hand.Play();
             }
+        }
+        private void txtid_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txtid.Text, regId))
+                label1.Text = "Número de Identidad";
+            if (Regex.IsMatch(txtid.Text, regRTN))
+                label1.Text = "Número de RTN";
+
         }
     }
 }

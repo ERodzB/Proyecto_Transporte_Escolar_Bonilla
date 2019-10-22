@@ -464,7 +464,7 @@ namespace Transporte_Escolar_Bonilla
             string resultado = "";
             if(!Regex.IsMatch(txtValidar, regex))
             {
-                resultado = "*Ingrese una Placa valida Ejemplo ABC123 o ABC1234\n";
+                resultado = "*Ingrese una Placa valida Ejemplo AB1234 o ABC1234 o AB12345\n";
             }
             return resultado;
         }

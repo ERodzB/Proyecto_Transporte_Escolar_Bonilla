@@ -30,21 +30,6 @@ namespace Transporte_Escolar_Bonilla
             txtinicio.ShortcutsEnabled = false;
             txtfin.ShortcutsEnabled = false;
         }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Dtphoras1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label13_Click(object sender, EventArgs e)
-        {
-
-        }
       
         private void Txtinicio_KeyPress(object sender, KeyPressEventArgs e)
         {
