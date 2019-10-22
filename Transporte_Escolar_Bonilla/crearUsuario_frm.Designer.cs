@@ -123,7 +123,7 @@
             this.nombre_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre_tb.Location = new System.Drawing.Point(350, 150);
             this.nombre_tb.Margin = new System.Windows.Forms.Padding(2);
-            this.nombre_tb.MaxLength = 10;
+            this.nombre_tb.MaxLength = 16;
             this.nombre_tb.Name = "nombre_tb";
             this.nombre_tb.Size = new System.Drawing.Size(339, 34);
             this.nombre_tb.TabIndex = 6;

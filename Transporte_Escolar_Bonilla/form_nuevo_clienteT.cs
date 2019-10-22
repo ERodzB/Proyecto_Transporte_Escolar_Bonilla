@@ -97,9 +97,9 @@ namespace Transporte_Escolar_Bonilla
                 contc++;
             }           
              
-            if (txtcantm.Text.Trim().Length == 0 || int.Parse(txtcantm.Text) <= 0)
+            if (txtcantm.Text.Trim().Length == 0 || (int.Parse(txtcantm.Text) <= 0 || int.Parse(txtcantm.Text) > 12))
             {
-                errorc += "Debe ingresar una Cantidad de Meses menor o igual a 12\n";
+                errorc += "Debe ingresar una Cantidad de Meses de 1-12\n";
                 contc++;
             }                
 
@@ -152,8 +152,6 @@ namespace Transporte_Escolar_Bonilla
                     if (combruta1.Text == combruta2.Text)
                         contri++; 
                 }
-
-                MessageBox.Show("Paradas: " + contp + "\n\nRutas: " + contr);
                  
                 //Mostrar mensajes de Error
                 if (contp > 0 && contr == 0)
@@ -167,9 +165,6 @@ namespace Transporte_Escolar_Bonilla
                             MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                        if (int.Parse(txtcantm.Text) > 12)
-                            MessageBox.Show("La cantidad máxima de Meses a Pagar son 12", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
                             if(contri > 0)
                                 MessageBox.Show("No puede ingresar ambas rutas iguales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             else

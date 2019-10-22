@@ -194,6 +194,7 @@
             // 
             this.txtPlaca.Enabled = false;
             this.txtPlaca.Location = new System.Drawing.Point(80, 288);
+            this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(201, 20);
             this.txtPlaca.TabIndex = 2;

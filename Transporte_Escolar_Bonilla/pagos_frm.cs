@@ -160,14 +160,17 @@ namespace Transporte_Escolar_Bonilla
 
         private void Cliente_dgv_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            consulto.CargadgvDatosContrato(contratos_dgv, cliente_dgv.CurrentRow.Cells[0].Value.ToString());
+            if(cliente_dgv.Rows.Count > 0)
+            {
+                consulto.CargadgvDatosContrato(contratos_dgv, cliente_dgv.CurrentRow.Cells[0].Value.ToString());
 
-            descripcion_tb.Clear();
-            monto_tb.Clear();
-            pagar_btn.Enabled = false;
-            descripcion_tb.Enabled = false;
-            monto_tb.Enabled = false;
-            Cuota_tb.Clear();
+                descripcion_tb.Clear();
+                monto_tb.Clear();
+                pagar_btn.Enabled = false;
+                descripcion_tb.Enabled = false;
+                monto_tb.Enabled = false;
+                Cuota_tb.Clear();
+            }
 
         }
     }

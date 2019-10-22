@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -140,6 +141,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtorigen_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Que no deje espacios en blanco al inicio
+            if (char.IsWhiteSpace(e.KeyChar) && txtorigen.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
@@ -148,6 +156,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtdestino_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Que no deje espacios en blanco al inicio
+            if (char.IsWhiteSpace(e.KeyChar) && txtdestino.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
@@ -179,39 +194,57 @@ namespace Transporte_Escolar_Bonilla
         {
             double ant = 0;
             int contc = 0, conth = 0;
-            string error = "", anio = "", codcli="";
+            string errorc="", error = "", anio = "", codcli="";
 
             val.igual = 0;
 
             //Validar Campos
             if (combservicio.SelectedIndex == -1)
-                MessageBox.Show("Seleccione un tipo de servicio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                errorc += "Seleccione un Servicio\n";
+                contc++;
+            }        
 
             if (combcliente.SelectedIndex == -1)
-                MessageBox.Show("Seleccione un cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                errorc += "Seleccione un Cliente\n";
+                contc++;
+            }
 
-            if (txtorigen.Text.Trim().Length < 3)
-                MessageBox.Show("Ingrese un origen de mas de 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txtorigen.Text.Trim().Length < 3 || txtorigen.Text.All(x => char.IsNumber(x)))
+            {
+                errorc += "Ingrese un Origen válido de 3 caracteres mínimo\n";
+                contc++;
+            }
 
-            if (txtdestino.Text.Trim().Length < 3)
-                MessageBox.Show("Ingrese un destino de mas de 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txtdestino.Text.Trim().Length < 3 || txtdestino.Text.All(x => char.IsNumber(x)))
+            {
+                errorc += "Ingrese un Destino válido de 3 caracteres mínimo\n";
+                contc++;
+            }
 
-            if (txtpa.Text.Trim().Length == 0)
-                MessageBox.Show("Ingrese un numero de pasajeros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            if (txtpa.Text.Trim().Length == 0 || int.Parse(txtpa.Text) <= 0) 
-                MessageBox.Show("Ingrese un numero de pasajeros mayor a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txtpa.Text.Trim().Length == 0 || int.Parse(txtpa.Text) <= 0)
+            {
+                errorc += "Ingrese un número de pasajeros mayor a 0\n";
+                contc++;
+            }
 
             //Validar Fechas 
             if (dtpfin.Value < dtpinicio.Value)
-                MessageBox.Show("El viaje no puede iniciar despues de que haya finalizado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                errorc += "El viaje no puede iniciar despues de que haya finalizado\n";
+                contc++;
+            }
             
             //Validar anticipo no mayor que monto total
-            if((txtant.Text.Trim().Length == 0 || double.Parse(txtant.Text) <= 0) || (txttotal.Text.Trim().Length == 0 || double.Parse(txttotal.Text) <= 0) || Double.Parse(txtant.Text) > Double.Parse(txttotal.Text))
-               contc++;
+            if((txtant.Text.Trim().Length == 0 || double.Parse(txtant.Text) <= 0) || (txttotal.Text.Trim().Length == 0 || double.Parse(txttotal.Text) <= 0) || double.Parse(txtant.Text) > double.Parse(txttotal.Text))
+            {
+                errorc += "El Anticipo y El Total deben ser mayor que 0. El Anticipo no puede ser mayor al Total a Pagar\n";
+                contc++;
+            }
 
             if (contc > 0)
-                MessageBox.Show("Debe llenar correctamente los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe llenar correctamente los datos: \n\n"+ errorc, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
 
@@ -285,7 +318,7 @@ namespace Transporte_Escolar_Bonilla
 
 
                 //Ruta Existente
-                if (val.validarRuta(txtorigen.Text + txtdestino.Text) == 1)
+                if (val.validarRuta(txtorigen.Text + "-" + txtdestino.Text) == 1)
                 {
                     error += "La Ruta ya existe\n";
 

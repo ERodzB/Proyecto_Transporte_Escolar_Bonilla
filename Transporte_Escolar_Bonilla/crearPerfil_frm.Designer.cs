@@ -42,7 +42,7 @@
             // 
             this.nombrePerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombrePerfil_tb.Location = new System.Drawing.Point(400, 185);
-            this.nombrePerfil_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nombrePerfil_tb.Margin = new System.Windows.Forms.Padding(2);
             this.nombrePerfil_tb.MaxLength = 20;
             this.nombrePerfil_tb.Name = "nombrePerfil_tb";
             this.nombrePerfil_tb.Size = new System.Drawing.Size(339, 34);
@@ -71,7 +71,7 @@
             "2",
             "3"});
             this.nivelAcceso_cmb.Location = new System.Drawing.Point(459, 109);
-            this.nivelAcceso_cmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nivelAcceso_cmb.Margin = new System.Windows.Forms.Padding(2);
             this.nivelAcceso_cmb.Name = "nivelAcceso_cmb";
             this.nivelAcceso_cmb.Size = new System.Drawing.Size(280, 38);
             this.nivelAcceso_cmb.TabIndex = 24;
@@ -83,7 +83,7 @@
             this.Crear_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Crear_btn.ForeColor = System.Drawing.Color.White;
             this.Crear_btn.Location = new System.Drawing.Point(626, 375);
-            this.Crear_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Crear_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Crear_btn.Name = "Crear_btn";
             this.Crear_btn.Size = new System.Drawing.Size(112, 51);
             this.Crear_btn.TabIndex = 30;
@@ -119,8 +119,8 @@
             // 
             this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desPerfil_tb.Location = new System.Drawing.Point(90, 298);
-            this.desPerfil_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.desPerfil_tb.MaxLength = 50;
+            this.desPerfil_tb.Margin = new System.Windows.Forms.Padding(2);
+            this.desPerfil_tb.MaxLength = 100;
             this.desPerfil_tb.Name = "desPerfil_tb";
             this.desPerfil_tb.Size = new System.Drawing.Size(649, 34);
             this.desPerfil_tb.TabIndex = 28;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.nivelAcceso_cmb);
             this.Controls.Add(this.Crear_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "crearPerfil_frm";
             this.Text = "crearPerfil_frm";
             this.ResumeLayout(false);

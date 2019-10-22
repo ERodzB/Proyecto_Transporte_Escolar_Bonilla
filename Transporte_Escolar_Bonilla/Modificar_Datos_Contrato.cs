@@ -70,73 +70,77 @@ namespace Transporte_Escolar_Bonilla
         //DA CLICK AL CONTRATO
         private void DgvDatosContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnModificar.Enabled = true;
-
-            if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() =="Temporal")
+            if(dgvDatosContrato.Rows.Count > 0)
             {
-                cmbTipoServicio.Items.Clear();
-                cmbTipoServicio.Items.Add("Bus Completo");
-                cmbTipoServicio.Items.Add("Medio Bus");
+                btnModificar.Enabled = true;
 
-                txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
-                txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();
-                txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
+                if (dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() == "Temporal")
+                {
+                    cmbTipoServicio.Items.Clear();
+                    cmbTipoServicio.Items.Add("Bus Completo");
+                    cmbTipoServicio.Items.Add("Medio Bus");
 
-                //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[4].Value.ToString());
-                cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
-                cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
-                //cmbTipoPago.SelectedIndex= Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString())-1;
-                txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
-                cmbEstado.Text = dgvDatosContrato.CurrentRow.Cells[9].Value.ToString();
-                //cmbEstado.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString()) - 1;
-                cmbTipoServicio.Enabled = true;                
-                dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
-                txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
-                //dtpFinal.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[8].Value.ToString());
+                    txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
+                    txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();
+                    txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
+
+                    //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[4].Value.ToString());
+                    cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
+                    cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
+                    //cmbTipoPago.SelectedIndex= Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString())-1;
+                    txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
+                    cmbEstado.Text = dgvDatosContrato.CurrentRow.Cells[9].Value.ToString();
+                    //cmbEstado.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString()) - 1;
+                    cmbTipoServicio.Enabled = true;
+                    dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
+                    txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
+                    //dtpFinal.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[8].Value.ToString());
 
 
-                txtCuota.Enabled = true;
-                txtMontoMensual.Enabled = true;
-                txtMonto.Enabled = true;
-                dtpInicio.Enabled = true;
-                //dtpFinal.Enabled = true;
+                    txtCuota.Enabled = true;
+                    txtMontoMensual.Enabled = true;
+                    txtMonto.Enabled = true;
+                    dtpInicio.Enabled = true;
+                    //dtpFinal.Enabled = true;
 
-                
-                cmbEstado.Enabled = true;
 
-                
-                cmbTipoPago.Enabled = true;
-                
+                    cmbEstado.Enabled = true;
 
+
+                    cmbTipoPago.Enabled = true;
+
+
+                }
+                else if (dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() == "Viaje")
+                {
+                    cmbTipoServicio.Items.Clear();
+                    cmbTipoServicio.Items.Add("Salida o Regreso");
+                    cmbTipoServicio.Items.Add("Salida y Regreso");
+
+                    txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
+                    txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();
+                    txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
+
+
+                    txtAnticipo.Text = dgvDatosContrato.CurrentRow.Cells[5].Value.ToString();
+                    dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
+                    txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
+                    cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
+                    //cmbTipoPago.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString()) - 1;
+                    cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
+                    txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
+                    //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString());
+                    cmbEstado.SelectedIndex = 1;
+                    dtpInicio.Enabled = true;
+                    txtMonto.Enabled = true;
+
+                    cmbTipoServicio.Enabled = true;
+
+
+
+                }
             }
-            else if(dgvDatosContrato.CurrentRow.Cells[1].Value.ToString() == "Viaje")
-            {
-                cmbTipoServicio.Items.Clear();
-                cmbTipoServicio.Items.Add("Salida o Regreso");
-                cmbTipoServicio.Items.Add("Salida y Regreso");
-
-                txtContrato.Text = dgvDatosContrato.CurrentRow.Cells[0].Value.ToString();
-                txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();   
-                txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
-                
-                
-                txtAnticipo.Text = dgvDatosContrato.CurrentRow.Cells[5].Value.ToString();
-                dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
-                txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
-                cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
-                //cmbTipoPago.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString()) - 1;
-                cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
-                txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
-                //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString());
-                cmbEstado.SelectedIndex = 1;
-                dtpInicio.Enabled = true;
-                txtMonto.Enabled = true;
-
-                cmbTipoServicio.Enabled = true;   
-
-
-
-            }
+         
         }
 
         private void BtnModificar_Click(object sender, EventArgs e) 

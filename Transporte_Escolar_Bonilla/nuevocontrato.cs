@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -187,43 +188,63 @@ namespace Transporte_Escolar_Bonilla
         //Boton Crear
         private void Botcrear_Click_1(object sender, EventArgs e)
         {
-            int contc = 0, contr = 0;
-            string errorc = "", error = "\n\n", anio = "", codcli = ""; 
+            int contc = 0, contp = 0, contr = 0, contri = 0;
+            string errorc = "", errorp = "", anio = "", codcli = "";
 
             //Campos de Texto y TipoContrato Vacio
             if (combservicio.SelectedIndex == -1)
-                MessageBox.Show("Seleccione un servicio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                errorc += "Debe seleccionar un Servicio\n";
+                contc++;
+            }
 
             if (combcliente.SelectedIndex == -1)
-                MessageBox.Show("Seleccione un cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            if (txtmontom.Text.Trim().Length == 0 || double.Parse(txtmontom.Text) <= 0)
-                MessageBox.Show("Ingrese un monto mayor a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            if (txtcantm.Text.Trim().Length == 0)
-                MessageBox.Show("Ingrese una cantidad de meses", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                if (int.Parse(txtcantm.Text) <= 0)
-                MessageBox.Show("Ingrese una cantidad de meses mayor a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                errorc += "Debe seleccionar un Cliente\n";
+                contc++;
+            }
 
             if (pago_cmb.SelectedIndex == -1)
-                MessageBox.Show("Seleccione un tipo de pago", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                errorc += "Debe seleccionar un Plan de Pago\n";
+                contc++;
+            }
 
+            if (txtmontom.Text.Trim().Length == 0 || double.Parse(txtmontom.Text) <= 0)
+            {
+                errorc += "Debe ingresar un Monto mayor a 0\n";
+                contc++;
+            }
 
+            if (txtcantm.Text.Trim().Length == 0 || (int.Parse(txtcantm.Text) <= 0  || int.Parse(txtcantm.Text) > 12))
+            {
+                errorc += "Debe ingresar una Cantidad de Meses de 1-12\n";
+                contc++;
+            }
+
+            if (contc > 0)
+            {
+                MessageBox.Show(errorc, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else
             {
                 //Medio Bus
                 if (combservicio.SelectedIndex == 1)
                 {
                     //Parada
-                    if (txtpa1.Text.Trim().Length < 3)
-                        contr++;
+                    if (txtpa1.Text.Trim().Length < 3 || txtpa1.Text.All(x => char.IsNumber(x)))
+                    {
+                        errorp += "\nDebe ingresar una Parada válida de mínimo 3 caracteres";
+                        contp++;
+                    }
 
                     //Todos Vacios
-                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && txtpa1.Text == "")
+                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1) /*&& txtpa1.Text == "")*/
                         contr++;
 
                     //Algunos vacios
-                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || txtpa1.Text == "")
+                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1) /*|| txtpa1.Text == "")*/
                         contr++;
                 }
 
@@ -231,90 +252,102 @@ namespace Transporte_Escolar_Bonilla
                 if (combservicio.SelectedIndex == 0)
                 {
                     //Parada
-                    if (txtpa1.Text.Trim().Length < 3 || txtpa2.Text.Trim().Length < 3)
-                        contr++;
+                    if (txtpa1.Text.Trim().Length < 3 || txtpa2.Text.Trim().Length < 3 || txtpa1.Text.All(x => char.IsNumber(x)) || txtpa2.Text.All(x => char.IsNumber(x)))
+                    {
+                        errorp += "\nDebe ingresar una Parada válida de mínimo 3 caracteres";
+                        contp++;
+                    }
 
                     //Todos Vacios
-                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && txtpa1.Text == "" &&
-                        combruta2.SelectedIndex == -1 && combhora2.SelectedIndex == -1 && combveh2.SelectedIndex == -1 && txtpa2.Text == "")
+                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && /*txtpa1.Text == "" &&*/
+                        combruta2.SelectedIndex == -1 && combhora2.SelectedIndex == -1 && combveh2.SelectedIndex == -1) /*&& txtpa2.Text == "")*/
                         contr++;
 
                     //Algunos vacios
-                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || txtpa1.Text == "" ||
-                        combruta2.SelectedIndex == -1 || combhora2.SelectedIndex == -1 || combveh2.SelectedIndex == -1 || txtpa2.Text == "")
+                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || /*txtpa1.Text == "" ||*/
+                        combruta2.SelectedIndex == -1 || combhora2.SelectedIndex == -1 || combveh2.SelectedIndex == -1) /*|| txtpa2.Text == "")*/
                         contr++;
 
                     //Rutas Iguales
                     if (combruta1.Text == combruta2.Text)
-                        contr++;
+                        contri++;
                 }
+
 
                 //if ()
 
                 //Mostrar mensaje de Error
-                if (contr > 0)
-                    MessageBox.Show("Debe llenar correctamente los datos de la Ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (contp > 0 && contr == 0)
+                    MessageBox.Show(errorp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    if(int.Parse(txtcantm.Text) > 12)
-                        MessageBox.Show("La cantidad máxima de Meses a Pagar son 12", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+                    if (contp > 0 && contr > 0)
+                        MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado" + errorp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        if (contp == 0 && contr > 0)
+                            MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                        DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                        if (DialogResult == DialogResult.Yes)
+                            if (contri > 0)
+                                MessageBox.Show("No puede ingresar ambas rutas iguales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
                         {
-                            anio = dtpinicio.Value.Year.ToString();
-                            codcli = combcliente.SelectedValue.ToString();
+                            DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                            //Guardar datos de Contrato 
-                            if (pago_cmb.SelectedIndex == 0)
+                            if (DialogResult == DialogResult.Yes)
                             {
-                                ing.NuevoContrato(anio, combcliente.Text, codcli, 1, dtpinicio.Value, total,
-                                              DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
-                                mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", combcliente.Text, "N/A", "N/A", "N/A", "N/A");
+                                anio = dtpinicio.Value.Year.ToString();
+                                codcli = combcliente.SelectedValue.ToString();
+
+                                //Guardar datos de Contrato 
+                                if (pago_cmb.SelectedIndex == 0)
+                                {
+                                    ing.NuevoContrato(anio, combcliente.Text, codcli, 1, dtpinicio.Value, total,
+                                                  DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), int.Parse(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
+                                    mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", combcliente.Text, "N/A", "N/A", "N/A", "N/A");
+                                }
+                                else
+                                {
+                                    ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
+                                                  DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
+                                    mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", combcliente.Text, "N/A", "N/A", "N/A", "N/A");
+                                }
+
+                                //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
+                                ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, combcliente.Text);
+                                ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);
+
+                                //Si es Bus completo - Se asocia ruta de Vuelta al contrato tambien y actualizar pasajeros
+                                if (combservicio.SelectedIndex == 0)
+                                {
+                                    ing.RutaContrato(combruta2.Text, txtpa2.Text, anio, combcliente.Text);
+                                    ing.Pasajeros(combruta2.Text, combveh2.Text, combhora2.Text);
+                                }
+
+                                MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                //Limpiar
+                                combservicio.SelectedIndex = -1;
+                                combcliente.SelectedIndex = -1;
+                                combruta1.SelectedIndex = -1;
+                                combruta2.SelectedIndex = -1;
+                                combhora1.SelectedIndex = -1;
+                                combhora2.SelectedIndex = -1;
+                                combveh1.SelectedIndex = -1;
+                                combveh2.SelectedIndex = -1;
+                                pago_cmb.SelectedIndex = -1;
+
+                                txtpa1.Clear();
+                                txtpa2.Clear();
+                                txtmontom.Text = "0";
+                                txtcantm.Text = "0";
+
+
+                                combruta2.Enabled = false;
+                                combhora2.Enabled = false;
+                                combveh2.Enabled = false;
+                                txtpa1.Enabled = false;
                             }
-                            else
-                            {
-                                ing.NuevoContrato(anio, combcliente.Text, codcli, 1, Convert.ToDateTime(dtpinicio.Text), total,
-                                              DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
-                                mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", combcliente.Text, "N/A", "N/A", "N/A", "N/A");
-                            }
-
-                            //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
-                            ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, combcliente.Text);
-                            ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);
-
-                            //Si es Bus completo - Se asocia ruta de Vuelta al contrato tambien y actualizar pasajeros
-                            if (combservicio.SelectedIndex == 0)
-                            {
-                                ing.RutaContrato(combruta2.Text, txtpa2.Text, anio, combcliente.Text);
-                                ing.Pasajeros(combruta2.Text, combveh2.Text, combhora2.Text);
-                            }
-
-                            MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            //Limpiar
-                            combservicio.SelectedIndex = -1;
-                            combcliente.SelectedIndex = -1;
-                            combruta1.SelectedIndex = -1;
-                            combruta2.SelectedIndex = -1;
-                            combhora1.SelectedIndex = -1;
-                            combhora2.SelectedIndex = -1;
-                            combveh1.SelectedIndex = -1;
-                            combveh2.SelectedIndex = -1;
-                            pago_cmb.SelectedIndex = -1;
-
-                            txtpa1.Clear();
-                            txtpa2.Clear();
-                            txtmontom.Text = "0";
-                            txtcantm.Text = "0";
-
-
-                            combruta2.Enabled = false;
-                            combhora2.Enabled = false;
-                            combveh2.Enabled = false;
-                            txtpa1.Enabled = false;
                         }
                     }
                 }
@@ -344,6 +377,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtpa1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Que no deje espacios en blanco al inicio
+            if (char.IsWhiteSpace(e.KeyChar) && txtpa1.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar == ','))
             {
                 e.Handled = true;
@@ -352,6 +392,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtpa2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Que no deje espacios en blanco al inicio
+            if (char.IsWhiteSpace(e.KeyChar) && txtpa2.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+                SystemSounds.Hand.Play();
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
             {
                 e.Handled = true;

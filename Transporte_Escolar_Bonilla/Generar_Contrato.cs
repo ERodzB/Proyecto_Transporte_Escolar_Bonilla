@@ -608,19 +608,24 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvGenerarContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idecliente= dgvGenerarContrato.CurrentRow.Cells[1].Value.ToString();
-            cliente = dgvGenerarContrato.CurrentRow.Cells[2].Value.ToString();
-            tipocon = dgvGenerarContrato.CurrentRow.Cells[3].Value.ToString();
-            mensualidad = dgvGenerarContrato.CurrentRow.Cells[4].Value.ToString();
-            cuotas = dgvGenerarContrato.CurrentRow.Cells[5].Value.ToString();
-            servicio = dgvGenerarContrato.CurrentRow.Cells[6].Value.ToString();
-            montocontrato = dgvGenerarContrato.CurrentRow.Cells[7].Value.ToString();
-            fechaini = dgvGenerarContrato.CurrentRow.Cells[8].Value.ToString();
-            fechafin = dgvGenerarContrato.CurrentRow.Cells[9].Value.ToString();
-            ruta = dgvGenerarContrato.CurrentRow.Cells[10].Value.ToString();
-            parada = dgvGenerarContrato.CurrentRow.Cells[11].Value.ToString();
-            anticipo = dgvGenerarContrato.CurrentRow.Cells[12].Value.ToString();
-            btnGenerar.Enabled = true;
+            if(dgvGenerarContrato.Rows.Count > 0)
+            {
+                idecliente = dgvGenerarContrato.CurrentRow.Cells[1].Value.ToString();
+                cliente = dgvGenerarContrato.CurrentRow.Cells[2].Value.ToString();
+                tipocon = dgvGenerarContrato.CurrentRow.Cells[3].Value.ToString();
+                mensualidad = dgvGenerarContrato.CurrentRow.Cells[4].Value.ToString();
+                cuotas = dgvGenerarContrato.CurrentRow.Cells[5].Value.ToString();
+                servicio = dgvGenerarContrato.CurrentRow.Cells[6].Value.ToString();
+                montocontrato = dgvGenerarContrato.CurrentRow.Cells[7].Value.ToString();
+                fechaini = dgvGenerarContrato.CurrentRow.Cells[8].Value.ToString();
+                fechafin = dgvGenerarContrato.CurrentRow.Cells[9].Value.ToString();
+                ruta = dgvGenerarContrato.CurrentRow.Cells[10].Value.ToString();
+                parada = dgvGenerarContrato.CurrentRow.Cells[11].Value.ToString();
+                anticipo = dgvGenerarContrato.CurrentRow.Cells[12].Value.ToString();
+                btnGenerar.Enabled = true; 
+            }
+
+            
         }
     }
 }

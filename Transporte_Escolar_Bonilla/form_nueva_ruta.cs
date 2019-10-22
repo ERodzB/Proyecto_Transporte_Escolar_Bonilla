@@ -18,7 +18,7 @@ namespace Transporte_Escolar_Bonilla
         Validar val = new Validar();
         Modificar modifico = new Modificar();
         int cant = 0;
-        string regRutas= @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
+        string regRutas= @"^[a-zA-Z]{3}[a-zA-Z 0-9]*$"; 
         string regLimRutas = @"^[\w ]{0,50}$";
         //Variables Globales
         int cambio1 = 0;

@@ -100,7 +100,7 @@ namespace Transporte_Escolar_Bonilla
             if (cmbPuesto.Text=="Conductor")
             {
                
-                LBLLicencia.Visible = true;
+                LBLLicencia.Visible = true; 
                 dtpvencimiento.Visible = true;
                 txtlicencia.Visible = true;
                 lblVencimiento.Visible = true;

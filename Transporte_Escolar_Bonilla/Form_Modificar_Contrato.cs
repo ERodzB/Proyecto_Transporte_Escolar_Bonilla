@@ -32,7 +32,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvContrato_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnSeleccionar.Enabled = true;
+
         }
 
         private void Contratos_panel_Paint(object sender, PaintEventArgs e)
@@ -42,9 +42,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvContrato_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            codc = dgvContrato.CurrentRow.Cells[0].Value.ToString();
-            nombrecli = dgvContrato.CurrentRow.Cells[1].Value.ToString();
-            btnSeleccionar.Enabled = true;
+            if(dgvContrato.Rows.Count > 0)
+            {
+                codc = dgvContrato.CurrentRow.Cells[0].Value.ToString();
+                nombrecli = dgvContrato.CurrentRow.Cells[1].Value.ToString();
+                btnSeleccionar.Enabled = true;
+            }
+
         }
 
         public contrato_panel()
