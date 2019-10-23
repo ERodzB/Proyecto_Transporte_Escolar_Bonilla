@@ -18,8 +18,6 @@ namespace Transporte_Escolar_Bonilla
         Validar val = new Validar();
         Modificar modifico = new Modificar();
         int cant = 0;
-        string regRutas= @"^[a-zA-Z]{3}[a-zA-Z 0-9]*$"; 
-        string regLimRutas = @"^[\w ]{0,50}$";
         //Variables Globales
         int cambio1 = 0;
         
@@ -82,87 +80,56 @@ namespace Transporte_Escolar_Bonilla
             val.igual = 0;
 
             //Validar datos vacios
-           
-            if (string.IsNullOrEmpty(txtinicio.Text))
-            {
-                cont++;
-                error += "*No Ingrese espacios vacios o valores Nulos en Origen de Ruta\n";
-                txtinicio.Clear();
-                txtinicio.Focus();
-            }
-           else
-            {
-                if((!Regex.IsMatch(txtinicio.Text, regRutas)))
-                {
-                    cont++;
-                    error += "*Debe ingresar al menos 3 caracteres en Origen de Ruta\n";
-                    txtinicio.Clear();
-                    txtinicio.Focus();
-                }
-                
-            }
-            if(!Regex.IsMatch(txtinicio.Text, regLimRutas))
-            {
-                cont++;
-                error += "*El nombre de la ruta de Origen es mayor a 50 letras\n";
 
-            }
-           
-            if (string.IsNullOrEmpty(txtfin.Text))
-            {
-                cont++;
-                error += "*No Ingrese espacios vacios o valores Nulos en Destino de Ruta\n";
-                txtfin.Clear();
-                txtfin.Focus();
-            }
-            else
-            {
-                if (!Regex.IsMatch(txtfin.Text, regRutas))
-                {
-                    cont++;
-                    error += "*Debe ingresar al menos 3 caracteres en Destino de Ruta\n";
-                    txtfin.Clear();
-                    txtfin.Focus();
-                }
-            }
-            if(!Regex.IsMatch(txtfin.Text, regLimRutas))
-            {
-                cont++;
-                error += "*El nombre de la ruta de Destino es mayor a 50 letras\n";
-            }
+
+            error += val.valTextoVacioOMaximo(txtinicio.Text, "Origen de la Ruta");
+            error += val.valTextoVacioOMaximo(txtfin.Text, "Ruta de Destino");
+            
             if (txtfin.Text == txtinicio.Text)
-            {
-                cont++;
                 error += "*El nombre de las rutas debe de ser diferente\n";
-            }
+            
             //Validar Horarios
             if (dtphoras1.Checked == false)
             {
-                cont++;
                 error += "*Escoja una Hora de Salida\n";
                 dtphoras1.Focus();
             }
 
             if(dtphorae1.Checked == false)
-            {
-                cont++;
                 error += "*Escoja una Hora de Llegada\n";
-            }
-            if (dtphorae1.Value == dtphoras1.Value)
+            
+
+            error += val.valFechas(dtphoras1, dtphorae1);
+
+            /*if(dtphoras1.Value.Hour - dtphorae1.Value.Hour >=8)
+                error += "*La ruta no puede tener una duración mayor a 8 horas\n";*/
+
+            if (dtphoras1.Value.Hour < dtphorae1.Value.Hour)
             {
-                error += "*Los Horarios no pueden ser los iguales\n";
-                cont++;
+                for(int x=0; x<=48; x++)
+                {
+                    if(dtphorae1.Value.Hour == dtphoras1.Value.AddHours(x).Hour)
+                    {
+                        if (x >= 8)
+                            error += "*La ruta no puede tener una duracion mayor a 8 horas\n";
+                        break;
+                    }
+                }
             }
-            if(dtphorae1.Value>=dtphoras1.Value.AddHours(8) || dtphorae1.Value < dtphoras1.Value)
+            if (dtphoras1.Value.Hour > dtphorae1.Value.Hour)
             {
-                error += "*La ruta no puede tener una duración mayor a 8 horas\n";
-                cont++;
+                for (int x = 0; x <= 48; x++)
+                {
+                    if (dtphoras1.Value.Hour == dtphorae1.Value.AddHours(-x).Hour)
+                    {
+                        if (x >= 8)
+                            error += "*La ruta no puede tener una duracion mayor a 8 horas\n";
+                        break;
+                    }
+                }
             }
-            if (combveh1.SelectedIndex == -1)
-            {
-                cont++;
-                error += "*Escoja un vehiculo a realizar la ruta\n";
-            }
+
+            error += val.valCmbVacio(combveh1.SelectedIndex, "Vehiculo");
             //Ruta Existente
             if (val.validarRuta(txtinicio.Text + txtfin.Text) == 1)
             {
@@ -171,8 +138,6 @@ namespace Transporte_Escolar_Bonilla
                 txtinicio.Clear();
                 txtfin.Clear();
                 txtinicio.Focus();
-
-                cont++;
             }
            
 
@@ -186,7 +151,7 @@ namespace Transporte_Escolar_Bonilla
                 }
             }
 
-            if (cont > 0)
+            if (error!="")
                 MessageBox.Show("ERROR EN: \n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {

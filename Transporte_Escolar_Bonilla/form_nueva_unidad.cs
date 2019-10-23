@@ -18,8 +18,6 @@ namespace Transporte_Escolar_Bonilla
         Validar val = new Validar();
         Modificar mod = new Modificar();
         string regAsientos = @"^([1-9]{1}|[1-5]{1}[0-9]{1})$";
-        string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
-        string regLimMaximo = @"^[\w ]{0,50}$";
         string regMatricula = @"^([a-zA-Z]{2}[0-9]{4}|[a-zA-Z]{3}[0-9]{3}|[a-zA-Z]{2}[0-9]{5})$";
 
         public form_nueva_unidad()
@@ -85,16 +83,17 @@ namespace Transporte_Escolar_Bonilla
             string errores = "";
 
             //Validar campos y combobox vacios vacios
-            errores += val.regMatricula(txtmat.Text, regMatricula);
-            errores += val.valTextoVacioOMaximo(txtmat.Text, "Placa", regTexto, regLimMaximo);
-            errores += val.valTextoVacioOMaximo(txtmarca.Text, "Marca", regTexto, regLimMaximo);
-            errores += val.valTextoVacioOMaximo(txtmodelo.Text, "Modelo", regTexto, regLimMaximo);
-            errores += val.valTextoVacioOMaximo(txtcolor.Text, "Color", regTexto, regLimMaximo);
+            errores += val.regMatricula(txtmat.Text);
+            errores += val.valTextoVacioOMaximo(txtmat.Text, "Placa");
+            errores += val.valTextoVacioOMaximo(txtmarca.Text, "Marca");
+            errores += val.valTextoVacioOMaximo(txtmodelo.Text, "Modelo");
+            errores += val.valTextoVacioOMaximo(txtcolor.Text, "Color");
             errores += val.valCmbVacio(combtipoveh.SelectedIndex, "Tipo Vehiculo");
             errores += val.valCmbVacio(combtipotra.SelectedIndex, "Tipo de Transmision");
             errores += val.valCmbVacio(combtipocom.SelectedIndex, "Tipo de Combustible");
             errores += val.valCmbVacio(combestado.SelectedIndex, "Estado de Vehiculo");
-            errores += val.valFechas(dtpemision, dtpvenc);
+            if (dtpemision.Value.Date == dtpvenc.Value.Date)
+                errores += "*Escoja fechas Distintas\n";
 
             if (!Regex.IsMatch(txtcap.Text, regAsientos))
             {

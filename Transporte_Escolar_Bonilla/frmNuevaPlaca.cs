@@ -15,9 +15,6 @@ namespace Transporte_Escolar_Bonilla
         Consultar consul = new Consultar();
         Modificar modifico = new Modificar();
         Validar val = new Validar();
-        string regMatricula = @"^([a-zA-Z]{2}[0-9]{4}|[a-zA-Z]{3}[0-9]{3}|[a-zA-Z]{2}[0-9]{5})$";
-        string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
-        string regLimMaximo = @"^[\w ]{0,50}$";
         public frmNuevaPlaca()
         {
             InitializeComponent();
@@ -41,8 +38,8 @@ namespace Transporte_Escolar_Bonilla
         private void Botasignar_Click(object sender, EventArgs e)
         {
             string errores = "";
-            errores+= val.regMatricula(txtNuevaMatricula.Text, regMatricula);
-            errores += val.valTextoVacioOMaximo(txtNuevaMatricula.Text,"Placa", regTexto, regLimMaximo);
+            errores+= val.regMatricula(txtNuevaMatricula.Text);
+            errores += val.valTextoVacioOMaximo(txtNuevaMatricula.Text,"Placa");
             errores += val.valCmbVacio(combveh.SelectedIndex, "Vehiculo");
             if (errores != "")
             {

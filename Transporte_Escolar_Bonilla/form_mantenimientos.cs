@@ -16,8 +16,6 @@ namespace Transporte_Escolar_Bonilla
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
         Modificar modi = new Modificar();
-        string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
-        string regLimMaximo = @"^[\w ]{0,50}$";
         int cambio = 0;
 
         public form_mantenimientos()
@@ -107,8 +105,8 @@ namespace Transporte_Escolar_Bonilla
         private void Botingresar_Click(object sender, EventArgs e)
         {
             string errores = "";
-            errores += val.valTextoVacioOMaximo(txtnom.Text, "Nombre de Mantenimiento", regTexto, regLimMaximo);
-            errores += val.valTextoVacioOMaximo(txtdesc.Text, "Descripcion de Mantenimiento", regTexto, regLimMaximo);
+            errores += val.valTextoVacioOMaximo(txtnom.Text, "Nombre de Mantenimiento");
+            errores += val.valTextoVacioOMaximo(txtdesc.Text, "Descripcion de Mantenimiento");
             //INGRESAR NUEVO
             if (botingresar.Text.Equals("Ingresar"))
             {

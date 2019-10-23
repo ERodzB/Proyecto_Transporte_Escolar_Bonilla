@@ -417,9 +417,11 @@ namespace Transporte_Escolar_Bonilla
             return x;
         }
 
-        public string valTextoVacioOMaximo(string txtValidar, string nombreTxt, string regex1, string regex2)
+        public string valTextoVacioOMaximo(string txtValidar, string nombreTxt)
         {
             string resultado = "";
+            string regex1 = @"^[a-zA-Z]{3}[a-zA-Z 0-9]*$"; 
+            string regex2 = @"^[\w ]{0,50}$";
             if (string.IsNullOrEmpty(txtValidar))
             {
                 resultado = "*Error valor nulo o vacio en " + nombreTxt+"\n";
@@ -453,16 +455,17 @@ namespace Transporte_Escolar_Bonilla
         public string valFechas(DateTimePicker dtp1, DateTimePicker dtp2)
         {
             string resultado = "";
-            if (dtp1.Value.Date == dtp2.Value.Date)
+            if (dtp1.Value.Hour == dtp2.Value.Hour)
             {
-                resultado = "*Escoja Fechas Diferentes\n";
+                resultado = "*Escoja Horarios Diferentes\n";
             }
             return resultado;
         }
-        public string regMatricula(string txtValidar, string regex)
+        public string regMatricula(string txtValidar)
         {
             string resultado = "";
-            if(!Regex.IsMatch(txtValidar, regex))
+            string regex = @"^([a-zA-Z]{2}[0-9]{4}|[a-zA-Z]{3}[0-9]{3}|[a-zA-Z]{2}[0-9]{5})$";
+            if (!Regex.IsMatch(txtValidar, regex))
             {
                 resultado = "*Ingrese una Placa valida Ejemplo AB1234 o ABC1234 o AB12345\n";
             }

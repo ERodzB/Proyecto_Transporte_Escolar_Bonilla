@@ -29,44 +29,53 @@ namespace Transporte_Escolar_Bonilla
         private void Realizar_btn_Click(object sender, EventArgs e)
         {
             string errores = "";
-            int conte = 0;
+            if ((agregar_rb.Checked == true || modiHorario_rb.Checked == true))
+                errores+=val.valFechas(llegadaHorario_dtp, horaSalida_dtp);
+
             if (Horario_cmb.SelectedIndex == -1 && (modiHorario_rb.Checked == true || eliminarHorario_rb.Checked==true) )
-            {
                 errores += "*Seleccione un Horario a Modificar\n";
-                conte++;
-            }
+          
             if(horaSalida_dtp.Checked == false && (agregar_rb.Checked==true || modiHorario_rb.Checked == true))
-            {
-                conte++;
                 errores += "*Escoja una Hora de Salida\n";
-            }
+            
             if(llegadaHorario_dtp.Checked == false && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
-            {
-                conte++;
                 errores += "*Escoja una Hora de Llegada\n";
-            }
             else
             {
-                if ((llegadaHorario_dtp.Value >= horaSalida_dtp.Value.AddHours(8) || llegadaHorario_dtp.Value < horaSalida_dtp.Value) && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
+                if (horaSalida_dtp.Value.Hour < llegadaHorario_dtp.Value.Hour)
                 {
-                    errores += "*La ruta no puede tener una duración mayor a 8 horas\n";
-                    conte++;
+                    for (int x = 0; x <= 48; x++)
+                    {
+                        if (llegadaHorario_dtp.Value.Hour == horaSalida_dtp.Value.AddHours(x).Hour)
+                        {
+                            if (x >= 8)
+                                errores += "*La ruta no puede tener una duracion mayor a 8 horas\n";
+                            break;
+                        }
+                    }
+                }
+                if (horaSalida_dtp.Value.Hour > llegadaHorario_dtp.Value.Hour)
+                {
+                    for (int x = 0; x <= 48; x++)
+                    {
+                        if (horaSalida_dtp.Value.Hour == llegadaHorario_dtp.Value.AddHours(-x).Hour)
+                        {
+                            if (x >= 8)
+                                errores += "*La ruta no puede tener una duracion mayor a 8 horas\n";
+                            break;
+                        }
+                    }
                 }
             }
+
             if (vehiculo_cmb.SelectedIndex == -1 && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
-            {
                 errores += "*Escoja un vehiculo a realizar la ruta\n";
-                conte++;
-            }
+
             if (val.validarHorariosVeh(vehiculo_cmb.Text, horaSalida_dtp.Text) == 1 && (agregar_rb.Checked == true || modiHorario_rb.Checked == true))
-            {
                 errores += "*El Vehiculo ya realiza una ruta en ese Horario\n";
-                conte++;
-            }
-            if (conte > 0)
-            {
+
+            if (errores != "")          
                 MessageBox.Show("ERROR EN: \n" + errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else
             {
                 if (agregar_rb.Checked == true)

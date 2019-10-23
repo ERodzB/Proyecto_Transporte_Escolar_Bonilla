@@ -16,8 +16,6 @@ namespace Transporte_Escolar_Bonilla
         Consultar con = new Consultar();
         Modificar mod = new Modificar();
         Validar val = new Validar();
-        string regTexto = @"^[a-zA-Z]{4}[a-zA-Z 0-9]*$";
-        string regLimMaximo = @"^[\w ]{0,50}$";
         string color = "1";
         int cmbValue=999;
         string dtp1 = "1";
@@ -37,9 +35,10 @@ namespace Transporte_Escolar_Bonilla
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             string errores = "";
-            errores += val.valTextoVacioOMaximo(txtColor.Text, "Color", regTexto, regLimMaximo);
+            errores += val.valTextoVacioOMaximo(txtColor.Text, "Color");
             errores += val.valCmbVacio(cmbEstadoVehiculo.SelectedIndex, "Estado de Vehiculo");
-            errores += val.valFechas(dtpEmision, dtpVencimiento);
+            if (dtpEmision.Value.Date == dtpVencimiento.Value.Date)
+                errores += "*Escoja Fechas Distintas\n";
             if(txtColor.Text == color && cmbEstadoVehiculo.SelectedIndex == cmbValue && dtpEmision.Value.ToString() == dtp1 && dtpVencimiento.Value.ToString() == dtp2)
             {
                 errores += "*No se ha realizado ningun cambio\n";
