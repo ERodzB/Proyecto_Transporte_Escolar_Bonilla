@@ -96,7 +96,7 @@ namespace Transporte_Escolar_Bonilla
 
             if (!Regex.IsMatch(txtcap.Text, regAsientos))
             {
-                errores += "*Error la cantidad maxima de asientos es entre 1-60\n";
+                errores += "*Error la cantidad maxima de asientos es entre 1-59\n";
             }
             
             

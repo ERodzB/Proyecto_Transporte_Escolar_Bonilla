@@ -72,7 +72,7 @@
             // 
             this.txtpa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpa.Location = new System.Drawing.Point(371, 111);
-            this.txtpa.MaxLength = 3;
+            this.txtpa.MaxLength = 2;
             this.txtpa.Name = "txtpa";
             this.txtpa.Size = new System.Drawing.Size(65, 23);
             this.txtpa.TabIndex = 298;
@@ -164,6 +164,7 @@
             // 
             // dtpfin
             // 
+            this.dtpfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpfin.Location = new System.Drawing.Point(655, 194);
             this.dtpfin.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpfin.Name = "dtpfin";
@@ -172,6 +173,7 @@
             // 
             // dtpinicio
             // 
+            this.dtpinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpinicio.Location = new System.Drawing.Point(478, 194);
             this.dtpinicio.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpinicio.Name = "dtpinicio";
