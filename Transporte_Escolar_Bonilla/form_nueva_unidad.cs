@@ -92,8 +92,7 @@ namespace Transporte_Escolar_Bonilla
             errores += val.valCmbVacio(combtipotra.SelectedIndex, "Tipo de Transmision");
             errores += val.valCmbVacio(combtipocom.SelectedIndex, "Tipo de Combustible");
             errores += val.valCmbVacio(combestado.SelectedIndex, "Estado de Vehiculo");
-            if (dtpemision.Value.Date == dtpvenc.Value.Date)
-                errores += "*Escoja fechas Distintas\n";
+            errores += val.valFechasIguales(dtpemision, dtpvenc);
 
             if (!Regex.IsMatch(txtcap.Text, regAsientos))
             {

@@ -99,10 +99,7 @@ namespace Transporte_Escolar_Bonilla
                 error += "*Escoja una Hora de Llegada\n";
             
 
-            error += val.valFechas(dtphoras1, dtphorae1);
-
-            /*if(dtphoras1.Value.Hour - dtphorae1.Value.Hour >=8)
-                error += "*La ruta no puede tener una duración mayor a 8 horas\n";*/
+            error += val.valHorarios(dtphoras1, dtphorae1);
 
             if (dtphoras1.Value.Hour < dtphorae1.Value.Hour)
             {

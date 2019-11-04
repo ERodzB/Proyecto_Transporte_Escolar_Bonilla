@@ -24,8 +24,8 @@ namespace Transporte_Escolar_Bonilla
         static public string id;
         static public string nomc;
         static public int tipoc;
-        string regId = @"^[0-9]{13}$";
-        string regRTN = @"^[0-9]{14}$";
+        string regId = @"^(([0-9][1-9]){1,2}(19\d{7})?(20[0-0][0-1]\d{5})?)$";
+        string regRTN = @"^(([0-9][1-9]){1,2}(19\d{8})?(20[0-0][0-1]\d{6})?)$";
 
 
         public form_nuevo_cliente()
@@ -52,7 +52,7 @@ namespace Transporte_Escolar_Bonilla
         //Click Siguiente
         private void Labsiguiente_Click(object sender, EventArgs e)
         { 
-            int cont = 0, conte = 0;
+            int cont = 0;
             string error = "";
 
             //No dejar Campos Vacios
@@ -83,43 +83,26 @@ namespace Transporte_Escolar_Bonilla
                 }
                 else
                 {
-                    if (Convert.ToInt64(txtid.Text) < 101190000000)
-                    {
-                        error += "Debe Ingresar un "+label1.Text+" valido\n";
-                        conte++;
-                    }
-                    if(txtid.Text.Trim().Length < 13)
-                    {
-                        error += "Debe ingresar un Número de Identidad de 13 numeros\n";
-                        conte++;
-                    }
+
+
+                    error += val.valIdORtn(txtid.Text);
+
+                      
                  
                     if(txtnom.Text.Trim().Length < 3)
-                    {
-                        error += "Debe ingresar un Nombre mayor o igual a 3 caracteres\n";
-                        conte++;
-                    }
+                        error += "*Debe ingresar un Nombre mayor o igual a 3 caracteres\n";
 
                     //All verifica si todos los caracteres cumplen cierta condicion. Se toma cada letra en x y se verifica si cada una es un numero 
                     if (txtdir.Text.Trim().Length < 15 || txtdir.Text.All(x => char.IsNumber(x))) 
-                    {
-                        error += "Debe ingresar una Dirección válida mayor o igual a 15 caracteres\n";
-                        conte++;
-                    }
+                        error += "*Debe ingresar una Dirección válida mayor o igual a 15 caracteres\n";
 
                     if(txttel.Text.Trim().Length < 8 || txttel.Text.Equals("00000000"))
-                    {
-                        error += "Debe ingresar un Teléfono Válido\n";
-                        conte++;
-                    }
+                        error += "*Debe ingresar un Teléfono Válido\n";
 
                     if(combTipoContrato.SelectedIndex == -1)
-                    {
-                        error += "Debe seleccionar un Tipo de Contrato\n";
-                        conte++;
-                    }
+                        error += "*Debe seleccionar un Tipo de Contrato\n";
 
-                    if(conte == 0)
+                    if(error == "")
                     {
                         if(System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
@@ -248,9 +231,9 @@ namespace Transporte_Escolar_Bonilla
         }
         private void txtid_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(txtid.Text, regId))
+            if (txtid.Text.Length <= 13)
                 label1.Text = "Número de Identidad";
-            if (Regex.IsMatch(txtid.Text, regRTN))
+            if (txtid.Text.Length == 14)
                 label1.Text = "Número de RTN";
 
         }

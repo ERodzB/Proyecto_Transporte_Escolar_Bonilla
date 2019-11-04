@@ -72,7 +72,7 @@
             this.txtpa2.Enabled = false;
             this.txtpa2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpa2.Location = new System.Drawing.Point(843, 358);
-            this.txtpa2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtpa2.Margin = new System.Windows.Forms.Padding(4);
             this.txtpa2.MaxLength = 50;
             this.txtpa2.Name = "txtpa2";
             this.txtpa2.Size = new System.Drawing.Size(186, 26);
@@ -95,7 +95,7 @@
             // 
             this.txtpa1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpa1.Location = new System.Drawing.Point(843, 230);
-            this.txtpa1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtpa1.Margin = new System.Windows.Forms.Padding(4);
             this.txtpa1.MaxLength = 50;
             this.txtpa1.Name = "txtpa1";
             this.txtpa1.Size = new System.Drawing.Size(186, 26);
@@ -128,12 +128,12 @@
             // 
             // txtmontom
             // 
-            this.txtmontom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmontom.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtmontom.Location = new System.Drawing.Point(357, 501);
-            this.txtmontom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmontom.Margin = new System.Windows.Forms.Padding(4);
             this.txtmontom.MaxLength = 9;
             this.txtmontom.Name = "txtmontom";
-            this.txtmontom.Size = new System.Drawing.Size(169, 26);
+            this.txtmontom.Size = new System.Drawing.Size(169, 32);
             this.txtmontom.TabIndex = 230;
             this.txtmontom.TextChanged += new System.EventHandler(this.Txtmontom_TextChanged_1);
             this.txtmontom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmontom_KeyPress);
@@ -144,8 +144,8 @@
             this.combhora2.Enabled = false;
             this.combhora2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combhora2.FormattingEnabled = true;
-            this.combhora2.Location = new System.Drawing.Point(416, 354);
-            this.combhora2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combhora2.Location = new System.Drawing.Point(381, 356);
+            this.combhora2.Margin = new System.Windows.Forms.Padding(4);
             this.combhora2.Name = "combhora2";
             this.combhora2.Size = new System.Drawing.Size(161, 28);
             this.combhora2.TabIndex = 227;
@@ -156,7 +156,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(410, 321);
+            this.label5.Location = new System.Drawing.Point(375, 323);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 33);
@@ -169,8 +169,8 @@
             this.combruta2.Enabled = false;
             this.combruta2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combruta2.FormattingEnabled = true;
-            this.combruta2.Location = new System.Drawing.Point(73, 354);
-            this.combruta2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combruta2.Location = new System.Drawing.Point(50, 354);
+            this.combruta2.Margin = new System.Windows.Forms.Padding(4);
             this.combruta2.Name = "combruta2";
             this.combruta2.Size = new System.Drawing.Size(288, 28);
             this.combruta2.TabIndex = 225;
@@ -181,7 +181,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(67, 321);
+            this.label6.Location = new System.Drawing.Point(44, 321);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 33);
@@ -191,12 +191,12 @@
             // labv2
             // 
             this.labv2.AutoSize = true;
-            this.labv2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labv2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
             this.labv2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.labv2.Location = new System.Drawing.Point(604, 402);
+            this.labv2.Location = new System.Drawing.Point(550, 402);
             this.labv2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labv2.Name = "labv2";
-            this.labv2.Size = new System.Drawing.Size(36, 23);
+            this.labv2.Size = new System.Drawing.Size(28, 18);
             this.labv2.TabIndex = 224;
             this.labv2.Text = "Fin";
             this.labv2.Visible = false;
@@ -207,10 +207,10 @@
             this.combveh2.Enabled = false;
             this.combveh2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combveh2.FormattingEnabled = true;
-            this.combveh2.Location = new System.Drawing.Point(624, 354);
-            this.combveh2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combveh2.Location = new System.Drawing.Point(570, 354);
+            this.combveh2.Margin = new System.Windows.Forms.Padding(4);
             this.combveh2.Name = "combveh2";
-            this.combveh2.Size = new System.Drawing.Size(161, 28);
+            this.combveh2.Size = new System.Drawing.Size(233, 28);
             this.combveh2.TabIndex = 221;
             this.combveh2.SelectedIndexChanged += new System.EventHandler(this.Combveh2_SelectedIndexChanged_1);
             // 
@@ -219,7 +219,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(618, 321);
+            this.label8.Location = new System.Drawing.Point(564, 321);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 33);
@@ -231,7 +231,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(67, 271);
+            this.label9.Location = new System.Drawing.Point(44, 271);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 33);
@@ -243,8 +243,8 @@
             this.combhora1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combhora1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combhora1.FormattingEnabled = true;
-            this.combhora1.Location = new System.Drawing.Point(416, 226);
-            this.combhora1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combhora1.Location = new System.Drawing.Point(381, 228);
+            this.combhora1.Margin = new System.Windows.Forms.Padding(4);
             this.combhora1.Name = "combhora1";
             this.combhora1.Size = new System.Drawing.Size(161, 28);
             this.combhora1.TabIndex = 219;
@@ -255,7 +255,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(410, 193);
+            this.label2.Location = new System.Drawing.Point(375, 195);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 33);
@@ -267,8 +267,8 @@
             this.combruta1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combruta1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combruta1.FormattingEnabled = true;
-            this.combruta1.Location = new System.Drawing.Point(72, 226);
-            this.combruta1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combruta1.Location = new System.Drawing.Point(49, 226);
+            this.combruta1.Margin = new System.Windows.Forms.Padding(4);
             this.combruta1.Name = "combruta1";
             this.combruta1.Size = new System.Drawing.Size(288, 28);
             this.combruta1.TabIndex = 217;
@@ -279,7 +279,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(67, 193);
+            this.label1.Location = new System.Drawing.Point(44, 193);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 33);
@@ -295,7 +295,7 @@
             "Bus Completo",
             "Medio Bus"});
             this.combservicio.Location = new System.Drawing.Point(241, 84);
-            this.combservicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combservicio.Margin = new System.Windows.Forms.Padding(4);
             this.combservicio.Name = "combservicio";
             this.combservicio.Size = new System.Drawing.Size(193, 28);
             this.combservicio.TabIndex = 216;
@@ -304,23 +304,25 @@
             // labv1
             // 
             this.labv1.AutoSize = true;
-            this.labv1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labv1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
             this.labv1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.labv1.Location = new System.Drawing.Point(602, 274);
+            this.labv1.Location = new System.Drawing.Point(548, 274);
             this.labv1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labv1.Name = "labv1";
-            this.labv1.Size = new System.Drawing.Size(36, 23);
+            this.labv1.Size = new System.Drawing.Size(28, 18);
             this.labv1.TabIndex = 215;
             this.labv1.Text = "Fin";
             this.labv1.Visible = false;
             // 
             // dtpinicio
             // 
+            this.dtpinicio.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dtpinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpinicio.Location = new System.Drawing.Point(611, 505);
-            this.dtpinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpinicio.Margin = new System.Windows.Forms.Padding(4);
             this.dtpinicio.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpinicio.Name = "dtpinicio";
-            this.dtpinicio.Size = new System.Drawing.Size(192, 22);
+            this.dtpinicio.Size = new System.Drawing.Size(192, 32);
             this.dtpinicio.TabIndex = 214;
             this.dtpinicio.ValueChanged += new System.EventHandler(this.Dtpinicio_ValueChanged_1);
             // 
@@ -329,10 +331,10 @@
             this.combveh1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combveh1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combveh1.FormattingEnabled = true;
-            this.combveh1.Location = new System.Drawing.Point(624, 226);
-            this.combveh1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combveh1.Location = new System.Drawing.Point(570, 226);
+            this.combveh1.Margin = new System.Windows.Forms.Padding(4);
             this.combveh1.Name = "combveh1";
-            this.combveh1.Size = new System.Drawing.Size(161, 28);
+            this.combveh1.Size = new System.Drawing.Size(233, 28);
             this.combveh1.TabIndex = 204;
             this.combveh1.SelectedIndexChanged += new System.EventHandler(this.Combveh1_SelectedIndexChanged);
             // 
@@ -341,7 +343,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.Window;
-            this.label22.Location = new System.Drawing.Point(618, 193);
+            this.label22.Location = new System.Drawing.Point(564, 193);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(138, 33);
@@ -352,7 +354,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 433);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1108, 4);
             this.panel2.TabIndex = 212;
@@ -386,7 +388,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.Window;
-            this.label19.Location = new System.Drawing.Point(67, 148);
+            this.label19.Location = new System.Drawing.Point(43, 150);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(128, 33);
@@ -399,10 +401,10 @@
             this.botcrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
-            this.botcrear.Location = new System.Drawing.Point(877, 527);
-            this.botcrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botcrear.Location = new System.Drawing.Point(883, 525);
+            this.botcrear.Margin = new System.Windows.Forms.Padding(4);
             this.botcrear.Name = "botcrear";
-            this.botcrear.Size = new System.Drawing.Size(145, 52);
+            this.botcrear.Size = new System.Drawing.Size(161, 81);
             this.botcrear.TabIndex = 211;
             this.botcrear.Text = "Crear";
             this.botcrear.UseVisualStyleBackColor = false;
@@ -422,12 +424,12 @@
             // 
             // txtcantm
             // 
-            this.txtcantm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcantm.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtcantm.Location = new System.Drawing.Point(357, 585);
-            this.txtcantm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcantm.Margin = new System.Windows.Forms.Padding(4);
             this.txtcantm.MaxLength = 2;
             this.txtcantm.Name = "txtcantm";
-            this.txtcantm.Size = new System.Drawing.Size(169, 26);
+            this.txtcantm.Size = new System.Drawing.Size(169, 32);
             this.txtcantm.TabIndex = 205;
             this.txtcantm.TextChanged += new System.EventHandler(this.Txtcantm_TextChanged_1);
             this.txtcantm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcantm_KeyPress_1);
@@ -453,7 +455,7 @@
             "Bus Completo",
             "Medio Bus"});
             this.combcliente.Location = new System.Drawing.Point(690, 84);
-            this.combcliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combcliente.Margin = new System.Windows.Forms.Padding(4);
             this.combcliente.Name = "combcliente";
             this.combcliente.Size = new System.Drawing.Size(323, 28);
             this.combcliente.TabIndex = 239;
@@ -486,7 +488,7 @@
             // pago_cmb
             // 
             this.pago_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pago_cmb.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.pago_cmb.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.pago_cmb.FormattingEnabled = true;
             this.pago_cmb.Items.AddRange(new object[] {
             "Mensual",
@@ -494,7 +496,7 @@
             this.pago_cmb.Location = new System.Drawing.Point(31, 527);
             this.pago_cmb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pago_cmb.Name = "pago_cmb";
-            this.pago_cmb.Size = new System.Drawing.Size(272, 39);
+            this.pago_cmb.Size = new System.Drawing.Size(272, 31);
             this.pago_cmb.TabIndex = 241;
             this.pago_cmb.SelectedIndexChanged += new System.EventHandler(this.Pago_cmb_SelectedIndexChanged);
             this.pago_cmb.SelectedValueChanged += new System.EventHandler(this.Pago_cmb_SelectedValueChanged);
@@ -502,11 +504,11 @@
             // txtfechafin
             // 
             this.txtfechafin.Enabled = false;
-            this.txtfechafin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfechafin.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtfechafin.Location = new System.Drawing.Point(611, 585);
-            this.txtfechafin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtfechafin.Margin = new System.Windows.Forms.Padding(4);
             this.txtfechafin.Name = "txtfechafin";
-            this.txtfechafin.Size = new System.Drawing.Size(192, 26);
+            this.txtfechafin.Size = new System.Drawing.Size(192, 32);
             this.txtfechafin.TabIndex = 229;
             // 
             // label14

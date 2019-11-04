@@ -31,14 +31,14 @@ namespace Transporte_Escolar_Bonilla
             dtpVencimiento.MinDate = new DateTime(2019, 01, 01);
             
         }
-
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             string errores = "";
+
             errores += val.valTextoVacioOMaximo(txtColor.Text, "Color");
             errores += val.valCmbVacio(cmbEstadoVehiculo.SelectedIndex, "Estado de Vehiculo");
-            if (dtpEmision.Value.Date == dtpVencimiento.Value.Date)
-                errores += "*Escoja Fechas Distintas\n";
+            errores += val.valFechasIguales(dtpEmision, dtpVencimiento);
+
             if(txtColor.Text == color && cmbEstadoVehiculo.SelectedIndex == cmbValue && dtpEmision.Value.ToString() == dtp1 && dtpVencimiento.Value.ToString() == dtp2)
             {
                 errores += "*No se ha realizado ningun cambio\n";
@@ -66,8 +66,6 @@ namespace Transporte_Escolar_Bonilla
             }
                 
          }
-         
-
         private void Modificar_UnidadFrm_Load(object sender, EventArgs e)
         {
             con.CargadgvModVehiculos(dgvVehiculos);
@@ -77,14 +75,6 @@ namespace Transporte_Escolar_Bonilla
             cmbEstadoVehiculo.SelectedIndex = -1;
 
         }
-
- 
-
-        private void DgvVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void DgvVehiculos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if(dgvVehiculos.Rows.Count > 0)
@@ -107,7 +97,6 @@ namespace Transporte_Escolar_Bonilla
                 dtp2 = dtpVencimiento.Value.ToString();
             }   
         }
-
         private void txtColor_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Que no deje espacios en blanco al inicio

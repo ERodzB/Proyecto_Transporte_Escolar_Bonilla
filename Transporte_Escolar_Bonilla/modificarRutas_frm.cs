@@ -30,7 +30,7 @@ namespace Transporte_Escolar_Bonilla
         {
             string errores = "";
             if ((agregar_rb.Checked == true || modiHorario_rb.Checked == true))
-                errores+=val.valFechas(llegadaHorario_dtp, horaSalida_dtp);
+                errores+=val.valHorarios(horaSalida_dtp, llegadaHorario_dtp);
 
             if (Horario_cmb.SelectedIndex == -1 && (modiHorario_rb.Checked == true || eliminarHorario_rb.Checked==true) )
                 errores += "*Seleccione un Horario a Modificar\n";

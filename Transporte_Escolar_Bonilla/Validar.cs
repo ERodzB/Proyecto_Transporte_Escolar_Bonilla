@@ -452,13 +452,31 @@ namespace Transporte_Escolar_Bonilla
 
             return resultado;
         }
-        public string valFechas(DateTimePicker dtp1, DateTimePicker dtp2)
+        public string valHorarios(DateTimePicker dtp1, DateTimePicker dtp2)
         {
             string resultado = "";
-            if (dtp1.Value.Hour == dtp2.Value.Hour)
+            if (dtp2.Value.Minute <= dtp1.Value.AddMinutes(19).Minute && dtp2.Value.Hour==dtp1.Value.Hour)
             {
-                resultado = "*Escoja Horarios Diferentes\n";
+                resultado = "*La ruta debe durar al menos 20 minutos\n";
             }
+            
+            if(dtp1.Value.Hour < dtp2.Value.Hour)
+            {
+                for (int x = 0; x > -1; x++)
+                {
+                    if (dtp1.Value.AddMinutes(x).Minute == dtp2.Value.Minute)
+                    {
+                        if (x <= 19)
+                            resultado = "*La ruta debe durar al menos 20 minutos\n";
+
+                        break;
+
+                    }
+
+                }
+            }
+                
+            
             return resultado;
         }
         public string regMatricula(string txtValidar)
@@ -472,7 +490,37 @@ namespace Transporte_Escolar_Bonilla
             return resultado;
         }
 
-        
-       
+        public string valFechasIguales(DateTimePicker dtp1, DateTimePicker dtp2)
+        {
+            string resultado = "";
+            if (dtp1.Value.Date == dtp2.Value.Date)
+            {
+                resultado = "*Escoja Fechas Distintas\n";
+            }
+            return resultado;
+        }
+        public string valIdORtn(string id)
+        {
+            string regId = @"^(([0-9][1-9]){1,2}(19\d{7})?(20[0-0][0-1]\d{5})?)$";
+            string regRTN = @"^(([0-9][1-9]){1,2}(19\d{8})?(20[0-0][0-1]\d{6})?)$";
+            string resultado = "";
+            if(id.Trim().Length<13)
+                resultado = "*Debe ingresar un Número de Identidad de 13 numeros\n";
+            else
+            {
+                if (!Regex.IsMatch(id, regId) && id.Trim().Length == 13)
+                    resultado = "*Debe Ingresar un ID valido o con fecha de nacimiento mayor a 18\n";
+                
+                else
+                {
+                    if (!Regex.IsMatch(id, regRTN) && id.Trim().Length == 14)
+                        resultado = "*Debe Ingresar un RTN valido o con fecha de nacimiento mayor a 18\n";
+                }
+            }
+            
+            
+
+            return resultado;
+        }
     }
 }
