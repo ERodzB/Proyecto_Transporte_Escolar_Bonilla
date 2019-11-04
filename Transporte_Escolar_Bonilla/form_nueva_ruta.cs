@@ -97,8 +97,8 @@ namespace Transporte_Escolar_Bonilla
 
             if(dtphorae1.Checked == false)
                 error += "*Escoja una Hora de Llegada\n";
-            
 
+            MessageBox.Show(dtphorae1.Value.AddMinutes(60).Hour.ToString());
             error += val.valHorarios(dtphoras1, dtphorae1);
 
             if (dtphoras1.Value.Hour < dtphorae1.Value.Hour)

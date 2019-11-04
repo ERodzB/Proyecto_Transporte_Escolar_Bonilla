@@ -32,7 +32,7 @@ namespace Transporte_Escolar_Bonilla
             Ingresar ingresar = new Ingresar();
             Validar validar = new Validar();
             int varlicencia=0;
-
+            string error = validar.valIdORtn(txtidentidad.Text);
 
             if (cmbPuesto.Text=="Conductor")
             {
@@ -56,9 +56,9 @@ namespace Transporte_Escolar_Bonilla
                 {
                     varlicencia = 1;
                 }
-
                 
-                if (txtcorreo.Text!="" && txtdireccion.Text.Trim().Length > 15 && txtidentidad.Text.Trim().Length == 13 && txtlicencia.Text.Trim().Length != 0 && txtnombre.Text.Trim().Length > 2
+
+                if (error=="" && txtcorreo.Text!="" && txtdireccion.Text.Trim().Length > 15 && txtidentidad.Text.Trim().Length == 13 && txtlicencia.Text.Trim().Length != 0 && txtnombre.Text.Trim().Length > 2
                     && txtsalario.Text.Trim().Length != 0 && double.Parse(txtsalario.Text) > 0 && txttelefono.Text.Trim().Length == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1 && RBPesada.Checked==true || RBLiviana.Checked==true
                     && dateTimePicker1.Value<System.DateTime.Today && dtpvencimiento.Value > System.DateTime.Today && 
                     System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
@@ -95,6 +95,12 @@ namespace Transporte_Escolar_Bonilla
                 if (txtidentidad.Text == "")
                 {
                     MessageBox.Show("La Identidad debe no puede quedar vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                if (error != "")
+                {
+                    MessageBox.Show(validar.valIdORtn(txtidentidad.Text), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                 if (txtidentidad.Text.Trim().Length != 13)
@@ -166,7 +172,7 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                if (txtcorreo.Text != "" && txtdireccion.Text.Trim().Length > 15 && txtidentidad.Text.Trim().Length == 13 && txtnombre.Text.Trim().Length > 2
+                if (error == "" && txtcorreo.Text != "" && txtdireccion.Text.Trim().Length > 15 && txtidentidad.Text.Trim().Length == 13 && txtnombre.Text.Trim().Length > 2
                    && txtsalario.Text.Trim().Length != 0 && double.Parse(txtsalario.Text) > 0 && txttelefono.Text.Trim().Length == 8 && cmbGenero.SelectedIndex != -1 && cmbPuesto.SelectedIndex != -1
                    && dateTimePicker1.Value<System.DateTime.Today &&
                    System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
@@ -193,9 +199,10 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("La Identidad debe no puede quedar vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                if (txtidentidad.Text.Trim().Length != 13)
+                if (error != "")
                 {
-                    MessageBox.Show("La Identidad debe no puede quedar vacio o ser menor a 13 numeros.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(validar.valIdORtn(txtidentidad.Text), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                     if (txtnombre.Text.Trim().Length <= 2)

@@ -464,12 +464,17 @@ namespace Transporte_Escolar_Bonilla
             {
                 for (int x = 0; x > -1; x++)
                 {
-                    if (dtp1.Value.AddMinutes(x).Minute == dtp2.Value.Minute)
+                    if (dtp1.Value.AddMinutes(x).Hour == dtp2.Value.Hour)
                     {
-                        if (x <= 19)
-                            resultado = "*La ruta debe durar al menos 20 minutos\n";
+                        if(dtp1.Value.AddMinutes(x).Minute == dtp2.Value.Minute)
+                        {
+                            if (x <= 19)
+                                resultado = "*La ruta debe durar al menos 20 minutos\n";
+                            break;
 
-                        break;
+
+                        }
+
 
                     }
 
@@ -482,7 +487,7 @@ namespace Transporte_Escolar_Bonilla
         public string regMatricula(string txtValidar)
         {
             string resultado = "";
-            string regex = @"^([a-zA-Z]{2}[0-9]{4}|[a-zA-Z]{3}[0-9]{3}|[a-zA-Z]{2}[0-9]{5})$";
+            string regex = @"^([a-zA-Z]{2}[0-9]{4}|[a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{2}[0-9]{5})$";
             if (!Regex.IsMatch(txtValidar, regex))
             {
                 resultado = "*Ingrese una Placa valida Ejemplo AB1234 o ABC1234 o AB12345\n";
