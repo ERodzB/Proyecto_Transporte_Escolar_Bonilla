@@ -223,9 +223,9 @@ namespace Transporte_Escolar_Bonilla
                 contc++;
             }
 
-            if (txtpa.Text.Trim().Length == 0 || int.Parse(txtpa.Text) <= 0)
+            if (txtpa.Text.Trim().Length == 0 || (int.Parse(txtpa.Text) <= 0 || int.Parse(txtpa.Text) > 59))
             {
-                errorc += "Ingrese un número de pasajeros mayor a 0\n";
+                errorc += "Ingrese un número de pasajeros entre 1 y 59\n";
                 contc++;
             }
 

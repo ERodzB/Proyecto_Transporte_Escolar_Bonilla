@@ -250,6 +250,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(520, 36);
             this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.Value = new System.DateTime(2001, 12, 31, 0, 0, 0, 0);
             // 
             // cmbGenero
             // 
