@@ -94,127 +94,127 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="asignacionunidades.cs">
+    <Compile Include="Forms\Vehiculos\asignacionunidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="asignacionunidades.Designer.cs">
+    <Compile Include="Forms\Vehiculos\asignacionunidades.Designer.cs">
       <DependentUpon>asignacionunidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="BitacoraModulos.cs">
+    <Compile Include="Forms\Extras\BitacoraModulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BitacoraModulos.Designer.cs">
+    <Compile Include="Forms\Extras\BitacoraModulos.Designer.cs">
       <DependentUpon>BitacoraModulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="clientes_frm.cs">
+    <Compile Include="Forms\Clientes\clientes_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="clientes_frm.Designer.cs">
+    <Compile Include="Forms\Clientes\clientes_frm.Designer.cs">
       <DependentUpon>clientes_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="conductores_frm.cs">
+    <Compile Include="Forms\Empleados\conductores_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="conductores_frm.Designer.cs">
+    <Compile Include="Forms\Empleados\conductores_frm.Designer.cs">
       <DependentUpon>conductores_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConexionBD.cs" />
-    <Compile Include="Consultar.cs" />
-    <Compile Include="consultartransporte.cs">
+    <Compile Include="Forms\Clases\Consultar.cs" />
+    <Compile Include="Forms\Vehiculos\consultartransporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consultartransporte.Designer.cs">
+    <Compile Include="Forms\Vehiculos\consultartransporte.Designer.cs">
       <DependentUpon>consultartransporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="consultarcontrato.cs">
+    <Compile Include="Forms\Contratos\consultarcontrato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consultarcontrato.Designer.cs">
+    <Compile Include="Forms\Contratos\consultarcontrato.Designer.cs">
       <DependentUpon>consultarcontrato.cs</DependentUpon>
     </Compile>
-    <Compile Include="consultar_clientes.cs">
+    <Compile Include="Forms\Clientes\consultar_clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consultar_clientes.Designer.cs">
+    <Compile Include="Forms\Clientes\consultar_clientes.Designer.cs">
       <DependentUpon>consultar_clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultar_empleados.cs">
+    <Compile Include="Forms\Empleados\Consultar_empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultar_empleados.Designer.cs">
+    <Compile Include="Forms\Empleados\Consultar_empleados.Designer.cs">
       <DependentUpon>Consultar_empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="consultar_rutas.cs">
+    <Compile Include="Forms\Empleados\consultar_rutas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consultar_rutas.Designer.cs">
+    <Compile Include="Forms\Empleados\consultar_rutas.Designer.cs">
       <DependentUpon>consultar_rutas.cs</DependentUpon>
     </Compile>
-    <Compile Include="consulta_usuarios.cs">
+    <Compile Include="Forms\Usuarios\consulta_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consulta_usuarios.Designer.cs">
+    <Compile Include="Forms\Usuarios\consulta_usuarios.Designer.cs">
       <DependentUpon>consulta_usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="contratos_frm.cs">
+    <Compile Include="Forms\Contratos\contratos_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="contratos_frm.Designer.cs">
+    <Compile Include="Forms\Contratos\contratos_frm.Designer.cs">
       <DependentUpon>contratos_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="crearPerfil_frm.cs">
+    <Compile Include="Forms\Usuarios\crearPerfil_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="crearPerfil_frm.Designer.cs">
+    <Compile Include="Forms\Usuarios\crearPerfil_frm.Designer.cs">
       <DependentUpon>crearPerfil_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="crearUsuario_frm.cs">
+    <Compile Include="Forms\Usuarios\crearUsuario_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="crearUsuario_frm.Designer.cs">
+    <Compile Include="Forms\Usuarios\crearUsuario_frm.Designer.cs">
       <DependentUpon>crearUsuario_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estetica.cs" />
+    <Compile Include="Forms\Clases\Estetica.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_asignar_ruta.cs">
+    <Compile Include="Forms\Rutas\form_asignar_ruta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_asignar_ruta.Designer.cs">
+    <Compile Include="Forms\Rutas\form_asignar_ruta.Designer.cs">
       <DependentUpon>form_asignar_ruta.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_mantenimientos.cs">
+    <Compile Include="Forms\Vehiculos\form_mantenimientos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_mantenimientos.Designer.cs">
+    <Compile Include="Forms\Vehiculos\form_mantenimientos.Designer.cs">
       <DependentUpon>form_mantenimientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_mantenimiento_unidad.cs">
+    <Compile Include="Forms\Vehiculos\form_mantenimiento_unidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_mantenimiento_unidad.Designer.cs">
+    <Compile Include="Forms\Vehiculos\form_mantenimiento_unidad.Designer.cs">
       <DependentUpon>form_mantenimiento_unidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Modificar_Cliente.cs">
+    <Compile Include="Forms\Clientes\Form_Modificar_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Modificar_Cliente.Designer.cs">
+    <Compile Include="Forms\Clientes\Form_Modificar_Cliente.Designer.cs">
       <DependentUpon>Form_Modificar_Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Modificar_Contrato.cs">
+    <Compile Include="Forms\Contratos\Form_Modificar_Contrato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Modificar_Contrato.Designer.cs">
+    <Compile Include="Forms\Contratos\Form_Modificar_Contrato.Designer.cs">
       <DependentUpon>Form_Modificar_Contrato.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_nueva_ruta.cs">
+    <Compile Include="Forms\Rutas\form_nueva_ruta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_nueva_ruta.Designer.cs">
+    <Compile Include="Forms\Rutas\form_nueva_ruta.Designer.cs">
       <DependentUpon>form_nueva_ruta.cs</DependentUpon>
     </Compile>
     <Compile Include="form_nueva_unidad.cs">
@@ -223,23 +223,29 @@
     <Compile Include="form_nueva_unidad.Designer.cs">
       <DependentUpon>form_nueva_unidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_nuevo_cliente.cs">
+    <Compile Include="Forms\Clientes\form_nuevo_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_nuevo_cliente.Designer.cs">
+    <Compile Include="Forms\Clientes\form_nuevo_cliente.Designer.cs">
       <DependentUpon>form_nuevo_cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_nuevo_clienteP.cs">
+    <Compile Include="Forms\Clientes\form_nuevo_clienteP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_nuevo_clienteP.designer.cs">
+    <Compile Include="Forms\Clientes\form_nuevo_clienteP.designer.cs">
       <DependentUpon>form_nuevo_clienteP.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_nuevo_clienteT.cs">
+    <Compile Include="Forms\Clientes\form_nuevo_clienteT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_nuevo_clienteT.Designer.cs">
+    <Compile Include="Forms\Clientes\form_nuevo_clienteT.Designer.cs">
       <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Extras\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Extras\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNuevaPlaca.cs">
       <SubType>Form</SubType>
@@ -247,30 +253,30 @@
     <Compile Include="frmNuevaPlaca.Designer.cs">
       <DependentUpon>frmNuevaPlaca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generar_Contrato.cs">
+    <Compile Include="Forms\Contratos\Generar_Contrato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Generar_Contrato.Designer.cs">
+    <Compile Include="Forms\Contratos\Generar_Contrato.Designer.cs">
       <DependentUpon>Generar_Contrato.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ingresar.cs" />
-    <Compile Include="Modficar_Empleado.cs">
+    <Compile Include="Forms\Clases\Ingresar.cs" />
+    <Compile Include="Forms\Empleados\Modficar_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modficar_Empleado.Designer.cs">
+    <Compile Include="Forms\Empleados\Modficar_Empleado.Designer.cs">
       <DependentUpon>Modficar_Empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Modificar.cs" />
-    <Compile Include="modificarPerfiles_frm.cs">
+    <Compile Include="Forms\Usuarios\modificarPerfiles_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modificarPerfiles_frm.Designer.cs">
+    <Compile Include="Forms\Usuarios\modificarPerfiles_frm.Designer.cs">
       <DependentUpon>modificarPerfiles_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="modificarRutas_frm.cs">
+    <Compile Include="Forms\Rutas\modificarRutas_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modificarRutas_frm.Designer.cs">
+    <Compile Include="Forms\Rutas\modificarRutas_frm.Designer.cs">
       <DependentUpon>modificarRutas_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="modificarUsuario_frm.cs">
@@ -279,16 +285,16 @@
     <Compile Include="modificarUsuario_frm.Designer.cs">
       <DependentUpon>modificarUsuario_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modificar_Datos_Contrato.cs">
+    <Compile Include="Forms\Contratos\Modificar_Datos_Contrato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modificar_Datos_Contrato.Designer.cs">
+    <Compile Include="Forms\Contratos\Modificar_Datos_Contrato.Designer.cs">
       <DependentUpon>Modificar_Datos_Contrato.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modificar_UnidadFrm.cs">
+    <Compile Include="Forms\Vehiculos\Modificar_UnidadFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modificar_UnidadFrm.Designer.cs">
+    <Compile Include="Forms\Vehiculos\Modificar_UnidadFrm.Designer.cs">
       <DependentUpon>Modificar_UnidadFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNotificaciones.cs">
@@ -297,36 +303,36 @@
     <Compile Include="frmNotificaciones.Designer.cs">
       <DependentUpon>frmNotificaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="nuevocontrato.cs">
+    <Compile Include="Forms\Contratos\nuevocontrato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nuevocontrato.Designer.cs">
+    <Compile Include="Forms\Contratos\nuevocontrato.Designer.cs">
       <DependentUpon>nuevocontrato.cs</DependentUpon>
     </Compile>
-    <Compile Include="nuevoempleado.cs">
+    <Compile Include="Forms\Empleados\nuevoempleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nuevoempleado.Designer.cs">
+    <Compile Include="Forms\Empleados\nuevoempleado.Designer.cs">
       <DependentUpon>nuevoempleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="nuevoviaje.cs">
+    <Compile Include="Forms\Contratos\nuevoviaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nuevoviaje.Designer.cs">
+    <Compile Include="Forms\Contratos\nuevoviaje.Designer.cs">
       <DependentUpon>nuevoviaje.cs</DependentUpon>
     </Compile>
-    <Compile Include="pagos_frm.cs">
+    <Compile Include="Forms\Contratos\pagos_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pagos_frm.Designer.cs">
+    <Compile Include="Forms\Contratos\pagos_frm.Designer.cs">
       <DependentUpon>pagos_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rutas_frm.cs">
+    <Compile Include="Forms\Rutas\rutas_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rutas_frm.Designer.cs">
+    <Compile Include="Forms\Rutas\rutas_frm.Designer.cs">
       <DependentUpon>rutas_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="unidades_frm.cs">
@@ -335,122 +341,125 @@
     <Compile Include="unidades_frm.Designer.cs">
       <DependentUpon>unidades_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="usuariosf_Frm.cs">
+    <Compile Include="Forms\Usuarios\usuariosf_Frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="usuariosf_Frm.Designer.cs">
+    <Compile Include="Forms\Usuarios\usuariosf_Frm.Designer.cs">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Validar.cs" />
-    <EmbeddedResource Include="asignacionunidades.resx">
+    <EmbeddedResource Include="Forms\Vehiculos\asignacionunidades.resx">
       <DependentUpon>asignacionunidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BitacoraModulos.resx">
+    <EmbeddedResource Include="Forms\Extras\BitacoraModulos.resx">
       <DependentUpon>BitacoraModulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="clientes_frm.resx">
+    <EmbeddedResource Include="Forms\Clientes\clientes_frm.resx">
       <DependentUpon>clientes_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="conductores_frm.resx">
+    <EmbeddedResource Include="Forms\Empleados\conductores_frm.resx">
       <DependentUpon>conductores_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultartransporte.resx">
+    <EmbeddedResource Include="Forms\Vehiculos\consultartransporte.resx">
       <DependentUpon>consultartransporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultarcontrato.resx">
+    <EmbeddedResource Include="Forms\Contratos\consultarcontrato.resx">
       <DependentUpon>consultarcontrato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultar_clientes.resx">
+    <EmbeddedResource Include="Forms\Clientes\consultar_clientes.resx">
       <DependentUpon>consultar_clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultar_empleados.resx">
+    <EmbeddedResource Include="Forms\Empleados\Consultar_empleados.resx">
       <DependentUpon>Consultar_empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultar_rutas.resx">
+    <EmbeddedResource Include="Forms\Empleados\consultar_rutas.resx">
       <DependentUpon>consultar_rutas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consulta_usuarios.resx">
+    <EmbeddedResource Include="Forms\Usuarios\consulta_usuarios.resx">
       <DependentUpon>consulta_usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="contratos_frm.resx">
+    <EmbeddedResource Include="Forms\Contratos\contratos_frm.resx">
       <DependentUpon>contratos_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="crearPerfil_frm.resx">
+    <EmbeddedResource Include="Forms\Usuarios\crearPerfil_frm.resx">
       <DependentUpon>crearPerfil_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="crearUsuario_frm.resx">
+    <EmbeddedResource Include="Forms\Usuarios\crearUsuario_frm.resx">
       <DependentUpon>crearUsuario_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_asignar_ruta.resx">
+    <EmbeddedResource Include="Forms\Rutas\form_asignar_ruta.resx">
       <DependentUpon>form_asignar_ruta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_mantenimientos.resx">
+    <EmbeddedResource Include="Forms\Vehiculos\form_mantenimientos.resx">
       <DependentUpon>form_mantenimientos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_mantenimiento_unidad.resx">
+    <EmbeddedResource Include="Forms\Vehiculos\form_mantenimiento_unidad.resx">
       <DependentUpon>form_mantenimiento_unidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Modificar_Cliente.resx">
+    <EmbeddedResource Include="Forms\Clientes\Form_Modificar_Cliente.resx">
       <DependentUpon>Form_Modificar_Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Modificar_Contrato.resx">
+    <EmbeddedResource Include="Forms\Contratos\Form_Modificar_Contrato.resx">
       <DependentUpon>Form_Modificar_Contrato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_nueva_ruta.resx">
+    <EmbeddedResource Include="Forms\Rutas\form_nueva_ruta.resx">
       <DependentUpon>form_nueva_ruta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_nueva_unidad.resx">
       <DependentUpon>form_nueva_unidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_nuevo_cliente.resx">
+    <EmbeddedResource Include="Forms\Clientes\form_nuevo_cliente.resx">
       <DependentUpon>form_nuevo_cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_nuevo_clienteP.resx">
+    <EmbeddedResource Include="Forms\Clientes\form_nuevo_clienteP.resx">
       <DependentUpon>form_nuevo_clienteP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_nuevo_clienteT.resx">
+    <EmbeddedResource Include="Forms\Clientes\form_nuevo_clienteT.resx">
       <DependentUpon>form_nuevo_clienteT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Extras\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevaPlaca.resx">
       <DependentUpon>frmNuevaPlaca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generar_Contrato.resx">
+    <EmbeddedResource Include="Forms\Contratos\Generar_Contrato.resx">
       <DependentUpon>Generar_Contrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNotificaciones.resx">
       <DependentUpon>frmNotificaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modficar_Empleado.resx">
+    <EmbeddedResource Include="Forms\Empleados\Modficar_Empleado.resx">
       <DependentUpon>Modficar_Empleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modificarPerfiles_frm.resx">
+    <EmbeddedResource Include="Forms\Usuarios\modificarPerfiles_frm.resx">
       <DependentUpon>modificarPerfiles_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modificarRutas_frm.resx">
+    <EmbeddedResource Include="Forms\Rutas\modificarRutas_frm.resx">
       <DependentUpon>modificarRutas_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarUsuario_frm.resx">
       <DependentUpon>modificarUsuario_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modificar_Datos_Contrato.resx">
+    <EmbeddedResource Include="Forms\Contratos\Modificar_Datos_Contrato.resx">
       <DependentUpon>Modificar_Datos_Contrato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modificar_UnidadFrm.resx">
+    <EmbeddedResource Include="Forms\Vehiculos\Modificar_UnidadFrm.resx">
       <DependentUpon>Modificar_UnidadFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nuevocontrato.resx">
+    <EmbeddedResource Include="Forms\Contratos\nuevocontrato.resx">
       <DependentUpon>nuevocontrato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nuevoempleado.resx">
+    <EmbeddedResource Include="Forms\Empleados\nuevoempleado.resx">
       <DependentUpon>nuevoempleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nuevoviaje.resx">
+    <EmbeddedResource Include="Forms\Contratos\nuevoviaje.resx">
       <DependentUpon>nuevoviaje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pagos_frm.resx">
+    <EmbeddedResource Include="Forms\Contratos\pagos_frm.resx">
       <DependentUpon>pagos_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -463,13 +472,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="rutas_frm.resx">
+    <EmbeddedResource Include="Forms\Rutas\rutas_frm.resx">
       <DependentUpon>rutas_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="unidades_frm.resx">
       <DependentUpon>unidades_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="usuariosf_Frm.resx">
+    <EmbeddedResource Include="Forms\Usuarios\usuariosf_Frm.resx">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -574,6 +583,7 @@
     <Content Include="logoteb_I8K_icon.ico" />
     <Content Include="logo_Lv1_icon.ico" />
     <Content Include="logo_ZdI_icon.ico" />
+    <None Include="Resources\printing-tool.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

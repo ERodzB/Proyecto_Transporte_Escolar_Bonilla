@@ -203,6 +203,16 @@ namespace Transporte_Escolar_Bonilla.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printing_tool {
+            get {
+                object obj = ResourceManager.GetObject("printing-tool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap remove_symbol {
             get {
                 object obj = ResourceManager.GetObject("remove-symbol", resourceCulture);

@@ -174,7 +174,10 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("El usuario o correo introducido son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public async void  enviarCorreo()
+        {
 
+        }
         private void Contra_tb_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
@@ -243,6 +246,8 @@ namespace Transporte_Escolar_Bonilla
                     e.Cancel = true;
             }
         }
+
+    
 
         private void BtnBitacora_Click(object sender, EventArgs e)
         {
