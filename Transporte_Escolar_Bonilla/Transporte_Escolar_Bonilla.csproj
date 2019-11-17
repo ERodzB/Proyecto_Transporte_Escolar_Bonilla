@@ -66,7 +66,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo_Lv1_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\logo_Lv1_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -118,7 +118,7 @@
     <Compile Include="Forms\Empleados\conductores_frm.Designer.cs">
       <DependentUpon>conductores_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConexionBD.cs" />
+    <Compile Include="Forms\Clases\ConexionBD.cs" />
     <Compile Include="Forms\Clases\Consultar.cs" />
     <Compile Include="Forms\Vehiculos\consultartransporte.cs">
       <SubType>Form</SubType>
@@ -175,11 +175,11 @@
       <DependentUpon>crearUsuario_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Clases\Estetica.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Rutas\form_asignar_ruta.cs">
       <SubType>Form</SubType>
@@ -217,10 +217,10 @@
     <Compile Include="Forms\Rutas\form_nueva_ruta.Designer.cs">
       <DependentUpon>form_nueva_ruta.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_nueva_unidad.cs">
+    <Compile Include="Forms\Vehiculos\form_nueva_unidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_nueva_unidad.Designer.cs">
+    <Compile Include="Forms\Vehiculos\form_nueva_unidad.Designer.cs">
       <DependentUpon>form_nueva_unidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Clientes\form_nuevo_cliente.cs">
@@ -266,7 +266,7 @@
     <Compile Include="Forms\Empleados\Modficar_Empleado.Designer.cs">
       <DependentUpon>Modficar_Empleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modificar.cs" />
+    <Compile Include="Forms\Clases\Modificar.cs" />
     <Compile Include="Forms\Usuarios\modificarPerfiles_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,10 +279,10 @@
     <Compile Include="Forms\Rutas\modificarRutas_frm.Designer.cs">
       <DependentUpon>modificarRutas_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="modificarUsuario_frm.cs">
+    <Compile Include="Forms\Usuarios\modificarUsuario_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modificarUsuario_frm.Designer.cs">
+    <Compile Include="Forms\Usuarios\modificarUsuario_frm.Designer.cs">
       <DependentUpon>modificarUsuario_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Contratos\Modificar_Datos_Contrato.cs">
@@ -297,10 +297,10 @@
     <Compile Include="Forms\Vehiculos\Modificar_UnidadFrm.Designer.cs">
       <DependentUpon>Modificar_UnidadFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNotificaciones.cs">
+    <Compile Include="Forms\Extras\frmNotificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNotificaciones.Designer.cs">
+    <Compile Include="Forms\Extras\frmNotificaciones.Designer.cs">
       <DependentUpon>frmNotificaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Contratos\nuevocontrato.cs">
@@ -335,10 +335,10 @@
     <Compile Include="Forms\Rutas\rutas_frm.Designer.cs">
       <DependentUpon>rutas_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="unidades_frm.cs">
+    <Compile Include="Forms\Vehiculos\unidades_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="unidades_frm.Designer.cs">
+    <Compile Include="Forms\Vehiculos\unidades_frm.Designer.cs">
       <DependentUpon>unidades_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Usuarios\usuariosf_Frm.cs">
@@ -347,7 +347,7 @@
     <Compile Include="Forms\Usuarios\usuariosf_Frm.Designer.cs">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validar.cs" />
+    <Compile Include="Forms\Clases\Validar.cs" />
     <EmbeddedResource Include="Forms\Vehiculos\asignacionunidades.resx">
       <DependentUpon>asignacionunidades.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,8 +387,8 @@
     <EmbeddedResource Include="Forms\Usuarios\crearUsuario_frm.resx">
       <DependentUpon>crearUsuario_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Rutas\form_asignar_ruta.resx">
       <DependentUpon>form_asignar_ruta.cs</DependentUpon>
@@ -408,7 +408,7 @@
     <EmbeddedResource Include="Forms\Rutas\form_nueva_ruta.resx">
       <DependentUpon>form_nueva_ruta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_nueva_unidad.resx">
+    <EmbeddedResource Include="Forms\Vehiculos\form_nueva_unidad.resx">
       <DependentUpon>form_nueva_unidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Clientes\form_nuevo_cliente.resx">
@@ -429,7 +429,7 @@
     <EmbeddedResource Include="Forms\Contratos\Generar_Contrato.resx">
       <DependentUpon>Generar_Contrato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNotificaciones.resx">
+    <EmbeddedResource Include="Forms\Extras\frmNotificaciones.resx">
       <DependentUpon>frmNotificaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Empleados\Modficar_Empleado.resx">
@@ -441,7 +441,7 @@
     <EmbeddedResource Include="Forms\Rutas\modificarRutas_frm.resx">
       <DependentUpon>modificarRutas_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modificarUsuario_frm.resx">
+    <EmbeddedResource Include="Forms\Usuarios\modificarUsuario_frm.resx">
       <DependentUpon>modificarUsuario_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Contratos\Modificar_Datos_Contrato.resx">
@@ -475,7 +475,7 @@
     <EmbeddedResource Include="Forms\Rutas\rutas_frm.resx">
       <DependentUpon>rutas_frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="unidades_frm.resx">
+    <EmbeddedResource Include="Forms\Vehiculos\unidades_frm.resx">
       <DependentUpon>unidades_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\usuariosf_Frm.resx">
@@ -580,9 +580,9 @@
       <DependentUpon>Transporte_Bonilla.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="logoteb_I8K_icon.ico" />
-    <Content Include="logo_Lv1_icon.ico" />
-    <Content Include="logo_ZdI_icon.ico" />
+    <Content Include="Resources\logoteb_I8K_icon.ico" />
+    <Content Include="Resources\logo_Lv1_icon.ico" />
+    <Content Include="Resources\logo_ZdI_icon.ico" />
     <None Include="Resources\printing-tool.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
