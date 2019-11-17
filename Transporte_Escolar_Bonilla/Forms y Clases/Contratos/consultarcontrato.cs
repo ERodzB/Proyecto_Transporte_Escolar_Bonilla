@@ -6,6 +6,7 @@ namespace Transporte_Escolar_Bonilla
     public partial class consultarcontrato : Form
     {
         Consultar con = new Consultar();
+        Estetica est = new Estetica();
         public consultarcontrato()
         {
             InitializeComponent();
@@ -62,6 +63,23 @@ namespace Transporte_Escolar_Bonilla
         {
             if (CMBFiltro.SelectedIndex != -1)
                 btnFiltrar.Enabled = true;
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (CMBFiltro.SelectedIndex == -1 || CBFiltrox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un filtro");
+            }
+            else if (dgvConsultaU.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay informacion disponible para impresion ");
+
+            }
+            else
+            {
+                est.imprimirTabla(dgvConsultaU, "Información de contratos " + CMBFiltro.Text+" "+ CBFiltrox);
+            }
         }
     }
 }

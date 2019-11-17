@@ -5,6 +5,7 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Consultar_empleados : Form
     {
+        Estetica est = new Estetica();
         Consultar con = new Consultar();
         public Consultar_empleados()
         {
@@ -25,6 +26,23 @@ namespace Transporte_Escolar_Bonilla
             con.filtrarempleado(dgvConsultaU, int.Parse(cmbpuesto.SelectedValue.ToString()));
             cmbpuesto.SelectedIndex = int.Parse(cmbpuesto.SelectedValue.ToString()) - 1;
             cmbpuesto.Focus();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (cmbpuesto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un filtro");
+            }
+            else if (dgvConsultaU.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay informacion disponible para impresion ");
+
+            }
+            else
+            {
+                est.imprimirTabla(dgvConsultaU, "Información de Empleados en el " + cmbpuesto.Text);
+            }
         }
     }
 }

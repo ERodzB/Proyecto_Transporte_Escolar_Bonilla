@@ -6,6 +6,7 @@ namespace Transporte_Escolar_Bonilla
     public partial class consulta_usuarios : Form
     {
         Consultar con = new Consultar();
+        Estetica est = new Estetica();
         public consulta_usuarios()
         {
             InitializeComponent();
@@ -49,6 +50,23 @@ namespace Transporte_Escolar_Bonilla
         private void DgvConsultaU_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (cbConsulta.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un filtro");
+            }
+            else if (dgvConsultaU.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay informacion disponible para impresion ");
+
+            }
+            else
+            {
+                est.imprimirTabla(dgvConsultaU, "Información de  " + cbConsulta.Text);
+            }
         }
     }
 }

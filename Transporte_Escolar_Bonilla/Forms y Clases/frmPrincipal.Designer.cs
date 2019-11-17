@@ -199,7 +199,6 @@
             // 
             // center_panel
             // 
-            this.center_panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.center_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
             this.center_panel.Controls.Add(this.enviar_linklbl);
             this.center_panel.Controls.Add(this.regresar_linklbl);
@@ -211,12 +210,12 @@
             this.center_panel.Controls.Add(this.ingresarLogin_btn);
             this.center_panel.Controls.Add(this.userLogin_tb);
             this.center_panel.Controls.Add(this.userLogin_lbl);
-            this.center_panel.Location = new System.Drawing.Point(312, 34);
+            this.center_panel.Location = new System.Drawing.Point(316, 36);
             this.center_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.center_panel.MaximumSize = new System.Drawing.Size(1420, 798);
             this.center_panel.Name = "center_panel";
-            this.center_panel.Size = new System.Drawing.Size(1108, 798);
-            this.center_panel.TabIndex = 3;
+            this.center_panel.Size = new System.Drawing.Size(1106, 795);
+            this.center_panel.TabIndex = 999;
             this.center_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Center_panel_Paint);
             // 
             // enviar_linklbl
@@ -515,8 +514,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(80)))), ((int)(((byte)(144)))));
             this.ClientSize = new System.Drawing.Size(1420, 831);
-            this.Controls.Add(this.left_panel);
             this.Controls.Add(this.center_panel);
+            this.Controls.Add(this.left_panel);
             this.Controls.Add(this.top_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

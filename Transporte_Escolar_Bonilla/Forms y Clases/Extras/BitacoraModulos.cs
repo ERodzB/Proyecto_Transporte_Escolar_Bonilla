@@ -40,13 +40,18 @@ namespace Transporte_Escolar_Bonilla
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (dgvConsultaU.SelectedRows.Count == 0 && cmbfiltro.SelectedIndex == -1 && dgvConsultaU.Columns.Count <= 0)
+            if (cmbfiltro.SelectedIndex == -1)
             {
-                MessageBox.Show("Consulte Una opcion para imprimir");
+                MessageBox.Show("Seleccione un filtro");
+            }
+            else if(dgvConsultaU.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay informacion disponible para impresion ");
+
             }
             else
             {
-                est.imprimirTabla(dgvConsultaU);
+                est.imprimirTabla(dgvConsultaU, "Información de "+ cmbfiltro.Text);
             }
         }
     }

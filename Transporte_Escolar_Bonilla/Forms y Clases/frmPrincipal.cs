@@ -10,14 +10,9 @@ namespace Transporte_Escolar_Bonilla
     {
 
 
-        int usuario_key_press = 0;
-
-        int contrasena_key_press = 0;
-
         static public string nomusu = "";
 
         Estetica Estetics = new Estetica();//Clase que manejara lo estetico de el proyecto
-        Consultar consulto = new Consultar();
         public Principal_frm()
         {
             InitializeComponent();
@@ -218,6 +213,7 @@ namespace Transporte_Escolar_Bonilla
             if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
+                
             }
             else
             {

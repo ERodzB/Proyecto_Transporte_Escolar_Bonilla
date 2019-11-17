@@ -5,6 +5,7 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class consultartransporte : Form
     {
+        Estetica est = new Estetica();
         Consultar con = new Consultar();
         public consultartransporte()
         {
@@ -97,6 +98,23 @@ namespace Transporte_Escolar_Bonilla
         {
             if (CMBFiltro.SelectedIndex != -1)
                 btnFiltrar.Enabled = true;
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (CBFiltrox.SelectedIndex == -1 || CMBFiltro.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione ambos filtro");
+            }
+            else if (dgvConsultaU.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay informacion disponible para impresion ");
+
+            }
+            else
+            {
+                est.imprimirTabla(dgvConsultaU, "Información de " + CBFiltrox.Text+" "+ CMBFiltro);
+            }
         }
     }
 }

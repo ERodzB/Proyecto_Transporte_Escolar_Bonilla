@@ -139,12 +139,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Vehiculo", cod);
                 desc.Text = (string)cmd.ExecuteScalar();
-                //table = new DataTable();
-                //Adapter = new SqlDataAdapter("DescVehiculos", conexionBD);
-                //Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                //Adapter.SelectCommand.Parameters.AddWithValue("@Codigo_Vehiculo", cod);
-                //Adapter.Fill(table);
-                //desc.Text = table.Rows[0][0].ToString();  
+                 
             }
             catch (Exception ex)
             {

@@ -5,6 +5,7 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class consultar_rutas : Form
     {
+        Estetica est = new Estetica();
         Consultar con = new Consultar();
         public consultar_rutas()
         {
@@ -32,6 +33,23 @@ namespace Transporte_Escolar_Bonilla
                     con.consultarutas(dgvConsultaU, "Rutas Viajes Privados");
                 }
 
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (cbConsulta.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un filtro");
+            }
+            else if (dgvConsultaU.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay informacion disponible para impresion ");
+
+            }
+            else
+            {
+                est.imprimirTabla(dgvConsultaU, "Información de " + cbConsulta.Text);
             }
         }
     }

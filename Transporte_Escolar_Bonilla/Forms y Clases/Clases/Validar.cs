@@ -9,9 +9,6 @@ namespace Transporte_Escolar_Bonilla
     public class Validar : ConexionBD
     {
         private SqlCommand cmd;
-#pragma warning disable CS0169 // The field 'Validar.Reader' is never used
-        private SqlDataReader Reader;
-#pragma warning restore CS0169 // The field 'Validar.Reader' is never used
         int x = 0;
         public int igual = 0; //Para validar horarios duplicados de un vehiculo
 
