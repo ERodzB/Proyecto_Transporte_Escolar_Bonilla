@@ -113,7 +113,7 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                est.imprimirTabla(dgvConsultaU, "Información de " + CBFiltrox.Text+" "+ CMBFiltro);
+                est.imprimirTabla(dgvConsultaU, "Información de " + CBFiltrox.Text+" "+ CMBFiltro.Text);
             }
         }
     }
