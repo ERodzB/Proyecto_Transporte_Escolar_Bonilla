@@ -8,20 +8,11 @@ namespace Transporte_Escolar_Bonilla
 {
     public partial class Principal_frm : Form
     {
-#pragma warning disable CS0414 // The field 'Principal_frm.x' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'Principal_frm.y' is assigned but its value is never used
-        int x = 0, y = 0;
-#pragma warning restore CS0414 // The field 'Principal_frm.y' is assigned but its value is never used
-#pragma warning restore CS0414 // The field 'Principal_frm.x' is assigned but its value is never used
-#pragma warning disable CS0169 // The field 'Principal_frm.mousedown' is never used
-        bool mousedown;
-#pragma warning restore CS0169 // The field 'Principal_frm.mousedown' is never used
-#pragma warning disable CS0414 // The field 'Principal_frm.usuario_key_press' is assigned but its value is never used
+
+
         int usuario_key_press = 0;
-#pragma warning restore CS0414 // The field 'Principal_frm.usuario_key_press' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'Principal_frm.contrasena_key_press' is assigned but its value is never used
+
         int contrasena_key_press = 0;
-#pragma warning restore CS0414 // The field 'Principal_frm.contrasena_key_press' is assigned but its value is never used
 
         static public string nomusu = "";
 
