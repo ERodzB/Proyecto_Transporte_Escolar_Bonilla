@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -31,12 +26,12 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Llenar Combobox de Contratos
-        public DataTable Combobox_Contrato()  
+        public DataTable Combobox_Contrato()
         {
             table = new DataTable();
             Adapter = new SqlDataAdapter("ComboboxContratos", conexionBD);
             Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            Adapter.Fill(table); 
+            Adapter.Fill(table);
             return table;
         }
 
@@ -47,7 +42,7 @@ namespace Transporte_Escolar_Bonilla
             Adapter = new SqlDataAdapter("ComboboxTipoContrato", conexionBD);
             Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             Adapter.Fill(table);
-            return table; 
+            return table;
         }
         public DataTable Combobox_TipoEvento()
         {
@@ -143,7 +138,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd = new SqlCommand("DescVehiculos", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Vehiculo", cod);
-                desc.Text = (string)cmd.ExecuteScalar(); 
+                desc.Text = (string)cmd.ExecuteScalar();
                 //table = new DataTable();
                 //Adapter = new SqlDataAdapter("DescVehiculos", conexionBD);
                 //Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -151,7 +146,7 @@ namespace Transporte_Escolar_Bonilla
                 //Adapter.Fill(table);
                 //desc.Text = table.Rows[0][0].ToString();  
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
@@ -206,7 +201,7 @@ namespace Transporte_Escolar_Bonilla
             Adapter = new SqlDataAdapter("ComboboxTipoVeh", conexionBD);
             Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             Adapter.Fill(table);
-            return table; 
+            return table;
         }
 
         //Llenar Combobox Tipo de Transmision
@@ -284,7 +279,7 @@ namespace Transporte_Escolar_Bonilla
                 nom.Text = table.Rows[0][0].ToString();
                 desc.Text = table.Rows[0][1].ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Codigo que recibe: " + cod + "\n\nERROR: " + ex);
             }
@@ -309,16 +304,16 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.Fill(table);
                 Nombre_Usuario.Text = table.Rows[0][0].ToString();
                 Contrasena_Usuario.Text = table.Rows[0][1].ToString();
-                Perfil_cmb.SelectedIndex = (int)table.Rows[0][2]-1;
+                Perfil_cmb.SelectedIndex = (int)table.Rows[0][2] - 1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex);
             }
-            
+
         }
-        public void BuscarEmpleado(String Codigo_Empleado, TextBox Nombre, ComboBox Genero, TextBox telefono,TextBox Correo, TextBox direccion
-            ,TextBox salario, ComboBox puesto,TextBox licencia, DateTimePicker fecha)
+        public void BuscarEmpleado(String Codigo_Empleado, TextBox Nombre, ComboBox Genero, TextBox telefono, TextBox Correo, TextBox direccion
+            , TextBox salario, ComboBox puesto, TextBox licencia, DateTimePicker fecha)
         {
             try
             {
@@ -329,7 +324,7 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.SelectCommand.Parameters.AddWithValue("@Codigo_Empleado", Codigo_Empleado);
                 Adapter.Fill(table);
                 Nombre.Text = table.Rows[0][0].ToString();
-                Genero.SelectedIndex = int.Parse(table.Rows[0][1].ToString())-1;
+                Genero.SelectedIndex = int.Parse(table.Rows[0][1].ToString()) - 1;
                 telefono.Text = table.Rows[0][2].ToString();
                 Correo.Text = table.Rows[0][3].ToString();
                 direccion.Text = table.Rows[0][4].ToString();
@@ -337,7 +332,7 @@ namespace Transporte_Escolar_Bonilla
                 salario.Text = table.Rows[0][6].ToString();
                 licencia.Text = table.Rows[0][7].ToString();
                 fecha.Text = table.Rows[0][8].ToString();
-                lic =int.Parse( table.Rows[0][9].ToString());
+                lic = int.Parse(table.Rows[0][9].ToString());
             }
             catch (Exception ex)
             {
@@ -355,12 +350,12 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 Adapter.SelectCommand.Parameters.AddWithValue("Codigo_Perfil", Codigo_Perfil);
                 Adapter.Fill(table);
-                
+
                 Nivel_Acceso.SelectedIndex = Convert.ToInt32(table.Rows[0][0].ToString()) - 1;
                 Nombre_Perfil.Text = table.Rows[0][1].ToString();
                 Descripcion_Perfil.Text = table.Rows[0][2].ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
@@ -522,7 +517,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void filtrarcontrato(DataGridView dgvConsulta, string tipo,string filtro)
+        public void filtrarcontrato(DataGridView dgvConsulta, string tipo, string filtro)
         {
             try
             {
@@ -541,7 +536,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
-        public void filtrarempleado(DataGridView dgvConsulta,int filtro)
+        public void filtrarempleado(DataGridView dgvConsulta, int filtro)
         {
             try
             {
@@ -609,7 +604,7 @@ namespace Transporte_Escolar_Bonilla
                 Adapter.Fill(table);
                 dgvCliente.DataSource = table;
 
-                if(refresh == false)
+                if (refresh == false)
                     MessageBox.Show("Carga de Datos Finalizada", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             catch (Exception ex)
@@ -655,11 +650,11 @@ namespace Transporte_Escolar_Bonilla
         {
             table = new DataTable();
             Adapter = new SqlDataAdapter("ComboboxEstados", conexionBD);
-            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;            
+            Adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             Adapter.Fill(table);
             return table;
         }
-        
+
         public void CargarInicioFinRuta(string Codigo_Ruta, TextBox Inicio_tb, TextBox Fin_tb)
         {
             try
@@ -696,9 +691,9 @@ namespace Transporte_Escolar_Bonilla
                 cmd = new SqlCommand("TotalRecibosContratos", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Contrato", Codigo_Contrato);
-                nc = (int)cmd.ExecuteScalar()+1;
+                nc = (int)cmd.ExecuteScalar() + 1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error :" + ex);
             }

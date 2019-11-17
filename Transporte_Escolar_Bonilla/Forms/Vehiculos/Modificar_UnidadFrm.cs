@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -17,7 +10,7 @@ namespace Transporte_Escolar_Bonilla
         Modificar mod = new Modificar();
         Validar val = new Validar();
         string color = "1";
-        int cmbValue=999;
+        int cmbValue = 999;
         string dtp1 = "1";
         string dtp2 = "1";
         public Modificar_UnidadFrm()
@@ -25,11 +18,11 @@ namespace Transporte_Escolar_Bonilla
             InitializeComponent();
 
             txtPlaca.ShortcutsEnabled = false;
-            txtColor.ShortcutsEnabled = false;  
+            txtColor.ShortcutsEnabled = false;
             dtpEmision.MinDate = new DateTime(2015, 01, 01);
             dtpEmision.MaxDate = new DateTime(Convert.ToInt32(DateTime.Now.Year), Convert.ToInt32(DateTime.Now.Month), Convert.ToInt32(DateTime.Now.Day));
             dtpVencimiento.MinDate = new DateTime(2019, 01, 01);
-            
+
         }
         private void BtnModificar_Click(object sender, EventArgs e)
         {
@@ -39,11 +32,11 @@ namespace Transporte_Escolar_Bonilla
             errores += val.valCmbVacio(cmbEstadoVehiculo.SelectedIndex, "Estado de Vehiculo");
             errores += val.valFechasIguales(dtpEmision, dtpVencimiento);
 
-            if(txtColor.Text == color && cmbEstadoVehiculo.SelectedIndex == cmbValue && dtpEmision.Value.ToString() == dtp1 && dtpVencimiento.Value.ToString() == dtp2)
+            if (txtColor.Text == color && cmbEstadoVehiculo.SelectedIndex == cmbValue && dtpEmision.Value.ToString() == dtp1 && dtpVencimiento.Value.ToString() == dtp2)
             {
                 errores += "*No se ha realizado ningun cambio\n";
             }
-            
+
             if (errores != "")
             {
                 MessageBox.Show("Debe llenar correctamente los datos\n" + errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -64,12 +57,12 @@ namespace Transporte_Escolar_Bonilla
                     dtpVencimiento.Enabled = false;
                 }
             }
-                
-         }
+
+        }
         private void Modificar_UnidadFrm_Load(object sender, EventArgs e)
         {
             con.CargadgvModVehiculos(dgvVehiculos);
-            cmbEstadoVehiculo.DataSource = con.combox_mod_vehiculo ();
+            cmbEstadoVehiculo.DataSource = con.combox_mod_vehiculo();
             cmbEstadoVehiculo.DisplayMember = "Nombre_Estado";
             cmbEstadoVehiculo.ValueMember = "Codigo_Estado";
             cmbEstadoVehiculo.SelectedIndex = -1;
@@ -77,7 +70,7 @@ namespace Transporte_Escolar_Bonilla
         }
         private void DgvVehiculos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvVehiculos.Rows.Count > 0)
+            if (dgvVehiculos.Rows.Count > 0)
             {
                 txtPlaca.Text = dgvVehiculos.CurrentRow.Cells[0].Value.ToString();
                 txtColor.Text = dgvVehiculos.CurrentRow.Cells[8].Value.ToString();
@@ -95,7 +88,7 @@ namespace Transporte_Escolar_Bonilla
                 cmbValue = cmbEstadoVehiculo.SelectedIndex;
                 dtp1 = dtpEmision.Value.ToString();
                 dtp2 = dtpVencimiento.Value.ToString();
-            }   
+            }
         }
         private void txtColor_KeyPress(object sender, KeyPressEventArgs e)
         {

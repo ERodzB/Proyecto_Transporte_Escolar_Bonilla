@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -75,8 +69,8 @@ namespace Transporte_Escolar_Bonilla
         //Boton Crear
         private void Botcrear_Click(object sender, EventArgs e)
         {
-            int contc = 0, contp=0, contr = 0, contri = 0;
-            string errorc= "", errorp = "", anio="";
+            int contc = 0, contp = 0, contr = 0, contri = 0;
+            string errorc = "", errorp = "", anio = "";
 
             //Campos de Texto y TipoContrato Vacio
             if (combservicio.SelectedIndex == -1)
@@ -91,26 +85,26 @@ namespace Transporte_Escolar_Bonilla
                 contc++;
             }
 
-            if (txtmontom.Text.Trim().Length == 0 || double.Parse(txtmontom.Text)<=0)
+            if (txtmontom.Text.Trim().Length == 0 || double.Parse(txtmontom.Text) <= 0)
             {
                 errorc += "Debe ingresar un Monto mayor a 0\n";
                 contc++;
-            }           
-             
+            }
+
             if (txtcantm.Text.Trim().Length == 0 || (int.Parse(txtcantm.Text) <= 0 || int.Parse(txtcantm.Text) > 12))
             {
                 errorc += "Debe ingresar una Cantidad de Meses de 1-12\n";
                 contc++;
-            }                
+            }
 
-            if (contc>0)
+            if (contc > 0)
             {
                 MessageBox.Show(errorc, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }           
-            else   
+            }
+            else
             {
                 //Medio Bus
-                if(combservicio.SelectedIndex == 1)
+                if (combservicio.SelectedIndex == 1)
                 {
                     //Parada
                     if (txtpa1.Text.Trim().Length < 3 || txtpa1.Text.All(x => char.IsNumber(x)))
@@ -125,7 +119,7 @@ namespace Transporte_Escolar_Bonilla
 
                     //Algunos vacios
                     if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1) /*|| txtpa1.Text == "")*/
-                        contr++; 
+                        contr++;
                 }
 
                 //Bus Completo
@@ -139,83 +133,83 @@ namespace Transporte_Escolar_Bonilla
                     }
 
                     //Todos Vacios
-                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && /*txtpa1.Text == "" &&*/ 
+                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && /*txtpa1.Text == "" &&*/
                         combruta2.SelectedIndex == -1 && combhora2.SelectedIndex == -1 && combveh2.SelectedIndex == -1) /*&& txtpa2.Text == "")*/
                         contr++;
 
                     //Algunos vacios
-                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || /*txtpa1.Text == "" ||*/ 
+                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || /*txtpa1.Text == "" ||*/
                         combruta2.SelectedIndex == -1 || combhora2.SelectedIndex == -1 || combveh2.SelectedIndex == -1) /*|| txtpa2.Text == "")*/
                         contr++;
 
                     //Rutas Iguales
                     if (combruta1.Text == combruta2.Text)
-                        contri++; 
+                        contri++;
                 }
-                 
+
                 //Mostrar mensajes de Error
                 if (contp > 0 && contr == 0)
                     MessageBox.Show(errorp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    if(contp > 0 && contr > 0)
+                    if (contp > 0 && contr > 0)
                         MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado" + errorp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
-                        if(contp == 0 && contr > 0)
-                            MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (contp == 0 && contr > 0)
+                        MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                            if(contri > 0)
-                                MessageBox.Show("No puede ingresar ambas rutas iguales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            else
+                        if (contri > 0)
+                            MessageBox.Show("No puede ingresar ambas rutas iguales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                        {
+                            DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                            if (DialogResult == DialogResult.Yes)
                             {
-                                DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                anio = dtpinicio.Value.Year.ToString();
 
-                                if (DialogResult == DialogResult.Yes)
+                                //Guardar datos de Contrato 
+
+                                if (pago_cmb.SelectedItem.Equals("Pago Mensual"))
                                 {
-                                    anio = dtpinicio.Value.Year.ToString();
+                                    ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
+                                                  DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), Convert.ToInt32(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
+                                    mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", form_nuevo_cliente.id, "N/A", "N/A", "N/A", "N/A");
 
-                                    //Guardar datos de Contrato 
-
-                                    if (pago_cmb.SelectedItem.Equals("Pago Mensual"))
-                                    {
-                                        ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
-                                                      DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), Convert.ToInt32(txtcantm.Text), combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
-                                        mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", form_nuevo_cliente.id, "N/A", "N/A", "N/A", "N/A");
-
-                                    }
-                                    else
-                                    {
-                                        ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
-                                                      DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
-                                        mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", form_nuevo_cliente.id, "N/A", "N/A", "N/A", "N/A");
-
-                                    }
-
-                                    //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
-                                    ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, form_nuevo_cliente.nomc);
-                                    ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);
-
-                                    //Si es Bus completo - Se asocia ruta de Vuelta al contrato tambien y actualizar pasajeros
-                                    if (combservicio.SelectedIndex == 0)
-                                    {
-                                        ing.RutaContrato(combruta2.Text, txtpa2.Text, anio, form_nuevo_cliente.nomc);
-                                        ing.Pasajeros(combruta2.Text, combveh2.Text, combhora2.Text);
-                                    }
-
-                                    MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    form_nuevo_cliente cli1 = new form_nuevo_cliente();
-                                    Estetics.AbrirFormularios(cli1, cliente2_panel);
-
-                                    this.Close();
                                 }
+                                else
+                                {
+                                    ing.NuevoContrato(anio, form_nuevo_cliente.nomc, form_nuevo_cliente.id, form_nuevo_cliente.tipoc, Convert.ToDateTime(dtpinicio.Text), total,
+                                                  DateTime.ParseExact(txtfechafin.Text, "dd/MM/yyyy", null), double.Parse(txtmontom.Text), 1, combservicio.Text, 0.00, pago_cmb.SelectedIndex + 1);
+                                    mod.BitacoraModulo("Nuevo Contrato", 2, "Nuevo Contrato Creado", form_nuevo_cliente.id, "N/A", "N/A", "N/A", "N/A");
+
+                                }
+
+                                //Asociar Ruta Ida con el Contrato creado (PORQUE OBLIGATORIAMENTE SE CREA UNA) y actualizar pasajeros
+                                ing.RutaContrato(combruta1.Text, txtpa1.Text, anio, form_nuevo_cliente.nomc);
+                                ing.Pasajeros(combruta1.Text, combveh1.Text, combhora1.Text);
+
+                                //Si es Bus completo - Se asocia ruta de Vuelta al contrato tambien y actualizar pasajeros
+                                if (combservicio.SelectedIndex == 0)
+                                {
+                                    ing.RutaContrato(combruta2.Text, txtpa2.Text, anio, form_nuevo_cliente.nomc);
+                                    ing.Pasajeros(combruta2.Text, combveh2.Text, combhora2.Text);
+                                }
+
+                                MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                form_nuevo_cliente cli1 = new form_nuevo_cliente();
+                                Estetics.AbrirFormularios(cli1, cliente2_panel);
+
+                                this.Close();
                             }
+                        }
                     }
                 }
                 //else
                 //{
-                    
+
                 //}
             }
         }
@@ -224,7 +218,7 @@ namespace Transporte_Escolar_Bonilla
         private void Combvh1r1_SelectedIndexChanged(object sender, EventArgs e)
         {
             consul.DescVehiculos(combveh1.Text, labv1);
-            labv1.Visible = true; 
+            labv1.Visible = true;
         }
 
         private void Combvh1r1_SelectedValueChanged(object sender, EventArgs e)
@@ -236,7 +230,7 @@ namespace Transporte_Escolar_Bonilla
         private void Combservicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Bus completo
-            if(combservicio.SelectedIndex == 0)
+            if (combservicio.SelectedIndex == 0)
             {
                 combruta2.Enabled = true;
                 combhora2.Enabled = true;
@@ -272,7 +266,7 @@ namespace Transporte_Escolar_Bonilla
         private void Combruta2_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Llenar ComboBox de Horarios con Horario de la Ruta Seleccionada
-            combhora2.DataSource = consul.Combobox_Horarios(combruta2.Text); 
+            combhora2.DataSource = consul.Combobox_Horarios(combruta2.Text);
             combhora2.DisplayMember = "Horarios";
             combhora2.SelectedIndex = -1;
         }
@@ -290,7 +284,7 @@ namespace Transporte_Escolar_Bonilla
         private void Combhora2_SelectedIndexChanged(object sender, EventArgs e)
         {
             combveh2.DataSource = consul.Combobox_VehiculosRH(combruta2.Text, combhora2.Text);
-            combveh2.DisplayMember = "Codigo_vehiculo";  
+            combveh2.DisplayMember = "Codigo_vehiculo";
             combveh2.SelectedIndex = -1;
         }
 
@@ -298,7 +292,7 @@ namespace Transporte_Escolar_Bonilla
         //Seleccionar vehiculo 2
         private void Combveh2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            consul.DescVehiculos(combveh2.Text, labv2); 
+            consul.DescVehiculos(combveh2.Text, labv2);
             labv2.Visible = true;
         }
 
@@ -315,7 +309,7 @@ namespace Transporte_Escolar_Bonilla
         private void Txtcantm_TextChanged(object sender, EventArgs e)
         {
             //Para calcular Monto Total
-           
+
             //Para calcular fecha de finalizacion (Se toma en cuenta si se presiona borrar)
             if (txtcantm.Text == "")
                 txtfechafin.Text = "";
@@ -327,9 +321,9 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                if (txtcantm.Text != "") 
+                if (txtcantm.Text != "")
                     txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");
-            } 
+            }
 
         }
 
@@ -337,8 +331,8 @@ namespace Transporte_Escolar_Bonilla
         //Selecciona fecha Inicio
         private void Dtpinicio_ValueChanged(object sender, EventArgs e)
         {
-            if(txtcantm.Text != "")
-                txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy"); 
+            if (txtcantm.Text != "")
+                txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");
         }
 
 
@@ -380,7 +374,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Pago_cmb_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (pago_cmb.SelectedIndex==0)
+            if (pago_cmb.SelectedIndex == 0)
             {
                 label7.Text = "Cantidad de Meses";
                 label7.Text = "Monto Mensual";
@@ -401,7 +395,7 @@ namespace Transporte_Escolar_Bonilla
                 SystemSounds.Hand.Play();
             }
 
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
             {
                 e.Handled = true;
                 SystemSounds.Hand.Play();
@@ -428,7 +422,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(txtmontom.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtmontom.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
         }

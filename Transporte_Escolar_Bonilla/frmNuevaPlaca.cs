@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -38,8 +31,8 @@ namespace Transporte_Escolar_Bonilla
         private void Botasignar_Click(object sender, EventArgs e)
         {
             string errores = "";
-            errores+= val.regMatricula(txtNuevaMatricula.Text);
-            errores += val.valTextoVacioOMaximo(txtNuevaMatricula.Text,"Placa");
+            errores += val.regMatricula(txtNuevaMatricula.Text);
+            errores += val.valTextoVacioOMaximo(txtNuevaMatricula.Text, "Placa");
             errores += val.valCmbVacio(combveh.SelectedIndex, "Vehiculo");
             if (errores != "")
             {
@@ -51,7 +44,7 @@ namespace Transporte_Escolar_Bonilla
 
                 combveh.DataSource = consul.Combobox_Vehiculos();
                 combveh.DisplayMember = "Codigo_vehiculo";
-                combveh.SelectedIndex = -1; 
+                combveh.SelectedIndex = -1;
 
                 lab1.Visible = false;
                 txtNuevaMatricula.Clear();

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -103,7 +97,7 @@ namespace Transporte_Escolar_Bonilla
             modificarUsuarios_btn.ForeColor = Color.White;
             crearPerfil_btn.ForeColor = Color.White;
             crearPerfil_btn.BackColor = Color.FromArgb(12, 24, 94);
-            modificarPerfil_btn.BackColor = Color.White; 
+            modificarPerfil_btn.BackColor = Color.White;
             modificarPerfil_btn.ForeColor = Color.MidnightBlue;
         }
 

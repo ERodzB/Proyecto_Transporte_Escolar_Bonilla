@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -13,18 +8,18 @@ namespace Transporte_Escolar_Bonilla
     class Ingresar : ConexionBD
     {
         private SqlCommand cmd;
-        public string mensaje = ""; 
+        public string mensaje = "";
 
         public Ingresar()
         {
             try
             {
-                conexionBD.Open();   
+                conexionBD.Open();
             }
 
             catch (Exception ex) //Tira error en caso que el try no funcione correctamente
             {
-                MessageBox.Show("Desconectado: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);   
+                MessageBox.Show("Desconectado: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -42,15 +37,15 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Correo_Cliente", correo);
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR: "+ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            mensaje = "Datos del Cliente guardados con Éxito"; 
+            mensaje = "Datos del Cliente guardados con Éxito";
         }
 
-        public void NuevoEmpleado(string id, string nom, DateTime fecha, int genero, string tel, string correo, string dir, int puesto, double salario,string Lic, DateTime fechaLic, int tipolic)
+        public void NuevoEmpleado(string id, string nom, DateTime fecha, int genero, string tel, string correo, string dir, int puesto, double salario, string Lic, DateTime fechaLic, int tipolic)
         {
             try
             {
@@ -62,7 +57,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Genero", genero);
                 cmd.Parameters.AddWithValue("@Telefono", tel);
                 cmd.Parameters.AddWithValue("@Correo", correo);
-                cmd.Parameters.AddWithValue("@Direccion",dir);
+                cmd.Parameters.AddWithValue("@Direccion", dir);
                 cmd.Parameters.AddWithValue("@Puesto", puesto);
                 cmd.Parameters.AddWithValue("@Salario", salario);
                 cmd.Parameters.AddWithValue("@Licencia", Lic);
@@ -86,8 +81,8 @@ namespace Transporte_Escolar_Bonilla
                 cmd = new SqlCommand("NuevoContrato", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Anio_Contrato", anio);
-                cmd.Parameters.AddWithValue("@Nombre_Cliente_Contrato", nomcli); 
-                cmd.Parameters.AddWithValue("@Id_Cliente_Contrato", idcli); 
+                cmd.Parameters.AddWithValue("@Nombre_Cliente_Contrato", nomcli);
+                cmd.Parameters.AddWithValue("@Id_Cliente_Contrato", idcli);
                 cmd.Parameters.AddWithValue("@Tipo_Contrato", tipo);
                 cmd.Parameters.AddWithValue("@Fecha_Inicio_Contrato", fechai);
                 cmd.Parameters.AddWithValue("@Monto_Contrato", monto);
@@ -120,7 +115,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Nombre_Cliente_Contrato", nomcli);
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -165,11 +160,11 @@ namespace Transporte_Escolar_Bonilla
         }
 
         //Asignar Horarios y Vehiculos a las Rutas
-        public void AsignarHoraVeh(string cod, string mat, string horas, string horae, int pa) 
+        public void AsignarHoraVeh(string cod, string mat, string horas, string horae, int pa)
         {
             try
             {
-                cmd = new SqlCommand("AsignarHoraVeh", conexionBD); 
+                cmd = new SqlCommand("AsignarHoraVeh", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Ruta", cod);
                 cmd.Parameters.AddWithValue("@Codigo_Vehiculo", mat);
@@ -204,10 +199,10 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Anio_Adquisicion", anioad);
                 cmd.Parameters.AddWithValue("@Estado_Vehiculo", estado);
                 cmd.Parameters.AddWithValue("@Emision_Permiso", emipermiso);
-                cmd.Parameters.AddWithValue("@Vencimiento_Permiso", vencpermiso); 
+                cmd.Parameters.AddWithValue("@Vencimiento_Permiso", vencpermiso);
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -251,7 +246,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.ExecuteNonQuery();
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -278,7 +273,7 @@ namespace Transporte_Escolar_Bonilla
                 else
                     MessageBox.Show("Error" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-         }
+        }
         public void NuevoUsuario(string Codigo_Usuario, string Nombre_Usuario, string contra_usuario, int Codigo_Perfil)
         {
             try
@@ -299,7 +294,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        public void NuevoPerfil(int Nivel_Acceso, string Nombre_Perfil,  string Descripcion_Perfil)
+        public void NuevoPerfil(int Nivel_Acceso, string Nombre_Perfil, string Descripcion_Perfil)
         {
             try
             {
@@ -311,7 +306,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se ha creado correctamente el Perfil", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-             catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -328,11 +323,11 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Monto", Monto);
                 cmd.Parameters.AddWithValue("@Descripcion_Recibo", Descripcion_Recibo);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha realizado el pago","INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se ha realizado el pago", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error : " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -351,6 +346,6 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error : " + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-      
+
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -30,8 +23,8 @@ namespace Transporte_Escolar_Bonilla
 
         private void Cliente_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            
+
+
         }
 
         private void Contratos_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -75,20 +68,20 @@ namespace Transporte_Escolar_Bonilla
                             MessageBox.Show("El pago de ese viaje ya fue CANCELADO", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                   
+
                 }
                 else
                 {
                     MessageBox.Show("Ese contrato ya Expiró", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            
+
         }
 
         private void Pagar_btn_Click(object sender, EventArgs e)
         {
             Ingresar ingreso = new Ingresar();
-            if (monto_tb.Text.Trim() != String.Empty) 
+            if (monto_tb.Text.Trim() != String.Empty)
             {
                 if (Convert.ToDouble(monto_tb.Text) == Convert.ToDouble(contratos_dgv.CurrentRow.Cells[2].Value.ToString()) || Convert.ToDouble(monto_tb.Text) == Convert.ToDouble(monto_tb.Text = contratos_dgv.CurrentRow.Cells[7].Value.ToString()))
                 {
@@ -96,7 +89,7 @@ namespace Transporte_Escolar_Bonilla
                     {
                         if (contratos_dgv.CurrentRow.Cells[1].Value.ToString().Equals("Temporal"))
                         {
-                            ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(Cuota_tb.Text),Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
+                            ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(Cuota_tb.Text), Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
                             mod.BitacoraModulo("Pago Cliente", 7, "Pago Recibido del Cliente", cliente_dgv.CurrentRow.Cells[0].Value.ToString(), "N/A", "N/A", "N/A", "N/A");
                             descripcion_tb.Clear();
                             monto_tb.Clear();
@@ -108,7 +101,7 @@ namespace Transporte_Escolar_Bonilla
                         else
                         {
 
-                            ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), 1,Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
+                            ingreso.NuevoPago(contratos_dgv.CurrentRow.Cells[0].Value.ToString(), 1, Convert.ToDouble(monto_tb.Text), descripcion_tb.Text);
                             mod.BitacoraModulo("Pago Cliente", 7, "Pago Recibido del Cliente", cliente_dgv.CurrentRow.Cells[0].Value.ToString(), "N/A", "N/A", "N/A", "N/A");
                             descripcion_tb.Clear();
                             monto_tb.Clear();
@@ -117,7 +110,7 @@ namespace Transporte_Escolar_Bonilla
                             monto_tb.Enabled = false;
                             Cuota_tb.Clear();
                         }
-                       
+
 
                     }
                     else
@@ -160,7 +153,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Cliente_dgv_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if(cliente_dgv.Rows.Count > 0)
+            if (cliente_dgv.Rows.Count > 0)
             {
                 consulto.CargadgvDatosContrato(contratos_dgv, cliente_dgv.CurrentRow.Cells[0].Value.ToString());
 

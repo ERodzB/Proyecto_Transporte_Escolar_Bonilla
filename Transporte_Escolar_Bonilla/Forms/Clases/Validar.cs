@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
     public class Validar : ConexionBD
     {
         private SqlCommand cmd;
+#pragma warning disable CS0169 // The field 'Validar.Reader' is never used
         private SqlDataReader Reader;
+#pragma warning restore CS0169 // The field 'Validar.Reader' is never used
         int x = 0;
         public int igual = 0; //Para validar horarios duplicados de un vehiculo
 
@@ -30,7 +27,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Desconectado: " + ex.ToString());
             }
         }
-        public int validarInicioSession (string Nombre_Usuario, string Correo)
+        public int validarInicioSession(string Nombre_Usuario, string Correo)
         {
             x = 0;
             try
@@ -41,7 +38,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Correo", Correo);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
@@ -49,7 +46,7 @@ namespace Transporte_Escolar_Bonilla
         }
         public int validarUsuario_Empleado(string Codigo_Empleado)
         {
-            x= 0;
+            x = 0;
             try
             {
                 cmd = new SqlCommand("verificar_empleado_usuario", conexionBD);
@@ -57,11 +54,11 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Codigo_Empleado", Codigo_Empleado);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
-            return x; 
+            return x;
         }
         public int validarUsuario(string Nombre_Usuario)
         {
@@ -73,7 +70,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Nombre_Usuario", Nombre_Usuario);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex);
             }
@@ -90,7 +87,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("Codigo_Empleado", Codigo_Empleado);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex);
             }
@@ -107,7 +104,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("Nombre_Perfil", Nombre_Perfil);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex);
             }
@@ -125,9 +122,9 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Codigo_Cliente", id);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR: "+ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString());
             }
 
             return x;
@@ -150,9 +147,9 @@ namespace Transporte_Escolar_Bonilla
 
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " +ex.ToString(), "ERROR");
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR");
             }
 
             return x;
@@ -167,11 +164,11 @@ namespace Transporte_Escolar_Bonilla
                 cmd = new SqlCommand("VerificarRuta", conexionBD);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Codigo_Ruta", cod);
-                 x = (int)cmd.ExecuteScalar();
+                x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR: "+ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString());
             }
 
             return x;
@@ -189,9 +186,9 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Horario_Salida", hora);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR: "+ex.ToString());
+                MessageBox.Show("ERROR: " + ex.ToString());
             }
 
             return x;
@@ -237,7 +234,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Codigo_Vehiculo", mat);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex);
             }
@@ -250,7 +247,7 @@ namespace Transporte_Escolar_Bonilla
         {
             int num = 0, letra = 0, i = 0;
 
-            for(i=0; i<placa.Length; i++)
+            for (i = 0; i < placa.Length; i++)
             {
                 if (char.IsLetter(placa[i]))
                     letra++;
@@ -280,7 +277,7 @@ namespace Transporte_Escolar_Bonilla
 
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex);
             }
@@ -296,7 +293,7 @@ namespace Transporte_Escolar_Bonilla
             try
             {
                 cmd = new SqlCommand("CambiosMantenimiento", conexionBD);
-                cmd.CommandType = CommandType.StoredProcedure;               
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombre", nom);
                 cmd.Parameters.AddWithValue("@descripcion", desc);
                 x = (int)cmd.ExecuteScalar();
@@ -320,7 +317,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@identidad", ID);
                 x = (int)cmd.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex);
             }
@@ -361,7 +358,7 @@ namespace Transporte_Escolar_Bonilla
             return x;
         }
 
-        public int validarVehiculoPesado (string CodVeh)
+        public int validarVehiculoPesado(string CodVeh)
         {
             x = 0;
             try
@@ -381,7 +378,7 @@ namespace Transporte_Escolar_Bonilla
 
         public int VehiculoConductor(string CodVeh)
         {
-            int x=0;
+            int x = 0;
             try
             {
                 cmd = new SqlCommand("VehiculoConductor", conexionBD);
@@ -420,21 +417,21 @@ namespace Transporte_Escolar_Bonilla
         public string valTextoVacioOMaximo(string txtValidar, string nombreTxt)
         {
             string resultado = "";
-            string regex1 = @"^[a-zA-Z]{3}[a-zA-Z 0-9]*$"; 
+            string regex1 = @"^[a-zA-Z]{3}[a-zA-Z 0-9]*$";
             string regex2 = @"^[\w ]{0,50}$";
             if (string.IsNullOrEmpty(txtValidar))
             {
-                resultado = "*Error valor nulo o vacio en " + nombreTxt+"\n";
+                resultado = "*Error valor nulo o vacio en " + nombreTxt + "\n";
             }
             else
             {
-                if (!Regex.IsMatch(txtValidar, regex1) && nombreTxt!= "Placa")
+                if (!Regex.IsMatch(txtValidar, regex1) && nombreTxt != "Placa")
                 {
                     resultado = "*Debe Ingresar minimo 3  caracteres en " + nombreTxt + "\n";
                 }
                 else
                 {
-                    if(!Regex.IsMatch(txtValidar, regex2) && nombreTxt != "Placa")
+                    if (!Regex.IsMatch(txtValidar, regex2) && nombreTxt != "Placa")
                     {
                         resultado = "*El maximo de caracteres es de 50 en " + nombreTxt + "\n";
                     }
@@ -455,18 +452,18 @@ namespace Transporte_Escolar_Bonilla
         public string valHorarios(DateTimePicker dtp1, DateTimePicker dtp2)
         {
             string resultado = "";
-            if (dtp2.Value.Minute <= dtp1.Value.AddMinutes(19).Minute && dtp2.Value.Hour==dtp1.Value.Hour)
+            if (dtp2.Value.Minute <= dtp1.Value.AddMinutes(19).Minute && dtp2.Value.Hour == dtp1.Value.Hour)
             {
                 resultado = "*La ruta debe durar al menos 20 minutos\n";
             }
-            
-            if(dtp1.Value.Hour < dtp2.Value.Hour)
+
+            if (dtp1.Value.Hour < dtp2.Value.Hour)
             {
                 for (int x = 0; x > -1; x++)
                 {
                     if (dtp1.Value.AddMinutes(x).Hour == dtp2.Value.Hour)
                     {
-                        if(dtp1.Value.AddMinutes(x).Minute == dtp2.Value.Minute)
+                        if (dtp1.Value.AddMinutes(x).Minute == dtp2.Value.Minute)
                         {
                             if (x <= 19)
                                 resultado = "*La ruta debe durar al menos 20 minutos\n";
@@ -480,8 +477,8 @@ namespace Transporte_Escolar_Bonilla
 
                 }
             }
-                
-            
+
+
             return resultado;
         }
         public string regMatricula(string txtValidar)
@@ -509,21 +506,21 @@ namespace Transporte_Escolar_Bonilla
             string regId = @"^(([0-9][1-9]){1,2}(19\d{7})?(20[0-0][0-1]\d{5})?)$";
             string regRTN = @"^(([0-9][1-9]){1,2}(19\d{8})?(20[0-0][0-1]\d{6})?)$";
             string resultado = "";
-            if(id.Trim().Length<13)
+            if (id.Trim().Length < 13)
                 resultado = "*Debe ingresar un Número de Identidad de 13 numeros\n";
             else
             {
                 if (!Regex.IsMatch(id, regId) && id.Trim().Length == 13)
                     resultado = "*Debe Ingresar un ID valido o con fecha de nacimiento mayor a 18\n";
-                
+
                 else
                 {
                     if (!Regex.IsMatch(id, regRTN) && id.Trim().Length == 14)
                         resultado = "*Debe Ingresar un RTN valido o con fecha de nacimiento mayor a 18\n";
                 }
             }
-            
-            
+
+
 
             return resultado;
         }

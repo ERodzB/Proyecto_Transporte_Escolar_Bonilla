@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
-    
+
     public partial class contratos_frm : Form
     {
         Estetica estetics = new Estetica();
@@ -51,7 +45,7 @@ namespace Transporte_Escolar_Bonilla
 
         //TEMPORAL
         private void Contratos_btn_Click(object sender, EventArgs e)
-        {           
+        {
             nuevocontrato ncontrato = new nuevocontrato();
             estetics.AbrirFormularios(ncontrato, contratosMain_panel);
             consultaContratos_btn.BackColor = Color.FromArgb(12, 24, 94);
@@ -89,7 +83,7 @@ namespace Transporte_Escolar_Bonilla
 
         //PRIVADO
         private void ModificarContratos_btn_Click(object sender, EventArgs e)
-        {      
+        {
             nuevoviaje viaje = new nuevoviaje();
             estetics.AbrirFormularios(viaje, contratosMain_panel);
             //label1.Visible = false;//La form no sobreescribia el label

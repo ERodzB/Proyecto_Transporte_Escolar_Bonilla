@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
-using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -24,8 +18,12 @@ namespace Transporte_Escolar_Bonilla
         static public string id;
         static public string nomc;
         static public int tipoc;
+#pragma warning disable CS0414 // The field 'form_nuevo_cliente.regId' is assigned but its value is never used
         string regId = @"^(([0-9][1-9]){1,2}(19\d{7})?(20[0-0][0-1]\d{5})?)$";
+#pragma warning restore CS0414 // The field 'form_nuevo_cliente.regId' is assigned but its value is never used
+#pragma warning disable CS0414 // The field 'form_nuevo_cliente.regRTN' is assigned but its value is never used
         string regRTN = @"^(([0-9][1-9]){1,2}(19\d{8})?(20[0-0][0-1]\d{6})?)$";
+#pragma warning restore CS0414 // The field 'form_nuevo_cliente.regRTN' is assigned but its value is never used
 
 
         public form_nuevo_cliente()
@@ -48,10 +46,10 @@ namespace Transporte_Escolar_Bonilla
             combTipoContrato.SelectedIndex = -1;
 
             txtid.Focus();
-        } 
+        }
         //Click Siguiente
         private void Labsiguiente_Click(object sender, EventArgs e)
-        { 
+        {
             int cont = 0;
             string error = "";
 
@@ -79,7 +77,7 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("El ID ingresado ya existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     txtid.Clear();
-                    txtid.Focus(); 
+                    txtid.Focus();
                 }
                 else
                 {
@@ -87,24 +85,24 @@ namespace Transporte_Escolar_Bonilla
 
                     error += val.valIdORtn(txtid.Text);
 
-                      
-                 
-                    if(txtnom.Text.Trim().Length < 3)
+
+
+                    if (txtnom.Text.Trim().Length < 3)
                         error += "*Debe ingresar un Nombre mayor o igual a 3 caracteres\n";
 
                     //All verifica si todos los caracteres cumplen cierta condicion. Se toma cada letra en x y se verifica si cada una es un numero 
-                    if (txtdir.Text.Trim().Length < 15 || txtdir.Text.All(x => char.IsNumber(x))) 
+                    if (txtdir.Text.Trim().Length < 15 || txtdir.Text.All(x => char.IsNumber(x)))
                         error += "*Debe ingresar una Dirección válida mayor o igual a 15 caracteres\n";
 
-                    if(txttel.Text.Trim().Length < 8 || txttel.Text.Equals("00000000"))
+                    if (txttel.Text.Trim().Length < 8 || txttel.Text.Equals("00000000"))
                         error += "*Debe ingresar un Teléfono Válido\n";
 
-                    if(combTipoContrato.SelectedIndex == -1)
+                    if (combTipoContrato.SelectedIndex == -1)
                         error += "*Debe seleccionar un Tipo de Contrato\n";
 
-                    if(error == "")
+                    if (error == "")
                     {
-                        if(System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                        if (System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
                             DialogResult = MessageBox.Show("Procederá a crear el Contrato y ya no podrá regresar\n\n¿Está seguro de los datos ingresados?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -139,7 +137,7 @@ namespace Transporte_Escolar_Bonilla
                                 txttel.Clear();
                                 txtcorreo.Clear();
                                 combTipoContrato.SelectedIndex = -1;
-                            }                         
+                            }
                         }
                         else
                         {
@@ -162,7 +160,7 @@ namespace Transporte_Escolar_Bonilla
         //Se quita el mouse de Siguiente
         private void Labsiguiente_MouseLeave(object sender, EventArgs e)
         {
-            labsiguiente.ForeColor = Color.FromArgb(12, 24, 94); 
+            labsiguiente.ForeColor = Color.FromArgb(12, 24, 94);
         }
 
         private void CombTipoContrato_SelectedIndexChanged(object sender, EventArgs e)
@@ -177,13 +175,13 @@ namespace Transporte_Escolar_Bonilla
                 e.Handled = true;
                 SystemSounds.Hand.Play();
             }
-            
+
         }
 
         private void Txtnom_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Que no deje espacios en blanco al inicio
-            if(char.IsWhiteSpace(e.KeyChar) && txtnom.Text.Trim().Length == 0)
+            if (char.IsWhiteSpace(e.KeyChar) && txtnom.Text.Trim().Length == 0)
             {
                 e.Handled = true;
                 SystemSounds.Hand.Play();
@@ -205,7 +203,7 @@ namespace Transporte_Escolar_Bonilla
                 SystemSounds.Hand.Play();
             }
 
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
             {
                 e.Handled = true;
                 SystemSounds.Hand.Play();
@@ -214,7 +212,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txttel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
                 SystemSounds.Hand.Play();
@@ -223,7 +221,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtcorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='@') && !(e.KeyChar=='.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar == '@') && !(e.KeyChar == '.'))
             {
                 e.Handled = true;
                 SystemSounds.Hand.Play();

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -25,7 +18,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            if (cbConsulta.SelectedIndex ==-1)
+            if (cbConsulta.SelectedIndex == -1)
             {
                 MessageBox.Show("Porfavor seleccione una opcion del menu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -44,8 +37,8 @@ namespace Transporte_Escolar_Bonilla
                     con.consultasusuario(dgvConsultaU, "Niveles de Acceso");
                 }
             }
-           
-           
+
+
         }
 
         private void CbConsulta_SelectedIndexChanged(object sender, EventArgs e)

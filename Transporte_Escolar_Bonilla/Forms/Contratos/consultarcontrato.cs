@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -41,13 +34,13 @@ namespace Transporte_Escolar_Bonilla
                 cfiltro = CMBFiltro.SelectedValue.ToString();
                 con.filtrarcontrato(dgvConsultaU, ctipo, cfiltro);
             }
-                
+
 
         }
 
         private void CBFiltrox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(CBFiltrox.SelectedItem.ToString()=="Clientes")
+            if (CBFiltrox.SelectedItem.ToString() == "Clientes")
             {
                 CMBFiltro.DataSource = con.combox_Clientes();
                 CMBFiltro.DisplayMember = "Nombre_Cliente";

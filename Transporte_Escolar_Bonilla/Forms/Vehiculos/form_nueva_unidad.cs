@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -18,7 +11,9 @@ namespace Transporte_Escolar_Bonilla
         Validar val = new Validar();
         Modificar mod = new Modificar();
         string regAsientos = @"^([1-9]{1}|[1-5]{1}[0-9]{1})$";
+#pragma warning disable CS0414 // The field 'form_nueva_unidad.regMatricula' is assigned but its value is never used
         string regMatricula = @"^([a-zA-Z]{2}[0-9]{4}|[a-zA-Z]{3}[0-9]{3}|[a-zA-Z]{2}[0-9]{5})$";
+#pragma warning restore CS0414 // The field 'form_nueva_unidad.regMatricula' is assigned but its value is never used
 
         public form_nueva_unidad()
         {
@@ -36,7 +31,7 @@ namespace Transporte_Escolar_Bonilla
         {
             //Cargar Tipo de Vehiculo
             combtipoveh.DataSource = consul.Combobox_TipoVehiculo();
-            combtipoveh.DisplayMember = "Tipo";  
+            combtipoveh.DisplayMember = "Tipo";
             combtipoveh.ValueMember = "Codigo";
             combtipoveh.SelectedIndex = -1;
 
@@ -48,7 +43,7 @@ namespace Transporte_Escolar_Bonilla
 
             //Cargar Tipo de Combustible
             combtipocom.DataSource = consul.Combobox_TipoGas();
-            combtipocom.DisplayMember = "Gasolina"; 
+            combtipocom.DisplayMember = "Gasolina";
             combtipocom.ValueMember = "Codigo";
             combtipocom.SelectedIndex = -1;
 
@@ -71,8 +66,8 @@ namespace Transporte_Escolar_Bonilla
             dtpanioad.ShowUpDown = true;
 
             txtmat.Focus();
-            dtpemision.MinDate= new DateTime(2015, 01, 01);
-            dtpemision.MaxDate = new DateTime(Convert.ToInt32(DateTime.Now.Year),Convert.ToInt32(DateTime.Now.Month), Convert.ToInt32(DateTime.Now.Day));
+            dtpemision.MinDate = new DateTime(2015, 01, 01);
+            dtpemision.MaxDate = new DateTime(Convert.ToInt32(DateTime.Now.Year), Convert.ToInt32(DateTime.Now.Month), Convert.ToInt32(DateTime.Now.Day));
 
             dtpvenc.MinDate = new DateTime(2018, 01, 01);
         }
@@ -98,47 +93,47 @@ namespace Transporte_Escolar_Bonilla
             {
                 errores += "*Error la cantidad maxima de asientos es entre 1-59\n";
             }
-            
-            
+
+
             //Validar fechas de emision y vencimiento del permiso
-            
+
             //Validar si el Vehiculo ya Existe
             if (val.validarVeh(txtmat.Text) == 1)
             {
                 errores += "El Vehiculo ya fue registrado";
             }
-            if (errores!="")
-                MessageBox.Show("Debe llenar correctamente los datos\n"+errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (errores != "")
+                MessageBox.Show("Debe llenar correctamente los datos\n" + errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                
-                    DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (DialogResult == DialogResult.Yes)
-                    {
-                        //Guardar datos en Vehiculos
-                        ing.NuevaUnidad(txtmat.Text, int.Parse(combtipoveh.SelectedValue.ToString()), int.Parse(dtpanioveh.Text), txtmarca.Text, txtmodelo.Text,
-                                        int.Parse(txtcap.Text), int.Parse(combtipotra.SelectedValue.ToString()), int.Parse(combtipocom.SelectedValue.ToString()),
-                                        txtcolor.Text, int.Parse(dtpanioad.Text), int.Parse(combestado.SelectedValue.ToString()), Convert.ToDateTime(dtpemision.Text),
-                                        Convert.ToDateTime(dtpvenc.Text));
-                        mod.BitacoraModulo("Ingreso Vehiculo", 1, "Ingreso de Nuevo Vehiculo Adquirido", txtmat.Text, "N/A", "N/A", "N/A", "N/A");
 
-                        MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    //Guardar datos en Vehiculos
+                    ing.NuevaUnidad(txtmat.Text, int.Parse(combtipoveh.SelectedValue.ToString()), int.Parse(dtpanioveh.Text), txtmarca.Text, txtmodelo.Text,
+                                    int.Parse(txtcap.Text), int.Parse(combtipotra.SelectedValue.ToString()), int.Parse(combtipocom.SelectedValue.ToString()),
+                                    txtcolor.Text, int.Parse(dtpanioad.Text), int.Parse(combestado.SelectedValue.ToString()), Convert.ToDateTime(dtpemision.Text),
+                                    Convert.ToDateTime(dtpvenc.Text));
+                    mod.BitacoraModulo("Ingreso Vehiculo", 1, "Ingreso de Nuevo Vehiculo Adquirido", txtmat.Text, "N/A", "N/A", "N/A", "N/A");
 
-                        //Limpiar
-                        txtmat.Clear();
-                        txtmarca.Clear();
-                        txtmodelo.Clear();
-                        txtcolor.Clear();
-                        txtcap.Clear();
+                    MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        combtipoveh.SelectedIndex = -1; 
-                        combtipotra.SelectedIndex = -1;
-                        combtipocom.SelectedIndex = -1;
-                        combestado.SelectedIndex = -1;
+                    //Limpiar
+                    txtmat.Clear();
+                    txtmarca.Clear();
+                    txtmodelo.Clear();
+                    txtcolor.Clear();
+                    txtcap.Clear();
 
-                        txtmat.Focus();
-                    }
-                 
+                    combtipoveh.SelectedIndex = -1;
+                    combtipotra.SelectedIndex = -1;
+                    combtipocom.SelectedIndex = -1;
+                    combestado.SelectedIndex = -1;
+
+                    txtmat.Focus();
+                }
+
             }
         }
 
@@ -168,7 +163,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtcolor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !(e.KeyChar=='-'))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !(e.KeyChar == '-'))
             {
                 e.Handled = true;
             }

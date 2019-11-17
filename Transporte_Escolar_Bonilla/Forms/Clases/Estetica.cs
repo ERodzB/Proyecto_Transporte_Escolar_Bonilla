@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms; // Librearia para poder utilizar formularios y los controles de windows
+﻿using System.Windows.Forms; // Librearia para poder utilizar formularios y los controles de windows
 using Word = Microsoft.Office.Interop.Word;
-using System.Globalization;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -53,13 +47,13 @@ namespace Transporte_Escolar_Bonilla
             oWord.Visible = true;
             oDoc = oWord.Documents.Add(ref oMissing, ref oMissing, ref oMissing, ref oMissing);
             table = oDoc.Tables.Add(oDoc.Range(), dgvImprimir.Rows.Count, dgvImprimir.Columns.Count, ref oMissing, ref oMissing);
-            
-            
-            for(int x=0; x<dgvImprimir.Rows.Count; x++)
+
+
+            for (int x = 0; x < dgvImprimir.Rows.Count; x++)
             {
-                for(int y=0; y<dgvImprimir.Columns.Count; y++)
+                for (int y = 0; y < dgvImprimir.Columns.Count; y++)
                 {
-                   
+
                     table.Cell(x, y).Range.Text = dgvImprimir[y, x].Value.ToString();
                 }
             }

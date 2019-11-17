@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
     public partial class form_nuevo_clienteP : Form
     {
-        Estetica Estetics = new Estetica(); 
+        Estetica Estetics = new Estetica();
         Consultar consul = new Consultar();
         Ingresar ing = new Ingresar();
         Validar val = new Validar();
@@ -74,7 +68,11 @@ namespace Transporte_Escolar_Bonilla
         {
             double ant = 0;
             int contc = 0, contn = 0, conth = 0;
-            string error = "", errorn="", anti = "", anio = ""; 
+#pragma warning disable CS0219 // The variable 'anti' is assigned but its value is never used
+#pragma warning disable CS0219 // The variable 'errorn' is assigned but its value is never used
+            string error = "", errorn = "", anti = "", anio = "";
+#pragma warning restore CS0219 // The variable 'errorn' is assigned but its value is never used
+#pragma warning restore CS0219 // The variable 'anti' is assigned but its value is never used
 
             val.igual = 0;
 
@@ -88,7 +86,7 @@ namespace Transporte_Escolar_Bonilla
             if (txtdestino.Text == "")
                 contc++;
 
-            if (txttotal.Text == "" )
+            if (txttotal.Text == "")
                 contc++;
 
             if (txtant.Text == "")
@@ -107,7 +105,7 @@ namespace Transporte_Escolar_Bonilla
                 if (txtdestino.Text.Trim().Length < 3 || txtdestino.Text.All(x => char.IsNumber(x)))
                     contc++;
 
-                if(contc > 0)
+                if (contc > 0)
                     MessageBox.Show("Debe ingresar un Origen y Destino válidos de 3 caracteres mínimo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
@@ -137,14 +135,14 @@ namespace Transporte_Escolar_Bonilla
                         else
                         {
                             //Validar Fechas 
-                            if (dtpinicio.Value > dtpfin.Value) 
+                            if (dtpinicio.Value > dtpfin.Value)
                                 contn++;
 
                             if (contn > 0)
                                 MessageBox.Show("La Fecha de Finalización debe ser mayor a la de Inicio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             else
                             {
-                                if(int.Parse(txtpa.Text) > 59)
+                                if (int.Parse(txtpa.Text) > 59)
                                     MessageBox.Show("No puede ingresar más de 59 pasajeros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 else
                                 {
@@ -283,11 +281,11 @@ namespace Transporte_Escolar_Bonilla
                                     }
                                 }
 
-                                
+
                             }
                         }
                     }
-                }      
+                }
             }
         }
 
@@ -347,7 +345,7 @@ namespace Transporte_Escolar_Bonilla
                 SystemSounds.Hand.Play();
             }
 
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar==','))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
             {
                 e.Handled = true;
                 SystemSounds.Hand.Play();
@@ -374,7 +372,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(txttotal.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+                if (System.Text.RegularExpressions.Regex.IsMatch(txttotal.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
         }

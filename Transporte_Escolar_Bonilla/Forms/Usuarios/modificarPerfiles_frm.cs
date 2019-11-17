@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -18,13 +11,13 @@ namespace Transporte_Escolar_Bonilla
             InitializeComponent();
 
             nombrePerfil_tb.ShortcutsEnabled = false;
-            desPerfil_tb.ShortcutsEnabled = false;   
+            desPerfil_tb.ShortcutsEnabled = false;
         }
 
         private void ModificarPerfiles_frm_Load(object sender, EventArgs e)
         {
 
-           
+
             Perfiles_cmb.DataSource = consu.llenarPerfiles();
             Perfiles_cmb.DisplayMember = "Nombre_Perfil";
             Perfiles_cmb.ValueMember = "Codigo_Perfil";
@@ -36,15 +29,15 @@ namespace Transporte_Escolar_Bonilla
 
         private void Perfiles_cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Perfiles_cmb.SelectedIndex !=-1)
+            if (Perfiles_cmb.SelectedIndex != -1)
             {
                 consu.BuscarPerfiles(Perfiles_cmb.SelectedIndex + 1, nivelAcceso_cmb, nombrePerfil_tb, desPerfil_tb);
             }
         }
 
-        private void Modificar_btn_Click(object sender, EventArgs e) 
+        private void Modificar_btn_Click(object sender, EventArgs e)
         {
-            if (nombrePerfil_tb.Text.Trim().Length > 2 && desPerfil_tb.Text.Trim().Length > 2 && nivelAcceso_cmb.Text!="" && Perfiles_cmb.Text!="")
+            if (nombrePerfil_tb.Text.Trim().Length > 2 && desPerfil_tb.Text.Trim().Length > 2 && nivelAcceso_cmb.Text != "" && Perfiles_cmb.Text != "")
             {
                 Modificar mperfiles = new Modificar();
 

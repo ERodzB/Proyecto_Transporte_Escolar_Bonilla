@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -21,7 +14,7 @@ namespace Transporte_Escolar_Bonilla
             if (MessageBox.Show("¿Está seguro que desea Modificar los contratos de este Cliente?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Modificar_Datos_Contrato moddato = new Modificar_Datos_Contrato();
-                estetics.AbrirFormularios(moddato, contratos_panel); 
+                estetics.AbrirFormularios(moddato, contratos_panel);
             }
         }
 
@@ -42,7 +35,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvContrato_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvContrato.Rows.Count > 0)
+            if (dgvContrato.Rows.Count > 0)
             {
                 codc = dgvContrato.CurrentRow.Cells[0].Value.ToString();
                 nombrecli = dgvContrato.CurrentRow.Cells[1].Value.ToString();
@@ -55,7 +48,7 @@ namespace Transporte_Escolar_Bonilla
         {
             InitializeComponent();
         }
-        
+
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,7 +75,7 @@ namespace Transporte_Escolar_Bonilla
 
         }
         private void BtnSeleccionar_Click(object sender, EventArgs e)
-        {                            
+        {
 
         }
 

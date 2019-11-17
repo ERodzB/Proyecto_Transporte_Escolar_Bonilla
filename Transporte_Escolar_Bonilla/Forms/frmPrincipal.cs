@@ -1,23 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Net;//Libreria para mandar Correo
 using System.Net.Mail;//Libreria para mandar Correo
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
     public partial class Principal_frm : Form
     {
+#pragma warning disable CS0414 // The field 'Principal_frm.x' is assigned but its value is never used
+#pragma warning disable CS0414 // The field 'Principal_frm.y' is assigned but its value is never used
         int x = 0, y = 0;
+#pragma warning restore CS0414 // The field 'Principal_frm.y' is assigned but its value is never used
+#pragma warning restore CS0414 // The field 'Principal_frm.x' is assigned but its value is never used
+#pragma warning disable CS0169 // The field 'Principal_frm.mousedown' is never used
         bool mousedown;
+#pragma warning restore CS0169 // The field 'Principal_frm.mousedown' is never used
+#pragma warning disable CS0414 // The field 'Principal_frm.usuario_key_press' is assigned but its value is never used
         int usuario_key_press = 0;
+#pragma warning restore CS0414 // The field 'Principal_frm.usuario_key_press' is assigned but its value is never used
+#pragma warning disable CS0414 // The field 'Principal_frm.contrasena_key_press' is assigned but its value is never used
         int contrasena_key_press = 0;
+#pragma warning restore CS0414 // The field 'Principal_frm.contrasena_key_press' is assigned but its value is never used
 
         static public string nomusu = "";
 
@@ -30,19 +34,19 @@ namespace Transporte_Escolar_Bonilla
 
             userLogin_tb.ShortcutsEnabled = false;
             contra_tb.ShortcutsEnabled = false;
-            Correo_tb.ShortcutsEnabled = false;           
+            Correo_tb.ShortcutsEnabled = false;
         }
-        
-       
-        
+
+
+
         private void Salir_btn_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("¿Desea Cerrar el Programa?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if(DialogResult == DialogResult.Yes)
+            if (DialogResult == DialogResult.Yes)
                 Application.Exit();
         }
-        
+
         private void Salir_btn_MouseHover(object sender, EventArgs e)
         {
             salir_btn.BackColor = Color.Transparent;
@@ -58,7 +62,7 @@ namespace Transporte_Escolar_Bonilla
         private void Unidades_btn_Click(object sender, EventArgs e)
         {
             unidades_frm uni = new unidades_frm();
-            Estetics.AbrirFormularios(uni , center_panel);
+            Estetics.AbrirFormularios(uni, center_panel);
             bar_panel.Location = unidades_btn.Location;
         }
 
@@ -94,7 +98,7 @@ namespace Transporte_Escolar_Bonilla
         {
             DialogResult = MessageBox.Show("¿Desea Cerrar Sesión?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if(DialogResult == DialogResult.Yes)
+            if (DialogResult == DialogResult.Yes)
                 Application.Restart();
         }
 
@@ -155,9 +159,9 @@ namespace Transporte_Escolar_Bonilla
         {
             Validar valido = new Validar();
             Modificar modifico = new Modificar();
-            if(valido.validarInicioSession(userLogin_tb.Text, Correo_tb.Text) == 1)
+            if (valido.validarInicioSession(userLogin_tb.Text, Correo_tb.Text) == 1)
             {
-                MailMessage mensaje = new MailMessage("transporte.escolar.bonilla13@gmail.com",Correo_tb.Text,enviar_linklbl.Text, modifico.CambiarContra(userLogin_tb.Text));//Crea el cuerpo del correo
+                MailMessage mensaje = new MailMessage("transporte.escolar.bonilla13@gmail.com", Correo_tb.Text, enviar_linklbl.Text, modifico.CambiarContra(userLogin_tb.Text));//Crea el cuerpo del correo
                 //MailMessage(Quien lo envia, A quien se lo enviamos, titulo del correo, cuerpo del correo)
                 mensaje.IsBodyHtml = true;//el texto que se envia tiene una codificacion html
                 SmtpClient mail = new SmtpClient("smtp.gmail.com", 587); // usar el servicio de gmail y especificar el puerto
@@ -168,13 +172,16 @@ namespace Transporte_Escolar_Bonilla
                 mail.Send(mensaje);//Envia el mensaje creado
                 MessageBox.Show("Su Nueva Contraseña ha sido enviada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Restart();//Reinicia la aplicacion
-                
-            }else
+
+            }
+            else
             {
                 MessageBox.Show("El usuario o correo introducido son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public async void  enviarCorreo()
+#pragma warning disable CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
+        public async void enviarCorreo()
+#pragma warning restore CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
         {
 
         }
@@ -196,13 +203,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void Correo_tb_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='@') && !(e.KeyChar=='.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar == '@') && !(e.KeyChar == '.'))
             {
                 e.Handled = true;
             }
         }
 
-    
+
 
         private void BtnNoti_Click(object sender, EventArgs e)
         {
@@ -229,14 +236,14 @@ namespace Transporte_Escolar_Bonilla
 
         private void userLogin_tb_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void Principal_frm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string cierre = e.CloseReason.ToString(); 
+            string cierre = e.CloseReason.ToString();
 
-            if(cierre.Equals("UserClosing"))
+            if (cierre.Equals("UserClosing"))
             {
                 DialogResult = MessageBox.Show("¿Desea Cerrar el Programa?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -247,7 +254,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-    
+
 
         private void BtnBitacora_Click(object sender, EventArgs e)
         {

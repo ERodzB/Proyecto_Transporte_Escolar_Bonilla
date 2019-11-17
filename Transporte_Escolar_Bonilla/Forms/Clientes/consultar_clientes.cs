@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -27,14 +20,14 @@ namespace Transporte_Escolar_Bonilla
             else
             {
                 if (cbConsulta.SelectedItem.ToString() == "Clientes")
-            {
-                con.consultaclientes(dgvConsultaU, "Clientes");
-            }
-            if (cbConsulta.SelectedItem.ToString() == "Contratos por Cliente")
-            {
-                con.consultaclientes(dgvConsultaU, "Contratos por Cliente");
-            }
-           
+                {
+                    con.consultaclientes(dgvConsultaU, "Clientes");
+                }
+                if (cbConsulta.SelectedItem.ToString() == "Contratos por Cliente")
+                {
+                    con.consultaclientes(dgvConsultaU, "Contratos por Cliente");
+                }
+
             }
         }
 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -44,7 +37,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (valido.validarEmpleado(busqueda.Text) == 1)
             {
-                
+
                 cmbPuesto.DataSource = consultar.ComboboxPuestos();
                 cmbPuesto.DisplayMember = "Nombre_Puesto";
                 cmbPuesto.ValueMember = "Codigo_Puesto";
@@ -93,14 +86,14 @@ namespace Transporte_Escolar_Bonilla
             {
                 MessageBox.Show("El empleado no existe");
             }
-}
+        }
 
         private void CmbPuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbPuesto.Text=="Conductor")
+            if (cmbPuesto.Text == "Conductor")
             {
-               
-                LBLLicencia.Visible = true; 
+
+                LBLLicencia.Visible = true;
                 dtpvencimiento.Visible = true;
                 txtlicencia.Visible = true;
                 lblVencimiento.Visible = true;
@@ -121,7 +114,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (cmbPuesto.Text=="Conductor")
+            if (cmbPuesto.Text == "Conductor")
             {
                 if (RBLiviana.Checked == false && RBPesada.Checked == false)
                 {
@@ -144,11 +137,11 @@ namespace Transporte_Escolar_Bonilla
                         Licencia = 2;
                     }
                     else
-                    if (CBInter.Checked == false && RBLiviana.Checked == true) 
+                    if (CBInter.Checked == false && RBLiviana.Checked == true)
                     {
                         Licencia = 1;
                     }
-                    if(txtnombre.Text.Trim().Length > 2 && cmbGenero.Text!="" && txttelefono.Text.Trim().Length == 8 && txtcorreo.Text!="" && txtdireccion.Text.Trim().Length >= 15 && cmbPuesto.Text!="" && txtsalario.Text.Trim().Length != 0 && double.Parse(txtsalario.Text) > 0 && txtlicencia.Text!="" && dtpvencimiento.Value>System.DateTime.Today && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                    if (txtnombre.Text.Trim().Length > 2 && cmbGenero.Text != "" && txttelefono.Text.Trim().Length == 8 && txtcorreo.Text != "" && txtdireccion.Text.Trim().Length >= 15 && cmbPuesto.Text != "" && txtsalario.Text.Trim().Length != 0 && double.Parse(txtsalario.Text) > 0 && txtlicencia.Text != "" && dtpvencimiento.Value > System.DateTime.Today && System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                     {
                         if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
@@ -180,34 +173,40 @@ namespace Transporte_Escolar_Bonilla
                             RBLiviana.Enabled = false;
                             CBInter.Enabled = false;
                         }
-                            
+
                     }
                     else
                     {
-                        if(txtnombre.Text.Trim().Length <= 2)
+                        if (txtnombre.Text.Trim().Length <= 2)
                         {
                             MessageBox.Show("El Nombre debe ser mayor a 2 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
+                        }
+                        else
                         if (cmbGenero.Text == "")
                         {
                             MessageBox.Show("El Combobox de Genero no puede quedar sin seleccionar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
+                        }
+                        else
                         if (txttelefono.Text.Trim().Length != 8)
                         {
                             MessageBox.Show("El Telefono debe ser solamente los 8 numeros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
+                        }
+                        else
                         if (txtdireccion.Text.Trim().Length <= 15)
                         {
                             MessageBox.Show("La direccion debe ser mas de 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
+                        }
+                        else
                         if (cmbPuesto.Text == "")
                         {
                             MessageBox.Show("El puesto no puede quedar sin seleccionar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
+                        }
+                        else
                         if (txtsalario.Text.Trim().Length == 0)
                         {
                             MessageBox.Show("El salario no puede quedar vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
+                        }
+                        else
                         if (double.Parse(txtsalario.Text) < 1)
                         {
                             MessageBox.Show("El salario no puede ser menor a 1", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -217,7 +216,8 @@ namespace Transporte_Escolar_Bonilla
                         if (txtlicencia.Text == "")
                         {
                             MessageBox.Show("La licencia no puede quedar vacia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
+                        }
+                        else
                         if (dtpvencimiento.Value <= System.DateTime.Today)
                         {
                             MessageBox.Show("La fecha de vencimiento de la licencia no puede ser menor al dia de hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -265,12 +265,12 @@ namespace Transporte_Escolar_Bonilla
                         txtsalario.Enabled = false;
                         txttelefono.Enabled = false;
                         cmbGenero.Enabled = false;
-                        cmbPuesto.Enabled = false; 
+                        cmbPuesto.Enabled = false;
                         dtpvencimiento.Enabled = false;
                         RBPesada.Enabled = false;
                         RBLiviana.Enabled = false;
                         CBInter.Enabled = false;
-                    }       
+                    }
                 }
                 else
                 {
@@ -288,7 +288,7 @@ namespace Transporte_Escolar_Bonilla
                     {
                         MessageBox.Show("El Telefono debe ser solamente los 8 numeros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                   
+
                     else
                        if (txtdireccion.Text.Trim().Length <= 15)
                     {
@@ -356,7 +356,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Txtcorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar=='@'))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == '@'))
             {
                 e.Handled = true;
             }

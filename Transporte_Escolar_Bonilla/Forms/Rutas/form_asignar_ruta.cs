@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -88,17 +81,17 @@ namespace Transporte_Escolar_Bonilla
                                            combhorario.Text.Substring(combhorario.Text.IndexOf(" ") + 1, 6), 0);
 
                         MOD.BitacoraModulo("Asignacion Vehiculo - Ruta", 1, "Asignacion de Vehiculo a una ruta", combveh.Text, "N/A", "N/A", "N/A", "N/A");
-                        MessageBox.Show("Ruta Asignada Con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                        MessageBox.Show("Ruta Asignada Con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         //Limpiar
                         lab1.Visible = false;
 
-                        combveh.SelectedIndex = -1;   
+                        combveh.SelectedIndex = -1;
                         combruta.SelectedIndex = -1;
-                        combhorario.SelectedIndex = -1; 
+                        combhorario.SelectedIndex = -1;
                     }
                 }
-     
+
             }
         }
     }

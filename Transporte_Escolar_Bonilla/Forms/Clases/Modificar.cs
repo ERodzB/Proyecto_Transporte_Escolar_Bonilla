@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -93,7 +88,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
         }
-        public void ModificarVAsigDevol(int Tipo,string Empleado,string Placa, int estado)
+        public void ModificarVAsigDevol(int Tipo, string Empleado, string Placa, int estado)
         {
             try
             {
@@ -111,7 +106,7 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("ERROR: " + ex.ToString());
             }
         }
-        public void BitacoraModulo(string Evento, int tipo, string d1, string d2, string d3, string d4, string d5,string d6)
+        public void BitacoraModulo(string Evento, int tipo, string d1, string d2, string d3, string d4, string d5, string d6)
         {
             try
             {
@@ -191,7 +186,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Fecha_Vencimiento", fechafin);
                 cmd.Parameters.AddWithValue("@Estado_Contrato", estado);
                 cmd.Parameters.AddWithValue("@Tipo_Pago_Contrato", tipopago);
-                cmd.Parameters.AddWithValue("@Cuotas_Mensuales", cuotas); 
+                cmd.Parameters.AddWithValue("@Cuotas_Mensuales", cuotas);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se ha Modificado correctamente el Contrato", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -239,7 +234,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("Horario_Salida_Nuevo", Horario_Salida_Nuevo);
                 cmd.Parameters.AddWithValue("@Decision", Decision);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha " + Decision + " correctamente el Horario","GUARDADO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Se ha " + Decision + " correctamente el Horario", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -298,7 +293,7 @@ namespace Transporte_Escolar_Bonilla
 
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
@@ -319,6 +314,6 @@ namespace Transporte_Escolar_Bonilla
                 MessageBox.Show("Error: " + ex);
             }
         }
-    
+
     }
 }

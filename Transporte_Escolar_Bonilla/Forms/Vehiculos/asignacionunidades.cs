@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -20,7 +13,7 @@ namespace Transporte_Escolar_Bonilla
         {
             InitializeComponent();
             Tipo = tipo;
-    
+
             txtObservaciones.ShortcutsEnabled = false;
         }
 
@@ -34,8 +27,8 @@ namespace Transporte_Escolar_Bonilla
             cmbestado.DisplayMember = "Estado";
             cmbestado.ValueMember = "Codigo";
             cmbestado.SelectedIndex = -1;
-            
-            if(Tipo==1)
+
+            if (Tipo == 1)
             {
                 btnAsignar.Visible = true;
                 btnDevolver.Visible = false;
@@ -43,7 +36,7 @@ namespace Transporte_Escolar_Bonilla
                 lblestado.Visible = false;
                 cmbestado.Visible = false;
             }
-            if(Tipo==2)
+            if (Tipo == 2)
             {
                 btnAsignar.Visible = false;
                 btnDevolver.Visible = true;
@@ -51,13 +44,13 @@ namespace Transporte_Escolar_Bonilla
                 cmbempleado.Enabled = false;
                 lblasignado.Text = "Actualmente asignado a: ";
                 lblestado.Text = "Estado en que se devuelve: ";
-      
+
             }
         }
 
         private void BtnAsignar_Click(object sender, EventArgs e)
         {
-            if (cmbempleado.SelectedIndex!=-1)
+            if (cmbempleado.SelectedIndex != -1)
             {
                 if (val.validarLicenciaLiviana(cmbempleado.Text) > 0 && val.validarVehiculoPesado(txtPlaca.Text) > 0)
                 {
@@ -77,7 +70,7 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                MessageBox.Show("Ingrese el empleado a quien se le va a asignar la unidad","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese el empleado a quien se le va a asignar la unidad", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -103,13 +96,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void DgvConsultaU_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
 
         private void DgvConsultaU_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvConsultaU.Rows.Count != 0)
+            if (dgvConsultaU.Rows.Count != 0)
             {
                 btnAsignar.Enabled = true;
                 btnDevolver.Enabled = true;
@@ -117,7 +110,7 @@ namespace Transporte_Escolar_Bonilla
                 txtDescripcion.Text = dgvConsultaU.CurrentRow.Cells[1].Value.ToString();
                 cmbempleado.Text = dgvConsultaU.CurrentRow.Cells[3].Value.ToString();
             }
-            
+
         }
 
         private void TxtObservaciones_KeyPress(object sender, KeyPressEventArgs e)

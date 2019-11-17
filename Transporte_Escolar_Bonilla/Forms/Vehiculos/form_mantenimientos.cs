@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -37,7 +30,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Radagregar_CheckedChanged(object sender, EventArgs e)
         {
-            if(radagregar.Checked)
+            if (radagregar.Checked)
             {
                 labnom.Visible = true;
                 txtnom.Visible = true;
@@ -214,22 +207,22 @@ namespace Transporte_Escolar_Bonilla
         {
             cambio++;
 
-            if(cambio>3)
+            if (cambio > 3)
             {
                 consul.DatosMantenimiento(combmant.SelectedIndex + 1, txtnom, txtdesc);
                 txtnom.Enabled = true;
                 txtdesc.Enabled = true;
             }
-                
+
         }
 
         private void Radno_CheckedChanged(object sender, EventArgs e)
         {
-            if(radno.Checked)
+            if (radno.Checked)
             {
                 txtnom.Clear();
                 txtdesc.Clear();
-            } 
+            }
         }
     }
 }

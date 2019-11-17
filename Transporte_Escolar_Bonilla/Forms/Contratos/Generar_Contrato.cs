@@ -1,36 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection;
 using Word = Microsoft.Office.Interop.Word;
-using System.Globalization;
-using System.Threading;
 
 namespace Transporte_Escolar_Bonilla
 {
     public partial class Generar_Contrato : Form
     {
-        
-        
+
+
         Consultar con = new Consultar();
         Estetica est = new Estetica();
-        string idecliente,cliente, tipocon, mensualidad, cuotas, servicio, fechaini, montocontrato, fechafin, ruta, parada, anticipo;
+        string idecliente, cliente, tipocon, mensualidad, cuotas, servicio, fechaini, montocontrato, fechafin, ruta, parada, anticipo;
 
         private async void BtnGenerar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea Generar el Contrato?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                
+
                 Task contrato = new Task(generarContrato);
                 contrato.Start();
                 await contrato;
-                
+
             }
         }
 
@@ -64,7 +56,7 @@ namespace Transporte_Escolar_Bonilla
                 oDoc.Tables.Add(oDoc.Range(), 5, 5, ref oMissing, ref oMissing);
                 Word.Paragraph oPara1;
                 oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
-                
+
                 oPara1.Range.Text = "CONTRATO DE SERVICIO DE TRANSPORTE TRANSPORTE ESCOLAR BONILLA";
                 oPara1.Range.Font.Underline = Word.WdUnderline.wdUnderlineSingle;
                 oPara1.Range.Font.Name = "Times New Roman";
@@ -562,7 +554,7 @@ namespace Transporte_Escolar_Bonilla
                 oPara5.Range.Font.Underline = Word.WdUnderline.wdUnderlineNone;
                 oPara5.Format.SpaceAfter = 15;
                 oPara5.Range.InsertParagraphAfter();
-                
+
                 Word.Paragraph oPara6;
                 oPara6 = oDoc.Content.Paragraphs.Add(ref oMissing);
                 oPara6.Range.Text = "CUARTA:  PLAZO DEL CONTRATO: el plazo del presente contrato será " +
@@ -598,7 +590,7 @@ namespace Transporte_Escolar_Bonilla
                 oPara8.Range.InsertParagraphAfter();
                 loading.barraProgreso(70);
                 Word.Paragraph oPara9;
-                
+
                 oPara9 = oDoc.Content.Paragraphs.Add(ref oMissing);
                 oPara9.Range.Text = "SEPTIMA: Declaran “EL TRANSPORTISTA” y “EL CLIENTE, que aceptan las cláusulas estipuladas en este " +
                     "CONTRATO DE SERVICIOS y para dar fe de lo convenido, " +
@@ -623,7 +615,7 @@ namespace Transporte_Escolar_Bonilla
         }
         private void DgvGenerarContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvGenerarContrato.Rows.Count > 0)
+            if (dgvGenerarContrato.Rows.Count > 0)
             {
                 idecliente = dgvGenerarContrato.CurrentRow.Cells[1].Value.ToString();
                 cliente = dgvGenerarContrato.CurrentRow.Cells[2].Value.ToString();
@@ -637,10 +629,10 @@ namespace Transporte_Escolar_Bonilla
                 ruta = dgvGenerarContrato.CurrentRow.Cells[10].Value.ToString();
                 parada = dgvGenerarContrato.CurrentRow.Cells[11].Value.ToString();
                 anticipo = dgvGenerarContrato.CurrentRow.Cells[12].Value.ToString();
-                btnGenerar.Enabled = true; 
+                btnGenerar.Enabled = true;
             }
 
-            
+
         }
     }
 }

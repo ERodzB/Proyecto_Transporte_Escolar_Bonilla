@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -112,7 +106,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 consul.DescVehiculos(combveh1.Text, labv1);
                 labv1.Visible = true;
-                if(combservicio.SelectedIndex==1)
+                if (combservicio.SelectedIndex == 1)
                     combveh2.SelectedIndex = combveh1.SelectedIndex;
             }
         }
@@ -173,11 +167,11 @@ namespace Transporte_Escolar_Bonilla
         {
             if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(txttotal.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+                if (System.Text.RegularExpressions.Regex.IsMatch(txttotal.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
         }
-    
+
 
         private void Txtant_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -187,14 +181,14 @@ namespace Transporte_Escolar_Bonilla
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
         }
-    
+
 
         //Crear
         private void Botcrear_Click(object sender, EventArgs e)
         {
             double ant = 0;
             int contc = 0, conth = 0;
-            string errorc="", error = "", anio = "", codcli="";
+            string errorc = "", error = "", anio = "", codcli = "";
 
             val.igual = 0;
 
@@ -203,7 +197,7 @@ namespace Transporte_Escolar_Bonilla
             {
                 errorc += "Seleccione un Servicio\n";
                 contc++;
-            }        
+            }
 
             if (combcliente.SelectedIndex == -1)
             {
@@ -235,16 +229,16 @@ namespace Transporte_Escolar_Bonilla
                 errorc += "El viaje no puede iniciar despues de que haya finalizado\n";
                 contc++;
             }
-            
+
             //Validar anticipo no mayor que monto total
-            if((txtant.Text.Trim().Length == 0 || double.Parse(txtant.Text) <= 0) || (txttotal.Text.Trim().Length == 0 || double.Parse(txttotal.Text) <= 0) || double.Parse(txtant.Text) > double.Parse(txttotal.Text))
+            if ((txtant.Text.Trim().Length == 0 || double.Parse(txtant.Text) <= 0) || (txttotal.Text.Trim().Length == 0 || double.Parse(txttotal.Text) <= 0) || double.Parse(txtant.Text) > double.Parse(txttotal.Text))
             {
                 errorc += "El Anticipo y El Total deben ser mayor que 0. El Anticipo no puede ser mayor al Total a Pagar\n";
                 contc++;
             }
 
             if (contc > 0)
-                MessageBox.Show("Debe llenar correctamente los datos: \n\n"+ errorc, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe llenar correctamente los datos: \n\n" + errorc, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
 

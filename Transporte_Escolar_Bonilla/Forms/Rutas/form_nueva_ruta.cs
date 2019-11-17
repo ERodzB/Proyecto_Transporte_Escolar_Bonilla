@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -20,7 +12,7 @@ namespace Transporte_Escolar_Bonilla
         int cant = 0;
         //Variables Globales
         int cambio1 = 0;
-        
+
         public form_nueva_ruta()
         {
             InitializeComponent();
@@ -28,7 +20,7 @@ namespace Transporte_Escolar_Bonilla
             txtinicio.ShortcutsEnabled = false;
             txtfin.ShortcutsEnabled = false;
         }
-      
+
         private void Txtinicio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
@@ -84,10 +76,10 @@ namespace Transporte_Escolar_Bonilla
 
             error += val.valTextoVacioOMaximo(txtinicio.Text, "Origen de la Ruta");
             error += val.valTextoVacioOMaximo(txtfin.Text, "Ruta de Destino");
-            
+
             if (txtfin.Text == txtinicio.Text)
                 error += "*El nombre de las rutas debe de ser diferente\n";
-            
+
             //Validar Horarios
             if (dtphoras1.Checked == false)
             {
@@ -95,7 +87,7 @@ namespace Transporte_Escolar_Bonilla
                 dtphoras1.Focus();
             }
 
-            if(dtphorae1.Checked == false)
+            if (dtphorae1.Checked == false)
                 error += "*Escoja una Hora de Llegada\n";
 
             MessageBox.Show(dtphorae1.Value.AddMinutes(60).Hour.ToString());
@@ -103,9 +95,9 @@ namespace Transporte_Escolar_Bonilla
 
             if (dtphoras1.Value.Hour < dtphorae1.Value.Hour)
             {
-                for(int x=0; x<=48; x++)
+                for (int x = 0; x <= 48; x++)
                 {
-                    if(dtphorae1.Value.Hour == dtphoras1.Value.AddHours(x).Hour)
+                    if (dtphorae1.Value.Hour == dtphoras1.Value.AddHours(x).Hour)
                     {
                         if (x >= 8)
                             error += "*La ruta no puede tener una duracion mayor a 8 horas\n";
@@ -136,7 +128,7 @@ namespace Transporte_Escolar_Bonilla
                 txtfin.Clear();
                 txtinicio.Focus();
             }
-           
+
 
             //Horarios para Vehiculos ya existentes
             if (dtphoras1.Checked == true)
@@ -148,7 +140,7 @@ namespace Transporte_Escolar_Bonilla
                 }
             }
 
-            if (error!="")
+            if (error != "")
                 MessageBox.Show("ERROR EN: \n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -157,7 +149,7 @@ namespace Transporte_Escolar_Bonilla
                 if (DialogResult == DialogResult.Yes)
                 {
                     //Guardar Ruta con Contrato
-                    ing.NuevaRuta(txtinicio.Text +"-"+ txtfin.Text, txtinicio.Text + " - " + txtfin.Text, "Ruta desde " + txtinicio.Text + " hasta " + txtfin.Text, "Temporal");
+                    ing.NuevaRuta(txtinicio.Text + "-" + txtfin.Text, txtinicio.Text + " - " + txtfin.Text, "Ruta desde " + txtinicio.Text + " hasta " + txtfin.Text, "Temporal");
 
                     //Guardar Ruta con Horarios Y Vehiculos 
                     if (dtphoras1.Checked)
@@ -165,8 +157,8 @@ namespace Transporte_Escolar_Bonilla
 
                     MessageBox.Show("Ruta creada con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     modifico.BitacoraModulo("Creación", 4, "Creación de una Ruta", txtinicio.Text + "-" + txtfin.Text, combveh1.Text, "N/A", "N/A", "N/A");
-                   
-                    if(cant == 0)
+
+                    if (cant == 0)
                     {
                         if (MessageBox.Show("¿Desea crear la ruta de regreso?", "Información", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                         {
@@ -176,7 +168,7 @@ namespace Transporte_Escolar_Bonilla
                             txtfin.Text = txtini;
                             dtphorae1.Checked = false;
                             dtphoras1.Checked = false;
-                            
+
                             cant = 1;
                         }
                         else
@@ -198,7 +190,7 @@ namespace Transporte_Escolar_Bonilla
 
                             txtinicio.Focus();
                         }
-                    }                   
+                    }
                     else
                     {
                         txtinicio.Clear();
@@ -219,7 +211,7 @@ namespace Transporte_Escolar_Bonilla
                         txtinicio.Focus();
                     }
                     //Limpieza
-                    
+
                 }
             }
         }
@@ -238,4 +230,4 @@ namespace Transporte_Escolar_Bonilla
             }
         }
     }
- }
+}

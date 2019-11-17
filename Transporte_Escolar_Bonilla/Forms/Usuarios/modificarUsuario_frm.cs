@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -26,7 +19,7 @@ namespace Transporte_Escolar_Bonilla
         private void Ingresar_btn_Click(object sender, EventArgs e)
         {
             Consultar consulto = new Consultar();
-            
+
             if (valido.validarEmpleado(identidad_tb.Text) == 1)
             {
                 Perfil_cmb.DataSource = consulto.llenarPerfiles();
@@ -36,10 +29,10 @@ namespace Transporte_Escolar_Bonilla
                 nombre_tb.Enabled = true;
                 contra_tb.Enabled = true;
 
-                if(Principal_frm.nomusu.Equals(nombre_tb.Text))
+                if (Principal_frm.nomusu.Equals(nombre_tb.Text))
                     Perfil_cmb.Enabled = false;
                 else
-                    Perfil_cmb.Enabled = true;         
+                    Perfil_cmb.Enabled = true;
 
                 modificar_btn.Enabled = true;
                 identidad_tb.Enabled = false;
@@ -49,16 +42,16 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                MessageBox.Show("El empleado no existe","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El empleado no existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 identidad_tb.Clear();
                 identidad_tb.Focus();
             }
         }
         private void Modificar_btn_Click(object sender, EventArgs e)
         {
-            if (nombre_tb.Text.Trim().Length > 2 && contra_tb.Text.Trim().Length != 0 && Perfil_cmb.Text!="")
+            if (nombre_tb.Text.Trim().Length > 2 && contra_tb.Text.Trim().Length != 0 && Perfil_cmb.Text != "")
             {
-                if (nueva_tb.Text.Length >= 8) 
+                if (nueva_tb.Text.Length >= 8)
                 {
                     if (nueva_tb.Text.Equals(contra_tb.Text) && valido.validarContrasena(actual_tb.Text, identidad_tb.Text) == 1)
                     {
@@ -74,14 +67,14 @@ namespace Transporte_Escolar_Bonilla
                             identidad_tb.Enabled = true;
                             nombre_tb.Enabled = true;
                             contra_tb.Enabled = false;
-                            Perfil_cmb.Enabled = false; 
+                            Perfil_cmb.Enabled = false;
                             Perfil_cmb.SelectedIndex = -1;
                             modificar_btn.Enabled = false;
                             actual_tb.Clear();
                             actual_tb.Enabled = false;
                             nueva_tb.Clear();
                             nueva_tb.Enabled = false;
-                        }      
+                        }
                     }
                     else
                     {

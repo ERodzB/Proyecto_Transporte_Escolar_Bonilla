@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -21,7 +14,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void Cmbfiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-     
+
         }
 
         private void BitacoraModulos_Load(object sender, EventArgs e)
@@ -41,13 +34,13 @@ namespace Transporte_Escolar_Bonilla
             else
             {
                 con.consultabitacora(dgvConsultaU, cmbfiltro.SelectedIndex + 1);
-                
+
             }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if(dgvConsultaU.SelectedRows.Count == 0 && cmbfiltro.SelectedIndex == -1 && dgvConsultaU.Columns.Count <=0)
+            if (dgvConsultaU.SelectedRows.Count == 0 && cmbfiltro.SelectedIndex == -1 && dgvConsultaU.Columns.Count <= 0)
             {
                 MessageBox.Show("Consulte Una opcion para imprimir");
             }

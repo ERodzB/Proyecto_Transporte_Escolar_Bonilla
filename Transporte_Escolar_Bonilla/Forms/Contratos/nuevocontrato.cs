@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -129,7 +123,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled=true;
+                e.Handled = true;
                 if (e.KeyChar == Convert.ToChar(Keys.Delete))
                 {
                     borrar = true;
@@ -162,7 +156,7 @@ namespace Transporte_Escolar_Bonilla
             if (borrar == false)
             {
                 if (txtcantm.Text != "")
-                    txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");  
+                    txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(txtcantm.Text)).ToString("dd/MM/yyyy");
             }
             else
             {
@@ -216,7 +210,7 @@ namespace Transporte_Escolar_Bonilla
                 contc++;
             }
 
-            if (txtcantm.Text.Trim().Length == 0 || (int.Parse(txtcantm.Text) <= 0  || int.Parse(txtcantm.Text) > 12))
+            if (txtcantm.Text.Trim().Length == 0 || (int.Parse(txtcantm.Text) <= 0 || int.Parse(txtcantm.Text) > 12))
             {
                 errorc += "Debe ingresar una Cantidad de Meses de 1-12\n";
                 contc++;
@@ -285,11 +279,11 @@ namespace Transporte_Escolar_Bonilla
                         MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado" + errorp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                         if (contp == 0 && contr > 0)
-                            MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe ingresar la Ruta según el servicio seleccionado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                            if (contri > 0)
-                                MessageBox.Show("No puede ingresar ambas rutas iguales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (contri > 0)
+                            MessageBox.Show("No puede ingresar ambas rutas iguales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         else
                         {
                             DialogResult = MessageBox.Show("¿Datos ingresados correctamente?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -356,7 +350,8 @@ namespace Transporte_Escolar_Bonilla
 
         private void Pago_cmb_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (pago_cmb.SelectedIndex==0) { 
+            if (pago_cmb.SelectedIndex == 0)
+            {
                 label7.Text = "Monto por mes";
             }
             else
@@ -384,7 +379,7 @@ namespace Transporte_Escolar_Bonilla
                 SystemSounds.Hand.Play();
             }
 
-            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar=='.') && !(e.KeyChar == ','))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
             {
                 e.Handled = true;
             }

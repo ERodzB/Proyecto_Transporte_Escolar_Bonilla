@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -53,7 +46,9 @@ namespace Transporte_Escolar_Bonilla
         private void Botingresar_Click(object sender, EventArgs e)
         {
             int cont = 0;
+#pragma warning disable CS0219 // The variable 'error' is assigned but its value is never used
             string error = "";
+#pragma warning restore CS0219 // The variable 'error' is assigned but its value is never used
 
             //Validar campos vacios
             if (combveh.SelectedIndex == -1)
@@ -62,12 +57,12 @@ namespace Transporte_Escolar_Bonilla
             if (combtipo.SelectedIndex == -1)
                 cont++;
 
-            if (txtcosto.Text.Trim().Length == 0) 
+            if (txtcosto.Text.Trim().Length == 0)
                 cont++;
-            
+
             if (cont > 0)
                 MessageBox.Show("Debe llenar todos los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else 
+            else
             {
                 if (double.Parse(txtcosto.Text) <= 0)
                     MessageBox.Show("El Costo del Mantenimiento debe ser mayor que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -77,40 +72,40 @@ namespace Transporte_Escolar_Bonilla
                     //    MessageBox.Show("No se admiten fechas anteriores al día de Hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //else
                     //{
-                        if (val.VehiculoConductor(combveh.Text) == 0)
-                            MessageBox.Show("Asigne un conductor encargado antes de enviarlo a Mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
+                    if (val.VehiculoConductor(combveh.Text) == 0)
+                        MessageBox.Show("Asigne un conductor encargado antes de enviarlo a Mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (DialogResult == DialogResult.Yes)
                         {
-                            DialogResult = MessageBox.Show("¿Está seguro de los datos ingresados?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            //Guardar mantenimiento
+                            ing.NuevoMantenimiento(int.Parse(combtipo.SelectedValue.ToString()), dtpfecha.Value, combveh.Text, double.Parse(txtcosto.Text));
+                            mod.BitacoraModulo("Mantenimiento", 1, "Mantenimiento a un Vehiculo", combveh.Text, "N/A", "N/A", "N/A", "N/A");
 
-                            if (DialogResult == DialogResult.Yes)
-                            {
-                                //Guardar mantenimiento
-                                ing.NuevoMantenimiento(int.Parse(combtipo.SelectedValue.ToString()), dtpfecha.Value, combveh.Text, double.Parse(txtcosto.Text));
-                                mod.BitacoraModulo("Mantenimiento", 1, "Mantenimiento a un Vehiculo", combveh.Text, "N/A", "N/A", "N/A", "N/A");
+                            //Cambiar estado del vehiculo a "En Mantenimiento"
+                            mod.ModificarEstadoVeh(combveh.Text);
 
-                                //Cambiar estado del vehiculo a "En Mantenimiento"
-                                mod.ModificarEstadoVeh(combveh.Text);
+                            MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //Limpiar
+                            lab1.Visible = false;
 
-                                //Limpiar
-                                lab1.Visible = false;
+                            txtcosto.Clear();
 
-                                txtcosto.Clear();
-
-                                combveh.SelectedIndex = -1;
-                                combtipo.SelectedIndex = -1;
-                            }
+                            combveh.SelectedIndex = -1;
+                            combtipo.SelectedIndex = -1;
                         }
+                    }
                     //}
                 }
 
-                
+
             }
 
 
-               
+
         }
 
         private void Txtcosto_KeyPress(object sender, KeyPressEventArgs e)

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Transporte_Escolar_Bonilla
@@ -39,7 +32,7 @@ namespace Transporte_Escolar_Bonilla
         private void Modificar_Datos_Contrato_Load(object sender, EventArgs e)
         {
             txtCliente.Text = contrato_panel.nombrecli;
-                        
+
             con.CargadgvDatosContrato(dgvDatosContrato, contrato_panel.codc);
             cmbTipoPago.DataSource = con.combox_tipo_pago();
             cmbTipoPago.DisplayMember = "NombrePago";
@@ -63,14 +56,14 @@ namespace Transporte_Escolar_Bonilla
             if (MessageBox.Show("¿Está seguro que desea Regresar?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 contrato_panel modcon = new contrato_panel();
-                estetics.AbrirFormularios(modcon, datos_contrato_panel); 
+                estetics.AbrirFormularios(modcon, datos_contrato_panel);
             }
         }
 
         //DA CLICK AL CONTRATO
         private void DgvDatosContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvDatosContrato.Rows.Count > 0)
+            if (dgvDatosContrato.Rows.Count > 0)
             {
                 btnModificar.Enabled = true;
 
@@ -140,58 +133,58 @@ namespace Transporte_Escolar_Bonilla
 
                 }
             }
-         
+
         }
 
-        private void BtnModificar_Click(object sender, EventArgs e) 
+        private void BtnModificar_Click(object sender, EventArgs e)
         {
-                if(txtTipoContrato.Text == "Temporal")
+            if (txtTipoContrato.Text == "Temporal")
+            {
+                if (txtMonto.Text.Trim().Length == 0 || double.Parse(txtMonto.Text) <= 0 || txtMontoMensual.Text.Trim().Length == 0 || double.Parse(txtMontoMensual.Text) <= 0 || txtCuota.Text.Trim().Length == 0 || double.Parse(txtCuota.Text) <= 0)
+                    MessageBox.Show("Debe ingresar los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
                 {
-                    if (txtMonto.Text.Trim().Length == 0 || double.Parse(txtMonto.Text) <= 0 || txtMontoMensual.Text.Trim().Length == 0 || double.Parse(txtMontoMensual.Text) <= 0 || txtCuota.Text.Trim().Length == 0 || double.Parse(txtCuota.Text) <= 0)
-                        MessageBox.Show("Debe ingresar los datos correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                    {
-                        if (int.Parse(txtCuota.Text) > 12)
-                            MessageBox.Show("El Máximo de Cuotas permitidas es 12", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
-                        {
-                            if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                            {
-                                 string estado, tipopago;
-                                 estado = cmbEstado.SelectedValue.ToString();
-                                 tipopago = cmbTipoPago.SelectedValue.ToString();
-                                 modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago), int.Parse(txtCuota.Text));
-                                 modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
-                            }
-                        }
-                    }
-                         
-                    
-                }
-
-
-                if(txtTipoContrato.Text == "Viaje")
-                {
-                    if (txtMonto.Text.Trim().Length == 0 || double.Parse(txtMonto.Text) <= 0)
-                        MessageBox.Show("Debe ingresar un monto válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (int.Parse(txtCuota.Text) > 12)
+                        MessageBox.Show("El Máximo de Cuotas permitidas es 12", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
                         if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
-                            string estado;
+                            string estado, tipopago;
                             estado = cmbEstado.SelectedValue.ToString();
-                            modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
+                            tipopago = cmbTipoPago.SelectedValue.ToString();
+                            modif.ModificarContratoTemporal(txtContrato.Text, double.Parse(txtMontoMensual.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado), int.Parse(tipopago), int.Parse(txtCuota.Text));
                             modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
                         }
-                    }                 
+                    }
                 }
+
+
+            }
+
+
+            if (txtTipoContrato.Text == "Viaje")
+            {
+                if (txtMonto.Text.Trim().Length == 0 || double.Parse(txtMonto.Text) <= 0)
+                    MessageBox.Show("Debe ingresar un monto válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string estado;
+                        estado = cmbEstado.SelectedValue.ToString();
+                        modif.ModificarContratoViaje(txtContrato.Text, double.Parse(txtAnticipo.Text), cmbTipoServicio.SelectedItem.ToString(), DateTime.Parse(dtpInicio.Text), double.Parse(txtMonto.Text), txtFechaFinal.Text, int.Parse(estado));
+                        modif.BitacoraModulo("Modificación - Contrato", 10, "Modificación Información del Contrato", txtCliente.Text, "N/A", "N/A", "N/A", "N/A");
+                    }
+                }
+            }
         }
 
         private void TxtMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsNumber(e.KeyChar) || e.KeyChar == '.' || (char.IsControl(e.KeyChar) && e.KeyChar != (char)Keys.Back))
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(txtMonto.Text,"^\\d*\\.\\d{2}$")) e.Handled = true;
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtMonto.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
         }
@@ -203,13 +196,13 @@ namespace Transporte_Escolar_Bonilla
 
         private void DtpFinal_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void TxtCuota_TextChanged(object sender, EventArgs e)
         {
             if (txtCuota.Text.Trim().Length != 0 && int.Parse(txtCuota.Text) <= 12)
-                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy"); 
+                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
         }
 
         private void DtpInicio_ValueChanged(object sender, EventArgs e)
