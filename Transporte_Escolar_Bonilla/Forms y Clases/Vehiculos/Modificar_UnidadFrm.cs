@@ -55,6 +55,8 @@ namespace Transporte_Escolar_Bonilla
                     dtpEmision.Enabled = false;
                     dtpVencimiento.ResetText();
                     dtpVencimiento.Enabled = false;
+
+                    con.CargadgvModVehiculos(dgvVehiculos);
                 }
             }
 
@@ -76,7 +78,7 @@ namespace Transporte_Escolar_Bonilla
                 txtColor.Text = dgvVehiculos.CurrentRow.Cells[8].Value.ToString();
                 dtpEmision.Value = DateTime.Parse(dgvVehiculos.CurrentRow.Cells[11].Value.ToString());
                 dtpVencimiento.Value = DateTime.Parse(dgvVehiculos.CurrentRow.Cells[12].Value.ToString());
-                cmbEstadoVehiculo.SelectedIndex = 1;
+                cmbEstadoVehiculo.Text = dgvVehiculos.CurrentRow.Cells[10].Value.ToString();
 
                 txtColor.Enabled = true;
                 dtpEmision.Enabled = true;

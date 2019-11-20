@@ -150,7 +150,7 @@
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(216, 26);
             this.dtpfecha.TabIndex = 290;
-            this.dtpfecha.Value = new System.DateTime(2019, 10, 16, 0, 0, 0, 0);
+            this.dtpfecha.Value = new System.DateTime(2019, 11, 20, 0, 0, 0, 0);
             // 
             // label1
             // 

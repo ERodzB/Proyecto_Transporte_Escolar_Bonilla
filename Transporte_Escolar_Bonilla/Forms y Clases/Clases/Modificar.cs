@@ -256,7 +256,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Emision_Permiso", emision);
                 cmd.Parameters.AddWithValue("@Vencimiento_Permiso", vencimiento);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Se ha Modificado correctamente el Contrato");
+                MessageBox.Show("Se ha Modificado correctamente el Vehículo", "MODIFICACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
