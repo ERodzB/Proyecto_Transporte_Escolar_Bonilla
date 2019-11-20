@@ -262,6 +262,17 @@ GO
 /* ----------------------------------------------------Procedimientos Almacenados USUARIOS---------------------------------------------------------- */
 
 /*Procedimiento para el Inicio del Sitema*/
+	--Verificar Estado Usuario
+	create procedure EstadoUsuario
+		@Nombre_Usuario varchar(100),
+		@Contrasena_Usuario varchar(100)
+		as 
+	begin
+		select Estado_Usuario from [dbo].[Usuarios]
+		where Nombre_Usuario=@Nombre_Usuario and
+		Contrasena_Usuario=@Contrasena_Usuario
+	end
+	GO
 	--Entrar al sistema
 	create procedure Entrar_Sistema
 		@Nombre_Usuario varchar(100),
@@ -312,8 +323,7 @@ GO
 		@Codigo_Empleado varchar(50),
 		@Nombre_Usuario varchar(100),
 		@Contrasena_Usuario varchar(100),
-		@Codigo_Perfil int
-	
+		@Codigo_Perfil int	
 	as
 	begin
 		insert into [dbo].[Usuarios]
@@ -321,7 +331,8 @@ GO
 		@Codigo_Empleado,
 		@Nombre_Usuario,
 		@Contrasena_Usuario,
-		@Codigo_Perfil
+		@Codigo_Perfil,
+		201
 		)
 	end
 	GO
@@ -365,7 +376,7 @@ GO
 		@Codigo_Empleado  varchar(100)
 	as
 	begin
-		select U.Nombre_Usuario,U.Contrasena_Usuario, U.Perfil_Acceso from Usuarios U where u.Codigo_Empleado=@Codigo_Empleado
+		select U.Nombre_Usuario,U.Contrasena_Usuario, U.Perfil_Acceso, U.Estado_Usuario from Usuarios U where u.Codigo_Empleado=@Codigo_Empleado
 	end
 	GO
 	--Modificar Usuario--
@@ -373,13 +384,15 @@ GO
 		@Codigo_Empleado as varchar(50),
 		@Nombre_Usuario varchar(100),
 		@Contrasena_Usuario varchar(100),
-		@Perfil_Acceso int 
+		@Perfil_Acceso int,
+		@Estado_Usuario int
 	as
 	begin
 		update [dbo].[Usuarios] 
 		set Nombre_Usuario=@Nombre_Usuario,
 		Contrasena_Usuario=@Contrasena_Usuario,
-		Perfil_Acceso=@Perfil_Acceso
+		Perfil_Acceso=@Perfil_Acceso,
+		Estado_Usuario=@Estado_Usuario
 		where @Codigo_Empleado=Codigo_Empleado
 	end
 	GO
@@ -436,11 +449,12 @@ create procedure consultasusuario
 	if @TipoConsulta='Usuarios'
 		Begin
 			select e.Nombre_Empleado'Empleado', u.Nombre_Usuario'Usuario',convert(varchar(50),ENCRYPTBYPASSPHRASE(u.Codigo_Empleado,u.Contrasena_Usuario))'Contraseña',
-			p.Nombre_Perfil'Perfil Usuario',a.Tipo_Acceso'Acceso Usuario'
+			p.Nombre_Perfil'Perfil Usuario',a.Tipo_Acceso'Acceso Usuario', s.Nombre_Estado 'Estado'
 			from dbo.Usuarios u
 			inner join dbo.Empleado e on u.Codigo_Empleado = e.Identidad_Empleado
 			inner join dbo.Perfiles p on u.Perfil_Acceso = p.Codigo_Perfil
 			inner join dbo.Acceso a on p.Nivel_Acceso = a.Codigo_Acceso
+			inner join dbo.Estado s on u.Estado_Usuario = s.Codigo_Estado
 		end
 	if @TipoConsulta='Perfiles'
 		Begin

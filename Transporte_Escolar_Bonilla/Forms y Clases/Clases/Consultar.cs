@@ -288,7 +288,7 @@ namespace Transporte_Escolar_Bonilla
             Adapter.Fill(table);
             return table;
         }
-        public void BuscarUsuario(String Codigo_Empleado, TextBox Nombre_Usuario, TextBox Contrasena_Usuario, ComboBox Perfil_cmb)
+        public void BuscarUsuario(String Codigo_Empleado, TextBox Nombre_Usuario, TextBox Contrasena_Usuario, ComboBox Perfil_cmb, RadioButton ac, RadioButton inac)
         {
             try
             {
@@ -300,6 +300,11 @@ namespace Transporte_Escolar_Bonilla
                 Nombre_Usuario.Text = table.Rows[0][0].ToString();
                 Contrasena_Usuario.Text = table.Rows[0][1].ToString();
                 Perfil_cmb.SelectedIndex = (int)table.Rows[0][2] - 1;
+
+                if ((int)table.Rows[0][3] == 201)
+                    ac.Checked = true;
+                else
+                    inac.Checked = true;
             }
             catch (Exception ex)
             {

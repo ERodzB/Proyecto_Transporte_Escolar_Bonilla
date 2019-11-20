@@ -34,6 +34,7 @@ INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasoli
 INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (3, N'Diesel', N'Gasolina Diesel')
 INSERT [dbo].[TipoGasolina] ([CodGasolina], [NombreGasolina], [DescripcionGasolina]) VALUES (4, N'Gas', N'Gas LPG')
 GO
+INSERT [dbo].[TipoLicencia] ([CodTipoLicencia], [TipoLicencia]) VALUES (0, N'No posee Licencia')
 INSERT [dbo].[TipoLicencia] ([CodTipoLicencia], [TipoLicencia]) VALUES (1, N'Liviana')
 INSERT [dbo].[TipoLicencia] ([CodTipoLicencia], [TipoLicencia]) VALUES (2, N'Pesada')
 INSERT [dbo].[TipoLicencia] ([CodTipoLicencia], [TipoLicencia]) VALUES (3, N'Liviana Internacional')
@@ -55,7 +56,7 @@ INSERT [dbo].[TipoVehiculo] ([CodVehiculo], [Tipo_Vehiculo], [Descripcion_Tipo_V
 GO
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'CT', N'Contrato')
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'DC', N'Documentos')
-INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'EP', N'Empleado')
+INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'US', N'Usuario')
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'EV', N'Eventos')
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'MT', N'Mantenimientos')
 INSERT [dbo].[Categoria] ([Codigo_Categoria], [Nombre_Categoria]) VALUES (N'PG', N'Pagos')
@@ -67,7 +68,8 @@ INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [De
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (3, N'CT', N'Sin Validar', N'Contrato sin Firma')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (101, N'DC', N'Vigente', N'Documento Vigente')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (102, N'DC', N'No Vigente', N'Documento Vencido')
-INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (201, N'EP', N'Enfermo', N'Con Incapacidad')
+INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (201, N'US', N'Activo', N'El Usuario esta activo actualmente')
+INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (202, N'US', N'Inactivo', N'El Usuario esta inactivo por tiempo indefinido')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (301, N'EV', N'Sin Retornar', N'El vehiculo no ha sido retornada aun')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (302, N'EV', N'Retornado', N'El vehiculo fue retornado')
 INSERT [dbo].[Estado] ([Codigo_Estado], [Codigo_Categoria], [Nombre_Estado], [Descripcion_Estado]) VALUES (303, N'EV', N'Retornado con Atraso', N'El vehiculo se retorno fuera de la hora laboral')
@@ -127,11 +129,11 @@ INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Desc
 INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (6, 3, N'Invitado', N'Solo puede ver notificaciones')
 INSERT [dbo].[Perfiles] ([Codigo_Perfil], [Nivel_Acceso], [Nombre_Perfil], [Descripcion_Perfil]) VALUES (7, 3, N'Pasante ', N'Invitado con usuario')
 GO
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199919518', N'athompson', N'12345678', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0301199901357', N'ebonilla', N'12345678', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199802725', N'esalgado', N'12345678', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'1502199600657', N'lmejia', N'12345678', 1)
-INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso]) VALUES (N'0801199810682', N'sduarte', N'12345678', 1)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'0801199919518', N'athompson', N'12345678', 1, 201)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'0301199901357', N'ebonilla', N'12345678', 1, 201)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'0801199802725', N'esalgado', N'12345678', 1, 201)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'1502199600657', N'lmejia', N'12345678', 1, 201)
+INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'0801199810682', N'sduarte', N'12345678', 1, 201)
 GO
 
 

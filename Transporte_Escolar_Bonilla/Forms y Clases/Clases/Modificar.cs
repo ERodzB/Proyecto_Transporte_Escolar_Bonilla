@@ -39,7 +39,7 @@ namespace Transporte_Escolar_Bonilla
 
             return nuevaContra;
         }
-        public void ModificarUsuario(string Codigo_Empleado, string Nombre_Usuario, string Contrasena_Usuario, int Perfil_Acceso)
+        public void ModificarUsuario(string Codigo_Empleado, string Nombre_Usuario, string Contrasena_Usuario, int Perfil_Acceso, int estado)
         {
             try
             {
@@ -49,6 +49,7 @@ namespace Transporte_Escolar_Bonilla
                 cmd.Parameters.AddWithValue("@Nombre_Usuario", Nombre_Usuario);
                 cmd.Parameters.AddWithValue("@Contrasena_Usuario", Contrasena_Usuario);
                 cmd.Parameters.AddWithValue("@Perfil_Acceso", Perfil_Acceso);
+                cmd.Parameters.AddWithValue("@Estado_Usuario", estado);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se ha Modificado correctamente el usuario", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

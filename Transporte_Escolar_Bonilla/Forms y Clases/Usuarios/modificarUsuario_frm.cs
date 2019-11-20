@@ -25,14 +25,22 @@ namespace Transporte_Escolar_Bonilla
                 Perfil_cmb.DataSource = consulto.llenarPerfiles();
                 Perfil_cmb.DisplayMember = "Nombre_Perfil";
                 Perfil_cmb.ValueMember = "Codigo_Perfil";
-                consulto.BuscarUsuario(identidad_tb.Text, nombre_tb, contra_tb, Perfil_cmb);
+                consulto.BuscarUsuario(identidad_tb.Text, nombre_tb, contra_tb, Perfil_cmb, radac, radinac);
                 nombre_tb.Enabled = true;
                 contra_tb.Enabled = true;
 
                 if (Principal_frm.nomusu.Equals(nombre_tb.Text))
+                {
                     Perfil_cmb.Enabled = false;
+                    radinac.Enabled = false;
+                }
+                    
                 else
+                {
                     Perfil_cmb.Enabled = true;
+                    radinac.Enabled = true;  
+                }
+                    
 
                 modificar_btn.Enabled = true;
                 identidad_tb.Enabled = false;
@@ -49,6 +57,8 @@ namespace Transporte_Escolar_Bonilla
         }
         private void Modificar_btn_Click(object sender, EventArgs e)
         {
+            int estado = 0;
+
             if (nombre_tb.Text.Trim().Length > 2 && contra_tb.Text.Trim().Length != 0 && Perfil_cmb.Text != "")
             {
                 if (nueva_tb.Text.Length >= 8)
@@ -58,7 +68,13 @@ namespace Transporte_Escolar_Bonilla
                         if (MessageBox.Show("¿Está seguro que desea guardar los cambios?", "ATENCIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             Modificar modify = new Modificar();
-                            modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1);
+
+                            if (radac.Checked == true)
+                                estado = 201;
+                            else
+                                estado = 202;
+
+                            modify.ModificarUsuario(identidad_tb.Text, nombre_tb.Text, contra_tb.Text, Perfil_cmb.SelectedIndex + 1, estado);
                             modify.BitacoraModulo("Modificación - Usuario", 10, "Modificación de Información del Usuario ", "Usuario Modificado: " + nombre_tb.Text, "N/A", "N/A", "N/A", "N/A");
 
                             identidad_tb.Clear();
@@ -74,6 +90,10 @@ namespace Transporte_Escolar_Bonilla
                             actual_tb.Enabled = false;
                             nueva_tb.Clear();
                             nueva_tb.Enabled = false;
+                            radac.Checked = false;
+                            radinac.Checked = false;
+                            radinac.Enabled = true;
+                            identidad_tb.Focus();
                         }
                     }
                     else
@@ -159,6 +179,26 @@ namespace Transporte_Escolar_Bonilla
                 contra_tb.PasswordChar = '*';
             else
                 contra_tb.PasswordChar = '\0';
+        }
+
+        private void nombre_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void actual_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nueva_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contra_tb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
