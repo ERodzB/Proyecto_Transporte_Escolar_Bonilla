@@ -30,7 +30,7 @@ GO
 create procedure ComboboxTipoContrato
 as
 begin
-	select Tipo_Contrato from TipoContrato 
+	select Nombre_Tipo_Contrato from Tipo_Contrato 
 end
 GO
 
@@ -481,10 +481,10 @@ begin
 	inner join dbo.Contratos co on c.Codigo_Cliente = co.Cliente_Contrato
 	group by c.Codigo_Cliente,c.Correo_Cliente,c.Direccion_Cliente,c.Nombre_Cliente,c.Telefono_Cliente
 	if @consultacliente ='Contratos por Cliente'
-	select c.Nombre_Cliente'Cliente del Contrato',c.Telefono_Cliente'Contacto del Cliente', co.Codigo_Contrato'Contrato',tc.Tipo_Contrato'Tipo de Contrato',e.Nombre_Estado'Estado Contrato'
+	select c.Nombre_Cliente'Cliente del Contrato',c.Telefono_Cliente'Contacto del Cliente', co.Codigo_Contrato'Contrato',tc.Nombre_Tipo_Contrato'Tipo de Contrato',e.Nombre_Estado'Estado Contrato'
 	from  dbo.Cliente c
 	inner join dbo.Contratos co on c.Codigo_Cliente = co.Cliente_Contrato
-	inner join dbo.TipoContrato tc on co.Tipo_Contrato = tc.Cod_Contrato
+	inner join dbo.Tipo_Contrato tc on co.Tipo_Contrato = tc.Codigo_Tipo_Contrato
 	inner join dbo.Estado e on co.Estado_Contrato = e.Codigo_Estado
 end
 GO
@@ -538,12 +538,12 @@ GO
 create procedure LLenarDVG
 as
 begin
-	select c.Codigo_Contrato'Código del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Tipo_Contrato 'Tipo de Contrato',
+	select c.Codigo_Contrato'Código del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Nombre_Tipo_Contrato 'Tipo de Contrato',
 	c.Fecha_Inicio_Contrato'Incio del Contrato',c.Fecha_Vencimiento'Finalización del Contrato',e.Nombre_Estado 'Estado del Contrato',
 	c.Monto_Contrato'Costo del Contrato'
 	from Contratos C
 	inner join dbo.Estado e on c.Estado_Contrato = e.Codigo_Estado
-	inner join dbo.TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join dbo.Tipo_Contrato tp on c.Tipo_Contrato = tp.Codigo_Tipo_Contrato
 	inner join dbo.Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
 end
 GO
@@ -555,21 +555,21 @@ create procedure filtrarcontratos
 	as
 begin
 	if @tipobusqueda = 'Clientes'
-	select c.Codigo_Contrato'Código del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Tipo_Contrato 'Tipo de Contrato',
+	select c.Codigo_Contrato'Código del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Nombre_Tipo_Contrato 'Tipo de Contrato',
 	c.Fecha_Inicio_Contrato'Incio del Contrato',c.Fecha_Vencimiento'Finalización del Contrato',e.Nombre_Estado 'Estado del Contrato',
 	c.Monto_Contrato'Costo del Contrato'
 	from Contratos C
 	inner join dbo.Estado e on c.Estado_Contrato = e.Codigo_Estado
-	inner join dbo.TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join dbo.Tipo_Contrato tp on c.Tipo_Contrato = tp.Codigo_Tipo_Contrato
 	inner join dbo.Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
 	where cl.Codigo_Cliente = @filtro;
 	if @tipobusqueda = 'Estados'
-	select c.Codigo_Contrato'Código del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Tipo_Contrato 'Tipo de Contrato',
+	select c.Codigo_Contrato'Código del Contrato',cl.Nombre_Cliente 'Dueño del Contrato', tp.Nombre_Tipo_Contrato 'Tipo de Contrato',
 	c.Fecha_Inicio_Contrato'Incio del Contrato',c.Fecha_Vencimiento'Finalización del Contrato',e.Nombre_Estado 'Estado del Contrato',
 	c.Monto_Contrato'Costo del Contrato'
 	from Contratos C
 	inner join dbo.Estado e on c.Estado_Contrato = e.Codigo_Estado
-	inner join dbo.TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join dbo.Tipo_Contrato tp on c.Tipo_Contrato = tp.Codigo_Tipo_Contrato
 	inner join dbo.Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
 	where e.Codigo_Estado = @filtro;
 end
@@ -635,12 +635,12 @@ Create procedure ModificarContratoTemporal
 @Monto_Contrato money,
 @Fecha_Vencimiento date,
 @Estado_Contrato int,
-@Tipo_Pago_Contrato varchar(50),
+@Tipo_Pago_Contrato int,
 @Cuotas_Mensuales int
 as
 begin
 	update Contratos
-	set [Monto Mensual] = @Monto_Mensual,
+	set [Monto_Mensual] = @Monto_Mensual,
 	Fecha_Inicio_Contrato = @Fecha_Inicio_Contrato,
 	Fecha_Vencimiento = @Fecha_Vencimiento,
 	Cuotas_Mensuales = @Cuotas_Mensuales,
@@ -676,7 +676,7 @@ create procedure ComboboxTipoPago
 as
 begin
 	
-	select TipoPago, NombrePago from Tipo_Pago
+	select Codigo_Tipo_Pago 'Codigo_Tipo_Pago', Nombre_Tipo_Pago 'Nombre_Tipo_Pago' from Tipo_Pago
 end
 GO
 
@@ -695,17 +695,17 @@ create procedure CargadgvDatoContratoCliente
 @Cod_Cliente varchar(50)
 as
 begin
-	select c.Codigo_Contrato'Nombre del Contrato', tp.Tipo_Contrato'Tipo de Contrato', 
-	c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotas Mensuales', 
+	select c.Codigo_Contrato'Nombre del Contrato', tp.Nombre_Tipo_Contrato'Tipo de Contrato', 
+	c.[Monto_Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotas Mensuales', 
 	c.Servicio'Servicio', c.Anticipo'Anticipo', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato',
 	 c.Monto_Contrato'Monto del Contrato', 
 	Fecha_Vencimiento'Fecha de Vencimiento Contrato',e.Nombre_Estado'Estado del Contrato', 
-	p.NombrePago 'Tipo de Pago'
+	p.Nombre_Tipo_Pago 'Tipo de Pago'
 	from Contratos c
 	inner join Estado e on c.Estado_Contrato = e.Codigo_Estado
-	inner join TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join Tipo_Contrato tp on c.Tipo_Contrato = tp.Codigo_Tipo_Contrato
 	inner join Estado es on es.Codigo_Estado=c.Estado_Contrato
-	inner join Tipo_Pago p on c.Tipo_Pago = p.TipoPago
+	inner join Tipo_Pago p on c.Tipo_Pago = p.Codigo_Tipo_Pago
 	where Cliente_Contrato = @Cod_Cliente
 end
 GO
@@ -759,7 +759,7 @@ begin
 	g.Genero,E.Telefono,e.Correo,e.Direccion,p.Nombre_Puesto'Puesto Empleado',ROUND(e.Salario,2)'Salario'
 	from Empleado E
 	inner join Puesto p on E.Puesto_Empleado = P.Codigo_Puesto
-	inner join Genero g on e.Genero = g.CodGenero;
+	inner join Genero g on e.Genero = g.Codigo_Genero;
 end
 GO
 /*---------------------------------------------Procedimiento Buscar Empleado------------------------------------------------*/
@@ -776,7 +776,7 @@ GO
 create procedure [dbo].[cargarGenero]
 as
 begin
-	select g.CodGenero'Codigo', g.Genero'Gen' from dbo.Genero g
+	select g.Codigo_Genero'Codigo', g.Genero'Gen' from dbo.Genero g
 end
 go
 /*---------------------------------------------Procedimiento Filtro Encargado Vehiculos------------------------------------------------*/
@@ -818,9 +818,9 @@ create procedure [dbo].[ComboboxTVehiculos]
 as
 begin
 begin
-	select v.Tipo_Vehiculo'Codigo',tv.Tipo_Vehiculo'Tipo' from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-	group by v.Tipo_Vehiculo,tv.Tipo_Vehiculo
+	select v.Tipo_Vehiculo'Codigo',tv.Nombre_Tipo_Vehiculo'Tipo' from Vehiculos v
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+	group by v.Tipo_Vehiculo,tv.Nombre_Tipo_Vehiculo
 end
 
 end
@@ -829,10 +829,10 @@ GO
 Create procedure [dbo].[DatosVehiculosSencillos]
 as
 begin
-select v.Codigo_Vehiculo'Placa',CONCAT(tv.Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripción Vehículo',tt.NombreTransmision'Transmisión',tg.NombreGasolina'Tipo Combustible',e.Nombre_Estado'Estado Vehiculo',ep.Nombre_Empleado'Responsable' from Vehiculos v
-inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+select v.Codigo_Vehiculo'Placa',CONCAT(tv.Nombre_Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripción Vehículo',tt.Nombre_Tipo_Transmision'Transmisión',tg.Nombre_Tipo_Gasolina'Tipo Combustible',e.Nombre_Estado'Estado Vehiculo',ep.Nombre_Empleado'Responsable' from Vehiculos v
+inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 end
@@ -841,10 +841,10 @@ GO
 CREATE procedure [dbo].[DatosVehiculosSencillosAsignar]
 as
 begin
-select v.Codigo_Vehiculo'Placa',CONCAT(tv.Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripción Vehículo',tt.NombreTransmision 'Transmisión',
+select v.Codigo_Vehiculo'Placa',CONCAT(tv.Nombre_Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripción Vehículo',tt.Nombre_Tipo_Transmision 'Transmisión',
 'Sin Asignar' as 'Responsable',e.Nombre_Estado 'Estado Vehiculo' from Vehiculos v
-inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
+inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
 inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 where v.Responsable_Vehiculo is null
 end
@@ -853,10 +853,10 @@ GO
 create procedure [dbo].[DatosVehiculosSencillosdevolver]
 as
 begin
-select v.Codigo_Vehiculo'Placa',CONCAT(tv.Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripción Vehículo',tt.NombreTransmision'Transmisión',ep.Nombre_Empleado'Responsable' from Vehiculos v
-inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+select v.Codigo_Vehiculo'Placa',CONCAT(tv.Nombre_Tipo_Vehiculo,' ',v.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo,' ',v.Capacidad_Vehiculo,' Asientos')'Descripción Vehículo',tt.Nombre_Tipo_Transmision'Transmisión',ep.Nombre_Empleado'Responsable' from Vehiculos v
+inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 where v.Responsable_Vehiculo is not null;
@@ -892,18 +892,18 @@ set  @filtro=(Select p.Codigo_Puesto from Puesto p where p.Nombre_Puesto='Conduc
 begin
 	if(@puesto =@filtro)
 	select e.Identidad_Empleado'Identidad Empleado',e.Nombre_Empleado'Nombre Empleado',e.Fecha_Nacimiento'Fecha Nacimiento',
-	g.Genero,E.Telefono,e.Correo,e.Direccion,p.Nombre_Puesto'Puesto Empleado',ROUND(e.Salario,2)'Salario', tl.TipoLicencia'Tipo de Licencia'
+	g.Genero,E.Telefono,e.Correo,e.Direccion,p.Nombre_Puesto'Puesto Empleado',ROUND(e.Salario,2)'Salario', tl.Nombre_Tipo_Licencia'Tipo de Licencia'
 	from Empleado E
 	inner join Puesto p on E.Puesto_Empleado = P.Codigo_Puesto
-	inner join Genero g on e.Genero = g.CodGenero
-	inner join TipoLicencia tl on e.Tipo_Licencia = tl.CodTipoLicencia
+	inner join Genero g on e.Genero = g.Codigo_Genero
+	inner join Tipo_Licencia tl on e.Tipo_Licencia = tl.Codigo_Tipo_Licencia
 	where e.Puesto_Empleado=@puesto;
 	else
 	select e.Identidad_Empleado'Identidad Empleado',e.Nombre_Empleado'Nombre Empleado',e.Fecha_Nacimiento'Fecha Nacimiento',
 	g.Genero,E.Telefono,e.Correo,e.Direccion,p.Nombre_Puesto'Puesto Empleado',ROUND(e.Salario,2)'Salario'
 	from Empleado E
 	inner join Puesto p on E.Puesto_Empleado = P.Codigo_Puesto
-	inner join Genero g on e.Genero = g.CodGenero
+	inner join Genero g on e.Genero = g.Codigo_Genero
 	where e.Puesto_Empleado=@puesto;
 
 end
@@ -915,49 +915,49 @@ create procedure [dbo].[filtrarvehiculos]
 	as
 begin
 	if @tipobusqueda = 'Marca Vehículo'
-	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
-	tt.NombreTransmision 'Transmisión Vehículo',tg.NombreGasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
+	select v.Codigo_Vehiculo'Placa',tv.Nombre_Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
+	tt.Nombre_Tipo_Transmision 'Transmisión Vehículo',tg.Nombre_Tipo_Gasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
 	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehículo',e.Nombre_Estado'Estado' from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+	inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+	inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 	where v.Marca_Vehiculo=@filtro;
 	if @tipobusqueda = 'Tipo Vehículo'
-	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
-	tt.NombreTransmision 'Transmisión Vehículo',tg.NombreGasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
+	select v.Codigo_Vehiculo'Placa',tv.Nombre_Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
+	tt.Nombre_Tipo_Transmision 'Transmisión Vehículo',tg.Nombre_Tipo_Gasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
 	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehículo',e.Nombre_Estado'Estado' from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+	inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+	inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 	where v.Tipo_Vehiculo=@filtro;
 	if @tipobusqueda = 'Estado Vehículo'
-	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
-	tt.NombreTransmision 'Transmision Vehículo',tg.NombreGasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
+	select v.Codigo_Vehiculo'Placa',tv.Nombre_Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
+	tt.Nombre_Tipo_Transmision 'Transmision Vehículo',tg.Nombre_Tipo_Gasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
 	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehículo',e.Nombre_Estado'Estado' from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+	inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+	inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 	where v.Estado_Vehiculo=@filtro;
 	if @tipobusqueda = 'Responsable Vehículo'
-	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
-	tt.NombreTransmision 'Transmisión Vehículo',tg.NombreGasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
+	select v.Codigo_Vehiculo'Placa',tv.Nombre_Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
+	tt.Nombre_Tipo_Transmision 'Transmisión Vehículo',tg.Nombre_Tipo_Gasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
 	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehículo',e.Nombre_Estado'Estado',ep.Nombre_Empleado'Responsable' from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+	inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+	inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 	inner join Empleado ep on v.Responsable_Vehiculo = ep.Identidad_Empleado
 	where v.Responsable_Vehiculo=@filtro;
 	if @tipobusqueda = 'Sin Asignar'
-	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
-	tt.NombreTransmision 'Transmisión Vehículo',tg.NombreGasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
+	select v.Codigo_Vehiculo'Placa',tv.Nombre_Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehiculo',
+	tt.Nombre_Tipo_Transmision 'Transmisión Vehículo',tg.Nombre_Tipo_Gasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
 	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehículo',e.Nombre_Estado'Estado','Sin Asignar'as'Responsable' from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+	inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+	inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 	where v.Responsable_Vehiculo is null;
 end
@@ -966,12 +966,12 @@ GO
 create procedure [dbo].[LLenarDVGvehiculos]
 as
 begin
-	select v.Codigo_Vehiculo'Placa',tv.Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
-	tt.NombreTransmision 'Transmisión Vehículo',tg.NombreGasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
+	select v.Codigo_Vehiculo'Placa',tv.Nombre_Tipo_Vehiculo 'Tipo',concat(v.Anio_Vehiculo,' ',V.Marca_Vehiculo,' ',v.Modelo_Vehiculo,' ',v.Color_Vehiculo)'Descripción',Concat(v.Capacidad_Vehiculo,' Asientos')'Capacidad Vehículo',
+	tt.Nombre_Tipo_Transmision 'Transmisión Vehículo',tg.Nombre_Tipo_Gasolina 'Combustible Vehículo',V.Anio_Adquisicion'Adquirido en: ' ,
 	concat(v.Emision_Permiso,'-',v.Vencimiento_Permiso)'Permiso de Vehículo',e.Nombre_Estado'Estado' from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo=tv.CodVehiculo
-	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo=tv.Codigo_Tipo_Vehiculo
+	inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+	inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 end
 GO
@@ -1054,7 +1054,7 @@ create procedure TotalRecibosContratos
 create procedure ComboboxTipoVeh
 as
 begin
-	select CodVehiculo 'Codigo' , Tipo_Vehiculo 'Tipo' from TipoVehiculo
+	select Codigo_Tipo_Vehiculo 'Codigo' , Nombre_Tipo_Vehiculo 'Tipo' from Tipo_Vehiculo
 end
 GO
 
@@ -1062,7 +1062,7 @@ GO
 create procedure ComboboxTipoTrans
 as
 begin
-	select CodTransmision 'Codigo', NombreTransmision 'Transmision' from TipoTransmision
+	select Codigo_Tipo_Transmision 'Codigo', Nombre_Tipo_Transmision 'Transmision' from Tipo_Transmision
 end
 GO
 
@@ -1070,7 +1070,7 @@ GO
 create procedure ComboboxTipoGas
 as
 begin
-	select CodGasolina 'Codigo', NombreGasolina 'Gasolina' from TipoGasolina
+	select Codigo_Tipo_Gasolina 'Codigo', Nombre_Tipo_Gasolina 'Gasolina' from Tipo_Gasolina
 end
 GO
 
@@ -1122,7 +1122,7 @@ GO
 create procedure ComboboxTipoMant
 as
 begin
-	select Codigo_Tipo_Mantenimiento 'Codigo', Nombre_Mantenimiento 'Mantenimiento' from Tipo_Mantenimientos
+	select Codigo_Tipo_Mantenimiento 'Codigo', Nombre_Tipo_Mantenimiento 'Mantenimiento' from Tipo_Mantenimientos
 end
 GO
 
@@ -1175,70 +1175,70 @@ begin
 	declare @contador as int
 	if(@tipo=1)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=1)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=1)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=2)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=2)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=2)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=3)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=3)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=3)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=4)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=4)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=4)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=5)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=5)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=5)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=6)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=6)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=6)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=7)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=7)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=7)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=8)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=8)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=8)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=9)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=9)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=9)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
 	end
 	if(@tipo=10)
 	begin
-		set @contador=(select count(*) from Eventos where TipoEvento=10)+1
+		set @contador=(select count(*) from Eventos where Tipo_Evento=10)+1
 		select @contador
 		insert into Eventos values
 		(CONCAT(@desc,@contador),@tipo,GETDATE(),@dato1,@dato2,@dato3,@dato4,@dato5,@dato6)
@@ -1278,7 +1278,7 @@ GO
 create procedure ComboTipoEventos
 As
 begin
-	select tv.CodTipoEvento'Codigo',tv.TipoEvento'Nombre' from dbo.TipoEvento tv
+	select tv.Codigo_Tipo_Evento'Codigo',tv.Nombre_Tipo_Evento'Nombre' from dbo.Tipo_Evento tv
 end
 GO
 /*----------------------------------Datagrid Eventos---------------------------------------*/
@@ -1286,9 +1286,9 @@ Create procedure dgvEventos
 @filtro as int
 As
 begin
-	select e.CodEvento'Código Evento',e.FechaEvento'Fecha del Evento',e.Dato1'Descripción Evento',e.Dato2'Clave del Afectado'
+	select e.Codigo_Evento'Código Evento',e.Fecha_Evento'Fecha del Evento',e.Dato1'Descripción Evento',e.Dato2'Clave del Afectado'
 	,e.Dato3'Información Adicional',e.Dato4'Observaciones Adicionales' from Eventos e
-	where e.TipoEvento = @filtro;
+	where e.Tipo_Evento = @filtro;
 end
 GO
 
@@ -1298,13 +1298,13 @@ GO
 Create Procedure CargaDgvModVehiculo
 as
 begin
-	select v.Codigo_Vehiculo'Placa Vehículo', tv.Tipo_Vehiculo'Tipo de Vehículo', v.Anio_Vehiculo'Año del Vehículo', v.Marca_Vehiculo'Marca del Vehículo', v.Modelo_Vehiculo'Modelo del Vehículo',
-	v.Capacidad_Vehiculo'Capacidad del Vehículo', tt.NombreTransmision'Transmisión del Vehículo', tg.NombreGasolina'Combustible del Vehículo', v.Color_Vehiculo,
+	select v.Codigo_Vehiculo'Placa Vehículo', tv.Nombre_Tipo_Vehiculo'Tipo de Vehículo', v.Anio_Vehiculo'Año del Vehículo', v.Marca_Vehiculo'Marca del Vehículo', v.Modelo_Vehiculo'Modelo del Vehículo',
+	v.Capacidad_Vehiculo'Capacidad del Vehículo', tt.Nombre_Tipo_Transmision'Transmisión del Vehículo', tg.Nombre_Tipo_Gasolina'Combustible del Vehículo', v.Color_Vehiculo,
 	v.Anio_Adquisicion, e.Nombre_Estado'Estado del Vehículo', v.Emision_Permiso'Emision del Permiso', v.Vencimiento_Permiso'Vencimiento del Permiso', v.Responsable_Vehiculo'Responsable del Vehículo'
 	from Vehiculos v
-	inner join TipoVehiculo tv on v.Tipo_Vehiculo = tv.CodVehiculo
-	inner join TipoTransmision tt on v.Transmision_Vehiculo = tt.CodTransmision
-	inner join TipoGasolina tg on v.Combustible_Vehiculo = tg.CodGasolina
+	inner join Tipo_Vehiculo tv on v.Tipo_Vehiculo = tv.Codigo_Tipo_Vehiculo
+	inner join Tipo_Transmision tt on v.Transmision_Vehiculo = tt.Codigo_Tipo_Transmision
+	inner join Tipo_Gasolina tg on v.Combustible_Vehiculo = tg.Codigo_Tipo_Gasolina
 	inner join Estado e on v.Estado_Vehiculo = e.Codigo_Estado
 end
 GO
@@ -1313,24 +1313,24 @@ create procedure Notificaciones
 as
 begin
 	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
-	' entro a mantenimiento de ', tp.Nombre_Mantenimiento) as 'Notificaciones' from Vehiculos v
+	' entro a mantenimiento de ', tp.Nombre_Tipo_Mantenimiento) as 'Notificaciones' from Vehiculos v
 	inner join Mantenimientos m on v.Codigo_Vehiculo = m.Codigo_Vehiculo
 	inner join Tipo_Mantenimientos tp on tp.[Codigo_Tipo_Mantenimiento] =[Tipo_Mantenimiento]
 	where v.Estado_Vehiculo = 701 and  DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE())=0
 	union
 	select CONCAT(Marca_Vehiculo,' ', Modelo_Vehiculo,' con placa ', v.Codigo_Vehiculo,
-	' está en mantenimiento de ', tp.Nombre_Mantenimiento , ' hace ',
+	' está en mantenimiento de ', tp.Nombre_Tipo_Mantenimiento , ' hace ',
 	DATEDIFF(DAY,GETDATE(),m.Fecha_Mantenimiento),' días') as 'Notificaciones' from Vehiculos v
 	inner join Mantenimientos m on v.Codigo_Vehiculo = m.Codigo_Vehiculo
 	inner join Tipo_Mantenimientos tp on tp.[Codigo_Tipo_Mantenimiento] =[Tipo_Mantenimiento]
 	where v.Estado_Vehiculo = 701 and  DATEDIFF(DAY,m.Fecha_Mantenimiento,GETDATE())!=0
 	union
-	select CONCAT('El cliente ',cl.Nombre_Cliente,' no ha pagado el mes de ',DATENAME(month,getdate()),' del contrato ', c.Codigo_Contrato,' de Tipo ', tp.Tipo_Contrato) from Contratos c
+	select CONCAT('El cliente ',cl.Nombre_Cliente,' no ha pagado el mes de ',DATENAME(month,getdate()),' del contrato ', c.Codigo_Contrato,' de Tipo ', tp.Nombre_Tipo_Contrato) from Contratos c
 	left join Cliente cl on c.Cliente_Contrato=cl.Codigo_Cliente
 	left join Recibos r on r.Codigo_Contrato = c.Codigo_Contrato
-	left join TipoContrato tp on tp.Cod_Contrato=c.Tipo_Contrato
-	group by c.Codigo_Contrato, cl.Nombre_Cliente, c.Fecha_Inicio_Contrato, C.Cuotas_Mensuales, tp.Tipo_Contrato, c.Estado_Contrato
-	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Num_Recibo),c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Num_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Num_Recibo) and c.Estado_Contrato=1
+	left join Tipo_Contrato tp on tp.Codigo_Tipo_Contrato=c.Tipo_Contrato
+	group by c.Codigo_Contrato, cl.Nombre_Cliente, c.Fecha_Inicio_Contrato, C.Cuotas_Mensuales, tp.Nombre_Tipo_Contrato, c.Estado_Contrato
+	having DATEPART(MONTH,GETDATE())>=DATEPART(MONTH,DATEADD(MONTH,COUNT(R.Numero_Recibo),c.Fecha_Inicio_Contrato)) and DATEPART(MONTH,GETDATE())<=DATEPART(MONTH,DATEADD(MONTH, COUNT(R.Numero_Recibo)+1,c.Fecha_Inicio_Contrato)) and c.Cuotas_Mensuales>COUNT(R.Numero_Recibo) and c.Estado_Contrato=1
 	union
 	select CONCAT('Ya se acerca la fecha de Pago del mes de ',DATENAME(MONTH,DATEADD(month,1,getdate())),' hazlo saber a tus clientes')
 	where DATEPART(DAY,GETDATE())>=25
@@ -1378,7 +1378,7 @@ GO
 create procedure ComboboxMant
 as
 begin
-	select Nombre_Mantenimiento 'Mantenimiento' from Tipo_Mantenimientos
+	select Nombre_Tipo_Mantenimiento 'Mantenimiento' from Tipo_Mantenimientos
 end
 GO
 
@@ -1389,7 +1389,7 @@ create procedure NuevoTipoMantenimiento
 @descripcion varchar(200)
 as
 begin
-	insert into Tipo_Mantenimientos (Codigo_Tipo_Mantenimiento, Nombre_Mantenimiento, Descripcion_Mantenimiento)
+	insert into Tipo_Mantenimientos (Codigo_Tipo_Mantenimiento, Nombre_Tipo_Mantenimiento, Descripcion_Tipo_Mantenimiento)
 	values ( (select COUNT(*)+1 from Tipo_Mantenimientos), @nombre, @descripcion )
 end
 GO
@@ -1399,7 +1399,7 @@ create procedure DatosMantenimiento
 @codigo int
 as
 begin
-	select Nombre_Mantenimiento 'Nombre', Descripcion_Mantenimiento 'Descripcion' from Tipo_Mantenimientos
+	select Nombre_Tipo_Mantenimiento 'Nombre', Descripcion_Tipo_Mantenimiento 'Descripcion' from Tipo_Mantenimientos
 	where Codigo_Tipo_Mantenimiento = @codigo
 end
 GO
@@ -1412,7 +1412,7 @@ create procedure ModificarMantenimiento
 @descripcion varchar(200)
 as
 begin
-	UPDATE Tipo_Mantenimientos set Nombre_Mantenimiento = @nombre, Descripcion_Mantenimiento = @descripcion
+	UPDATE Tipo_Mantenimientos set Nombre_Tipo_Mantenimiento = @nombre, Descripcion_Tipo_Mantenimiento = @descripcion
 	where Codigo_Tipo_Mantenimiento = @codigo
 end
 GO
@@ -1426,12 +1426,12 @@ as
 begin
 	if(@opcion = 1) --Nuevo
 	BEGIN
-		select COUNT(*) from Tipo_Mantenimientos where (Nombre_Mantenimiento = @nombre)
+		select COUNT(*) from Tipo_Mantenimientos where (Nombre_Tipo_Mantenimiento = @nombre)
 	END
 
 	if(@opcion = 2) --Modifica
 	BEGIN
-		select COUNT(*) from Tipo_Mantenimientos where (Nombre_Mantenimiento = @nombre and Codigo_Tipo_Mantenimiento != @codigo)
+		select COUNT(*) from Tipo_Mantenimientos where (Nombre_Tipo_Mantenimiento = @nombre and Codigo_Tipo_Mantenimiento != @codigo)
 	END
 end
 GO
@@ -1442,7 +1442,7 @@ create procedure CambiosMantenimiento
 @descripcion varchar(200)
 as
 begin
-	select COUNT(*) from Tipo_Mantenimientos where (Nombre_Mantenimiento = @nombre and Descripcion_Mantenimiento = @descripcion)
+	select COUNT(*) from Tipo_Mantenimientos where (Nombre_Tipo_Mantenimiento = @nombre and Descripcion_Tipo_Mantenimiento = @descripcion)
 end
 GO
 
@@ -1453,10 +1453,10 @@ GO
 Create Procedure CargaGenerarContrato
 as
 begin
-	select c.Codigo_Contrato'Código del Contrato',cli.Codigo_Cliente'Identidad del Cliente', cli.Nombre_Cliente'Nombre del Cliente', tp.Tipo_Contrato'Tipo del Contrato', c.[Monto Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotas Mensuales',
+	select c.Codigo_Contrato'Código del Contrato',cli.Codigo_Cliente'Identidad del Cliente', cli.Nombre_Cliente'Nombre del Cliente', tp.Nombre_Tipo_Contrato'Tipo del Contrato', c.[Monto_Mensual]'Monto Mensual', c.Cuotas_Mensuales'Cuotas Mensuales',
 	c.Servicio'Servicio', c.Monto_Contrato'Monto del Contrato', c.Fecha_Vencimiento'Fecha de Vencimiento del Contrato', c.Fecha_Inicio_Contrato'Fecha de Inicio del Contrato', rut.Codigo_Ruta'Ruta', rut.Parada_Contrato'Parada', c.Anticipo'Anticipo'  from Contratos c
 	inner join Rutas_Contratos rut on c.Codigo_Contrato = rut.Codigo_Contrato
-	inner join TipoContrato tp on c.Tipo_Contrato = tp.Cod_Contrato
+	inner join Tipo_Contrato tp on c.Tipo_Contrato = tp.Codigo_Tipo_Contrato
 	inner join Cliente cli on c.Cliente_Contrato = cli.Codigo_Cliente	 
 end
 GO
@@ -1511,8 +1511,8 @@ create procedure BuscaMantenimiento
 	@matricula varchar (50)
 	as
 	Begin
-		select Count(*) from Mantenimientos
-		where Mantenimientos.Codigo_Vehiculo=@matricula
+		select Estado_Vehiculo from Vehiculos
+		where Codigo_Vehiculo=@matricula
 	End
 	GO
 

@@ -16,7 +16,7 @@ namespace Transporte_Escolar_Bonilla
 
         private async void BtnGenerar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea Generar el Contrato?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea Generar el Contrato?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
 
                 Task contrato = new Task(generarContrato);

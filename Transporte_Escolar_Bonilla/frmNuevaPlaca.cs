@@ -40,14 +40,24 @@ namespace Transporte_Escolar_Bonilla
             }
             else
             {
-                modifico.ActualizarMatricula(combveh.Text, txtNuevaMatricula.Text);
+                if(combveh.Text.Equals(txtNuevaMatricula.Text))
+                {
+                    MessageBox.Show("Debe ingresar una Nueva Placa para el Vehículo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNuevaMatricula.Clear();
+                    txtNuevaMatricula.Focus();
+                }
+                else
+                {
+                    modifico.ActualizarMatricula(combveh.Text, txtNuevaMatricula.Text);
 
-                combveh.DataSource = consul.Combobox_Vehiculos();
-                combveh.DisplayMember = "Codigo_vehiculo";
-                combveh.SelectedIndex = -1;
+                    combveh.DataSource = consul.Combobox_Vehiculos();
+                    combveh.DisplayMember = "Codigo_vehiculo";
+                    combveh.SelectedIndex = -1;
 
-                lab1.Visible = false;
-                txtNuevaMatricula.Clear();
+                    lab1.Visible = false;
+                    txtNuevaMatricula.Clear();
+                }
+
             }
         }
 

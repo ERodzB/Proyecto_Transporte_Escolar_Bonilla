@@ -20,7 +20,7 @@ namespace Transporte_Escolar_Bonilla
             txtPlaca.ShortcutsEnabled = false;
             txtColor.ShortcutsEnabled = false;
             dtpEmision.MinDate = new DateTime(2015, 01, 01);
-            dtpEmision.MaxDate = new DateTime(Convert.ToInt32(DateTime.Now.Year), Convert.ToInt32(DateTime.Now.Month), Convert.ToInt32(DateTime.Now.Day));
+            dtpEmision.MaxDate = new DateTime(Convert.ToInt32(DateTime.Now.Year), Convert.ToInt32(DateTime.Now.Month), Convert.ToInt32(DateTime.Now.Day)+1);
             dtpVencimiento.MinDate = new DateTime(2019, 01, 01);
 
         }

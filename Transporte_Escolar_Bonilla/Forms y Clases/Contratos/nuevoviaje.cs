@@ -326,7 +326,7 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("Debe llenar correctamente los Horarios\n\n" + error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    if (val.validarMantenimiento(combveh1.Text) > 0)
+                    if (val.validarMantenimiento(combveh1.Text) == 701)
                         MessageBox.Show("El vehiculo no esta disponible para viajar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {

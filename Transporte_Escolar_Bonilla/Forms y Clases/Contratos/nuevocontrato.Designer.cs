@@ -460,7 +460,7 @@
             "Mensual",
             "Completo"});
             this.pago_cmb.Location = new System.Drawing.Point(23, 428);
-            this.pago_cmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pago_cmb.Margin = new System.Windows.Forms.Padding(2);
             this.pago_cmb.Name = "pago_cmb";
             this.pago_cmb.Size = new System.Drawing.Size(205, 29);
             this.pago_cmb.TabIndex = 241;
@@ -531,7 +531,7 @@
             this.Controls.Add(this.txtcantm);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "nuevocontrato";
             this.Text = "nuevocontrato";
             this.Load += new System.EventHandler(this.Nuevocontrato_Load);

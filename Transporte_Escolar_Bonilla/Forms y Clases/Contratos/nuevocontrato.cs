@@ -46,8 +46,8 @@ namespace Transporte_Escolar_Bonilla
             combcliente.SelectedIndex = -1;
 
             pago_cmb.DataSource = consul.combox_tipo_pago();
-            pago_cmb.DisplayMember = "NombrePago";
-            pago_cmb.ValueMember = "TipoPago";
+            pago_cmb.DisplayMember = "Nombre_Tipo_Pago";
+            pago_cmb.ValueMember = "Codigo_Tipo_Pago";
             pago_cmb.SelectedIndex = -1;
         }
 
@@ -66,7 +66,7 @@ namespace Transporte_Escolar_Bonilla
                 combruta2.Enabled = true;
                 combhora2.Enabled = true;
                 combveh2.Enabled = true;
-                txtpa2.Enabled = true;
+                txtpa1.Enabled = true;
             }
             else
             {
@@ -340,7 +340,6 @@ namespace Transporte_Escolar_Bonilla
                                 combruta2.Enabled = false;
                                 combhora2.Enabled = false;
                                 combveh2.Enabled = false;
-                                txtpa1.Enabled = false;
                             }
                         }
                     }

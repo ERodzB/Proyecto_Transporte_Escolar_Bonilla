@@ -235,7 +235,7 @@ namespace Transporte_Escolar_Bonilla
                                         }
                                         else
                                         {
-                                            if (val.validarMantenimiento(combveh1.Text) > 0)
+                                            if (val.validarMantenimiento(combveh1.Text) == 701)
                                                 MessageBox.Show("El vehiculo no puede realizar viajes, ya que se encuentra en mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                             else
                                             {

@@ -35,8 +35,8 @@ namespace Transporte_Escolar_Bonilla
 
             con.CargadgvDatosContrato(dgvDatosContrato, contrato_panel.codc);
             cmbTipoPago.DataSource = con.combox_tipo_pago();
-            cmbTipoPago.DisplayMember = "NombrePago";
-            cmbTipoPago.ValueMember = "TipoPago";
+            cmbTipoPago.DisplayMember = "Nombre_Tipo_Pago";
+            cmbTipoPago.ValueMember = "Codigo_Tipo_Pago";
             cmbTipoPago.SelectedIndex = -1;
             cmbEstado.DataSource = con.combox_mod_contrato();
             cmbEstado.DisplayMember = "Nombre_Estado";
@@ -202,13 +202,13 @@ namespace Transporte_Escolar_Bonilla
         private void TxtCuota_TextChanged(object sender, EventArgs e)
         {
             if (txtCuota.Text.Trim().Length != 0 && int.Parse(txtCuota.Text) <= 12)
-                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
+                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("dd/MM/yyyy");
         }
 
         private void DtpInicio_ValueChanged(object sender, EventArgs e)
         {
             if (txtCuota.Text.Trim().Length != 0 && int.Parse(txtCuota.Text) <= 12)
-                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("MM/dd/yyyy");
+                txtFechaFinal.Text = dtpInicio.Value.AddMonths(int.Parse(txtCuota.Text)).ToString("dd/MM/yyyy");
         }
 
         private void CmbTipoPago_SelectedIndexChanged(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace Transporte_Escolar_Bonilla
         {
             //Llenar Combobox de Tipo de Contrato
             combTipoContrato.DataSource = consul.Combobox_TipoContrato();
-            combTipoContrato.DisplayMember = "Tipo_Contrato";
+            combTipoContrato.DisplayMember = "Nombre_Tipo_Contrato";
             combTipoContrato.SelectedIndex = -1;
 
             txtid.Focus();
