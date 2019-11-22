@@ -261,7 +261,7 @@ end
 GO
 /* ----------------------------------------------------Procedimientos Almacenados USUARIOS---------------------------------------------------------- */
 
-/*Procedimiento para el Inicio del Sitema*/
+/*Procedimiento para el Inicio del Sistema*/
 	--Verificar Estado Usuario
 	create procedure EstadoUsuario
 		@Nombre_Usuario varchar(100),
@@ -285,6 +285,18 @@ GO
 		u.Contrasena_Usuario=@Contrasena_Usuario
 	end
 	GO
+
+	--Verificar cambio constante de Contraseñas por seguridad (CADA 3 MESES)
+	create procedure VerificarActualizarContrasena
+	@Nombre_Usuario varchar(100)
+	as
+	begin
+		select Top 1 DATEDIFF(month, Fecha, GETDATE()) 'Meses sin actualizar' from Historial_usuarios
+		where Nombre_Usuario = @Nombre_Usuario
+		order by Fecha desc  
+	end
+	GO	
+
 	--Verificacion de Correo
 	create procedure VerificarCorreo
 	@Nombre_Usuario varchar(100),
@@ -1556,3 +1568,50 @@ create procedure VehiculoConductor
 		where v.Codigo_Vehiculo=@Codigo_Vehiculo
 	end
 	go
+
+
+
+
+/*---------------------------------------------Triggers Historial Usuarios--------------------------------------------------*/
+
+--Cuando se Ingresa un Nuevo Usuario
+create trigger TR_Insert_Usuario
+on Usuarios		--La tabla que se desea monitorear
+for insert		--La accion que se desea monitorear
+as
+begin
+	set nocount on; --Evita que se muestre el guardado de los datos en esta tabla como mensaje en consola
+
+	-- Insertar en la Tabla de Historial (en sus campos) los datos que fueron insertados
+	insert into Historial_Usuarios (Codigo_Empleado, Nombre_Usuario, Contrasena_Usuario, Fecha, Descripcion)
+	select Codigo_Empleado, Nombre_Usuario, Contrasena_Usuario, getdate(), 'Se insertó un Usuario'
+	from inserted
+end
+GO 
+
+--Cuando se Modifica un Usuario
+create trigger TR_Update_Usuario
+on Usuarios		--La tabla que se desea monitorear
+for update		--La accion que se desea monitorear
+as
+begin
+	set nocount on; --Evita que se muestre el guardado de los datos en esta tabla como mensaje en consola
+
+	-- Insertar en la Tabla de Historial (en sus campos) los datos que fueron insertados
+	insert into Historial_Usuarios (Codigo_Empleado, Nombre_Usuario, Contrasena_Usuario, Fecha, Descripcion)
+	select Codigo_Empleado, Nombre_Usuario, Contrasena_Usuario, getdate(), 'Se modificó un Usuario'
+	from inserted --No existe un UPDATED, el nuevo registro se inserta (INSERTED) una vez que se elimina (DELETED) el anterior
+end
+GO
+
+/*INSERT [dbo].[Empleado] ([Identidad_Empleado], [Nombre_Empleado], [Fecha_Nacimiento], [Genero], [Telefono], [Correo], [Direccion], [Puesto_Empleado], [Salario], [Licencia], [Fecha_Vencimiento_Licencia], [Tipo_Licencia]) VALUES (N'08011996444', N'Empleado1', CAST(N'1965-03-28' AS Date), 1, N'94543929', N'alroca.rodriguez@gmail.com ', N'Colonia Brisas del Humuya', 1,4.0000, N'N/A', NULL, 1)
+
+INSERT [dbo].[Usuarios] ([Codigo_Empleado],[Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'08011996444', N'empleado1', N'empleado1', 1, 201)
+
+
+update [dbo].[Usuarios] 
+		set Nombre_Usuario='empleado2',
+		Contrasena_Usuario='contrasena2',
+		Perfil_Acceso=1,
+		Estado_Usuario=201
+		where Codigo_Empleado = '08011996444'*/

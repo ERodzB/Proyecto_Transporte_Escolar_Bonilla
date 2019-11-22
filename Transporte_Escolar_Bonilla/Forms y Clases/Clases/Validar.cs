@@ -95,6 +95,25 @@ namespace Transporte_Escolar_Bonilla
             return x;
         }
 
+        public int verificarActualizarContra(string usuario)
+        {
+            x = 0;
+
+            try
+            {
+                cmd = new SqlCommand("VerificarActualizarContrasena", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Nombre_Usuario", usuario);
+                x = (int)cmd.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+
+            return x;
+        }
+
         public int validarEmpleado(string Codigo_Empleado)
         {
             x = 0;

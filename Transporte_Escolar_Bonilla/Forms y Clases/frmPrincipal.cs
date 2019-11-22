@@ -121,37 +121,44 @@ namespace Transporte_Escolar_Bonilla
         {
             Ingresar ingreso = new Ingresar();
             Validar val = new Validar();
-
-            if(val.validarEstadoUsuario(userLogin_tb.Text, contra_tb.Text) == 202)
-            {
-                MessageBox.Show("Su usuario ha sido desactivado indefinidamente. \nPara más información comuniquese con el administrador", "CUENTA DESACTIVADA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                userLogin_tb.Clear();
-                contra_tb.Clear();
-                userLogin_tb.Focus();
-            }
-            else
-            {
-                ingreso.login(userLogin_tb.Text, contra_tb.Text);
+          
+             ingreso.login(userLogin_tb.Text, contra_tb.Text);
 
                 if (ConexionBD.Acceso == 1 || ConexionBD.Acceso == 2 || ConexionBD.Acceso == 3)
                 {
-                    nomusu = userLogin_tb.Text;
+                    if (val.validarEstadoUsuario(userLogin_tb.Text, contra_tb.Text) == 202)
+                    {
+                        MessageBox.Show("Su usuario ha sido desactivado indefinidamente. \nPara más información comuniquese con el administrador", "CUENTA DESACTIVADA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        userLogin_tb.Clear();
+                        contra_tb.Clear();
+                        userLogin_tb.Focus(); 
+                    }
+                    else
+                    {
+                        nomusu = userLogin_tb.Text;
 
-                    ingreso.ActualizarContratos();
-                    center_panel.Controls.Clear();
-                    btnMax.Visible = true;
-                    rutas_btn.Enabled = true;
-                    unidades_btn.Enabled = true;
-                    conductores_btn.Enabled = true;
-                    clientes_btn.Enabled = true;
-                    contratos_btn.Enabled = true;
-                    usuarios_btn.Enabled = true;
-                    bar_panel.Visible = true;
-                    close_btn.Enabled = true;
-                    btnNoti.Visible = true;
-                    btnBitacora.Visible = true;
+                        ingreso.ActualizarContratos();
+                        center_panel.Controls.Clear();
+                        btnMax.Visible = true;
+                        rutas_btn.Enabled = true;
+                        unidades_btn.Enabled = true;
+                        conductores_btn.Enabled = true;
+                        clientes_btn.Enabled = true;
+                        contratos_btn.Enabled = true;
+                        usuarios_btn.Enabled = true;
+                        bar_panel.Visible = true;
+                        close_btn.Enabled = true;
+                        btnNoti.Visible = true;
+                        btnBitacora.Visible = true;
+
+                        //Verificar si debe realizar un cambio de contraseña periodico por seguridad (CADA 3 MESES)
+                        if (val.verificarActualizarContra(nomusu) >= 3)
+                            MessageBox.Show("Debe realizar su cambio periodico de contraseña.\nVaya a Usuarios - Modificar Usuario y actualize su contraseña", "SEGURIDAD", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                
                 }
-            }
+            
 
             
         }

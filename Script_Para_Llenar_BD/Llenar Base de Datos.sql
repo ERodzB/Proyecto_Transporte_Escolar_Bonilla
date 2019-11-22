@@ -135,5 +135,10 @@ INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuari
 INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'1502199600657', N'lmejia', N'12345678', 1, 201)
 INSERT [dbo].[Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Perfil_Acceso], [Estado_Usuario]) VALUES (N'0801199810682', N'sduarte', N'12345678', 1, 201)
 GO
-
+INSERT INTO [dbo].[Historial_Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Fecha], [Descripcion]) VALUES (N'0801199919518', N'athompson', N'12345678', CAST(GETDATE() AS Date), 'Se insertó un Usuario')
+INSERT INTO [dbo].[Historial_Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Fecha], [Descripcion]) VALUES (N'0301199901357', N'ebonilla', N'12345678', CAST(GETDATE() AS Date), 'Se insertó un Usuario')
+INSERT INTO [dbo].[Historial_Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Fecha], [Descripcion]) VALUES (N'0801199802725', N'esalgado', N'12345678', CAST(GETDATE() AS Date), 'Se insertó un Usuario')
+INSERT INTO [dbo].[Historial_Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Fecha], [Descripcion]) VALUES (N'1502199600657', N'lmejia', N'12345678', CAST(GETDATE() AS Date), 'Se insertó un Usuario')
+INSERT INTO [dbo].[Historial_Usuarios] ([Codigo_Empleado], [Nombre_Usuario], [Contrasena_Usuario], [Fecha], [Descripcion]) VALUES (N'0801199810682', N'sduarte', N'12345678', CAST(GETDATE() AS Date), 'Se insertó un Usuario')
+GO
 
