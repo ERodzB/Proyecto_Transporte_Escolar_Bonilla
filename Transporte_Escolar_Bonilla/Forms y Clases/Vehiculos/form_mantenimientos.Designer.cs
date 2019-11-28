@@ -102,7 +102,7 @@
             this.combmant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combmant.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combmant.FormattingEnabled = true;
-            this.combmant.Location = new System.Drawing.Point(348, 211);
+            this.combmant.Location = new System.Drawing.Point(350, 211);
             this.combmant.Name = "combmant";
             this.combmant.Size = new System.Drawing.Size(285, 31);
             this.combmant.TabIndex = 189;
@@ -149,11 +149,11 @@
             // 
             this.botingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.botingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botingresar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botingresar.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.botingresar.ForeColor = System.Drawing.Color.Transparent;
-            this.botingresar.Location = new System.Drawing.Point(400, 393);
+            this.botingresar.Location = new System.Drawing.Point(426, 386);
             this.botingresar.Name = "botingresar";
-            this.botingresar.Size = new System.Drawing.Size(177, 64);
+            this.botingresar.Size = new System.Drawing.Size(122, 50);
             this.botingresar.TabIndex = 236;
             this.botingresar.Text = "Ingresar";
             this.botingresar.UseVisualStyleBackColor = false;
@@ -162,21 +162,21 @@
             // 
             // txtnom
             // 
-            this.txtnom.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnom.Location = new System.Drawing.Point(348, 271);
+            this.txtnom.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnom.Location = new System.Drawing.Point(350, 271);
             this.txtnom.MaxLength = 100;
             this.txtnom.Name = "txtnom";
-            this.txtnom.Size = new System.Drawing.Size(285, 28);
+            this.txtnom.Size = new System.Drawing.Size(285, 32);
             this.txtnom.TabIndex = 237;
             this.txtnom.Visible = false;
             // 
             // txtdesc
             // 
-            this.txtdesc.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdesc.Location = new System.Drawing.Point(348, 325);
+            this.txtdesc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdesc.Location = new System.Drawing.Point(350, 325);
             this.txtdesc.MaxLength = 200;
             this.txtdesc.Name = "txtdesc";
-            this.txtdesc.Size = new System.Drawing.Size(285, 28);
+            this.txtdesc.Size = new System.Drawing.Size(285, 32);
             this.txtdesc.TabIndex = 238;
             this.txtdesc.Visible = false;
             // 
@@ -185,7 +185,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(303, 29);
+            this.label4.Location = new System.Drawing.Point(293, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(248, 37);
             this.label4.TabIndex = 239;

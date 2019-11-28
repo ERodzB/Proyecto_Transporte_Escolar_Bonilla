@@ -52,14 +52,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(190, 79);
+            this.label1.Location = new System.Drawing.Point(167, 79);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 25);
+            this.label1.Size = new System.Drawing.Size(209, 27);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ruta a Modificar";
+            this.label1.Text = "Ruta a Modificar:";
             // 
             // opc_gp
             // 
@@ -70,9 +70,9 @@
             this.opc_gp.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opc_gp.ForeColor = System.Drawing.Color.White;
             this.opc_gp.Location = new System.Drawing.Point(66, 124);
-            this.opc_gp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opc_gp.Margin = new System.Windows.Forms.Padding(2);
             this.opc_gp.Name = "opc_gp";
-            this.opc_gp.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opc_gp.Padding = new System.Windows.Forms.Padding(2);
             this.opc_gp.Size = new System.Drawing.Size(698, 90);
             this.opc_gp.TabIndex = 6;
             this.opc_gp.TabStop = false;
@@ -81,8 +81,8 @@
             // agregar_rb
             // 
             this.agregar_rb.AutoSize = true;
-            this.agregar_rb.Location = new System.Drawing.Point(151, 41);
-            this.agregar_rb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.agregar_rb.Location = new System.Drawing.Point(159, 41);
+            this.agregar_rb.Margin = new System.Windows.Forms.Padding(2);
             this.agregar_rb.Name = "agregar_rb";
             this.agregar_rb.Size = new System.Drawing.Size(176, 26);
             this.agregar_rb.TabIndex = 10;
@@ -93,8 +93,8 @@
             // eliminarHorario_rb
             // 
             this.eliminarHorario_rb.AutoSize = true;
-            this.eliminarHorario_rb.Location = new System.Drawing.Point(521, 41);
-            this.eliminarHorario_rb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eliminarHorario_rb.Location = new System.Drawing.Point(527, 41);
+            this.eliminarHorario_rb.Margin = new System.Windows.Forms.Padding(2);
             this.eliminarHorario_rb.Name = "eliminarHorario_rb";
             this.eliminarHorario_rb.Size = new System.Drawing.Size(165, 26);
             this.eliminarHorario_rb.TabIndex = 9;
@@ -105,8 +105,8 @@
             // modiHorario_rb
             // 
             this.modiHorario_rb.AutoSize = true;
-            this.modiHorario_rb.Location = new System.Drawing.Point(328, 41);
-            this.modiHorario_rb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modiHorario_rb.Location = new System.Drawing.Point(339, 41);
+            this.modiHorario_rb.Margin = new System.Windows.Forms.Padding(2);
             this.modiHorario_rb.Name = "modiHorario_rb";
             this.modiHorario_rb.Size = new System.Drawing.Size(183, 26);
             this.modiHorario_rb.TabIndex = 8;
@@ -118,8 +118,8 @@
             // 
             this.no_rb.AutoSize = true;
             this.no_rb.Checked = true;
-            this.no_rb.Location = new System.Drawing.Point(4, 41);
-            this.no_rb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.no_rb.Location = new System.Drawing.Point(10, 41);
+            this.no_rb.Margin = new System.Windows.Forms.Padding(2);
             this.no_rb.Name = "no_rb";
             this.no_rb.Size = new System.Drawing.Size(144, 26);
             this.no_rb.TabIndex = 7;
@@ -132,6 +132,7 @@
             // 
             this.llegadaHorario_dtp.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.llegadaHorario_dtp.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llegadaHorario_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.llegadaHorario_dtp.Location = new System.Drawing.Point(390, 365);
             this.llegadaHorario_dtp.Name = "llegadaHorario_dtp";
             this.llegadaHorario_dtp.Size = new System.Drawing.Size(183, 34);
@@ -143,11 +144,11 @@
             this.entradaHorario_lbl.AutoSize = true;
             this.entradaHorario_lbl.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.entradaHorario_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.entradaHorario_lbl.Location = new System.Drawing.Point(98, 369);
+            this.entradaHorario_lbl.Location = new System.Drawing.Point(166, 367);
             this.entradaHorario_lbl.Name = "entradaHorario_lbl";
-            this.entradaHorario_lbl.Size = new System.Drawing.Size(204, 27);
+            this.entradaHorario_lbl.Size = new System.Drawing.Size(210, 27);
             this.entradaHorario_lbl.TabIndex = 38;
-            this.entradaHorario_lbl.Text = "Hora de Llegada";
+            this.entradaHorario_lbl.Text = "Hora de Llegada:";
             this.entradaHorario_lbl.Visible = false;
             // 
             // salidaHorario_lbl
@@ -155,11 +156,11 @@
             this.salidaHorario_lbl.AutoSize = true;
             this.salidaHorario_lbl.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.salidaHorario_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.salidaHorario_lbl.Location = new System.Drawing.Point(98, 314);
+            this.salidaHorario_lbl.Location = new System.Drawing.Point(190, 312);
             this.salidaHorario_lbl.Name = "salidaHorario_lbl";
-            this.salidaHorario_lbl.Size = new System.Drawing.Size(180, 27);
+            this.salidaHorario_lbl.Size = new System.Drawing.Size(186, 27);
             this.salidaHorario_lbl.TabIndex = 37;
-            this.salidaHorario_lbl.Text = "Hora de Salida";
+            this.salidaHorario_lbl.Text = "Hora de Salida:";
             this.salidaHorario_lbl.Visible = false;
             // 
             // horario_lbl
@@ -167,17 +168,18 @@
             this.horario_lbl.AutoSize = true;
             this.horario_lbl.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.horario_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.horario_lbl.Location = new System.Drawing.Point(98, 262);
+            this.horario_lbl.Location = new System.Drawing.Point(137, 260);
             this.horario_lbl.Name = "horario_lbl";
-            this.horario_lbl.Size = new System.Drawing.Size(233, 27);
+            this.horario_lbl.Size = new System.Drawing.Size(239, 27);
             this.horario_lbl.TabIndex = 36;
-            this.horario_lbl.Text = "Horario a Modificar";
+            this.horario_lbl.Text = "Horario a Modificar:";
             this.horario_lbl.Visible = false;
             // 
             // horaSalida_dtp
             // 
             this.horaSalida_dtp.CalendarFont = new System.Drawing.Font("Century Gothic", 13F);
             this.horaSalida_dtp.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horaSalida_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.horaSalida_dtp.Location = new System.Drawing.Point(390, 310);
             this.horaSalida_dtp.Name = "horaSalida_dtp";
             this.horaSalida_dtp.Size = new System.Drawing.Size(183, 34);
@@ -190,7 +192,7 @@
             this.Horario_cmb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Horario_cmb.FormattingEnabled = true;
             this.Horario_cmb.Location = new System.Drawing.Point(390, 258);
-            this.Horario_cmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Horario_cmb.Margin = new System.Windows.Forms.Padding(2);
             this.Horario_cmb.Name = "Horario_cmb";
             this.Horario_cmb.Size = new System.Drawing.Size(235, 33);
             this.Horario_cmb.TabIndex = 39;
@@ -202,12 +204,12 @@
             this.realizar_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.realizar_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.realizar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.realizar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.realizar_btn.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.realizar_btn.ForeColor = System.Drawing.Color.White;
-            this.realizar_btn.Location = new System.Drawing.Point(648, 406);
-            this.realizar_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.realizar_btn.Location = new System.Drawing.Point(649, 441);
+            this.realizar_btn.Margin = new System.Windows.Forms.Padding(2);
             this.realizar_btn.Name = "realizar_btn";
-            this.realizar_btn.Size = new System.Drawing.Size(140, 56);
+            this.realizar_btn.Size = new System.Drawing.Size(129, 50);
             this.realizar_btn.TabIndex = 40;
             this.realizar_btn.Text = "Modificar";
             this.realizar_btn.UseVisualStyleBackColor = false;
@@ -220,7 +222,7 @@
             this.rutasModificar_cmb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rutasModificar_cmb.FormattingEnabled = true;
             this.rutasModificar_cmb.Location = new System.Drawing.Point(394, 79);
-            this.rutasModificar_cmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rutasModificar_cmb.Margin = new System.Windows.Forms.Padding(2);
             this.rutasModificar_cmb.Name = "rutasModificar_cmb";
             this.rutasModificar_cmb.Size = new System.Drawing.Size(254, 29);
             this.rutasModificar_cmb.TabIndex = 41;
@@ -254,13 +256,13 @@
             // vehi_lbl
             // 
             this.vehi_lbl.AutoSize = true;
-            this.vehi_lbl.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vehi_lbl.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.vehi_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.vehi_lbl.Location = new System.Drawing.Point(97, 422);
+            this.vehi_lbl.Location = new System.Drawing.Point(52, 421);
             this.vehi_lbl.Name = "vehi_lbl";
-            this.vehi_lbl.Size = new System.Drawing.Size(285, 24);
+            this.vehi_lbl.Size = new System.Drawing.Size(324, 27);
             this.vehi_lbl.TabIndex = 185;
-            this.vehi_lbl.Text = "Vehículo a Realizar la Ruta";
+            this.vehi_lbl.Text = "Vehículo a Realizar la Ruta:";
             this.vehi_lbl.Visible = false;
             // 
             // label13
@@ -268,7 +270,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(315, 24);
+            this.label13.Location = new System.Drawing.Point(291, 18);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(239, 37);
             this.label13.TabIndex = 187;
@@ -295,7 +297,7 @@
             this.Controls.Add(this.opc_gp);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "modificarRutas_frm";
             this.Text = "modificarRutas_frm";
             this.Load += new System.EventHandler(this.ModificarRutas_frm_Load);

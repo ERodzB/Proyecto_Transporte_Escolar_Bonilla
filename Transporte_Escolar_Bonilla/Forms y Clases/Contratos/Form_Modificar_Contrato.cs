@@ -44,6 +44,11 @@ namespace Transporte_Escolar_Bonilla
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public contrato_panel()
         {
             InitializeComponent();

@@ -230,7 +230,7 @@
             this.enviar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enviar_linklbl.ForeColor = System.Drawing.Color.White;
             this.enviar_linklbl.LinkColor = System.Drawing.Color.White;
-            this.enviar_linklbl.Location = new System.Drawing.Point(496, 419);
+            this.enviar_linklbl.Location = new System.Drawing.Point(450, 381);
             this.enviar_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.enviar_linklbl.Name = "enviar_linklbl";
             this.enviar_linklbl.Size = new System.Drawing.Size(202, 21);
@@ -248,7 +248,7 @@
             this.regresar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regresar_linklbl.ForeColor = System.Drawing.Color.White;
             this.regresar_linklbl.LinkColor = System.Drawing.Color.White;
-            this.regresar_linklbl.Location = new System.Drawing.Point(426, 386);
+            this.regresar_linklbl.Location = new System.Drawing.Point(380, 348);
             this.regresar_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.regresar_linklbl.Name = "regresar_linklbl";
             this.regresar_linklbl.Size = new System.Drawing.Size(78, 21);
@@ -260,11 +260,11 @@
             // 
             // Correo_tb
             // 
-            this.Correo_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.Correo_tb.Location = new System.Drawing.Point(452, 340);
+            this.Correo_tb.Font = new System.Drawing.Font("Century Gothic", 17F);
+            this.Correo_tb.Location = new System.Drawing.Point(406, 296);
             this.Correo_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Correo_tb.Name = "Correo_tb";
-            this.Correo_tb.Size = new System.Drawing.Size(234, 32);
+            this.Correo_tb.Size = new System.Drawing.Size(234, 35);
             this.Correo_tb.TabIndex = 13;
             this.Correo_tb.Visible = false;
             this.Correo_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Correo_tb_KeyPress);
@@ -274,12 +274,12 @@
             this.correo_lbl.AutoSize = true;
             this.correo_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.correo_lbl.ForeColor = System.Drawing.Color.White;
-            this.correo_lbl.Location = new System.Drawing.Point(183, 338);
+            this.correo_lbl.Location = new System.Drawing.Point(112, 294);
             this.correo_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.correo_lbl.Name = "correo_lbl";
-            this.correo_lbl.Size = new System.Drawing.Size(262, 33);
+            this.correo_lbl.Size = new System.Drawing.Size(269, 33);
             this.correo_lbl.TabIndex = 16;
-            this.correo_lbl.Text = "Correo Electrónico";
+            this.correo_lbl.Text = "Correo Electrónico:";
             this.correo_lbl.Visible = false;
             // 
             // olvidadoLogin_linklbl
@@ -290,7 +290,7 @@
             this.olvidadoLogin_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.olvidadoLogin_linklbl.ForeColor = System.Drawing.Color.White;
             this.olvidadoLogin_linklbl.LinkColor = System.Drawing.Color.White;
-            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(502, 386);
+            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(456, 348);
             this.olvidadoLogin_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.olvidadoLogin_linklbl.Name = "olvidadoLogin_linklbl";
             this.olvidadoLogin_linklbl.Size = new System.Drawing.Size(193, 21);
@@ -301,13 +301,13 @@
             // 
             // contra_tb
             // 
-            this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.contra_tb.Location = new System.Drawing.Point(452, 284);
+            this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 17F);
+            this.contra_tb.Location = new System.Drawing.Point(406, 240);
             this.contra_tb.Margin = new System.Windows.Forms.Padding(2);
             this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
             this.contra_tb.PasswordChar = '*';
-            this.contra_tb.Size = new System.Drawing.Size(234, 32);
+            this.contra_tb.Size = new System.Drawing.Size(234, 35);
             this.contra_tb.TabIndex = 12;
             this.contra_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contra_tb_KeyPress);
             // 
@@ -316,12 +316,12 @@
             this.contra_lbl.AutoSize = true;
             this.contra_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.contra_lbl.ForeColor = System.Drawing.Color.White;
-            this.contra_lbl.Location = new System.Drawing.Point(251, 284);
+            this.contra_lbl.Location = new System.Drawing.Point(205, 240);
             this.contra_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.contra_lbl.Name = "contra_lbl";
-            this.contra_lbl.Size = new System.Drawing.Size(169, 33);
+            this.contra_lbl.Size = new System.Drawing.Size(176, 33);
             this.contra_lbl.TabIndex = 13;
-            this.contra_lbl.Text = "Contraseña";
+            this.contra_lbl.Text = "Contraseña:";
             // 
             // ingresarLogin_btn
             // 
@@ -329,10 +329,10 @@
             this.ingresarLogin_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ingresarLogin_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingresarLogin_btn.ForeColor = System.Drawing.Color.White;
-            this.ingresarLogin_btn.Location = new System.Drawing.Point(506, 459);
+            this.ingresarLogin_btn.Location = new System.Drawing.Point(460, 421);
             this.ingresarLogin_btn.Margin = new System.Windows.Forms.Padding(2);
             this.ingresarLogin_btn.Name = "ingresarLogin_btn";
-            this.ingresarLogin_btn.Size = new System.Drawing.Size(120, 46);
+            this.ingresarLogin_btn.Size = new System.Drawing.Size(122, 50);
             this.ingresarLogin_btn.TabIndex = 14;
             this.ingresarLogin_btn.Text = "Ingresar";
             this.ingresarLogin_btn.UseVisualStyleBackColor = false;
@@ -340,12 +340,12 @@
             // 
             // userLogin_tb
             // 
-            this.userLogin_tb.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.userLogin_tb.Location = new System.Drawing.Point(452, 225);
+            this.userLogin_tb.Font = new System.Drawing.Font("Century Gothic", 17F);
+            this.userLogin_tb.Location = new System.Drawing.Point(406, 181);
             this.userLogin_tb.Margin = new System.Windows.Forms.Padding(2);
             this.userLogin_tb.MaxLength = 10;
             this.userLogin_tb.Name = "userLogin_tb";
-            this.userLogin_tb.Size = new System.Drawing.Size(234, 32);
+            this.userLogin_tb.Size = new System.Drawing.Size(234, 35);
             this.userLogin_tb.TabIndex = 11;
             this.userLogin_tb.TextChanged += new System.EventHandler(this.UserLogin_tb_TextChanged);
             this.userLogin_tb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userLogin_tb_KeyDown);
@@ -356,12 +356,12 @@
             this.userLogin_lbl.AutoSize = true;
             this.userLogin_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.userLogin_lbl.ForeColor = System.Drawing.Color.White;
-            this.userLogin_lbl.Location = new System.Drawing.Point(302, 225);
+            this.userLogin_lbl.Location = new System.Drawing.Point(256, 181);
             this.userLogin_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userLogin_lbl.Name = "userLogin_lbl";
-            this.userLogin_lbl.Size = new System.Drawing.Size(108, 33);
+            this.userLogin_lbl.Size = new System.Drawing.Size(115, 33);
             this.userLogin_lbl.TabIndex = 10;
-            this.userLogin_lbl.Text = "Usuario";
+            this.userLogin_lbl.Text = "Usuario:";
             // 
             // left_panel
             // 

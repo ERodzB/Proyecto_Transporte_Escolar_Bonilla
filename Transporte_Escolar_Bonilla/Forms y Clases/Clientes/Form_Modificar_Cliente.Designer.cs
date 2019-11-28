@@ -83,7 +83,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(23, 299);
+            this.label2.Location = new System.Drawing.Point(40, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 30);
             this.label2.TabIndex = 3;
@@ -96,7 +96,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(172, 398);
             this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(321, 34);
+            this.txtTelefono.Size = new System.Drawing.Size(191, 34);
             this.txtTelefono.TabIndex = 6;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             // 
@@ -105,7 +105,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(23, 399);
+            this.label3.Location = new System.Drawing.Point(33, 398);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 30);
             this.label3.TabIndex = 5;
@@ -149,7 +149,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(23, 450);
+            this.label5.Location = new System.Drawing.Point(55, 450);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 30);
             this.label5.TabIndex = 9;
@@ -164,7 +164,7 @@
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(596, 437);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(129, 54);
+            this.btnModificar.Size = new System.Drawing.Size(129, 50);
             this.btnModificar.TabIndex = 11;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -190,11 +190,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(220, 32);
+            this.label6.Location = new System.Drawing.Point(165, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(446, 32);
+            this.label6.Size = new System.Drawing.Size(496, 37);
             this.label6.TabIndex = 13;
             this.label6.Text = "Seleccione el Cliente a Modificar";
             // 

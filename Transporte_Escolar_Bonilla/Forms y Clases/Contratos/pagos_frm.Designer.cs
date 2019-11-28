@@ -85,9 +85,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(31, 442);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 22);
+            this.label5.Size = new System.Drawing.Size(154, 22);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Monto a Pagar";
+            this.label5.Text = "Monto a Pagar:";
             // 
             // monto_tb
             // 
@@ -103,17 +103,17 @@
             this.lblCuota.AutoSize = true;
             this.lblCuota.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCuota.Location = new System.Drawing.Point(28, 360);
+            this.lblCuota.Location = new System.Drawing.Point(28, 367);
             this.lblCuota.Name = "lblCuota";
-            this.lblCuota.Size = new System.Drawing.Size(147, 22);
+            this.lblCuota.Size = new System.Drawing.Size(152, 22);
             this.lblCuota.TabIndex = 31;
-            this.lblCuota.Text = "Numero Cuota";
+            this.lblCuota.Text = "Numero Cuota:";
             // 
             // Cuota_tb
             // 
             this.Cuota_tb.Enabled = false;
             this.Cuota_tb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cuota_tb.Location = new System.Drawing.Point(31, 387);
+            this.Cuota_tb.Location = new System.Drawing.Point(31, 394);
             this.Cuota_tb.MaxLength = 2;
             this.Cuota_tb.Name = "Cuota_tb";
             this.Cuota_tb.Size = new System.Drawing.Size(107, 27);
@@ -124,19 +124,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(239, 360);
+            this.label1.Location = new System.Drawing.Point(230, 367);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 22);
+            this.label1.Size = new System.Drawing.Size(205, 22);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Descripcion de Pago";
+            this.label1.Text = "Descripcion de Pago:";
             // 
             // descripcion_tb
             // 
             this.descripcion_tb.Enabled = false;
             this.descripcion_tb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descripcion_tb.Location = new System.Drawing.Point(242, 387);
+            this.descripcion_tb.Location = new System.Drawing.Point(233, 394);
             this.descripcion_tb.Name = "descripcion_tb";
-            this.descripcion_tb.Size = new System.Drawing.Size(516, 27);
+            this.descripcion_tb.Size = new System.Drawing.Size(523, 27);
             this.descripcion_tb.TabIndex = 32;
             // 
             // pagar_btn
@@ -147,10 +147,10 @@
             this.pagar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagar_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagar_btn.ForeColor = System.Drawing.Color.White;
-            this.pagar_btn.Location = new System.Drawing.Point(618, 449);
-            this.pagar_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pagar_btn.Location = new System.Drawing.Point(634, 455);
+            this.pagar_btn.Margin = new System.Windows.Forms.Padding(2);
             this.pagar_btn.Name = "pagar_btn";
-            this.pagar_btn.Size = new System.Drawing.Size(140, 56);
+            this.pagar_btn.Size = new System.Drawing.Size(122, 50);
             this.pagar_btn.TabIndex = 41;
             this.pagar_btn.Text = "Pagar";
             this.pagar_btn.UseVisualStyleBackColor = false;
@@ -161,7 +161,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(32, 16);
+            this.label2.Location = new System.Drawing.Point(32, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 22);
             this.label2.TabIndex = 42;
@@ -173,7 +173,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(32, 220);
+            this.label3.Location = new System.Drawing.Point(32, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 22);
             this.label3.TabIndex = 43;
@@ -209,7 +209,7 @@
             this.Controls.Add(this.contratos_dgv);
             this.Controls.Add(this.cliente_dgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "pagos_frm";
             this.Text = "pagos_frm";
             this.Load += new System.EventHandler(this.Pagos_frm_Load);

@@ -40,12 +40,12 @@
             // 
             // nombrePerfil_tb
             // 
-            this.nombrePerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombrePerfil_tb.Location = new System.Drawing.Point(400, 185);
+            this.nombrePerfil_tb.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombrePerfil_tb.Location = new System.Drawing.Point(431, 185);
             this.nombrePerfil_tb.Margin = new System.Windows.Forms.Padding(2);
             this.nombrePerfil_tb.MaxLength = 20;
             this.nombrePerfil_tb.Name = "nombrePerfil_tb";
-            this.nombrePerfil_tb.Size = new System.Drawing.Size(339, 34);
+            this.nombrePerfil_tb.Size = new System.Drawing.Size(308, 37);
             this.nombrePerfil_tb.TabIndex = 26;
             this.nombrePerfil_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrePerfil_tb_KeyPress);
             // 
@@ -54,12 +54,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(85, 110);
+            this.label2.Location = new System.Drawing.Point(135, 110);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 33);
+            this.label2.Size = new System.Drawing.Size(239, 33);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Nivel de Acceso";
+            this.label2.Text = "Nivel de Acceso:";
             // 
             // nivelAcceso_cmb
             // 
@@ -70,10 +70,10 @@
             "1",
             "2",
             "3"});
-            this.nivelAcceso_cmb.Location = new System.Drawing.Point(459, 109);
+            this.nivelAcceso_cmb.Location = new System.Drawing.Point(431, 109);
             this.nivelAcceso_cmb.Margin = new System.Windows.Forms.Padding(2);
             this.nivelAcceso_cmb.Name = "nivelAcceso_cmb";
-            this.nivelAcceso_cmb.Size = new System.Drawing.Size(280, 38);
+            this.nivelAcceso_cmb.Size = new System.Drawing.Size(308, 38);
             this.nivelAcceso_cmb.TabIndex = 24;
             // 
             // Crear_btn
@@ -82,10 +82,10 @@
             this.Crear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Crear_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Crear_btn.ForeColor = System.Drawing.Color.White;
-            this.Crear_btn.Location = new System.Drawing.Point(626, 375);
+            this.Crear_btn.Location = new System.Drawing.Point(617, 376);
             this.Crear_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Crear_btn.Name = "Crear_btn";
-            this.Crear_btn.Size = new System.Drawing.Size(112, 51);
+            this.Crear_btn.Size = new System.Drawing.Size(122, 50);
             this.Crear_btn.TabIndex = 30;
             this.Crear_btn.Text = "Crear";
             this.Crear_btn.UseVisualStyleBackColor = false;
@@ -96,33 +96,33 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(85, 178);
+            this.label1.Location = new System.Drawing.Point(131, 186);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 33);
+            this.label1.Size = new System.Drawing.Size(243, 33);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Nombre de Perfil";
+            this.label1.Text = "Nombre de Perfil:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(85, 242);
+            this.label3.Location = new System.Drawing.Point(85, 254);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(282, 33);
+            this.label3.Size = new System.Drawing.Size(289, 33);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Descripción de Perfil";
+            this.label3.Text = "Descripción de Perfil:";
             // 
             // desPerfil_tb
             // 
-            this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desPerfil_tb.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desPerfil_tb.Location = new System.Drawing.Point(90, 298);
             this.desPerfil_tb.Margin = new System.Windows.Forms.Padding(2);
             this.desPerfil_tb.MaxLength = 100;
             this.desPerfil_tb.Name = "desPerfil_tb";
-            this.desPerfil_tb.Size = new System.Drawing.Size(649, 34);
+            this.desPerfil_tb.Size = new System.Drawing.Size(649, 37);
             this.desPerfil_tb.TabIndex = 28;
             this.desPerfil_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DesPerfil_tb_KeyPress);
             // 

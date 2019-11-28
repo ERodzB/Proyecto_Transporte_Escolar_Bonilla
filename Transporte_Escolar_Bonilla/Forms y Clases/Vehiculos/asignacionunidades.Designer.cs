@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvConsultaU = new System.Windows.Forms.DataGridView();
             this.btnDevolver = new System.Windows.Forms.Button();
             this.btnAsignar = new System.Windows.Forms.Button();
@@ -57,35 +57,35 @@
             this.dgvConsultaU.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvConsultaU.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvConsultaU.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConsultaU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultaU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvConsultaU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvConsultaU.Location = new System.Drawing.Point(9, 60);
-            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConsultaU.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultaU.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvConsultaU.RowHeadersWidth = 51;
             this.dgvConsultaU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvConsultaU.RowTemplate.Height = 24;
@@ -100,12 +100,12 @@
             this.btnDevolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.btnDevolver.Enabled = false;
             this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDevolver.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDevolver.Font = new System.Drawing.Font("Century Gothic", 14.5F);
             this.btnDevolver.ForeColor = System.Drawing.Color.White;
             this.btnDevolver.Location = new System.Drawing.Point(684, 455);
-            this.btnDevolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDevolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnDevolver.Name = "btnDevolver";
-            this.btnDevolver.Size = new System.Drawing.Size(116, 52);
+            this.btnDevolver.Size = new System.Drawing.Size(122, 50);
             this.btnDevolver.TabIndex = 12;
             this.btnDevolver.Text = "Entregar";
             this.btnDevolver.UseVisualStyleBackColor = false;
@@ -117,12 +117,12 @@
             this.btnAsignar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.btnAsignar.Enabled = false;
             this.btnAsignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsignar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnAsignar.Font = new System.Drawing.Font("Century Gothic", 14.5F);
             this.btnAsignar.ForeColor = System.Drawing.Color.White;
             this.btnAsignar.Location = new System.Drawing.Point(684, 454);
-            this.btnAsignar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAsignar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsignar.Name = "btnAsignar";
-            this.btnAsignar.Size = new System.Drawing.Size(116, 52);
+            this.btnAsignar.Size = new System.Drawing.Size(122, 50);
             this.btnAsignar.TabIndex = 13;
             this.btnAsignar.Text = "Asignar";
             this.btnAsignar.UseVisualStyleBackColor = false;
@@ -134,7 +134,7 @@
             this.plinea.AutoSize = true;
             this.plinea.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.plinea.ForeColor = System.Drawing.Color.White;
-            this.plinea.Location = new System.Drawing.Point(46, 215);
+            this.plinea.Location = new System.Drawing.Point(46, 224);
             this.plinea.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.plinea.Name = "plinea";
             this.plinea.Size = new System.Drawing.Size(112, 22);
@@ -146,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(47, 280);
+            this.label1.Location = new System.Drawing.Point(48, 291);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 22);
@@ -157,19 +157,19 @@
             // 
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Century Gothic", 14.5F);
-            this.txtDescripcion.Location = new System.Drawing.Point(52, 312);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Location = new System.Drawing.Point(52, 315);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(440, 63);
+            this.txtDescripcion.Size = new System.Drawing.Size(440, 50);
             this.txtDescripcion.TabIndex = 16;
             // 
             // txtPlaca
             // 
             this.txtPlaca.Enabled = false;
             this.txtPlaca.Font = new System.Drawing.Font("Century Gothic", 14.5F);
-            this.txtPlaca.Location = new System.Drawing.Point(51, 245);
-            this.txtPlaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPlaca.Location = new System.Drawing.Point(51, 248);
+            this.txtPlaca.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(440, 31);
             this.txtPlaca.TabIndex = 17;
@@ -179,7 +179,7 @@
             this.lblasignado.AutoSize = true;
             this.lblasignado.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblasignado.ForeColor = System.Drawing.Color.White;
-            this.lblasignado.Location = new System.Drawing.Point(46, 377);
+            this.lblasignado.Location = new System.Drawing.Point(46, 379);
             this.lblasignado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblasignado.Name = "lblasignado";
             this.lblasignado.Size = new System.Drawing.Size(164, 22);
@@ -191,8 +191,8 @@
             this.cmbempleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbempleado.Font = new System.Drawing.Font("Century Gothic", 14.5F);
             this.cmbempleado.FormattingEnabled = true;
-            this.cmbempleado.Location = new System.Drawing.Point(51, 406);
-            this.cmbempleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbempleado.Location = new System.Drawing.Point(51, 403);
+            this.cmbempleado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbempleado.Name = "cmbempleado";
             this.cmbempleado.Size = new System.Drawing.Size(440, 30);
             this.cmbempleado.TabIndex = 19;
@@ -202,7 +202,7 @@
             this.lblestado.AutoSize = true;
             this.lblestado.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblestado.ForeColor = System.Drawing.Color.White;
-            this.lblestado.Location = new System.Drawing.Point(47, 440);
+            this.lblestado.Location = new System.Drawing.Point(48, 443);
             this.lblestado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblestado.Name = "lblestado";
             this.lblestado.Size = new System.Drawing.Size(196, 22);
@@ -214,17 +214,17 @@
             this.cmbestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbestado.Font = new System.Drawing.Font("Century Gothic", 14.5F);
             this.cmbestado.FormattingEnabled = true;
-            this.cmbestado.Location = new System.Drawing.Point(52, 467);
-            this.cmbestado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbestado.Location = new System.Drawing.Point(52, 468);
+            this.cmbestado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(440, 30);
             this.cmbestado.TabIndex = 21;
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.txtObservaciones.Font = new System.Drawing.Font("Century Gothic", 14.5F);
             this.txtObservaciones.Location = new System.Drawing.Point(589, 260);
-            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(2);
             this.txtObservaciones.MaxLength = 100;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
@@ -237,12 +237,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(584, 231);
+            this.label2.Location = new System.Drawing.Point(585, 236);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 24);
+            this.label2.Size = new System.Drawing.Size(154, 22);
             this.label2.TabIndex = 23;
             this.label2.Text = "Observaciones:";
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.dgvConsultaU);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "asignacionunidades";
             this.Text = "asignacionunidades";
             this.Load += new System.EventHandler(this.Asignacionunidades_Load);

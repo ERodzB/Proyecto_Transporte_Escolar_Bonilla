@@ -66,8 +66,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaU.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvConsultaU.Location = new System.Drawing.Point(61, 162);
-            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvConsultaU.Location = new System.Drawing.Point(50, 213);
+            this.dgvConsultaU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvConsultaU.Name = "dgvConsultaU";
             this.dgvConsultaU.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -81,17 +81,18 @@
             this.dgvConsultaU.RowHeadersWidth = 51;
             this.dgvConsultaU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvConsultaU.RowTemplate.Height = 24;
-            this.dgvConsultaU.Size = new System.Drawing.Size(971, 444);
+            this.dgvConsultaU.Size = new System.Drawing.Size(728, 361);
             this.dgvConsultaU.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(335, 63);
+            this.label1.Location = new System.Drawing.Point(235, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 47);
+            this.label1.Size = new System.Drawing.Size(312, 37);
             this.label1.TabIndex = 8;
             this.label1.Text = "Bitácora del Sistema";
             // 
@@ -100,11 +101,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(50, 641);
+            this.label2.Location = new System.Drawing.Point(46, 99);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(288, 33);
+            this.label2.Size = new System.Drawing.Size(213, 24);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Mostrar Bitácora de :";
+            this.label2.Text = "Mostrar Bitácora de:";
             // 
             // btnFiltrar
             // 
@@ -113,10 +115,10 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(873, 623);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFiltrar.Location = new System.Drawing.Point(656, 143);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(165, 66);
+            this.btnFiltrar.Size = new System.Drawing.Size(122, 50);
             this.btnFiltrar.TabIndex = 17;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -130,10 +132,10 @@
             this.cmbfiltro.Items.AddRange(new object[] {
             "Clientes",
             "Estados"});
-            this.cmbfiltro.Location = new System.Drawing.Point(362, 637);
-            this.cmbfiltro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbfiltro.Location = new System.Drawing.Point(434, 96);
+            this.cmbfiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbfiltro.Name = "cmbfiltro";
-            this.cmbfiltro.Size = new System.Drawing.Size(457, 40);
+            this.cmbfiltro.Size = new System.Drawing.Size(344, 32);
             this.cmbfiltro.TabIndex = 16;
             this.cmbfiltro.SelectedIndexChanged += new System.EventHandler(this.Cmbfiltro_SelectedIndexChanged);
             // 
@@ -143,19 +145,20 @@
             this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(947, 75);
+            this.btnImprimir.Location = new System.Drawing.Point(579, 143);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(75, 62);
+            this.btnImprimir.Size = new System.Drawing.Size(56, 50);
             this.btnImprimir.TabIndex = 19;
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // BitacoraModulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1107, 745);
+            this.ClientSize = new System.Drawing.Size(830, 605);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFiltrar);
@@ -163,7 +166,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvConsultaU);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BitacoraModulos";
             this.Text = "BitacoraModulos";
             this.Load += new System.EventHandler(this.BitacoraModulos_Load);

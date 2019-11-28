@@ -76,9 +76,9 @@
             this.label12.ForeColor = System.Drawing.SystemColors.Window;
             this.label12.Location = new System.Drawing.Point(44, 92);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 24);
+            this.label12.Size = new System.Drawing.Size(74, 24);
             this.label12.TabIndex = 204;
-            this.label12.Text = "Placa";
+            this.label12.Text = "Placa:";
             // 
             // label2
             // 
@@ -87,9 +87,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(298, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 24);
+            this.label2.Size = new System.Drawing.Size(187, 24);
             this.label2.TabIndex = 206;
-            this.label2.Text = "Tipo de Vehículo";
+            this.label2.Text = "Tipo de Vehículo:";
             // 
             // combtipoveh
             // 
@@ -111,13 +111,14 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(551, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 24);
+            this.label3.Size = new System.Drawing.Size(195, 24);
             this.label3.TabIndex = 208;
-            this.label3.Text = "Año del Vehículo";
+            this.label3.Text = "Año del Vehículo:";
             // 
             // dtpanioveh
             // 
             this.dtpanioveh.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.dtpanioveh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpanioveh.Location = new System.Drawing.Point(556, 119);
             this.dtpanioveh.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpanioveh.Name = "dtpanioveh";
@@ -141,9 +142,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
             this.label4.Location = new System.Drawing.Point(44, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 24);
+            this.label4.Size = new System.Drawing.Size(82, 24);
             this.label4.TabIndex = 210;
-            this.label4.Text = "Marca";
+            this.label4.Text = "Marca:";
             // 
             // txtmodelo
             // 
@@ -162,9 +163,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
             this.label5.Location = new System.Drawing.Point(298, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(95, 24);
             this.label5.TabIndex = 212;
-            this.label5.Text = "Modelo";
+            this.label5.Text = "Modelo:";
             // 
             // txtcap
             // 
@@ -183,9 +184,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
             this.label6.Location = new System.Drawing.Point(44, 256);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 24);
+            this.label6.Size = new System.Drawing.Size(133, 24);
             this.label6.TabIndex = 214;
-            this.label6.Text = "Capacidad";
+            this.label6.Text = "Capacidad:";
             // 
             // combtipocom
             // 
@@ -207,9 +208,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
             this.label7.Location = new System.Drawing.Point(551, 256);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(219, 24);
+            this.label7.Size = new System.Drawing.Size(224, 24);
             this.label7.TabIndex = 216;
-            this.label7.Text = "Tipo de Combustible";
+            this.label7.Text = "Tipo de Combustible:";
             // 
             // combtipotra
             // 
@@ -231,9 +232,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
             this.label8.Location = new System.Drawing.Point(298, 256);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(200, 24);
+            this.label8.Size = new System.Drawing.Size(205, 24);
             this.label8.TabIndex = 218;
-            this.label8.Text = "Tipo de Transmisión";
+            this.label8.Text = "Tipo de Transmisión:";
             // 
             // txtcolor
             // 
@@ -252,20 +253,20 @@
             this.label9.ForeColor = System.Drawing.SystemColors.Window;
             this.label9.Location = new System.Drawing.Point(551, 174);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 24);
+            this.label9.Size = new System.Drawing.Size(71, 24);
             this.label9.TabIndex = 220;
-            this.label9.Text = "Color";
+            this.label9.Text = "Color:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(176, 465);
+            this.label10.Location = new System.Drawing.Point(298, 433);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 24);
+            this.label10.Size = new System.Drawing.Size(83, 24);
             this.label10.TabIndex = 222;
-            this.label10.Text = "Estado";
+            this.label10.Text = "Estado:";
             // 
             // label11
             // 
@@ -274,13 +275,14 @@
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
             this.label11.Location = new System.Drawing.Point(44, 340);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(206, 24);
+            this.label11.Size = new System.Drawing.Size(211, 24);
             this.label11.TabIndex = 224;
-            this.label11.Text = "Año de Adquisición";
+            this.label11.Text = "Año de Adquisición:";
             // 
             // dtpanioad
             // 
             this.dtpanioad.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.dtpanioad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpanioad.Location = new System.Drawing.Point(48, 370);
             this.dtpanioad.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpanioad.Name = "dtpanioad";
@@ -294,9 +296,9 @@
             this.label13.ForeColor = System.Drawing.SystemColors.Window;
             this.label13.Location = new System.Drawing.Point(298, 340);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(206, 24);
+            this.label13.Size = new System.Drawing.Size(211, 24);
             this.label13.TabIndex = 226;
-            this.label13.Text = "Emisión del Permiso";
+            this.label13.Text = "Emisión del Permiso:";
             // 
             // label14
             // 
@@ -305,9 +307,9 @@
             this.label14.ForeColor = System.Drawing.SystemColors.Window;
             this.label14.Location = new System.Drawing.Point(550, 340);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(264, 24);
+            this.label14.Size = new System.Drawing.Size(269, 24);
             this.label14.TabIndex = 228;
-            this.label14.Text = "Vencimiento del Permiso";
+            this.label14.Text = "Vencimiento del Permiso:";
             // 
             // botcrear
             // 
@@ -315,9 +317,9 @@
             this.botcrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botcrear.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botcrear.ForeColor = System.Drawing.Color.Transparent;
-            this.botcrear.Location = new System.Drawing.Point(613, 442);
+            this.botcrear.Location = new System.Drawing.Point(640, 449);
             this.botcrear.Name = "botcrear";
-            this.botcrear.Size = new System.Drawing.Size(150, 66);
+            this.botcrear.Size = new System.Drawing.Size(122, 50);
             this.botcrear.TabIndex = 14;
             this.botcrear.Text = "Crear";
             this.botcrear.UseVisualStyleBackColor = false;
@@ -359,7 +361,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.Window;
-            this.label15.Location = new System.Drawing.Point(140, 20);
+            this.label15.Location = new System.Drawing.Point(125, 19);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(593, 37);
             this.label15.TabIndex = 232;

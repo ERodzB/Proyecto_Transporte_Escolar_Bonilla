@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.contratos_panel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.dgvContrato = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             // 
             // contratos_panel
             // 
+            this.contratos_panel.Controls.Add(this.label2);
             this.contratos_panel.Controls.Add(this.dgvContrato);
             this.contratos_panel.Controls.Add(this.label1);
             this.contratos_panel.Controls.Add(this.btnSeleccionar);
@@ -46,6 +48,18 @@
             this.contratos_panel.Size = new System.Drawing.Size(830, 530);
             this.contratos_panel.TabIndex = 4;
             this.contratos_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Contratos_panel_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(118, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(343, 37);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Modificará el Contrato";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dgvContrato
             // 
@@ -58,7 +72,7 @@
             this.dgvContrato.ReadOnly = true;
             this.dgvContrato.RowHeadersWidth = 51;
             this.dgvContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContrato.Size = new System.Drawing.Size(247, 283);
+            this.dgvContrato.Size = new System.Drawing.Size(252, 283);
             this.dgvContrato.TabIndex = 4;
             this.dgvContrato.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContrato_CellClick_1);
             this.dgvContrato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContrato_CellContentClick);
@@ -66,24 +80,25 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(92, 48);
+            this.label1.Location = new System.Drawing.Point(118, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(679, 28);
+            this.label1.Size = new System.Drawing.Size(516, 37);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Seleccione el Cliente al Cual se le Modificará el Contrato";
+            this.label1.Text = "Seleccione el Cliente al Cual  se le";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.btnSeleccionar.Enabled = false;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(541, 379);
+            this.btnSeleccionar.Location = new System.Drawing.Point(541, 390);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(161, 60);
+            this.btnSeleccionar.Size = new System.Drawing.Size(151, 50);
             this.btnSeleccionar.TabIndex = 5;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -113,5 +128,6 @@
         private System.Windows.Forms.DataGridView dgvContrato;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Label label2;
     }
 }

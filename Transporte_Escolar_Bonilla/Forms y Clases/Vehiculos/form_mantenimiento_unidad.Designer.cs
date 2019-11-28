@@ -60,7 +60,7 @@
             this.combveh.FormattingEnabled = true;
             this.combveh.Location = new System.Drawing.Point(420, 131);
             this.combveh.Name = "combveh";
-            this.combveh.Size = new System.Drawing.Size(183, 31);
+            this.combveh.Size = new System.Drawing.Size(217, 31);
             this.combveh.TabIndex = 187;
             this.combveh.SelectedIndexChanged += new System.EventHandler(this.Combveh_SelectedIndexChanged);
             // 
@@ -109,18 +109,18 @@
             // 
             // txtcosto
             // 
-            this.txtcosto.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtcosto.Location = new System.Drawing.Point(420, 286);
+            this.txtcosto.Font = new System.Drawing.Font("Century Gothic", 14.5F, System.Drawing.FontStyle.Bold);
+            this.txtcosto.Location = new System.Drawing.Point(420, 285);
             this.txtcosto.MaxLength = 8;
             this.txtcosto.Name = "txtcosto";
-            this.txtcosto.Size = new System.Drawing.Size(217, 29);
+            this.txtcosto.Size = new System.Drawing.Size(217, 31);
             this.txtcosto.TabIndex = 193;
             this.txtcosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcosto_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
             this.label4.Location = new System.Drawing.Point(101, 348);
             this.label4.Name = "label4";
@@ -136,7 +136,7 @@
             this.botingresar.ForeColor = System.Drawing.Color.Transparent;
             this.botingresar.Location = new System.Drawing.Point(629, 445);
             this.botingresar.Name = "botingresar";
-            this.botingresar.Size = new System.Drawing.Size(121, 50);
+            this.botingresar.Size = new System.Drawing.Size(122, 50);
             this.botingresar.TabIndex = 235;
             this.botingresar.Text = "Ingresar";
             this.botingresar.UseVisualStyleBackColor = false;
@@ -145,6 +145,7 @@
             // dtpfecha
             // 
             this.dtpfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpfecha.Location = new System.Drawing.Point(421, 350);
             this.dtpfecha.MinDate = new System.DateTime(2019, 7, 12, 0, 0, 0, 0);
             this.dtpfecha.Name = "dtpfecha";

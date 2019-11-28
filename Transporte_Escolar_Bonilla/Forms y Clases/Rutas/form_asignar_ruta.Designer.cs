@@ -56,9 +56,9 @@
             this.combveh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combveh.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combveh.FormattingEnabled = true;
-            this.combveh.Location = new System.Drawing.Point(456, 133);
+            this.combveh.Location = new System.Drawing.Point(438, 133);
             this.combveh.Name = "combveh";
-            this.combveh.Size = new System.Drawing.Size(183, 31);
+            this.combveh.Size = new System.Drawing.Size(260, 31);
             this.combveh.TabIndex = 184;
             this.combveh.SelectedIndexChanged += new System.EventHandler(this.Combveh_SelectedIndexChanged);
             // 
@@ -67,7 +67,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(124, 132);
+            this.label13.Location = new System.Drawing.Point(101, 132);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(324, 27);
             this.label13.TabIndex = 185;
@@ -78,7 +78,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(185, 243);
+            this.label2.Location = new System.Drawing.Point(237, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 27);
             this.label2.TabIndex = 188;
@@ -89,7 +89,7 @@
             this.combruta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combruta.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combruta.FormattingEnabled = true;
-            this.combruta.Location = new System.Drawing.Point(379, 244);
+            this.combruta.Location = new System.Drawing.Point(438, 244);
             this.combruta.Name = "combruta";
             this.combruta.Size = new System.Drawing.Size(260, 31);
             this.combruta.TabIndex = 189;
@@ -100,9 +100,9 @@
             this.combhorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combhorario.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.combhorario.FormattingEnabled = true;
-            this.combhorario.Location = new System.Drawing.Point(427, 309);
+            this.combhorario.Location = new System.Drawing.Point(438, 304);
             this.combhorario.Name = "combhorario";
-            this.combhorario.Size = new System.Drawing.Size(183, 31);
+            this.combhorario.Size = new System.Drawing.Size(260, 31);
             this.combhorario.TabIndex = 191;
             // 
             // label3
@@ -110,7 +110,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(185, 308);
+            this.label3.Location = new System.Drawing.Point(202, 305);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(223, 27);
             this.label3.TabIndex = 190;
@@ -120,11 +120,11 @@
             // 
             this.botasignar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.botasignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botasignar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botasignar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botasignar.ForeColor = System.Drawing.Color.Transparent;
-            this.botasignar.Location = new System.Drawing.Point(438, 402);
+            this.botasignar.Location = new System.Drawing.Point(507, 372);
             this.botasignar.Name = "botasignar";
-            this.botasignar.Size = new System.Drawing.Size(163, 57);
+            this.botasignar.Size = new System.Drawing.Size(122, 50);
             this.botasignar.TabIndex = 192;
             this.botasignar.Text = "Asignar";
             this.botasignar.UseVisualStyleBackColor = false;
