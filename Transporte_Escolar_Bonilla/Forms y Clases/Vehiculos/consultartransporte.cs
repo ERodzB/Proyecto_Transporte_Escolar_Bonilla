@@ -104,11 +104,11 @@ namespace Transporte_Escolar_Bonilla
         {
             if (CBFiltrox.SelectedIndex == -1 || CMBFiltro.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione ambos filtro");
+                MessageBox.Show("Seleccione ambos filtro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (dgvConsultaU.Rows.Count == 0)
             {
-                MessageBox.Show("No hay informacion disponible para impresion ");
+                MessageBox.Show("No hay información disponible para impresión", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else

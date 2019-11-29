@@ -518,7 +518,7 @@ begin
 	inner join Cliente cl on c.Cliente_Contrato = cl.Codigo_Cliente
 	inner join Vehiculos v on vr.Codigo_Vehiculo = v.Codigo_Vehiculo
 	if @consultacliente ='Rutas Viajes Privados'
-	select r.Codigo_Ruta'Codigo Viaje',r.Nombre_Ruta'Nombre de Viaje',r.Descripcion_Ruta'Descripcion Viaje',rc.Parada_Contrato'Final de Viaje', c.Servicio'Tipo de Viaje' from Rutas r
+	select r.Codigo_Ruta'Codigo Viaje',r.Nombre_Ruta'Nombre de Viaje',r.Descripcion_Ruta'Descripcion Viaje', c.Servicio'Tipo de Viaje' from Rutas r
 	inner join Rutas_Contratos rc on r.Codigo_Ruta = rc.Codigo_Ruta
 	inner join Contratos c on rc.Codigo_Contrato = c.Codigo_Contrato
 	where r.Tipo_Ruta='Viaje';

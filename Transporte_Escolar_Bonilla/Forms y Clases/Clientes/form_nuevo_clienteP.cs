@@ -147,10 +147,7 @@ namespace Transporte_Escolar_Bonilla
                                 else
                                 {
                                     //Validar Horarios
-
-                                    //Ida 
-                                    // if (combservicio.SelectedIndex == 1)
-                                    // {
+                                   
                                     //Algunos vacios
                                     if ((dtphoras1.Checked == true && dtphorae1.Checked == false) || (dtphoras1.Checked == false && dtphorae1.Checked == true) || (dtphoras1.Checked == true && dtphorae1.Checked == true && combveh1.SelectedIndex == -1) || (dtphoras1.Checked == true && dtphorae1.Checked == true && dtphoras1.Text == dtphorae1.Text))
                                         conth++;

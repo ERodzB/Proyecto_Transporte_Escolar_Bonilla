@@ -230,7 +230,7 @@
             this.enviar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enviar_linklbl.ForeColor = System.Drawing.Color.White;
             this.enviar_linklbl.LinkColor = System.Drawing.Color.White;
-            this.enviar_linklbl.Location = new System.Drawing.Point(450, 381);
+            this.enviar_linklbl.Location = new System.Drawing.Point(450, 409);
             this.enviar_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.enviar_linklbl.Name = "enviar_linklbl";
             this.enviar_linklbl.Size = new System.Drawing.Size(202, 21);
@@ -248,7 +248,7 @@
             this.regresar_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regresar_linklbl.ForeColor = System.Drawing.Color.White;
             this.regresar_linklbl.LinkColor = System.Drawing.Color.White;
-            this.regresar_linklbl.Location = new System.Drawing.Point(380, 348);
+            this.regresar_linklbl.Location = new System.Drawing.Point(380, 376);
             this.regresar_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.regresar_linklbl.Name = "regresar_linklbl";
             this.regresar_linklbl.Size = new System.Drawing.Size(78, 21);
@@ -261,7 +261,7 @@
             // Correo_tb
             // 
             this.Correo_tb.Font = new System.Drawing.Font("Century Gothic", 17F);
-            this.Correo_tb.Location = new System.Drawing.Point(406, 296);
+            this.Correo_tb.Location = new System.Drawing.Point(406, 324);
             this.Correo_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Correo_tb.Name = "Correo_tb";
             this.Correo_tb.Size = new System.Drawing.Size(234, 35);
@@ -274,7 +274,7 @@
             this.correo_lbl.AutoSize = true;
             this.correo_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.correo_lbl.ForeColor = System.Drawing.Color.White;
-            this.correo_lbl.Location = new System.Drawing.Point(112, 294);
+            this.correo_lbl.Location = new System.Drawing.Point(112, 322);
             this.correo_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.correo_lbl.Name = "correo_lbl";
             this.correo_lbl.Size = new System.Drawing.Size(269, 33);
@@ -290,7 +290,7 @@
             this.olvidadoLogin_linklbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.olvidadoLogin_linklbl.ForeColor = System.Drawing.Color.White;
             this.olvidadoLogin_linklbl.LinkColor = System.Drawing.Color.White;
-            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(456, 348);
+            this.olvidadoLogin_linklbl.Location = new System.Drawing.Point(456, 376);
             this.olvidadoLogin_linklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.olvidadoLogin_linklbl.Name = "olvidadoLogin_linklbl";
             this.olvidadoLogin_linklbl.Size = new System.Drawing.Size(193, 21);
@@ -302,7 +302,7 @@
             // contra_tb
             // 
             this.contra_tb.Font = new System.Drawing.Font("Century Gothic", 17F);
-            this.contra_tb.Location = new System.Drawing.Point(406, 240);
+            this.contra_tb.Location = new System.Drawing.Point(406, 268);
             this.contra_tb.Margin = new System.Windows.Forms.Padding(2);
             this.contra_tb.MaxLength = 20;
             this.contra_tb.Name = "contra_tb";
@@ -316,7 +316,7 @@
             this.contra_lbl.AutoSize = true;
             this.contra_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.contra_lbl.ForeColor = System.Drawing.Color.White;
-            this.contra_lbl.Location = new System.Drawing.Point(205, 240);
+            this.contra_lbl.Location = new System.Drawing.Point(205, 268);
             this.contra_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.contra_lbl.Name = "contra_lbl";
             this.contra_lbl.Size = new System.Drawing.Size(176, 33);
@@ -329,7 +329,7 @@
             this.ingresarLogin_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ingresarLogin_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingresarLogin_btn.ForeColor = System.Drawing.Color.White;
-            this.ingresarLogin_btn.Location = new System.Drawing.Point(460, 421);
+            this.ingresarLogin_btn.Location = new System.Drawing.Point(460, 449);
             this.ingresarLogin_btn.Margin = new System.Windows.Forms.Padding(2);
             this.ingresarLogin_btn.Name = "ingresarLogin_btn";
             this.ingresarLogin_btn.Size = new System.Drawing.Size(122, 50);
@@ -341,7 +341,7 @@
             // userLogin_tb
             // 
             this.userLogin_tb.Font = new System.Drawing.Font("Century Gothic", 17F);
-            this.userLogin_tb.Location = new System.Drawing.Point(406, 181);
+            this.userLogin_tb.Location = new System.Drawing.Point(406, 209);
             this.userLogin_tb.Margin = new System.Windows.Forms.Padding(2);
             this.userLogin_tb.MaxLength = 10;
             this.userLogin_tb.Name = "userLogin_tb";
@@ -356,7 +356,7 @@
             this.userLogin_lbl.AutoSize = true;
             this.userLogin_lbl.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.userLogin_lbl.ForeColor = System.Drawing.Color.White;
-            this.userLogin_lbl.Location = new System.Drawing.Point(256, 181);
+            this.userLogin_lbl.Location = new System.Drawing.Point(256, 209);
             this.userLogin_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userLogin_lbl.Name = "userLogin_lbl";
             this.userLogin_lbl.Size = new System.Drawing.Size(115, 33);

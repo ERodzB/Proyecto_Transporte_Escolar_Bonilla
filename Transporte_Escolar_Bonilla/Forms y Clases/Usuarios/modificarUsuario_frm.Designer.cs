@@ -306,7 +306,7 @@
             this.radac.AutoSize = true;
             this.radac.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radac.ForeColor = System.Drawing.Color.White;
-            this.radac.Location = new System.Drawing.Point(429, 441);
+            this.radac.Location = new System.Drawing.Point(429, 438);
             this.radac.Margin = new System.Windows.Forms.Padding(2);
             this.radac.Name = "radac";
             this.radac.Size = new System.Drawing.Size(109, 34);
@@ -319,7 +319,7 @@
             this.radinac.AutoSize = true;
             this.radinac.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radinac.ForeColor = System.Drawing.Color.White;
-            this.radinac.Location = new System.Drawing.Point(429, 473);
+            this.radinac.Location = new System.Drawing.Point(429, 470);
             this.radinac.Margin = new System.Windows.Forms.Padding(2);
             this.radinac.Name = "radinac";
             this.radinac.Size = new System.Drawing.Size(129, 34);

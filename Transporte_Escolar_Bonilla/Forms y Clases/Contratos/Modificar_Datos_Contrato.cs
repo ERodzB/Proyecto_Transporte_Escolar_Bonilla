@@ -41,14 +41,7 @@ namespace Transporte_Escolar_Bonilla
             cmbEstado.DataSource = con.combox_mod_contrato();
             cmbEstado.DisplayMember = "Nombre_Estado";
             cmbEstado.ValueMember = "Codigo_Estado";
-            cmbEstado.SelectedIndex = -1;
-
-            //MessageBox.Show("CARGA", "Atención", MessageBoxButtons.YesNo);
-
-            //cmbTipoServicio.Enabled = true;
-            //cmbTipoServicio.Items.Clear();
-            //cmbTipoServicio.Items.Add("Bus Completo");
-            //cmbTipoServicio.Items.Add("Medio Bus");
+            cmbEstado.SelectedIndex = -1;       
         }
 
         private void BtnAtras_Click(object sender, EventArgs e)
@@ -77,24 +70,24 @@ namespace Transporte_Escolar_Bonilla
                     txtMontoMensual.Text = dgvDatosContrato.CurrentRow.Cells[2].Value.ToString();
                     txtTipoContrato.Text = dgvDatosContrato.CurrentRow.Cells[1].Value.ToString();
 
-                    //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[4].Value.ToString());
+                    
                     cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
                     cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
-                    //cmbTipoPago.SelectedIndex= Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString())-1;
+                    
                     txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
                     cmbEstado.Text = dgvDatosContrato.CurrentRow.Cells[9].Value.ToString();
-                    //cmbEstado.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString()) - 1;
+                    
                     cmbTipoServicio.Enabled = true;
                     dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
                     txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
-                    //dtpFinal.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[8].Value.ToString());
+                    
 
 
                     txtCuota.Enabled = true;
                     txtMontoMensual.Enabled = true;
                     txtMonto.Enabled = true;
                     dtpInicio.Enabled = true;
-                    //dtpFinal.Enabled = true;
+                    
 
 
                     cmbEstado.Enabled = true;
@@ -119,10 +112,10 @@ namespace Transporte_Escolar_Bonilla
                     dtpInicio.Value = DateTime.Parse(dgvDatosContrato.CurrentRow.Cells[6].Value.ToString());
                     txtMonto.Text = dgvDatosContrato.CurrentRow.Cells[7].Value.ToString();
                     cmbTipoServicio.Text = dgvDatosContrato.CurrentRow.Cells[4].Value.ToString();
-                    //cmbTipoPago.SelectedIndex = Convert.ToInt32(dgvDatosContrato.CurrentRow.Cells[10].Value.ToString()) - 1;
+                    
                     cmbTipoPago.Text = dgvDatosContrato.CurrentRow.Cells[10].Value.ToString();
                     txtCuota.Text = dgvDatosContrato.CurrentRow.Cells[3].Value.ToString();
-                    //MessageBox.Show(dgvDatosContrato.CurrentRow.Cells[11].Value.ToString());
+                    
                     cmbEstado.SelectedIndex = 1;
                     dtpInicio.Enabled = true;
                     txtMonto.Enabled = true;

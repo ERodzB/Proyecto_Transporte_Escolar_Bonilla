@@ -29,7 +29,7 @@ namespace Transporte_Escolar_Bonilla
         {
             if (cmbfiltro.SelectedIndex == -1)
             {
-                MessageBox.Show("Error debe seleccionar al menos un fltro antes");
+                MessageBox.Show("Debe seleccionar al menos un filtro antes", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -42,11 +42,11 @@ namespace Transporte_Escolar_Bonilla
         {
             if (cmbfiltro.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione un filtro");
+                MessageBox.Show("Seleccione un filtro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(dgvConsultaU.Rows.Count == 0)
             {
-                MessageBox.Show("No hay informacion disponible para impresion ");
+                MessageBox.Show("No hay información disponible para impresión", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else

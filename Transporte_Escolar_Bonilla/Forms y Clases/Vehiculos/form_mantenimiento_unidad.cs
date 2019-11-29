@@ -67,11 +67,7 @@ namespace Transporte_Escolar_Bonilla
                 if (double.Parse(txtcosto.Text) <= 0)
                     MessageBox.Show("El Costo del Mantenimiento debe ser mayor que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                {
-                    //if (dtpfecha.Value < System.DateTime.Today)
-                    //    MessageBox.Show("No se admiten fechas anteriores al día de Hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //else
-                    //{
+                {                  
                     if (val.VehiculoConductor(combveh.Text) == 0)
                         MessageBox.Show("Asigne un conductor encargado antes de enviarlo a Mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
@@ -97,8 +93,7 @@ namespace Transporte_Escolar_Bonilla
                             combveh.SelectedIndex = -1;
                             combtipo.SelectedIndex = -1;
                         }
-                    }
-                    //}
+                    }                  
                 }
 
 

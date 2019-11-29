@@ -159,16 +159,7 @@ namespace Transporte_Escolar_Bonilla
                 {
                     MessageBox.Show("La licencia no puede quedar vacía", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //else
-                //        if (dtpvencimiento.Value <= System.DateTime.Today)
-                //{
-                //    MessageBox.Show("La fecha de vencimiento de la licencia no puede ser menor al día de hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
-                //else
-                //       if (dateTimePicker1.Value >= System.DateTime.Today)
-                //{
-                //    MessageBox.Show("La fecha de nacimiento no puede ser hoy o en el futuro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                
                 else
                        if (txtcorreo.Text == "")
                 {
@@ -263,11 +254,7 @@ namespace Transporte_Escolar_Bonilla
                     MessageBox.Show("El salario no puede ser menor a 1", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                //else
-                //       if (dateTimePicker1.Value >= System.DateTime.Today)
-                //{
-                //    MessageBox.Show("La fecha de nacimiento no puede ser hoy o en el futuro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                
                 else
                        if (txtcorreo.Text == "")
                 {

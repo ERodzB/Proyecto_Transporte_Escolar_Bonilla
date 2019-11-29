@@ -17,7 +17,7 @@ namespace Transporte_Escolar_Bonilla
 
             else
             {
-                MessageBox.Show("No hay Notificaciones ", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No hay Notificaciones ", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

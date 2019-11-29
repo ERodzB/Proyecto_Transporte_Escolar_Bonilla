@@ -127,7 +127,6 @@ namespace Transporte_Escolar_Bonilla
                 if (e.KeyChar == Convert.ToChar(Keys.Delete))
                 {
                     borrar = true;
-                    //MessageBox.Show("TECLA: " + e.KeyChar);
                 }
 
                 else
@@ -165,7 +164,7 @@ namespace Transporte_Escolar_Bonilla
             }
         }
 
-        //Se escribe monto mensual
+
         private void Txtmontom_TextChanged_1(object sender, EventArgs e)
         {
 
@@ -234,11 +233,11 @@ namespace Transporte_Escolar_Bonilla
                     }
 
                     //Todos Vacios
-                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1) /*&& txtpa1.Text == "")*/
+                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1)
                         contr++;
 
                     //Algunos vacios
-                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1) /*|| txtpa1.Text == "")*/
+                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1)
                         contr++;
                 }
 
@@ -253,13 +252,13 @@ namespace Transporte_Escolar_Bonilla
                     }
 
                     //Todos Vacios
-                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 && /*txtpa1.Text == "" &&*/
-                        combruta2.SelectedIndex == -1 && combhora2.SelectedIndex == -1 && combveh2.SelectedIndex == -1) /*&& txtpa2.Text == "")*/
+                    if (combruta1.SelectedIndex == -1 && combhora1.SelectedIndex == -1 && combveh1.SelectedIndex == -1 &&
+                        combruta2.SelectedIndex == -1 && combhora2.SelectedIndex == -1 && combveh2.SelectedIndex == -1)
                         contr++;
 
                     //Algunos vacios
-                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 || /*txtpa1.Text == "" ||*/
-                        combruta2.SelectedIndex == -1 || combhora2.SelectedIndex == -1 || combveh2.SelectedIndex == -1) /*|| txtpa2.Text == "")*/
+                    if (combruta1.SelectedIndex == -1 || combhora1.SelectedIndex == -1 || combveh1.SelectedIndex == -1 ||
+                        combruta2.SelectedIndex == -1 || combhora2.SelectedIndex == -1 || combveh2.SelectedIndex == -1)
                         contr++;
 
                     //Rutas Iguales
@@ -267,8 +266,6 @@ namespace Transporte_Escolar_Bonilla
                         contri++;
                 }
 
-
-                //if ()
 
                 //Mostrar mensaje de Error
                 if (contp > 0 && contr == 0)

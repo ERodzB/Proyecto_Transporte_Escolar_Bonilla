@@ -32,7 +32,7 @@ namespace Transporte_Escolar_Bonilla
 
             if (txtIdentidad.Text.Trim().Length == 13)
             {
-                if (txtNombre.Text.Trim().Length > 2) /*&& txtDireccion.Text!="" && txtTelefono.Text.Trim().Length == 8 && txtCorreo.Text!="")*/
+                if (txtNombre.Text.Trim().Length > 2)
                 {
                     if (txtDireccion.Text.Trim().Length >= 15 && txtDireccion.Text.Any(x => char.IsLetter(x)))
                     {

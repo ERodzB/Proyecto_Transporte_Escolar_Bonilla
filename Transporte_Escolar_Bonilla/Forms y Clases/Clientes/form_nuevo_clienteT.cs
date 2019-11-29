@@ -207,10 +207,6 @@ namespace Transporte_Escolar_Bonilla
                         }
                     }
                 }
-                //else
-                //{
-
-                //}
             }
         }
 
@@ -297,10 +293,10 @@ namespace Transporte_Escolar_Bonilla
         }
 
 
-        //Se escribe monto mensual
+
         private void Txtmontom_TextChanged(object sender, EventArgs e)
         {
-            //Para calcular Monto Total
+
 
 
         }
@@ -347,24 +343,12 @@ namespace Transporte_Escolar_Bonilla
                 if (e.KeyChar == Convert.ToChar(Keys.Back))
                 {
                     borrar = true;
-                    //MessageBox.Show("TECLA: " + e.KeyChar);
                 }
 
                 else
                     borrar = false;
 
-            }
-
-            //MessageBox.Show("TECLA DESPUES: " + e.KeyChar);
-            ////Si no se presiona borrar (Para que no mande un dato vacio)
-            //if (e.KeyChar != Convert.ToChar(Keys.Back))
-            //{
-            //    if (txtcantm.Text != " ")
-            //    {
-            //        //MessageBox.Show("DATO: " + e.KeyChar);
-            //        txtfechafin.Text = dtpinicio.Value.AddMonths(int.Parse(e.KeyChar.ToString())).ToString("dd/MM/yyyy");
-            //    }
-            //}      
+            }                
         }
 
         private void Cliente2_panel_Paint(object sender, PaintEventArgs e)

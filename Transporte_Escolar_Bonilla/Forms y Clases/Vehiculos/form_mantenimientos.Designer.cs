@@ -151,9 +151,9 @@
             this.botingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botingresar.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.botingresar.ForeColor = System.Drawing.Color.Transparent;
-            this.botingresar.Location = new System.Drawing.Point(426, 386);
+            this.botingresar.Location = new System.Drawing.Point(419, 389);
             this.botingresar.Name = "botingresar";
-            this.botingresar.Size = new System.Drawing.Size(122, 50);
+            this.botingresar.Size = new System.Drawing.Size(137, 50);
             this.botingresar.TabIndex = 236;
             this.botingresar.Text = "Ingresar";
             this.botingresar.UseVisualStyleBackColor = false;

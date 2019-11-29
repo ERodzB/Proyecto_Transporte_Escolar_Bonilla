@@ -21,26 +21,6 @@ namespace Transporte_Escolar_Bonilla
             Validar valido = new Validar();
             Modificar mod = new Modificar();
 
-            //String error = " ";
-            //int cont = 0;
-
-            //if(nombre_tb.Text.Trim().Length < 3)
-            //{
-            //    error += "Debe ingresar 3 caracteres mínimo para el Nombre de Usuario\n";
-            //    cont++;               
-            //}
-
-
-            //if (contra_tb.Text.Trim().Length < 8)
-            //{
-            //    error += "Ingrese una contraseña de 8 caracteres mínimo";
-            //    cont++;
-            //}
-
-            //if(cont>0)
-            //    MessageBox.Show(error, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //else
-            //{
             if (contra_tb.Text.Equals(confirm_tb.Text))
             {
                 if (valido.validarEmpleado(identidad_tb.Text) == 1)

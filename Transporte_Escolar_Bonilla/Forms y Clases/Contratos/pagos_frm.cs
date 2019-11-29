@@ -29,8 +29,6 @@ namespace Transporte_Escolar_Bonilla
 
         private void Contratos_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(contratos_dgv.CurrentRow.Cells[6].Value.ToString(), "CELDA CLIC COMPARA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             if (contratos_dgv.Rows.Count != 0)
             {
                 if (contratos_dgv.CurrentRow.Cells[9].Value.ToString().Equals("Vigente"))
