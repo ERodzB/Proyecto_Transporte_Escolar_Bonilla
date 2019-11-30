@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.contratosTop_panel = new System.Windows.Forms.Panel();
+            this.btnCotizar = new System.Windows.Forms.Button();
             this.btnGenerarContrato = new System.Windows.Forms.Button();
             this.pagos_btn = new System.Windows.Forms.Button();
             this.modificarContratos_btn = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             // contratosTop_panel
             // 
             this.contratosTop_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(80)))));
+            this.contratosTop_panel.Controls.Add(this.btnCotizar);
             this.contratosTop_panel.Controls.Add(this.btnGenerarContrato);
             this.contratosTop_panel.Controls.Add(this.pagos_btn);
             this.contratosTop_panel.Controls.Add(this.modificarContratos_btn);
@@ -54,10 +56,27 @@
             this.contratosTop_panel.Controls.Add(this.consultaContratos_btn);
             this.contratosTop_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.contratosTop_panel.Location = new System.Drawing.Point(0, 0);
-            this.contratosTop_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contratosTop_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contratosTop_panel.Name = "contratosTop_panel";
-            this.contratosTop_panel.Size = new System.Drawing.Size(831, 77);
+            this.contratosTop_panel.Size = new System.Drawing.Size(1108, 95);
             this.contratosTop_panel.TabIndex = 0;
+            // 
+            // btnCotizar
+            // 
+            this.btnCotizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
+            this.btnCotizar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCotizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(129)))));
+            this.btnCotizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCotizar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCotizar.ForeColor = System.Drawing.Color.White;
+            this.btnCotizar.Location = new System.Drawing.Point(975, 0);
+            this.btnCotizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCotizar.Name = "btnCotizar";
+            this.btnCotizar.Size = new System.Drawing.Size(134, 95);
+            this.btnCotizar.TabIndex = 9;
+            this.btnCotizar.Text = "Cotizar";
+            this.btnCotizar.UseVisualStyleBackColor = false;
+            this.btnCotizar.Click += new System.EventHandler(this.btnCotizar_Click);
             // 
             // btnGenerarContrato
             // 
@@ -67,10 +86,10 @@
             this.btnGenerarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarContrato.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarContrato.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarContrato.Location = new System.Drawing.Point(620, 0);
-            this.btnGenerarContrato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerarContrato.Location = new System.Drawing.Point(812, 0);
+            this.btnGenerarContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGenerarContrato.Name = "btnGenerarContrato";
-            this.btnGenerarContrato.Size = new System.Drawing.Size(122, 77);
+            this.btnGenerarContrato.Size = new System.Drawing.Size(163, 95);
             this.btnGenerarContrato.TabIndex = 8;
             this.btnGenerarContrato.Text = "Generar Contrato";
             this.btnGenerarContrato.UseVisualStyleBackColor = false;
@@ -84,10 +103,10 @@
             this.pagos_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagos_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagos_btn.ForeColor = System.Drawing.Color.White;
-            this.pagos_btn.Location = new System.Drawing.Point(528, 0);
-            this.pagos_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pagos_btn.Location = new System.Drawing.Point(689, 0);
+            this.pagos_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pagos_btn.Name = "pagos_btn";
-            this.pagos_btn.Size = new System.Drawing.Size(92, 77);
+            this.pagos_btn.Size = new System.Drawing.Size(123, 95);
             this.pagos_btn.TabIndex = 7;
             this.pagos_btn.Text = "Pagos";
             this.pagos_btn.UseVisualStyleBackColor = false;
@@ -101,10 +120,10 @@
             this.modificarContratos_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificarContratos_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificarContratos_btn.ForeColor = System.Drawing.Color.White;
-            this.modificarContratos_btn.Location = new System.Drawing.Point(396, 0);
-            this.modificarContratos_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modificarContratos_btn.Location = new System.Drawing.Point(513, 0);
+            this.modificarContratos_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modificarContratos_btn.Name = "modificarContratos_btn";
-            this.modificarContratos_btn.Size = new System.Drawing.Size(132, 77);
+            this.modificarContratos_btn.Size = new System.Drawing.Size(176, 95);
             this.modificarContratos_btn.TabIndex = 6;
             this.modificarContratos_btn.Text = "Modificar Contratos";
             this.modificarContratos_btn.UseVisualStyleBackColor = false;
@@ -118,10 +137,10 @@
             this.ContratosPrivado_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContratosPrivado_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContratosPrivado_btn.ForeColor = System.Drawing.Color.White;
-            this.ContratosPrivado_btn.Location = new System.Drawing.Point(264, 0);
-            this.ContratosPrivado_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContratosPrivado_btn.Location = new System.Drawing.Point(337, 0);
+            this.ContratosPrivado_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContratosPrivado_btn.Name = "ContratosPrivado_btn";
-            this.ContratosPrivado_btn.Size = new System.Drawing.Size(132, 77);
+            this.ContratosPrivado_btn.Size = new System.Drawing.Size(176, 95);
             this.ContratosPrivado_btn.TabIndex = 5;
             this.ContratosPrivado_btn.Text = "Contrato Privado";
             this.ContratosPrivado_btn.UseVisualStyleBackColor = false;
@@ -135,10 +154,10 @@
             this.Contratos_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Contratos_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contratos_btn.ForeColor = System.Drawing.Color.White;
-            this.Contratos_btn.Location = new System.Drawing.Point(132, 0);
-            this.Contratos_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Contratos_btn.Location = new System.Drawing.Point(176, 0);
+            this.Contratos_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Contratos_btn.Name = "Contratos_btn";
-            this.Contratos_btn.Size = new System.Drawing.Size(132, 77);
+            this.Contratos_btn.Size = new System.Drawing.Size(161, 95);
             this.Contratos_btn.TabIndex = 4;
             this.Contratos_btn.Text = " Contrato Temporal";
             this.Contratos_btn.UseVisualStyleBackColor = false;
@@ -153,9 +172,9 @@
             this.consultaContratos_btn.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaContratos_btn.ForeColor = System.Drawing.Color.White;
             this.consultaContratos_btn.Location = new System.Drawing.Point(0, 0);
-            this.consultaContratos_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.consultaContratos_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.consultaContratos_btn.Name = "consultaContratos_btn";
-            this.consultaContratos_btn.Size = new System.Drawing.Size(132, 77);
+            this.consultaContratos_btn.Size = new System.Drawing.Size(176, 95);
             this.consultaContratos_btn.TabIndex = 3;
             this.consultaContratos_btn.Text = "Consultas";
             this.consultaContratos_btn.UseVisualStyleBackColor = false;
@@ -166,19 +185,19 @@
             this.contratosMain_panel.Controls.Add(this.pictureBox1);
             this.contratosMain_panel.Controls.Add(this.label1);
             this.contratosMain_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contratosMain_panel.Location = new System.Drawing.Point(0, 77);
-            this.contratosMain_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contratosMain_panel.Location = new System.Drawing.Point(0, 95);
+            this.contratosMain_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contratosMain_panel.Name = "contratosMain_panel";
-            this.contratosMain_panel.Size = new System.Drawing.Size(831, 528);
+            this.contratosMain_panel.Size = new System.Drawing.Size(1108, 650);
             this.contratosMain_panel.TabIndex = 7;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Transporte_Escolar_Bonilla.Properties.Resources.contratos1;
-            this.pictureBox1.Location = new System.Drawing.Point(295, 98);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(393, 121);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 249);
+            this.pictureBox1.Size = new System.Drawing.Size(331, 306);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -188,10 +207,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(23, 402);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(31, 495);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(783, 66);
+            this.label1.Size = new System.Drawing.Size(954, 80);
             this.label1.TabIndex = 5;
             this.label1.Text = "Bienvenido al Módulo de Contratos\r\nSeleccione la acción que desea realizar del me" +
     "nú superior\r\n";
@@ -200,14 +218,14 @@
             // 
             // contratos_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(72)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(831, 605);
+            this.ClientSize = new System.Drawing.Size(1108, 745);
             this.Controls.Add(this.contratosMain_panel);
             this.Controls.Add(this.contratosTop_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "contratos_frm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "contratos_frm";
@@ -231,5 +249,6 @@
         private System.Windows.Forms.Button modificarContratos_btn;
         private System.Windows.Forms.Button pagos_btn;
         private System.Windows.Forms.Button btnGenerarContrato;
+        private System.Windows.Forms.Button btnCotizar;
     }
 }

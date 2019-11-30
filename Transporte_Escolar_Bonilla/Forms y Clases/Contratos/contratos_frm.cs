@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos;
 
 namespace Transporte_Escolar_Bonilla
 {
@@ -161,6 +162,28 @@ namespace Transporte_Escolar_Bonilla
             pagos_btn.ForeColor = Color.White;
             btnGenerarContrato.BackColor = Color.White;
             btnGenerarContrato.ForeColor = Color.MidnightBlue;
+
+        }
+
+        private void btnCotizar_Click(object sender, EventArgs e)
+        {
+            cotizacion cotiza = new cotizacion();
+            estetics.AbrirFormularios(cotiza, contratosMain_panel);
+
+            consultaContratos_btn.BackColor = Color.FromArgb(12, 24, 94);
+            consultaContratos_btn.ForeColor = Color.White;
+            Contratos_btn.BackColor = Color.FromArgb(12, 24, 94);
+            Contratos_btn.ForeColor = Color.White;
+            ContratosPrivado_btn.BackColor = Color.FromArgb(12, 24, 94);
+            ContratosPrivado_btn.ForeColor = Color.White;
+            modificarContratos_btn.BackColor = Color.FromArgb(12, 24, 94);
+            modificarContratos_btn.ForeColor = Color.White;
+            pagos_btn.BackColor = Color.FromArgb(12, 24, 94);
+            pagos_btn.ForeColor = Color.White;
+            btnGenerarContrato.BackColor = Color.FromArgb(12, 24, 94);
+            btnGenerarContrato.ForeColor = Color.White;
+            btnCotizar.BackColor = Color.White;
+            btnCotizar.ForeColor = Color.MidnightBlue;
 
         }
     }

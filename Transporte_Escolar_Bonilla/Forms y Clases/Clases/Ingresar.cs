@@ -44,6 +44,37 @@ namespace Transporte_Escolar_Bonilla
 
             mensaje = "Datos del Cliente guardados con Éxito";
         }
+        //Ingresar Nueva Cotizacion
+        public void NuevaCotizacion(string nombre, string correo, string telefono1, string telefono2,string origen,string destino,double distancia,
+            double tarifa, string tipoviaje, double subtotal, double descuento, double isv, double rebaja, double total)
+        {
+            try
+            {
+                cmd = new SqlCommand("NuevaCotizacion", conexionBD);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@correo", correo);
+                cmd.Parameters.AddWithValue("@telefono1",telefono1);
+                cmd.Parameters.AddWithValue("@telefono2", telefono2);
+                cmd.Parameters.AddWithValue("@origen", origen);
+                cmd.Parameters.AddWithValue("@destino", destino);
+                cmd.Parameters.AddWithValue("@distancia", distancia);
+                cmd.Parameters.AddWithValue("@tarifa", tarifa);
+                cmd.Parameters.AddWithValue("@tipoviaje", tipoviaje);
+                cmd.Parameters.AddWithValue("@subtotal", subtotal);
+                cmd.Parameters.AddWithValue("@descuento", descuento);
+                cmd.Parameters.AddWithValue("@isv", isv);
+                cmd.Parameters.AddWithValue("@rebaja", rebaja);
+                cmd.Parameters.AddWithValue("@total", total);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            mensaje = "Datos de de la Cotización guardados con Éxito";
+        }
 
         public void NuevoEmpleado(string id, string nom, DateTime fecha, int genero, string tel, string correo, string dir, int puesto, double salario, string Lic, DateTime fechaLic, int tipolic)
         {

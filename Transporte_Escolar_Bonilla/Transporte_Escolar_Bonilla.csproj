@@ -94,6 +94,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms y Clases\Contratos\cotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms y Clases\Contratos\cotizacion.Designer.cs">
+      <DependentUpon>cotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms y Clases\Vehiculos\asignacionunidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +354,9 @@
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms y Clases\Clases\Validar.cs" />
+    <EmbeddedResource Include="Forms y Clases\Contratos\cotizacion.resx">
+      <DependentUpon>cotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms y Clases\Vehiculos\asignacionunidades.resx">
       <DependentUpon>asignacionunidades.cs</DependentUpon>
     </EmbeddedResource>

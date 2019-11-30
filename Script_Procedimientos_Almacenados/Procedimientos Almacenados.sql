@@ -1569,7 +1569,30 @@ create procedure VehiculoConductor
 	end
 	go
 
+/*---------------------------------------------Nueva Cotizacion--------------------------------------------------*/
 
+create procedure NuevaCotizacion
+@nombre as varchar(100),
+@correo as varchar(100),
+@telefono1 as varchar(20),
+@telefono2 as varchar(20),
+@origen as varchar(100),
+@destino as varchar(100),
+@distancia as float,
+@tarifa as money,
+@tipoviaje as varchar(50),
+@subtotal as money,
+@descuento as money,
+@isv as money,
+@rebaja as money,
+@total as money
+as 
+begin
+ insert into [dbo].[Cotizacion] ([Fecha_Cotizacion],[Nombre_Interesado],[Correo_Interesado],[Telefono1_Interesado],[Telefono2_Interesado],
+ [Origen_Cotizacion],[Destino_Cotizacion],[Distancia_Cotizacion],[Tarifa_x_Km_Cotizacion],[Tipo_Viaje_Cotizacion],[Subtotal_Cotizacion],
+ [ISV_Cotizacion],[Porce_Descuento_Cotizacion],[Rebaja_Cotizacion],[Total_Cotizacion])
+ values (GETDATE(),@nombre,@correo,@telefono1,@telefono2,@origen,@destino,@distancia,@tarifa,@tipoviaje,@subtotal,@isv,@descuento,@rebaja,@total)
+end
 
 
 /*---------------------------------------------Triggers Historial Usuarios--------------------------------------------------*/
