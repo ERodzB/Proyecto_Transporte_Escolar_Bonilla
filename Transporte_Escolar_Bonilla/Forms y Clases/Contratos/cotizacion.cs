@@ -71,23 +71,49 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if(rbSingle.Checked == true)
+
+            if (txtNombre.Text!="" && txtCorreo.Text!="" && txtTelefono1.Text!="" && txtTelefono2.Text!="" &&
+                txtSalida.Text!="" && txtRegreso.Text!="" && txtTarifa.Text!="" && txtDistancia.Text!="")
             {
-                subtotal = Double.Parse(txtDistancia.Text) * Double.Parse(txtTarifa.Text);
-                
+                if (txtNombre.Text.Length > 3  && txtSalida.Text.Length > 3 && txtRegreso.Text.Length > 3)
+                {
+                    if (txtTelefono1.Text.Length == 8 && txtTelefono2.Text.Length == 8)
+                    {
+                        if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                        {
+                            if (Double.Parse(txtDistancia.Text) > 0 && Double.Parse(txtTarifa.Text) > 0)
+                            {
+                                if (rbSingle.Checked == true)
+                                {
+                                    subtotal = Double.Parse(txtDistancia.Text) * Double.Parse(txtTarifa.Text);
+
+                                }
+                                else
+                                {
+                                    subtotal = (Double.Parse(txtDistancia.Text) * Double.Parse(txtTarifa.Text)) * 2;
+                                }
+
+                                gbPago.Visible = true;
+                                btnCalcular.Visible = false;
+                                btnCotizar.Enabled = true;
+                                txtSubtotal.Text = subtotal.ToString();
+                                txtISV.Text = (Double.Parse(txtSubtotal.Text) * 0.15).ToString();
+                                txtTotal.Text = (Double.Parse(txtSubtotal.Text) + Double.Parse(txtISV.Text)).ToString();
+                            }
+                            else
+                                MessageBox.Show("Ingrese una distancia y una tarifa mayores a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                            MessageBox.Show("Ingrese el correo en un formato válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                        MessageBox.Show("Los telefonos deben ser igual a 8 caracteres cada uno", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("El nombre, punto de origen y destino final deben ser mayores a 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            {
-                subtotal = (Double.Parse(txtDistancia.Text) * Double.Parse(txtTarifa.Text))*2;
-            }
-
-            gbPago.Visible = true;
-            btnCalcular.Visible = false;
-            btnCotizar.Enabled = true;
-            txtSubtotal.Text = subtotal.ToString();
-            txtISV.Text = (Double.Parse(txtSubtotal.Text) * 0.15).ToString();
-            txtTotal.Text = (Double.Parse(txtSubtotal.Text) + Double.Parse(txtISV.Text)).ToString();
-
+                MessageBox.Show("Debe llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void RBRoundtrip_CheckedChanged(object sender, EventArgs e)
@@ -124,15 +150,32 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
         {
             btnRecalcular.Visible = true;
             btnCotizar.Enabled = false;
-            txtRebaja.Text = (subtotal * (Double.Parse(txtDescuento.Text) / 100)).ToString();
+            if (txtDescuento.Text == "")
+                txtDescuento.Text = "0";
+            else { 
+                if (Double.Parse(txtDescuento.Text) > 100)
+                    txtDescuento.Text = "100";
+                else
+                    txtRebaja.Text = (subtotal * (Double.Parse(txtDescuento.Text) / 100)).ToString();
+            }
         }
 
-        private void txtRebaja_TextChanged(object sender, EventArgs e)
+
+
+    private void txtRebaja_TextChanged(object sender, EventArgs e)
         {
             btnRecalcular.Visible = true;
             btnCotizar.Enabled = false;
-            txtDescuento.Text = ((Double.Parse(txtRebaja.Text) / subtotal)*100).ToString();
+            if (txtRebaja.Text == "")
+                txtRebaja.Text = "0";
+            else { 
+                if (Double.Parse(txtRebaja.Text) > subtotal)
+                    txtRebaja.Text = txtSubtotal.Text;
+                else    
+                    txtDescuento.Text = ((Double.Parse(txtRebaja.Text) / subtotal)*100).ToString();
+            }
         }
+
 
         private void btnRecalcular_Click(object sender, EventArgs e)
         {
@@ -145,36 +188,146 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
 
         private void btnCotizar_Click(object sender, EventArgs e)
         {
-            string nametipoviaje="";
 
-            if (rbSingle.Checked == true)
-                nametipoviaje = rbSingle.Text;
-            if (RBRoundtrip.Checked == true)
-                nametipoviaje = RBRoundtrip.Text;
-            ing.NuevaCotizacion(txtNombre.Text, txtCorreo.Text, txtTelefono1.Text, txtTelefono2.Text, txtSalida.Text, txtRegreso.Text, Double.Parse(txtDistancia.Text), Double.Parse(txtTarifa.Text),
-                nametipoviaje, Double.Parse(txtSubtotal.Text), Double.Parse(txtDescuento.Text),Double.Parse(txtISV.Text),Double.Parse(txtRebaja.Text),Double.Parse(txtTotal.Text));
+        if (txtNombre.Text != "" && txtCorreo.Text != "" && txtTelefono1.Text != "" && txtTelefono2.Text != "" &&
+            txtSalida.Text != "" && txtRegreso.Text != "" && txtTarifa.Text != "" && txtDistancia.Text != "")
+            {
+                if (txtNombre.Text.Length > 3 && txtSalida.Text.Length > 3 && txtRegreso.Text.Length > 3)
+                {
+                    if (txtTelefono1.Text.Length == 8 && txtTelefono2.Text.Length == 8)
+                    {
+                        if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                        {
+                            if (Double.Parse(txtDistancia.Text) > 0 && Double.Parse(txtTarifa.Text) > 0)
+                            {
 
-            MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtCorreo.Text = "";
-            txtDescuento.Text = "0";
-            txtDistancia.Text = "";
-            txtISV.Text = "";
-            txtNombre.Text = "";
-            txtRebaja.Text = "0";
-            txtRegreso.Text = "";
-            txtSalida.Text = "";
-            txtSubtotal.Text = "";
-            txtTarifa.Text = "";
-            txtTelefono1.Text = "";
-            txtTelefono2.Text = "";
-            txtTotal.Text = "";
-            RBRoundtrip.Checked = true;
-            gbPago.Visible = false;
+                                string nametipoviaje = "";
+
+                                if (rbSingle.Checked == true)
+                                    nametipoviaje = rbSingle.Text;
+                                if (RBRoundtrip.Checked == true)
+                                    nametipoviaje = RBRoundtrip.Text;
+                                ing.NuevaCotizacion(txtNombre.Text, txtCorreo.Text, txtTelefono1.Text, txtTelefono2.Text, txtSalida.Text, txtRegreso.Text, Double.Parse(txtDistancia.Text), Double.Parse(txtTarifa.Text),
+                                    nametipoviaje, Double.Parse(txtSubtotal.Text), Double.Parse(txtDescuento.Text), Double.Parse(txtISV.Text), Double.Parse(txtRebaja.Text), Double.Parse(txtTotal.Text));
+
+                                MessageBox.Show(ing.mensaje, "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtCorreo.Text = "";
+                                txtDescuento.Text = "0";
+                                txtDistancia.Text = "";
+                                txtISV.Text = "";
+                                txtNombre.Text = "";
+                                txtRebaja.Text = "0";
+                                txtRegreso.Text = "";
+                                txtSalida.Text = "";
+                                txtSubtotal.Text = "";
+                                txtTarifa.Text = "";
+                                txtTelefono1.Text = "";
+                                txtTelefono2.Text = "";
+                                txtTotal.Text = "";
+                                RBRoundtrip.Checked = true;
+                                gbPago.Visible = false;
+
+                            }
+                            else
+                                MessageBox.Show("Ingrese una distancia y una tarifa mayores a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                            MessageBox.Show("Ingrese el correo en un formato válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                        MessageBox.Show("Los telefonos deben ser igual a 8 caracteres cada uno", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("El nombre, punto de origen y destino final deben ser mayores a 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Debe llenar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void txtRebaja_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtRebaja.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
 
+        private void txtTarifa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtTarifa.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == '@'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSalida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar) && txtSalida.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRegreso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar) && txtRegreso.Text.Trim().Length == 0)
+            {
+                e.Handled = true;
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !(e.KeyChar == '.') && !(e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDistancia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtRebaja.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
         }
     }
 }

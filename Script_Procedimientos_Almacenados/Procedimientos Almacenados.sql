@@ -1593,7 +1593,7 @@ begin
  [ISV_Cotizacion],[Porce_Descuento_Cotizacion],[Rebaja_Cotizacion],[Total_Cotizacion])
  values (GETDATE(),@nombre,@correo,@telefono1,@telefono2,@origen,@destino,@distancia,@tarifa,@tipoviaje,@subtotal,@isv,@descuento,@rebaja,@total)
 end
-
+GO
 
 /*---------------------------------------------Triggers Historial Usuarios--------------------------------------------------*/
 
