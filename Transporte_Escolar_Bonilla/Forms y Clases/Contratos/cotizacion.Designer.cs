@@ -254,10 +254,10 @@
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcular.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnCalcular.ForeColor = System.Drawing.Color.White;
-            this.btnCalcular.Location = new System.Drawing.Point(590, 106);
+            this.btnCalcular.Location = new System.Drawing.Point(686, 110);
             this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(136, 50);
+            this.btnCalcular.Size = new System.Drawing.Size(122, 50);
             this.btnCalcular.TabIndex = 101;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = false;
@@ -269,6 +269,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
             this.linkLabel1.Location = new System.Drawing.Point(166, 66);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
@@ -276,7 +277,7 @@
             this.linkLabel1.TabIndex = 25;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "(?)";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label11
@@ -412,10 +413,10 @@
             this.btnRecalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecalcular.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnRecalcular.ForeColor = System.Drawing.Color.White;
-            this.btnRecalcular.Location = new System.Drawing.Point(590, 98);
+            this.btnRecalcular.Location = new System.Drawing.Point(676, 99);
             this.btnRecalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecalcular.Name = "btnRecalcular";
-            this.btnRecalcular.Size = new System.Drawing.Size(136, 50);
+            this.btnRecalcular.Size = new System.Drawing.Size(132, 50);
             this.btnRecalcular.TabIndex = 103;
             this.btnRecalcular.Text = "Recalcular";
             this.btnRecalcular.UseVisualStyleBackColor = false;
@@ -554,7 +555,7 @@
             this.btnCotizar.Location = new System.Drawing.Point(695, 474);
             this.btnCotizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCotizar.Name = "btnCotizar";
-            this.btnCotizar.Size = new System.Drawing.Size(128, 50);
+            this.btnCotizar.Size = new System.Drawing.Size(122, 50);
             this.btnCotizar.TabIndex = 99;
             this.btnCotizar.Text = "Cotizar";
             this.btnCotizar.UseVisualStyleBackColor = false;
@@ -570,7 +571,7 @@
             this.btnClear.Location = new System.Drawing.Point(9, 474);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(128, 50);
+            this.btnClear.Size = new System.Drawing.Size(122, 50);
             this.btnClear.TabIndex = 101;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = false;
