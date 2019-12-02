@@ -490,6 +490,7 @@
     <EmbeddedResource Include="Forms y Clases\Usuarios\usuariosf_Frm.resx">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="TEB.chm" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -580,7 +581,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ayuda\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Transporte_Bonilla.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -592,6 +595,7 @@
     <Content Include="Resources\logoteb_I8K_icon.ico" />
     <Content Include="Resources\logo_Lv1_icon.ico" />
     <Content Include="Resources\logo_ZdI_icon.ico" />
+    <None Include="Resources\question-sign.png" />
     <None Include="Resources\printing-tool.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
