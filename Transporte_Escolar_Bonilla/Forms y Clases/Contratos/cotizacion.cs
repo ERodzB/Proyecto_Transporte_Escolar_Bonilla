@@ -73,12 +73,14 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
         private void btnCalcular_Click(object sender, EventArgs e)
         {
 
-            if (txtNombre.Text!="" && txtCorreo.Text!="" && txtTelefono1.Text!="" && txtTelefono2.Text!="" &&
+            if (txtNombre.Text!="" && txtCorreo.Text!="" && txtTelefono1.Text!="" &&
                 txtSalida.Text!="" && txtRegreso.Text!="" && txtTarifa.Text!="" && txtDistancia.Text!="")
             {
-                if (txtNombre.Text.Length > 3  && txtSalida.Text.Length > 3 && txtRegreso.Text.Length > 3)
+                if (txtNombre.Text.Length >= 3  && txtSalida.Text.Length >= 3 && txtRegreso.Text.Length >= 3)
                 {
-                    if (txtTelefono1.Text.Length == 8 && txtTelefono2.Text.Length == 8)
+                    if (txtTelefono1.Text.Length == 8 && (txtTelefono2.Text=="" || txtTelefono2.Text.Length == 8) && 
+                        txtTelefono1.Text!=txtTelefono2.Text && int.Parse(txtTelefono1.Text)!=0 && 
+                        (txtTelefono2.Text == "" || int.Parse(txtTelefono2.Text) != 0))
                     {
                         if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
@@ -108,7 +110,7 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
                             MessageBox.Show("Ingrese el correo en un formato válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                        MessageBox.Show("Los telefonos deben ser igual a 8 caracteres cada uno", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Los telefonos deben ser igual a 8 caracteres distintos entre si y distintos a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                     MessageBox.Show("El nombre, punto de origen y destino final deben ser mayores a 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -190,12 +192,14 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
         private void btnCotizar_Click(object sender, EventArgs e)
         {
 
-        if (txtNombre.Text != "" && txtCorreo.Text != "" && txtTelefono1.Text != "" && txtTelefono2.Text != "" &&
+        if (txtNombre.Text != "" && txtCorreo.Text != "" && txtTelefono1.Text != "" &&
             txtSalida.Text != "" && txtRegreso.Text != "" && txtTarifa.Text != "" && txtDistancia.Text != "")
             {
-                if (txtNombre.Text.Length > 3 && txtSalida.Text.Length > 3 && txtRegreso.Text.Length > 3)
+                if (txtNombre.Text.Length >= 3 && txtSalida.Text.Length >= 3 && txtRegreso.Text.Length >= 3)
                 {
-                    if (txtTelefono1.Text.Length == 8 && txtTelefono2.Text.Length == 8)
+                    if (txtTelefono1.Text.Length == 8 && (txtTelefono2.Text=="" || txtTelefono2.Text.Length == 8) &&
+                        txtTelefono1.Text!=txtTelefono2.Text && int.Parse(txtTelefono1.Text)!=0 && 
+                        (txtTelefono2.Text == "" || int.Parse(txtTelefono2.Text) != 0))
                     {
                         if (System.Text.RegularExpressions.Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                         {
@@ -353,7 +357,7 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
                             MessageBox.Show("Ingrese el correo en un formato válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                        MessageBox.Show("Los telefonos deben ser igual a 8 caracteres cada uno", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Los telefonos deben ser igual a 8 caracteres distintos entre si y distintos a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                     MessageBox.Show("El nombre, punto de origen y destino final deben ser mayores a 3 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -377,6 +381,15 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
             if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtTarifa.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
+        }
+
+        private void txtDistancia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtDistancia.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
             }
             else e.Handled = e.KeyChar != (char)Keys.Back;
         }
@@ -439,13 +452,6 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
             }
         }
 
-        private void txtDistancia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
-            {
-                if (System.Text.RegularExpressions.Regex.IsMatch(txtRebaja.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
-            }
-            else e.Handled = e.KeyChar != (char)Keys.Back;
-        }
+
     }
 }

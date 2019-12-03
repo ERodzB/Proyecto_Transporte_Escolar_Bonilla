@@ -186,7 +186,7 @@ namespace Transporte_Escolar_Bonilla
                             Convert.ToDateTime(dtpvencimiento.Value.ToString()), 0);
                             modify.BitacoraModulo("Contratación", 3, "Contratacion Nuevo Empleado", txtidentidad.Text, txtsalario.Text, "N/A", "N/A", "N/A");
                             MessageBox.Show("Empleado Guardado con Éxito", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtcorreo.Text = "";
+                            txtcorreo.Clear();
                             txtdireccion.Text = "";
                             txtidentidad.Text = "";
                             txtnombre.Text = "";
@@ -194,7 +194,7 @@ namespace Transporte_Escolar_Bonilla
                             txttelefono.Text = "";
                             cmbGenero.SelectedIndex = -1;
                             cmbPuesto.SelectedIndex = -1;
-                            dateTimePicker1.ResetText();
+                            dateTimePicker1.Value = DateTime.Today.AddDays(-6575);
                         }
                     }
                     else
@@ -263,7 +263,6 @@ namespace Transporte_Escolar_Bonilla
                 else
                 {
                     MessageBox.Show("Use un formato de correo válido \nEj: abc@gmail.com", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
             }
 

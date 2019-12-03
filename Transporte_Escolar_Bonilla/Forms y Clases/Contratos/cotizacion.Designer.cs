@@ -269,7 +269,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(94)))));
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
+            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlLightLight;
             this.linkLabel1.Location = new System.Drawing.Point(166, 66);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
@@ -306,7 +306,7 @@
             // 
             this.txtDistancia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDistancia.Location = new System.Drawing.Point(211, 68);
-            this.txtDistancia.MaxLength = 3;
+            this.txtDistancia.MaxLength = 6;
             this.txtDistancia.Name = "txtDistancia";
             this.txtDistancia.ShortcutsEnabled = false;
             this.txtDistancia.Size = new System.Drawing.Size(219, 27);
