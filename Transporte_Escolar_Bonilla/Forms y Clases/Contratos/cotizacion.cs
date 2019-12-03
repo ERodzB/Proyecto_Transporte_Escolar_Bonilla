@@ -185,7 +185,6 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
             btnRecalcular.Visible = false;
             btnCotizar.Enabled = true;
             txtSubtotal.Text =(subtotal-double.Parse(txtRebaja.Text)).ToString(); 
-            txtISV.Text = (Double.Parse(txtSubtotal.Text) * 0.15).ToString();
             txtTotal.Text = (Double.Parse(txtSubtotal.Text) + Double.Parse(txtISV.Text)).ToString();
         }
 
@@ -452,6 +451,9 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
             }
         }
 
+        private void txtSubtotal_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
