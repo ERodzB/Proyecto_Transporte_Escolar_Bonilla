@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
@@ -151,8 +152,18 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
-            btnRecalcular.Visible = true;
-            btnCotizar.Enabled = false;
+            string dot = @"^([.]+\d*)$";
+            string twodot = @"^[0-9]+[.]{2,}$";
+            //btnRecalcular.Visible = true;
+            //btnCotizar.Enabled = false;
+            if (Regex.IsMatch(txtDescuento.Text, dot))
+            {
+                txtDescuento.Text = "0";
+            }
+            if(Regex.IsMatch(txtDescuento.Text,twodot))
+            {
+                txtDescuento.Text = txtDescuento.Text.Substring(0,1);
+            }
             if (txtDescuento.Text == "")
                 txtDescuento.Text = "0";
             else { 
@@ -177,6 +188,8 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
                 else    
                     txtDescuento.Text = ((Double.Parse(txtRebaja.Text) / subtotal)*100).ToString();
             }
+            txtSubtotal.Text = (subtotal - double.Parse(txtRebaja.Text)).ToString();
+            txtTotal.Text = (Double.Parse(txtSubtotal.Text) + Double.Parse(txtISV.Text)).ToString();
         }
 
 
@@ -184,8 +197,7 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
         {
             btnRecalcular.Visible = false;
             btnCotizar.Enabled = true;
-            txtSubtotal.Text =(subtotal-double.Parse(txtRebaja.Text)).ToString(); 
-            txtTotal.Text = (Double.Parse(txtSubtotal.Text) + Double.Parse(txtISV.Text)).ToString();
+           
         }
 
         private void btnCotizar_Click(object sender, EventArgs e)

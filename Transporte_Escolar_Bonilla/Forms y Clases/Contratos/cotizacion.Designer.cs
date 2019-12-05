@@ -100,7 +100,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(608, 76);
+            this.label5.Location = new System.Drawing.Point(576, 77);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 30);
@@ -110,8 +110,8 @@
             // txtTelefono2
             // 
             this.txtTelefono2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono2.Location = new System.Drawing.Point(787, 74);
-            this.txtTelefono2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono2.Location = new System.Drawing.Point(745, 78);
+            this.txtTelefono2.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono2.MaxLength = 8;
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.ShortcutsEnabled = false;
@@ -135,8 +135,8 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(281, 74);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Location = new System.Drawing.Point(259, 77);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.MaxLength = 100;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.ShortcutsEnabled = false;
@@ -149,7 +149,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(608, 36);
+            this.label1.Location = new System.Drawing.Point(576, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 30);
@@ -159,8 +159,8 @@
             // txtTelefono1
             // 
             this.txtTelefono1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono1.Location = new System.Drawing.Point(787, 34);
-            this.txtTelefono1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono1.Location = new System.Drawing.Point(745, 34);
+            this.txtTelefono1.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono1.MaxLength = 8;
             this.txtTelefono1.Name = "txtTelefono1";
             this.txtTelefono1.ShortcutsEnabled = false;
@@ -183,8 +183,8 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(281, 34);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(259, 37);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ShortcutsEnabled = false;
@@ -262,7 +262,7 @@
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcular.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnCalcular.ForeColor = System.Drawing.Color.White;
-            this.btnCalcular.Location = new System.Drawing.Point(915, 135);
+            this.btnCalcular.Location = new System.Drawing.Point(915, 125);
             this.btnCalcular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(163, 62);
@@ -284,7 +284,7 @@
             this.linkLabel1.TabIndex = 25;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "(?)";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.White;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label11
@@ -315,7 +315,7 @@
             // 
             this.txtDistancia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDistancia.Location = new System.Drawing.Point(281, 84);
-            this.txtDistancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDistancia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDistancia.MaxLength = 6;
             this.txtDistancia.Name = "txtDistancia";
             this.txtDistancia.ShortcutsEnabled = false;
@@ -328,7 +328,7 @@
             // 
             this.txtTarifa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTarifa.Location = new System.Drawing.Point(787, 87);
-            this.txtTarifa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTarifa.Margin = new System.Windows.Forms.Padding(4);
             this.txtTarifa.MaxLength = 7;
             this.txtTarifa.Name = "txtTarifa";
             this.txtTarifa.ShortcutsEnabled = false;
@@ -365,7 +365,7 @@
             // 
             this.txtSalida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalida.Location = new System.Drawing.Point(281, 46);
-            this.txtSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSalida.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalida.MaxLength = 50;
             this.txtSalida.Name = "txtSalida";
             this.txtSalida.ShortcutsEnabled = false;
@@ -377,7 +377,7 @@
             // 
             this.txtRegreso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegreso.Location = new System.Drawing.Point(787, 46);
-            this.txtRegreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRegreso.Margin = new System.Windows.Forms.Padding(4);
             this.txtRegreso.MaxLength = 50;
             this.txtRegreso.Name = "txtRegreso";
             this.txtRegreso.ShortcutsEnabled = false;
@@ -444,7 +444,7 @@
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(284, 126);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(291, 32);
             this.txtTotal.TabIndex = 111;
@@ -465,7 +465,7 @@
             // 
             this.txtRebaja.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRebaja.Location = new System.Drawing.Point(787, 82);
-            this.txtRebaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRebaja.Margin = new System.Windows.Forms.Padding(4);
             this.txtRebaja.MaxLength = 10;
             this.txtRebaja.Name = "txtRebaja";
             this.txtRebaja.ShortcutsEnabled = false;
@@ -491,7 +491,7 @@
             // 
             this.txtDescuento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescuento.Location = new System.Drawing.Point(787, 39);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescuento.MaxLength = 3;
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.ShortcutsEnabled = false;
@@ -517,7 +517,7 @@
             this.txtISV.Enabled = false;
             this.txtISV.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtISV.Location = new System.Drawing.Point(284, 82);
-            this.txtISV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtISV.Margin = new System.Windows.Forms.Padding(4);
             this.txtISV.Name = "txtISV";
             this.txtISV.Size = new System.Drawing.Size(291, 32);
             this.txtISV.TabIndex = 105;
@@ -540,7 +540,7 @@
             this.txtSubtotal.Enabled = false;
             this.txtSubtotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.Location = new System.Drawing.Point(284, 39);
-            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(291, 32);
             this.txtSubtotal.TabIndex = 103;

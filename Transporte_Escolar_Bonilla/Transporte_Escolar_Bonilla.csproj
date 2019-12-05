@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\hondu\Desktop\</PublishUrl>
+    <PublishUrl>C:\Users\hondu\source\repos\Proyecto_Transporte_Escolar_Bonilla\Instalador\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,7 +27,7 @@
     <ProductName>TEB</ProductName>
     <PublisherName>Transporte Escolar Bonilla</PublisherName>
     <SuiteName>TEB</SuiteName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -490,9 +490,9 @@
     <EmbeddedResource Include="Forms y Clases\Usuarios\usuariosf_Frm.resx">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manualAyudaTEB.chm">
+    <Content Include="Resources\manualAyudaTEB.chm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -585,12 +585,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Data\Transporte_Bonilla.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Data\Transporte_Bonilla.mdf" />
     <Content Include="Data\Transporte_Bonilla_log.ldf">
       <DependentUpon>Transporte_Bonilla.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\logoteb_I8K_icon.ico" />
     <Content Include="Resources\logo_Lv1_icon.ico" />
