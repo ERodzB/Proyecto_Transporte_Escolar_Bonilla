@@ -178,8 +178,8 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
 
     private void txtRebaja_TextChanged(object sender, EventArgs e)
         {
-            btnRecalcular.Visible = true;
-            btnCotizar.Enabled = false;
+            //btnRecalcular.Visible = true;
+           // btnCotizar.Enabled = false;
             if (txtRebaja.Text == "")
                 txtRebaja.Text = "0";
             else { 
