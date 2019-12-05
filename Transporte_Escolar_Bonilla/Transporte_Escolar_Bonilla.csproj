@@ -490,7 +490,9 @@
     <EmbeddedResource Include="Forms y Clases\Usuarios\usuariosf_Frm.resx">
       <DependentUpon>usuariosf_Frm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="TEB.chm" />
+    <EmbeddedResource Include="manualAyudaTEB.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -581,9 +583,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ayuda\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Data\Transporte_Bonilla.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

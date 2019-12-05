@@ -273,7 +273,7 @@ namespace Transporte_Escolar_Bonilla
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "file:C:\\Users\\hondu\\source\\repos\\Proyecto_Transporte_Escolar_Bonilla\\Transporte_Escolar_Bonilla\\ayuda\\TEB.chm");
+            Help.ShowHelp(this, Application.StartupPath + @"\\manualAyudaTEB.chm");
         }
     }
 }
