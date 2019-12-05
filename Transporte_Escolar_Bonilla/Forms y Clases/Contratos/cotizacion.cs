@@ -159,7 +159,7 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
                 if (Double.Parse(txtDescuento.Text) > 100)
                     txtDescuento.Text = "100";
                 else
-                    txtRebaja.Text = (subtotal * (Double.Parse(txtDescuento.Text) / 100)).ToString();
+                    txtRebaja.Text = (Math.Round((subtotal * (Double.Parse(txtDescuento.Text) / 100)),2)).ToString();
             }
         }
 
@@ -175,7 +175,7 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
                 if (Double.Parse(txtRebaja.Text) > subtotal)
                     txtRebaja.Text = txtSubtotal.Text;
                 else    
-                    txtDescuento.Text = ((Double.Parse(txtRebaja.Text) / subtotal)*100).ToString();
+                    txtDescuento.Text = (Math.Round(((Double.Parse(txtRebaja.Text) / subtotal)*100),2)).ToString();
             }
         }
 
@@ -454,6 +454,15 @@ namespace Transporte_Escolar_Bonilla.Forms_y_Clases.Contratos
         private void txtSubtotal_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtDistancia.Text, "^\\d*\\.\\d{2}$")) e.Handled = true;
+            }
+            else e.Handled = e.KeyChar != (char)Keys.Back;
         }
     }
 }
