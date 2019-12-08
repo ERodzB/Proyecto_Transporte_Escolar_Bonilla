@@ -504,9 +504,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Transporte_Escolar_Bonilla_TemporaryKey.pfx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Transporte_Escolar_Bonilla_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -585,10 +583,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Data\Transporte_Bonilla.mdf" />
-    <Content Include="Data\Transporte_Bonilla_log.ldf">
-      <DependentUpon>Transporte_Bonilla.mdf</DependentUpon>
-    </Content>
     <Content Include="Resources\logoteb_I8K_icon.ico" />
     <Content Include="Resources\logo_Lv1_icon.ico" />
     <Content Include="Resources\logo_ZdI_icon.ico" />

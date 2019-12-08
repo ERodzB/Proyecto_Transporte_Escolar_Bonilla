@@ -120,7 +120,7 @@ namespace Transporte_Escolar_Bonilla
 
             error += val.valCmbVacio(combveh1.SelectedIndex, "Vehiculo");
             //Ruta Existente
-            if (val.validarRuta(txtinicio.Text + txtfin.Text) == 1)
+            if (val.validarRuta(txtinicio.Text +"-"+txtfin.Text) == 1)
             {
                 error += "*La Ruta ya existe\n";
 
